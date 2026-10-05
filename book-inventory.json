@@ -14548,8 +14548,14 @@
       "struc:cat-unit-laws",
       "struct:cat-assoc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WildPrecat"
+    ],
+    "principal": [
+      "WildPrecat"
+    ],
+    "note": "WildPrecat is a record with the fields ob, hom, idn, comp, lu, ru and assoc. The term comp a b c g f is the book's g ∘_{A,B,C} f. Its argument order is the order of the footnote: (B → C) → (A → B) → (A → C). The fields lu : id_B ∘ f = f, ru : f ∘ id_A = f and assoc : h ∘ (g ∘ f) = (h ∘ g) ∘ f have the printed orientations. The formalization does not keep the book's records of U-levels, because it uses a single universe."
   },
   {
     "chapter": 6,
@@ -14562,8 +14568,37 @@
       "rem:wild",
       "eq:pentagon"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TypeWild",
+      "PointedWild",
+      "pointed_wild_lu",
+      "pointed_wild_ru",
+      "pointed_wild_assoc",
+      "book_pointed_compose",
+      "book_pointed_identity",
+      "WildUnitCoherence",
+      "WildTriangleCoherence",
+      "wild_pentagon_left",
+      "wild_pentagon_right",
+      "WildPentagonFiller",
+      "WildPentagon",
+      "wild_pentagon_fillers",
+      "type_wild_unit_coherence",
+      "type_wild_triangle",
+      "type_wild_pentagon",
+      "precat_unit_coherence",
+      "precat_triangle_coherence",
+      "precat_pentagon",
+      "pointed_wild_composite_point",
+      "pointed_wild_negation_twice"
+    ],
+    "principal": [
+      "PointedWild",
+      "WildPentagon",
+      "type_wild_pentagon"
+    ],
+    "note": "The wild precategory of pointed types uses the book's composition (g f, g(f_pt)·g_pt) and the book's pointed identity. The book leaves λ, ρ and α as an exercise. Here they are concat_1p, concat_p1 and associativity with ap of a concatenation, and the underlying maps agree judgmentally. The formalization states as types the coherences that a wild precategory does not require: λ = ρ at identities, the triangle of the footnote and eq:pentagon. For eq:pentagon, WildPentagonFiller is the type for one quadruple and WildPentagon is the type for all quadruples. These coherences hold in TypeWild and in every precategory. The remarks on A_n-precategories, (∞,1)-precategories and the open problem make no claim that can be checked, and they stay informal."
   },
   {
     "chapter": 6,
@@ -14575,8 +14610,17 @@
     "labels": [
       "def:precategory"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "HasHomSets",
+      "has_hom_sets_prop",
+      "Precat"
+    ],
+    "principal": [
+      "Precat",
+      "HasHomSets"
+    ],
+    "note": "Precat is the record (wild : WildPrecat, homset : HasHomSets wild). Here HasHomSets C says that every C .hom a b is a set. The lemma has_hom_sets_prop shows that this is a property."
   },
   {
     "chapter": 6,
@@ -14588,8 +14632,20 @@
     "labels": [
       "def:iso-in-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CatIsIso",
+      "CatIso",
+      "cat_identity_is_iso",
+      "cat_identity_iso",
+      "cat_iso_inverse",
+      "cat_iso_compose"
+    ],
+    "principal": [
+      "CatIsIso",
+      "CatIso"
+    ],
+    "note": "CatIsIso C a b f is the displayed type (Σ g, f ∘ g = id_b) × (Σ h, h ∘ f = id_a). Also, CatIso C a b = Σ f, CatIsIso f. The prose before the display writes the identifications in the reverse direction (σ : id_B = f ∘ g, ρ : id_A = h ∘ f). We follow the displayed definition. The two types are equivalent by path inversion. The formalization gives inverses and composites of isomorphisms. For the inverse, cat_iso_inverse uses the right inverse g."
   },
   {
     "chapter": 6,
@@ -14601,8 +14657,23 @@
     "labels": [
       "def:univalent-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cat_idtoiso",
+      "cat_idtoiso_refl",
+      "IsUnivalentCat",
+      "is_univalent_cat_prop",
+      "cat_idtoiso_equiv",
+      "cat_isotoid",
+      "cat_univalent_from_equivalences",
+      "cat_univalent_from_contractible",
+      "cat_univalent_iso_total_contractible"
+    ],
+    "principal": [
+      "IsUnivalentCat",
+      "cat_idtoiso"
+    ],
+    "note": "The formalization defines cat_idtoiso by Narya's J, which sends refl a to the identity isomorphism. J has only a typal beta rule. Thus the defining clause idtoiso(refl a) ≡ id_a is the identification cat_idtoiso_refl. IsUnivalentCat C requires BookIsEquiv of cat_idtoiso for all a, b. The examples use the criteria cat_univalent_from_equivalences/from_contractible to prove univalence. These criteria come from the fundamental theorem of identity types."
   },
   {
     "chapter": 6,
@@ -14614,8 +14685,18 @@
     "labels": [
       "def:category"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WildCategory",
+      "Category",
+      "category_precat",
+      "category_wild_category"
+    ],
+    "principal": [
+      "Category",
+      "WildCategory"
+    ],
+    "note": "WildCategory = (wild, univalent) and Category = (wild, homset, univalent). Thus a category is a univalent precategory. The formalization stores it as one record, not as a nested Σ. The map category_precat forgets univalence."
   },
   {
     "chapter": 6,
@@ -14627,8 +14708,19 @@
     "labels": [
       "def:full-subcat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FullSubcat",
+      "full_subcat_homset",
+      "full_subcat_univalent",
+      "full_subcat_precat",
+      "full_subcat_category"
+    ],
+    "principal": [
+      "FullSubcat",
+      "full_subcat_univalent"
+    ],
+    "note": "Let P : Subtypes (C .ob) be given. This is the book's P : Ob(C) → Prop. Then the objects of FullSubcat C P are SubtypeCarrier (C .ob) P, the book's Ob(C)_P of def:subtype. FullSubcat C P inherits hom, identities, composition and laws from C. The lemmas full_subcat_homset and full_subcat_univalent prove that the full subcategory is non-wild (respectively univalent) if C is."
   },
   {
     "chapter": 6,
@@ -14640,8 +14732,16 @@
     "labels": [
       "lem:obj-gpd"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "category_objects_groupoid",
+      "cat_idtoiso_equiv",
+      "cat_iso_set"
+    ],
+    "principal": [
+      "category_objects_groupoid"
+    ],
+    "note": "The lemma category_objects_groupoid C : isGroupoid (C .wild .ob) follows from two facts. The first is the univalence equivalence (a = b) ≃ (a ≅ b). The second is that a ≅ b is a set (cat_iso_set)."
   },
   {
     "chapter": 6,
@@ -14653,8 +14753,60 @@
     "labels": [
       "ex:poset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "HomsAreProps",
+      "homs_are_props_prop",
+      "Preorder",
+      "preorder_homset",
+      "preorder_precat",
+      "CatAssocAt",
+      "CatAssocLaw",
+      "precat_assoc_law_prop",
+      "preorder_left_unit_contractible",
+      "preorder_right_unit_contractible",
+      "preorder_assoc_contractible",
+      "PreorderRelation",
+      "preorder_of_relation",
+      "relation_of_preorder",
+      "preorder_relation_roundtrip",
+      "relation_preorder_roundtrip",
+      "preorder_relation_equiv",
+      "preorder_iso_of_arrows",
+      "preorder_iso_prop",
+      "IsAntisymmetric",
+      "preorder_univalent_antisymmetric",
+      "preorder_path_arrow",
+      "preorder_antisymmetric_objects_set",
+      "preorder_antisymmetric_univalent",
+      "preorder_univalent_iff_antisymmetric",
+      "Poset",
+      "poset_preorder",
+      "poset_category",
+      "poset_from_antisymmetric",
+      "poset_objects_set",
+      "NatLeqPreorder",
+      "nat_leq_poset",
+      "IntLeqPreorder",
+      "int_leq_poset",
+      "PropImplicationPreorder",
+      "prop_implication_poset",
+      "SubtypeInclusionPreorder",
+      "subtype_inclusion_poset",
+      "BoolChaoticPreorder",
+      "bool_chaotic_precat",
+      "bool_chaotic_not_univalent",
+      "bool_chaotic_iso",
+      "nat_leq_two_five",
+      "nat_leq_composite_difference",
+      "int_leq_example"
+    ],
+    "principal": [
+      "Preorder",
+      "preorder_relation_equiv",
+      "preorder_univalent_iff_antisymmetric"
+    ],
+    "note": "Preorders are precategories with propositional hom types. The formalization proves that the λ, ρ and α data are contractible. It also proves the reduction to a reflexive transitive Prop-valued relation, as an equivalence Preorder ≃ PreorderRelation. Posets are univalent preorders. Their objects form a set. Univalence is equivalent to antisymmetry. The book displays this condition, but it calls the condition \"symmetric\". The examples are (ℕ, ≤) with the book's BookLe, (ℤ, ≤), (Prop, →) and (Sub(S), ⊆) for every type S. For (Sub(S), ⊆), the book's set hypothesis is not necessary. The type 2 with the always-true relation is a preorder and a precategory that is not univalent."
   },
   {
     "chapter": 6,
@@ -14666,8 +14818,20 @@
     "labels": [
       "xca:order-poset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OrderDivisibilityPreorder",
+      "order_divisibility_poset",
+      "OrderDivides",
+      "order_divides_prop",
+      "order_divides_refl",
+      "order_divides_trans",
+      "order_divides_antisym"
+    ],
+    "principal": [
+      "order_divisibility_poset"
+    ],
+    "note": "The orders (Order = SetTrunc Cycles, def:Order) form a preorder with an arrow d → k exactly when d | k (OrderDivides, module 69). Divisibility is antisymmetric, so this preorder is univalent, that is, a poset."
   },
   {
     "chapter": 6,
@@ -14679,8 +14843,22 @@
     "labels": [
       "def:wild-pre-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsPregroupoid",
+      "is_pregroupoid_prop",
+      "WildPregroupoid",
+      "Pregroupoid",
+      "WildGroupoid",
+      "GroupoidCat",
+      "groupoid_cat_category"
+    ],
+    "principal": [
+      "IsPregroupoid",
+      "Pregroupoid",
+      "GroupoidCat"
+    ],
+    "note": "IsPregroupoid C says that every arrow is invertible (CatIsIso). WildPregroupoid/Pregroupoid add this property to wild precategories and to precategories. WildGroupoid and GroupoidCat add univalence. GroupoidCat is the book's groupoid. Its name prevents confusion with the predicate isGroupoid on types."
   },
   {
     "chapter": 6,
@@ -14692,8 +14870,20 @@
     "labels": [
       "ex:path-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PathWild",
+      "path_wild_invertible",
+      "path_wild_iso_equiv",
+      "path_wild_univalent",
+      "PathGroupoid",
+      "path_groupoid_of_groupoid"
+    ],
+    "principal": [
+      "PathGroupoid",
+      "path_groupoid_of_groupoid"
+    ],
+    "note": "PathWild X has the objects X, the arrows x = y, the identities refl and the composite q ∘ p = p · q (concat). Its laws are concat_p1, concat_1p and concat_assoc. Every path is invertible (path_wild_invertible). The structure is univalent for every type (PathGroupoid : WildGroupoid). If X is a 1-type, the hom types are sets and we get a groupoid (path_groupoid_of_groupoid)."
   },
   {
     "chapter": 6,
@@ -14705,8 +14895,44 @@
     "labels": [
       "rem:cat-sizes"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsSmallWildPrecat",
+      "IsLocallySmallWildPrecat",
+      "IsLocallySmallOver",
+      "small_wild_precat_locally_small",
+      "small_wild_precat_locally_small_over",
+      "path_wild_small",
+      "SmallTypePredicate",
+      "TypeWildIn",
+      "type_wild_in_objects",
+      "type_wild_in_locally_small",
+      "type_wild_in_locally_small_over",
+      "type_wild_in_univalent",
+      "SetWildIn",
+      "set_wild_in_objects",
+      "set_wild_in_locally_small",
+      "set_wild_in_locally_small_over",
+      "PointedWildIn",
+      "pointed_wild_in_hom_small",
+      "pointed_wild_in_locally_small",
+      "pointed_wild_in_objects_equiv",
+      "pointed_wild_in_locally_small_over",
+      "path_wild_locally_small_to_type",
+      "type_locally_small_to_path_wild",
+      "path_wild_locally_small_iff",
+      "nat_path_wild_small",
+      "type_wild_total_locally_small",
+      "SmallGroupPredicate",
+      "GroupWildIn",
+      "group_wild_in_locally_small"
+    ],
+    "principal": [
+      "IsSmallWildPrecat",
+      "IsLocallySmallOver",
+      "path_wild_locally_small_iff"
+    ],
+    "note": "Universes are the smallness predicates of modules 190-193. A nested pair N models U : U'. A category is U-small if its objects and hom types are in U. It is locally U-small if its hom types are in U and, over N, its objects are in U'. The formalization proves these facts. Path groupoids of X : U are U-small. The wild categories of types, sets and pointed types in U are locally U-small. For path groupoids, local smallness is exactly def:ess-loc-small. For groups, GroupWildIn U (groups with a U-small classifying type) has U-small hom types (group_wild_in_locally_small, module 686). The object-level statement for groups is not formalized."
   },
   {
     "chapter": 6,
@@ -14718,8 +14944,51 @@
     "labels": [
       "def:slice-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SliceOb",
+      "SliceTriangle",
+      "SliceHom",
+      "slice_idn",
+      "slice_comp",
+      "slice_triangle_prop",
+      "slice_hom_path",
+      "slice_precat_wild",
+      "slice_homset",
+      "SlicePrecat",
+      "slice_iso_to_base",
+      "slice_inverse_triangle",
+      "slice_iso_from_base",
+      "slice_univalent",
+      "SliceCategory",
+      "WildTriangleCoherence",
+      "WildPentagon",
+      "WildRightTriangleFiller",
+      "wild_slice_sigma_path",
+      "wild_slice_lu_algebra",
+      "wild_slice_ru_algebra",
+      "wild_slice_assoc_algebra",
+      "coherent_wild_slice",
+      "type_wild_triangle",
+      "type_wild_pentagon",
+      "type_wild_right_triangle",
+      "universe_slice_univalent",
+      "slice_litmus_base",
+      "slice_litmus_not",
+      "slice_litmus_id",
+      "slice_litmus_arrow",
+      "slice_litmus_back",
+      "slice_litmus_composite_value",
+      "slice_litmus_point",
+      "slice_litmus_point_arrow",
+      "slice_litmus_no_arrow_back"
+    ],
+    "principal": [
+      "SlicePrecat",
+      "SliceCategory",
+      "coherent_wild_slice"
+    ],
+    "note": "SlicePrecat C c has the objects Σ_A (A → c) and the arrows g with f' ∘ g = f. This condition is a proposition, as the footnote says (slice_triangle_prop). The identities are (id, ρ), and the composition comes from C. SliceCategory is univalent if C is (slice_univalent). For a wild C, coherent_wild_slice builds the wild slice from the pentagon (WildPentagon, module 604). The pentagon gives α, as the book says. In addition, λ and ρ need the footnote triangle of rem:wild (WildTriangleCoherence, module 604). They also need its right-unit analogue WildRightTriangleFiller, which the book does not mention. The book claims that particular wild categories have wild slices. TypeWild is an instance, because all three coherences hold in it. U/B is another instance, and the formalization shows that it is univalent (universe_slice_univalent). The (∞,1) footnote is informal."
   },
   {
     "chapter": 6,
@@ -14731,8 +15000,33 @@
     "labels": [
       "xca:univ-slice-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "UniverseSliceOb",
+      "UniverseSliceHom",
+      "universe_slice_comp",
+      "universe_slice_assoc_path",
+      "universe_slice_wild",
+      "universe_slice_projection",
+      "universe_slice_identity_iso",
+      "universe_slice_iso_from_equiv",
+      "universe_slice_univalent",
+      "UniverseSliceCategory",
+      "universe_slice_coherent_ob",
+      "universe_slice_coherent_hom",
+      "type_wild_right_triangle",
+      "universe_slice_litmus_point",
+      "universe_slice_litmus_id",
+      "universe_slice_litmus_not",
+      "universe_slice_litmus_arrow",
+      "universe_slice_litmus_not_arrow",
+      "universe_slice_litmus_composite"
+    ],
+    "principal": [
+      "universe_slice_wild",
+      "UniverseSliceCategory"
+    ],
+    "note": "The wild category universe_slice_wild B has the objects (A, f : A → B). Its arrows are (g, f' ∘ g = f), with identifications of functions. The identity is (id, refl f), and the composite is (h ∘ g, ap_{-∘g}(q) · p). The data λ, ρ and α come from the unit and associativity laws of path concatenation and from map_path_concat. The formalization proves more than the exercise asks: U/B is univalent. An arrow is an iso if and only if its underlying map is an equivalence. The objects and arrows of U/B are equal by refl to those of the general coherent_wild_slice of TypeWild."
   },
   {
     "chapter": 6,
@@ -14744,8 +15038,16 @@
     "labels": [
       "def:terminal-obj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsTerminalObj",
+      "is_terminal_obj_prop",
+      "TerminalObj"
+    ],
+    "principal": [
+      "IsTerminalObj"
+    ],
+    "note": "The formal definition takes an object t such that every arrow type A → t is contractible. Contractibility is in the book's sense (BookIsContr: a center and paths from it)."
   },
   {
     "chapter": 6,
@@ -14757,8 +15059,17 @@
     "labels": [
       "xca:terminal-prop"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "terminal_objects_iso",
+      "terminal_objects_prop",
+      "book_contractible_paths",
+      "type_wild_terminal_contractible"
+    ],
+    "principal": [
+      "terminal_objects_prop"
+    ],
+    "note": "Any two terminal objects are isomorphic, because the unique arrows compose to the identities. In a univalent wild precategory, the isomorphism gives an identification. Also, the property of being terminal is a proposition. Thus the type Σ t, IsTerminalObj t is a proposition."
   },
   {
     "chapter": 6,
@@ -14770,8 +15081,20 @@
     "labels": [
       "def:initial-obj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsInitialObj",
+      "is_initial_obj_prop",
+      "InitialObj",
+      "initial_is_terminal_op",
+      "initial_objects_iso",
+      "initial_objects_prop"
+    ],
+    "principal": [
+      "IsInitialObj",
+      "initial_is_terminal_op"
+    ],
+    "note": "Every arrow type 0 → A is contractible (BookIsContr). Initial objects are judgmentally the terminal objects of the opposite. This is the duality that the book discusses after xca:unit-ptd-types. In a univalent wild precategory, the initial objects also form a proposition."
   },
   {
     "chapter": 6,
@@ -14783,8 +15106,20 @@
     "labels": [
       "xca:unit-ptd-types"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_unit",
+      "pointed_unit_terminal",
+      "pointed_unit_initial",
+      "pointed_unit_zero_object",
+      "unit_carrier_contractible",
+      "contractible_domain_pointed_maps",
+      "pointed_unit_initial_value"
+    ],
+    "principal": [
+      "pointed_unit_zero_object"
+    ],
+    "note": "In the wild category of pointed types, the pointed unit (1, *) is terminal and initial. It is terminal because pointed homotopies identify the maps into it, since Unit is a set. It is initial because pointed maps out of a contractible pointed type form a contractible type (module 98)."
   },
   {
     "chapter": 6,
@@ -14796,8 +15131,15 @@
     "labels": [
       "def:op-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OppositeWild",
+      "opposite_precat"
+    ],
+    "principal": [
+      "OppositeWild"
+    ],
+    "note": "OppositeWild C has the same objects and identities as C, and hom_op(a,b) = hom(b,a). The composite is g ∘_op f = f ∘ g. The unit laws are swapped (lu_op = ru, ru_op = lu), and the associativity is the inverse of α, as in the book. The construction opposite_precat transfers hom-sets."
   },
   {
     "chapter": 6,
@@ -14809,8 +15151,24 @@
     "labels": [
       "lem:op-idem"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OppositeWild",
+      "opposite_opposite_assoc_path",
+      "opposite_opposite_path",
+      "opposite_book_equiv",
+      "opposite_is_book_equiv",
+      "opposite_precat_involution",
+      "opposite_opposite_hom_check",
+      "opposite_opposite_comp_check",
+      "opposite_opposite_objects_check",
+      "opposite_equiv_map_check"
+    ],
+    "principal": [
+      "opposite_opposite_path",
+      "opposite_book_equiv"
+    ],
+    "note": "The opposite operation is a book equivalence WildPrecat ≃ WildPrecat, and it is its own inverse. There is a deviation. (C^op)^op agrees with C judgmentally in every component except α. The α of (C^op)^op is the double inverse of α, because def:op-cat uses α⁻¹. The identification (C^op)^op = C is refl on the other components. On α, it is inverse_inverse with function extensionality. Thus it is not literally \"trivially defined\". The same is true for precategories."
   },
   {
     "chapter": 6,
@@ -14822,8 +15180,18 @@
     "labels": [
       "def:mono-in-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsMono",
+      "is_mono_prop",
+      "embedding_prop",
+      "MonoCancellation",
+      "precat_mono_iff_cancellation"
+    ],
+    "principal": [
+      "IsMono"
+    ],
+    "note": "An arrow f is a mono if f ∘ - : (C → A) → (C → B) is an injection for every object C. Here an injection is as in def:injection: IsEmbedding, with propositional fibers. In a precategory, this is equivalent to left cancellability. This is the reduction that the book states after def:epi-in-cat."
   },
   {
     "chapter": 6,
@@ -14835,8 +15203,19 @@
     "labels": [
       "def:epi-in-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsEpi",
+      "is_epi_prop",
+      "epi_is_mono_op",
+      "EpiCancellation",
+      "precat_epi_iff_cancellation"
+    ],
+    "principal": [
+      "IsEpi",
+      "epi_is_mono_op"
+    ],
+    "note": "An arrow f is an epi if - ∘ f : (B → C) → (A → C) is an injection for every C. The epis are judgmentally the monos of the opposite. In a precategory, this condition is equivalent to right cancellability."
   },
   {
     "chapter": 6,
@@ -14848,8 +15227,37 @@
     "labels": [
       "xca:mono-cat-grp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_mono_iff_usym_injective",
+      "group_mono_usym_injective_equiv",
+      "group_monos_total_equiv",
+      "group_mono_usym_injective",
+      "usym_injective_group_mono",
+      "group_mono_usym_reflects",
+      "circle_group_hom_from_loop",
+      "circle_group_hom_from_loop_beta",
+      "circle_group_hom_eval_reflects",
+      "usym_injective_base_ap_embedding",
+      "usym_injective_ap_embedding",
+      "pointed_postcompose_homotopy_lift",
+      "grp_mono_pointing_base",
+      "grp_mono_pointing_lemma",
+      "IsMono",
+      "GroupCat",
+      "usym_hom",
+      "group_identity_usym_injective",
+      "sigma3_identity_group_mono",
+      "product_group_incl1_usym_injective",
+      "product_group_incl1_mono",
+      "sigma3_incl_mono",
+      "sigma3_to_unit_not_mono"
+    ],
+    "principal": [
+      "group_mono_usym_injective_equiv",
+      "group_mono_iff_usym_injective"
+    ],
+    "note": "Let H and G be groups and let i : Hom(H, G). The formal predicate IsMono (GroupCat .wild) H G i follows def:mono-in-cat: i ∘ - : Hom(K, H) → Hom(K, G) is an injection for every group K. The formalization shows that it is equivalent to IsEmbedding (USym H) (USym G) (usym_hom H G i). This is the unfolded condition of def:typeofmono (actions.tex 918). The formalization does not name the chapter-5 predicate ismono. It proves both implications, and it gives an equivalence of propositions and of the types of monomorphisms H → G. The direction (⇒) uses the test group Z = circle_group constructed_circle (integer_group) and the pointed universal property of the circle. The direction (⇐) first shows that ap_{Bi} is injective on all path types. This step uses that BH is connected (cor:fib-vs-path). Then post-composition with Bi reflects identifications of pointed maps out of the connected BK. As a litmus test, identities and the factor inclusion G → G × H are monos, but Σ_3 → 1 is not."
   },
   {
     "chapter": 6,
@@ -14861,8 +15269,32 @@
     "labels": [
       "xca:monos-epis-sets-types"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "type_mono_iff_embedding",
+      "type_mono_embedding_equiv",
+      "type_mono_embedding",
+      "type_embedding_mono",
+      "unit_maps_fiber_section",
+      "unit_maps_fiber_retraction",
+      "unit_maps_fiber_retract",
+      "postcomposition_embedding",
+      "set_epi_iff_surjective",
+      "set_epi_surjective_equiv",
+      "set_epi_surjective",
+      "set_surjective_epi",
+      "surjectivity_predicate",
+      "surjectivity_predicate_restriction",
+      "surjective_from_prop_cancellation",
+      "prop_set_object",
+      "bool_to_unit_not_mono",
+      "bool_negation_set_epi"
+    ],
+    "principal": [
+      "type_mono_embedding_equiv",
+      "set_epi_surjective_equiv"
+    ],
+    "note": "In the wild category of types, the monos are exactly the injections. The proof uses the test object 1: each fiber of f is a retract of a fiber of f ∘ -. In the category of sets, the epis are exactly the surjections. For epi ⇒ surjective, the test object is the set of propositions with the predicates ∃-fiber and True. In a stratified reading, Prop_U lies in the next universe. Here SetCat contains Prop_U, as in the rest of the repository. The direction surjective ⇒ epi is the cancellation of surjections into sets (module 40)."
   },
   {
     "chapter": 6,
@@ -14874,8 +15306,17 @@
     "labels": [
       "xca:monos-epis-preorder"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "prop_map_embedding",
+      "preorder_arrow_mono",
+      "preorder_arrow_epi",
+      "preorder_arrow_mono_epi"
+    ],
+    "principal": [
+      "preorder_arrow_mono_epi"
+    ],
+    "note": "Every map between propositions is an injection. Thus postcomposition and precomposition in a preorder are injections."
   },
   {
     "chapter": 6,
@@ -14887,8 +15328,20 @@
     "labels": [
       "def:functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WildFunctor",
+      "FunctorData",
+      "FunctorLaws",
+      "functor_laws_prop",
+      "functor_path",
+      "functor_path_equiv"
+    ],
+    "principal": [
+      "WildFunctor",
+      "functor_laws_prop"
+    ],
+    "note": "WildFunctor C D has the fields obj, mor, map_id and map_comp. The field map_id has the type F(id_a) = id_{F a}. The field map_comp a b c f g has the type F(g ∘ f) = F(g) ∘ F(f). The book claims that F_id and F_∘ are propositions when D is a precategory. This claim is functor_laws_prop. Thus functors into a precategory are identified by their actions on objects and arrows (functor_path_equiv). The book's functors between precategories are WildFunctor (C .wild) (D .wild)."
   },
   {
     "chapter": 6,
@@ -14900,8 +15353,15 @@
     "labels": [
       "xca:wild-functor-isos"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "functor_preserves_iso",
+      "functor_iso"
+    ],
+    "principal": [
+      "functor_preserves_iso"
+    ],
+    "note": "Let F be a wild functor and let f be an isomorphism. Then F(f) is an isomorphism with the right inverse F(g) and the left inverse F(h). The proof uses F_∘ and F_id."
   },
   {
     "chapter": 6,
@@ -14913,8 +15373,18 @@
     "labels": [
       "ex:functor-preorders"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MonotoneMap",
+      "preorder_functor_of_monotone",
+      "preorder_monotone_of_functor",
+      "preorder_functor_monotone_equiv",
+      "monotone_successor"
+    ],
+    "principal": [
+      "preorder_functor_monotone_equiv"
+    ],
+    "note": "The formalization states \"A functor between preorders amounts to a monotone map\" as an equivalence of types WildFunctor P Q ≃ MonotoneMap P Q. The functor laws are propositions because the hom types of Q are propositions."
   },
   {
     "chapter": 6,
@@ -14926,8 +15396,23 @@
     "labels": [
       "ex:USym-functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_functor",
+      "usym_set_object",
+      "usym_hom_id",
+      "usym_hom_compose",
+      "GroupWild",
+      "GroupCat",
+      "group_wild_univalent",
+      "group_iso_cat_iso_equiv",
+      "usym_functor_identity_check"
+    ],
+    "principal": [
+      "usym_functor",
+      "GroupCat"
+    ],
+    "note": "The functor usym_functor : WildFunctor GroupWild SetWild sends G to the set (USym G, usym_set G). It sends a homomorphism f to usym_hom G H f. The law USym(id_G) = id is usym_hom_id, by funext. The preservation of composition is cor:USym-compose (usym_hom_compose of chapter 4). GroupCat is the category of groups of module 686, with the arrows GroupHom and the composition group_hom_compose. It is univalent for two reasons. First, Id Group G H ≃ GroupIso G H. Second, group isomorphisms (equivalences of classifying types) are exactly the categorical isomorphisms."
   },
   {
     "chapter": 6,
@@ -14939,8 +15424,31 @@
     "labels": [
       "ex:action-functors"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSetWild",
+      "GSetCat",
+      "gset_restrict_functor",
+      "gset_induce_functor",
+      "gset_coinduce_functor",
+      "gset_restrict_functor_obj",
+      "gset_restrict_functor_mor",
+      "gset_induce_functor_obj",
+      "gset_induce_functor_mor_class",
+      "gset_coinduce_functor_obj",
+      "set_family_reindex_functor",
+      "set_family_sum_functor",
+      "set_family_product_functor",
+      "gset_restrict",
+      "gset_induce",
+      "gset_coinduce"
+    ],
+    "principal": [
+      "gset_restrict_functor",
+      "gset_induce_functor",
+      "gset_coinduce_functor"
+    ],
+    "note": "Let f : G → H. Then f^* : GSet[H] → GSet[G] and f_!, f_* : GSet[G] → GSet[H] are functors between the categories of G-sets. These categories are GSetCat, the families of sets over BG. The functors are instances of the family-of-sets functors of module 664 at Bf. On objects, they are by refl the chapter-5 gset_restrict, gset_induce and gset_coinduce (def:restrictandinduce, rem:coinduced-Hset). On arrows, f^*(g) maps z to g_{Bf(z)}, by refl, as stated. The arrow f_!(g) is the functorial action of set truncation. It sends the class of (z, p, x) to the class of (z, p, g_z(x)). The arrow f_*(g) is postcomposition. The printed example stops after 'for w : BH:'. Thus the book does not print the formula for f_! on arrows or the action of f_*. We supply the evident ones."
   },
   {
     "chapter": 6,
@@ -14952,8 +15460,25 @@
     "labels": [
       "def:n-trunc-functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TruncatedPredicate",
+      "TruncatedTypeWild",
+      "trunc_functor_mor",
+      "trunc_functor_mor_beta",
+      "trunc_functor_map_id",
+      "trunc_functor_map_comp",
+      "TruncFunctor",
+      "TruncSetFunctor",
+      "trunc_set_functor_agrees",
+      "trunc_functor_minus_one_objects",
+      "trunc_functor_minus_one_value"
+    ],
+    "principal": [
+      "TruncFunctor",
+      "TruncSetFunctor"
+    ],
+    "note": "The functor ‖-‖_n is Trunc k with k = n + 1 for n ≥ -1, the range of def:join-construction-of-truncation. U^{≤n} is the full subcategory of TypeWild on the HLevel (k+1) types. The action on an arrow f is the unique extension of |-| ∘ f that the universal property gives. The functor laws hold by the uniqueness of extensions (trunc_maps_equal). The computation rule on units is an identification. For n = 0, the same data is a functor into the category of sets SetWild, with isSet in place of HLevel 2."
   },
   {
     "chapter": 6,
@@ -14965,8 +15490,23 @@
     "labels": [
       "ex:add-remove-basepoint"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "plus_pointed",
+      "plus_map",
+      "plus_pointed_map",
+      "plus_map_id",
+      "plus_map_comp",
+      "PlusFunctor",
+      "ForgetBasepointFunctor",
+      "plus_map_bool_point",
+      "plus_map_bool_value"
+    ],
+    "principal": [
+      "PlusFunctor",
+      "ForgetBasepointFunctor"
+    ],
+    "note": "The formalization defines f_+ by the two displayed clauses, with refl as the pointing path. The functor laws are pointed homotopies, by case analysis on A ⊔ 1. The identity law is not judgmental, because id_+ sends inr u to inr *. The underlying-type functor (-)_÷ has judgmental laws."
   },
   {
     "chapter": 6,
@@ -14978,8 +15518,31 @@
     "labels": [
       "ex:loop-functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Omega",
+      "loops_map",
+      "pointed_loop_conjugate",
+      "loop_conj_refl",
+      "loop_conj_unit",
+      "loop_conj_unit_refl",
+      "loop_functor_map",
+      "loop_functor_strict",
+      "loop_functor_map_id",
+      "loop_functor_end_induction",
+      "LoopFunctorCompStatement",
+      "loop_functor_comp_strict",
+      "loop_functor_comp_general",
+      "LoopFunctor",
+      "loop_functor_formula",
+      "loop_functor_pointing",
+      "loop_functor_bool_object"
+    ],
+    "principal": [
+      "LoopFunctor",
+      "loop_functor_map"
+    ],
+    "note": "Ω X = (pt = pt, refl) is chapter 4's Omega. The underlying map of Ω k is chapter 4's loops_map. It is judgmentally the formula of def:loops-map: k_pt⁻¹ · ap_k(p) · k_pt, with the concatenation order of pointed_loop_conjugate. The pointing path refl = Ω k(refl) is an instance of the inverse law, as in the displayed chain. The formalization defines it by path induction on k_pt from the unit law. It does not reuse chapter 4's loops_map_point, because the functor laws use the β-rule of this definition. The remaining data are as follows. The law Ω id = id follows from the coherence of that choice at refl (the typal β of J). The law Ω(g ∘ f) = Ω g ∘ Ω f follows by path induction on both pointing paths. This reduces the law to strictly pointed maps, for which Ω k = ap_k with the pointing path refl (loop_functor_strict, compare rem:loops-map)."
   },
   {
     "chapter": 6,
@@ -14991,8 +15554,18 @@
     "labels": [
       "ex:slice-projection"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "slice_projection",
+      "slice_precat_projection",
+      "coherent_wild_slice_projection",
+      "universe_slice_projection",
+      "slice_litmus_projection"
+    ],
+    "principal": [
+      "slice_precat_projection"
+    ],
+    "note": "For a precategory C, the functor fst : C/c → C has the first projections as obj and mor. Both functor laws hold by refl. The formalization also gives the same projection for the coherent wild slice and for U/B."
   },
   {
     "chapter": 6,
@@ -15004,8 +15577,40 @@
     "labels": [
       "ex:arrow-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ArrowCatOb",
+      "ArrowCatSquare",
+      "ArrowCatHomPair",
+      "ArrowCatHom",
+      "arrow_cat_idn",
+      "arrow_cat_comp_square",
+      "arrow_cat_comp",
+      "arrow_cat_square_prop",
+      "arrow_cat_hom_path",
+      "arrow_precat_wild",
+      "arrow_cat_homset",
+      "ArrowPrecat",
+      "arrow_cat_dom",
+      "arrow_cat_cod",
+      "arrow_cat_iso_to_dom",
+      "arrow_cat_iso_to_cod",
+      "arrow_cat_inverse_square",
+      "arrow_cat_iso_from_components",
+      "arrow_cat_univalent",
+      "ArrowCategory",
+      "arrow_cat_litmus_true",
+      "arrow_cat_litmus_false",
+      "arrow_cat_litmus_arrow",
+      "arrow_cat_litmus_no_identity_arrow",
+      "arrow_cat_litmus_dom_cod"
+    ],
+    "principal": [
+      "ArrowPrecat",
+      "arrow_cat_dom",
+      "ArrowCategory"
+    ],
+    "note": "The objects are (A, B, f : A → B). The arrows are pairs (g, h) with a filler of the square f' ∘ g = h ∘ f. This is one fixed orientation of the commutative square. The identities and the composition come from C, and the laws follow from hom-sets. The maps dom and cod are functors with refl laws. The claim 'C^→ is a category if C is' is arrow_cat_univalent/ArrowCategory. An arrow is an iso if and only if both components are isos, and the iso total space is contractible."
   },
   {
     "chapter": 6,
@@ -15017,8 +15622,46 @@
     "labels": [
       "xca:wildprecat-of-wildprecats"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "functor_identity",
+      "functor_compose",
+      "functor_left_unit",
+      "functor_right_unit",
+      "functor_assoc",
+      "ch6c_ap_concat_assoc",
+      "WildPrecatWild",
+      "WildPentagonFiller",
+      "functor_data_path_refl_concat",
+      "wild_precat_pentagon_precategory",
+      "wild_precat_wild_identity_composite",
+      "YonedaWildFunctor",
+      "yoneda_wild_functor_compose",
+      "yoneda_wild_functor_assoc",
+      "wild_functor_yoneda",
+      "yoneda_wild_functor",
+      "yoneda_wild_functor_section",
+      "wild_functor_yoneda_equiv",
+      "wild_functor_yoneda_paths",
+      "wild_functor_yoneda_compose",
+      "ywf_rho_left",
+      "ywf_rho_right",
+      "ywf_beta",
+      "functor_assoc_yoneda",
+      "functor_assoc_yoneda_image",
+      "WildPrecatWildWith",
+      "WildPrecatWildYoneda",
+      "ywf_pentagon_reflect",
+      "ywf_pentagon_with",
+      "wild_precat_yoneda_pentagon_filler",
+      "wild_precat_yoneda_pentagon"
+    ],
+    "principal": [
+      "WildPrecatWild",
+      "functor_assoc",
+      "wild_precat_yoneda_pentagon"
+    ],
+    "note": "The identity and composite wild functors are the core functor_identity/functor_compose. The lemmas functor_left_unit, functor_right_unit and functor_assoc give λ, ρ and α as identifications of wild functors. These data form WildPrecatWild, whose objects are WildPrecat in Narya's single universe. The optional pentagon is proved for arbitrary wild C_4 (modules 692–694). The statement is wild_precat_yoneda_pentagon : WildPentagon WildPrecatWildYoneda. This is the same wild precategory with a different associator, functor_assoc_yoneda. The book leaves the choice of α to the reader. The proof uses strictification. Yoneda wild functors store their laws as maps on paths u = id, u = g∘f, and they compose associatively on the nose. The comparison Φ is an equivalence. The associator α is the unique path with ap Φ α = ρ_left⁻¹·ρ_right. Every pentagon edge maps to r_i⁻¹·r_j, so the pentagon reduces to groupoid algebra. The pentagon for functor_assoc itself is proved only when C_4 has hom-sets (wild_precat_pentagon_precategory). In that case it is almost trivial, and this is the answer to 'how much easier'."
   },
   {
     "chapter": 6,
@@ -15030,8 +15673,35 @@
     "labels": [
       "xca:wildcat-of-precats"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PrecatPredicate",
+      "PreCatWild",
+      "precat_wild_object",
+      "precat_wild_object_equiv",
+      "functor_path_identity_mor_equiv",
+      "ch6c_transport2",
+      "precat_wild_iso_to_precat_iso",
+      "precat_path_functor_is_iso",
+      "precat_iso_property_from_paths",
+      "precat_iso_to_precat_wild_iso",
+      "precat_iso_precat_wild_iso_equiv",
+      "precat_wild_path_iso_equiv",
+      "precat_wild_univalent",
+      "CategoryPredicate",
+      "CatWild",
+      "cat_wild_univalent",
+      "CatWildCategory",
+      "set_cat_in_cat_wild",
+      "set_cat_identity_iso_in_cat_wild",
+      "set_cat_in_cat_wild_objects",
+      "precategory_path_equiv"
+    ],
+    "principal": [
+      "precat_wild_univalent",
+      "cat_wild_univalent"
+    ],
+    "note": "PreCatWild is FullSubcat WildPrecatWild on HasHomSets. CatWild is the further full subcategory on IsUnivalentCat. An isomorphism F in PreCat comes with functors G, H such that F∘G = id and H∘F = id. The formalization shows that this is equivalent to an isomorphism of precategories, that is, a fully faithful functor with an equivalence on objects. The forward direction uses the object and arrow components of the identifications and 2-out-of-6. The backward direction uses path induction via precategory_path_equiv. The univalence of PreCat then follows from (C = D) ≃ (C ≅ D). Cat is univalent by full_subcat_univalent."
   },
   {
     "chapter": 6,
@@ -15043,8 +15713,21 @@
     "labels": [
       "def:full-faithful"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFaithful",
+      "IsFull",
+      "IsFullyFaithful",
+      "fully_faithful_equiv",
+      "fully_faithful_from_equivs",
+      "is_fully_faithful_prop"
+    ],
+    "principal": [
+      "IsFaithful",
+      "IsFull",
+      "IsFullyFaithful"
+    ],
+    "note": "A functor F is faithful if every F .mor a b is an injection in the book's sense (IsEmbedding, propositional fibers). It is full if every F .mor a b is a surjection (Surjective, with the native propositional truncation). It is fully faithful if it is both. The parenthetical 'and hence equivalences' is fully_faithful_equiv (BookEquiv). The converse is fully_faithful_from_equivs."
   },
   {
     "chapter": 6,
@@ -15054,8 +15737,35 @@
     "line": 728,
     "section_raw": "Functors and natural transformations}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CoreWild",
+      "core_invertible",
+      "core_inclusion",
+      "core_inclusion_faithful",
+      "constant_true_not_iso",
+      "set_core_inclusion_not_full",
+      "ProductWild",
+      "product_projection_left",
+      "product_projection_full",
+      "product_projection_not_faithful",
+      "bool_conjunction",
+      "bool_and_true_right",
+      "bool_and_assoc",
+      "BoolAndWild",
+      "bool_and_composite_litmus",
+      "set_bool_and_projection_full",
+      "set_bool_and_projection_not_faithful",
+      "full_subcat_inclusion",
+      "full_subcat_inclusion_fully_faithful",
+      "set_inclusion_fully_faithful"
+    ],
+    "principal": [
+      "core_inclusion_faithful",
+      "product_projection_full",
+      "full_subcat_inclusion_fully_faithful"
+    ],
+    "note": "This is a \\wip example. The formalization defines the core (CoreWild, with isomorphisms as arrows) and the product wild precategory here, because the book does not define them. The core inclusion is faithful because isIso is a proposition (core_inclusion_faithful). But it is not necessarily full (set_core_inclusion_not_full). The formalization makes 'Projections can be full, not faithful' precise. The projection C × D → C is full when all hom-types of D are merely inhabited. It is not faithful when D has two distinct parallel arrows. A concrete instance is Set × B(Bool, and) → Set. Full subcategory inclusions are fully faithful, because they are the identity on hom-types."
   },
   {
     "chapter": 6,
@@ -15067,8 +15777,22 @@
     "labels": [
       "def:nat-trans"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WildNatTrans",
+      "NatSquare",
+      "nat_square_prop",
+      "nat_trans_sigma_equiv",
+      "nat_trans_path",
+      "nat_trans_set",
+      "IsNatIso",
+      "NatIso"
+    ],
+    "principal": [
+      "WildNatTrans",
+      "nat_square_prop"
+    ],
+    "note": "WildNatTrans C D F G has the components α_a : F a → G a. It also has the naturality fillers natural a b f : G(f) ∘ α_a = α_b ∘ F(f). The book does not fix the direction of the filler. The lemma nat_square_prop proves the claim that the filler types are propositions when D is a precategory. In that case, nat_trans_path shows that the components determine the natural transformations."
   },
   {
     "chapter": 6,
@@ -15080,8 +15804,15 @@
     "labels": [
       "ex:pt-unpt-unit"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "plus_forget_unit",
+      "plus_forget_objects"
+    ],
+    "principal": [
+      "plus_forget_unit"
+    ],
+    "note": "The transformation η : id_U → ((-)_+)_÷ has the components inl : A → A ⊔ 1. Here (A_+)_÷ = A ⊔ 1 holds judgmentally. The naturality squares commute by reflexivity, as stated."
   },
   {
     "chapter": 6,
@@ -15093,8 +15824,22 @@
     "labels": [
       "ex:path-gpd-nat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_wild_functor",
+      "path_wild_nat_trans",
+      "map_path_concat",
+      "naturality",
+      "path_wild_functor_identity",
+      "path_wild_functor_compose",
+      "path_wild_nat_trans_component",
+      "path_wild_bool_negation_involution"
+    ],
+    "principal": [
+      "path_wild_functor",
+      "path_wild_nat_trans"
+    ],
+    "note": "A map f : A → B gives the wild functor PathWild A → PathWild B, which acts by ap_f. Its law F_∘ comes from lem:apcomp (map_path_concat). A family h : ∏ f(x) = g(x) gives a wild natural transformation. Its naturality fillers are the naturality squares of def:naturality-square (module 04). They are inverted to the orientation G(p) ∘ h_x = h_y ∘ F(p) of WildNatTrans."
   },
   {
     "chapter": 6,
@@ -15106,8 +15851,20 @@
     "labels": [
       "def:functor-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FunctorWild",
+      "FunctorPrecat",
+      "nat_trans_identity",
+      "nat_trans_compose",
+      "nat_trans_set",
+      "nat_trans_path_pointwise"
+    ],
+    "principal": [
+      "FunctorPrecat",
+      "FunctorWild"
+    ],
+    "note": "Let C be a wild precategory and D a precategory. The objects of FunctorPrecat C D are WildFunctor C (D .wild), and its arrows are natural transformations. The identity transformation has the components id_{F a}, and the composition is objectwise. The unit and associativity laws are proved componentwise (nat_trans_path_pointwise). The hom types are sets (nat_trans_set)."
   },
   {
     "chapter": 6,
@@ -15119,8 +15876,30 @@
     "labels": [
       "xca:funext-nat-trans"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "nat_iso_inverse_component",
+      "nat_iso_inverse_left",
+      "nat_iso_inverse_right",
+      "nat_iso_inverse_natural",
+      "nat_iso_inverse",
+      "functor_cat_iso_components",
+      "functor_cat_components_iso",
+      "is_nat_iso_prop",
+      "nat_trans_invertible_iff_components",
+      "functor_cat_is_iso_equiv",
+      "functor_cat_iso_equiv",
+      "constant_functor",
+      "set_precat",
+      "bool_negation_nat_trans",
+      "bool_negation_functor_iso",
+      "bool_negation_functor_iso_inverse_value"
+    ],
+    "principal": [
+      "nat_trans_invertible_iff_components",
+      "functor_cat_iso_equiv"
+    ],
+    "note": "Let C be a wild precategory and D a precategory. Then α : F → G is an isomorphism in FunctorWild C D if and only if every component is an isomorphism (IsNatIso). The formalization proves both directions. Both sides are propositions, so this is also an equivalence. The sum over α gives (F ≅ G) ≃ NatIso F G. The componentwise inverses are natural for every wild D (nat_iso_inverse_natural). The litmus test is negation as a natural isomorphism of the constant Bool-valued functor. Its computed inverse evaluates to negation."
   },
   {
     "chapter": 6,
@@ -15132,8 +15911,36 @@
     "labels": [
       "xca:functor-cat-univalent"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sigma_contractible_from_center",
+      "FunctorIsoBase",
+      "FunctorIsoMor",
+      "FunctorIsoSquares",
+      "FunctorIsoFiber",
+      "functor_nat_iso_total_equiv",
+      "functor_iso_base_center",
+      "functor_iso_base_contractible",
+      "functor_iso_squares_prop",
+      "functor_iso_fiber_props",
+      "functor_iso_fiber_center_arrow",
+      "functor_iso_fiber_contractible",
+      "functor_nat_iso_total_contractible",
+      "functor_wild_univalent",
+      "FunctorCategory",
+      "PresheafCategory",
+      "functor_category_wild",
+      "presheaf_category_objects",
+      "bool_constant_functor",
+      "bool_negation_cat_iso",
+      "bool_negation_functor_path",
+      "bool_negation_functor_path_iso"
+    ],
+    "principal": [
+      "functor_wild_univalent",
+      "FunctorCategory"
+    ],
+    "note": "The lemma functor_wild_univalent says this: for a wild precategory C and a category D, the functor precategory FunctorWild C (category_precat D) is univalent. FunctorCategory C D : Category packages it ('we call it the functor category'), with .wild ≡ FunctorWild C (category_precat D). The proof shows that Σ G, F ≅ G is contractible. It uses xca:funext-nat-trans and the contractibility of (a : C) → Σ y, F a ≅ y. It also uses that naturality squares with identity components force G(f) = F(f). PresheafCategory C = FunctorCategory C^op SetCat is Set^{C^op}."
   },
   {
     "chapter": 6,
@@ -15145,8 +15952,24 @@
     "labels": [
       "xca:path-core-adj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cat_idtoiso_concat",
+      "cat_idtoiso_refl_arrow",
+      "path_functor_from_objects",
+      "path_functor_mor",
+      "path_functor_restriction_section",
+      "path_functor_restriction_equiv_precat",
+      "path_functor_restriction_is_equiv",
+      "path_functor_restriction_equiv",
+      "path_functor_from_objects_obj",
+      "path_restriction_constant_bool"
+    ],
+    "principal": [
+      "path_functor_restriction_is_equiv",
+      "path_functor_restriction_equiv"
+    ],
+    "note": "Let A be a type and C a category. The restriction to objects F ↦ F .obj goes from the objects of FunctorCategory (PathWild A) C to A → Ob C. This map is a BookIsEquiv. The inverse sends f to the functor that acts on paths by p ↦ idtoiso(ap f p). The proof of functoriality uses that idtoiso turns concatenation into composition. The proof does not use the univalence of C: path_functor_restriction_equiv_precat proves the result for every precategory."
   },
   {
     "chapter": 6,
@@ -15158,8 +15981,25 @@
     "labels": [
       "ex:repr-functors"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "covariant_representable",
+      "contravariant_representable",
+      "covariant_representable_action",
+      "contravariant_representable_action",
+      "contravariant_functor_action",
+      "covariant_representable_set_litmus",
+      "contravariant_representable_set_litmus",
+      "covariant_representable_paths",
+      "representable_presheaf",
+      "representable_presheaf_underlying"
+    ],
+    "principal": [
+      "covariant_representable",
+      "contravariant_representable",
+      "representable_presheaf"
+    ],
+    "note": "The core definitions k_c = Hom(c, -) : C → U and h_c = Hom(-, c) : C^op → U (module 603) are checked. They act by postcomposition and precomposition on the nose (covariant_representable_action, contravariant_representable_action). Their laws come from λ, ρ and α by funext. Litmus computations are in Set and on a path category. 'Locally U-small' is vacuous in Narya's single universe. For a precategory, representable_presheaf is the Set-valued h_c, with the same action on objects and arrows as h_c."
   },
   {
     "chapter": 6,
@@ -15171,8 +16011,36 @@
     "labels": [
       "def:adjunction"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "RightAdjointData",
+      "WildAdjunction",
+      "adjunction_nat_trans_left",
+      "adjunction_nat_trans_right",
+      "hom_bifunctor",
+      "adjunction_left_hom_bifunctor",
+      "adjunction_right_hom_bifunctor",
+      "adjunction_hom_nat_iso",
+      "right_adjoint_from_hom_nat_iso",
+      "adjunction_hom_nat_iso_round_trip",
+      "set_hom_bifunctor_litmus",
+      "adjunction_unit",
+      "adjunction_counit",
+      "adjunction_natural_left_at",
+      "adjunction_natural_right_at",
+      "adjunction_transpose_injective",
+      "adjunction_counit_transpose",
+      "adjunction_unit_natural",
+      "adjunction_unit_nat_trans",
+      "adjunction_counit_natural",
+      "adjunction_counit_nat_trans"
+    ],
+    "principal": [
+      "RightAdjointData",
+      "adjunction_hom_nat_iso",
+      "right_adjoint_from_hom_nat_iso"
+    ],
+    "note": "The core RightAdjointData (module 603) records G, the transposition maps α_{c,d} and naturality. The maps α_{c,d} are isomorphisms of U (biinvertible). Naturality is recorded separately in c and in d, as in the prose before the definition. As a fidelity check, adjunction_hom_nat_iso turns this data into a wild natural isomorphism Hom_D(F -, -) ≅ Hom_C(-, G -). This is an isomorphism of functors C^op × D → U on the product wild precategory. The map right_adjoint_from_hom_nat_iso converts back with the same G and α, and the round trip holds by refl. The prose that follows is eq:adj-unit-counit: η and ε are natural transformations id_C → GF and FG → id_D (adjunction_unit_nat_trans, adjunction_counit_nat_trans)."
   },
   {
     "chapter": 6,
@@ -15184,8 +16052,20 @@
     "labels": [
       "xca:adj-triangles"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "adjunction_triangle_left",
+      "adjunction_triangle_right",
+      "adjunction_transpose_injective",
+      "adjunction_counit_transpose",
+      "adjunction_natural_left_at",
+      "adjunction_natural_right_at"
+    ],
+    "principal": [
+      "adjunction_triangle_left",
+      "adjunction_triangle_right"
+    ],
+    "note": "Every wild adjunction satisfies ε_{F c} ∘ F(η_c) = id_{F c} and G(ε_d) ∘ η_{G d} = id_{G d}. These are the two triangles of fig:adj-triangles. The proof uses the naturality of α and the unit laws. The proof of the first triangle also uses the injectivity of α."
   },
   {
     "chapter": 6,
@@ -15197,8 +16077,29 @@
     "labels": [
       "xca:adj-from-triangles"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "UnitCounitAdjunction",
+      "unit_counit_of_adjunction",
+      "triangle_transpose",
+      "triangle_untranspose",
+      "triangle_transpose_section",
+      "triangle_transpose_retraction",
+      "adjunction_from_triangles",
+      "adjunction_transpose_via_unit",
+      "adjunction_from_triangles_unit",
+      "adjunction_from_triangles_counit",
+      "adjunction_round_trip_transpose",
+      "identity_unit_counit_adjunction",
+      "identity_unit_counit_unit",
+      "identity_triangle_transpose",
+      "set_identity_triangle_transpose"
+    ],
+    "principal": [
+      "adjunction_from_triangles",
+      "adjunction_transpose_via_unit"
+    ],
+    "note": "UnitCounitAdjunction bundles G, the natural η and ε, and the triangle laws. From it, adjunction_from_triangles builds RightAdjointData with α(f) = G(f) ∘ η_c. This is the composite that the book prints before the exercise. The inverse is m ↦ ε_d ∘ F(m). The construction proves both naturality laws from the functor and triangle laws. For the back-and-forth of the footnote: the rebuilt unit and counit are η and ε. Also, α(f) = G(f) ∘ η_c for every adjunction, so the round trip returns α pointwise. These are pointwise identifications, not an equivalence of the two types of bundles."
   },
   {
     "chapter": 6,
@@ -15210,8 +16111,22 @@
     "labels": [
       "ex:trunc-adj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "truncated_inclusion_functor",
+      "trunc_right_adjoint",
+      "TruncAdjunction",
+      "trunc_adjunction_unit",
+      "trunc_universal_property",
+      "trunc_adjunction_transpose_equiv",
+      "trunc_adjunction_transpose_map"
+    ],
+    "principal": [
+      "TruncAdjunction",
+      "trunc_adjunction_transpose_equiv",
+      "trunc_adjunction_unit"
+    ],
+    "note": "For ‖-‖_n ⊣ ι_n, the transposition is precomposition with |-|_n. It is an equivalence (‖X‖_n → Y) ≃ (X → Y) by the universal property. Naturality in X uses the computation rule of the action on arrows. Naturality in Y is judgmental. The unit is judgmentally the constructor |-|_n. The statement is for n ≥ -1, as in def:n-trunc-functor."
   },
   {
     "chapter": 6,
@@ -15223,8 +16138,23 @@
     "labels": [
       "ex:pt-unpt-adj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "plus_forget_right_adjoint",
+      "PlusForgetAdjunction",
+      "plus_forget_adjunction_unit",
+      "plus_forget_transpose_equiv",
+      "plus_forget_transpose_map",
+      "plus_restrict",
+      "plus_extend",
+      "plus_extend_restrict",
+      "plus_forget_transpose_value"
+    ],
+    "principal": [
+      "PlusForgetAdjunction",
+      "plus_forget_transpose_equiv"
+    ],
+    "note": "For (-)_+ ⊣ (-)_÷, the map α : (A_+ →* X) → (A → X_÷) is precomposition with inl. Its inverse is the extension of xca:plusforgetadjoint (module 162). Both naturality conditions hold judgmentally. The unit is η of ex:pt-unpt-unit. Correction: the book types the example \"For A : U_* and X : U\". The roles are swapped: A : U and X : U_*."
   },
   {
     "chapter": 6,
@@ -15236,8 +16166,72 @@
     "labels": [
       "ex:Sigma-Pi-adj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FamilyWild",
+      "family_wild_univalent",
+      "FamilySetWild",
+      "family_set_homset",
+      "FamilySetPrecat",
+      "family_reindex_functor",
+      "FamilyPushSum",
+      "FamilyPushProduct",
+      "family_sum_functor",
+      "family_product_functor",
+      "family_sum_transport_lemma",
+      "family_transport_inverse_refl",
+      "family_product_transport_lemma",
+      "family_transport_natural",
+      "family_sum_transpose",
+      "family_sum_untranspose",
+      "family_sum_transpose_is_iso",
+      "family_sum_right_adjoint",
+      "family_sum_adjunction",
+      "family_product_transpose",
+      "family_product_untranspose",
+      "family_product_transpose_is_iso",
+      "family_product_right_adjoint",
+      "family_product_adjunction",
+      "family_total_functor",
+      "family_constant_functor",
+      "family_pi_functor",
+      "family_total_right_adjoint",
+      "family_total_adjunction",
+      "family_pi_right_adjoint",
+      "family_pi_adjunction",
+      "family_terminal_map",
+      "family_reindex_terminal",
+      "family_sum_terminal_equiv",
+      "family_product_terminal_equiv",
+      "SetPushSumCarrier",
+      "set_family_sum_obj",
+      "set_family_product_obj",
+      "set_family_reindex_functor",
+      "set_family_sum_mor",
+      "set_family_sum_functor",
+      "set_family_product_functor",
+      "set_family_sum_transpose",
+      "set_family_sum_untranspose",
+      "set_family_sum_transpose_is_iso",
+      "set_family_sum_right_adjoint",
+      "set_family_sum_adjunction",
+      "set_family_product_transpose",
+      "set_family_product_untranspose",
+      "set_family_product_transpose_is_iso",
+      "set_family_product_right_adjoint",
+      "set_family_product_adjunction",
+      "family_sum_litmus_unit",
+      "family_total_litmus_counit",
+      "set_family_litmus_family",
+      "set_family_litmus_unit",
+      "set_family_litmus_counit"
+    ],
+    "principal": [
+      "set_family_sum_adjunction",
+      "set_family_product_adjunction",
+      "family_product_adjunction"
+    ],
+    "note": "The formalization reads Set^A as FamilySetWild A and U^A as FamilyWild A (module 604). FamilySetWild A has the families A → Set with fiberwise maps. By xca:path-core-adj, these are the functors from the path groupoid of A. Let f : A → B. Then f^*, f_! and f_* are the displayed formulas. For sets, f_! is set-truncated via SetTrunc, and for types it is not truncated. The adjunctions f_! ⊣ f^* ⊣ f_* are given as RightAdjointData at both levels. Their transpositions are isomorphisms in TypeWild, natural in both variables. The special case Σ_A ⊣ cst ⊣ Π_A is stated between U^A and U itself. The simplification from U^1 is family_reindex_terminal (refl) and the equivalences f_!(X)(⋆) ≃ Σ_A X and f_*(X)(⋆) ≃ Π_A X. The formalization does not build an equivalence of categories U^1 ≃ U."
   },
   {
     "chapter": 6,
@@ -15249,8 +16243,70 @@
     "labels": [
       "rem:adj-in-posets"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PreorderAdjointIff",
+      "preorder_adjunction_iff",
+      "preorder_right_adjoint_from_iff",
+      "preorder_right_adjoint_from_iff_right",
+      "preorder_iff_right_monotone",
+      "preorder_iff_left_monotone",
+      "preorder_adjunction_from_right_map",
+      "preorder_adjunction_from_left_map",
+      "Frac",
+      "FracLe",
+      "frac_le_trans",
+      "FracPreorder",
+      "frac_of_int",
+      "frac_inclusion_functor",
+      "frac_floor",
+      "frac_floor_spec",
+      "frac_floor_iff",
+      "frac_ceiling",
+      "frac_ceiling_iff",
+      "frac_floor_right_adjoint",
+      "frac_ceiling_adjunction",
+      "frac_preorder_not_univalent",
+      "preorder_equivalence_relation",
+      "PosetalCarrier",
+      "posetal_leq",
+      "posetal_preorder",
+      "posetal_antisymmetric",
+      "PosetalReflection",
+      "posetal_unit_functor",
+      "posetal_unit_weak_equivalence",
+      "posetal_descend",
+      "RationalPoset",
+      "Rational",
+      "frac_equivalent_iff_cross_equal",
+      "rational_of_frac",
+      "rational_of_int",
+      "rational_inclusion_functor",
+      "rational_inclusion_embedding",
+      "rational_floor",
+      "rational_ceiling",
+      "rational_floor_iff",
+      "rational_ceiling_iff",
+      "rational_floor_right_adjoint",
+      "rational_ceiling_adjunction",
+      "rational_ceiling_adjunction_right",
+      "rational_floor_seven_halves",
+      "rational_ceiling_seven_halves",
+      "subtype_preimage",
+      "subtype_image_exists",
+      "subtype_coinduced_forall",
+      "subtype_preimage_functor",
+      "subtype_exists_preimage_iff",
+      "subtype_preimage_forall_iff",
+      "subtype_exists_adjunction",
+      "subtype_forall_right_adjoint"
+    ],
+    "principal": [
+      "preorder_right_adjoint_from_iff",
+      "rational_floor_right_adjoint",
+      "subtype_exists_adjunction"
+    ],
+    "note": "Let F be a monotone map between preorders. Adjunction data with the right adjoint G gives the biimplication F(p) ≤ q ↔ p ≤ G(q). Conversely, the biimplication gives adjunction data with the right adjoint G, and G is then automatically monotone. The repository has no rationals. Thus ℚ is built as the posetal reflection (set quotient) of the fractions a/(k+1) under the cross-multiplication order. That is, ℚ is the fractions modulo a(l+1) = b(k+1). The map ι : ℤ ↪ ℚ is an injection. The floor ⌊-⌋ is the Euclidean quotient of module 55, and ⌈x⌉ = -⌊-x⌋. This gives ⌈-⌉ ⊣ ι ⊣ ⌊-⌋, also on the fraction preorder. The adjunctions ∃_f ⊣ f^* ⊣ ∀_f on (Sub(A), ⊆), (Sub(B), ⊆) use the operations of rem:^*-_!-as-(pre)image and rem:coinduced-subset. They hold for arbitrary types A, B."
   },
   {
     "chapter": 6,
@@ -15262,8 +16318,19 @@
     "labels": [
       "def:yoneda"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "representable_presheaf",
+      "yoneda_nat_trans",
+      "yoneda_functor",
+      "yoneda_functor_object",
+      "representable_presheaf_underlying",
+      "PresheafCategory"
+    ],
+    "principal": [
+      "yoneda_functor"
+    ],
+    "note": "For a precategory C, the functor is yoneda_functor C : WildFunctor (C .wild) (PresheafCategory C .wild). It has yo(c) ≡ representable_presheaf C c, that is, h_c with the hom-sets as values. The arrow yo(f) is postcomposition with f. Local smallness is vacuous: Narya has one universe, and SetCat consists of all sets in it."
   },
   {
     "chapter": 6,
@@ -15275,8 +16342,33 @@
     "labels": [
       "thm:yoneda-lemma"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "yoneda_evaluation",
+      "yoneda_extension",
+      "yoneda_component_formula",
+      "yoneda_extension_evaluation",
+      "yoneda_evaluation_extension",
+      "yoneda_lemma",
+      "yoneda_lemma_map",
+      "presheaf_hom_set",
+      "yoneda_lemma_set_iso",
+      "presheaf_evaluation_functor",
+      "yoneda_natural_in_presheaf",
+      "yoneda_hom_presheaf",
+      "presheaf_underlying",
+      "yoneda_natural_in_object_square",
+      "yoneda_natural_in_object",
+      "yoneda_litmus_evaluation",
+      "yoneda_litmus_extension",
+      "yoneda_litmus_inverse_value"
+    ],
+    "principal": [
+      "yoneda_lemma",
+      "yoneda_natural_in_presheaf",
+      "yoneda_natural_in_object"
+    ],
+    "note": "The lemma yoneda_lemma says that evaluation at id_c is a BookEquiv Hom(yo(c), F) ≃ F(c). Its map is yoneda_evaluation by refl. The isomorphism in Set is yoneda_lemma_set_iso. Naturality in F and in c is stated as natural isomorphisms of U-valued functors. These are Hom(yo(c), -) ≅ ev_c on Set^{C^op}, with squares by refl, and Hom(yo(-), F) ≅ F on C^op. Litmus computations are at the presheaf h_Bool of Set."
   },
   {
     "chapter": 6,
@@ -15288,8 +16380,15 @@
     "labels": [
       "cor:yo-ff"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "yoneda_mor_equiv",
+      "yoneda_fully_faithful"
+    ],
+    "principal": [
+      "yoneda_fully_faithful"
+    ],
+    "note": "The statement is yoneda_fully_faithful C : IsFullyFaithful (C .wild) (PresheafCategory C .wild) (yoneda_functor C). On arrows, yo is a BookIsEquiv, and its inverse is evaluation at the identity."
   },
   {
     "chapter": 6,
@@ -15301,8 +16400,26 @@
     "labels": [
       "cor:yo-emb-obj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ff_hom_equiv",
+      "ff_hom_inverse",
+      "ff_hom_injective",
+      "ff_inverse_law",
+      "ff_reflects_iso",
+      "ff_iso_inverse",
+      "ff_functor_iso_equiv",
+      "functor_idtoiso_base",
+      "functor_idtoiso",
+      "ff_ap_equiv",
+      "ff_object_embedding",
+      "yoneda_object_embedding"
+    ],
+    "principal": [
+      "yoneda_object_embedding",
+      "ff_object_embedding"
+    ],
+    "note": "For a category C, yoneda_functor's action on objects is an IsEmbedding (the book's injection). The general lemma is ff_object_embedding. It says that a fully faithful functor between univalent wild precategories is an embedding on objects. The reason is that ap F agrees with the composite of idtoiso, F on isomorphisms and isotoid. This agreement is functor_idtoiso, by J. For a fully faithful F, the map F on isomorphisms is an equivalence."
   },
   {
     "chapter": 6,
@@ -15314,8 +16431,18 @@
     "labels": [
       "def:repr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsRepresentable",
+      "representable_presheaf_is_representable",
+      "empty_presheaf",
+      "empty_presheaf_not_representable",
+      "set_cat_bool_representable_center"
+    ],
+    "principal": [
+      "IsRepresentable"
+    ],
+    "note": "IsRepresentable C F is the type of pairs (c, α) with α : yo(c) ≅ F an isomorphism in Set^{C^op}. This type is not truncated, as cor:repr-prop requires. Litmus tests: (c, id) represents yo(c), and the presheaf constant at the empty set is not representable."
   },
   {
     "chapter": 6,
@@ -15327,8 +16454,16 @@
     "labels": [
       "cor:repr-prop"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "prop_from_equiv",
+      "representability_fiber_equiv",
+      "representability_prop"
+    ],
+    "principal": [
+      "representability_prop"
+    ],
+    "note": "Let C be a category and F : Set^{C^op}. Then IsRepresentable F is a proposition. By the univalence of the presheaf category, it is equivalent to the fiber of yo over F. This fiber is a proposition by cor:yo-emb-obj."
   },
   {
     "chapter": 6,
@@ -15340,8 +16475,46 @@
     "labels": [
       "lem:adj-via-repr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "left_adjoint_hom_functor",
+      "AdjRepresentingData",
+      "AdjExtMor",
+      "AdjExtMapId",
+      "AdjExtMapComp",
+      "AdjExtNatural",
+      "AdjunctionExtension",
+      "adjunction_extension_right_adjoint",
+      "adj_repr_untranspose",
+      "adj_repr_section",
+      "adj_repr_injective",
+      "adj_repr_counit",
+      "adj_repr_counit_transpose",
+      "adj_repr_counit_untranspose",
+      "adj_repr_mor",
+      "AdjExtNaturalAt",
+      "adj_repr_mor_unique",
+      "adj_repr_mor_natural_at",
+      "adj_repr_mor_natural",
+      "adj_repr_map_id",
+      "adj_repr_map_comp_natural",
+      "adj_repr_map_comp",
+      "adj_ext_map_id_prop",
+      "adj_ext_map_comp_prop",
+      "adj_ext_natural_prop",
+      "adj_ext_rest_prop",
+      "adj_repr_extension",
+      "adjunction_via_representability",
+      "adjunction_via_representability_objects",
+      "set_identity_representing_data",
+      "set_identity_extension_litmus"
+    ],
+    "principal": [
+      "adjunction_via_representability",
+      "AdjunctionExtension",
+      "adjunction_extension_right_adjoint"
+    ],
+    "note": "Let C be a precategory, D a wild precategory, F : C → D and G0 : Ob D → Ob C. Let α_d : Hom_D(F -, d) ≅ h_{G0 d} be natural isomorphisms. AdjunctionExtension is the type of extensions of G0 to a functor (arrows, F_id, F_∘) with α natural in d. The lemma adjunction_via_representability proves that this type is contractible (existence and uniqueness). Then adjunction_extension_right_adjoint gives the wild adjunction with the object part G0 and the transposition α. D can be wild, so Hom_D(F -, d) and yo(G0 d) are U-valued (C^op → U), as in RightAdjointData."
   },
   {
     "chapter": 6,
@@ -15353,8 +16526,23 @@
     "labels": [
       "cor:adj-unique"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "right_adjoint_data_split_equiv",
+      "right_adjoint_data_representations_equiv",
+      "cat_iso_inverse_equiv",
+      "left_adjoint_hom_presheaf",
+      "left_adjoint_hom_nat_iso_equiv",
+      "left_adjoint_representations_prop",
+      "right_adjoint_hom_sets",
+      "right_adjoint_data_prop",
+      "right_adjoints_agree",
+      "set_identity_right_adjoint_unique"
+    ],
+    "principal": [
+      "right_adjoint_data_prop"
+    ],
+    "note": "For a category C and a wild precategory D, right_adjoint_data_prop C D F : isProp (RightAdjointData (C .wild) D F). The proof is as in the book. By lem:adj-via-repr, RightAdjointData ≃ (d : D) → Σ x, Hom_D(F -, d) ≅ h_x. Each factor is a representability type. It is a proposition by cor:repr-prop when it is known that the types Hom_D(F c, d) are sets. This follows from any given adjunction."
   },
   {
     "chapter": 6,
@@ -15366,8 +16554,24 @@
     "labels": [
       "def:cat-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsCatEquivalence",
+      "CatEquivalence",
+      "RightAdjointData",
+      "adjunction_unit",
+      "adjunction_counit",
+      "identity_is_cat_equivalence",
+      "cat_equivalence_identity",
+      "cat_equivalence_functor_cat_isos_equiv",
+      "CatEquivalenceIsoConditions"
+    ],
+    "principal": [
+      "IsCatEquivalence",
+      "CatEquivalence",
+      "cat_equivalence_functor_cat_isos_equiv"
+    ],
+    "note": "The core definition (module 603) is right adjoint data with componentwise invertibility of the unit and the counit. The unit is η_c = α(id_{Fc}), and the counit is ε_d = α⁻¹(id_{Gd}). CatEquivalence C D is the type C ≃ D. Fidelity check: for precategories, cat_equivalence_functor_cat_isos_equiv shows an equivalence with a second condition. This condition requires that the unit and counit natural transformations are isomorphisms in the functor precategories, as the book says. These transformations are adjunction_unit_nat_trans/adjunction_counit_nat_trans of module 625. For wild codomains, only the componentwise reading is available."
   },
   {
     "chapter": 6,
@@ -15379,8 +16583,23 @@
     "labels": [
       "lem:cat-equiv-is-prop"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "is_cat_equivalence_prop",
+      "ff_split_eso_prop",
+      "split_eso_prop",
+      "is_cat_equivalence_prop_via_adj_unique",
+      "right_adjoint_data_prop",
+      "cat_equivalence_iso_conditions_prop",
+      "is_cat_equivalence_prop_routes_agree",
+      "is_cat_equivalence_not_prop_without_univalence",
+      "indiscrete_bool_equivalences_differ"
+    ],
+    "principal": [
+      "is_cat_equivalence_prop",
+      "is_cat_equivalence_prop_via_adj_unique"
+    ],
+    "note": "Let C be a category and D any wild precategory. Then IsCatEquivalence (C .wild) D F is a proposition. The lemma is_cat_equivalence_prop proves this via lem:equiv-precat-is-ff-split-eso and lem:ff-eso. The lemma is_cat_equivalence_prop_via_adj_unique follows the book's route through cor:adj-unique (right_adjoint_data_prop, module 624). Litmus test: the indiscrete precategory on Bool is not univalent, and its functor to the terminal category has two different equivalence structures."
   },
   {
     "chapter": 6,
@@ -15392,8 +16611,24 @@
     "labels": [
       "lem:cat-equiv-ff"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cat_equivalence_ff",
+      "wild_cat_equivalence_ff",
+      "cat_equivalence_mor_is_equiv",
+      "left_adjoint_unit_iso_mor_is_equiv",
+      "adjunction_transpose_of_image",
+      "ch6c_two_out_of_three_left",
+      "ff_from_mor_equivs",
+      "identity_cat_equivalence_ff",
+      "bool_to_unit_path_functor",
+      "bool_to_unit_path_functor_not_equivalence"
+    ],
+    "principal": [
+      "cat_equivalence_ff",
+      "wild_cat_equivalence_ff"
+    ],
+    "note": "The statement cat_equivalence_ff gives the lemma for precategories. The lemma wild_cat_equivalence_ff proves it for wild precategories. It uses only that the unit is an isomorphism: α(F f) = η_b ∘ f, and both α and η_b ∘ - are equivalences. Litmus test: the functor from the path groupoid of Bool to the path groupoid of Unit is not full. Thus it is not an equivalence."
   },
   {
     "chapter": 6,
@@ -15405,8 +16640,20 @@
     "labels": [
       "def:functor-split-eso"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsSplitEso",
+      "IsEso",
+      "is_eso_prop",
+      "eso_from_split_eso",
+      "identity_split_eso",
+      "indiscrete_bool_split_eso"
+    ],
+    "principal": [
+      "IsSplitEso",
+      "IsEso"
+    ],
+    "note": "The core definitions are in module 602. IsSplitEso C D F = (d : D) → Σ c, F(c) ≅ d. IsEso is its pointwise propositional truncation (Mere). The litmus examples are the identity functor (d ↦ (d, id)) and the functor from the indiscrete precategory on Bool to the terminal category. The second functor has two different split essential surjections."
   },
   {
     "chapter": 6,
@@ -15418,8 +16665,39 @@
     "labels": [
       "lem:equiv-precat-is-ff-split-eso"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cat_equivalence_ff_split_eso_equiv",
+      "cat_equivalence_ff_split_eso_is_equiv",
+      "wild_cat_equivalence_ff_split_eso_equiv",
+      "cat_equivalence_to_ff_split_eso",
+      "cat_equivalence_split_eso",
+      "ff_split_eso_is_cat_equivalence",
+      "ff_split_eso_is_cat_equivalence_native",
+      "split_eso_inverse_functor",
+      "split_eso_unit",
+      "split_eso_counit",
+      "split_eso_counit_path",
+      "ff_split_eso_round_trip",
+      "cat_equivalence_round_trip",
+      "cat_equivalence_round_trip_mor",
+      "cat_equivalence_round_trip_transpose",
+      "adjunction_untranspose_formula",
+      "adjunction_untranspose_natural_right",
+      "cat_adjunction_counit_naturality",
+      "right_adjoint_data_path",
+      "AdjointCore",
+      "AdjointLaws",
+      "adjoint_laws_prop",
+      "is_cat_equivalence_path",
+      "identity_cat_equivalence_split_eso"
+    ],
+    "principal": [
+      "cat_equivalence_ff_split_eso_equiv",
+      "cat_equivalence_to_ff_split_eso",
+      "ff_split_eso_is_cat_equivalence"
+    ],
+    "note": "The book's map E ↦ (lem:cat-equiv-ff, d ↦ (G(d), ε_d)) is cat_equivalence_to_ff_split_eso. It is a BookEquiv for precategories C, D. In fact, only C needs hom-sets. The inverse ff_split_eso_is_cat_equivalence works for wild precategories. It uses G(g) = F⁻¹(h⁻¹ ∘ g ∘ h) and η_c = F⁻¹(h⁻¹), and then AKS 6.2. The round trip on equivalences uses that G on objects and the counit determine an equivalence structure: G(g) = F⁻¹(ε⁻¹ ∘ g ∘ ε) and α(k) = G(k) ∘ η'. The remaining data are propositions when C has hom-sets."
   },
   {
     "chapter": 6,
@@ -15431,8 +16709,20 @@
     "labels": [
       "lem:ff-eso"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ff_iso_fiber_prop",
+      "ff_iso_fiber_path",
+      "ff_iso_fiber_transport",
+      "ff_iso_fiber_transport_base",
+      "mor_equiv_functor_reflects_iso",
+      "ff_mor_is_equiv",
+      "ff_iso_fiber_not_prop_without_univalence"
+    ],
+    "principal": [
+      "ff_iso_fiber_prop"
+    ],
+    "note": "Let C be a category, D any wild precategory and F fully faithful. Then Σ_c F(c) ≅ d is a proposition. Two elements (c, h) and (c', h') are identified along isotoid of the preimage of h'⁻¹ ∘ h. The proof uses that transport precomposes with F(idtoiso p)⁻¹. Litmus test: the claim fails without the univalence of C. The counterexample is the indiscrete precategory on Bool, mapped to the terminal category."
   },
   {
     "chapter": 6,
@@ -15444,8 +16734,28 @@
     "labels": [
       "thm:ff-eso-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ff_eso_is_cat_equivalence",
+      "wild_ff_eso_is_cat_equivalence",
+      "split_eso_from_eso",
+      "split_eso_eso_equiv",
+      "cat_equivalence_weak_equivalence",
+      "cat_equivalence_weak_equivalence_equiv",
+      "cat_equivalence_projection",
+      "cat_equivalence_projection_fiber_equiv",
+      "cat_equivalence_projection_injective",
+      "cat_equivalence_projection_image",
+      "identity_weak_equivalence",
+      "identity_ff_eso_right_adjoint_obj",
+      "identity_cat_equivalence_unique"
+    ],
+    "principal": [
+      "ff_eso_is_cat_equivalence",
+      "cat_equivalence_projection_injective",
+      "cat_equivalence_projection_image"
+    ],
+    "note": "For a category C, the projection (C ≃ D) → (C → D) is an injection (IsEmbedding). Its fibers are the propositions IsCatEquivalence F. Its image is the fully faithful, essentially surjective functors: Mere of the fiber ≃ IsWeakEquivalence F. Also, IsCatEquivalence F ≃ ff × eso. The lemma ff_eso_is_cat_equivalence has the reserved signature with D : Precat. The lemma wild_ff_eso_is_cat_equivalence allows a wild D."
   },
   {
     "chapter": 6,
@@ -15457,8 +16767,29 @@
     "labels": [
       "cor:Cat-ua"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "category_path_equiv",
+      "category_path_to_equivalence",
+      "category_path_to_equivalence_is_equiv",
+      "category_path_composite_equiv",
+      "category_path_composite_refl",
+      "category_path_composite_homotopy",
+      "category_path_precat_equiv",
+      "category_sigma_equiv",
+      "precat_iso_cat_equivalence_equiv",
+      "obj_equiv_eso",
+      "cat_equivalence_obj_is_equiv",
+      "cat_equivalence_obj_fiber_contractible",
+      "cat_equivalence_path",
+      "precategory_path_equiv",
+      "category_path_equiv_refl"
+    ],
+    "principal": [
+      "category_path_equiv",
+      "category_path_to_equivalence"
+    ],
+    "note": "The map category_path_to_equivalence is defined by path induction (J). It sends refl C to cat_equivalence_identity (C .wild). Its computation rule holds typally (category_path_equiv_refl). It is a BookIsEquiv. By J, it agrees with the composite (C = D) ≃ (C = D as precategories) ≃ (isomorphism of precategories) ≃ (C ≃ D). The last step uses lem:ff-eso and thm:ff-eso-equiv."
   },
   {
     "chapter": 6,
@@ -15470,8 +16801,18 @@
     "labels": [
       "cor:cat-2-type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "category_type_two_truncated",
+      "category_paths_groupoid",
+      "cat_equivalence_groupoid",
+      "functor_type_groupoid",
+      "set_cat_self_paths_groupoid"
+    ],
+    "principal": [
+      "category_type_two_truncated"
+    ],
+    "note": "Category has HLevel 4, that is, it is 2-truncated in the book's sense. In general, HLevel n is the book's level n-2. The reason is that C = D ≃ (C ≃ D) is a groupoid. Functors into a category form a groupoid (functor_type_groupoid), and the property of being an equivalence is a proposition."
   },
   {
     "chapter": 6,
@@ -15483,8 +16824,17 @@
     "labels": [
       "def:we-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsWeakEquivalence",
+      "identity_weak_equivalence",
+      "cat_equivalence_weak_equivalence",
+      "indiscrete_bool_to_terminal_ff"
+    ],
+    "principal": [
+      "IsWeakEquivalence"
+    ],
+    "note": "The core definition (module 602) is: fully faithful and essentially surjective. It is stated for wild precategories. The book's version is the instance for precategories. Litmus tests: the identity functor is a weak equivalence, and every equivalence is one (cat_equivalence_weak_equivalence). The functor from the indiscrete precategory on Bool to the terminal category is also one."
   },
   {
     "chapter": 6,
@@ -15496,8 +16846,41 @@
     "labels": [
       "lem:precomp-equiv-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "precomposition_cat_equivalence",
+      "precomposition_functor",
+      "nat_trans_whisker_right",
+      "precomposition_fully_faithful",
+      "precomposition_mor_is_equiv",
+      "WhiskerExt",
+      "whisker_ext_contractible",
+      "whisker_ext",
+      "whisker_ext_whisker",
+      "whisker_whisker_ext",
+      "precomposition_split_eso",
+      "ExtObj",
+      "ExtCompatible",
+      "ExtArrowFamily",
+      "ext_obj_contractible",
+      "ext_obj_path_from",
+      "ExtMor",
+      "ExtMorCond",
+      "ext_mor_contractible",
+      "ext_functor",
+      "ext_functor_nat_iso",
+      "ext_split_eso_at",
+      "ff_lift_through_iso",
+      "ff_iso_cancel",
+      "FunctorCategory",
+      "precomposition_identity_cat_equivalence"
+    ],
+    "principal": [
+      "precomposition_cat_equivalence",
+      "precomposition_fully_faithful",
+      "precomposition_split_eso"
+    ],
+    "note": "Let H be a weak equivalence of precategories and E a category. Then precomposition_functor H : E^D → E^C is an equivalence of categories (HoTT book Thm 9.9.4). It goes from FunctorCategory (D .wild) E to FunctorCategory (C .wild) E. It is fully faithful: a transformation KH → K'H extends uniquely along H, because the extension at d is contractible. It is also split essentially surjective. For F, G(d) is the object of the contractible type of compatible families F(c) ≅ e indexed by isomorphisms H(c) ≅ d. This type is contractible by the univalence of E. G(g) is the unique compatible arrow, and GH ≅ F. Then ff_split_eso_is_cat_equivalence applies. Full faithfulness needs only hom-sets in E."
   },
   {
     "chapter": 6,
@@ -15509,8 +16892,27 @@
     "labels": [
       "def:Rezk-completion"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MerelyRepresentable",
+      "RezkCompletion",
+      "rezk_unit_object",
+      "rezk_unit",
+      "IsRepresentable",
+      "representable_presheaf_is_representable",
+      "PresheafCategory",
+      "yoneda_functor",
+      "full_subcat_category",
+      "rezk_unit_object_value",
+      "rezk_unit_mor_value",
+      "rezk_empty_presheaf_excluded"
+    ],
+    "principal": [
+      "RezkCompletion",
+      "rezk_unit",
+      "MerelyRepresentable"
+    ],
+    "note": "L(C) is full_subcat_category of PresheafCategory C on MerelyRepresentable C, the proposition ‖Σ c, yo(c) ≅ F‖. Here PresheafCategory C is Set^{C^op}. The book's Set is SetCat, the sets of Narya's single universe. The book's isRepr must be proposition-valued for def:full-subcat. But IsRepresentable (def:repr) is a proposition only for categories (cor:repr-prop). Thus for precategories we take its propositional truncation, as in the HoTT book, 9.9. The map η = rezk_unit factors yo through the proofs mere(c, id). Litmus tests: η(c)(x) ≡ hom(x, c), η acts by postcomposition, and the empty presheaf is not an object."
   },
   {
     "chapter": 6,
@@ -15522,8 +16924,35 @@
     "labels": [
       "thm:Rezk-completion"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "rezk_unit_ff",
+      "rezk_unit_eso",
+      "rezk_unit_weak_equivalence",
+      "IsEssentiallySmallPrecat",
+      "rezk_completion_essentially_small",
+      "rezk_completion_objects_essentially_small",
+      "rezk_completion_locally_essentially_small",
+      "rezk_object_pair_induction",
+      "rezk_unit_hom_equiv",
+      "cat_iso_essentially_small",
+      "univalent_objects_locally_small",
+      "rezk_unit_obj_surjective",
+      "eso_univalent_obj_surjective",
+      "essentially_small_precat_small",
+      "small_precat_essentially_small",
+      "rezk_objects_image_equiv",
+      "representable_values_small",
+      "presheaf_hom_essentially_small",
+      "rezk_completion_total_small",
+      "Replacement",
+      "surjection_image_equiv"
+    ],
+    "principal": [
+      "rezk_unit_weak_equivalence",
+      "rezk_completion_essentially_small"
+    ],
+    "note": "The lemma rezk_unit_weak_equivalence says that η is fully faithful and essentially surjective. Full faithfulness is literally yoneda_fully_faithful. Essential surjectivity is the membership proof of an object of L(C). The second sentence of the book is rezk_completion_essentially_small. It is for a universe U of the module-190 model, under the explicit hypothesis Replacement U. IsEssentiallySmallPrecat says that Ob and all hom-sets are essentially U-small. This is equivalent to IsSmallWildPrecat of module 606. The proof route differs, because Narya's Set^{C^op} takes values in all sets. The hom-sets of L(C) are small by Yoneda (hom_L(ηc, ηc') ≃ hom_C(c, c')). Replacement is applied to Ob(η) : Ob(C) → Ob(L(C)), whose codomain is locally small. The book's intermediate steps are formalized separately (rezk_objects_image_equiv, presheaf_hom_essentially_small)."
   },
   {
     "chapter": 6,
@@ -15535,8 +16964,20 @@
     "labels": [
       "xca:Rezk-completion-locally-small"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "rezk_completion_locally_small",
+      "rezk_completion_locally_essentially_small",
+      "rezk_object_pair_induction",
+      "rezk_unit_hom_equiv",
+      "IsLocallySmallWildPrecat",
+      "presheaf_hom_essentially_small"
+    ],
+    "principal": [
+      "rezk_completion_locally_small",
+      "rezk_completion_locally_essentially_small"
+    ],
+    "note": "Assume that all hom-types of C are U-small (IsLocallySmallWildPrecat, rem:cat-sizes, module 606). Then all hom-types of L(C) are U-small. This needs no hypothesis on Ob(C) and no Replacement. By Yoneda, hom_L(η c, η c') ≃ hom_C(c, c'), and every object of L(C) is merely some η(c). The book cites a converse from Freyd–Street: Set_U^{C^op} is locally U-small only when C is essentially U-small. This converse is not formalized. The positive direction is presheaf_hom_essentially_small."
   },
   {
     "chapter": 6,
@@ -15548,8 +16989,48 @@
     "labels": [
       "thm:1types-are-groupoids"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_wild_functor",
+      "PathFunctorUnfolded",
+      "path_functor_unfolded_equiv",
+      "path_family_refl_equiv",
+      "PathActionWithUnit",
+      "path_functor_action_contractible",
+      "path_functor_laws_prop",
+      "path_functor_mor_ap",
+      "path_functor_eta",
+      "path_groupoid_functors_equiv",
+      "one_types_functor_projection_equiv",
+      "path_functor_category",
+      "path_functor_category_invertible",
+      "path_functor_groupoid",
+      "one_types_functor_groupoid_projection",
+      "path_category",
+      "path_functor_equivalence_ff",
+      "path_equivalence_projection",
+      "path_groupoid_equivalences_equiv",
+      "path_groupoid_equivalences_projection_is_equiv",
+      "Gpd",
+      "gpd_groupoid_cat_equiv",
+      "GroupoidTypes",
+      "path_gpd",
+      "gpd_objects",
+      "gpd_comparison_functor",
+      "gpd_comparison_mor_equiv",
+      "gpd_comparison_isomorphism",
+      "path_gpd_gpd_objects",
+      "gpd_objects_path_gpd",
+      "one_types_groupoids_equiv",
+      "one_types_groupoids_is_equiv",
+      "path_gpd_injective",
+      "path_gpd_surjective"
+    ],
+    "principal": [
+      "one_types_functor_groupoid_projection",
+      "one_types_groupoids_is_equiv"
+    ],
+    "note": "First sentence of the book: let A, B be 1-types. The functor groupoid [A, B] is FunctorCategory of the path groupoids, and the formalization shows that it is a groupoid. The projection F ↦ F₀ from [A, B] to A → B is a BookIsEquiv. Only B needs to be a 1-type (path_groupoid_functors_equiv). Second sentence: path_gpd : U^{≤1} → Gpd is an equivalence. Here U^{≤1} = GroupoidTypes (Σ Type isGroupoid, module 284). Also, Gpd = Σ (C : Category), IsPregroupoid C, which is equivalent to the record GroupoidCat. The book argues injectivity via the first consequence (path_groupoid_equivalences_projection_is_equiv) and cor:Cat-ua, and it also argues surjectivity. We give the inverse G ↦ Ob(G) directly. It identifies G with the path groupoid of its objects by an isomorphism of precategories (module 645). From this we derive injectivity and surjectivity."
   },
   {
     "chapter": 6,
@@ -15561,8 +17042,42 @@
     "labels": [
       "xca:Rezk-completion-1trunc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "trunc_path_comp",
+      "trunc_path_lu",
+      "trunc_path_ru",
+      "trunc_path_assoc",
+      "TruncPathWild",
+      "trunc_path_homset",
+      "trunc_path_precat",
+      "trunc_path_invertible",
+      "trunc_path_pregroupoid",
+      "trunc_path_comp_compute",
+      "OneTrunc",
+      "one_trunc_unit",
+      "one_trunc_groupoid",
+      "one_trunc_category",
+      "trunc_path_one_trunc_functor",
+      "trunc_path_hom_equiv",
+      "trunc_path_one_trunc_mor_equiv",
+      "trunc_path_one_trunc_ff",
+      "trunc_path_one_trunc_eso",
+      "one_trunc_unit_surjective",
+      "trunc_path_one_trunc_weak_equivalence",
+      "trunc_path_rezk_equivalence",
+      "trunc_path_rezk_path",
+      "trunc_path_rezk_objects_equiv",
+      "trunc_path_rezk_objects_unit",
+      "trunc_path_rezk_hom_equiv",
+      "trunc_path_rezk_object_value"
+    ],
+    "principal": [
+      "trunc_path_pregroupoid",
+      "trunc_path_rezk_path",
+      "trunc_path_rezk_objects_equiv"
+    ],
+    "note": "TruncPathWild A has the objects A and hom(x, y) = SetTrunc (x = y), that is, ‖x = y‖₀ (module 43). Its composition is |q|₀ ∘ |p|₀ = |p · q|₀, definitional on representatives. It is a pregroupoid. The unit |-|₁ : A → ‖A‖₁ (OneTrunc A = Trunc 2 A, module 202) extends to a weak equivalence onto the path groupoid of ‖A‖₁. On arrows, it acts by ‖x = y‖₀ ≃ (|x|₁ = |y|₁) (eq:trunc-path-eq). Hence L(TruncPathWild A) = path category of ‖A‖₁, as an identification of categories. Also, Ob(L) ≃ ‖A‖₁, and this equivalence sends |a|₁ to η(a)."
   },
   {
     "chapter": 6,
@@ -15574,8 +17089,18 @@
     "labels": [
       "def:flagged-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FlCat",
+      "FlagStructure",
+      "flagged_cat_sigma_check",
+      "identity_surjective",
+      "category_identity_flag"
+    ],
+    "principal": [
+      "FlCat"
+    ],
+    "note": "FlCat ≔ Σ (C : Category) Σ (A : Type) Σ (f : A → Ob C), Surjective f, verbatim. Here U = Type, and issurj = Surjective, with the book's fibres. FlagStructure C is the inner Σ-type, that is, the fibre of the first projection. The footnote on the terminology is informal."
   },
   {
     "chapter": 6,
@@ -15587,8 +17112,37 @@
     "labels": [
       "thm:flagged-cat-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "rezk_flag",
+      "rezk_flag_triangle",
+      "PulledBackWild",
+      "pulled_back_precat",
+      "pulled_back_functor",
+      "pulled_back_functor_ff",
+      "pulled_back_functor_eso",
+      "pulled_back_weak_equivalence",
+      "flagged_to_precat",
+      "rezk_pullback_iso_functor",
+      "rezk_pullback_isomorphism",
+      "precat_path_from_isomorphism",
+      "rezk_flag_round_trip_precat",
+      "restricted_yoneda_rezk_equivalence",
+      "restricted_yoneda_unit_path",
+      "cat_equiv_induction",
+      "flagged_path_from_equivalence",
+      "flagged_round_trip",
+      "precat_flagged_equiv",
+      "precat_flagged_is_equiv",
+      "flagged_projection_fiber_equiv",
+      "rezk_completion_fiber_equiv"
+    ],
+    "principal": [
+      "precat_flagged_is_equiv",
+      "rezk_flag",
+      "rezk_completion_fiber_equiv"
+    ],
+    "note": "The statement says 'sending a category C', but the domain is PreCat. Thus C is read as a precategory. The map rezk_flag C is (L(C), Ob(C), Ob(η), proof that Ob(η) is surjective). The formalization proves precat_flagged_is_equiv : BookIsEquiv Precat FlCat rezk_flag. The inverse is the pulled-back precategory (flagged_to_precat). The step 'inducing an equivalence L(A) ≃ C' is restricted_yoneda_rezk_equivalence (module 674). It is stated as C ≃ L(A), compatible with objects. Footnote: fst ∘ F ≡ L by refl (rezk_flag_triangle). The fibre of L at D is FlagStructure D (rezk_completion_fiber_equiv)."
   },
   {
     "chapter": 6,
@@ -15600,8 +17154,28 @@
     "labels": [
       "rem:chicken-or-egg"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "category_precat",
+      "category_precat_fiber_equiv",
+      "category_precat_embedding",
+      "rezk_completion_retraction",
+      "identity_weak_equivalence",
+      "precat_category_with_flag_equiv",
+      "rezk_completion_fiber_equiv",
+      "unit_category",
+      "constant_star_surjective",
+      "unit_flag",
+      "bool_flag",
+      "unit_bool_not_equivalent",
+      "flag_structure_not_prop"
+    ],
+    "principal": [
+      "category_precat_embedding",
+      "rezk_completion_retraction",
+      "precat_category_with_flag_equiv"
+    ],
+    "note": "The inclusion Cat → PreCat is an injection. Its fibre over P is the proposition IsUnivalentCat P, the extra property. L is a retraction: L(C) = C for every category. The reason is that the identity is a weak equivalence into a category (module 674). Precategories are categories with flag structure: Precat ≃ Σ (C : Cat), FlagStructure C (thm:flagged-cat-equiv). This is genuine structure: the path category of Unit carries the distinct flags Unit and Bool (flag_structure_not_prop). The word 'Higher' (flags involve arbitrary types) is informal."
   },
   {
     "chapter": 6,
@@ -15613,8 +17187,21 @@
     "labels": [
       "def:prod-in-a-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CatCone",
+      "ConeFactorization",
+      "IsProductCone",
+      "ProductCone",
+      "is_product_cone_prop",
+      "product_litmus_cone",
+      "product_litmus_factor"
+    ],
+    "principal": [
+      "IsProductCone",
+      "ProductCone"
+    ],
+    "note": "In any wild precategory, a cone is (P, p₁, p₂). IsProductCone says this: for every cone (X, x₁, x₂), the type of f : X → P with x_i = p_i ∘ f is contractible (native isContr). The equation x_i = p_i ∘ f has the book's orientation. The contractibility means 'there is a unique arrow'."
   },
   {
     "chapter": 6,
@@ -15626,8 +17213,23 @@
     "labels": [
       "xca:product-cone-prop"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_cone_prop",
+      "ConeIso",
+      "cone_iso_refl",
+      "cone_product_contractible",
+      "cone_iso_total_contractible",
+      "product_cone_iso",
+      "cone_fac_idn",
+      "cone_fac_leg",
+      "cone_fac_comp",
+      "is_product_cone_prop"
+    ],
+    "principal": [
+      "product_cone_prop"
+    ],
+    "note": "For a univalent wild precategory C, ProductCone C a b is a proposition. This needs no hom-set hypothesis. In every wild precategory, any two product cones are isomorphic as cones (product_cone_iso). This follows from the uniqueness of factorizations. By univalence, the cones with a cone isomorphism from a fixed cone form a contractible type."
   },
   {
     "chapter": 6,
@@ -15639,8 +17241,22 @@
     "labels": [
       "def:product-cones-as-terminal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cone_fac_idn",
+      "cone_fac_comp",
+      "cone_fac_prop",
+      "cone_fac_path",
+      "cone_precat_wild",
+      "cone_homset",
+      "ConePrecat",
+      "product_cone_is_terminal_cone"
+    ],
+    "principal": [
+      "ConePrecat",
+      "product_cone_is_terminal_cone"
+    ],
+    "note": "The precategory of cones on a, b is built for C with hom-sets. Its arrows are the filled triangles. For a wild C, its λ, ρ and α would need coherences as in def:slice-cat. Thus the wild version is not built. 'A product cone is a terminal cone' holds by refl. IsProductCone C a b P is literally the statement that every hom type into P in the cone category is contractible. This is def:terminal-obj, unfolded."
   },
   {
     "chapter": 6,
@@ -15652,8 +17268,21 @@
     "labels": [
       "def:coprod-in-a-cat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CatCocone",
+      "CoconeFactorization",
+      "IsCoproductCocone",
+      "CoproductCocone",
+      "coproduct_cocone_is_op_product_cone",
+      "coproduct_litmus_cocone",
+      "coproduct_litmus_factor"
+    ],
+    "principal": [
+      "IsCoproductCocone",
+      "CoproductCocone"
+    ],
+    "note": "A cocone (C, i₁, i₂) is a coproduct cocone if, for every cocone (X, x₁, x₂), the type of f : C → X with x_j = f ∘ i_j is contractible. The book refers to fig:product-cone(2), but it means fig:coproduct-cone(2). Coproduct cocones in C are by refl the product cones in C^op."
   },
   {
     "chapter": 6,
@@ -15665,8 +17294,19 @@
     "labels": [
       "def:pullback"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TypePullback",
+      "pullback_proj_left",
+      "pullback_proj_right",
+      "pullback_square_commutes",
+      "pullback_litmus_point",
+      "pullback_litmus_projections"
+    ],
+    "principal": [
+      "TypePullback"
+    ],
+    "note": "B ×_D C ≔ Σ_{(b,c) : B × C} f(b) = g(c), with the projections prj_B, prj_C. The displayed square commutes (pullback_square_commutes). The proof uses funext of the second components."
   },
   {
     "chapter": 6,
@@ -15678,8 +17318,19 @@
     "labels": [
       "xca:univpropofpullback"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PullbackOfPostcomp",
+      "pullback_gap_map",
+      "pullback_gap_inverse",
+      "pullback_universal_property",
+      "pullback_litmus_square",
+      "pullback_litmus_gap"
+    ],
+    "principal": [
+      "pullback_universal_property"
+    ],
+    "note": "The printed map sends (β, γ, p) to a ↦ (f(a), g(a), p(a)), which is ill-typed. We prove that the intended map a ↦ (β(a), γ(a), happly p a) is a BookIsEquiv. The proof uses the quasi-inverse h ↦ (prj_B ∘ h, prj_C ∘ h, funext) with funext_eta/funext_beta. The footnote's 'unique dashed arrow' is the contractibility of the fibers of this map, that is, the BookIsEquiv itself."
   },
   {
     "chapter": 6,
@@ -15689,8 +17340,20 @@
     "line": 1558,
     "section_raw": "Limits and colimits}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pullback_point_fiber_eta",
+      "pullback_point_fiber_equiv",
+      "IsPullbackSquare",
+      "fiber_pullback_square",
+      "fiber_is_pullback",
+      "pullback_litmus_fiber"
+    ],
+    "principal": [
+      "pullback_point_fiber_equiv",
+      "fiber_is_pullback"
+    ],
+    "note": "Let d : 1 → D be the constant map and g : C → D. Then 1 ×_D C ≃ g⁻¹(d) = BookFiber C D g d = Σ_{c:C} d = g(c) (BookEquiv). The book writes Σ_{b:B}, a typo for c : C. The footnote's square has the arrows g⁻¹(d) → C and g⁻¹(d) → 1, and the identifications d = g(c) fill it. This square is a pullback diagram in the sense of IsPullbackSquare (fiber_is_pullback)."
   },
   {
     "chapter": 7,

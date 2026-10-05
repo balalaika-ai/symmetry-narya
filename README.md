@@ -17,7 +17,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 3: The universal symmetry: the circle](chapters/ch03/README.md) | 102 | 101 | 1 | 0 | 0 | — | 10 |
 | [Chapter 4: Groups, concretely](chapters/ch04/README.md) | 95 | 92 | 3 | 0 | 0 | 0 | 8 |
 | [Chapter 5: Actions](chapters/ch05/README.md) | 112 | 110 | 1 | 0 | 1 | 0 | 11 |
-| **Total** | **505** | **499** | **5** | **0** | **1** | | **31** |
+| [Chapter 6: A categorical interlude](chapters/ch06/README.md) | 89 | 89 | 0 | 0 | 0 | 0 | 10 |
+| **Total** | **594** | **588** | **5** | **0** | **1** | | **41** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:

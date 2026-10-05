@@ -1,0 +1,2304 @@
+[
+  {
+    "source": "cats.tex",
+    "line": 86,
+    "labels": [
+      "def:wild-cat",
+      "struc:cat-ob",
+      "struc:cat-mor",
+      "struc:cat-id",
+      "struc:cat-comp",
+      "struc:cat-unit-laws",
+      "struct:cat-assoc"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindWildPrecat",
+      "BlindWildPrecatStr"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_w",
+      "bridge_w_inv",
+      "bridge_def_wild_precat",
+      "bridge_wstr",
+      "bridge_wstr_of",
+      "bridge_wstr_roundtrip"
+    ],
+    "our_declarations": [
+      "WildPrecat"
+    ],
+    "note": "BlindWildPrecat (sig with lunit/runit) and WildPrecat (lu/ru) have the same fields with the same orientations. The translations are inverse up to η. Thus bridge_def_wild_precat is an equivalence with refl round trips. BlindWildPrecatStr Ob hom maps to WildPrecat with .ob ≡ Ob, .hom ≡ hom (bridge_wstr). Every WildPrecat comes from its own structure."
+  },
+  {
+    "source": "cats.tex",
+    "line": 132,
+    "labels": [
+      "rem:wild",
+      "eq:pentagon"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_universe_wild_precat",
+      "blind_pointed_wild_precat",
+      "blind_pointed_lunit",
+      "blind_pointed_runit",
+      "blind_pointed_assoc",
+      "BlindUnitCoherence",
+      "BlindPentagon"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_universe_wild",
+      "bridge_def_pointed_wild",
+      "bridge_def_unit_coherence",
+      "bridge_pentagon_assoc",
+      "bridge_blind_pentagon_filler",
+      "bridge_def_pentagon_filler",
+      "bridge_def_pentagon_to_blind",
+      "bridge_def_pentagon_from_blind"
+    ],
+    "our_declarations": [
+      "TypeWild",
+      "PointedWild",
+      "WildUnitCoherence",
+      "WildPentagon",
+      "wild_pentagon_left",
+      "wild_pentagon_right"
+    ],
+    "note": "The blind wild categories U and U_* are ours on the nose (refl). This includes the pointed unit and associativity proofs. The equation λ=ρ at identities is ours by refl. The left boundary of the blind pentagon is (ap α · α) · ap α, and ours is ap α · (α · ap α). The filler types are equivalent pointwise by precomposition with concat_assoc. This gives maps in both directions between BlindPentagon C and WildPentagon C."
+  },
+  {
+    "source": "cats.tex",
+    "line": 183,
+    "labels": [
+      "def:precategory"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindPrecat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_p",
+      "bridge_def_precat"
+    ],
+    "our_declarations": [
+      "Precat",
+      "HasHomSets"
+    ],
+    "note": "BlindPrecat (Σ) ≃ Precat (record), with refl round trips."
+  },
+  {
+    "source": "cats.tex",
+    "line": 198,
+    "labels": [
+      "def:iso-in-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindIsIso",
+      "BlindIso"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_is_iso",
+      "bridge_def_iso"
+    ],
+    "our_declarations": [
+      "CatIsIso",
+      "CatIso"
+    ],
+    "note": "The two are definitionally equal (refl). Both follow the displayed orientation f∘g = id_B, h∘f = id_A."
+  },
+  {
+    "source": "cats.tex",
+    "line": 229,
+    "labels": [
+      "def:univalent-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_id_iso",
+      "blind_idtoiso",
+      "BlindIsUnivalent"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_idtoiso",
+      "bridge_def_univalent"
+    ],
+    "our_declarations": [
+      "cat_idtoiso",
+      "IsUnivalentCat"
+    ],
+    "note": "The terms blind_idtoiso and cat_idtoiso are the same J-term, and BlindIsUnivalent ≡ IsUnivalentCat (refl)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 238,
+    "labels": [
+      "def:category"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindWildCat",
+      "BlindCat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_c",
+      "bridge_c_inv",
+      "bridge_def_category",
+      "bridge_def_wild_category"
+    ],
+    "our_declarations": [
+      "Category",
+      "WildCategory"
+    ],
+    "note": "BlindCat ≃ Category and BlindWildCat ≃ WildCategory with refl round trips."
+  },
+  {
+    "source": "cats.tex",
+    "line": 273,
+    "labels": [
+      "def:full-subcat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_full_subcat",
+      "blind_full_subprecat",
+      "blind_full_subcat_univalent"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_full_subcat",
+      "bridge_def_full_subprecat",
+      "bridge_full_subcat_univalent"
+    ],
+    "our_declarations": [
+      "FullSubcat",
+      "full_subcat_precat",
+      "full_subcat_univalent"
+    ],
+    "note": "The blind full subcategory is ours on the nose (refl). The inheritance of univalence is full_subcat_univalent."
+  },
+  {
+    "source": "cats.tex",
+    "line": 286,
+    "labels": [
+      "lem:obj-gpd"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_obj_gpd"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_obj_gpd"
+    ],
+    "our_declarations": [
+      "category_objects_groupoid"
+    ],
+    "note": "This is a direct instance of category_objects_groupoid."
+  },
+  {
+    "source": "cats.tex",
+    "line": 291,
+    "labels": [
+      "ex:poset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindPreorder",
+      "BlindPoset",
+      "BlindPreorderRelData",
+      "blind_preorder_of_rel",
+      "BlindRelIsPoset",
+      "blind_ex_poset_laws_contractible",
+      "blind_ex_poset_preorder_data",
+      "blind_ex_poset_objects_set",
+      "blind_ex_poset_iff_antisymmetric",
+      "blind_ex_poset_nat",
+      "blind_ex_poset_int",
+      "blind_ex_poset_prop",
+      "blind_ex_poset_sub",
+      "blind_ex_poset_bool_not_univalent"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_pre",
+      "bridge_pre_inv",
+      "bridge_pre_roundtrip",
+      "bridge_def_preorder",
+      "bridge_poset",
+      "bridge_poset_inv",
+      "bridge_def_poset",
+      "bridge_rel_to_blind",
+      "bridge_rel_from_blind",
+      "bridge_def_preorder_rel_data",
+      "bridge_ex_poset_preorder_data",
+      "bridge_ex_poset_laws_contractible",
+      "bridge_ex_poset_objects_set",
+      "bridge_ex_poset_iff_antisymmetric",
+      "bridge_rel_is_poset",
+      "bridge_ex_poset_nat",
+      "bridge_ex_poset_int",
+      "bridge_ex_poset_prop",
+      "bridge_ex_poset_sub",
+      "bridge_ex_poset_bool_not_univalent"
+    ],
+    "our_declarations": [
+      "Preorder",
+      "Poset",
+      "preorder_relation_equiv",
+      "preorder_univalent_iff_antisymmetric",
+      "preorder_antisymmetric_univalent",
+      "poset_objects_set",
+      "int_leq_poset",
+      "prop_implication_poset",
+      "subtype_inclusion_poset",
+      "bool_chaotic_not_univalent",
+      "preorder_homset"
+    ],
+    "note": "BlindPreorder ≃ Preorder and BlindPoset ≃ Poset. In the first equivalence, preorder_homset replaces the blind hom-set proof, and has_hom_sets_prop identifies the two proofs. The preorder-data equivalence is ours, composed with the record translations. The blind laws-contractible claim is pointwise, but ours (preorder_*_contractible) is for the whole Π-types. The pointwise form is derived from the hom-props. For (ℕ, ≤), the blind relation is Le (module 07), and ours is BookLe. The bridge goes through our general preorder_antisymmetric_univalent and le_antisym. The examples (ℤ,≤), (Prop,→), (Sub S,⊆) and the chaotic 2 are ours on the nose. Both read the book's 'symmetric' as antisymmetry."
+  },
+  {
+    "source": "cats.tex",
+    "line": 312,
+    "labels": [
+      "xca:order-poset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_xca_order_poset"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_xca_order_poset"
+    ],
+    "our_declarations": [
+      "order_divisibility_poset"
+    ],
+    "note": "The relation, the proofs and the univalence are the same as ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 318,
+    "labels": [
+      "def:wild-pre-groupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindIsPregroupoid",
+      "BlindWildPregroupoid",
+      "BlindPregroupoid",
+      "BlindWildGroupoid",
+      "BlindGroupoid"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_is_pregroupoid",
+      "bridge_def_wild_pregroupoid",
+      "bridge_def_pregroupoid",
+      "bridge_def_wild_groupoid",
+      "bridge_def_groupoid"
+    ],
+    "our_declarations": [
+      "IsPregroupoid",
+      "WildPregroupoid",
+      "Pregroupoid",
+      "WildGroupoid",
+      "GroupoidCat"
+    ],
+    "note": "IsPregroupoid agrees by refl. The four packagings are equivalent to ours with refl round trips."
+  },
+  {
+    "source": "cats.tex",
+    "line": 324,
+    "labels": [
+      "ex:path-groupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "blind_path_wild_precat",
+      "blind_ex_path_groupoid_wild",
+      "blind_ex_path_groupoid_one_type"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_path_wild",
+      "bridge_ex_path_groupoid_wild",
+      "bridge_ex_path_groupoid_one_type"
+    ],
+    "our_declarations": [
+      "PathWild",
+      "PathGroupoid",
+      "path_groupoid_of_groupoid"
+    ],
+    "note": "The equation blind_path_wild_precat X ≡ PathWild X holds by refl. Both claims are fields of ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 379,
+    "labels": [
+      "rem:cat-sizes"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindIsUSmall",
+      "BlindIsLocallyUSmall",
+      "blind_rem_cat_sizes_path_small",
+      "blind_universe_wild_precat_in",
+      "blind_sets_wild_precat_in",
+      "blind_pointed_wild_precat_in",
+      "blind_rem_cat_sizes_locally_small",
+      "blind_rem_cat_sizes_generalizes"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_is_small",
+      "bridge_def_is_locally_small",
+      "bridge_def_universe_wild_in",
+      "bridge_def_pointed_wild_in",
+      "bridge_rem_cat_sizes_path_small",
+      "bridge_rem_cat_sizes_locally_small",
+      "bridge_rem_cat_sizes_generalizes",
+      "bridge_rem_cat_sizes_generalizes_converse"
+    ],
+    "our_declarations": [
+      "IsSmallWildPrecat",
+      "IsLocallySmallWildPrecat",
+      "TypeWildIn",
+      "PointedWildIn",
+      "SetWildIn",
+      "path_wild_small",
+      "type_wild_in_locally_small",
+      "pointed_wild_in_locally_small",
+      "path_wild_locally_small_iff"
+    ],
+    "note": "Smallness predicates, U-types and pointed U-types agree by refl. The blind sets-in-U category has the objects Σ A, small(A) × isSet(A). Ours, SetWildIn, nests the subtypes. Its local smallness is derived directly from type_wild_in_locally_small. The 'generalizes' implication is ours. The converse is also proved."
+  },
+  {
+    "source": "cats.tex",
+    "line": 404,
+    "labels": [
+      "def:slice-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindSliceHom",
+      "blind_slice_hom_path",
+      "blind_slice_comp",
+      "blind_slice_precat",
+      "blind_ex_slice_univalent"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_def_slice_ob",
+      "bridge_def_slice_hom",
+      "bridge_def_slice_comp",
+      "bridge_ex_slice_univalent"
+    ],
+    "our_declarations": [
+      "SlicePrecat",
+      "SliceCategory",
+      "slice_univalent"
+    ],
+    "note": "The objects, arrows, identities and composition of the blind slice are ours on the nose. The unit and associativity proofs differ (hom-sets). Univalence depends only on idn/comp. Thus ours transfers through cat_univalent_from_equivalences."
+  },
+  {
+    "source": "cats.tex",
+    "line": 431,
+    "labels": [
+      "xca:univ-slice-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/01-wild-cats.ny",
+    "blind_declarations": [
+      "BlindUnivSliceOb",
+      "BlindUnivSliceHom",
+      "blind_xca_univ_slice_cat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-01-wild-cats.ny",
+    "bridge_declarations": [
+      "bridge_xca_univ_slice_cat",
+      "bridge_def_univ_slice_ob"
+    ],
+    "our_declarations": [
+      "universe_slice_wild",
+      "UniverseSliceCategory"
+    ],
+    "note": "Our universe_slice_wild has exactly the blind objects and arrows. Its structure is the required BlindWildPrecatStr."
+  },
+  {
+    "source": "cats.tex",
+    "line": 442,
+    "labels": [
+      "def:terminal-obj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "BlindIsTerminal"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_terminal"
+    ],
+    "our_declarations": [
+      "IsTerminalObj"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 448,
+    "labels": [
+      "xca:terminal-prop"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_xca_terminal_prop"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_xca_terminal_prop"
+    ],
+    "our_declarations": [
+      "terminal_objects_prop"
+    ],
+    "note": "This is a direct instance."
+  },
+  {
+    "source": "cats.tex",
+    "line": 457,
+    "labels": [
+      "def:initial-obj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "BlindIsInitial"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_initial"
+    ],
+    "our_declarations": [
+      "IsInitialObj"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 466,
+    "labels": [
+      "xca:unit-ptd-types"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_xca_unit_ptd_types"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_xca_unit_ptd_types"
+    ],
+    "our_declarations": [
+      "pointed_unit_zero_object"
+    ],
+    "note": "This is direct, because the blind pointed precategory is judgmentally PointedWild."
+  },
+  {
+    "source": "cats.tex",
+    "line": 476,
+    "labels": [
+      "def:op-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_op"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_op"
+    ],
+    "our_declarations": [
+      "OppositeWild"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 489,
+    "labels": [
+      "lem:op-idem"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_lem_op_idem"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_op_op_path",
+      "bridge_lem_op_idem"
+    ],
+    "our_declarations": [
+      "opposite_opposite_path",
+      "opposite_book_equiv"
+    ],
+    "note": "The proof transports our identification (C^op)^op = C along the record translation. Involutivity gives the BookIsEquiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 503,
+    "labels": [
+      "def:mono-in-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "BlindIsMono"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_mono"
+    ],
+    "our_declarations": [
+      "IsMono"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 512,
+    "labels": [
+      "def:epi-in-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "BlindIsEpi"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_epi"
+    ],
+    "our_declarations": [
+      "IsEpi"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 545,
+    "labels": [
+      "xca:mono-cat-grp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_group_precat",
+      "blind_xca_mono_cat_grp"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_group_precat",
+      "bridge_xca_mono_cat_grp"
+    ],
+    "our_declarations": [
+      "GroupCat",
+      "group_mono_iff_usym_injective"
+    ],
+    "note": "The blind category of groups is GroupCat on the nose. IsGroupMono (ch. 5) is IsEmbedding of USym, and ours states exactly this."
+  },
+  {
+    "source": "cats.tex",
+    "line": 549,
+    "labels": [
+      "xca:monos-epis-sets-types"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_set_precat",
+      "blind_xca_monos_types",
+      "blind_xca_epis_sets"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_def_set_precat_cat",
+      "bridge_xca_monos_types",
+      "bridge_xca_epis_sets"
+    ],
+    "our_declarations": [
+      "SetCat",
+      "type_mono_embedding_equiv",
+      "set_epi_surjective_equiv"
+    ],
+    "note": "Both directions follow from our equivalences."
+  },
+  {
+    "source": "cats.tex",
+    "line": 555,
+    "labels": [
+      "xca:monos-epis-preorder"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/02-duality.ny",
+    "blind_declarations": [
+      "blind_xca_monos_epis_preorder"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-02-duality.ny",
+    "bridge_declarations": [
+      "bridge_xca_monos_epis_preorder"
+    ],
+    "our_declarations": [
+      "preorder_arrow_mono_epi"
+    ],
+    "note": "This is direct."
+  },
+  {
+    "source": "cats.tex",
+    "line": 564,
+    "labels": [
+      "def:functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "BlindWildFunctor",
+      "BlindWildFunctorLaws",
+      "blind_functor_of_laws",
+      "blind_def_functor_laws_prop",
+      "BlindFunctor"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_f",
+      "bridge_f_inv",
+      "bridge_def_functor",
+      "bridge_def_functor_laws",
+      "bridge_def_functor_id",
+      "bridge_def_functor_comp"
+    ],
+    "our_declarations": [
+      "WildFunctor",
+      "FunctorLaws",
+      "functor_laws_prop",
+      "functor_identity",
+      "functor_compose"
+    ],
+    "note": "BlindWildFunctor ≃ WildFunctor, with refl round trips. The laws and the identity and composite functors agree by refl. The statement blind_def_functor_laws_prop (bridge-03) is functor_laws_prop."
+  },
+  {
+    "source": "cats.tex",
+    "line": 588,
+    "labels": [
+      "xca:wild-functor-isos"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_xca_wild_functor_isos"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_wild_functor_isos"
+    ],
+    "our_declarations": [
+      "functor_preserves_iso"
+    ],
+    "note": "This is direct."
+  },
+  {
+    "source": "cats.tex",
+    "line": 591,
+    "labels": [
+      "ex:functor-preorders"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_ex_functor_preorders"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_ex_functor_preorders"
+    ],
+    "our_declarations": [
+      "preorder_functor_monotone_equiv"
+    ],
+    "note": "This is ours, composed with the functor translation."
+  },
+  {
+    "source": "cats.tex",
+    "line": 595,
+    "labels": [
+      "ex:USym-functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_ex_usym_functor"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_ex_usym_functor"
+    ],
+    "our_declarations": [
+      "usym_functor"
+    ],
+    "note": "The laws are those of usym_functor, because the object and arrow actions are the same."
+  },
+  {
+    "source": "cats.tex",
+    "line": 608,
+    "labels": [
+      "ex:action-functors"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_gset_precat",
+      "blind_restrict_hom",
+      "blind_induce_hom",
+      "blind_coinduce_hom",
+      "blind_ex_action_functors"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_gset_precat",
+      "bridge_ex_action_functors"
+    ],
+    "our_declarations": [
+      "GSetWild",
+      "gset_restrict_functor",
+      "gset_induce_functor",
+      "gset_coinduce_functor"
+    ],
+    "note": "The printed example is truncated. The blind statement and ours use the same actions on arrows: restriction, set-truncation functoriality and postcomposition. These actions are ours on the nose, so the laws are ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 626,
+    "labels": [
+      "def:n-trunc-functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_truncated_universe",
+      "blind_trunc_hom",
+      "blind_ex_trunc_functor"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_truncated_universe",
+      "bridge_ex_trunc_functor"
+    ],
+    "our_declarations": [
+      "TruncatedTypeWild",
+      "TruncFunctor"
+    ],
+    "note": "The indexing is the same (Trunc k, HLevel (k+1)). The laws are TruncFunctor's."
+  },
+  {
+    "source": "cats.tex",
+    "line": 634,
+    "labels": [
+      "ex:add-remove-basepoint"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_plus_ob",
+      "blind_plus_fun",
+      "blind_plus_hom",
+      "blind_ex_plus_functor",
+      "blind_forget_functor"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_forget_functor",
+      "bridge_plus_fun_homotopy",
+      "bridge_plus_hom_path",
+      "bridge_ex_plus_functor"
+    ],
+    "our_declarations": [
+      "PlusFunctor",
+      "plus_pointed_map",
+      "plus_map_id",
+      "plus_map_comp",
+      "ForgetBasepointFunctor"
+    ],
+    "note": "The blind f_+ sends inr u to inr u, but ours sends it to inr ★. These are not definitionally equal. The two pointed maps are identified by a pointed homotopy, by case split. The functor laws are transported from ours. The functor (−)_÷ is ours by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 648,
+    "labels": [
+      "ex:loop-functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_loops_hom",
+      "blind_ex_loop_functor"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_lp_nat",
+      "bridge_lp_s1t1",
+      "bridge_lp_s2",
+      "bridge_lp_base",
+      "bridge_loop_unit_agree",
+      "bridge_loops_hom_path",
+      "bridge_ex_loop_functor"
+    ],
+    "our_declarations": [
+      "LoopFunctor",
+      "loop_functor_map",
+      "loop_conj_unit",
+      "loop_conj_unit_refl",
+      "concat_p1_1p_refl"
+    ],
+    "note": "The book leaves the pointing path of Ω k implicit. The blind statement uses ch. 4's loops_map_point, the inverse of the explicit loop_conjugate_unit. Ours (module 616) uses the inverse of the J-defined loop_conj_unit. The two 2-paths are identified by path induction and a 3-dimensional coherence at refl. This coherence uses the naturality of concat_1p, λ_refl = ρ_refl from module 281 and the typal Jβ. Then the functor laws are transported from ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 662,
+    "labels": [
+      "ex:slice-projection"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_slice_projection"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_slice_projection"
+    ],
+    "our_declarations": [
+      "slice_precat_projection"
+    ],
+    "note": "The actions on objects and arrows are the same, and the functor data are equal by refl. The blind laws are refl, as ours are."
+  },
+  {
+    "source": "cats.tex",
+    "line": 669,
+    "labels": [
+      "ex:arrow-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "BlindArrowOb",
+      "BlindArrowSq",
+      "BlindArrowHom",
+      "blind_arrow_hom_path",
+      "blind_arrow_id",
+      "blind_arrow_comp",
+      "blind_arrow_precat",
+      "blind_arrow_dom",
+      "blind_arrow_cod",
+      "blind_ex_arrow_univalent"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_arrow_ob",
+      "bridge_def_arrow_hom",
+      "BridgeArrowB",
+      "BridgeArrowO",
+      "bridge_def_arrow_comp",
+      "bridge_arrow_to",
+      "bridge_arrow_from",
+      "bridge_arrow_iso_equiv",
+      "bridge_def_arrow_dom",
+      "bridge_ex_arrow_univalent"
+    ],
+    "our_declarations": [
+      "ArrowPrecat",
+      "ArrowCategory",
+      "arrow_cat_dom",
+      "arrow_cat_comp"
+    ],
+    "note": "The objects, arrows and identities agree by refl. The composites differ only in the square proof, which is a proposition. Thus the identity functors in both directions form a strict isomorphism. Isomorphisms correspond, and our univalence transfers."
+  },
+  {
+    "source": "cats.tex",
+    "line": 692,
+    "labels": [
+      "xca:wildprecat-of-wildprecats"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_functor_id",
+      "blind_functor_comp",
+      "BlindFunctorLunit",
+      "BlindFunctorRunit",
+      "BlindFunctorAssoc",
+      "blind_xca_wildprecat_of_wildprecats",
+      "blind_wpc_of",
+      "blind_xca_wildprecat_pentagon"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_wildprecat_of_wildprecats",
+      "bridge_assoc_of",
+      "bridge_pentagon_transfer",
+      "bridge_xca_wildprecat_pentagon"
+    ],
+    "our_declarations": [
+      "functor_left_unit",
+      "functor_right_unit",
+      "functor_assoc",
+      "WildPrecatWild",
+      "wild_precat_pentagon_precategory",
+      "functor_assoc_yoneda",
+      "WildPrecatWildWith",
+      "WildPrecatWildYoneda",
+      "wild_precat_yoneda_pentagon"
+    ],
+    "note": "The statement blind_xca_wildprecat_of_wildprecats (λ, ρ, α for composition of wild functors) is bridged from module 644. The statement blind_xca_wildprecat_pentagon asks for some λ, ρ, α with pentagon fillers for all quadruples of wild functors. It is derived as bridge_xca_wildprecat_pentagon. Here λ and ρ are as before, and α is the translation of our functor_assoc_yoneda (module 693). The fillers are transported from wild_precat_yoneda_pentagon (modules 692–694, arbitrary wild C_4) by bridge_pentagon_transfer. This transfer is generic in the associator, because ap of the record translation preserves concatenation. The blind left side is bracketed (a1·a2)·a3, and ours is a1·(a2·a3). The blind statement lets the associator be chosen. Thus it is no deviation that our pentagon uses functor_assoc_yoneda and not functor_assoc."
+  },
+  {
+    "source": "cats.tex",
+    "line": 709,
+    "labels": [
+      "xca:wildcat-of-precats"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_is_precat_prop",
+      "blind_univalent_prop",
+      "blind_is_cat_prop",
+      "blind_xca_wildcat_of_precats"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_wpc_iso_to",
+      "bridge_wpc_iso_from",
+      "bridge_wpc_iso",
+      "bridge_tp",
+      "bridge_tp_inv",
+      "bridge_tc",
+      "bridge_tc_inv",
+      "bridge_xca_wildcat_of_precats"
+    ],
+    "our_declarations": [
+      "PreCatWild",
+      "CatWild",
+      "precat_wild_univalent",
+      "cat_wild_univalent"
+    ],
+    "note": "This holds for any choice of the blind laws. Isomorphisms in the blind wild precategory of wild precategories are ours up to the functor translation. Objects translate with refl round trips. Thus our univalence of PreCat and Cat transfers."
+  },
+  {
+    "source": "cats.tex",
+    "line": 721,
+    "labels": [
+      "def:full-faithful"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "BlindIsFaithful",
+      "BlindIsFull",
+      "BlindIsFullyFaithful",
+      "blind_def_fully_faithful_equiv"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-03-functors.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_ff",
+      "bridge_ff_inv",
+      "bridge_def_fully_faithful",
+      "bridge_def_fully_faithful_equiv"
+    ],
+    "our_declarations": [
+      "IsFaithful",
+      "IsFull",
+      "IsFullyFaithful",
+      "fully_faithful_equiv"
+    ],
+    "note": "Ours is faithful × full, and the blind one is full × faithful (swap equivalence). The statement blind_def_fully_faithful_equiv (bridge-03) is fully_faithful_equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 728,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_full_subcat_inclusion",
+      "blind_wip_full_subcat_inclusion_ff"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_full_subcat_inclusion",
+      "bridge_wip_full_subcat_inclusion_ff"
+    ],
+    "our_declarations": [
+      "full_subcat_inclusion",
+      "full_subcat_inclusion_fully_faithful",
+      "core_inclusion_faithful",
+      "product_projection_full"
+    ],
+    "note": "The blind file formalizes only the third claim, that inclusions are fully faithful. It is bridged from ours. Ours also formalizes the core inclusion and a projection example."
+  },
+  {
+    "source": "cats.tex",
+    "line": 741,
+    "labels": [
+      "def:nat-trans"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "BlindNatSquares",
+      "BlindNatTrans",
+      "blind_nat_squares_prop",
+      "blind_def_nat_trans_squares_prop"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-03-functors.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_nt",
+      "bridge_nt_inv",
+      "bridge_def_nat_trans",
+      "bridge_def_nat_squares",
+      "bridge_def_nat_trans_squares_prop",
+      "bridge_nat_squares_prop_from_ours"
+    ],
+    "our_declarations": [
+      "WildNatTrans",
+      "NatSquare",
+      "nat_square_prop"
+    ],
+    "note": "BlindNatTrans ≃ WildNatTrans, with refl round trips. The squares agree by refl. The blind pointwise prop claim is the hom-set property. The Π-level claim is our nat_square_prop."
+  },
+  {
+    "source": "cats.tex",
+    "line": 765,
+    "labels": [
+      "ex:pt-unpt-unit"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_ex_pt_unpt_unit"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_ex_pt_unpt_unit_components"
+    ],
+    "our_declarations": [
+      "plus_forget_unit"
+    ],
+    "note": "This is a construction. The components (inl) agree with ours by refl. The squares are refl on both sides."
+  },
+  {
+    "source": "cats.tex",
+    "line": 778,
+    "labels": [
+      "ex:path-gpd-nat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_path_functor",
+      "blind_ex_path_gpd_nat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_path_functor",
+      "bridge_ex_path_gpd_nat"
+    ],
+    "our_declarations": [
+      "path_wild_functor",
+      "path_wild_nat_trans"
+    ],
+    "note": "The map ap f is ours on the nose. The squares are ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 791,
+    "labels": [
+      "def:functor-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_path5",
+      "blind_nat_path",
+      "blind_nat_id",
+      "blind_nat_comp",
+      "blind_functor_precat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_nat_id",
+      "bridge_def_nat_comp",
+      "BridgeFP",
+      "BridgeOurFP",
+      "bridge_fp_functor",
+      "bridge_fp_functor_inv",
+      "bridge_fp_iso_equiv",
+      "bridge_functor_path_equiv"
+    ],
+    "our_declarations": [
+      "FunctorWild",
+      "FunctorPrecat",
+      "nat_trans_identity",
+      "nat_trans_compose"
+    ],
+    "note": "Identity and composite natural transformations are ours on the nose. The blind functor precategory is strictly isomorphic to ours. This isomorphism uses translation functors in both directions, and they are the identity on the nose. Thus isomorphisms correspond."
+  },
+  {
+    "source": "cats.tex",
+    "line": 804,
+    "labels": [
+      "xca:funext-nat-trans"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_xca_funext_nat_trans"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_funext_nat_trans"
+    ],
+    "our_declarations": [
+      "nat_trans_invertible_iff_components",
+      "functor_cat_iso_components",
+      "functor_cat_components_iso"
+    ],
+    "note": "Both directions follow from ours through the translation functors."
+  },
+  {
+    "source": "cats.tex",
+    "line": 810,
+    "labels": [
+      "xca:functor-cat-univalent"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_xca_functor_cat_univalent"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-03-functors.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_fp_univalent",
+      "bridge_xca_functor_cat_univalent"
+    ],
+    "our_declarations": [
+      "functor_wild_univalent"
+    ],
+    "note": "Our univalence is transferred along the strict isomorphism (bridge_fp_univalent in the core)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 817,
+    "labels": [
+      "xca:path-core-adj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_xca_path_core_adj"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_path_core_adj"
+    ],
+    "our_declarations": [
+      "path_functor_restriction_is_equiv"
+    ],
+    "note": "This is ours, composed with the functor translation (2-out-of-3)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 835,
+    "labels": [
+      "ex:repr-functors"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/03-functors.ny",
+    "blind_declarations": [
+      "blind_repr_cov",
+      "blind_repr_contra"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-03-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_repr_cov",
+      "bridge_def_repr_cov_laws",
+      "bridge_def_repr_contra",
+      "bridge_def_repr_contra_laws"
+    ],
+    "our_declarations": [
+      "covariant_representable",
+      "contravariant_representable"
+    ],
+    "note": "The blind representables land in U-small types. After the inclusion, they have our actions and literally our laws."
+  },
+  {
+    "source": "cats.tex",
+    "line": 874,
+    "labels": [
+      "def:adjunction"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "BlindAdjTranspose",
+      "BlindAdjNatIso",
+      "BlindAdjoint",
+      "BlindAdjunction",
+      "BlindRightAdjoint",
+      "blind_adj_unit",
+      "blind_adj_counit"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-04-adjunctions.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_radj",
+      "bridge_radj_inv",
+      "bridge_def_right_adjoint",
+      "bridge_def_adj_unit",
+      "bridge_def_adj_counit",
+      "bridge_def_adjunction"
+    ],
+    "our_declarations": [
+      "RightAdjointData",
+      "WildAdjunction",
+      "adjunction_unit",
+      "adjunction_counit"
+    ],
+    "note": "Both encode α as componentwise isomorphisms of U with naturality in each variable separately (orientation of def:nat-trans). BlindRightAdjoint ≃ RightAdjointData. The blind left naturality takes (c c' d f), and ours takes (c c' f d). The units and counits agree by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 913,
+    "labels": [
+      "xca:adj-triangles"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_xca_adj_triangles"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_xca_adj_triangles"
+    ],
+    "our_declarations": [
+      "adjunction_triangle_left",
+      "adjunction_triangle_right"
+    ],
+    "note": "This is direct through the record translation."
+  },
+  {
+    "source": "cats.tex",
+    "line": 924,
+    "labels": [
+      "xca:adj-from-triangles"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_xca_adj_from_triangles"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_triangle_data",
+      "bridge_xca_adj_from_triangles"
+    ],
+    "our_declarations": [
+      "adjunction_from_triangles",
+      "UnitCounitAdjunction"
+    ],
+    "note": "Our adjunction_from_triangles has the transposition G(f) ∘ η_c, as in the blind statement. Its fields give the blind natural isomorphism."
+  },
+  {
+    "source": "cats.tex",
+    "line": 934,
+    "labels": [
+      "ex:trunc-adj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_ex_trunc_adj"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_ex_trunc_adj"
+    ],
+    "our_declarations": [
+      "trunc_right_adjoint",
+      "TruncAdjunction"
+    ],
+    "note": "Our transposition is precomposition with the unit. The blind statement assumes the laws of the truncation functor. The field types do not involve these laws."
+  },
+  {
+    "source": "cats.tex",
+    "line": 946,
+    "labels": [
+      "ex:pt-unpt-adj"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_ex_pt_unpt_adj_corrected"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_ex_pt_unpt_adj_corrected"
+    ],
+    "our_declarations": [
+      "PlusForgetAdjunction",
+      "plus_forget_right_adjoint"
+    ],
+    "note": "The printed statement (A_+ →* X) ≃ (A → X_÷) with A : U_*, X : U is ill-typed, because X_÷ is undefined for X : U. Thus it cannot be stated or refuted. Both sides read it with the roles swapped, and our inv note says the same. For the corrected statement, transpose_iso and right naturality are ours. Left naturality is refl, because the blind f_+ differs from ours only away from inl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 957,
+    "labels": [
+      "ex:Sigma-Pi-adj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_family_set_precat",
+      "blind_family_wild_precat",
+      "blind_set_pullback",
+      "BlindSetLowerSum",
+      "blind_set_lower_ob",
+      "blind_set_lower_hom",
+      "blind_set_upper_ob",
+      "blind_set_upper",
+      "blind_type_pullback",
+      "blind_type_lower",
+      "blind_type_upper",
+      "blind_ex_sigma_pi_adj_sets",
+      "blind_ex_sigma_pi_adj_types",
+      "blind_sigma_functor",
+      "blind_const_functor",
+      "blind_pi_functor",
+      "blind_ex_sigma_pi_adj_terminal"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_def_family_set_precat",
+      "bridge_def_family_wild_precat",
+      "bridge_ex_sigma_pi_adj_sets",
+      "bridge_ex_sigma_pi_adj_types",
+      "bridge_ex_sigma_pi_adj_terminal"
+    ],
+    "our_declarations": [
+      "set_family_sum_adjunction",
+      "set_family_product_adjunction",
+      "family_sum_adjunction",
+      "family_product_adjunction",
+      "family_total_adjunction",
+      "family_pi_adjunction"
+    ],
+    "note": "Families of sets/types and f^*, f_!, f_* agree with ours on objects and arrows by refl. The blind Σ-packaged adjunctions are the fields of ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1000,
+    "labels": [
+      "rem:adj-in-posets"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/04-adjunctions.ny",
+    "blind_declarations": [
+      "blind_rem_adj_in_posets",
+      "BlindFrac",
+      "blind_frac_le",
+      "blind_int_to_frac",
+      "blind_rem_adj_floor_ceil",
+      "blind_sub_exists",
+      "blind_sub_forall",
+      "blind_sub_pullback",
+      "blind_rem_adj_subsets"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-04-adjunctions.ny",
+    "bridge_declarations": [
+      "bridge_rem_adj_in_posets",
+      "bridge_def_frac_le",
+      "bridge_rem_adj_floor_ceil",
+      "bridge_rem_adj_subsets"
+    ],
+    "our_declarations": [
+      "preorder_adjunction_iff",
+      "preorder_right_adjoint_from_iff",
+      "frac_floor_iff",
+      "frac_ceiling_iff",
+      "subtype_exists_preimage_iff",
+      "subtype_preimage_forall_iff",
+      "rational_floor_right_adjoint"
+    ],
+    "note": "Both directions of (1) follow from ours. The blind fractions with the cross-multiplied order are ours (Frac, FracLe) on the nose. The maps ⌈−⌉, ⌊−⌋ with their biimplications are ours (module 611). Ours also descends to the posetal reflection ℚ (module 612). The adjunctions ∃_f ⊣ f^* ⊣ ∀_f are ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1029,
+    "labels": [
+      "def:yoneda"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_psh",
+      "blind_yo_ob",
+      "blind_yo_hom",
+      "blind_yoneda"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-05-yoneda.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_psh",
+      "bridge_def_yo_ob",
+      "bridge_def_yo_hom",
+      "bridge_def_yoneda"
+    ],
+    "our_declarations": [
+      "PresheafCategory",
+      "representable_presheaf",
+      "yoneda_nat_trans",
+      "yoneda_functor"
+    ],
+    "note": "The core translates blind presheaves to ours. Representables and yo on arrows agree on the nose. The blind yo followed by the translation has our functor data."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1046,
+    "labels": [
+      "thm:yoneda-lemma"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_yoneda_hom_set",
+      "blind_yoneda_eval",
+      "blind_thm_yoneda_lemma"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "BridgeBX",
+      "BridgeOX",
+      "bridge_nt_set_iso",
+      "bridge_thm_yoneda_lemma"
+    ],
+    "our_declarations": [
+      "yoneda_lemma_set_iso",
+      "yoneda_natural_in_presheaf",
+      "yoneda_natural_in_object"
+    ],
+    "note": "Part (1) is ours, composed in Set with the iso of hom-sets that the record translation gives. Parts (2) and (3) are ours, precomposed with the translation, with the same squares."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1056,
+    "labels": [
+      "cor:yo-ff"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_cor_yo_ff"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "bridge_cor_yo_ff"
+    ],
+    "our_declarations": [
+      "yoneda_fully_faithful",
+      "fully_faithful_equiv"
+    ],
+    "note": "The blind arrow maps are ours, followed by the inverse translation (2-out-of-3)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1061,
+    "labels": [
+      "cor:yo-emb-obj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_cor_yo_emb_obj"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "bridge_yo_fiber_equiv",
+      "bridge_cor_yo_emb_obj"
+    ],
+    "our_declarations": [
+      "yoneda_object_embedding"
+    ],
+    "note": "The fibers of the blind object map are equivalent to ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1067,
+    "labels": [
+      "def:repr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "BlindRepresentation",
+      "BlindIsRepr"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-05-yoneda.ny",
+      "chapters/ch06/blind/bridge-07-rezk.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_representation",
+      "bridge_repr_to",
+      "bridge_repr_from"
+    ],
+    "our_declarations": [
+      "IsRepresentable",
+      "MerelyRepresentable"
+    ],
+    "note": "The blind statement is ambiguous between a Σ-type and mere existence. Both sides resolve this ambiguity in the same way. BlindRepresentation ≃ IsRepresentable (Σ), and BlindIsRepr ↔ MerelyRepresentable (mere, used for L(C)). The maps are in bridge-07."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1074,
+    "labels": [
+      "cor:repr-prop"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_cor_repr_prop"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "bridge_cor_repr_prop"
+    ],
+    "our_declarations": [
+      "representability_prop"
+    ],
+    "note": "This follows via the Σ-type equivalence."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1082,
+    "labels": [
+      "lem:adj-via-repr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_hom_from_functor",
+      "blind_lem_adj_via_repr"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "bridge_adj_repr_data",
+      "BridgeBlindExt",
+      "bridge_blind_ext_prop",
+      "bridge_lem_adj_via_repr"
+    ],
+    "our_declarations": [
+      "adjunction_via_representability",
+      "AdjunctionExtension",
+      "AdjRepresentingData"
+    ],
+    "note": "The blind version has D a precategory, Set-valued presheaves and naturality in d pointwise. Ours has D wild, U-valued presheaves and naturality as identifications of functions. The blind isomorphisms give our data, with componentwise invertibility via the funext-nat-trans bridge. The blind type of extensions is a retract of ours, because the fibers are propositions. Thus it is contractible. Ours is more general."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1094,
+    "labels": [
+      "cor:adj-unique"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/05-yoneda.ny",
+    "blind_declarations": [
+      "blind_cor_adj_unique"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-05-yoneda.ny",
+    "bridge_declarations": [
+      "bridge_cor_adj_unique"
+    ],
+    "our_declarations": [
+      "right_adjoint_data_prop"
+    ],
+    "note": "This follows via bridge_def_right_adjoint."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1101,
+    "labels": [
+      "def:cat-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "BlindIsCatEquiv",
+      "BlindCatEquiv"
+    ],
+    "bridge_file": [
+      "chapters/ch06/blind/bridge-00-core.ny",
+      "chapters/ch06/blind/bridge-06-equivalences.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_ce",
+      "bridge_ce_inv",
+      "bridge_def_cat_equiv",
+      "bridge_def_cat_equivalence",
+      "bridge_ce_inv_map"
+    ],
+    "our_declarations": [
+      "IsCatEquivalence",
+      "CatEquivalence"
+    ],
+    "note": "The packaging is the same: right adjoint data with a componentwise invertible unit and counit. The equivalences have refl round trips."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1110,
+    "labels": [
+      "lem:cat-equiv-is-prop"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_lem_cat_equiv_is_prop"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_lem_cat_equiv_is_prop"
+    ],
+    "our_declarations": [
+      "is_cat_equivalence_prop"
+    ],
+    "note": "Ours (D any wild precategory) is transferred."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1120,
+    "labels": [
+      "lem:cat-equiv-ff"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_lem_cat_equiv_ff"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_lem_cat_equiv_ff"
+    ],
+    "our_declarations": [
+      "cat_equivalence_ff"
+    ],
+    "note": "This is direct."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1124,
+    "labels": [
+      "def:functor-split-eso"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "BlindIsSplitEso",
+      "BlindIsEso"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_split_eso",
+      "bridge_def_eso"
+    ],
+    "our_declarations": [
+      "IsSplitEso",
+      "IsEso"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1134,
+    "labels": [
+      "lem:equiv-precat-is-ff-split-eso"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_lem_equiv_precat_is_ff_split_eso"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_ff_se_swap",
+      "bridge_lem_equiv_precat_is_ff_split_eso"
+    ],
+    "our_declarations": [
+      "cat_equivalence_ff_split_eso_equiv",
+      "cat_equivalence_to_ff_split_eso",
+      "cat_equivalence_split_eso"
+    ],
+    "note": "The blind map (ff(e), d ↦ (G d, ε_d)) is ours (cat_equivalence_to_ff_split_eso), conjugated by the translations. Its BookIsEquiv is ours, composed with two equivalences."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1151,
+    "labels": [
+      "lem:ff-eso"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_lem_ff_eso"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_lem_ff_eso"
+    ],
+    "our_declarations": [
+      "ff_iso_fiber_prop"
+    ],
+    "note": "Ours (D wild) is transferred."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1161,
+    "labels": [
+      "thm:ff-eso-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_thm_ff_eso_equiv"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_ce_fiber_equiv",
+      "bridge_mere_map",
+      "bridge_thm_ff_eso_equiv"
+    ],
+    "our_declarations": [
+      "cat_equivalence_projection_injective",
+      "cat_equivalence_projection_image"
+    ],
+    "note": "The fibers of the blind projection BlindCatEquiv → functors are equivalent to ours. Injectivity and the image characterization transfer."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1170,
+    "labels": [
+      "cor:Cat-ua"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_id_iso_proof",
+      "blind_id_fun_iso",
+      "blind_id_cat_equiv",
+      "blind_idtoeqv_cat",
+      "blind_cor_cat_ua"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_cat_ua_equiv",
+      "bridge_cat_ua_base",
+      "bridge_cat_ua_homotopy",
+      "bridge_cor_cat_ua"
+    ],
+    "our_declarations": [
+      "category_path_equiv",
+      "category_path_to_equivalence",
+      "cat_equivalence_identity"
+    ],
+    "note": "The blind idtoeqv (J on BlindCat) is homotopic to ours, conjugated by the translations. The proof uses J and both typal β-rules. Ours is an equivalence, so the blind map is also an equivalence."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1183,
+    "labels": [
+      "cor:cat-2-type"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_cor_cat_2_type"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_cor_cat_2_type"
+    ],
+    "our_declarations": [
+      "category_type_two_truncated"
+    ],
+    "note": "Ours is transported along BlindCat ≃ Category."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1195,
+    "labels": [
+      "def:we-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "BlindIsWeakEquiv"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_we",
+      "bridge_we_inv"
+    ],
+    "our_declarations": [
+      "IsWeakEquivalence"
+    ],
+    "note": "The two are the same up to the full/faithful swap."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1202,
+    "labels": [
+      "lem:precomp-equiv-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/06-equivalences.ny",
+    "blind_declarations": [
+      "blind_whisker",
+      "blind_precomp_functor",
+      "blind_lem_precomp_equiv_cat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-06-equivalences.ny",
+    "bridge_declarations": [
+      "bridge_precomp_ff",
+      "bridge_precomp_split_eso",
+      "bridge_lem_precomp_equiv_cat"
+    ],
+    "our_declarations": [
+      "precomposition_cat_equivalence",
+      "precomposition_functor",
+      "cat_equivalence_to_ff_split_eso",
+      "ff_split_eso_is_cat_equivalence"
+    ],
+    "note": "The blind precomposition functor is ours, conjugated by the strict isomorphisms of functor precategories. Full faithfulness and split essential surjectivity transfer from ours, and they give the equivalence."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1227,
+    "labels": [
+      "def:Rezk-completion"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "blind_rezk",
+      "blind_rezk_eta",
+      "blind_def_rezk_is_category"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "BridgeBR",
+      "BridgeOR",
+      "bridge_rezk_univalent",
+      "bridge_def_rezk_is_category",
+      "BridgeBRC",
+      "bridge_rezk_functor",
+      "bridge_rezk_obj_inv",
+      "bridge_rezk_obj_equiv",
+      "bridge_rezk_functor_ff",
+      "bridge_rezk_functor_eso",
+      "bridge_rezk_equivalence",
+      "bridge_rezk_path",
+      "bridge_rezk_unit_obj"
+    ],
+    "our_declarations": [
+      "RezkCompletion",
+      "MerelyRepresentable",
+      "rezk_unit",
+      "functor_wild_univalent",
+      "full_subcat_univalent",
+      "ff_eso_is_cat_equivalence",
+      "category_path_from_equivalence"
+    ],
+    "note": "Both take isRepr as mere representability. The record translation gives a fully faithful, essentially surjective functor T : L_blind(C) → L(C). Thus T is an equivalence and gives an identification of categories. The blind η followed by T is our rezk_unit, with objects up to the propositional proof. The univalence of the blind L(C) (a prose claim) comes from ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1238,
+    "labels": [
+      "thm:Rezk-completion"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "BlindIsEssUSmall",
+      "blind_thm_rezk_completion"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_rezk_eta_we",
+      "bridge_rezk_ess_small",
+      "bridge_thm_rezk_completion"
+    ],
+    "our_declarations": [
+      "rezk_unit_weak_equivalence",
+      "rezk_unit_eso",
+      "rezk_completion_essentially_small"
+    ],
+    "note": "Full faithfulness is ours for yo (cor:yo-ff bridge). Essential surjectivity holds by definition on both sides. Smallness is ours, transported along T. Both sides state Replacement explicitly."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1260,
+    "labels": [
+      "xca:Rezk-completion-locally-small"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "blind_xca_rezk_locally_small"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_xca_rezk_locally_small"
+    ],
+    "our_declarations": [
+      "rezk_completion_locally_essentially_small",
+      "rezk_completion_locally_small"
+    ],
+    "note": "The blind statement derives essential local smallness from local smallness. Ours gives it, and also the strict version."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1269,
+    "labels": [
+      "thm:1types-are-groupoids"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "BlindOneTypes",
+      "BlindGpd",
+      "BlindPathGpdProofs",
+      "blind_thm_1types_are_groupoids"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_tgpd",
+      "bridge_def_gpd",
+      "bridge_path_gpd_proofs",
+      "bridge_thm_1types_are_groupoids"
+    ],
+    "our_declarations": [
+      "one_types_functor_groupoid_projection",
+      "one_types_groupoids_is_equiv",
+      "path_gpd",
+      "Gpd"
+    ],
+    "note": "Both parts are ours, composed with record translations (BlindGpd ≃ Gpd)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1309,
+    "labels": [
+      "xca:Rezk-completion-1trunc"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "blind_wild_of_str",
+      "blind_xca_rezk_1trunc"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_trunc_path_precat",
+      "bridge_xca_rezk_1trunc"
+    ],
+    "our_declarations": [
+      "TruncPathWild",
+      "trunc_path_comp_compute",
+      "trunc_path_invertible",
+      "trunc_path_rezk_path",
+      "category_path_to_equivalence"
+    ],
+    "note": "The structure is ours, with |refl| and |p·q| by refl. Invertibility is ours. The equivalence comes from L_blind = L (via T) and from our L(TruncPath A) = path groupoid of ‖A‖₁."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1330,
+    "labels": [
+      "def:flagged-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "BlindFlCat"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_tfl",
+      "bridge_def_flagged_cat"
+    ],
+    "our_declarations": [
+      "FlCat"
+    ],
+    "note": "BlindFlCat ≃ FlCat with refl round trips."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1357,
+    "labels": [
+      "thm:flagged-cat-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "blind_thm_flagged_cat_equiv"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_rezk_obj_surjective",
+      "bridge_blind_flag",
+      "bridge_flag_homotopy",
+      "bridge_thm_flagged_cat_equiv"
+    ],
+    "our_declarations": [
+      "precat_flagged_equiv",
+      "rezk_flag",
+      "flagged_path_from_equivalence",
+      "eso_univalent_obj_surjective"
+    ],
+    "note": "Both read 'a category C' as a precategory. The blind map is homotopic to ours (rezk_flag), conjugated by the translations. The homotopy uses flagged_path_from_equivalence along T. Ours is an equivalence."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1391,
+    "labels": [
+      "rem:chicken-or-egg"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/07-rezk.ny",
+    "blind_declarations": [
+      "blind_rem_chicken_or_egg"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-07-rezk.ny",
+    "bridge_declarations": [
+      "bridge_cat_fiber_equiv",
+      "bridge_rem_chicken_or_egg"
+    ],
+    "our_declarations": [
+      "category_precat_embedding",
+      "rezk_completion_retraction"
+    ],
+    "note": "Embedding: the fibers are translated. Retraction: the identification blind L(C) = our L(C) (via T) is concatenated with our rezk_completion_retraction."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1432,
+    "labels": [
+      "def:prod-in-a-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "BlindCone",
+      "BlindConeHom",
+      "BlindIsProductCone",
+      "BlindProductCone"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_def_cone",
+      "bridge_def_cone_hom",
+      "bridge_product_to_blind",
+      "bridge_product_from_blind",
+      "bridge_blind_product_prop",
+      "bridge_def_is_product_cone",
+      "bridge_def_product_cone"
+    ],
+    "our_declarations": [
+      "CatCone",
+      "ConeFactorization",
+      "IsProductCone",
+      "ProductCone"
+    ],
+    "note": "Cones and cone arrows are ours by refl. IsProductCone differs by currying and by BookIsContr versus isContr, which are equivalent propositions."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1441,
+    "labels": [
+      "xca:product-cone-prop"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "blind_xca_product_cone_prop"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_xca_product_cone_prop"
+    ],
+    "our_declarations": [
+      "product_cone_prop"
+    ],
+    "note": "This follows via the equivalence of product-cone types."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1459,
+    "labels": [
+      "def:product-cones-as-terminal"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "blind_cone_hom_path",
+      "blind_cone_leg",
+      "blind_cone_comp",
+      "blind_cone_id",
+      "blind_cone_precat",
+      "blind_rem_product_cones_as_terminal"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_rem_product_cones_as_terminal"
+    ],
+    "our_declarations": [
+      "product_cone_is_terminal_cone",
+      "cone_precat_wild"
+    ],
+    "note": "The blind cone precategory has our arrows. Both directions follow from ours."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1486,
+    "labels": [
+      "def:coprod-in-a-cat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "BlindCocone",
+      "BlindIsCoproductCocone",
+      "BlindCoproductCocone"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_def_cocone",
+      "bridge_def_is_coproduct_to_blind",
+      "bridge_def_is_coproduct_from_blind"
+    ],
+    "our_declarations": [
+      "CatCocone",
+      "CoconeFactorization",
+      "IsCoproductCocone"
+    ],
+    "note": "The two are the same up to currying and BookIsContr versus isContr, with maps in both directions. The book's reference to the product figure is a typo, and both sides note it."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1511,
+    "labels": [
+      "def:pullback"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "BlindPullback",
+      "blind_pullback_pr1",
+      "blind_pullback_pr2"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_def_pullback"
+    ],
+    "our_declarations": [
+      "TypePullback",
+      "pullback_proj_left",
+      "pullback_proj_right"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1529,
+    "labels": [
+      "xca:univpropofpullback"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "blind_xca_univpropofpullback_corrected"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_xca_univpropofpullback_corrected"
+    ],
+    "our_declarations": [
+      "pullback_universal_property",
+      "pullback_gap_map"
+    ],
+    "note": "The printed map a ↦ (f(a), g(a), p(a)) is ill-typed, so the literal statement cannot be stated or refuted. The corrected statement (β(a), γ(a), happly p a) is ours on the nose."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1558,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch06/blind/08-limits.ny",
+    "blind_declarations": [
+      "blind_ex_preimage_pullback"
+    ],
+    "bridge_file": "chapters/ch06/blind/bridge-08-limits.ny",
+    "bridge_declarations": [
+      "bridge_ex_preimage_pullback"
+    ],
+    "our_declarations": [
+      "pullback_point_fiber_equiv"
+    ],
+    "note": "The printed Σ_{b:B} is a typo for Σ_{c:C}, and both sides read it that way. The statement is ours on the nose."
+  }
+]

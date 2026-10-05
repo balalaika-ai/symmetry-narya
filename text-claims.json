@@ -7456,5 +7456,1546 @@
       "fermat_little_theorem"
     ],
     "note": "For p = m+1: Card(Σ_g X^g) = n^p + n·m (fermat_fixed_points_count, by separation of refl). This equals Card(X/C_p) × p by burnside_lemma and Card(C_p) = p (fermat_burnside_equation). fermat_divides_from_count derives p | n^p ∸ n with n ≤ n^p."
+  },
+  {
+    "source": "cats.tex",
+    "line": 7,
+    "quote": "We have seen that many types carry a notion of morphism between its elements: ... In all those cases, we have notions of identity morphism and composition of morphisms.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "TypeWild",
+      "PathWild",
+      "PointedWild",
+      "FamilyWild",
+      "GroupWild",
+      "GSetWild"
+    ],
+    "note": "Functions, identifications, pointed maps, fiberwise maps, group homomorphisms and maps of G-sets have identities and composition. The formalization packages them as the wild precategories TypeWild, PathWild X, PointedWild, FamilyWild X, GroupWild and GSetWild G. The last one is FamilySetWild BG, and its arrows are by refl the chapter-5 GSetHom. The \\wip item on cycles is not part of the text."
+  },
+  {
+    "source": "cats.tex",
+    "line": 23,
+    "quote": "taking underlying symmetries in groups, USym : Group → Set, comes with ... USym : Hom(G,H) → (USym G → USym H) satisfying USym(id_G) = id_{USym G} and USym(ψ∘φ) = USym ψ ∘ USym φ",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "usym_functor",
+      "usym_hom",
+      "usym_hom_id",
+      "usym_hom_compose"
+    ],
+    "note": "The claim is usym_hom (chapter 4) with usym_hom_id and usym_hom_compose. Together they form the functor usym_functor : GroupWild → SetWild (ex:USym-functor)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 50,
+    "quote": "prepare for the main result of the next chapter, ch:absgroup, which is to give an equivalence of categories between the categories of concrete and abstract groups",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a forward reference to chapter 7. Chapter 7 proves the equivalence with GroupCat (module 686) and the equivalence criteria of this chapter (ff_eso_is_cat_equivalence, cat_equivalence_from_nat_isos)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 62,
+    "quote": "we have already seen some examples of adjunctions, for example in xca:adjunction-_!-^*, xca:adjunction-^*-_*",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gset_induce_restrict_adjunction",
+      "gset_restrict_coinduce_adjunction"
+    ],
+    "note": "The bijections of xca:adjunction-_!-^* and xca:adjunction-^*-_* are the transpositions of the adjunctions f_! ⊣ f^* and f^* ⊣ f_* between GSetCat G and GSetCat H (module 690). These adjunctions are instances of the family-of-sets adjunctions of module 664."
+  },
+  {
+    "source": "cats.tex",
+    "line": 65,
+    "quote": "We have also seen an incarnation of the Yoneda lemma in xca:TTYoneda; in sec:yoneda we treat the O.G. version.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "type_theoretic_yoneda",
+      "yoneda_lemma"
+    ],
+    "note": "This is an analogy between the type-theoretic Yoneda lemma (module 95) and the categorical one (module 622). It is not a precise statement."
+  },
+  {
+    "source": "cats.tex",
+    "line": 72,
+    "quote": "We end with a brief introduction to monoidal categories in sec:monoidal-cats, as we'll see in ch:abelian that abelian groups form an example.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The section on monoidal categories is empty at the pinned commit. It has only LaTeX comments. The abelian-group example is a forward reference to chapter 12."
+  },
+  {
+    "source": "cats.tex",
+    "line": 77,
+    "quote": "As mentioned above, many types come equipped with notion of \\emph{morphism} or \\emph{arrow} between its elements which is more general than identification or \\emph{isomorphism}. For instance we have type of functions $A \\to B$ for $A,B:\\UU$ and the type of pointed functions $A \\ptdto B$ for $A,B:\\UUp$. There are identity morphisms and composition of morphisms,",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "TypeWild",
+      "PointedWild"
+    ],
+    "note": "The claim is about identities and composition of functions and of pointed functions. The formalization organises them as the wild precategories TypeWild and PointedWild."
+  },
+  {
+    "source": "cats.tex",
+    "line": 178,
+    "quote": "However, when the types of morphisms $\\hom(A,B)$ are \\emph{sets}, then the types of $\\lambda$, $\\rho$, and $\\alpha$ are propositions, so any coherence conditions are automatically fulfilled.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "precat_left_unit_prop",
+      "precat_right_unit_prop",
+      "precat_assoc_prop",
+      "precat_assoc_law_prop",
+      "precat_unit_coherence",
+      "precat_triangle_coherence",
+      "precat_pentagon"
+    ],
+    "note": "The families of λ, ρ and α are propositions when the hom types are sets. The coherences of rem:wild hold in every precategory. These coherences are λ = ρ at identities, the triangle and the pentagon."
+  },
+  {
+    "source": "cats.tex",
+    "line": 189,
+    "quote": "Most (wild) precategories we shall meet satisfy a further condition that makes them better behaved than arbitrary precategories: a \\emph{univalence} condition.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the motivation for def:univalent-cat."
+  },
+  {
+    "source": "cats.tex",
+    "line": 192,
+    "quote": "In fact, for the wild precategory of types and functions, this condition is exactly the Univalence Axiom (\\cref{def:univalence})!",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "UnivalenceStatement",
+      "type_idtoiso_triangle",
+      "type_wild_univalent_to_univalence",
+      "univalence_to_type_wild_univalent",
+      "type_wild_univalent_iff_univalence",
+      "univalence_statement_holds",
+      "type_wild_univalent"
+    ],
+    "note": "For TypeWild, idtoiso followed by the comparison of isomorphisms with equivalences is ptoe (transport_equiv). Thus the univalence of TypeWild is equivalent to the statement that p ↦ ptoe(p) is an equivalence (2-out-of-3, module 151). The equivalence type is the native Equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 218,
+    "quote": "The type $\\isIso(f)$ is indeed a proposition,\\footnote{This follows just as for functions: If $f$ is an isomorphism, then each factor in the product is contractible, as, e.g., $\\sum_{g:B\\to A}f\\circ g\\eqto\\id_B$ is the fiber of $f\\circ\\blank : (B \\to A) \\to (B \\to B)$ at $\\id_B$, and all functions $f\\circ\\blank$ and $\\blank\\circ f$ are equivalences of types using the data that makes $f$ an isomorphism along with $\\lambda$, $\\rho$, and $\\alpha$.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cat_is_iso_prop",
+      "cat_is_iso_contractible",
+      "cat_postcompose_equiv",
+      "cat_precompose_equiv"
+    ],
+    "note": "This is the chapter-6 core (module 600). The proof follows the footnote exactly."
+  },
+  {
+    "source": "cats.tex",
+    "line": 227,
+    "quote": "and every identity arrow is an isomorphism. We write $\\inv f$ for the inverse of an isomorphism $f$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cat_identity_is_iso",
+      "cat_identity_iso",
+      "cat_iso_inverse"
+    ],
+    "note": "This is the chapter-6 core (module 600). The inverse of an isomorphism is cat_iso_inverse."
+  },
+  {
+    "source": "cats.tex",
+    "line": 242,
+    "quote": "Now we are ready to restate the examples mentioned in the introduction to the chapter. In each case we leave it to the reader to supply most of the data.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text introduces the list of examples. The claims below supply the data."
+  },
+  {
+    "source": "cats.tex",
+    "line": 246,
+    "quote": "The \\emph{wild category of types} (in universe $\\UU$) has $\\UU$ as its type of objects, and the function type $A \\to B$ as its type of arrows for $A,B :\\UU$. It is univalent by the Univalence Axiom.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "TypeWild",
+      "type_wild_univalent",
+      "TypeWildCategory",
+      "type_iso_equiv"
+    ],
+    "note": "This is the chapter-6 core (module 601). The universe is Narya's Type. TypeWildIn (module 606) is the version for a universe that a smallness predicate gives."
+  },
+  {
+    "source": "cats.tex",
+    "line": 250,
+    "quote": "The \\emph{wild category of pointed types} (in a universe $\\UU$) has $\\UUp$ as its type of objects, and the type of pointed maps $A \\ptdto B$ as its type of arrows.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "PointedWild",
+      "pointed_wild_univalent",
+      "PointedWildCategory",
+      "pointed_iso_book_equiv"
+    ],
+    "note": "The book calls it a wild category, so it is univalent. The formalization proves this. Isomorphisms of pointed types are the pointed maps whose underlying map is an equivalence. The type of pointed equivalences out of X is contractible (module 162)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 253,
+    "quote": "The \\emph{wild category of families} over a given type $X$ has $X \\to \\UU$ as its type of objects, and the type of fiberwise maps $(X \\to_B Y) \\defeq \\prod_{b:B}X(b) \\to Y(b)$ as its type of arrows.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "FamilyWild",
+      "family_wild_univalent",
+      "FamilyWildCategory",
+      "family_iso_fiberwise_equiv",
+      "family_fiberwise_equiv_iso",
+      "family_litmus_family",
+      "family_litmus_map",
+      "family_litmus_composite",
+      "family_litmus_is_iso",
+      "family_litmus_path"
+    ],
+    "note": "Module 604 defines FamilyWild, its univalence and FamilyWildCategory. Modules 662-664 use them again. Module 662 adds litmus checks: fiberwise negation is an iso, and it gives an identification of families. The book's formula mixes the names of the base and of the families."
+  },
+  {
+    "source": "cats.tex",
+    "line": 258,
+    "quote": "The \\emph{category of sets} has $\\Set$ as its type of objects, and the function type $A \\to B$ as its type of arrows. It's a category since each type $A\\to B$ is a set, and it's univalent.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "SetCat",
+      "SetWild",
+      "set_wild_homset",
+      "full_subcat_univalent"
+    ],
+    "note": "This is the chapter-6 core (module 601)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 262,
+    "quote": "The category of groups has Group as its type of objects, and the homomorphism type (G → H) ≔ Hom(G,H) as its type of arrows.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "GroupWild",
+      "group_wild_homset",
+      "group_wild_univalent",
+      "GroupCat",
+      "group_iso_cat_iso_equiv"
+    ],
+    "note": "The formalization gives GroupCat : Category. Its hom-sets come from lem:hom-is-set (group_hom_set). Its univalence comes from Id Group G H ≃ GroupIso G H (module 402) together with group_iso_cat_iso_equiv. The latter says that group isomorphisms are exactly the categorical isomorphisms."
+  },
+  {
+    "source": "cats.tex",
+    "line": 266,
+    "quote": "The category of G-sets, for a group G, has GSet as its type of objects, and the type of morphisms of G-sets Hom_G(X,Y) as its type of arrows.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "GSetWild",
+      "GSetCat",
+      "gset_cat_objects",
+      "gset_cat_homs",
+      "gset_cat_compose",
+      "family_set_univalent"
+    ],
+    "note": "GSetCat G : Category is FamilySetCategory (BG G .carrier). By refl, its objects are GSet G, its arrows are GSetHom G X Y and its composition is gset_hom_compose. It is univalent because (X = Y) ≃ ∏_z (X z ≃ Y z) ≃ (X ≅ Y) (family_set_univalent)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 270,
+    "quote": "Note that the category of sets sits inside the wild category of types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "SetWild",
+      "FullSubcat",
+      "full_subcat_inclusion",
+      "set_inclusion_fully_faithful",
+      "set_inclusion_objects_embedding"
+    ],
+    "note": "SetWild is the full subcategory of TypeWild on the sets. The inclusion functor is fully faithful (full_subcat_inclusion, set_inclusion_fully_faithful: modules 620 and 627). It is also an injection on objects (module 618)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 283,
+    "quote": "By the univalence condition, in a category each identity type $A \\eqto B$ is equivalent to the set $A \\isoto B$, and is hence a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cat_idtoiso_equiv",
+      "cat_iso_set",
+      "category_objects_groupoid"
+    ],
+    "note": "This is the chapter-6 core (module 600)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 290,
+    "quote": "And important special case is when each arrow type $A \\to B$ is a \\emph{proposition}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text introduces ex:poset."
+  },
+  {
+    "source": "cats.tex",
+    "line": 331,
+    "quote": "There's no conflict with the terminology introduced in~\\cref{sec:props-sets-grpds}, because this construction gives an equivalence from the type of $1$-types (in $\\UU$) to the type of groupoids (in $\\UU$), as we shall see below in~\\cref{thm:1types-are-groupoids}.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "path_groupoid_of_groupoid"
+    ],
+    "note": "This is a forward reference. The equivalence is thm:1types-are-groupoids (modules 670–677). Here the book cites only the construction 1-type ↦ groupoid (path_groupoid_of_groupoid, core)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 336,
+    "quote": "\\Cref{def:wild-cat,def:precategory,def:category,def:wild-pre-groupoid} are summarized as a diagram of inclusions in~\\cref{fig:cat-summary}.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "category_precat",
+      "category_wild_category",
+      "groupoid_cat_category"
+    ],
+    "note": "The inclusions of the cube are forgetful maps between the record types. They are projections of .wild and of the property fields. The named ones are core. The figure itself is a picture."
+  },
+  {
+    "source": "cats.tex",
+    "line": 396,
+    "quote": "Many notions in category theory work already at the level of wild categories, [...] but a notable exception is the construction of slice categories, (also known as \\emph{over categories}).",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "coherent_wild_slice",
+      "WildRightTriangleFiller",
+      "WildTriangleCoherence",
+      "WildPentagon",
+      "slice_precat_wild"
+    ],
+    "note": "We show that the slice of a wild precategory is a wild precategory when the pentagon and two unit-triangle coherences are given. We also show that slices of precategories always exist. The negative claim is that slices cannot be built for arbitrary wild precategories. This claim is a meta-statement and is not formalized."
+  },
+  {
+    "source": "cats.tex",
+    "line": 397,
+    "quote": "They \\emph{all} work at the level of $(\\infty,1)$-categories.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text refers to (∞,1)-category theory (Lurie, Land). The book itself notes that the definition of (∞,1)-categories in this type theory is an open problem."
+  },
+  {
+    "source": "cats.tex",
+    "line": 439,
+    "quote": "Many concepts that we introduced in~\\cref{ch:univalent-mathematics} for the wild category of types make sense in arbitrary wild precategories.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text introduces section 6.3."
+  },
+  {
+    "source": "cats.tex",
+    "line": 452,
+    "quote": "The unit type $\\bn 1$ is a terminal object in the wild category of types, and in the category of sets,",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "unit_terminal_type",
+      "unit_set_object",
+      "unit_terminal_set",
+      "type_wild_terminal_contractible",
+      "unit_terminal_map_value",
+      "empty_not_terminal_type"
+    ],
+    "note": "The clause on the trivial group in the category of groups is a separate record (trivial_group_terminal/trivial_group_initial, module 688)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 454,
+    "quote": "while the trivial group TG is a terminal object in the category groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trivial_group_terminal",
+      "unit_group_terminal",
+      "group_hom_to_trivial_unique",
+      "trivial_group_classifying_contractible",
+      "group_cat_terminal_contractible",
+      "trivial_group_unit_group_path",
+      "unit_group_terminal_map_check",
+      "sigma3_not_terminal"
+    ],
+    "note": "The formalization proves IsTerminalObj (GroupCat .wild) trivial_group for the book's TG = Aut_Prop(true). Hom(G, TG) is contractible because B TG is a connected set, and thus contractible (module 431). The same holds for unit_group. GroupCat is univalent, so the type of terminal objects is contractible with the center TG. Thus TG = 1 as groups. Litmus tests: the unique Σ_3 → 1 is the homomorphism of ex:groups-morphisms (refl), and Σ_3 is not terminal. The sentence starts at line 452 with the claims about 1 in types and sets (module 607)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 456,
+    "quote": "The is a ``dual'' notion as well.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "initial_is_terminal_op"
+    ],
+    "note": "Initial objects of C are judgmentally the terminal objects of C^op."
+  },
+  {
+    "source": "cats.tex",
+    "line": 463,
+    "quote": "For example, the empty type $\\bn 0$ is initial in the wild category of types,",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "empty_initial_type",
+      "type_wild_initial_contractible",
+      "unit_not_initial_type"
+    ],
+    "note": "The clause on the trivial group in the category of groups is a separate record (trivial_group_terminal/trivial_group_initial, module 688)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 464,
+    "quote": "while the trivial group TG is initial in the category of groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trivial_group_initial",
+      "unit_group_initial",
+      "group_hom_from_trivial_unique",
+      "trivial_group_zero_object",
+      "group_cat_initial_contractible",
+      "sigma3_not_initial"
+    ],
+    "note": "The formalization proves IsInitialObj (GroupCat .wild) trivial_group. Hom(TG, G) ≃ (B TG →* BG) is contractible because B TG is contractible (contractible_domain_pointed_maps, module 431). The same holds for unit_group, and TG is a zero object. The type of initial objects of GroupCat is contractible. Litmus test: Σ_3 is not initial, because Hom(Σ_3, Σ_3) has two different elements. The sentence starts at line 463 with the claim about 0 in types (module 607)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 471,
+    "quote": "The relationship between terminal and initial objects reflects a deep aspect of category theory: Every concept comes with a dual version obtained by ``reversing all the arrows''. More formally, can introduce for every wild precategory its opposite category that has its arrows reversed.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "initial_is_terminal_op",
+      "epi_is_mono_op",
+      "OppositeWild"
+    ],
+    "note": "The general principle is not a single statement. The instances in this section (initial/terminal, epi/mono) hold judgmentally via OppositeWild."
+  },
+  {
+    "source": "cats.tex",
+    "line": 494,
+    "quote": "It follows that any construction or theorem about wild precategories has a dual version, obtained by precomposition with $(\\blank)\\op$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "opposite_book_equiv",
+      "initial_objects_prop",
+      "initial_objects_iso"
+    ],
+    "note": "This is a meta-principle. For example, the formalization uses it to get initial_objects_prop and initial_objects_iso as duals of the terminal versions."
+  },
+  {
+    "source": "cats.tex",
+    "line": 497,
+    "quote": "For example, the dual of the slice category construction is the \\emph{coslice} category $C/\\mathcal C$ (also known as the \\emph{under category}).",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "coslice_precat_wild",
+      "CoslicePrecat",
+      "coslice_ob_unfold",
+      "coslice_hom_unfold",
+      "coslice_litmus_arrow"
+    ],
+    "note": "The coslice c/C is defined as (C^op/c)^op via OppositeWild. The checks coslice_ob_unfold and coslice_hom_unfold show by refl that its objects are (A, f : c → A). They also show that its arrows are g : A → A' with g ∘ f = f'."
+  },
+  {
+    "source": "cats.tex",
+    "line": 501,
+    "quote": "As a further example of a pair dual notions, we consider that of monomorphisms and epimorphisms.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "epi_is_mono_op"
+    ],
+    "note": "Epimorphisms of C are judgmentally the monomorphisms of C^op."
+  },
+  {
+    "source": "cats.tex",
+    "line": 537,
+    "quote": "If $C$ is a precategory, then these conditions reduce to the implications \\[ f\\circ g=f\\circ h \\to g=h, \\quad\\text{and}\\quad g\\circ f=h\\circ f \\to g=h, \\] respectively.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "MonoCancellation",
+      "EpiCancellation",
+      "precat_mono_iff_cancellation",
+      "precat_epi_iff_cancellation"
+    ],
+    "note": "Both directions are proved. For maps between sets, injectivity (propositional fibers) is equivalent to the reflection of paths."
+  },
+  {
+    "source": "cats.tex",
+    "line": 543,
+    "quote": "We already met the monomorphisms in the category of groups in def:typeofmono using a different definition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "group_mono_usym_injective_equiv",
+      "group_mono_iff_usym_injective"
+    ],
+    "note": "The identification of the two notions is the content of the next exercise, xca:mono-cat-grp: IsMono (GroupCat .wild) H G i ≃ IsEmbedding (USym H) (USym G) (usym_hom H G i) (module 687)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 553,
+    "quote": "The epimorphisms in the wild category of types are always surjections,",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "type_epi_surjective",
+      "surjectivity_predicate",
+      "surjective_from_prop_cancellation"
+    ],
+    "note": "The test object is Prop (PropTypes) with the predicates ∃-fiber and True, as for sets."
+  },
+  {
+    "source": "cats.tex",
+    "line": 554,
+    "quote": "but are much more restricted. See~\\citeauthor{BdJR2025}\\footcite{BdJR2025} for details.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "two_sets_base_not_type_epi",
+      "two_sets_base_surjective"
+    ],
+    "note": "An example shows this. The base point 1 → TwoSets is a surjection (module 40), but it is not an epimorphism of types (test object TwoSets). The characterization of the cited paper is not formalized."
+  },
+  {
+    "source": "cats.tex",
+    "line": 562,
+    "quote": "Not only do have arrows \\emph{in} (wild pre-)categories, there's also a notion of arrow \\emph{between} them. These are called functors.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text introduces def:functor."
+  },
+  {
+    "source": "cats.tex",
+    "line": 602,
+    "quote": "In ch:absgroup we shall define the category of abstract groups, absGroup, in such a way that the map abstr : Group → absGroup from def:abstrG becomes a functor in line with the discussion from rem:first-abs-hom.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "abstr",
+      "abstr_hom",
+      "usym_functor"
+    ],
+    "note": "This is a forward reference to chapter 7, which defines the category of abstract groups. Chapter 7 will use the chapter-4 data abstr and abstr_hom (module 403). The corresponding functor to Set is usym_functor (module 686)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 714,
+    "quote": "There is in fact also a wild category of all wild precategories, but its notion of arrow is more refined than the wild functors of def:functor: We would need to include components corresponding to the unit and associativity laws as well.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [
+      "WildPrecatWild",
+      "precat_wild_univalent"
+    ],
+    "note": "The book does not define the refined notion of arrow, that is, wild functors with coherence components for the unit and associativity laws. We formalize only the plain version WildPrecatWild with wild functors. We show univalence after the restriction to precategories, where the law components are propositions."
+  },
+  {
+    "source": "cats.tex",
+    "line": 734,
+    "quote": "There's also a notion of arrow \\emph{between functors}. These are called natural transformations.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "WildNatTrans",
+      "FunctorWild"
+    ],
+    "note": "Natural transformations are the arrows of the functor precategory: FunctorWild C D .hom F G ≡ WildNatTrans C (D .wild) F G."
+  },
+  {
+    "source": "cats.tex",
+    "line": 735,
+    "quote": "Freyd observed that ``categories are what one must define in order to define functors, and that functors are what one must define in order to define natural transformations.'' In this sense, natural transformations are at the heart of category theory.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a historical quotation in a footnote. It has no mathematical content."
+  },
+  {
+    "source": "cats.tex",
+    "line": 789,
+    "quote": "With natural transformations as arrows we can elevate the type of functors to a precategory.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "FunctorWild",
+      "FunctorPrecat",
+      "nat_trans_set"
+    ],
+    "note": "FunctorPrecat C D (core module 602) is a precategory whose objects are the functors and whose arrows are natural transformations. Its hom-sets come from nat_trans_set."
+  },
+  {
+    "source": "cats.tex",
+    "line": 828,
+    "quote": "A functor $F : \\mathcal C\\op \\to \\mathcal D$ whose domain is an opposite category is called \\emph{contravariant}, because it reverses the directions of arrows: $f : C \\to_{\\mathcal C} C'$ in $\\mathcal C$ maps to $F(f) : F(C') \\to_{\\mathcal D} F(C)$ in $\\mathcal D$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "contravariant_functor_action",
+      "OppositeWild",
+      "WildFunctor"
+    ],
+    "note": "A contravariant functor is a WildFunctor (OppositeWild C) D. The lemma contravariant_functor_action shows the reversed action f : c → c' ↦ F(f) : F(c') → F(c). This action is F .mor c' c f."
+  },
+  {
+    "source": "cats.tex",
+    "line": 832,
+    "quote": "If needed for emphasis, we may say that a functor $F : \\mathcal C \\to \\mathcal D$ is \\emph{covariant} by contrast.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology only. Covariant functors are plain WildFunctor C D."
+  },
+  {
+    "source": "cats.tex",
+    "line": 853,
+    "quote": "Given a group homomorphism f : G → H, there are families of bijections α : Hom_H(f_! X, Y) ≅ Hom_G(X, f^* Y), β : Hom_G(f^* Y, X) ≅ Hom_H(Y, f_* X) ... that are furthermore natural.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_induce_restrict_adjunction",
+      "gset_restrict_coinduce_adjunction",
+      "gset_induce_restrict_transpose_equiv",
+      "gset_restrict_coinduce_transpose_equiv"
+    ],
+    "note": "The maps α : Hom_H(f_! X, Y) ≃ Hom_G(X, f^* Y) and β : Hom_G(f^* Y, X) ≃ Hom_H(Y, f_* X) are transpositions. They belong to the wild adjunctions gset_induce_restrict_adjunction and gset_restrict_coinduce_adjunction (module 690). Naturality in both variables is part of RightAdjointData. The equivalences are gset_induce_restrict_transpose_equiv and gset_restrict_coinduce_transpose_equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 863,
+    "quote": "This just means that if we fix either $X$ or $Y$, then we get natural transformations of the corresponding functors.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "RightAdjointData",
+      "adjunction_nat_trans_left",
+      "adjunction_nat_trans_right",
+      "adjunction_hom_nat_iso",
+      "right_adjoint_from_hom_nat_iso"
+    ],
+    "note": "Naturality of a transposition means naturality in each variable separately. RightAdjointData has natural_left and natural_right. These are the squares of wild natural transformations for fixed d and for fixed c (adjunction_nat_trans_left/right). They are interchangeable with joint naturality on C^op × D (module 628). The surrounding G-set instance (f_! ⊣ f^* ⊣ f_*, lines 853-872) needs chapter 5 and is not formalized here."
+  },
+  {
+    "source": "cats.tex",
+    "line": 886,
+    "quote": "The essence of an adjunction is thus the ability to transpose between arrows $F(C) \\to_{\\mathcal D} D$ and $C \\to_{\\mathcal C} G(D)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "adjunction_transposition",
+      "adjunction_transpose_equiv"
+    ],
+    "note": "The lemma adjunction_transposition gives the BookEquiv Hom_D(F c, d) ≃ Hom_C(c, G d) whose map is α_{c,d}."
+  },
+  {
+    "source": "cats.tex",
+    "line": 889,
+    "quote": "There is however another way of packaging this information. We can transpose the identity $\\id_{F(C)}$ to get an arrow $\\eta_C : C \\to_{\\mathcal C} GF(C)$, and the identity $\\id_{G(D)}$ to get an arrow $\\varepsilon_D : FG(D) \\to_{\\mathcal D} D$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "adjunction_unit",
+      "adjunction_counit",
+      "adjunction_counit_transpose"
+    ],
+    "note": "The unit is η_c = α(id_{F c}) and the counit is ε_d = α⁻¹(id_{G d}) (core module 603). Here α⁻¹ is the section that the isomorphism data supply. The lemma adjunction_counit_transpose gives α(ε_d) = id_{G d}."
+  },
+  {
+    "source": "cats.tex",
+    "line": 894,
+    "quote": "Naturality of $\\alpha$ makes these into natural transformations $\\eta : \\id_{\\mathcal C} \\to GF$, and $\\varepsilon : FG \\to \\id_{\\mathcal D}$ called the \\emph{unit} and \\emph{counit} of the adjunction.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "adjunction_unit_natural",
+      "adjunction_unit_nat_trans",
+      "adjunction_counit_natural",
+      "adjunction_counit_nat_trans",
+      "adjunction_transpose_injective"
+    ],
+    "note": "This is eq:adj-unit-counit. Every wild adjunction gives adjunction_unit_nat_trans : WildNatTrans C C (functor_identity C) (G ∘ F). It also gives adjunction_counit_nat_trans : WildNatTrans D D (F ∘ G) (functor_identity D). Their naturality comes from the naturality of α. The proof of the counit square uses the injectivity of α."
+  },
+  {
+    "source": "cats.tex",
+    "line": 901,
+    "quote": "Triangle laws for an adjunction $F \\dashv G$: $\\varepsilon_{F(C)} \\circ F(\\eta_C) = \\id_{F(C)}$ and $G(\\varepsilon_D) \\circ \\eta_{G(D)} = \\id_{G(D)}$ (fig:adj-triangles).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "adjunction_triangle_left",
+      "adjunction_triangle_right"
+    ],
+    "note": "The margin figure shows the two triangles (quoted here in formula form). They are proved for every wild adjunction in xca:adj-triangles."
+  },
+  {
+    "source": "cats.tex",
+    "line": 917,
+    "quote": "Conversely, given $F$, $G$, $\\eta$, and $\\varepsilon$, along with fillers for the triangle laws, we can recover $\\alpha$ by sending $f : F(C) \\to_{\\mathcal D} D$ to the composite $C \\xrightarrow{\\eta_C} GF(C) \\xrightarrow{G(f)} G(D)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "UnitCounitAdjunction",
+      "triangle_transpose",
+      "adjunction_from_triangles",
+      "adjunction_transpose_via_unit",
+      "adjunction_round_trip_transpose"
+    ],
+    "note": "The construction adjunction_from_triangles uses exactly α(f) = G(f) ∘ η_c. For an adjunction, adjunction_transpose_via_unit shows α(f) = G(f) ∘ η_c. Thus α is recovered from its own unit (adjunction_round_trip_transpose)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 927,
+    "quote": "We can thus go back and forth between the different bundles of data for a wild adjunction.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "unit_counit_of_adjunction",
+      "adjunction_from_triangles",
+      "adjunction_round_trip_transpose",
+      "adjunction_from_triangles_unit",
+      "adjunction_from_triangles_counit"
+    ],
+    "note": "The formalization gives maps in both directions between RightAdjointData and UnitCounitAdjunction. The round trips return α, η and ε up to pointwise identifications, with the same G on the nose. An equivalence of the two types of bundles is not proved. It would need coherence of the wild identifications."
+  },
+  {
+    "source": "cats.tex",
+    "line": 929,
+    "quote": "We shall see later in~\\cref{cor:adj-unique} for a functor whose domain is a category, that the data of a right adjoint is a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "right_adjoint_data_prop",
+      "right_adjoints_agree"
+    ],
+    "note": "This is a forward reference to cor:adj-unique. The lemma right_adjoints_agree shows that any two right adjoints of F have identified right functors."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1078,
+    "quote": "One benefit of the Yoneda lemma is that we can characterize adjoint functors in terms of representability, and then derive the uniqueness of adjoint functors in the case of categories.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "adjunction_via_representability",
+      "right_adjoint_data_representations_equiv",
+      "right_adjoint_data_prop"
+    ],
+    "note": "The lemma right_adjoint_data_representations_equiv gives RightAdjointData (C .wild) D F ≃ (d : D) → Σ x, Hom_D(F -, d) ≅ h_x (via lem:adj-via-repr). Uniqueness for categories is right_adjoint_data_prop."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1109,
+    "quote": "From cor:adj-unique we immediately see the following:",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "is_cat_equivalence_prop_via_adj_unique",
+      "right_adjoint_data_prop",
+      "cat_equivalence_iso_conditions_prop"
+    ],
+    "note": "The formalization derives lem:cat-equiv-is-prop from cor:adj-unique (right_adjoint_data_prop, module 624). It also uses that the unit and counit isomorphism conditions are propositions. An independent proof is is_cat_equivalence_prop."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1114,
+    "quote": "It's often useful to show that a functor F : C → D is an equivalence by giving just a functor G : D → C along with natural isomorphisms η : id_C ≅ GF and ε : FG ≅ id_D. This is analogous to lem:weq-iso, and we refer to AKS2015 Lemma 6.2 for the implementation.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cat_equivalence_from_nat_isos",
+      "nat_isos_right_adjoint",
+      "nat_isos_transpose",
+      "nat_isos_inverse_mor_is_equiv",
+      "nat_isos_unit_iso",
+      "nat_isos_counit_iso",
+      "ch6c_two_out_of_six",
+      "identity_cat_equivalence_from_nat_isos"
+    ],
+    "note": "The proof is for wild precategories. The transposition is k ↦ G(k) ∘ η_c. G is fully faithful by 2-out-of-6. The unit G(id) ∘ η_c is a composite of isomorphisms. The counit is an isomorphism because G reflects isomorphisms. The right adjoint of the result is definitionally G itself."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1149,
+    "quote": "We again refer to AKS2015 Lemma 6.6 for details.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "cat_equivalence_ff_split_eso_equiv"
+    ],
+    "note": "This is a bibliographic pointer. The lemma itself is fully formalized (cat_equivalence_ff_split_eso_equiv)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1156,
+    "quote": "From this we conclude that if C is category, then split essential surjectivity is equivalent to essential surjectivity, and then lem:equiv-precat-is-ff-split-eso gives one of the fundamental theorems of category theory",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "split_eso_eso_equiv",
+      "split_eso_prop",
+      "split_eso_from_eso",
+      "eso_from_split_eso",
+      "ff_eso_is_cat_equivalence"
+    ],
+    "note": "The lemma split_eso_eso_equiv says this: for a category C and a fully faithful F, IsSplitEso ≃ IsEso (BookEquiv). Together with lem:equiv-precat-is-ff-split-eso, this gives thm:ff-eso-equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1165,
+    "quote": "Compare lem:inj+surj, stating that a function f : A → B of types is an equivalence if and only if it is injective and surjective.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "embedding_surjection_equiv",
+      "native_embedding_surjection_equiv",
+      "cat_equivalence_projection_injective",
+      "cat_equivalence_projection_image"
+    ],
+    "note": "This is a cross-reference to chapter 2. There, lem:inj+surj is embedding_surjection_equiv (module 12). The categorical analogue is the injectivity/image description of thm:ff-eso-equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1175,
+    "quote": "There is also a version of this statement for precategories, but it concerns the stronger notion of isomorphism of precategories, i.e. fully faithful functors that induce an equivalence on the types of objects. The point is that for categories, this is the same as equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "PrecatIsomorphism",
+      "precategory_path_to_isomorphism",
+      "precategory_path_equiv",
+      "precategory_path_to_isomorphism_is_equiv",
+      "precat_iso_total_contractible",
+      "sip_total_contractible",
+      "precat_iso_cat_equivalence_equiv"
+    ],
+    "note": "The lemma precategory_path_equiv says this: for precategories, the map (C = D) → PrecatIsomorphism C D is a BookEquiv. This map is defined by path induction (refl ↦ identity functor). The proof uses a structure identity principle. This principle contracts the object type, the hom family, the identities and the composition by univalence and function extensionality. The lemma precat_iso_cat_equivalence_equiv says that, for categories, isomorphisms of precategories are equivalent to equivalences."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1181,
+    "quote": "Since the type of functors between categories is 1-truncated, we conclude as well:",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "functor_type_groupoid",
+      "cat_equivalence_groupoid"
+    ],
+    "note": "The lemma functor_type_groupoid says that WildFunctor C (D .wild) is a groupoid when D is a category. C is arbitrary."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1187,
+    "quote": "This result is one of the reasons that the primary objects of interest in category theory are the categories (i.e. univalent precategories), rather than the more general precategories.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a motivational remark without mathematical content."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1191,
+    "quote": "However, it's occasionally useful to present a category via a non-univalent precategory. This will not be equivalent to the corresponding category, so we need a notion that establishes their connection.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "non_univalent_precat_equivalent_to_category",
+      "indiscrete_bool_not_univalent",
+      "indiscrete_bool_equivalence",
+      "TerminalCategory"
+    ],
+    "note": "The literal reading ('will not be equivalent') can fail. The indiscrete precategory on Bool is not univalent, but it is equivalent to the terminal category. The intended reading is 'need not be equivalent', that is, a weak equivalence need not be an equivalence. A counterexample to that needs the failure of a choice principle. Thus it is not provable here (it is consistent with choice)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1200,
+    "quote": "From the point of view of categories, however, weak equivalences are as good as equivalences.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "precomposition_cat_equivalence",
+      "ff_eso_is_cat_equivalence"
+    ],
+    "note": "The result lem:precomp-equiv-cat (precomposition_cat_equivalence) makes this precise. For domains that are categories, thm:ff-eso-equiv also makes it precise."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1208,
+    "quote": "Our goal now is to construct for every precategory C a category L(C) along with a weak equivalence η : C → L(C). Here, L(C) is called the Rezk completion of C.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "RezkCompletion",
+      "rezk_unit",
+      "rezk_unit_weak_equivalence"
+    ],
+    "note": "This is formalized in module 673."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1213,
+    "quote": "The idea is a generalization of the Cayley's lem:allgpsarepermutationgps, which is also how we'll go from abstract groups to concrete groups in ch:absgroup.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is reading guidance and a forward reference. It makes no mathematical claim."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1221,
+    "quote": "Note that $\\Set$ is a category, and hence so is the functor category $\\Set^{\\mathcal C\\op}$ by~\\cref{xca:functor-cat-univalent}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "SetCat",
+      "set_cat_is_category",
+      "PresheafCategory",
+      "presheaf_category_is_category"
+    ],
+    "note": "Set is SetCat, the category of all sets of Narya's single universe (the book's Set_U). The presheaf category is a category by functor_wild_univalent (module 621) (xca:functor-cat-univalent)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1224,
+    "quote": "From~\\cref{cor:yo-ff} we know that the Yoneda embedding $\\yo : \\mathcal C \\to \\Set^{\\mathcal C\\op}$ is fully faithful, motivating the following definition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "yoneda_functor",
+      "yoneda_fully_faithful"
+    ],
+    "note": "This is cor:yo-ff from module 622. The formalization uses it for rezk_unit_ff."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1244,
+    "quote": "We have that $\\eta$ is fully faithful since $\\yo$ is, and it's essentially surjective by definition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_unit_ff",
+      "rezk_unit_eso"
+    ],
+    "note": "The lemma rezk_unit_ff is literally yoneda_fully_faithful, because the hom-sets of the full subcategory are those of Set^{C^op}. The lemma rezk_unit_eso returns the membership proof of the object."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1246,
+    "quote": "Suppose now that $\\mathcal C$ is essentially $\\UU$-small, meaning that the type of objects $\\Ob(\\mathcal C)$ and all hom-sets are essentially $\\UU$-small.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "IsEssentiallySmallPrecat",
+      "essentially_small_precat_small",
+      "small_precat_essentially_small"
+    ],
+    "note": "In the smallness-predicate model, this is equivalent to IsSmallWildPrecat of rem:cat-sizes (module 606). In that model, essential smallness and smallness agree."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1249,
+    "quote": "Then we have the hom-functor $\\hom_{\\mathcal C} : \\mathcal C\\op \\times \\mathcal C \\to \\Set_\\UU$, so we get a Yoneda embedding $\\mathcal C \\to \\Set_\\UU^{\\mathcal C\\op}$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "representable_values_small",
+      "yoneda_functor"
+    ],
+    "note": "Narya has one universe, so the presheaf category is valued in all sets. We record that the representable presheaves take U-small values when C is locally U-small. The two-variable hom-functor on C^op × C is not defined separately."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1252,
+    "quote": "Since $\\Ob(\\mathcal C)$ is essentially $\\UU$-small, then $\\Set_\\UU^{\\mathcal C\\op}$ is locally $\\UU$-small, and hence so is $L(\\mathcal C)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "presheaf_hom_essentially_small",
+      "rezk_completion_locally_essentially_small"
+    ],
+    "note": "The lemma presheaf_hom_essentially_small says this. Let C be essentially U-small. Then the natural transformations between presheaves on C with U-small values form an essentially U-small type. This is the statement that the book's Set_U^{C^op} is locally U-small. Via Yoneda, L(C) is locally U-small even without a smallness hypothesis on Ob(C)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1255,
+    "quote": "And now $\\Ob(L(\\mathcal C))$ is the image of $\\Ob(\\yo) : \\Ob(\\mathcal C) \\to \\Ob(\\Set_\\UU^{\\mathcal C\\op})$, which is then essentially $\\UU$-small by the Replacement~\\cref{pri:replacement}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_objects_image_equiv",
+      "rezk_completion_objects_essentially_small",
+      "Replacement",
+      "univalent_objects_locally_small"
+    ],
+    "note": "The lemma rezk_objects_image_equiv gives Ob(L(C)) ≃ Image(Ob(yo)). By the univalence of Set^{C^op}, mere isomorphisms are mere identifications. Our Ob(Set^{C^op}) is not locally U-small. Thus Replacement is applied to the surjection Ob(η) : Ob(C) → Ob(L(C)). Its codomain is locally U-small, because it is univalent with U-small hom-sets."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1262,
+    "quote": "even though $\\Set_\\UU^{\\mathcal C\\op}$ is only locally $\\UU$-small when $\\mathcal C$ is essentially $\\UU$-small",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [
+      "presheaf_hom_essentially_small"
+    ],
+    "note": "The 'only when' direction is a cited theorem of Freyd and Street: if Set_U^{C^op} is locally small, then C is essentially small. It is not formalized. The 'when' direction is presheaf_hom_essentially_small."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1268,
+    "quote": "Another consequence of~\\cref{cor:Cat-ua} is the following.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is about the organisation of the proof. Our proof of the second part of thm:1types-are-groupoids uses the identity of (pre)categories (precategory_path_equiv, category_path_precat_equiv). The first part needs only path induction."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1282,
+    "quote": "[A,B] \\jdeq \\sum_{f : A \\to B} \\sum_{g : \\prod_{x,y:A}(x\\eqto y) \\to (f(x) \\eqto f(y))} \\biggl(\\prod_{x:A} g(\\refl x) = \\refl{f(x)}\\biggr) \\times \\biggl(\\prod_{x,y,z:A}\\prod_{p:x\\eqto y}\\prod_{q:y\\eqto z} g(qp) = g(q)g(p)\\biggr)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "PathFunctorUnfolded",
+      "path_functor_unfolded_equiv"
+    ],
+    "note": "The formalization gives an equivalence whose round trips are reflexivities (eta for records), in place of the judgmental equality. In PathWild, qp is p · q."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1288,
+    "quote": "Here, the two bracketed components are propositions.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "path_functor_laws_prop",
+      "functor_laws_prop"
+    ],
+    "note": "This requires B to be a 1-type. Then the hom-sets of the path groupoid of B are sets."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1289,
+    "quote": "By path induction, $g$ is determined by its action on reflexivity, so the first bracketed component nails it down, so only the first component, the function $f:A\\to B$, remains up to equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "path_family_refl_equiv",
+      "PathActionWithUnit",
+      "path_functor_action_contractible",
+      "path_functor_mor_ap",
+      "path_groupoid_functors_equiv"
+    ],
+    "note": "The lemma path_family_refl_equiv gives (Π x y, (x = y) → P x y) ≃ Π x, P x x by evaluation at refl. The lemma path_functor_action_contractible says that the pairs (g, identity law) are contractible with the centre ap f. The lemma path_groupoid_functors_equiv gives [A, B] ≃ (A → B)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1294,
+    "quote": "As a first consequence, the projection from the type of equivalences of groupoids, $A \\equivto B$, to the type of equivalences of types, confusingly also denoted $A \\equivto B$, is an equivalence. (Hence the confusion is harmless.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "path_equivalence_projection",
+      "path_groupoid_equivalences_equiv",
+      "path_groupoid_equivalences_projection_is_equiv",
+      "path_functor_equivalence_ff"
+    ],
+    "note": "Let A, B be 1-types. Then (F, E) ↦ (F₀, F₀ is an equivalence) is a BookIsEquiv CatEquivalence(PathWild A, PathWild B) → Equiv A B. The inverse sends e to the path functor of e. This functor is fully faithful because it is ap of an equivalence. Thus it is an equivalence by thm:ff-eso-equiv. The parenthetical remark is informal."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1299,
+    "quote": "This shows that $\\UU^{\\le 1} \\to \\Gpd$ is injective, so by~\\cref{lem:inj+surj}, it remains to show it is surjective.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "path_gpd_injective",
+      "path_gpd_surjective",
+      "one_types_groupoids_is_equiv"
+    ],
+    "note": "We construct the inverse G ↦ Ob(G) directly. Then we derive injectivity and surjectivity from the resulting equivalence. We do not go in the reverse direction."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1300,
+    "quote": "Observe that for a groupoid, the hom-sets and the identity arrows are determined by the univalence condition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gpd_comparison_mor_equiv",
+      "gpd_iso_forget_equiv",
+      "cat_idtoiso_refl_arrow"
+    ],
+    "note": "In a groupoid, (x = y) ≃ (x ≅ y) ≃ hom(x, y), and idtoiso(refl) = id. The map that forgets invertibility is an equivalence, because isIso is a contractible proposition."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1302,
+    "quote": "And relative to this, the composition operation is determined (by path induction) by its values at $\\refl{y}p$, for all $p:x\\eqto y$. But these values are forced to be $p$ by the left unit law.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cat_idtoiso_concat",
+      "gpd_comparison_functor"
+    ],
+    "note": "The lemma cat_idtoiso_concat (module 626) proves idtoiso(p · q) = idtoiso(q) ∘ idtoiso(p). The proof is by path induction on q and uses the left unit law. This lemma is the composition law of the comparison functor."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1306,
+    "quote": "This identifies any groupoid with the path groupoid on its objects, showing that $\\UU^{\\le 1} \\to \\Gpd$ is surjective.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "gpd_comparison_isomorphism",
+      "path_gpd_gpd_objects",
+      "path_gpd_surjective"
+    ],
+    "note": "The formalization gives an isomorphism of precategories from the path groupoid of Ob(G) to G. It turns this isomorphism into an identification in Gpd via precategory_path_equiv (module 645)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1316,
+    "quote": "Can we think of them just in terms of categories? It turns out we can.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "precat_flagged_equiv"
+    ],
+    "note": "This is motivation. The precise content is thm:flagged-cat-equiv."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1322,
+    "quote": "The idea is that any precategory $\\mathcal C$ presents a category $L(\\mathcal C)$, its Rezk completion, but it has more structure, namely its type of objects, $\\Ob(\\mathcal C)$, as well as the relation between these and those of $L(\\mathcal C)$, given by the functor $\\eta : \\mathcal C \\to L(\\mathcal C)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "rezk_flag"
+    ],
+    "note": "The structure is packaged as rezk_flag C = (L(C), Ob(C), Ob(η), surjectivity)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1327,
+    "quote": "Since $\\eta$ is fully faithful, this structure boils down to the map on objects, $\\Ob(\\eta) : \\Ob(\\mathcal C) \\to \\Ob(L(\\mathcal C))$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_pullback_isomorphism",
+      "rezk_flag_round_trip_precat"
+    ],
+    "note": "C is recovered (up to identification of precategories) as the pullback of L(C) along Ob(η)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1334,
+    "quote": "The terminology is a bit whimsical: it's meant to indicate that we have a fat ``flag'' object, the category $\\mathcal C$, equipped with a thinner ``flagpole'' object, the (higher) groupoid $A$, connected by the function $f$",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an explanation of terminology with a picture."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1355,
+    "quote": "The flagged categories describe the fibers of the Rezk completion.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_completion_fiber_equiv",
+      "flagged_projection_fiber_equiv"
+    ],
+    "note": "The fibre of L : Precat → Category at D is equivalent to FlagStructure D."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1361,
+    "quote": "We conclude that the following triangle commutes definitionally, displaying the fiber of Rezk completion at a category $\\mathcal C$ as the type $\\sum_{A:\\UU}\\sum_{f:A\\to\\Ob(\\mathcal C)}\\issurj(f)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_flag_triangle",
+      "rezk_completion_fiber_equiv"
+    ],
+    "note": "The equation fst ∘ F = L holds by refl. The fibre statement uses that F is an equivalence. It contracts the path component of the fibre of fst."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1374,
+    "quote": "The inverse at a triple $(\\mathcal C,A,f)$ ``pulls back'' the (pre)category structure $\\mathcal C$ along $f$ to get a precategory $\\mathcal A$ on the object type $A$ and $\\hom(x,y) \\defeq \\hom_{\\mathcal C}(f(x), f(y))$, and likewise using $f$ to define identity arrows, composition, as well as unit and associativity laws.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "PulledBackWild",
+      "pulled_back_homset",
+      "pulled_back_precat",
+      "flagged_to_precat",
+      "pulled_back_identity",
+      "bool_endo_precat",
+      "bool_endo_composite"
+    ],
+    "note": "Litmus tests: the pullback along the identity of Ob(D) gives D by refl. The pullback of Set along ★ ↦ Bool gives the endomaps of Bool."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1381,
+    "quote": "By construction, this extends $f$ to a fully faithful functor $f : \\mathcal A \\to \\mathcal C$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pulled_back_functor",
+      "pulled_back_functor_ff"
+    ],
+    "note": "The functor is f on objects and the identity on arrows."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1383,
+    "quote": "This is also essentially surjective by the surjectivity of $f$, hence inducing an equivalence $L(\\mathcal A) \\equivto \\mathcal C$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "pulled_back_functor_eso",
+      "surjective_obj_eso",
+      "pulled_back_weak_equivalence",
+      "restricted_yoneda_rezk",
+      "restricted_yoneda_rezk_equivalence",
+      "rezk_weak_equivalence_path",
+      "rezk_weak_equivalence_path_obj"
+    ],
+    "note": "Let F : C → D be a weak equivalence into a category. Then the restricted Yoneda functor d ↦ hom_D(F -, d) is an equivalence D ≃ L(C) that sends F(c) to η(c) (module 674). This gives the identification D = L(A) that flagged_round_trip uses."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1386,
+    "quote": "For the other round trip, starting with a precategory $\\mathcal C$, we use the fully faithfulness of $\\eta : \\mathcal C \\to L(\\mathcal C)$ to identify the precategory structure on $\\Ob(\\mathcal C)$ with that pulled back from $L(\\mathcal C)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "rezk_pullback_iso_functor",
+      "rezk_pullback_isomorphism",
+      "rezk_flag_round_trip_precat"
+    ],
+    "note": "The functor that is the identity on objects and yo on arrows is an isomorphism of precategories C ≅ Ob(η)*L(C). Thus it gives an identification (module 645)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1410,
+    "quote": "We have also seen two instances of limits and colimits, namely terminal and initial objects",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The book does not define general limits and colimits. The section treats only products, coproducts and pullbacks. Thus the claim has no formal content here."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1446,
+    "quote": "We immediately recognize the product of types $A\\times B$, along with the first and second projections, as a product cone $(A\\times B,\\fst,snd)$ in the wild category of types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "type_product_cone",
+      "type_product_cone_is_product",
+      "type_has_binary_products",
+      "product_litmus_factor"
+    ],
+    "note": "The factorizations of a cone (X, x₁, x₂) through A × B form a retract of a based path space. Thus they are contractible."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1449,
+    "quote": "Likewise, in the category of groups, the product G×H from ex:productofgroups forms a product cone when equipped with the projection homomorphisms.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_product_cone",
+      "group_product_cone_is_product",
+      "group_product_cone_product",
+      "group_product_legs",
+      "group_product_pairing",
+      "group_product_legs_equiv",
+      "group_cat_has_binary_products",
+      "group_product_cone_unique",
+      "sigma3_diagonal_factorization_check"
+    ],
+    "note": "The formalization proves IsProductCone (GroupCat .wild) G H (product_group G H, (product_group_proj1, product_group_proj2)) in the sense of def:prod-in-a-cat (module 665). The map f ↦ (p1 ∘ f, p2 ∘ f) : Hom(K, G × H) → Hom(K, G) × Hom(K, H) is an equivalence. Its inverse pairs the classifying maps and the pointing paths. The factorizations of a cone are its book fiber. Hence GroupCat has binary products. By univalence, every product cone on G, H equals this one. Litmus test: the cone (Σ_3, id, id) factors through the diagonal x ↦ (x, x) (refl)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1453,
+    "quote": "We say that a (wild) category \\emph{has binary products} if every pair of objects $A,B$ as a product cone.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "HasBinaryProducts",
+      "has_binary_products_prop",
+      "type_has_binary_products"
+    ],
+    "note": "HasBinaryProducts C ≔ (a b : C .ob) → ProductCone C a b. For a univalent C, it is a proposition. The word 'as' in the book is a typo for 'has'."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1455,
+    "quote": "In this case we are justified by~\\cref{xca:product-cone-prop} in writing $(A\\times B,\\fst,\\snd)$ for the (unique) product cone on $A,B$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "product_cone_unique",
+      "product_cone_prop",
+      "type_product_cone_path"
+    ],
+    "note": "In a univalent wild precategory, a given product cone makes the type of product cones contractible. In the wild category of types, every product cone equals (A × B, fst, snd)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1468,
+    "quote": "Like every categorical notion, there is of course a dual notion, obtained by turning all the arrows around.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "coproduct_cocone_is_op_product_cone",
+      "cocone_precat_wild"
+    ],
+    "note": "The relation to products is as follows. IsCoproductCocone C a b K is by refl IsProductCone (OppositeWild C) a b K. The cocone precategory is the opposite of the cone precategory of C^op."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1495,
+    "quote": "In other words, a coproduct cocone is an initial cocone under the pair of objects $A,B$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "coproduct_cocone_is_initial_cocone",
+      "cocone_precat_wild"
+    ],
+    "note": "For C with hom-sets, this holds by refl. IsCoproductCocone C a b K is the statement that every hom type out of K in the cocone precategory is contractible. This is def:initial-obj, unfolded."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1498,
+    "quote": "In the wild category of types, we have the coproduct cocones $(A \\coprod B, \\inl{}, \\inr{})$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "type_coproduct_cocone",
+      "type_coproduct_copair",
+      "type_coproduct_copair_eta",
+      "type_coproduct_universal_equiv",
+      "type_coproduct_cocone_is_coproduct",
+      "coproduct_litmus_factor"
+    ],
+    "note": "Precomposition with inl, inr is an equivalence (A ⊔ B → X) ≃ (A → X) × (B → X). The factorizations of a cocone are a retract of its book fiber."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1498,
+    "quote": "We haven't yet seen the coproduct of groups; knowing about products and categorical duality, we'd be bound to discover them! We shall study them in sec:coprod.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a forward reference without a claim that can be checked. The book constructs and studies the coproduct of groups in sec:coprod (chapter 8, congp.tex, module range 800–899). It needs pushouts of classifying types, and chapter 6 does not provide them. The coproduct cocones of types in the same sentence belong to def:coprod-in-a-cat (module 665)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1502,
+    "quote": "Let's look at another pair of examples: pullbacks and pushouts.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This chapter does not define pushouts. Module 666 formalizes pullbacks of types."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1508,
+    "quote": "the ``pullback'' which we will now define should be thought about as the type of all pairs of elements $(b,c):B\\times C$ so that $f(b)\\eqto g(c)$.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "TypePullback"
+    ],
+    "note": "This agrees with def:pullback: TypePullback B C D f g ≔ Σ_{(b,c)} f(b) = g(c)."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1509,
+    "quote": "This construction is important in many situations also beyond group theory.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1547,
+    "quote": "In view of \\cref{xca:univpropofpullback} we will say that we have a \\emph{pullback diagram} [...] to indicate that we have an element in $(A\\to B)\\times_{(A\\to D)}(A\\to C)$ such that the resulting map $A\\to B\\times_DC$ is an equivalence.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "IsPullbackSquare",
+      "PullbackOfPostcomp",
+      "pullback_gap_map",
+      "pullback_canonical_square",
+      "pullback_canonical_is_pullback",
+      "fiber_is_pullback"
+    ],
+    "note": "IsPullbackSquare A B C D f g w ≔ BookIsEquiv of the gap map a ↦ (β(a), γ(a), happly p a). As checks, the formalization shows that the defining square of B ×_D C and the preimage square of the example are pullback diagrams."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1556,
+    "quote": "This is emphasized with the little $\\lrcorner$ symbol in the upper left corner.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is diagram notation."
+  },
+  {
+    "source": "cats.tex",
+    "line": 1571,
+    "quote": "\\section{Monoidal categories}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The section is empty in the pinned book. Only LaTeX comments follow. There is nothing to formalize."
   }
 ]
