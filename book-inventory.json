@@ -25272,8 +25272,34 @@
       "ring:ldistr-law",
       "ring:rdistr-law"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractRing",
+      "DistrLaws",
+      "ring_additive_group",
+      "ring_monoid",
+      "ring_set",
+      "ring_mul_one_left",
+      "ring_mul_one_right",
+      "ring_mul_assoc",
+      "ring_ldistr",
+      "ring_rdistr",
+      "IsNonTrivialRing",
+      "IsCommutativeRing",
+      "is_commutative_ring_prop",
+      "is_non_trivial_ring_prop",
+      "integer_ring",
+      "integer_ring_commutative",
+      "integer_ring_non_trivial",
+      "f2_ring",
+      "int_pair_endo_ring_not_commutative"
+    ],
+    "principal": [
+      "AbstractRing",
+      "DistrLaws",
+      "IsCommutativeRing"
+    ],
+    "note": "AbstractRing is a flat record. It contains the abstract group data (carrier, zero, add, neg, AbstractGroupLaws of module 403). It contains the monoid data (one, mul) with the book's MonoidLaws (module 700). It also contains DistrLaws = left × right distributive laws as printed. The maps ring_additive_group and ring_monoid recover the group (R,0,+,-) and the monoid (R,1,·). Non-trivial means Not (0 = 1). Commutative means a·b = b·a for all a, b. Litmus tests: integer_ring (module 1310), f2_ring (1303) and the non-commutative endomorphism ring of ℤ×ℤ (1311)."
   },
   {
     "chapter": 13,
@@ -25285,8 +25311,22 @@
     "labels": [
       "def:typering"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractRingSigma",
+      "abstract_ring_sigma_equiv",
+      "abstract_ring_to_sigma",
+      "abstract_ring_from_sigma",
+      "CommutativeRing",
+      "CommutativeRingSigma",
+      "commutative_ring_sigma_equiv"
+    ],
+    "principal": [
+      "AbstractRingSigma",
+      "abstract_ring_sigma_equiv",
+      "CommutativeRingSigma"
+    ],
+    "note": "AbstractRingSigma is the printed iterated Σ over abstract groups (Σ e, Σ μ, MonoidLaws × DistrLaws). The equivalence abstract_ring_sigma_equiv identifies it with the record AbstractRing, and both round trips are refl. The type of commutative rings is CommutativeRing = Σ AbstractRing IsCommutativeRing. This type is equivalent to the printed Σ with the extra factor Π a b, μ(a,b) = μ(b,a) (commutative_ring_sigma_equiv)."
   },
   {
     "chapter": 13,
@@ -25298,8 +25338,18 @@
     "labels": [
       "xca:ring-group-abelian"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ring_add_comm",
+      "ring_additive_abelian",
+      "ring_expand_right_first",
+      "ring_expand_left_first"
+    ],
+    "principal": [
+      "ring_add_comm",
+      "ring_additive_abelian"
+    ],
+    "note": "The proof of ring_add_comm R a b : a + b = b + a follows the hint. The product (a+1)(b+1) expands to (ab + a) + (b + 1) and to (ab + b) + (a + 1). The proof cancels ab on the left and 1 on the right in the additive group, and this gives the claim. The lemma ring_additive_abelian restates it as IsAbstractAbelian of the additive group."
   },
   {
     "chapter": 13,
@@ -25311,8 +25361,22 @@
     "labels": [
       "def:ringhom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "RingHom",
+      "IsRingHomFn",
+      "ring_hom_fn",
+      "ring_hom_monoid_hom",
+      "ring_hom_ext",
+      "ring_hom_id",
+      "ring_hom_compose",
+      "is_ring_hom_extra_prop"
+    ],
+    "principal": [
+      "RingHom",
+      "ring_hom_monoid_hom"
+    ],
+    "note": "RingHom R S = Σ (φ : AbstractHom of the additive groups) (φ(1) = 1 × φ(s·s') = φ(s)·φ(s')). That is, a ring homomorphism is an abstract homomorphism whose function is a monoid homomorphism in the sense of rem:monoid-hom. The map ring_hom_monoid_hom gives the MonoidHom. Ring homomorphisms are determined by their functions (ring_hom_ext). The formalization provides the identity and composition."
   },
   {
     "chapter": 13,
@@ -25324,8 +25388,47 @@
     "labels": [
       "exa:ring-Z-polynomials"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "integer_polynomial_ring",
+      "polynomial_ring",
+      "IsPolynomialSeries",
+      "SeriesVanishesFrom",
+      "is_polynomial_series_prop",
+      "closed_subring",
+      "closed_subring_inclusion",
+      "polynomial_series_inclusion",
+      "polynomial_zero_closed",
+      "polynomial_one_closed",
+      "polynomial_add_closed",
+      "polynomial_neg_closed",
+      "polynomial_mul_closed",
+      "series_add_vanishes",
+      "series_mul_vanishes",
+      "power_series_ring",
+      "series_mul",
+      "series_mul_assoc",
+      "series_mul_comm",
+      "series_mul_add_left",
+      "series_mul_add_right",
+      "series_mul_one_left",
+      "series_mul_one_right",
+      "power_series_ring_commutative",
+      "polynomial_ring_commutative",
+      "integer_polynomial_ring_commutative",
+      "integer_polynomial_ring_non_trivial",
+      "integer_polynomial_variable",
+      "integer_polynomial_litmus_square",
+      "integer_polynomial_litmus_one_plus_x",
+      "geometric_series_not_polynomial",
+      "integer_ring"
+    ],
+    "principal": [
+      "integer_polynomial_ring",
+      "polynomial_ring",
+      "power_series_ring"
+    ],
+    "note": "The printed block is a stub (\"We elaborate the abstract ring of polynomials with integer coefficients. TBD\"). We supply the construction. The ring power_series_ring R (module 1312) is R[[x]] = Nat → R with pointwise addition and the Cauchy product. A recursion defines the Cauchy product: (fg)_0 = f_0 g_0 and (fg)_(n+1) = f_0 g_(n+1) + ((shift f) g)_n. The ring laws are proved coefficientwise by induction. The ring polynomial_ring R (module 1313) is its subring (closed_subring) of sequences that merely vanish from some index on. This condition is a proposition, so the carrier is a set. The ring integer_polynomial_ring = polynomial_ring integer_ring is commutative and non-trivial. Litmus tests: (1+x)^2 has the coefficients 1, 2, 1, 0 by refl. The geometric series is not a polynomial."
   },
   {
     "chapter": 13,
@@ -25340,8 +25443,24 @@
       "mixring:lr-coherence-law",
       "mixring:assoc-law"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MixedRing",
+      "MixedRingProps",
+      "mixed_ring_left_unit",
+      "mixed_ring_right_unit",
+      "mixed_ring_coherence",
+      "mixed_ring_assoc",
+      "IsCommutativeMixedRing",
+      "IsNonTrivialMixedRing",
+      "mixed_ring_group_abelian"
+    ],
+    "principal": [
+      "MixedRing",
+      "MixedRingProps",
+      "IsCommutativeMixedRing"
+    ],
+    "note": "A MixedRing has these data: a group R, a symmetry 1_R : USym R and ℓ, r : USym R → Hom(R,R). The laws are the unit laws ℓ_1 = id = r_1, the coherence law USym(ℓ_g)(h) = USym(r_h)(g) and associativity. Commutative means ℓ = r. Non-trivial means 1_R ≠ refl. Corrections: the unit law prints id_G for id_R. The book prints the associativity law as ℓ ∘ r = r ∘ ℓ. This is ill-typed (ℓ, r : USym R → Hom(R,R)). The formalization states it as ℓ_g ∘ r_h = r_h ∘ ℓ_g in Hom(R,R) for all g, h (that is, g(xh) = (gx)h). This is what xca:Rmixring->URabstring needs. Footnote: R is abelian (mixed_ring_group_abelian)."
   },
   {
     "chapter": 13,
@@ -25351,8 +25470,30 @@
     "line": 143,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "integer_mixed_ring",
+      "integer_mixed_left",
+      "integer_mixed_unit",
+      "integer_mixed_coherence",
+      "integer_mixed_assoc",
+      "integer_mixed_ring_commutative",
+      "integer_mixed_ring_non_trivial",
+      "integer_mixed_value",
+      "integer_mixed_winding",
+      "integer_mixed_compose_loop",
+      "circle_hom_from_loop_agreement",
+      "circle_symmetry_from_winding",
+      "integer_mixed_two_times_three",
+      "integer_mixed_left_degree_map",
+      "circle_group_hom_from_symmetry"
+    ],
+    "principal": [
+      "integer_mixed_ring",
+      "integer_mixed_ring_commutative",
+      "integer_mixed_ring_non_trivial"
+    ],
+    "note": "For any circle C, the mixed ring integer_mixed_ring C has the group ℤ = circle_group C and 1 = loop. Also, ℓ_g = r_g = the homomorphism classified by base ↦ base, loop ↦ g (circle_group_hom_from_symmetry, module 435). The formalization proves the unit, coherence and associativity laws. Commutativity holds by refl (r ≔ ℓ). Non-triviality follows from loop ≠ refl. Deviation: the classifying map is pointed by the inverse of the base computation identification of the circle signature, not by reflexivity. This pointing is refl whenever base computation is judgmental. The proofs use w(g·h) = w(g)w(h) for the winding number w. The footnote (degree-m map) is integer_mixed_left_degree_map, by refl."
   },
   {
     "chapter": 13,
@@ -25364,8 +25505,20 @@
     "labels": [
       "def:typemixring"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MixedRingSigma",
+      "mixed_ring_sigma_equiv",
+      "CommutativeMixedRing",
+      "CommutativeMixedRingSigma",
+      "commutative_mixed_ring_sigma_equiv"
+    ],
+    "principal": [
+      "MixedRingSigma",
+      "mixed_ring_sigma_equiv",
+      "CommutativeMixedRingSigma"
+    ],
+    "note": "The printed iterated Σ Σ_{R:Group} Σ_{1_R} Σ_{ℓ,r} RingProps(R,1_R,ℓ,r) is equivalent to the record form. Here RingProps = MixedRingProps, and it includes the corrected associativity law of def:mixring. The commutative variant with the extra factor ℓ = r is also equivalent to the record form. Both equivalences have refl round trips."
   },
   {
     "chapter": 13,
@@ -25377,8 +25530,23 @@
     "labels": [
       "xca:Rmixring->URabstring"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "mixed_ring_abstract_ring",
+      "mixed_mul",
+      "mixed_mul_one_left",
+      "mixed_mul_one_right",
+      "mixed_mul_assoc",
+      "mixed_rdistr",
+      "mixed_ring_additive_is_abstr",
+      "mixed_ring_abstract_commutative",
+      "mixed_ring_abstract_non_trivial"
+    ],
+    "principal": [
+      "mixed_ring_abstract_ring",
+      "mixed_ring_additive_is_abstr"
+    ],
+    "note": "The abstract ring mixed_ring_abstract_ring R : AbstractRing has the carrier USym R and the additive group abstr(R) (mixed_ring_additive_is_abstr, refl). Its unit is 1_R and its multiplication is g·h = USym(ℓ_g)(h). The unit laws follow from the unit and coherence laws. Associativity follows from the (corrected) associativity and coherence laws. Left distributivity holds because ℓ_g is a homomorphism. Right distributivity follows from coherence and from the fact that r_h is a homomorphism. Commutative or non-trivial mixed rings give commutative or non-trivial abstract rings, respectively."
   },
   {
     "chapter": 13,
@@ -25390,8 +25558,16 @@
     "labels": [
       "def:ptd-homotopy-compo"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_homotopy_compose",
+      "PointedHomotopy",
+      "pointed_map_path_equiv"
+    ],
+    "principal": [
+      "pointed_homotopy_compose"
+    ],
+    "note": "The term pointed_homotopy_compose X Y f g h k k′ is the book’s k′·ptw k. Here k : H(f,g) = PointedHomotopy X Y f g and k′ : H(g,h). The argument order is the concatenation order. The first component is x ↦ concat (k x) (k′ x). The pointing path is k′_pt · ap_{(k′(pt)·-)}(k_pt). Before this path comes the associativity identification (concat_assoc), which the book leaves implicit. H(f,g) and ptw_* are those of module 162."
   },
   {
     "chapter": 13,
@@ -25403,8 +25579,21 @@
     "labels": [
       "con:ptd-homotopy-compo"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ptw_concat_compose",
+      "pointed_homotopy_compose_refl",
+      "ptw_refl_value",
+      "pointed_homotopy_refl",
+      "pathover_transport_refl_value",
+      "pointed_homotopy_path",
+      "ptd_right_unit_coherence",
+      "ptd_inverse_concat_cancel"
+    ],
+    "principal": [
+      "ptw_concat_compose"
+    ],
+    "note": "The formal statement is ptw_*(concat p q) = ptw_*(p) ·ptw ptw_*(q). The book writes ptw_*(qp) = ptw_*(q)·ptw ptw_*(p). Here ptw_* = pointed_map_path_equiv .map. The proof is by induction on q, as in the book. In Narya, refl·r ≡ r is not judgmental. Thus the base case is a proved right unit law. For this, ptw_*(refl g) is identified with (x ↦ refl, concat_p1 g_pt) (ptw_refl_value, through the typal computation rules of J). Also, k·ptw that = k needs the triangle coherence of concat_assoc and concat_p1 (ptd_right_unit_coherence)."
   },
   {
     "chapter": 13,
@@ -25416,8 +25605,16 @@
     "labels": [
       "def:cst-ptd"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_constant_at",
+      "pointed_constant_at_point",
+      "pointed_constant_domain_contractible"
+    ],
+    "principal": [
+      "pointed_constant_at"
+    ],
+    "note": "The map pointed_constant_at A B (b, p) = (cst_b, p) : A →* B is a function on Σ (x : B) (pt_B = x). Its value at (pt_B, refl) is book_pointed_constant A B by refl. The footnote claims that Σ (x : B) (pt_B = x) is contractible. This claim is pointed_constant_domain_contractible."
   },
   {
     "chapter": 13,
@@ -25429,8 +25626,17 @@
     "labels": [
       "rem:loops-at-ptd-cst"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "constant_loops_pointed_equiv",
+      "loops_at_constant_ptw_function",
+      "constant_pointed_homotopy_equiv",
+      "pointed_map_path_explicit_equiv"
+    ],
+    "principal": [
+      "constant_loops_pointed_equiv"
+    ],
+    "note": "The variant ptw_* : Ω(X →* Y) ≃ (X →* ΩY) is constant_loops_pointed_equiv of module 1207. The formalization reuses it and does not define it again. It is ptw_* followed by the equivalence of (refl·h(pt) = refl) with (refl = h(pt)). The order in refl·h(pt) is the concatenation order. This equivalence uses the unit law and symmetry, as in the footnote. Its underlying function sends r to x ↦ ptw(r₁)(x) judgmentally (loops_at_constant_ptw_function)."
   },
   {
     "chapter": 13,
@@ -25442,8 +25648,17 @@
     "labels": [
       "con:Id-(B->*A)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_map_path_from_underlying",
+      "IdentityPathEvSection",
+      "identity_path_evaluation",
+      "section_pointed_homotopy"
+    ],
+    "principal": [
+      "pointed_map_path_from_underlying"
+    ],
+    "note": "Let s be a section of ev(i) = ptw(i)(pt_A) (IdentityPathEvSection A, with ev(s p) = p). Then the formalization gives a map (f÷ = f′÷) → (f = f′) for pointed f, f′ : B →* A. The construction uses path induction on f÷ = f′÷ and then ptw_*⁻¹ of the pointed homotopy h(b) = ptw(s ℓ)(f b). Deviation: the formalization does not use path induction on f_pt. That induction moves the base point of A to f(pt_B), and then the section would need transport. Instead, the formalization uses the loop ℓ = f′_pt·f_pt⁻¹ at pt_A. Its concatenation order is f′_pt then f_pt⁻¹, and it is the conjugate of the book’s r. The identification h(pt_B)·f_pt = f′_pt comes from the naturality of ptw(s ℓ) along f_pt."
   },
   {
     "chapter": 13,
@@ -25455,8 +25670,18 @@
     "labels": [
       "con:ev-section-loopsA"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loops_identity_ev_section",
+      "loops_ev_section",
+      "loops_ev_section_component",
+      "loops_ev_section_beta"
+    ],
+    "principal": [
+      "loops_identity_ev_section",
+      "loops_ev_section_beta"
+    ],
+    "note": "For pointed A, consider the map ev : (id_{ΩA} = id_{ΩA}) → (rfl = rfl). It has the section s(α) = funext(p ↦ s_α(p)) with ev(s α) = α. The book’s s_α(p) = ap_{(-·p)}(α) has the type p·rfl = p·rfl. In the book, this type is judgmentally p = p. In Narya, s_α(p) is conjugated by concat_p1 p. The proof of ev(s α) = α uses funext_beta, concat_p1 = concat_1p at refl (module 281) and xca:ev-section-loopsA."
   },
   {
     "chapter": 13,
@@ -25468,8 +25693,18 @@
     "labels": [
       "xca:ev-section-loopsA"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ev_section_i",
+      "ev_section_whisker_refl",
+      "naturality",
+      "concat_1p"
+    ],
+    "principal": [
+      "ev_section_i",
+      "ev_section_whisker_refl"
+    ],
+    "note": "The path ρ_q : q·refl_a = q is concat_1p q. J.ny proves it by a cylinder, not literally by induction. For β : p = refl_a, i(β) is the naturality of ρ. In Narya, refl_a·refl_a is not judgmentally refl_a. Thus i(β) reads ap_{(-·refl)}(β)·ρ_refl = ρ_p·β. In concatenation order, this is concat (ap β) ρ_refl = concat ρ_p β. The lemma ev_section_whisker_refl states the identification of ap_{(-·refl)}(α) with α for α : refl = refl after conjugation by ρ_refl."
   },
   {
     "chapter": 13,
@@ -25481,8 +25716,16 @@
     "labels": [
       "cor:Id-(B->*loopsA)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loops_pointed_map_path_from_underlying",
+      "pointed_map_path_from_underlying",
+      "loops_identity_ev_section"
+    ],
+    "principal": [
+      "loops_pointed_map_path_from_underlying"
+    ],
+    "note": "For pointed maps f, f′ : B →* ΩA, the formalization gives a map (f÷ = f′÷) → (f = f′). It combines the two constructions."
   },
   {
     "chapter": 13,
@@ -25494,8 +25737,19 @@
     "labels": [
       "def:O-functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_pointed_maps",
+      "o_functor_map",
+      "o_point_path",
+      "o_point_pathover",
+      "pointed_constant_at"
+    ],
+    "principal": [
+      "circle_pointed_maps",
+      "o_functor_map"
+    ],
+    "note": "For an arbitrary CircleSignature C, O A = circle_pointed_maps C A = (S¹ →* A, cst). On maps, O(f) = (g ↦ f ∘ g, ap_{cst_*}(f_pt, ρ_{f_pt})) with the pointed composition book_pointed_compose. Deviation: f ∘ cst is pointed by concat f_pt (ap_f refl) ≡ f_pt·refl, which is not judgmentally f_pt. Thus the path (f_pt, ρ_{f_pt}) in Σ (x : B)(pt_B = x) ends at (f(pt_A), concat f_pt refl). Its pathover component is defined by path induction on f_pt (o_point_pathover), as the book defines ρ_{f_pt}."
   },
   {
     "chapter": 13,
@@ -25507,8 +25761,27 @@
     "labels": [
       "xca:O-functor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "o_wild_functor",
+      "o_functor_map_id",
+      "o_functor_map_comp",
+      "o_constant_paths_agree",
+      "o_constant_refl_path",
+      "o_functor_point_ptw",
+      "o_point_ptw",
+      "o_point_homotopy",
+      "pathover_transport_refl_map",
+      "first_endpoint_transport",
+      "o_point_pathover_refl",
+      "PointedWild",
+      "WildFunctor"
+    ],
+    "principal": [
+      "o_wild_functor",
+      "o_functor_point_ptw"
+    ],
+    "note": "O is a WildFunctor PointedWild PointedWild (cats.tex def:functor, module 602/604). This means that O(id_A) = id_{OA} and O(g ∘ f) = O(g) ∘ O(f) as pointed maps (with pointing paths). Both laws are pointed homotopies. The proof of their pointing coherence writes both sides as ap_{cst_*} of paths in the contractible Σ (x : B)(pt_B = x). Second part: O(f)_pt = ptw_*⁻¹(cst_{f_pt}, ρ′) with ρ′ = concat_1p f_pt · (concat_p1 f_pt)⁻¹ : refl·f_pt = f_pt·refl. This ρ′ is the Narya form of ρ_{f_pt}, because the target pointing is f_pt·refl."
   },
   {
     "chapter": 13,
@@ -25520,8 +25793,22 @@
     "labels": [
       "rem:pointing-ev"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_circle_ev",
+      "pointed_circle_ev_loops_map",
+      "pointed_circle_ev_book_equiv",
+      "pointed_circle_ev_inverse",
+      "pointed_circle_ev_inverse_beta",
+      "pointed_circle_ev_pointing",
+      "pointed_circle_ev_pointed",
+      "pointed_circle_ev_pointed_equiv"
+    ],
+    "principal": [
+      "pointed_circle_ev_pointed_equiv",
+      "pointed_circle_ev_pointing"
+    ],
+    "note": "The map ev_A(f) = f_pt⁻¹·f(loop)·f_pt (module 129) is equal to Ω(f)(loop) by refl. It is an equivalence O A → Ω A (cor:circle-loopspace). Its inverse is circle recursion (pointed_circle_loop_rec) with ev(ev⁻¹ p) = p. CircleSignature has propositional computation rules. Thus the inverse is pointed by the inverse base β-rule, not by refl. The path ε_A(p) : refl = ev-value of cst at p is defined by path induction on p : base = z. In Narya, the base case is the unit law of conjugation (loop_conjugate_unit) instead of refl_refl. The pointing (ev_A)_pt = ε_A(loop) makes ev_A a pointed equivalence."
   },
   {
     "chapter": 13,
@@ -25533,8 +25820,25 @@
     "labels": [
       "con:Omega-O"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "omega_o_square",
+      "omega_o_equiv",
+      "omega_o_precompose_equiv",
+      "omega_o_postcompose_equiv",
+      "o_functor_omega",
+      "pointed_equiv_induction",
+      "pointed_precompose_is_equiv",
+      "pointed_postcompose_is_equiv",
+      "loops_pointed_map_path_from_underlying",
+      "loops_map_compose_pointwise"
+    ],
+    "principal": [
+      "omega_o_square",
+      "omega_o_equiv",
+      "o_functor_omega"
+    ],
+    "note": "The square Ω(f) ∘ ev_A = ev_B ∘ O(f) holds as pointed maps O A →* Ω B (omega_o_square). Pointwise, this is the functoriality of Ω (the book’s i(f, f_pt)). The formalization does not fill the pointing triangle by hand. Instead, it obtains the identification of pointed maps into Ω B from the pointwise one by cor:Id-(B->*loopsA). The book does the same in con:ptw-swap-ptd-doms. The map e = ev_B⁻¹ ∘ - ∘ ev_A : (ΩA →* ΩB) ≃ (OA →* OB) is a composite of two equivalences. These are precomposition with ev_A and the inverse of postcomposition with ev_B. Both are equivalences by induction on pointed equivalences. Finally, O = e ∘ Ω as functions on A →* B (o_functor_omega)."
   },
   {
     "chapter": 13,
@@ -25546,8 +25850,31 @@
     "labels": [
       "con:swap-ptd-doms"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "swap_pointed_domains",
+      "swap_pointed_domains_map",
+      "swap_pointed_domains_equiv",
+      "swap_pointed_domains_point",
+      "swap_pointed_domains_underlying",
+      "pointed_maps_pointed",
+      "BiPointedMap",
+      "bi_pointed_equiv",
+      "bi_pointed_from",
+      "bi_pointed_to_from",
+      "bi_pointed_from_inverse",
+      "bi_pointed_swap",
+      "bi_pointed_swap_equiv",
+      "bi_pointed_trivial",
+      "bi_pointed_equiv_constant",
+      "bi_pointing_equiv",
+      "bi_concat_right_equiv"
+    ],
+    "principal": [
+      "swap_pointed_domains",
+      "swap_pointed_domains_underlying"
+    ],
+    "note": "The book gives no proof (TBD). The formalization follows its hint. It shows X →* (Y →* Z) ≃ BiPointedMap X Y Z, with ptw_* for the outer pointing. A BiPointedMap is a totally unpointed h : X → Y → Z with two pointings and a coherence. The pointings are a(x) : pt = h(x, pt) and b(y) : pt = h(pt, y). The coherence is a(pt) = b(pt). The swap of X and Y is an involution of this description. The map swap is a BookPointedEquiv between (X →* (Y →* Z), cst) and (Y →* (X →* Z), cst). The formalization proves swap(cst) = cst. The totally unpointed map of swap is the swap of the arguments, judgmentally: swap(f)(y)(x) ≡ f(x)(y) (swap_pointed_domains_underlying, by refl)."
   },
   {
     "chapter": 13,
@@ -25559,8 +25886,15 @@
     "labels": [
       "xca:allptd-S1-contractible"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_pointed_maps_contractible",
+      "pointed_maps_truncation_level"
+    ],
+    "principal": [
+      "pointed_pointed_maps_contractible"
+    ],
+    "note": "Let X and Y be connected (Connected) and let Z be a 1-type (isGroupoid). Then X →* (Y →* Z) is contractible (BookIsContr). The reason: Y →* Z is a set, and X →* (a set) is a proposition by ft:ptd-decr-h-lev (module 432). The constant map inhabits this proposition."
   },
   {
     "chapter": 13,
@@ -25572,8 +25906,39 @@
     "labels": [
       "exa:allS1*-swap"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "example_bbz",
+      "example_bbz_loops",
+      "example_M",
+      "example_M_double_loops",
+      "example_M_integers",
+      "example_M_bbz_integers",
+      "example_M_bbz_double_loops",
+      "example_loops_maps_circle",
+      "example_degree_map",
+      "example_degree_loops",
+      "example_degree_loops_spec",
+      "example_m",
+      "example_m_loop",
+      "example_degree_loops_power",
+      "example_m_power",
+      "example_swap_m",
+      "example_ev_along",
+      "example_swap_m_inverse",
+      "example_swap_m_bbz",
+      "example_swap_m_negative",
+      "loop_power_negate",
+      "loop_power_hom",
+      "map_path_power",
+      "ulrik_left_pointwise"
+    ],
+    "principal": [
+      "example_M_bbz_integers",
+      "example_m",
+      "example_swap_m_negative"
+    ],
+    "note": "Here ℤ = circle_group C and BB ℤ = BB (circle_group C) (module 1204). Because ℤ is abelian, Ω(BB ℤ) ≃* S¹ by abelian_bb_loops_pointed_equiv. The constructions are stated over any pointed Y with E : ΩY ≃* S¹ and then instantiated at BB ℤ. This avoids the unfolding of BB in conversion checks. The formalization gives M ≃ ΩΩ(BB ℤ), M ≃ ℤ and Ω(S¹ →* BB ℤ) ≃ (S¹ →* S¹). The map dg′_k is the preimage of the degree map dg_k under postcomposition with E. Here dg_k is defined by circle recursion, loop ↦ loopᵏ. The book uses a funext/univalence description of dg′_k instead. The formal dg′_k is characterized by E ∘ dg′_k = dg_k. The map m_k is defined by circle recursion, pointed by the inverse β-rule instead of refl, with ptw_*(ev(m_k)) = dg′_k. The formalization also gives Ω(E ∘ dg′_k)(loopʲ) = (loopᵏ)ʲ. Also, ptw_*(Ω(m_k)(loopⁱ)) is the pointwise i-th power of dg′_k. The evaluation at loopʲ that gives the ijk-loop is not formalized. TBD1 is an open question of the book and is not formalized. TBD2 has an answer: swap(m_k) = m_{−k} (example_swap_m_negative). In general, swap(m_k) = m_j whenever loopʲ = (loopᵏ)⁻¹. The proof uses con:ptw-swap-ptd-doms and the path reversal of fig:ulrik."
   },
   {
     "chapter": 13,
@@ -25585,8 +25950,14 @@
     "labels": [
       "con:swap-on-paths"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "swap_on_paths"
+    ],
+    "principal": [
+      "swap_on_paths"
+    ],
+    "note": "Let f : A → (B → C), g(b)(a) = f(a)(b) and q : b = b′. Then (a ↦ ap_{f(a)}(q)) = (a ↦ ptw(ap_g(q))(a)) as dependent functions. The proof is by induction on q, as in the book. The base case is refl."
   },
   {
     "chapter": 13,
@@ -25599,8 +25970,34 @@
       "rem:grpHomOK",
       "fig:ulrik"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ulrik_square",
+      "ulrik_left",
+      "ulrik_right",
+      "loops_functor_pointed",
+      "loops_functor_point",
+      "loops_constant_pointing",
+      "loops_of_loops_functor",
+      "double_loop_inverse",
+      "ulrik_ap_loops",
+      "ulrik_final",
+      "ulrik_path",
+      "ulrik_whisker",
+      "ulrik_constant_naturality",
+      "ulrik_naturality_form",
+      "ulrik_conjugate_independent",
+      "ulrik_map_conjugate",
+      "ulrik_group_cancel",
+      "constant_loops_pointed_equiv",
+      "loops_pointed_map_path_from_underlying"
+    ],
+    "principal": [
+      "ulrik_square",
+      "loops_functor_point",
+      "loops_of_loops_functor"
+    ],
+    "note": "The formalization defines h(p) (by path induction), Ω_pt = ptw_*⁻¹(h, ·) and Ω(Ω)(q) = Ω_pt⁻¹·ap_Ω(q)·Ω_pt as printed. The pointing refl_refl_refl becomes the β-rule of h. The square fig:ulrik is filled in full generality: for all pointed X, Y, not only for a 1-type X and a 2-type Y. The statement is ptw_*(Ω(Ω)(q)) = i ∘ Ω(ptw_*(q)) as pointed maps ΩX →* Ω(ΩY) (ulrik_square). Here ptw_* is the variant of rem:loops-at-ptd-cst, and i is path reversal pointed by inverse_refl. As the book TODO suggests, only the underlying functions are identified (cor:Id-(B->*loopsA)). Pointwise, the proof uses path induction on q with a free end point. This expresses ap_{f↦Ω(f)(p)}(q) through the naturality of ptw_*(q) along p. For constant maps, this naturality is ap_{ptw_*(q)}(p)⁻¹ up to conjugation. Eckmann-Hilton in Ω²Y removes the conjugating loops."
   },
   {
     "chapter": 13,
@@ -25612,8 +26009,20 @@
     "labels": [
       "def:O'"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "o_functor_pointed",
+      "o_functor_pointed_point",
+      "o_functor_map",
+      "swap_circle_inverse",
+      "o_prime_map",
+      "o_prime_point",
+      "o_prime_pointed"
+    ],
+    "principal": [
+      "o_prime_pointed"
+    ],
+    "note": "Consider the printed definition O′_{A,B} ≔ (O_{A,B} ∘ swap⁻¹ ∘ -). It does not typecheck against the printed type (A →* B) →* ((S¹ →* A) →* (S¹ →* B)). The reason is that O_{A,B} already has the domain A →* B. The formalization uses the reading that fig:bjørn ((swap ∘ -) ∘ O′ = O) forces. This reading is O′(φ) = swap⁻¹ ∘ O(φ) for φ : A →* O Y. It is a pointed map (A →* O Y) →* (O A →* O(O Y)) (o_prime_pointed, module 1397). The map O_{A,B}, pointed without the swap, is o_functor_pointed. It is a different map, because swap(m_k) = m_{−k}."
   },
   {
     "chapter": 13,
@@ -25625,8 +26034,19 @@
     "labels": [
       "con:ptw-swap-ptd-doms"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ptw_swap_pointed_domains",
+      "swap_pointed_domains_map",
+      "pointed_circle_ev_pointed",
+      "constant_loops_pointed_equiv",
+      "loops_pointed_map_path_from_underlying",
+      "pointed_map_path_equiv_ptw"
+    ],
+    "principal": [
+      "ptw_swap_pointed_domains"
+    ],
+    "note": "For f : S¹ →* (X →* Y), ev_Y ∘ swap(f) = ptw_*(ev_{X→*Y}(f)) as pointed maps X →* ΩY. Here ev ∘ - is pointed composition with the pointed ev_Y of rem:pointing-ev. Also, ptw_* is the variant of rem:loops-at-ptd-cst. As in the book, only the underlying functions are identified, and then cor:Id-(B->*loopsA) applies. Pointwise, the identification uses ptw(fst(f_pt))(x) = ptw_*(f_pt)₁(x). It also uses the fact that evaluation at x preserves composition and inverses (map_path_concat, map_path_inverse). The swap-on-paths step is judgmental."
   },
   {
     "chapter": 13,
@@ -25638,8 +26058,16 @@
     "labels": [
       "def:AbHomgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_hom_group",
+      "hom_group_definition",
+      "pointed_maps_bb_groupoid"
+    ],
+    "principal": [
+      "abelian_hom_group"
+    ],
+    "note": "For H : Group and G : AbelianGroup, Hom(H, G) ≔ Aut_{BH →* BB G}(cst_{pt_{BB G}}, refl) is abelian_hom_group H G of chapter 12. The formalization reuses it from module 1207. The lemma hom_group_definition restates it with the constant map written out (refl)."
   },
   {
     "chapter": 13,
@@ -25651,8 +26079,24 @@
     "labels": [
       "lem:grpHomOK"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "hom_group_abstract_iso",
+      "hom_group_abstract_iso_map",
+      "abstract_hom_ptw_group",
+      "ptw_mul_hom",
+      "ptw_unit_hom",
+      "ptw_inv_hom",
+      "abstract_hom_ptw_group_laws",
+      "abelian_hom_abstract_book_equiv",
+      "abelian_hom_abstract_mul",
+      "abelian_hom_usym_equiv"
+    ],
+    "principal": [
+      "hom_group_abstract_iso",
+      "abstract_hom_ptw_group"
+    ],
+    "note": "The formalization gives an AbstractIso abstr(Hom(H, G)) ≅ absHom_ptw(abstr H, abstr G). Here absHom_ptw is abstract_hom_ptw_group of module 1300. It contains the abstract homomorphisms with pointwise unit, product and inverse, for an abelian target (xca:abs-homgroup + xca:abstract-group-of-maps). The underlying equivalence is the composite of a printed chain. The chain is (sh = sh) ≃ (BH →* Ω BB G) (ptw_*) ≃ (BH →* BG) (ev ∘ -) ≃ absHom (abstr). That is, it is abelian_hom_usym_equiv (module 1207) followed by abstr_hom. The map abstr_hom is an equivalence by lem:homomabstrconcr (module 1219/710). The lemma hom_group_abstract_iso_map states this by refl. The book’s proof is unfinished (W.i.p.). Multiplicativity is the pointwise lemma abelian_hom_abstract_mul of module 1208. That module proves it by the free-loop argument, not by the book’s planned transport along p_pt, q_pt."
   },
   {
     "chapter": 13,
@@ -25666,8 +26110,29 @@
       "ring:unit-laws",
       "ring:assoc-law"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ConcreteRing",
+      "ConcreteRingProps",
+      "ConcreteRingLeftSpec",
+      "concrete_ring_left_unique",
+      "concrete_ring_mul",
+      "concrete_ring_unit",
+      "concrete_trivial_hom",
+      "IsCommutativeConcreteRing",
+      "IsNonTrivialConcreteRing",
+      "concrete_ring_left_unit",
+      "abelian_hom_group",
+      "hom_of_symmetry",
+      "circle_group",
+      "ce_unit_law",
+      "ce_right_unit_fails"
+    ],
+    "principal": [
+      "ConcreteRing",
+      "ConcreteRingProps"
+    ],
+    "note": "A ConcreteRing C (module 1350) has three components: an abelian group R, 1_R : Hom(ℤ, R) and μ : Hom(R, Hom(R, R)). Here ℤ = circle_group C for an arbitrary circle C. Also, Hom(R, R) = abelian_hom_group (def:AbHomgroup). The book's laws are TBD. We complete them with three definitions. First, ℓ_a ≔ hom_of_symmetry(USym μ (a)) (the footnote's ev ∘ -). Second, a · b ≔ USym ℓ_a (b). Third, 1 ≔ USym 1_R (loop). The printed unit law is ev ∘ USym(μ ∘ 1_R)(loop) = B id_R. We read it literally as hom_of_symmetry(USym(μ ∘ 1_R)(loop)) = id_R. This law gives 1 · b = b (concrete_ring_left_unit). The laws also include a · 1 = a and a · (b · c) = (a · b) · c. Commutative means a · b = b · a. Non-trivial means 1_R ≠ the trivial homomorphism. The constant map at the shape classifies the trivial homomorphism, as in the footnote. The record has a formal deviation for performance. In the pinned Narya, a comparison of types that contain USym(hom_of_symmetry(USym μ a))(b) does not terminate in reasonable time. Thus the record also carries left : USym R → Hom(R,R) with left_spec : left a = hom_of_symmetry(USym μ a). This pair is uniquely determined by μ (concrete_ring_left_unique). The laws are stated with USym(left a)(b). Module 1393 shows that the printed data and unit law do not suffice. Take R = ℤ × ℤ, 1_R the first inclusion and μ through the first projection. Then the printed unit law holds (ce_unit_law), but a · 1 ≠ a (ce_right_unit_fails)."
   },
   {
     "chapter": 13,
@@ -25677,8 +26142,60 @@
     "line": 1177,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "integer_concrete_ring",
+      "integer_concrete_ring_commutative",
+      "integer_concrete_ring_non_trivial",
+      "integer_concrete_mu",
+      "integer_mu_symmetry",
+      "integer_mu_symmetry_hom",
+      "integer_concrete_mu_power",
+      "integer_concrete_left_spec",
+      "integer_concrete_mul_one_right",
+      "integer_concrete_mul_powers",
+      "integer_concrete_two_times_three",
+      "integer_concrete_abstract_ring",
+      "integer_concrete_abstract_commutative",
+      "integer_concrete_abstract_non_trivial",
+      "zring_unit_law",
+      "zring_loop_loop",
+      "zring_left_loop",
+      "zring_left_mixed",
+      "zring_left_spec",
+      "circle_abstract_endo_fixing_loop",
+      "book_integer_twist",
+      "book_integer_twist_base",
+      "book_integer_rotation_base_map",
+      "book_integer_rotation_base",
+      "book_integer_rotation_path",
+      "book_integer_trunc_condition",
+      "book_integer_mu_loop",
+      "book_integer_mu_loop_fst",
+      "book_integer_mu_loop_evaluation",
+      "book_integer_mu",
+      "book_integer_mu_powers",
+      "book_integer_mu_powers_fst",
+      "book_integer_mu_loop_base",
+      "book_integer_mu_base",
+      "circle_translation",
+      "circle_translation_base",
+      "book_integer_mu_pointed",
+      "book_integer_mu_m_neg_one",
+      "book_integer_mu_is_swap_ring_mu",
+      "book_integer_mu_ne_ring_mu",
+      "book_integer_mu_double_loop_book_order",
+      "book_integer_mu_double_loop_footnote",
+      "example_m_power_along_circle"
+    ],
+    "principal": [
+      "integer_concrete_ring",
+      "integer_concrete_ring_commutative",
+      "book_integer_mu",
+      "book_integer_mu_is_swap_ring_mu",
+      "book_integer_mu_double_loop_book_order"
+    ],
+    "note": "This note is about the integers as a concrete ring (modules 1351, 1352), with C arbitrary and 1_ℤ = id. Module 1352 formalizes the book's explicit data. The first datum is s (book_integer_twist, s(base) = loop). Next, e_z = circle_translation C z with e_z(base) = z and e_base = id. Next is the loop (e_z, !) in BBℤ with first component ua(e_z) and evaluation z. Last, Bμ(z) = ve(sh, (e_z, !)) (book_integer_mu). It satisfies Bμ(z, loop^k) = (e_z, !)^k, with first component ua(e_z)^k, and Bμ(base) = the constant map. The ring structure itself (1351) uses μ := the homomorphism ℤ → Hom(ℤ,ℤ) that sends loop to the symmetry σ ↔ id_ℤ (printed unit law). The book's curried Bμ is the swap of this μ curried (book_integer_mu_is_swap_ring_mu, modules 1390-1392). It differs from the curried μ (book_integer_mu_ne_ring_mu): Bμ = m_{−1}. Thus Bμ satisfies the printed unit law only after a swap of its arguments. The 2-dimensional computation Bμ(loop^j, loop^k) = s^{jk} holds in the order of the book's display (book_integer_mu_double_loop_book_order, module 1394). In the footnote order, it gives s^{−jk}. On symmetries, loop^j · loop^k = loop^{jk} (integer_concrete_mul_powers). The final claim is that integer_concrete_ring is a commutative, non-trivial concrete ring. The proof shows that ℓ_a = ev ∘ USym μ (a) is the mixed-ring ℓ_a of module 1361 (zring_left_spec). This gives the left field and all laws."
   },
   {
     "chapter": 13,
@@ -25690,8 +26207,22 @@
     "labels": [
       "xca:Rconcring->URabstring"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "concrete_ring_abstract_ring",
+      "left_multiplication_abstract_ring",
+      "evaluation_left_unit",
+      "evaluation_rdistr",
+      "concrete_ring_rdistr",
+      "concrete_ring_right_hom",
+      "concrete_ring_additive_is_abstr",
+      "concrete_ring_abstract_commutative",
+      "concrete_ring_abstract_non_trivial"
+    ],
+    "principal": [
+      "concrete_ring_abstract_ring"
+    ],
+    "note": "The abstract ring concrete_ring_abstract_ring C R : AbstractRing (module 1350) has the carrier USym R. Its additive group is abstr(R) (concrete_ring_additive_is_abstr, refl), and its unit is USym 1_R (loop). Its multiplication is a · b = USym(ℓ_a)(b) with ℓ_a = hom_of_symmetry(USym μ (a)). This ℓ_a is the book's USym μ followed by ev. It comes from the field left and left_spec (see def:ring). Left distributivity is USym of a homomorphism. Right distributivity is the pointwise product in Hom(R,R) (abelian_hom_usym_mul, through evaluation_rdistr). Commutative/non-trivial concrete rings give commutative/non-trivial abstract rings. The algebra is proved for arbitrary left multiplications (left_multiplication_abstract_ring) and an arbitrary evaluation, and then instantiated."
   },
   {
     "chapter": 13,
@@ -25701,8 +26232,18 @@
     "line": 1239,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsInvertible",
+      "InverseWitness",
+      "is_invertible_prop",
+      "invertible_intro",
+      "one_invertible"
+    ],
+    "principal": [
+      "IsInvertible"
+    ],
+    "note": "IsInvertible R e = Mere (Σ a, (e·a = 1) × (a·e = 1)), where ‖-‖ is the native propositional truncation Mere. The definition is stated for every abstract ring R. It does not use the book's 'commutative ring' hypothesis."
   },
   {
     "chapter": 13,
@@ -25712,8 +26253,16 @@
     "line": 1244,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "zero_not_invertible",
+      "zero_not_invertible_any",
+      "IsNonTrivialCRing"
+    ],
+    "principal": [
+      "zero_not_invertible"
+    ],
+    "note": "The lemma zero_not_invertible R : IsNonTrivialCRing R → ¬ IsInvertible R 0 uses the book's proof. In this proof, a·0 = 1 and a·0 = 0 give 0 = 1. Here IsNonTrivialCRing R = IsCommutativeRing R × IsNonTrivialRing R. The lemma zero_not_invertible_any shows that commutativity is not necessary."
   },
   {
     "chapter": 13,
@@ -25723,8 +26272,29 @@
     "line": 1253,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsField",
+      "Field",
+      "NonInvertibles",
+      "field_ring",
+      "field_carrier",
+      "non_invertibles_path",
+      "NonInvertiblesAreZero",
+      "field_non_invertible_zero",
+      "field_from_non_invertible_zero",
+      "field_iff_non_invertible_zero",
+      "f2_is_field",
+      "f2_field",
+      "zero_ring_not_field",
+      "integer_ring_not_field"
+    ],
+    "principal": [
+      "IsField",
+      "Field",
+      "field_iff_non_invertible_zero"
+    ],
+    "note": "IsField R = IsNonTrivialCRing R × BookIsContr (Σ x, ¬ IsInvertible R x), as printed. Also, Field = Σ AbstractRing IsField. The 'equivalently' sentence is field_iff_non_invertible_zero. It proves both directions for a non-trivial commutative R: contractibility ⇔ every non-invertible element is 0. Litmus tests: ℤ/2 is a field (f2_is_field). The ring ℤ is not a field (integer_ring_not_field, module 1314). The zero ring is not a field (zero_ring_not_field)."
   },
   {
     "chapter": 13,
@@ -25734,8 +26304,10 @@
     "line": 1259,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "This is a remark on terminology. It compares the term with Johnstone's 'residue field'. It makes no mathematical claim."
   },
   {
     "chapter": 13,
@@ -25745,8 +26317,15 @@
     "line": 1263,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsDiscreteField",
+      "f2_discrete"
+    ],
+    "principal": [
+      "IsDiscreteField"
+    ],
+    "note": "IsDiscreteField R = IsField R × Π a, Mere ((a = 0) + IsInvertible R a), as printed. Litmus test: f2_discrete."
   },
   {
     "chapter": 13,
@@ -25756,8 +26335,16 @@
     "line": 1268,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsLocalRing",
+      "f2_local",
+      "integer_ring_not_local"
+    ],
+    "principal": [
+      "IsLocalRing"
+    ],
+    "note": "IsLocalRing R = IsNonTrivialCRing R × Π a b, IsInvertible R (a+b) → Mere (IsInvertible R a + IsInvertible R b), as printed. Litmus tests: ℤ/2 is local (f2_local). The ring ℤ is not local (integer_ring_not_local: 1 = 3 + (−2), module 1314)."
   },
   {
     "chapter": 13,
@@ -25767,8 +26354,15 @@
     "line": 1273,
     "section_raw": "Rings, abstract and concrete}\\label{sec:rings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsHeytingField",
+      "f2_heyting"
+    ],
+    "principal": [
+      "IsHeytingField"
+    ],
+    "note": "IsHeytingField R = IsField R × IsLocalRing R, as printed. Litmus test: f2_heyting."
   },
   {
     "chapter": 13,
@@ -25778,8 +26372,24 @@
     "line": 1287,
     "section_raw": "vector spaces}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "RingModule",
+      "VectorSpace",
+      "module_group",
+      "module_group_abelian",
+      "module_set",
+      "smul_zero_scalar",
+      "smul_zero_vector",
+      "ring_self_module",
+      "standard_module",
+      "standard_vector_space"
+    ],
+    "principal": [
+      "VectorSpace",
+      "RingModule"
+    ],
+    "note": "VectorSpace K = RingModule (K .fst). A RingModule is an abelian abstract group (carrier, zero, add, neg, group laws, add_comm) with smul : K → V → V. The laws are 1v = v, (ab)v = a(bv), (a+b)v = av + bv and a(v+w) = av + aw. Deviations: first, 'abelian group V' is read as an abelian abstract group. This is equivalent to a concrete abelian group by thm:Groupsareidentitytypes. Second, scalar multiplication is curried. Third, 'bilinear' is read as additive in each argument. Fourth, the definition is stated for modules over any abstract ring, because it does not use that K is a field."
   },
   {
     "chapter": 13,
@@ -25789,8 +26399,22 @@
     "line": 1291,
     "section_raw": "vector spaces}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LinearMap",
+      "IsLinear",
+      "linear_map_fn",
+      "is_linear_prop",
+      "linear_map_ext",
+      "linear_map_set",
+      "linear_id",
+      "linear_compose"
+    ],
+    "principal": [
+      "LinearMap",
+      "IsLinear"
+    ],
+    "note": "LinearMap R V W = Σ (h : AbstractHom of the additive groups) (Π a v, h(a v) = a h(v)). The printed text names the map h and then writes f in the equation. Both letters denote the same map."
   },
   {
     "chapter": 13,
@@ -25800,8 +26424,21 @@
     "line": 1295,
     "section_raw": "vector spaces}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFreeVectorSpace",
+      "IsFreeModuleOn",
+      "LinearExtensions",
+      "FreeVectorSpace",
+      "ring_self_module_free",
+      "standard_module_free",
+      "standard_vector_space_free"
+    ],
+    "principal": [
+      "IsFreeVectorSpace",
+      "FreeVectorSpace"
+    ],
+    "note": "IsFreeVectorSpace K S V i is a condition for a set S : SetTypes. It says that a type is contractible (BookIsContr) for every K-vector space W and j : S → W. This type is Σ (h : LinearMap V W) (Π s, h(i s) = j s). Also, FreeVectorSpace K S = Σ V, Σ i, IsFreeVectorSpace K S V i. Litmus tests: K is free on Fin 1 (ring_self_module_free). Kⁿ is free on Fin n (standard_vector_space_free, module 1315)."
   },
   {
     "chapter": 13,
@@ -25811,8 +26448,18 @@
     "line": 1299,
     "section_raw": "vector spaces}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "NDimensionalVectorSpace",
+      "field_one_dimensional",
+      "standard_n_dimensional",
+      "HasDimension",
+      "IsFiniteDimensional"
+    ],
+    "principal": [
+      "NDimensionalVectorSpace"
+    ],
+    "note": "NDimensionalVectorSpace K n = FreeVectorSpace K (Fin n, fin_set n), as printed. This is a vector space together with a basis indexed by Fin n. Litmus tests: field_one_dimensional (K is 1-dimensional) and standard_n_dimensional (Kⁿ, module 1315). HasDimension and IsFiniteDimensional are propositional helpers for later chapters. They are not book definitions."
   },
   {
     "chapter": 14,

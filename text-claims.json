@@ -13320,5 +13320,557 @@
     "importance": "low",
     "declarations": [],
     "note": "The section is empty in the pinned book."
+  },
+  {
+    "source": "fields.tex",
+    "line": 4,
+    "quote": "In this chapter we will extend the hierarchy of algebraic structures from monoids and groups to rings, fields, and vector spaces. Of all these structures there are several varieties, satisfying additional properties, such as abelian groups, non-trivial rings, commutative rings, ....",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a chapter overview. The cited labels def:field, def:vectorspace, def:non-trivial-ring and def:commutative-ring do not exist in the source. The notions are AbstractRing, IsNonTrivialRing, IsCommutativeRing, Field and VectorSpace."
+  },
+  {
+    "source": "fields.tex",
+    "line": 17,
+    "quote": "Quotients; subspaces (= ?). Bases and so. Dual space; orthogonality. (all of this depends on good implementations of subobjects). Eigen-stuff. Characteristic polynomials; Hamilton-Cayley.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a to-do list of the author for sections that are not written yet. It makes no claim."
+  },
+  {
+    "source": "fields.tex",
+    "line": 21,
+    "quote": "A ring is an algebraic structure that consists of a group and a monoid that share the same underlying set. The interaction between the respective operations is governed by laws that are called the distributivity laws.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "AbstractRing",
+      "DistrLaws",
+      "ring_additive_group",
+      "ring_monoid"
+    ],
+    "note": "This is an informal preview of def:abstractring. The formal counterpart is AbstractRing with ring_additive_group and ring_monoid."
+  },
+  {
+    "source": "fields.tex",
+    "line": 25,
+    "quote": "The standard example of a (commutative) ring is the ring with set of integers as underlying set, with addition as group operation and multiplication as monoid operation.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "integer_ring",
+      "integer_ring_commutative",
+      "integer_ring_non_trivial",
+      "integer_commutative_ring",
+      "int_mul_ldistr",
+      "int_mul_rdistr",
+      "int_mul_assoc",
+      "int_mul_monoid_laws",
+      "int_one",
+      "integer_ring_litmus_mul",
+      "integer_ring_litmus_neg_mul"
+    ],
+    "note": "The ring integer_ring (module 1310) is (Int, 0, +, -, 1, ·) with int_add_abstract_group_laws (module 721) and int_mul of module 53. Here int_mul is signed iterated addition. Module 1310 proves associativity and both distributive laws by induction on the last argument. Commutativity is int_mul_comm (module 53). The ring is non-trivial. Litmus tests: 2·3 = 6 and (-2)·3 = -6 by refl."
+  },
+  {
+    "source": "fields.tex",
+    "line": 28,
+    "quote": "Note that multiplication in a ring need not be commutative.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "endomorphism_ring",
+      "endo_ring_distr",
+      "int_pair_group",
+      "int_pair_endo_ring",
+      "int_pair_swap",
+      "int_pair_const_true",
+      "int_pair_endo_noncommuting",
+      "int_pair_endo_ring_not_commutative",
+      "int_pair_endo_ring_non_trivial"
+    ],
+    "note": "The ring endomorphism_ring A hab (module 1311) is End(A) for an abelian abstract group A. Its additive group is absHom_ptw(A, A). Its multiplication is composition (f · g = f ∘ g), and its unit is the identity. Take A = ℤ^Bool (≅ ℤ × ℤ). Then the swap and the constant projection u ↦ (_ ↦ u(true)) do not commute. Thus End(ℤ^Bool) is a non-trivial non-commutative ring (int_pair_endo_ring_not_commutative)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 29,
+    "quote": "In contrast, in xca:ring-group-abelian you are asked to prove that the group of a ring is always abelian, as a consequence of the extra structure and properties.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ring_add_comm",
+      "ring_additive_abelian"
+    ],
+    "note": "This is a footnote. It is proved as xca:ring-group-abelian."
+  },
+  {
+    "source": "fields.tex",
+    "line": 35,
+    "quote": "We follow the convention that the group data of an abstract group are denoted by 0, +, - and the monoid data by 1, ·.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "AbstractRing"
+    ],
+    "note": "These are the field names zero, add, neg, one and mul of AbstractRing."
+  },
+  {
+    "source": "fields.tex",
+    "line": 55,
+    "quote": "The abstract group (R,0,+,-) is called the (additive) group of R, and the monoid (R,1,·) the (multiplicative) monoid of R.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ring_additive_group",
+      "ring_monoid"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fields.tex",
+    "line": 100,
+    "quote": "for any abstract ring R and elements a,b:R, the left multiplication function (a·-) and the right multiplication function (-·b) are abstract homomorphisms of the additive group (R,0,+,-) of R to itself.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ring_left_mul_hom",
+      "ring_right_mul_hom"
+    ],
+    "note": "This follows from the left and right distributive laws."
+  },
+  {
+    "source": "fields.tex",
+    "line": 107,
+    "quote": "There are two ways to compose them: (a·(-·b)) and ((a·-)·b). Equality of the latter two functions is an elegant way of expressing associativity.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ComposedMultiplicationsAgree",
+      "assoc_to_composed_multiplications",
+      "composed_multiplications_to_assoc"
+    ],
+    "note": "For any binary operation, associativity is logically equivalent to the equality of the functions x ↦ a(xb) and x ↦ (ax)b for all a, b."
+  },
+  {
+    "source": "fields.tex",
+    "line": 114,
+    "quote": "It will follow as in xca:ring-group-abelian that the group R is abelian.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "mixed_ring_group_abelian",
+      "mixed_ring_abstract_ring"
+    ],
+    "note": "This is a footnote to def:mixring: the proof uses the abstract ring of xca:Rmixring->URabstring and ring_add_comm."
+  },
+  {
+    "source": "fields.tex",
+    "line": 118,
+    "quote": "We call these rings ``mixed'' since they are based on a concrete group R and data referring to abstr(R).",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology."
+  },
+  {
+    "source": "fields.tex",
+    "line": 135,
+    "quote": "The coherence law allows us to abbreviate both (USym ℓ_g)(h) and (USym r_h)(g) by g·h. ... Then, ℓ=r amounts to g·h = h·g, for all g,h : USym G, as could be expected from the abstract case.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "mixed_mul",
+      "mixed_commutative_to_mul_comm",
+      "mixed_mul_comm_to_commutative",
+      "group_hom_from_usym_agreement"
+    ],
+    "note": "Both directions are proved. The converse uses the fact that homomorphisms are determined by their action on symmetries (lem:homomabstrconcr, module 710). The printed USym G is USym R."
+  },
+  {
+    "source": "fields.tex",
+    "line": 150,
+    "quote": "The reader may recognize the degree m map from def:dgm-map as a special case.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "integer_mixed_left_degree_map",
+      "circle_degree_map"
+    ],
+    "note": "For m ≥ 0, the map that classifies ℓ_{loop^m} is circle_degree_map C m, by refl."
+  },
+  {
+    "line": 253,
+    "quote": "Of course, $\\sum_{x:B}(\\pt_B\\eqto x)$ is contractible.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "pointed_constant_domain_contractible"
+    ],
+    "note": "This is book_pathspace_contractible at pt_B.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 419,
+    "quote": "Note that $\\OO(f)_\\pt$ is a reflexivity path if $f_\\pt\\jdeq\\refl{\\pt_B}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "o_functor_point_refl"
+    ],
+    "note": "In Narya, the endpoint of O(f)_pt is cst_*(f pt, refl·refl). Thus the formal claim is as follows: for f_pt = refl, O(f)_pt equals the path (refl, (concat_p1 refl)⁻¹) given by the unit law. This is a propositional statement, not a judgmental one.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 461,
+    "quote": "$\\ev_\\blank$ is an example of a wild natural equivalence between the wild functors $\\loops, \\Sc\\blank : \\UUp\\ptdto\\UUp$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "omega_o_square",
+      "pointed_circle_ev_pointed_equiv",
+      "o_wild_functor",
+      "ev_wild_nat_trans",
+      "ev_wild_nat_iso"
+    ],
+    "note": "This is a margin note of the author. The map ev is a wild natural transformation O → Ω between wild functors on pointed types (ev_wild_nat_trans, module 1395). Here Ω is LoopFunctor of chapter 6, and O is o_wild_functor. Every component is an isomorphism (ev_wild_nat_iso). The naturality squares are con:Omega-O (omega_o_square).",
+    "source": "fields.tex"
+  },
+  {
+    "line": 603,
+    "quote": "Composition with $\\OO$, \\ie $(\\OO\\circ\\blank)\\defeq(q\\mapsto \\OO\\circ q)$, gives the map $(\\OO\\circ\\blank): (\\Sc\\ptdto(A\\ptdto B))\\to (\\Sc\\to((\\Sc\\ptdto A)\\ptdto(\\Sc\\ptdto B))$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "o_functor_postcompose"
+    ],
+    "note": "The map is q ↦ (z ↦ O(q z)). The footnote mentions a corresponding map Ω(X →* Y) → Ω(ΩX →* ΩY). This is the pointed map Ω(Ω) of rem:grpHomOK.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 646,
+    "quote": "There are several ways to see that $\\loops(\\BB\\ZZ) \\jdeq (\\pt=\\pt,\\refl{\\pt})$ is equivalent to $\\B\\ZZ \\jdeq \\Sc$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "example_bbz_loops",
+      "abelian_bb_loops_pointed_equiv"
+    ],
+    "note": "The formalization uses the first way (ℤ abelian). The second way (component of S¹ = S¹ at id) is univ_cover_loops_component_equiv (module 1203) with xca:(S1->S1)_(f)-eqv-S1. These two parts are not composed here.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 655,
+    "quote": "it follows that $M$ is equivalent to $\\loops\\loops(\\BB\\ZZ)$ and hence to $\\zet$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "example_M_bbz_double_loops",
+      "example_M_bbz_integers"
+    ],
+    "note": "These are equivalences of types.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 660,
+    "quote": "we get an equivalence between $\\loops(\\Sc\\ptdto\\BB\\ZZ)$ and $\\Sc\\ptdto\\Sc$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "example_loops_maps_circle"
+    ],
+    "note": "The map is ptw_* followed by postcomposition with Ω(BB ℤ) ≃* S¹.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 677,
+    "quote": "We see that applying $\\ptw_*(m_k(\\Sloop))=\\dg{k}'$ to $\\Sloop^j$ gives the $jk$-loop around $\\id_\\Sc$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "example_m_loop",
+      "example_degree_loops_power"
+    ],
+    "note": "The formalization proves ptw_*(ev(m_k)) = dg′_k. Along E, it proves Ω(E∘dg′_k)(loopʲ) = (loopᵏ)ʲ.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 679,
+    "quote": "Also, using \\cref{con:ptd-homotopy-compo}, applying $\\ptw_*(m_k(\\Sloop^i))$ to $\\Sloop^j$ gives the $ijk$-loop around $\\id_\\Sc$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "example_m_power",
+      "loops_eval_along_power",
+      "example_m_power_along",
+      "example_m_power_along_circle"
+    ],
+    "note": "The application of ptw_*(m_k(loopⁱ)) to loopʲ is Ω(ptw_*(m_k(loopⁱ)))(loopʲ). It equals (Ω(dg′_k)(loopʲ))ⁱ (example_m_power_along, by fig:ulrik and Eckmann-Hilton). Along E : Ω Y ≃* S¹, this is loop^{(i·j)·k} (example_m_power_along_circle, module 1396).",
+    "source": "fields.tex"
+  },
+  {
+    "line": 684,
+    "quote": "TBD1: clarify the relation between $m_k$ and multiplication of its arguments by $k$",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an open question of the authors. It has no precise claim.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 687,
+    "quote": "TBD2: Find out if $\\swap(m_k)$ is equal to $m_k$ or to $m_{-k}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "example_swap_m_negative",
+      "example_swap_m_inverse",
+      "example_swap_m"
+    ],
+    "note": "Answer: swap(m_k) = m_{−k}.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 779,
+    "quote": "Then $p=_{\\loops X}p'$ and $q=_{{\\loops}^2 Y}q'$ are proof-irrelevant.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "The formalization does not need this: fig:ulrik is filled for all pointed X, Y (ulrik_square).",
+    "source": "fields.tex"
+  },
+  {
+    "line": 890,
+    "quote": "$P(f)$ expresses that $\\protect\\ev\\circ f\\circ \\inv{\\protect\\ev}$ classifies a homomorphism.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the legend of the unfinished figure fig:bjørn, a plan for lem:grpHomOK. The formalization proves lem:grpHomOK by the chain of its statement instead.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 895,
+    "quote": "Then $\\BB G$ and hence also $\\BH\\ptdto\\BB G$ is a $2$-type, pointed at the constant map that sends any $w:\\BH$ to the point $\\pt_{\\BB G}$ of $\\BB G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bb_two_type",
+      "bh_pointed_maps_bb_two_type",
+      "book_pointed_constant"
+    ],
+    "note": "BB G is a 2-type (bb_two_type, module 1204). BH →* BB G is a 2-type (HLevel 4). This follows from the stronger 1-type statement. The type is pointed at book_pointed_constant.",
+    "source": "fields.tex"
+  },
+  {
+    "line": 899,
+    "quote": "In fact, the type $\\BG\\ptdto\\BB G$ is a $1$-type, since the maps are pointed.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_maps_bb_groupoid"
+    ],
+    "note": "Module 1207 shows that the pointed maps from the connected BG into the 2-type BB G form a groupoid (ft:ptd-decr-h-lev).",
+    "source": "fields.tex"
+  },
+  {
+    "line": 911,
+    "quote": "The following lemma identifies the group $\\grpHom(H,G)$ as the delooping of $\\absHom_{\\ptw}(\\abstr(H),\\abstr(G))$, the abelian abstract group of abstract homomorphisms with pointwise operations",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "hom_group_abstract_path",
+      "hom_group_abstract_iso",
+      "abstract_hom_ptw_group",
+      "abstract_hom_ptw_group_abelian"
+    ],
+    "note": "The formalization proves abstr(Hom(H, G)) = absHom_ptw(abstr H, abstr G) as abstract groups. This follows from the abstract isomorphism by module 702. The group absHom_ptw is abelian (litmus test abstract_hom_ptw_group_abelian).",
+    "source": "fields.tex"
+  },
+  {
+    "line": 916,
+    "quote": "Consequently, $\\grpHom(H,G)$ is an abelian group.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "hom_group_is_abelian",
+      "abelian_hom_group_abelian"
+    ],
+    "note": "This is abelian_hom_group_abelian of module 1208.",
+    "source": "fields.tex"
+  },
+  {
+    "source": "fields.tex",
+    "line": 1108,
+    "quote": "We will now elaborate an approach to rings that is even more concrete than mixed rings. ... Since monoids have no concrete counterpart in our set up, we replaced in def:mixring the multiplicative monoid by the half abstract ℓ, r : USym R → Hom(R,R).",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation. The mixed rings that it refers to are MixedRing (module 1360)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1115,
+    "quote": "for any abstract ring R, left and right multiplication by a fixed but arbitrary element of R are abstract homomorphisms from the additive group (R,0,+,-) of R to itself.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ring_left_mul_hom",
+      "ring_right_mul_hom"
+    ],
+    "note": "The formal counterpart is module 1300 (lead). It restates the running text before def:mixring."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1120,
+    "quote": "Even more so, the map a ↦ (a·-) is an abstract homomorphism from (R,0,+,-) to the abstract group absHom_ptw(R,R) of abstract homomorphisms from (R,0,+,-) to itself, with pointwise operations induced by (R,0,+,-). [absHom_ptw(R,R) is an abelian abstract group]",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ring_left_mul_ptw_hom",
+      "abstract_hom_ptw_group",
+      "abstract_hom_ptw_group_abelian"
+    ],
+    "note": "The group abstract_hom_ptw_group H G hab is absHom_ptw(H,G) for abelian G (xca:abs-homgroup with xca:abstract-group-of-maps). It is abelian. The map a ↦ (a·-) is a homomorphism by right distributivity."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1127,
+    "quote": "Given that we have replaced (R,0,+,-) by an abelian group G, the plan is to deloop absHom_ptw(abstr(G), abstr(G)). Denoting the result of the delooping by Hom(G,G)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abelian_hom_group",
+      "abelian_hom_usym_equiv",
+      "abelian_hom_usym_mul",
+      "abelian_hom_group_abelian",
+      "abstract_hom_ptw_group",
+      "hom_group_abstract_iso",
+      "hom_group_abstract_path"
+    ],
+    "note": "Hom(G,G) = abelian_hom_group (module 1207) deloops absHom_ptw(abstr G, abstr G). The results hom_group_abstract_iso and hom_group_abstract_path (lem:grpHomOK, module 1336) give abstr(Hom(G,G)) ≅ abstract_hom_ptw_group (module 1300). The map μ : Hom(G, Hom(G,G)) is the field mu of ConcreteRing (module 1350)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1129,
+    "quote": "This notation presupposes that G is abelian and distinguishes the set of homomorphisms from G to G from the group with this set of homomorphisms as underlying set.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "abelian_hom_group",
+      "GroupHom"
+    ],
+    "note": "The group abelian_hom_group takes its target as an AbelianGroup. The set of homomorphisms is GroupHom."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1133,
+    "quote": "we can then define the multiplication as a homomorphism μ : Hom(G, Hom(G,G)).",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ConcreteRing"
+    ],
+    "note": "This is the field mu of ConcreteRing (module 1350)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1136,
+    "quote": "One way of delooping absHom_ptw(abstr(G),abstr(G)) would be to use the inverse of abstr in lem:homomabstrconcr which involves torsors. We prefer to use Hom(G,G) from def:AbHomgroup, making direct use of the assumption that G is abelian.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "deloop_hom",
+      "abstr_hom_equiv",
+      "abelian_hom_group"
+    ],
+    "note": "The torsor-free delooping of abstract homomorphisms is given by deloop_hom and abstr_hom_equiv (module 710). As the book prefers, def:ring uses abelian_hom_group. Module 1351 also uses deloop_hom (circle_abstract_endo_fixing_loop)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1231,
+    "quote": "TBD define type of (abstract) rings, prove equivalence, define ring homomorphisms, delooping etc. No interesting difficulties expected before we come to fields.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "ConcreteRing",
+      "concrete_ring_abstract_ring"
+    ],
+    "note": "This is a to-do note of the author. The type of concrete rings is ConcreteRing C. The passage to abstract rings is concrete_ring_abstract_ring (module 1350). The book states no equivalence of types."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1278,
+    "quote": "References used in this section: Noether, Ideal Theory in Rings; Lombardi–Quitté, Commutative algebra: Constructive methods; Johnstone, Rings, Fields, and Spectra.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is bibliography."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1303,
+    "quote": "the general linear group as automorphism group",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "general_linear_group",
+      "vector_space_general_linear_group",
+      "general_linear_usym_equiv",
+      "module_path_iso_equiv",
+      "module_groupoid"
+    ],
+    "note": "This is only a section title (the section is empty). The formalization defines GL(V) = Aut_{Mod_R}(V), the automorphism group of V in the groupoid of modules or vector spaces. This groupoid is module_groupoid, through the structure identity principle module_path_iso_equiv. The symmetries of GL(V) are the linear automorphisms (general_linear_usym_equiv)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1304,
+    "quote": "determinants; examples: rationals, polynomials, adding a root, field extensions; ordered fields, real-closed fields, pythagorean fields, euclidean fields; complex fields, quadratically closed fields, algebraically closed fields",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "These are empty section titles (lines 1304-1307). They have no content."
   }
 ]

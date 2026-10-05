@@ -24,7 +24,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 10: Finite groups](chapters/ch10/README.md) | 19 | 17 | 1 | 1 | 0 | 3 | 5 |
 | [Chapter 11: Group presentations](chapters/ch11/README.md) | 36 | 29 | 3 | 3 | 1 | — | 10 |
 | [Chapter 12: Abelian groups](chapters/ch12/README.md) | 19 | 19 | 0 | 0 | 0 | 0 | 2 |
-| **Total** | **829** | **803** | **17** | **4** | **5** | | **69** |
+| [Chapter 13: Rings, fields and vector spaces](chapters/ch13/README.md) | 44 | 43 | 0 | 0 | 1 | 0 | 2 |
+| **Total** | **873** | **846** | **17** | **4** | **6** | | **71** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:

@@ -1,0 +1,1151 @@
+[
+  {
+    "source": "fields.tex",
+    "line": 38,
+    "labels": [
+      "def:abstractring",
+      "ring:ldistr-law",
+      "ring:rdistr-law"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/01-abstract-rings.ny",
+    "blind_declarations": [
+      "BlindDistrLaws",
+      "BlindAbsRing",
+      "blind_absring_monoid",
+      "BlindAbsRingNonTrivial",
+      "BlindAbsRingCommutative"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-01-abstract-rings.ny",
+    "bridge_declarations": [
+      "b01_ring",
+      "b01_blind_ring",
+      "bridge_def_distr_laws",
+      "bridge_def_absring",
+      "bridge_def_absring_monoid",
+      "bridge_def_absring_additive",
+      "bridge_def_absring_non_trivial",
+      "bridge_def_absring_commutative"
+    ],
+    "our_declarations": [
+      "AbstractRing",
+      "DistrLaws",
+      "ring_monoid",
+      "ring_additive_group",
+      "IsNonTrivialRing",
+      "IsCommutativeRing"
+    ],
+    "note": "BlindAbsRing (nested additive AbstractGroup) and our flat AbstractRing are equivalent with refl round trips (record eta). The distributive laws, monoid, additive group, non-triviality and commutativity agree by refl along the conversion."
+  },
+  {
+    "source": "fields.tex",
+    "line": 59,
+    "labels": [
+      "def:typering"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/01-abstract-rings.ny",
+    "blind_declarations": [
+      "BlindTypeRing",
+      "BlindTypeCommRing"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-01-abstract-rings.ny",
+    "bridge_declarations": [
+      "bridge_def_type_ring",
+      "bridge_def_type_ring_record",
+      "bridge_def_type_comm_ring"
+    ],
+    "our_declarations": [
+      "AbstractRingSigma",
+      "abstract_ring_sigma_equiv",
+      "CommutativeRing"
+    ],
+    "note": "BlindTypeRing is our AbstractRingSigma by refl. Both Sigma types are equivalent to our records with refl round trips. In the commutative version, the commutativity factor is nested differently."
+  },
+  {
+    "source": "fields.tex",
+    "line": 71,
+    "labels": [
+      "xca:ring-group-abelian"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/01-abstract-rings.ny",
+    "blind_declarations": [
+      "blind_ring_group_abelian"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-01-abstract-rings.ny",
+    "bridge_declarations": [
+      "bridge_ring_group_abelian",
+      "bridge_ring_group_abelian_converse"
+    ],
+    "our_declarations": [
+      "ring_additive_abelian"
+    ],
+    "note": "This is derived from ring_additive_abelian. The converse is also proved."
+  },
+  {
+    "source": "fields.tex",
+    "line": 76,
+    "labels": [
+      "def:ringhom"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/01-abstract-rings.ny",
+    "blind_declarations": [
+      "BlindIsRingMonoidHom",
+      "BlindAbsRingHom"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-01-abstract-rings.ny",
+    "bridge_declarations": [
+      "bridge_def_is_ring_monoid_hom",
+      "bridge_def_absring_hom"
+    ],
+    "our_declarations": [
+      "RingHom"
+    ],
+    "note": "BlindAbsRingHom R S is RingHom (b01_ring R) (b01_ring S) by refl."
+  },
+  {
+    "source": "fields.tex",
+    "line": 89,
+    "labels": [
+      "exa:ring-Z-polynomials"
+    ],
+    "status": "no-claim",
+    "blind_file": "chapters/ch13/blind/01-abstract-rings.ny",
+    "blind_declarations": [],
+    "bridge_file": "",
+    "bridge_declarations": [],
+    "our_declarations": [
+      "integer_polynomial_ring"
+    ],
+    "note": "This is a TBD stub without a claim in the book. The blind version has no declaration. Ours formalizes Z[x] anyway (module 1313). There is nothing to bridge."
+  },
+  {
+    "source": "fields.tex",
+    "line": 112,
+    "labels": [
+      "def:mixring",
+      "mixring:unit-laws",
+      "mixring:lr-coherence-law",
+      "mixring:assoc-law"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/02-mixed-rings.ny",
+    "blind_declarations": [
+      "BlindRingProps",
+      "BlindMixRing",
+      "BlindMixRingCommutative",
+      "BlindMixRingNonTrivial",
+      "blind_mixring_group_abelian"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-02-mixed-rings.ny",
+    "bridge_declarations": [
+      "b02_props_to",
+      "b02_props_from",
+      "bridge_def_ring_props",
+      "b02_ring",
+      "b02_blind_ring",
+      "bridge_def_mixring",
+      "bridge_def_mixring_commutative",
+      "bridge_def_mixring_non_trivial",
+      "bridge_mixring_group_abelian",
+      "bridge_mixring_group_abelian_converse"
+    ],
+    "our_declarations": [
+      "MixedRing",
+      "MixedRingProps",
+      "IsCommutativeMixedRing",
+      "IsNonTrivialMixedRing",
+      "mixed_ring_group_abelian"
+    ],
+    "note": "The blind version independently uses the same corrected readings: id_G = id_R and the pointwise associativity l_g o r_h = r_h o l_g. The blind version is a 4-field record, and ours uses nested products. They are equivalent with refl round trips. Commutative/non-trivial agree by refl. The footnote (group abelian) follows from ours, and so does the converse."
+  },
+  {
+    "source": "fields.tex",
+    "line": 143,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/02-mixed-rings.ny",
+    "blind_declarations": [
+      "blind_circle_ell_map",
+      "blind_circle_ell",
+      "blind_mixring_integers"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-02-mixed-rings.ny",
+    "bridge_declarations": [
+      "bridge_def_circle_ell",
+      "bridge_mixring_integers"
+    ],
+    "our_declarations": [
+      "integer_mixed_left",
+      "integer_mixed_ring",
+      "integer_mixed_ring_commutative",
+      "integer_mixed_ring_non_trivial"
+    ],
+    "note": "The blind l_g (circle_rec pointed by the inverse beta path) is our integer_mixed_left by refl. The claim (ring laws, non-trivial, commutative for every circle) follows from integer_mixed_ring."
+  },
+  {
+    "source": "fields.tex",
+    "line": 157,
+    "labels": [
+      "def:typemixring"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/02-mixed-rings.ny",
+    "blind_declarations": [
+      "BlindTypeMixRing",
+      "BlindTypeMixCommRing"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-02-mixed-rings.ny",
+    "bridge_declarations": [
+      "bridge_def_type_mixring",
+      "bridge_def_type_mixcommring"
+    ],
+    "our_declarations": [
+      "MixedRingSigma",
+      "CommutativeMixedRingSigma"
+    ],
+    "note": "The iterated Sigma types are equivalent to ours, with refl round trips."
+  },
+  {
+    "source": "fields.tex",
+    "line": 167,
+    "labels": [
+      "xca:Rmixring->URabstring"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/02-mixed-rings.ny",
+    "blind_declarations": [
+      "blind_mixring_mul",
+      "blind_mixring_abstract_ring"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-02-mixed-rings.ny",
+    "bridge_declarations": [
+      "bridge_def_mixring_mul",
+      "bridge_mixring_abstract_ring",
+      "bridge_mixring_abstract_ring_additive"
+    ],
+    "our_declarations": [
+      "mixed_mul",
+      "mixed_ring_abstract_ring"
+    ],
+    "note": "The blind choice g.h = USym(l_g)(h) is our mixed_mul by refl. The monoid and distributive laws are those of mixed_ring_abstract_ring. The additive group is abstr(R) by refl."
+  },
+  {
+    "source": "fields.tex",
+    "line": 188,
+    "labels": [
+      "def:ptd-homotopy-compo"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/03-ptd-homotopies.ny",
+    "blind_declarations": [
+      "blind_ptw",
+      "blind_ptw_compose"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-03-ptd-homotopies.ny",
+    "bridge_declarations": [
+      "bridge_def_ptw",
+      "bridge_def_ptw_compose"
+    ],
+    "our_declarations": [
+      "pointed_map_path_equiv",
+      "pointed_homotopy_compose"
+    ],
+    "note": "The map blind_ptw is pointed_map_path_equiv .map by refl. Also, blind_ptw_compose = pointed_homotopy_compose as elements of H(f,h). They have the same pointwise composite. The pointing paths differ only in the bracketing of the three 2-paths: (assoc⁻¹·ap)·k'_pt versus assoc⁻¹·(ap·k'_pt). One concat_assoc bridges this difference."
+  },
+  {
+    "source": "fields.tex",
+    "line": 223,
+    "labels": [
+      "con:ptd-homotopy-compo"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/03-ptd-homotopies.ny",
+    "blind_declarations": [
+      "blind_con_ptd_homotopy_compo"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-03-ptd-homotopies.ny",
+    "bridge_declarations": [
+      "bridge_con_ptd_homotopy_compo",
+      "bridge_con_ptd_homotopy_compo_converse"
+    ],
+    "our_declarations": [
+      "ptw_concat_compose",
+      "pointed_homotopy_compose"
+    ],
+    "note": "This is derived from ptw_concat_compose and the definition bridge of 188. The converse (ours from blind) is also proved."
+  },
+  {
+    "source": "fields.tex",
+    "line": 244,
+    "labels": [
+      "def:cst-ptd"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/03-ptd-homotopies.ny",
+    "blind_declarations": [
+      "blind_cst_ptd",
+      "blind_def_cst_ptd_domain_contr"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-03-ptd-homotopies.ny",
+    "bridge_declarations": [
+      "bridge_def_cst_ptd",
+      "bridge_def_cst_ptd_domain_contr"
+    ],
+    "our_declarations": [
+      "pointed_constant_at",
+      "pointed_constant_domain_contractible"
+    ],
+    "note": "The map blind_cst_ptd is pointed_constant_at by refl. The contractibility in the footnote is pointed_constant_domain_contractible."
+  },
+  {
+    "source": "fields.tex",
+    "line": 257,
+    "labels": [
+      "rem:loops-at-ptd-cst"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/03-ptd-homotopies.ny",
+    "blind_declarations": [
+      "blind_ptd_maps",
+      "blind_H_cst_equiv",
+      "blind_ptw_loops",
+      "blind_ptw_loops_inv",
+      "blind_path_endpoints_equiv",
+      "blind_rem_loops_at_ptd_cst"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-03-ptd-homotopies.ny",
+    "bridge_declarations": [
+      "bridge_def_ptd_maps",
+      "bridge_def_H_cst_equiv",
+      "bridge_def_ptw_loops",
+      "bridge_def_ptw_loops_inv",
+      "bridge_equiv_inverse_agree",
+      "bridge_rem_loops_at_ptd_cst"
+    ],
+    "our_declarations": [
+      "pointed_maps_pointed",
+      "constant_pointed_homotopy_equiv",
+      "constant_loops_pointed_equiv",
+      "pointed_map_path_equiv_ptw"
+    ],
+    "note": "By refl, blind_ptd_maps = pointed_maps_pointed and blind_H_cst_equiv = constant_pointed_homotopy_equiv. The blind variant ptw_* is built on pointed_map_path_equiv. Ours is built on pointed_map_path_explicit_equiv. Their maps agree pointwise (pointed_map_path_equiv_ptw). Thus their inverse maps also agree. The two claimed equivalences are book_equivalence of ours."
+  },
+  {
+    "source": "fields.tex",
+    "line": 281,
+    "labels": [
+      "con:Id-(B->*A)"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/04-ev-sections.ny",
+    "blind_declarations": [
+      "blind_ev_id",
+      "blind_con_Id_B_ptd_A"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-04-ev-sections.ny",
+    "bridge_declarations": [
+      "bridge_def_ev_id",
+      "bridge_con_Id_B_ptd_A"
+    ],
+    "our_declarations": [
+      "identity_path_evaluation",
+      "IdentityPathEvSection",
+      "pointed_map_path_from_underlying"
+    ],
+    "note": "The map blind_ev_id is identity_path_evaluation by refl (happly i x ≡ i(refl x)). Thus a blind section (s, hs) is literally an IdentityPathEvSection. The blind statement is weak existence: some map (f÷ = f'÷) → (f = f') exists. Ours is a specific map. Thus the blind statement is strictly weaker."
+  },
+  {
+    "source": "fields.tex",
+    "line": 315,
+    "labels": [
+      "con:ev-section-loopsA"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/04-ev-sections.ny",
+    "blind_declarations": [
+      "blind_con_ev_section_loopsA"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-04-ev-sections.ny",
+    "bridge_declarations": [
+      "bridge_con_ev_section_loopsA"
+    ],
+    "our_declarations": [
+      "loops_ev_section",
+      "loops_ev_section_beta"
+    ],
+    "note": "Ours gives the section and its law directly."
+  },
+  {
+    "source": "fields.tex",
+    "line": 362,
+    "labels": [
+      "xca:ev-section-loopsA"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/04-ev-sections.ny",
+    "blind_declarations": [
+      "blind_xca_ev_section_rho",
+      "blind_rho",
+      "blind_xca_ev_section_i",
+      "blind_xca_ev_section_loopsA"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-04-ev-sections.ny",
+    "bridge_declarations": [
+      "bridge_def_rho",
+      "bridge_xca_ev_section_rho",
+      "bridge_xca_ev_section_i",
+      "bridge_xca_ev_section_loopsA"
+    ],
+    "our_declarations": [
+      "concat_1p",
+      "ev_section_i",
+      "ev_section_whisker_refl"
+    ],
+    "note": "The path blind_rho is concat_1p by refl. Parts 2 and 3 are ev_section_i and ev_section_whisker_refl verbatim. The statements are the same up to η."
+  },
+  {
+    "source": "fields.tex",
+    "line": 372,
+    "labels": [
+      "cor:Id-(B->*loopsA)"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/04-ev-sections.ny",
+    "blind_declarations": [
+      "blind_cor_Id_B_ptd_loopsA"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-04-ev-sections.ny",
+    "bridge_declarations": [
+      "bridge_cor_Id_B_ptd_loopsA"
+    ],
+    "our_declarations": [
+      "loops_pointed_map_path_from_underlying"
+    ],
+    "note": "The blind statement is weak existence. Ours is a specific map."
+  },
+  {
+    "source": "fields.tex",
+    "line": 383,
+    "labels": [
+      "def:O-functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/07-o-functor.ny",
+    "blind_declarations": [
+      "blind_O",
+      "blind_O_rho",
+      "blind_O_sigma_path",
+      "blind_O_map_pt",
+      "blind_O_map"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-07-o-functor.ny",
+    "bridge_declarations": [
+      "bridge_def_O",
+      "bridge_def_O_map_pt",
+      "bridge_def_O_map"
+    ],
+    "our_declarations": [
+      "circle_pointed_maps",
+      "o_functor_map",
+      "o_point_path",
+      "o_constant_paths_agree"
+    ],
+    "note": "By refl, blind_O = circle_pointed_maps. The maps blind_O_map and o_functor_map have the same underlying map. Their pointing paths are ap_{cst_*} of two paths in the contractible Σ(x:B)(pt=x). The blind version uses pathover_of_eq of ρ', and ours uses path induction. The lemma o_constant_paths_agree identifies the two pointing paths. This gives a path of pointed maps."
+  },
+  {
+    "source": "fields.tex",
+    "line": 420,
+    "labels": [
+      "xca:O-functor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/07-o-functor.ny",
+    "blind_declarations": [
+      "blind_xca_O_functor_wild",
+      "blind_xca_O_functor_pt"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-07-o-functor.ny",
+    "bridge_declarations": [
+      "bridge_xca_O_functor_wild",
+      "bridge_xca_O_functor_pt"
+    ],
+    "our_declarations": [
+      "o_functor_map_id",
+      "o_functor_map_comp",
+      "o_functor_point_ptw",
+      "o_point_homotopy"
+    ],
+    "note": "The functor laws are transported along bridge_def_O_map. Part 2: the blind (cst_{f_pt}, ρ') is literally o_point_homotopy. Thus part 2 follows from o_functor_point_ptw and bridge_def_O_map_pt."
+  },
+  {
+    "source": "fields.tex",
+    "line": 426,
+    "labels": [
+      "rem:pointing-ev"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/07-o-functor.ny",
+    "blind_declarations": [
+      "blind_eps_base",
+      "blind_eps",
+      "blind_ev",
+      "blind_rem_pointing_ev"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-07-o-functor.ny",
+    "bridge_declarations": [
+      "bridge_def_ev",
+      "bridge_rem_pointing_ev"
+    ],
+    "our_declarations": [
+      "pointed_circle_ev_pointed",
+      "pointed_circle_ev_book_equiv",
+      "pointed_circle_ev_inverse_beta"
+    ],
+    "note": "The maps blind_ev and pointed_circle_ev_pointed have the same underlying map. Their pointing paths are built differently, by path induction with different base cases. As pointed maps into ΩA, they are identified by cor:Id-(B->*loopsA) (bridge_def_ev). The pointing paths ε themselves are not compared. The recalled claims come from pointed_circle_ev_book_equiv and pointed_circle_ev_inverse_beta."
+  },
+  {
+    "source": "fields.tex",
+    "line": 466,
+    "labels": [
+      "con:Omega-O"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/07-o-functor.ny",
+    "blind_declarations": [
+      "blind_con_Omega_O_square",
+      "blind_con_Omega_O_equiv"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-07-o-functor.ny",
+    "bridge_declarations": [
+      "bridge_con_Omega_O_square",
+      "bridge_con_Omega_O_equiv"
+    ],
+    "our_declarations": [
+      "omega_o_square",
+      "omega_o_equiv",
+      "omega_o_postcompose_equiv",
+      "o_functor_omega"
+    ],
+    "note": "Square: the bridge uses the same underlying functions as omega_o_square, and then cor:Id-(B->*loopsA). Equivalence: e = omega_o_equiv (book_equivalence). The identity ev_B ∘ e(φ) = φ ∘ ev_A comes from the counit of postcomposition with ev_B, again through underlying functions. Finally, O = e ∘ Ω follows from o_functor_omega and bridge_def_O_map."
+  },
+  {
+    "source": "fields.tex",
+    "line": 612,
+    "labels": [
+      "con:swap-ptd-doms"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/08-swap.ny",
+    "blind_declarations": [
+      "BlindSwap",
+      "blind_con_swap_ptd_doms"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-08-swap.ny",
+    "bridge_declarations": [
+      "bridge_def_swap",
+      "bridge_con_swap_ptd_doms",
+      "bridge_swap_spec_unique"
+    ],
+    "our_declarations": [
+      "swap_pointed_domains",
+      "swap_pointed_domains_underlying"
+    ],
+    "note": "Our swap is a BlindSwap, because its totally unpointed map is the argument swap by refl. The spec determines a swap only on the totally unpointed level (bridge_swap_spec_unique). It does not determine the inner and outer pointing paths."
+  },
+  {
+    "source": "fields.tex",
+    "line": 632,
+    "labels": [
+      "xca:allptd-S1-contractible"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/08-swap.ny",
+    "blind_declarations": [
+      "blind_xca_allptd_S1_contractible"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-08-swap.ny",
+    "bridge_declarations": [
+      "bridge_xca_allptd_S1_contractible"
+    ],
+    "our_declarations": [
+      "pointed_pointed_maps_contractible"
+    ],
+    "note": "The statements are identical."
+  },
+  {
+    "source": "fields.tex",
+    "line": 638,
+    "labels": [
+      "exa:allS1*-swap"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/12-example-m.ny",
+    "blind_declarations": [
+      "blind_exa_m_Z",
+      "blind_exa_m_M",
+      "blind_exa_allS1_swap_loops_BBZ",
+      "blind_exa_allS1_swap_M",
+      "blind_exa_allS1_swap_ptw",
+      "BlindKLoops",
+      "blind_exa_m_dg",
+      "blind_exa_m_m",
+      "blind_exa_allS1_swap_mk"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-12-example-m.ny",
+    "bridge_declarations": [
+      "bridge_def_exa_m_Z",
+      "bridge_def_exa_m_M",
+      "bridge_k_loop",
+      "bridge_def_k_loops",
+      "bridge_k_loops_unique",
+      "bridge_def_exa_m_dg",
+      "bridge_def_exa_m_m",
+      "bridge_exa_allS1_swap_loops_BBZ",
+      "bridge_exa_allS1_swap_M",
+      "bridge_exa_allS1_swap_ptw",
+      "bridge_exa_allS1_swap_mk_loop",
+      "bridge_exa_allS1_swap_mk_jk",
+      "bridge_exa_allS1_swap_mk_ijk",
+      "bridge_exa_allS1_swap_mk",
+      "bridge12_loops_map_injective",
+      "bridge12_equiv_inverse_agree",
+      "bridge12_ptw_agree"
+    ],
+    "our_declarations": [
+      "example_bbz_loops",
+      "example_M_bbz_double_loops",
+      "example_M_bbz_integers",
+      "example_loops_maps_circle",
+      "example_degree_loops",
+      "example_m",
+      "example_m_loop",
+      "example_degree_loops_power",
+      "example_m_power_along_circle",
+      "circle_loop_power_power"
+    ],
+    "note": "The equivalence E = example_bbz_loops C has the map bb_loops_evaluation_pointed, which is the blind evaluation. Also, BG ℤ = circle_pointed C by refl. The blind k-loop family L is characterised by Ω E(L k) = loopᵏ. It exists (L k = ev(dg'_k), bridge_def_k_loops), and it is unique because Ω E is injective. For every such L, the blind dg'_k = example_degree_loops and the blind m_k = example_m. All three computed claims are derived. First, ptw_*(Ω m_k(loop)) = dg'_k (example_m_loop). Second, Ω(dg'_k)(loopʲ) = L(jk) (example_degree_loops_power and power arithmetic). Third, Ω(ptw_*(Ω m_k(loopⁱ)))(loopʲ) = L(ijk) (the new example_m_power_along_circle, module 1396)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 693,
+    "labels": [
+      "con:swap-on-paths"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/08-swap.ny",
+    "blind_declarations": [
+      "blind_con_swap_on_paths"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-08-swap.ny",
+    "bridge_declarations": [
+      "bridge_con_swap_on_paths"
+    ],
+    "our_declarations": [
+      "swap_on_paths"
+    ],
+    "note": "The statements are identical."
+  },
+  {
+    "source": "fields.tex",
+    "line": 714,
+    "labels": [
+      "rem:grpHomOK",
+      "fig:ulrik"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/09-loops-ptd.ny",
+    "blind_declarations": [
+      "blind_loops_cst_h",
+      "blind_loops_cst_h_pt",
+      "blind_loops_pt",
+      "blind_loops_ptd_map",
+      "blind_loops_loops",
+      "blind_loop_reversal",
+      "blind_rem_grpHomOK_fill"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-09-loops-ptd.ny",
+    "bridge_declarations": [
+      "bridge_def_loops_cst_h",
+      "bridge_def_loops_pt",
+      "bridge_def_loops_ptd_map",
+      "bridge_def_loops_loops",
+      "bridge_def_loop_reversal",
+      "bridge_rem_grpHomOK_fill",
+      "bridge_ptw_loops_agree"
+    ],
+    "our_declarations": [
+      "loops_constant_pointing",
+      "loops_functor_point",
+      "loops_functor_pointed",
+      "loops_of_loops_functor",
+      "double_loop_inverse",
+      "ulrik_square"
+    ],
+    "note": "The blind h, Ω_pt, Ω as a pointed map, Ω(Ω) and i are ours by refl. Here loops_map_point at the constant map is judgmentally our base case. The filled square follows from ulrik_square. For this, the blind ptw_* is replaced by constant_loops_pointed_equiv on both sides."
+  },
+  {
+    "source": "fields.tex",
+    "line": 782,
+    "labels": [
+      "def:O'"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/08-swap.ny",
+    "blind_declarations": [
+      "blind_O'"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-08-swap.ny",
+    "bridge_declarations": [
+      "bridge_def_O'_swap",
+      "bridge_def_O'_unpointed",
+      "bridge_swap_inverse_as_blind",
+      "bridge_def_O'",
+      "bridge_swap_O_map"
+    ],
+    "our_declarations": [
+      "o_prime_map",
+      "o_prime_pointed",
+      "swap_circle_inverse",
+      "swap_circle_inverse_underlying",
+      "o_functor_pointed"
+    ],
+    "note": "The blind reading O'(φ) = swap⁻¹ ∘ O(φ) (B = OY) is the one that fig:bjørn ((swap ∘ -) ∘ O' = O) forces. The inventory's o_functor_pointed (O pointed, no swap) is a different map. The reason is that swap is not the identity: swap(m_k) = m_{−k}. Module 1397 formalizes the fig:bjørn reading. It contains swap_circle_inverse, which is swap⁻¹ as a pointed equivalence. This is also an argument swap, and thus a BlindSwap. It also contains o_prime_map and o_prime_pointed, which give O' as a pointed map (A →* OY) →* (OA →* O(OY)). The lemma bridge_def_O' identifies blind_O' at sw = swap⁻¹ with o_prime_map. For an arbitrary BlindSwap, only the totally unpointed part of blind_O' is determined (bridge_def_O'_unpointed). Recommendation: re-map 782 to o_prime_pointed (principal), and keep o_functor_pointed only as the evident-typo reading."
+  },
+  {
+    "source": "fields.tex",
+    "line": 800,
+    "labels": [
+      "con:ptw-swap-ptd-doms"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/09-loops-ptd.ny",
+    "blind_declarations": [
+      "BlindSwapInner",
+      "blind_con_ptw_swap_ptd_doms"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-09-loops-ptd.ny",
+    "bridge_declarations": [
+      "bridge_swap_as_blind",
+      "bridge_def_swap_inner",
+      "bridge_con_ptw_swap_ptd_doms_at",
+      "bridge_con_ptw_swap_ptd_doms",
+      "bridge_con_ptw_swap_ptd_doms_ours",
+      "bridge_ptw_loops_agree"
+    ],
+    "our_declarations": [
+      "ptw_swap_pointed_domains",
+      "swap_pointed_domains_map",
+      "pointed_map_path_equiv_ptw",
+      "loops_pointed_map_path_from_underlying"
+    ],
+    "note": "The result is derived for EVERY sw : BlindSwap with BlindSwapInner. Such an sw agrees with ours pointwise as pointed maps. That is, sw(f)(x) = ours(f)(x), through the inner spec and bridge_def_swap_inner. Thus ev ∘ sw(f) and ev ∘ swap(f) have the same underlying function. Maps into ΩY are determined by this function, and ptw_swap_pointed_domains applies. The outer pointing of sw is irrelevant. Our swap satisfies both hypotheses (bridge_def_swap_inner). Thus the hypotheses are not vacuous."
+  },
+  {
+    "source": "fields.tex",
+    "line": 902,
+    "labels": [
+      "def:AbHomgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/10-hom-group.ny",
+    "blind_declarations": [
+      "blind_grphom"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-10-hom-group.ny",
+    "bridge_declarations": [
+      "bridge_def_grphom"
+    ],
+    "our_declarations": [
+      "abelian_hom_group"
+    ],
+    "note": "The group blind_grphom is abelian_hom_group by refl."
+  },
+  {
+    "source": "fields.tex",
+    "line": 919,
+    "labels": [
+      "lem:grpHomOK"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/10-hom-group.ny",
+    "blind_declarations": [
+      "blind_grphom_chain",
+      "blind_lem_grpHomOK"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-10-hom-group.ny",
+    "bridge_declarations": [
+      "b10_ptw_agree",
+      "b10_chain_tail",
+      "b10_chain_agree",
+      "b10_chain_equiv",
+      "b10_chain_value",
+      "bridge_lem_grpHomOK",
+      "bridge_lem_grpHomOK_converse"
+    ],
+    "our_declarations": [
+      "hom_group_abstract_iso",
+      "abelian_hom_abstract_map",
+      "abelian_hom_abstract_mul",
+      "constant_loops_pointed_equiv",
+      "pointed_map_path_equiv_ptw"
+    ],
+    "note": "The blind chain uses the ptw_* of module 162 (pointed_map_path_equiv). Ours uses the explicit (happly, pathover) form. The two agree by pointed_map_path_equiv_ptw. After this step, the rest of the chain is ours by refl. The equivalence (equiv_change_map) and pointwise multiplicativity follow from hom_group_abstract_iso and abelian_hom_abstract_mul. The converse is also proved."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1143,
+    "labels": [
+      "def:ring",
+      "ring:unit-laws",
+      "ring:assoc-law"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/11-concrete-rings.ny",
+    "blind_declarations": [
+      "blind_Z",
+      "BlindConcRingData",
+      "blind_concring_unit_map",
+      "BlindConcRingUnitLaw",
+      "BlindConcRingNonTrivial"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-11a-concrete-ring-def.ny",
+    "bridge_declarations": [
+      "b11a_ptw_agree",
+      "b11a_classifying",
+      "b11a_hom_eta",
+      "b11_data",
+      "b11_unit_symmetry",
+      "b11_ev_compose",
+      "b11_unit_map_agree",
+      "b11_unit_law_to",
+      "b11_unit_law_from",
+      "bridge_def_conc_ring_unit_law",
+      "bridge_def_conc_ring_unit_law_converse",
+      "bridge_def_conc_ring_non_trivial"
+    ],
+    "our_declarations": [
+      "ConcreteRing",
+      "ConcreteRingProps",
+      "concrete_trivial_hom",
+      "IsNonTrivialConcreteRing"
+    ],
+    "note": "The blind data (R, 1_R, mu) are the first three fields of ConcreteRing. The blind printed unit law is stated as a pointed map BR ->* BR through ptw_* and ev. It is equivalent to our first law hom_of_symmetry(USym(mu o 1_R)(loop)) = id_R, in both directions. Non-triviality agrees by refl. The blind version formalizes only the printed law (the other laws are TBD). Ours adds the completed laws. Module 1393 shows that these laws are necessary (see 1222)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1177,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/11-concrete-rings.ny",
+    "blind_declarations": [
+      "blind_Zring_loop_case",
+      "blind_Zring_s_fun",
+      "blind_Zring_s",
+      "blind_Zring_e",
+      "blind_Zring_e_beta",
+      "blind_exa_Zring_e_base_loop",
+      "blind_exa_Zring_e_point",
+      "blind_exa_Zring_one_nontrivial",
+      "blind_exa_Zring_data",
+      "blind_exa_Zring_mu"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-11b-integer-ring.ny; chapters/ch13/blind/bridge-11c-integer-twist.ny",
+    "bridge_declarations": [
+      "b11b_ptw_agree",
+      "b11b_mu",
+      "b11b_unit_law",
+      "b11b_mu_powers",
+      "bridge_exa_Zring_mu",
+      "bridge_exa_Zring_one_nontrivial",
+      "bridge_def_Zring_data",
+      "b11c_happly_concat",
+      "b11c_happly_inverse",
+      "b11c_s_base",
+      "bridge_def_Zring_s_fun",
+      "bridge_def_Zring_s",
+      "bridge_def_Zring_e",
+      "bridge_exa_Zring_e_point",
+      "b11c_conj_loop_trivial",
+      "b11c_conj_any",
+      "b11c_iota",
+      "b11c_pointwise",
+      "b11c_pointwise_base",
+      "b11c_pointwise_s",
+      "b11c_conjugated",
+      "b11c_conjugated_happly",
+      "bridge_exa_Zring_e_base_loop"
+    ],
+    "our_declarations": [
+      "integer_concrete_ring",
+      "integer_concrete_mu",
+      "integer_concrete_left_spec",
+      "integer_concrete_mul_powers",
+      "integer_concrete_ring_non_trivial",
+      "book_integer_twist",
+      "circle_translation",
+      "book_integer_mu_pointed",
+      "book_integer_mu_is_swap_ring_mu",
+      "book_integer_mu_ne_ring_mu",
+      "book_integer_mu_double_loop_footnote",
+      "book_integer_mu_double_loop_book_order"
+    ],
+    "note": "The bridge files are 11b (ring part) and 11c (footnote s, e_z). The blind s agrees pointwise with book_integer_twist (both are loops in a set, and they are equal at base). Thus the blind e_z is circle_translation. By path induction, e_p(base) = p. The identities e_base = id and e_loop = s are proved pointwise, because the conjugation of loop in S^1 is trivial. Blind existential mu: ours satisfies the printed unit law and Omega(ev)(Omega(ptw(USym mu(loop^j)))(loop^k)) = loop^{jk}. Non-triviality follows from ours. New (modules 1390-1392): the explicit curried Bmu of the book equals the swap of our ring mu. That is, Bmu = m_{-1} and swap(Bmu) = m_1 = our mu curried. Thus Bmu is not our mu. In the footnote order, Bmu gives the degree -1 map. In the display order of the book, Bmu(loop^j, loop^k) = s^{jk}."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1222,
+    "labels": [
+      "xca:Rconcring->URabstring"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch13/blind/11-concrete-rings.ny",
+    "blind_declarations": [
+      "blind_concring_mul",
+      "blind_xca_Rconcring_URabstring"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-11a-concrete-ring-def.ny; chapters/ch13/blind/bridge-11d-concrete-ring-counterexample.ny",
+    "bridge_declarations": [
+      "b11a_mul_value",
+      "b11d_refute_generic",
+      "b11d_ce_data",
+      "b11d_ce_element_nontrivial",
+      "bridge_xca_Rconcring_URabstring_refuted_at",
+      "bridge_xca_Rconcring_URabstring_negation",
+      "b11a_mul",
+      "BlindConcRingCorrectedConclusion",
+      "blind_xca_Rconcring_URabstring_corrected",
+      "b11a_corrected_ours",
+      "bridge_xca_Rconcring_URabstring_corrected"
+    ],
+    "our_declarations": [
+      "concrete_ring_abstract_ring",
+      "evaluation_left_unit",
+      "evaluation_rdistr",
+      "ce_group",
+      "ce_one",
+      "ce_mu",
+      "ce_unit_law",
+      "ce_right_unit_fails"
+    ],
+    "note": "The literal blind statement has only the printed unit law as hypothesis, and it is false. The counterexample is R = Z x Z, 1_R = first inclusion and mu = (loop -> symmetry of id_R) o first projection. It satisfies the printed law, but a.1 = 0 for a = (refl, loop) (module 1393). The negation is proved at the constructed circle. A corrected variant is proved from ours. It adds the right unit law and associativity, that is, the laws that our ConcreteRing completes. The left unit follows from the printed law, and distributivity is automatic (module 1350)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1239,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsInvertible"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "bridge_def_is_invertible"
+    ],
+    "our_declarations": [
+      "IsInvertible"
+    ],
+    "note": "The types are the same by refl. Both are defined for every ring."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1244,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsNonTrivialCRing",
+      "blind_zero_not_invertible"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "b05_nt_to",
+      "b05_nt_from",
+      "bridge_def_non_trivial_cring",
+      "bridge_zero_not_invertible",
+      "bridge_zero_not_invertible_converse"
+    ],
+    "our_declarations": [
+      "zero_not_invertible",
+      "IsNonTrivialCRing"
+    ],
+    "note": "The factors of isNonTrivialCRing are in swapped order. The equivalence has refl round trips. The theorem follows from ours, and so does the converse."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1253,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsField",
+      "BlindField",
+      "blind_field_iff_noninvertible_zero"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "b05_field_to",
+      "b05_field_from",
+      "bridge_def_is_field",
+      "b05_to_field",
+      "b05_from_field",
+      "bridge_def_field",
+      "bridge_field_iff_noninvertible_zero"
+    ],
+    "our_declarations": [
+      "IsField",
+      "Field",
+      "field_iff_non_invertible_zero"
+    ],
+    "note": "The bridges are equivalences with refl round trips. The \"equivalently\" sentence follows from field_non_invertible_zero and field_from_non_invertible_zero."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1259,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [],
+    "bridge_file": "",
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "This is a terminology remark. Neither side makes a claim."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1263,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsDiscreteField"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "bridge_def_is_discrete_field"
+    ],
+    "our_declarations": [
+      "IsDiscreteField"
+    ],
+    "note": "The bridge is an equivalence with refl round trips."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1268,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsLocalRing"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "bridge_def_is_local_ring"
+    ],
+    "our_declarations": [
+      "IsLocalRing"
+    ],
+    "note": "The bridge is an equivalence with refl round trips."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1273,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/05-fields.ny",
+    "blind_declarations": [
+      "BlindIsHeytingField"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-05-fields.ny",
+    "bridge_declarations": [
+      "bridge_def_is_heyting_field"
+    ],
+    "our_declarations": [
+      "IsHeytingField"
+    ],
+    "note": "The bridge is an equivalence with refl round trips."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1287,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/06-vector-spaces.ny",
+    "blind_declarations": [
+      "BlindScalarBilinear",
+      "BlindVectorSpace"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-06-vector-spaces.ny",
+    "bridge_declarations": [
+      "b06_space",
+      "b06_blind_space",
+      "bridge_def_vector_space"
+    ],
+    "our_declarations": [
+      "VectorSpace",
+      "RingModule"
+    ],
+    "note": "The blind version has an uncurried scalar multiplication K x V -> V and an IsAbstractAbelian field. Ours has a curried smul and add_comm. The two are equivalent with refl round trips (eta)."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1291,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/06-vector-spaces.ny",
+    "blind_declarations": [
+      "BlindLinearMap"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-06-vector-spaces.ny",
+    "bridge_declarations": [
+      "bridge_def_linear_map"
+    ],
+    "our_declarations": [
+      "LinearMap"
+    ],
+    "note": "The types are the same by refl along the conversion."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1295,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/06-vector-spaces.ny",
+    "blind_declarations": [
+      "BlindIsFreeVectorSpace",
+      "BlindFreeVectorSpace"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-06-vector-spaces.ny",
+    "bridge_declarations": [
+      "bridge_def_is_free_to",
+      "bridge_def_is_free_from",
+      "bridge_def_free_vector_space"
+    ],
+    "our_declarations": [
+      "IsFreeVectorSpace",
+      "FreeVectorSpace"
+    ],
+    "note": "The freeness predicates imply each other along the conversion. The free vector spaces are equivalent, with refl round trips."
+  },
+  {
+    "source": "fields.tex",
+    "line": 1299,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch13/blind/06-vector-spaces.ny",
+    "blind_declarations": [
+      "BlindNDimVectorSpace"
+    ],
+    "bridge_file": "chapters/ch13/blind/bridge-06-vector-spaces.ny",
+    "bridge_declarations": [
+      "bridge_def_n_dim_vector_space"
+    ],
+    "our_declarations": [
+      "NDimensionalVectorSpace"
+    ],
+    "note": "This is an instance of 1295 at standard_set n."
+  }
+]
