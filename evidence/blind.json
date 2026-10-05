@@ -1,0 +1,229 @@
+[
+  {
+    "chapter": "ch04",
+    "files": 21,
+    "leaves": [
+      "chapters/ch04/blind/bridge-01e-wedge.ny",
+      "chapters/ch04/blind/bridge-01f-rmloop.ny",
+      "chapters/ch04/blind/bridge-02-abstract.ny",
+      "chapters/ch04/blind/bridge-03b-hom-examples.ny",
+      "chapters/ch04/blind/bridge-04-sign.ny",
+      "chapters/ch04/blind/bridge-05b-small-bicycles.ny",
+      "chapters/ch04/blind/bridge-05c-dihedral.ny",
+      "chapters/ch04/blind/bridge-06-infinity-groups.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 833.3
+  },
+  {
+    "chapter": "ch05",
+    "files": 12,
+    "leaves": [
+      "chapters/ch05/blind/bridge-01-gsets.ny",
+      "chapters/ch05/blind/bridge-01b-examples.ny",
+      "chapters/ch05/blind/bridge-02c-c3c6.ny",
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 1495.0
+  },
+  {
+    "chapter": "ch06",
+    "files": 17,
+    "leaves": [
+      "chapters/ch06/blind/bridge-02-duality.ny",
+      "chapters/ch06/blind/bridge-04-adjunctions.ny",
+      "chapters/ch06/blind/bridge-07-rezk.ny",
+      "chapters/ch06/blind/bridge-08-limits.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 973.0
+  },
+  {
+    "chapter": "ch07",
+    "files": 17,
+    "leaves": [
+      "chapters/ch07/blind/bridge-01-monoids.ny",
+      "chapters/ch07/blind/bridge-02-abshom.ny",
+      "chapters/ch07/blind/bridge-03-torsors.ny",
+      "chapters/ch07/blind/bridge-05-homs.ny",
+      "chapters/ch07/blind/bridge-05b-sg2.ny",
+      "chapters/ch07/blind/bridge-06b-induction.ny",
+      "chapters/ch07/blind/bridge-07-heaps.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 728.4
+  },
+  {
+    "chapter": "ch08",
+    "files": 16,
+    "leaves": [
+      "chapters/ch08/blind/bridge-01-semidirect.ny",
+      "chapters/ch08/blind/bridge-02-dihedral.ny",
+      "chapters/ch08/blind/bridge-03a-pullback.ny",
+      "chapters/ch08/blind/bridge-03b-lcm.ny",
+      "chapters/ch08/blind/bridge-03c-pullbackgcd.ny",
+      "chapters/ch08/blind/bridge-04c-wedge-aside.ny",
+      "chapters/ch08/blind/bridge-04d-wedge-converse.ny",
+      "chapters/ch08/blind/bridge-05b-free.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 845.3
+  },
+  {
+    "chapter": "ch09",
+    "files": 29,
+    "leaves": [
+      "chapters/ch09/blind/bridge-02-kernels.ny",
+      "chapters/ch09/blind/bridge-03b-stabilizers.ny",
+      "chapters/ch09/blind/bridge-03c-coker-R4.ny",
+      "chapters/ch09/blind/bridge-04b-images.ny",
+      "chapters/ch09/blind/bridge-04c-n-image.ny",
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny",
+      "chapters/ch09/blind/bridge-05b-sigma3.ny",
+      "chapters/ch09/blind/bridge-06b-characterizations.ny",
+      "chapters/ch09/blind/bridge-07-intersections.ny",
+      "chapters/ch09/blind/bridge-07b-conjugate.ny",
+      "chapters/ch09/blind/bridge-07c-abstract.ny",
+      "chapters/ch09/blind/bridge-08-automorphisms.ny",
+      "chapters/ch09/blind/bridge-09-weyl.ny",
+      "chapters/ch09/blind/bridge-10-center.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 1292.8
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-01b-noofsubgps.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 135.2
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-02-lagrange.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 543.1
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-03-cauchy.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 532.0
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-05a-thirteen.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 517.0
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-05c-sigma-six.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 643.3
+  },
+  {
+    "chapter": "ch10",
+    "files": 14,
+    "leaves": [
+      "chapters/ch10/blind/bridge-05d-sigma-counts.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 603.7
+  },
+  {
+    "chapter": "ch12",
+    "files": 10,
+    "leaves": [
+      "chapters/ch12/blind/bridge-01-center.ny",
+      "chapters/ch12/blind/bridge-02-universal-cover.ny",
+      "chapters/ch12/blind/bridge-03-abelian-sc2types.ny",
+      "chapters/ch12/blind/bridge-04-warn-torsors.ny",
+      "chapters/ch12/blind/bridge-05-hom-abelian.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 385.3
+  },
+  {
+    "chapter": "ch13",
+    "files": 27,
+    "leaves": [
+      "chapters/ch13/blind/bridge-02-mixed-rings.ny",
+      "chapters/ch13/blind/bridge-03-ptd-homotopies.ny",
+      "chapters/ch13/blind/bridge-04-ev-sections.ny",
+      "chapters/ch13/blind/bridge-06-vector-spaces.ny",
+      "chapters/ch13/blind/bridge-07-o-functor.ny",
+      "chapters/ch13/blind/bridge-08-swap.ny",
+      "chapters/ch13/blind/bridge-09-loops-ptd.ny",
+      "chapters/ch13/blind/bridge-10-hom-group.ny",
+      "chapters/ch13/blind/bridge-11b-integer-ring.ny",
+      "chapters/ch13/blind/bridge-11c-integer-twist.ny",
+      "chapters/ch13/blind/bridge-11d-concrete-ring-counterexample.ny",
+      "chapters/ch13/blind/bridge-12-example-m.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 2443.6
+  },
+  {
+    "chapter": "ch14",
+    "files": 10,
+    "leaves": [
+      "chapters/ch14/blind/bridge-03b-point-symmetry-refutation.ny",
+      "chapters/ch14/blind/bridge-04-icosahedron.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 261.1
+  },
+  {
+    "chapter": "ch15",
+    "files": 5,
+    "leaves": [
+      "chapters/ch15/blind/bridge-02-restriction-algebraic.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 245.8
+  },
+  {
+    "chapter": "appB",
+    "files": 8,
+    "leaves": [
+      "chapters/appB/blind/bridge-01-lpo-topology.ny",
+      "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+      "chapters/appB/blind/bridge-04-finite-choice.ny"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "wall_seconds": 126.9
+  }
+]

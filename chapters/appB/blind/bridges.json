@@ -1,0 +1,470 @@
+[
+  {
+    "source": "metamath.tex",
+    "line": 189,
+    "labels": [
+      "rem:LPO-solves-halting problem"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/01-lpo-topology.ny",
+    "blind_declarations": [
+      "BlindIff",
+      "BlindTwo",
+      "blind_two_zero",
+      "blind_two_one",
+      "BlindLPOSmallestOne",
+      "BlindLPOConstantZero",
+      "BlindLPOInstance",
+      "BlindLPO",
+      "blind_lpo_remark_constant_zero_iff_never_one",
+      "blind_lpo_remark_halting_decider",
+      "blind_lpo_remark_cases_exclusive",
+      "blind_lpo_remark_lem_implies_lpo"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-01-lpo-topology.ny",
+    "bridge_declarations": [
+      "bridge_def_lpo",
+      "bridge_def_lpo_to_ours",
+      "bridge_def_lpo_from_ours",
+      "bridge_lpo_remark_constant_zero_iff_never_one",
+      "bridge_lpo_remark_halting_decider",
+      "bridge_lpo_remark_cases_exclusive",
+      "bridge_lpo_remark_lem_implies_lpo"
+    ],
+    "our_declarations": [
+      "LimitedOmniscience",
+      "LPOInstance",
+      "bit_constant_zero_iff_no_hit",
+      "bit_minimum_not_zero",
+      "bit_constant_zero_no_hit",
+      "excluded_middle_implies_lpo"
+    ],
+    "note": "The blind 2 = Fin 2 names 0 = inl(inr *) and 1 = inr *. The Bit of module 71 is the same type with the opposite naming. Thus the bridge goes through the swap of Fin 2: bit_zero/bit_one = swap of blind 0/1, definitionally. The bridge gives BlindLPO <-> LimitedOmniscience as a pair of maps, because both are propositions. The four internal claims are derived from our module 71/1750 lemmas. The blind halting decider is untruncated (Sigma k). It is obtained from the LPO instance itself, not from lpo_decides_halting, which only gives Decidable (Mere ...). The metatheorem (LPO unprovable) is not internal on either side."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 240,
+    "labels": [
+      "rem:injectionsurjectionisnotwhatyouthink",
+      "ft:cohesive"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/01-lpo-topology.ny",
+    "blind_declarations": [
+      "blind_topology_remark_preimage_contains_both",
+      "blind_topology_remark_preimage_not_prop",
+      "blind_topology_remark_not_injection",
+      "blind_topology_remark_injection_into_contractible",
+      "blind_topology_remark_two_not_connected"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-01-lpo-topology.ny",
+    "bridge_declarations": [
+      "bridge_topology_remark_preimage_contains_both",
+      "bridge_topology_remark_preimage_not_prop",
+      "bridge_topology_remark_not_injection",
+      "bridge_topology_remark_injection_into_contractible",
+      "bridge_topology_remark_two_not_connected",
+      "bridge_topology_converse_injection_iff"
+    ],
+    "our_declarations": [
+      "bool_fiber_two_points",
+      "injection_into_contractible_prop",
+      "prop_into_contractible_injection",
+      "boolean_not_connected",
+      "bit_zero_ne_one"
+    ],
+    "note": "The blind version uses Fin 2 and a contractible R. Ours uses Bool and a contractible C. The bridge uses Bool -> Fin 2 (false/true to blind 0/1) and fin_two_path. In substance, both read 'the next result' the same way. Ours reads it as follows: a map into a contractible type is an injection iff its domain is a proposition, plus cor:inj+connected. Converse: our iff is recovered from the blind statement (bonus)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 15,
+    "labels": [
+      "pri:ac",
+      "eq:ac-impl"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "BlindNonEmptySets",
+      "BlindACNonEmptyForm",
+      "BlindAC",
+      "blind_ac_forms_iff"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_def_nonempty_sets",
+      "bridge_def_ac",
+      "bridge_def_ac_nonempty",
+      "bridge_ac_forms_iff"
+    ],
+    "our_declarations": [
+      "AxiomOfChoice",
+      "AxiomOfChoiceNonempty",
+      "axiom_of_choice_formulations_equiv"
+    ],
+    "note": "BlindNonEmptySets is literally NonemptySets. BlindAC and BlindACNonEmptyForm differ from ours only in the currying of the set (X, isSet X)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 26,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "BlindSections",
+      "blind_choice_remark_pi_sections_equiv",
+      "blind_choice_remark_nonempty_iff_projection_surjective",
+      "blind_choice_remark_total_set",
+      "BlindSurjectionsOnto",
+      "blind_projection_surjective",
+      "blind_family_to_surjection",
+      "blind_choice_remark_families_surjections_equiv",
+      "BlindSurjectionsSplit",
+      "blind_choice_remark_ac_iff_surjections_split"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_def_sections",
+      "bridge_def_surjections_onto",
+      "bridge_def_surjections_split",
+      "bridge_choice_remark_pi_sections_equiv",
+      "bridge_choice_remark_nonempty_iff_projection_surjective",
+      "bridge_choice_remark_total_set",
+      "bridge_choice_remark_families_surjections_equiv",
+      "bridge_choice_remark_ac_iff_surjections_split"
+    ],
+    "our_declarations": [
+      "pi_section_equiv",
+      "projection_surjective",
+      "book_projection_fiber_equiv",
+      "nonempty_families_surjections_equiv",
+      "maps_families_eta",
+      "choice_surjections_split_equiv"
+    ],
+    "note": "BlindSections is definitionally MapSection. BlindSurjectionsOnto is literally SetSurjectionsOnto. The blind version asks that the specific map P |-> (Sigma_x P x, pr1) is an equivalence. Ours is an equivalence between the same types with a non-definitional map. Thus the bridge proves that the blind map is an equivalence by a quasi-inverse (fibers). It uses maps_families_eta of module 19 and the projection-fiber equivalence from which ours is built."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 40,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "blind_ac_implies_lem"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_ac_implies_lem"
+    ],
+    "our_declarations": [
+      "choice_implies_excluded_middle"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 65,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "BlindAC",
+      "BlindLocalAC",
+      "BlindFinSetsAt",
+      "blind_finsets_base_carrier",
+      "BlindACn",
+      "BlindLocalACn",
+      "blind_ac_is_local_ac_everywhere"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_def_ac",
+      "bridge_def_local_ac",
+      "bridge_def_finsets_at",
+      "bridge_def_local_acn",
+      "bridge_def_acn"
+    ],
+    "our_declarations": [
+      "LocalChoice",
+      "ChoiceOfSize",
+      "LocalChoiceOfSize",
+      "FiniteSetsAt",
+      "book_finite_sets_at_equiv"
+    ],
+    "note": "BlindLocalAC = LocalChoice definitionally. The blind BSigma_n = BG(symmetric_group n) = BookFiniteSetsAt n uses mere SetTypes paths. Ours is FiniteSetsAt n, with mere Type paths. The two are equivalent (module 186). Carrier-preserving maps relate them in both directions. These maps give BlindLocalACn <-> LocalChoiceOfSize and BlindACn <-> ChoiceOfSize. Both sides define X-AC(n) for arbitrary X. The term blind_ac_is_local_ac_everywhere is a blind-internal refl litmus test, and it needs no bridge."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 77,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "blind_xca_finite_local_ac"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_xca_finite_local_ac"
+    ],
+    "our_declarations": [
+      "finite_local_choice"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 81,
+    "labels": [
+      "lem:ac-impl-triv-coh-sets"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/03-choice-cohomology.ny",
+    "blind_declarations": [
+      "BlindTrivialH1",
+      "blind_lemma_local_ac_trivial_h1"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+    "bridge_declarations": [
+      "bridge_def_trivial_h1",
+      "bridge_def_group_torsors_trivial",
+      "bridge_lemma_local_ac_trivial_h1"
+    ],
+    "our_declarations": [
+      "local_choice_torsors_trivial",
+      "GroupTorsorsTrivial"
+    ],
+    "note": "BlindTrivialH1 is literally the body of our GroupTorsorsTrivial."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 113,
+    "labels": [
+      "pri:sc"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "BlindSetsCover"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_def_sets_cover"
+    ],
+    "our_declarations": [
+      "SetsCover"
+    ],
+    "note": "The bridge is a pair of maps, because both sides are propositions. The maps reassociate (X, isSet X, f, surj) under Mere."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 119,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "BlindLocalACInfty",
+      "BlindACInfty",
+      "blind_xca_ac_infty_iff_ac_and_sc"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_def_local_ac_infty",
+      "bridge_def_ac_infty",
+      "bridge_xca_ac_infty_iff_ac_and_sc"
+    ],
+    "our_declarations": [
+      "untruncated_choice_iff",
+      "UntruncatedChoice",
+      "UntruncatedLocalChoice"
+    ],
+    "note": "BlindLocalACInfty = FiniteChoice = UntruncatedLocalChoice definitionally."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 125,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/02-choice-principles.ny",
+    "blind_declarations": [
+      "blind_xca_circle_local_ac_two_false"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-02-choice-principles.ny",
+    "bridge_declarations": [
+      "bridge_xca_circle_local_ac_two_false"
+    ],
+    "our_declarations": [
+      "circle_local_choice_two_false"
+    ],
+    "note": "The bridge uses bridge_def_local_acn_to_ours."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 134,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/03-choice-cohomology.ny",
+    "blind_declarations": [
+      "blind_xca_local_ac_infty_trivial_h1"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+    "bridge_declarations": [
+      "bridge_xca_local_ac_infty_trivial_h1"
+    ],
+    "our_declarations": [
+      "untruncated_local_choice_torsors_trivial"
+    ],
+    "note": "The blind InftyGroup (module 485) is unpacked to our (BG, sh, Connected BG)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 143,
+    "labels": [
+      "thm:Blass-1"
+    ],
+    "status": "gap",
+    "blind_file": "chapters/appB/blind/03-choice-cohomology.ny",
+    "blind_declarations": [
+      "blind_blass_one"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+    "bridge_declarations": [
+      "bridge_blass_one_nonempty_component",
+      "bridge_blass_one_inhabited_base",
+      "bridge_blass_one_converse",
+      "BlassOneConstantChoice",
+      "bridge_blass_one_component_constant_choice",
+      "bridge_blass_one_from_constant_choice",
+      "bridge_blass_one_to_constant_choice",
+      "bridge_blass_one_decided_base"
+    ],
+    "our_declarations": [
+      "blass_one",
+      "blass_component_sections",
+      "blass_one_inhabited"
+    ],
+    "note": "This is a gap with a formal reduction. The blind reading lets the component set S be possibly empty. It requires only that every P(x) is non-empty. Ours follows the printed proof ('BAut(S) for some non-empty set S'). The following results are proved. First, the blind version follows from ours under Mere S, Mere X or a decided ‖X‖ (bridge_blass_one_nonempty_component / _inhabited_base / _decided_base). Second, the blind version implies ours (bridge_blass_one_converse). Third, blind_blass_one is equivalent to BlassOneConstantChoice, through bridge_blass_one_from/to_constant_choice. BlassOneConstantChoice says: for a set X with ‖X → BG‖₀ contractible for all groups, X → ‖S‖ implies ‖X → S‖ for every set S. That principle is the converse of lem:ac-impl-triv-coh-sets restricted to constant families X × S → X. It is a special case of the converse that the book calls open (choicefin.tex after thm:Blass-2). The triviality hypothesis only controls families that are locally isomorphic to a fixed set. When it is not decided whether S is empty, no such family that encodes S was found. The principle is neither proved nor refuted. Ours is unchanged."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 170,
+    "labels": [
+      "thm:Blass-2"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/03-choice-cohomology.ny",
+    "blind_declarations": [
+      "blind_blass_two"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+    "bridge_declarations": [
+      "bridge_b_decidable_set_is_set",
+      "bridge_b_decidable_set_eq",
+      "bridge_blass_two"
+    ],
+    "our_declarations": [
+      "blass_two"
+    ],
+    "note": "DecidableSet gives isSet and DecidableEquality componentwise."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 215,
+    "labels": [
+      "thm:lAC-2-3-4"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/04-finite-choice.ny",
+    "blind_declarations": [
+      "blind_local_ac_two_three_four"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-04-finite-choice.ny",
+    "bridge_declarations": [
+      "bridge_local_ac_two_three_four"
+    ],
+    "our_declarations": [
+      "local_choice_two_three_four"
+    ],
+    "note": "The bridge uses the X-AC(n) definition bridges. Here quartet_three and quartet_four are the numerals 3 and 4."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 241,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/04-finite-choice.ny",
+    "blind_declarations": [
+      "blind_fin_sum",
+      "blind_fin_sum_litmus",
+      "BlindSymSubgroup",
+      "BlindSymSubgroupAction",
+      "blind_sym_subgroup_action_underlying",
+      "BlindFixedElements",
+      "BlindActsWithoutFixedPoints",
+      "BlindIndexIs",
+      "BlindIndexSumWitness",
+      "BlindLCondition"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-04-finite-choice.ny",
+    "bridge_declarations": [
+      "bridge_def_fin_sum",
+      "bridge_def_witness_to_ours",
+      "bridge_def_witness_from_ours",
+      "bridge_def_l_condition_to_ours",
+      "bridge_def_l_condition_from_ours",
+      "bridge_def_l_condition",
+      "bridge_l_condition_empty_one",
+      "bridge_l_condition_empty_one_ours",
+      "bridge_l_condition_empty_one_from_ours",
+      "bridge_l_condition_not_empty_two"
+    ],
+    "our_declarations": [
+      "ConditionL",
+      "ConditionLWitness",
+      "ActsWithoutFixedPoints",
+      "IndexedProperSubgroup",
+      "SubgroupHasIndex",
+      "condition_l_one",
+      "not_condition_l_two"
+    ],
+    "note": "Module 1740 was restated on the concrete subgroups of chapter 5. It uses Subgroups, subgroup_group, IsFiniteGroup, IsProperSubgroup, the standard Σ_n-set restricted along subgroup_inclusion, GSetFixedPoints and SubgroupHasIndex of module 1110. The old predicate encoding was removed. The bridge gives BlindLCondition Z n <-> ConditionL Z n for all Z, n. It is a pair of maps, because both are propositions. The blind fixed points read x = g·x, and ours read g·x = x. The blind index is ‖X(sh_G) = Fin m‖, and ours uses every fibre (gset_index_iff_shape). The witness is regrouped, and the two finite sums agree (bridge_def_fin_sum). Litmus tests: the blind L(∅,1) holds directly and from ours. The blind L(∅,2) is refuted through ours (not_condition_l_two)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 257,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/04-finite-choice.ny",
+    "blind_declarations": [
+      "blind_ac_two_implies_ac_four"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-04-finite-choice.ny",
+    "bridge_declarations": [
+      "bridge_ac_two_implies_ac_four"
+    ],
+    "our_declarations": [
+      "tarski_choice_two_four"
+    ],
+    "note": "The bridge uses the AC(n) definition bridges."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 301,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/appB/blind/03-choice-cohomology.ny",
+    "blind_declarations": [
+      "blind_blass_cyclic"
+    ],
+    "bridge_file": "chapters/appB/blind/bridge-03-choice-cohomology.ny",
+    "bridge_declarations": [
+      "bridge_b_cyclic_hypothesis",
+      "bridge_blass_cyclic"
+    ],
+    "our_declarations": [
+      "blass_cyclic_choice",
+      "CyclicTorsorsTrivial",
+      "cyclic_group_fin_path"
+    ],
+    "note": "The blind C_{k+1} = cyclic_group_fin k is identified with our cyclic_group (k+1), where BG = CycleComponent (k+1). The identification uses transport along cyclic_group_fin_path of module 404. The conclusion over all n matches ours."
+  }
+]

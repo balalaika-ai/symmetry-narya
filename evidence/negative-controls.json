@@ -1,0 +1,14 @@
+{
+  "zero_is_one": {
+    "statement": "def false_claim : Id Nat zero. (suc. zero.) ≔ refl (zero. : Nat)",
+    "exit_code": 1,
+    "rejected_with_type_mismatch": true,
+    "output": " ￫ error[E0401]\n ￭ zero_is_one.ny\n 2 | def false_claim : Id Nat zero. (suc. zero.) ≔ refl (zero. : Nat)\n   ^ term synthesized type\n       Nat⁽ᵉ⁾ 0 0\n     but is being checked against type\n       Nat⁽ᵉ⁾ 0 1\n     unequal constructors:\n       zero\n     does not equal\n       suc\n\n"
+  },
+  "successor_transport_is_identity": {
+    "statement": "def false_claim : Id Int (int_universe_loop .trr int_zero) int_zero ≔ refl int_zero",
+    "exit_code": 1,
+    "rejected_with_type_mismatch": true,
+    "output": " ￫ error[E0401]\n ￭ successor_transport_is_identity.ny\n 2 | def false_claim : Id Int (int_universe_loop .trr int_zero) int_zero ≔ refl int_zero\n   ^ term synthesized type\n       Int⁽ᵉ⁾ (pos. 0) (pos. 0)\n     but is being checked against type\n       Int⁽ᵉ⁾ (pos. 1) (pos. 0)\n     unequal constructors:\n       zero\n     does not equal\n       suc\n\n"
+  }
+}

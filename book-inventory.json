@@ -27268,8 +27268,40 @@
     "labels": [
       "rem:LPO-solves-halting problem"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LimitedOmniscience",
+      "LPOInstance",
+      "BitMinimum",
+      "BitConstantZero",
+      "BitHit",
+      "LPODecidedHits",
+      "lpo_decided_hits_prop",
+      "lpo_decides_hits",
+      "decided_hits_lpo",
+      "lpo_decided_hits_equiv",
+      "bit_constant_zero_iff_no_hit",
+      "bit_constant_zero_no_hit",
+      "bit_constant_zero_prop",
+      "lpo_decides_constant_zero",
+      "Halts",
+      "halting_constant_zero_iff",
+      "lpo_decides_halting",
+      "lpo_left_halts",
+      "lpo_right_not_halts",
+      "excluded_middle_decides_halting",
+      "excluded_middle_implies_lpo",
+      "halts_at_own_index",
+      "halts_at_own_index_halts",
+      "never_halts",
+      "never_halts_not_halts"
+    ],
+    "principal": [
+      "lpo_decides_halting",
+      "halting_constant_zero_iff",
+      "lpo_decided_hits_equiv"
+    ],
+    "note": "The LPO of the remark is LimitedOmniscience of module 71. It is literally the printed formula. The formalization also proves an equivalence: LPO holds iff ‖Σ_n P(n) = 1‖ is decidable for every P : ℕ → 2 (lpo_decided_hits_equiv). The internal steps of the argument are proved for an arbitrary step function T : ℕ → ℕ → ℕ → 2. Here Halts T e n ≔ ∃k T(e,n,k) = 1. Turing machines and the implementability of T are not formalized. The steps are as follows. The map k ↦ T(e,n,k) is constantly 0 iff M_e does not halt (halting_constant_zero_iff). An inhabitant of LPO decides halting by case analysis on inl/inr (lpo_decides_halting, lpo_left_halts, lpo_right_not_halts). With LEM as a hypothesis, this decision exists (excluded_middle_decides_halting). The conclusion 'LPO is not provable' is a metatheorem (canonicity of closed terms plus undecidability of the halting problem). It cannot be stated or proved internally. The same is true for the footnotes (Church–Turing thesis, a weakened canonicity in the presence of univalence). Note also that the pinned Narya has Type : Type. Thus the metatheorem is about the theory of the book, not about the checker."
   },
   {
     "chapter": "B",
@@ -27282,8 +27314,31 @@
       "rem:injectionsurjectionisnotwhatyouthink",
       "ft:cohesive"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsEmbedding",
+      "BookIsContr",
+      "book_injection_prop",
+      "contractible_all_identified",
+      "injection_into_contractible_prop",
+      "prop_into_contractible_injection",
+      "injection_into_contractible_iff",
+      "bool_into_contractible_not_injection",
+      "bool_fiber_two_points",
+      "bool_fiber_not_prop",
+      "bool_into_connected_not_injection",
+      "boolean_not_connected",
+      "native_nonempty_connected_embedding_equiv",
+      "unit_book_contractible",
+      "bool_to_unit_not_injection",
+      "unit_to_unit_injection"
+    ],
+    "principal": [
+      "injection_into_contractible_iff",
+      "bool_fiber_two_points",
+      "bool_into_connected_not_injection"
+    ],
+    "note": "Injections are those of the book (IsEmbedding: propositional fibers). The formalized content is as follows. A map into a contractible type is an injection iff its domain is a proposition (injection_into_contractible_iff). Take a map Bool → C into a contractible C. Every fiber contains both 0 and 1 as distinct elements. Thus the fiber is not a proposition, and the map is not an injection (bool_fiber_two_points, bool_into_contractible_not_injection). Bool is not connected (boolean_not_connected, module 121). Thus, by cor:inj+connected, no injection Bool → B into a connected B exists (bool_into_connected_not_injection). 'The next result' refers to cor:inj+connected (intro-uf.tex:2927), from where the remark was moved. The real line, its homotopy type, the shape modality of the footnote ft:cohesive and the topological intuition are not formalized. This development has no real numbers or cohesion."
   },
   {
     "chapter": "B",
@@ -27296,8 +27351,27 @@
       "pri:ac",
       "eq:ac-impl"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AxiomOfChoice",
+      "LocalChoice",
+      "AxiomOfChoiceNonempty",
+      "NonemptySets",
+      "axiom_of_choice_prop",
+      "local_choice_prop",
+      "axiom_of_choice_nonempty_prop",
+      "axiom_of_choice_from_nonempty",
+      "axiom_of_choice_to_nonempty",
+      "axiom_of_choice_formulations_equiv",
+      "SetTypes",
+      "Mere"
+    ],
+    "principal": [
+      "AxiomOfChoice",
+      "AxiomOfChoiceNonempty",
+      "axiom_of_choice_formulations_equiv"
+    ],
+    "note": "AxiomOfChoiceNonempty is the first formulation. It says that every family P : X → Set_{≠∅} over a set X merely has a section. Here Set_{≠∅} = NonemptySets of module 284. AxiomOfChoice is eq:ac-impl, Π_{X:Set} Π_{P:X→Set} (Π_x ‖P x‖) → ‖Π_x P x‖, written through LocalChoice X. Both are propositions, and the formalization proves them equivalent. They are types of hypotheses: no inhabitant is assumed. Sets range over the single universe Type of Narya, as for ExcludedMiddle."
   },
   {
     "chapter": "B",
@@ -27307,8 +27381,35 @@
     "line": 26,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pi_section_equiv",
+      "MapSection",
+      "SplitSurjection",
+      "split_surjection_section_equiv",
+      "book_projection_fiber_equiv",
+      "nonempty_families_surjections_equiv",
+      "SetSurjectionsOnto",
+      "NonemptySetStructure",
+      "nonempty_sets_reassociate",
+      "nonempty_fibers_iff_set_surjection",
+      "set_surjections_regroup",
+      "book_fiber_set",
+      "domain_set_of_fiber_sets",
+      "structured_families_equiv",
+      "SurjectionsBetweenSetsSplit",
+      "surjections_between_sets_split_prop",
+      "choice_splits_surjections",
+      "split_surjections_choice",
+      "projection_surjective",
+      "choice_surjections_split_equiv"
+    ],
+    "principal": [
+      "pi_section_equiv",
+      "nonempty_families_surjections_equiv",
+      "choice_surjections_split_equiv"
+    ],
+    "note": "The equivalence pi_section_equiv gives Π_x P(x) ≃ sections of pr1 : Σ_x P(x) → X. Here 'section' is in the sense of the footnote of def:surjection (MapSection: g with pr1 ∘ g = id). For a set X, families X → Set_{≠∅} are equivalent to surjections between sets onto X (nonempty_families_surjections_equiv). This equivalence comes from the family/fibration correspondence structured_families_equiv of module 19. Its map is not definitionally the total-space projection. AC is equivalent to 'every surjection between sets merely has a section' (choice_surjections_split_equiv). The word 'merely' is there because AC asserts existence. The naming convention 'sections' has no formal content."
   },
   {
     "chapter": "B",
@@ -27318,8 +27419,32 @@
     "line": 40,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "choice_implies_excluded_middle",
+      "ExcludedMiddle",
+      "diaconescu_relation",
+      "diaconescu_reflexive",
+      "diaconescu_symmetric",
+      "diaconescu_transitive",
+      "diaconescu_equivalence",
+      "DiaconescuQuotient",
+      "diaconescu_class",
+      "diaconescu_classes_path_equiv",
+      "diaconescu_decide",
+      "diaconescu_quotient_set",
+      "choice_bool_decidable_equality",
+      "choice_splits_surjections",
+      "Quotient",
+      "quotient_effective",
+      "quotient_encode",
+      "quotient_surjective",
+      "MapSection"
+    ],
+    "principal": [
+      "choice_implies_excluded_middle"
+    ],
+    "note": "The formalization proves AxiomOfChoice → ExcludedMiddle (module 70) by the printed proof. The quotient 2/∼ is the set quotient of module 41 (an image, not a HIT). It is the quotient of a relation whose value at (0,1) is P by definition. The map q is surjective. Thus AC gives merely a section s with q ∘ s = id. A decision of s([0]) = s([1]) gives P (through effectiveness, diaconescu_classes_path_equiv) or ¬P."
   },
   {
     "chapter": "B",
@@ -27329,8 +27454,30 @@
     "line": 65,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AxiomOfChoice",
+      "LocalChoice",
+      "ChoiceOfSize",
+      "LocalChoiceOfSize",
+      "FiniteSetsAt",
+      "local_choice_of_size_prop",
+      "choice_of_size_prop",
+      "local_choice_of_size",
+      "choice_of_size",
+      "one_element_point",
+      "one_element_prop",
+      "local_choice_of_size_one",
+      "choice_of_size_one",
+      "local_choice_of_size_zero",
+      "choice_of_size_zero"
+    ],
+    "principal": [
+      "LocalChoice",
+      "ChoiceOfSize",
+      "LocalChoiceOfSize"
+    ],
+    "note": "X-AC is LocalChoice X (families of sets over X). AC(n) is ChoiceOfSize n. X-AC(n) is LocalChoiceOfSize X n, for families P : X → BΣ_n = FinSet_n (FiniteSetsAt n). It keeps the hypothesis Π_x ‖P x‖ of eq:ac-impl. LocalChoice and LocalChoiceOfSize are defined for an arbitrary type X (the book fixes a set). The xca on S¹ needs this generality. AC and AC(n) quantify over sets. Litmus tests: X-AC(0) and X-AC(1) hold for every X (local_choice_of_size_zero, local_choice_of_size_one). Also, AC implies AC(n)."
   },
   {
     "chapter": "B",
@@ -27340,8 +27487,22 @@
     "line": 77,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "finite_local_choice",
+      "finite_untruncated_local_choice",
+      "finite_choice",
+      "fin_choice",
+      "FiniteChoice",
+      "UntruncatedLocalChoice",
+      "LocalChoice",
+      "IsFinite",
+      "bool_local_choice"
+    ],
+    "principal": [
+      "finite_local_choice"
+    ],
+    "note": "For every finite X (IsFinite X), X-AC holds (finite_local_choice). IsFinite X implies that X is a set. In fact, the untruncated X-AC_∞ holds (finite_untruncated_local_choice). Both results come from finite_choice of module 34. Its proof eliminates the truncation and then uses induction on Fin n. This is possible because the goal is a proposition. Litmus test: bool_local_choice."
   },
   {
     "chapter": "B",
@@ -27353,8 +27514,31 @@
     "labels": [
       "lem:ac-impl-triv-coh-sets"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "local_choice_torsors_trivial",
+      "GroupTorsorsTrivial",
+      "group_torsors_trivial_prop",
+      "Group",
+      "BG",
+      "shape",
+      "bg_connected",
+      "bg_groupoid",
+      "set_trunc_constant_contractible",
+      "set_trunc_constant_path",
+      "SetTrunc",
+      "set_trunc_paths",
+      "set_trunc_induction",
+      "LocalChoice",
+      "Connected",
+      "isGroupoid",
+      "bool_torsors_trivial"
+    ],
+    "principal": [
+      "local_choice_torsors_trivial",
+      "GroupTorsorsTrivial"
+    ],
+    "note": "Let X-AC hold for a set X. Then ‖X → BG‖₀ is contractible (BookIsContr of SetTrunc) for every group G : Group (chapter 4, module 400). Here BG G .carrier is the classifying type of G, a pointed connected groupoid. The proof is the printed one. It chooses s : Π_x (sh = f x) from the family of sets P(x) = (sh = f x). This identifies f with the constant map. The set hypothesis on X is kept as in the statement, but the proof does not use it. The H¹(X,G) of the margin note is not defined."
   },
   {
     "chapter": "B",
@@ -27366,8 +27550,18 @@
     "labels": [
       "pri:sc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SetsCover",
+      "SetCovers",
+      "sets_cover_prop",
+      "Surjective",
+      "set_covers_itself"
+    ],
+    "principal": [
+      "SetsCover"
+    ],
+    "note": "SetsCover ≔ Π_{A:Type} ‖Σ_{X:Set} Σ_{f:X→A} surj(f)‖. It is a proposition and a hypothesis type, and no inhabitant is assumed. Litmus test: every set covers itself (set_covers_itself)."
   },
   {
     "chapter": "B",
@@ -27377,8 +27571,28 @@
     "line": 119,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "untruncated_choice_iff",
+      "UntruncatedChoice",
+      "UntruncatedLocalChoice",
+      "untruncated_choice_prop",
+      "untruncated_choice_restrict",
+      "untruncated_local_choice_restrict",
+      "untruncated_choice_sets_cover",
+      "set_trunc_section_surjective",
+      "choice_and_cover_untruncated",
+      "CoverOver",
+      "cover_over_set",
+      "cover_over_inhabited",
+      "cover_over_point",
+      "AxiomOfChoice",
+      "SetsCover"
+    ],
+    "principal": [
+      "untruncated_choice_iff"
+    ],
+    "note": "AC_∞ is UntruncatedChoice: for every set X and every family P : X → Type, Π_x ‖P x‖ → ‖Π_x P x‖. X-AC_∞ is FiniteChoice X of module 34, reused under the name UntruncatedLocalChoice. AC_∞ is equivalent to AC × SC. The proof of AC_∞ ⇒ SC chooses preimages under |–|₀ : A → ‖A‖₀. It then shows that the chosen map ‖A‖₀ → A is surjective, with the effectiveness of the set truncation. The proof of AC ∧ SC ⇒ AC_∞ covers Σ_x P(x) by a set Y. It then applies AC to the family of sets {y : Y | pr1(g y) = x}."
   },
   {
     "chapter": "B",
@@ -27388,8 +27602,34 @@
     "line": 125,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_local_choice_two_false",
+      "constructed_circle_local_choice_two_false",
+      "choice_of_size_two_over_all_types_false",
+      "circle_local_choice_false",
+      "circle_untruncated_local_choice_false",
+      "swapping_family_no_section",
+      "circle_section_fixed_point",
+      "FixedPointOf",
+      "bool_swap_no_fixed_point",
+      "swapping_two_sets_family",
+      "swapping_family_two_element",
+      "swapping_family_base_bool",
+      "two_sets_inhabited",
+      "swapping_boolean_circle_family",
+      "swapping_boolean_circle_monodromy",
+      "circle_setfamilies_permutations",
+      "LocalChoiceOfSize",
+      "CircleSignature",
+      "constructed_circle",
+      "constant_bool_circle_section"
+    ],
+    "principal": [
+      "circle_local_choice_two_false",
+      "constructed_circle_local_choice_two_false"
+    ],
+    "note": "For every circle C (CircleSignature), LocalChoiceOfSize (C .carrier) 2 → Empty. The proof is as follows. The swapping double cover of module 120 is a family of 2-element sets over S¹. Its fibers are merely Fin 2, by circle induction into a proposition. A section would give a fixed point of its monodromy. This monodromy is the swap of Bool (swapping_boolean_circle_monodromy). The result is instantiated at the constructed circle (module 1759). Thus S¹-AC and S¹-AC_∞ are false, and 2-element choice cannot hold over all types (choice_of_size_two_over_all_types_false). Litmus test: the constant Bool family does have a section."
   },
   {
     "chapter": "B",
@@ -27399,8 +27639,19 @@
     "line": 134,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "untruncated_local_choice_torsors_trivial",
+      "InfinityGroupTorsorsTrivial",
+      "infinity_group_torsors_restrict",
+      "set_trunc_constant_contractible",
+      "UntruncatedLocalChoice",
+      "Connected"
+    ],
+    "principal": [
+      "untruncated_local_choice_torsors_trivial"
+    ],
+    "note": "Let X-AC_∞ hold for a set X. Then ‖X → BG‖₀ is contractible for every ∞-group G. Here G is given by its classifying type: every pointed connected type (BG, sh) (def:inftygps). The proof uses the family of types P(x) = (sh = f x). The set hypothesis on X is kept, but the proof does not use it."
   },
   {
     "chapter": "B",
@@ -27412,8 +27663,27 @@
     "labels": [
       "thm:Blass-1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "blass_one",
+      "blass_component_sections",
+      "blass_one_inhabited",
+      "FactorsThroughNonemptyComponent",
+      "GroupTorsorsTrivial",
+      "component_point",
+      "automorphism_group",
+      "set_component_transport",
+      "contractible_set_trunc_constant",
+      "native_component_connected",
+      "NativeComponent",
+      "blass_component_sections_infinity",
+      "InfinityGroupTorsorsTrivial"
+    ],
+    "principal": [
+      "blass_one",
+      "blass_component_sections"
+    ],
+    "note": "Let X be a set with ‖X → BG‖₀ contractible for all groups. Let S be a non-empty set, and let h : X → BAut(S) be a family into the component of S. Here BAut(S) = NativeComponent SetTypes S. Then pr1 ∘ h merely has a section (blass_component_sections). The proof uses only the group Aut(S) = automorphism_group SetTypes sets_groupoid S of module 400. The lemma blass_one restates this for P : X → Set with a mere factorization P = pr1 ∘ h. This factorization goes through the component of a non-empty S. Deviation: as in the proof, 'factors through a connected component of Set' is read as the component of a non-empty set. The printed wording also allows the component of a possibly empty S when X is not known to be inhabited. In that case, X → ‖S‖ need not give ‖X → S‖. If X is merely inhabited, the printed version follows (blass_one_inhabited). The remark after the proof (∞-groups, families of merely equivalent types) is blass_component_sections_infinity. The literal reading with S possibly empty is shown equivalent to another statement (chapters/appB/blind/bridge-03, bridge_blass_one_from/to_constant_choice). This statement is: for such X, X → ‖S‖ implies ‖X → S‖ for every set S. It is the converse of lem:ac-impl-triv-coh-sets for constant families. This is a special case of the converse that the book calls open. It holds when ‖X‖ is decided, or when S or X is merely inhabited. The statement itself is neither proved nor refuted."
   },
   {
     "chapter": "B",
@@ -27425,8 +27695,38 @@
     "labels": [
       "thm:Blass-2"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "blass_two",
+      "blass_two_surjection",
+      "blass_two_core",
+      "bword_Setup",
+      "bword_Pair",
+      "bword_Reduced",
+      "bword_Loops",
+      "bword_Paths",
+      "bword_endpoint",
+      "bword_paths_loops_equiv",
+      "bword_paths_component",
+      "bword_loops_settype",
+      "bword_sigma_decidable_equality",
+      "GroupTorsorsTrivial",
+      "component_point",
+      "automorphism_group",
+      "set_component_transport",
+      "contractible_set_trunc_constant",
+      "pi_section_equiv",
+      "projection_surjective",
+      "bword_bool_true_length",
+      "bword_bool_true_letter",
+      "bword_bool_false_length",
+      "bword_bool_roundtrip_endpoint"
+    ],
+    "principal": [
+      "blass_two",
+      "blass_two_surjection"
+    ],
+    "note": "The lemma blass_two is about a decidable set X (isSet and DecidableEquality) with ‖X → BG‖₀ contractible for every group. For such X, every family P : X → Set of non-empty sets with decidable equality merely has a section. The lemma blass_two_surjection is the form of the proof. It says that a surjection p : Y → X between decidable sets merely has a section p ∘ s = id. The proof differs from the printed one, because the pinned Narya has no pushout HIT. Thus C is not built, and c =_C f(x) is not computed. Instead, the group is Aut(S) for the set S of reduced loop words. The letters are pairs (a,b) of distinct elements of one fiber, and adjacent letters are reduced. The map x ↦ T_x sends x to the set of reduced paths to x. It is a map X → BAut(S), because T_x ≃ S once a preimage of x is chosen (bword_paths_loops_equiv). The proof trivializes this map and transports the empty word. This gives a reduced path to each x, and the last letter of this path is the section. The proof uses the decidability of X only to decide equality in Σ X P. The lemma blass_two_core needs isSet X and decidable equality of Y. The footnote's name X-AC^dec is not introduced."
   },
   {
     "chapter": "B",
@@ -27438,8 +27738,37 @@
     "labels": [
       "thm:lAC-2-3-4"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "local_choice_two_three_four",
+      "LocalChoiceOfSize",
+      "FiniteSetsAt",
+      "QuartetInvolution",
+      "QuartetPartitions",
+      "quartet_partitions_fin_equiv",
+      "quartet_partitions_three",
+      "QuartetBlockCondition",
+      "QuartetBlocks",
+      "QuartetBlockPoints",
+      "quartet_blocks1_equiv",
+      "quartet_blocks2_equiv",
+      "quartet_blocks3_equiv",
+      "quartet_blocks_two",
+      "quartet_block_points_two",
+      "quartet_points_count",
+      "quartet_transfer",
+      "quartet_sized",
+      "quartet_partitions_distinct12",
+      "quartet_partitions_distinct13",
+      "quartet_partitions_distinct23",
+      "quartet_block_example"
+    ],
+    "principal": [
+      "local_choice_two_three_four",
+      "quartet_partitions_three",
+      "quartet_partitions_fin_equiv"
+    ],
+    "note": "For every set X, LocalChoiceOfSize X 2 and LocalChoiceOfSize X 3 imply LocalChoiceOfSize X 4. The hypothesis isSet X is kept as printed, but the proof does not use it. The book's map Bf : BΣ₄ → BΣ₃ is A ↦ QuartetPartitions A. Here a 2+2 partition is encoded as the fixed-point-free involution that exchanges the two elements of each part. On Fin 4, these are exactly (01)(23), (02)(13), (03)(12) (quartet_partitions_fin_equiv). The 3-element property is transferred to every 4-element set along a mere identification with Fin 4. A part of σ is a σ-invariant non-constant predicate B : A → Bool. These predicates form a 2-element set (quartet_blocks_two). The elements of a part are Σ_a (B a = true), a 2-element set (quartet_block_points_two). As in the printed proof, X-AC(3) and then X-AC(2) twice are applied to these families."
   },
   {
     "chapter": "B",
@@ -27449,8 +27778,42 @@
     "line": 241,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ConditionL",
+      "ConditionLWitness",
+      "condition_l_prop",
+      "SymmetricSubgroupAction",
+      "ActsWithoutFixedPoints",
+      "IndexedProperSubgroup",
+      "index_of",
+      "fin_family_sum",
+      "Subgroups",
+      "subgroup_group",
+      "subgroup_inclusion",
+      "IsProperSubgroup",
+      "IsFiniteGroup",
+      "SubgroupHasIndex",
+      "GSetFixedPoints",
+      "standard_symmetric_gset",
+      "gset_restrict",
+      "EmptySubsetOfNat",
+      "condition_l_one",
+      "fin_one_prop",
+      "unit_gset_subgroup",
+      "unit_gset_subgroup_usym_equiv",
+      "unit_gset_subgroup_finite",
+      "whole_two_without_fixed_points",
+      "not_condition_l_two",
+      "condition_l_whole_index_one",
+      "condition_l_trivial_index_two"
+    ],
+    "principal": [
+      "ConditionL",
+      "IndexedProperSubgroup",
+      "ActsWithoutFixedPoints"
+    ],
+    "note": "ConditionL Z n says the following for every finite subgroup S of Σ_n whose action on Fin n has no fixed points. The subgroups are Subgroups (symmetric_group n) of chapter 5, and finite means IsFiniteGroup of subgroup_group. The action is the standard Σ_n-set restricted along subgroup_inclusion. No fixed points means GSetFixedPoints empty. For each such S, there merely are r and proper (IsProperSubgroup) finite subgroups K_1, …, K_r of that group. Their indices m_i satisfy m_1 + ⋯ + m_r ∈ Z. The indices use SubgroupHasIndex (def:finite-index, module 1110). The printed H_i are the K_i. Z is any subset of ℕ, and its finiteness is not used. The condition is stated on the book's concrete subgroups. An earlier version used predicates on Fin n ≃ Fin n, a second notion of subgroup, which is now removed. Litmus tests: L(∅,1) holds. L(∅,2) fails, because the full subgroup of Σ_2 is finite and the swap moves both points. Also, |Σ_n:Σ_n| = 1, and the trivial subgroup of Σ_2 has index 2. The sufficiency claim that precedes the definition is not formalized. No theorem about L is stated."
   },
   {
     "chapter": "B",
@@ -27460,8 +27823,42 @@
     "line": 257,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "tarski_choice_two_four",
+      "ChoiceOfSize",
+      "KSubsets",
+      "tarski_ksubsets_set",
+      "tarski_subset_family",
+      "TarskiChoice",
+      "tarski_pair",
+      "tarski_pair_subset",
+      "tarski_pair_subset_swap",
+      "tarski_beats",
+      "tarski_beats_tournament",
+      "TarskiTournament",
+      "TarskiOps",
+      "tarski_ops_finite",
+      "tarski_selected",
+      "TarskiUnique",
+      "tarski_unique_fin",
+      "tarski_all_tables_true",
+      "tarski_check_tables",
+      "tarski_table_eq",
+      "tarski_unique",
+      "tarski_select",
+      "tarski_choose",
+      "tarski_example_transitive",
+      "tarski_example_two_two_one_one",
+      "tarski_example_source",
+      "quartet_transfer",
+      "quartet_sized_point"
+    ],
+    "principal": [
+      "tarski_choice_two_four",
+      "tarski_unique"
+    ],
+    "note": "The formalization proves ChoiceOfSize 2 → ChoiceOfSize 4. Let Y = Σ_x [P(x)]², with [A]² = KSubsets A 2 of module 178. These are proposition-valued subsets whose carrier is merely Fin 2. As printed, AC(2) is applied to the carriers over the set Y. The chosen elements form a tournament on P(x). A rule selects one vertex, and this rule uses only decidable equality and boolean quantifiers over the finite set. The rule chooses no enumeration. It selects the vertex that beats nobody. If there is none, it selects the vertex that nobody beats. Else it selects the vertex with exactly one win whose beaten vertex also has exactly one win. On four vertices, this is the book's minimum-of-q_x rule in the cases |B(x)| = 1, 3, 2. The formalization does not use the decomposition X = X₁ + X₂ + X₃. Instead, the selected element is the centre of a contractible type. Its uniqueness is proved on Fin 4 by an exhaustive boolean check of all 64 tournaments. This check subsumes the argument that Σ q_x = 6 excludes B(x) = P(x). The result is then transferred to every 4-element set."
   },
   {
     "chapter": "B",
@@ -27471,7 +27868,43 @@
     "line": 301,
     "section_raw": "Choice for finite sets\\titledagger}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "blass_cyclic_choice",
+      "CyclicTorsorsTrivial",
+      "CycleComponent",
+      "principal_component_point",
+      "ChoiceOfSize",
+      "ChoiceUpTo",
+      "CardBound",
+      "choice_up_to_zero",
+      "choice_up_to_succ",
+      "choice_up_to_size",
+      "bsix_choice_up_to",
+      "bsix_choice_step",
+      "blass_main_step",
+      "bsix_after_choice",
+      "bsix_without_bound",
+      "bsix_image_bound",
+      "bsix_orbits_bound",
+      "bsix_orbit_elements_bound",
+      "BsixReach",
+      "bsix_reach_relation",
+      "BsixOrbits",
+      "bsix_cycle_component",
+      "bsix_cyclic_sections",
+      "bsix_fin_surjective_injective",
+      "bsix_injection_le",
+      "contractible_set_trunc_constant",
+      "choice_cyclic_torsors_trivial",
+      "local_choice_torsors_trivial",
+      "mkgroup",
+      "component_groupoid"
+    ],
+    "principal": [
+      "blass_cyclic_choice",
+      "CyclicTorsorsTrivial"
+    ],
+    "note": "CyclicTorsorsTrivial says: for every set X and n ≥ 0, ‖X → Cyc_{n+1}‖₀ is contractible. Here BC_m = Cyc_m = CycleComponent m of module 92, the component of the standard m-cycle. It is built on remainders mod m and equals the book's (Fin m, s) by fin_remainder_cycle_path. The lemma blass_cyclic_choice derives AC(n) for every n. This includes the trivial n = 0, which the printed proof omits. The induction hypothesis of the proof is applied to images and cycles of varying size. Thus the formalization makes it explicit as ChoiceUpTo n (non-empty sets with at most n elements). This form comes from a split of X by size. The split uses three cases: 'f_x not injective', 'injective but not transitive' and 'injective and transitive'. For finite endomaps, 'f_x not injective' is equivalent to 'not a permutation'. Cycles are classes of forward reachability under iterates of f_x. The transitive case gives an element of Cyc_{n+2} through the classification of finite cycles. Non-vacuity: AC implies the hypothesis (choice_cyclic_torsors_trivial)."
   }
 ]

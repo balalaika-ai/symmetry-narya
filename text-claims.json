@@ -14534,5 +14534,565 @@
     "importance": "low",
     "declarations": [],
     "note": "This is a programme statement. The sections 'separable/normal/etc.' and 'fundamental theorem' are empty stubs (lines 194-198)."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 7,
+    "quote": "statements like \"the law of the excluded middle is not provable in our theory\" ... is a statement about, and not in, the type theory",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text explains the notion of a metamathematical statement."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 12,
+    "quote": "Sometimes it is possible to encode statements about a theory in the language of the theory itself ... (margin: Gödel numbering)",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a historical and methodological comment."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 20,
+    "quote": "Even if true, the encoded metamathematical statement can be unprovable in the theory itself ... Gödel's second incompleteness theorem ... Con(T) is not provable in T",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Gödel's second incompleteness theorem is a metatheorem about T. The formalization contains no arithmetization of the type theory."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 37,
+    "quote": "the metamathematical statement \"if P is unprovable in T, then T is consistent\" is internally provable in T",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This needs an internal encoding of provability in T. This encoding is not formalized."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 43,
+    "quote": "The type theory in this book satisfies the assumptions of Gödel's second incompleteness theorem ... no hope that we can prove the consistency of our type theory internally ... no unprovability statement can be proved internally",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "medium",
+    "declarations": [],
+    "note": "This is a metatheorem. The pinned Narya itself has Type : Type and is inconsistent (README). Thus it does not satisfy these assumptions. The formalization forbids paradox-style terms by audit."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 50,
+    "quote": "[TODO For consistency of UA, LEM, etc, refer to simplicial set model. For unprovability of LEM, refer to cubical set model.]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial TODO about models."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 53,
+    "quote": "canonicity: every closed expression of type ℕ is a numeral ... every closed expression of type L ⊔ R is either inl l or inr r",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "nat_zero_or_successor",
+      "coproduct_constructor_form"
+    ],
+    "note": "Canonicity concerns closed terms and judgmental equality. It is a metatheorem. The formalization proves only the internal propositional shadows. Every n : ℕ is 0 or a successor, and every element of L ⊔ R is inl l or inr r, up to identification."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 64,
+    "quote": "canonicity for False means that there cannot be a closed expression of type False ... this means that our type theory is consistent ... we cannot prove general canonicity internally",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "medium",
+    "declarations": [],
+    "note": "This is a metatheorem (consistency). It cannot be expressed internally."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 71,
+    "quote": "[TODO no canonical forms: x:ℕ, trp^P_{ua(id)}(0): ℕ with P ≔ (p:True ↦ ℕ) and (problematic) trp^Q_{Sloop}(0): ℕ]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial TODO about closed terms without canonical form. The topic is judgmental, not internal."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 76,
+    "quote": "[TODO A second important property of our theory is that one can compute canonical forms.]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial TODO."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 85,
+    "quote": "Being the same by definition (NB appears for the first time on p. 26!) is a relationship between syntactic expressions",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Judgmental equality is the conversion of Narya. It is not an internal relation. The NB is an editorial note."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 93,
+    "quote": "1 ≔ S(0), after which we have 1 ≡ S(0)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "metamath_one",
+      "defeq_explicit_definition"
+    ],
+    "note": "The formalization checks this by refl."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 98,
+    "quote": "n+0 ≔ n and n+S(m) ≔ S(n+m), after which we have n+0 ≡ n and n+S(m) ≡ S(n+m)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "add",
+      "defeq_add_zero",
+      "defeq_add_succ"
+    ],
+    "note": "The add of module 1 recurses on the second argument, exactly as printed. Both equations hold by refl."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 103,
+    "quote": "(x ↦ e_x)(a) ≡ e_a",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "defeq_beta"
+    ],
+    "note": "This is an instance of β. The formalization checks it by refl."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 106,
+    "quote": "(x ↦ e_x) ≡ f when e_x is f(x), e.g., (x ↦ S(x)) ≡ S",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "defeq_eta"
+    ],
+    "note": "The formalization checks η for an arbitrary function by refl. Narya constructors such as suc. are not standalone functions. Thus the instance with S is stated for a function variable."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 111,
+    "quote": "Equality by definition is the congruence closure of these four basic forms",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text describes the metatheory of judgmental equality. The conversion checker of Narya also has record η, higher-dimensional rules and other rules."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 116,
+    "quote": "1+0 ≡ 1 and n+S(S(m)) ≡ S(n+S(m)) ... S(n+S(m)) ≡ S(S(n+m)), and also n+S(S(m)) ≡ S(S(n+m)) by transitivity",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "defeq_one_plus_zero",
+      "defeq_add_two_steps",
+      "defeq_succ_congruence",
+      "defeq_add_two_steps_closed"
+    ],
+    "note": "The formalization checks this by refl."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 123,
+    "quote": "Let's elaborate id ∘ f ≡ f ... Indeed id ∘ f ≡ f by transitivity",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "defeq_identity_compose",
+      "compose",
+      "identity"
+    ],
+    "note": "The formalization checks this by refl with the compose and identity of module 0."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 134,
+    "quote": "If B ≡ A, then (B → U) ≡ (A → U) by congruence, and also P : B → U, and even Π_{x:B} P(x) ≡ Π_{x:A} P(x)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "metamath_alias",
+      "defeq_family_retyped",
+      "defeq_pi_types"
+    ],
+    "note": "Let B ≔ A be a definition. Then P : A → Type is accepted at type B → Type, and the Π-types are equal by refl."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 145,
+    "quote": "Although it is possible to enumerate all true equalities by definition, this does not give a test ... such an enumeration will not terminate",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is metatheory of the type checker."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 153,
+    "quote": "First direct the four basic forms ... This defines a basic reduction relation ... e → e'",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the definition of reduction on syntax."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 162,
+    "quote": "The reflexive transitive closure of → is denoted by →*. The symmetric closure of →* coincides with ≡.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "Steps",
+      "ReflexiveTransitiveClosure",
+      "SymmetricClosure",
+      "Zigzag",
+      "EquivalenceClosure",
+      "fork_step",
+      "fork_b_c_equivalent",
+      "fork_not_symmetric_closure",
+      "symmetric_closure_not_equivalence_closure"
+    ],
+    "note": "This is false as printed. The symmetric closure of →* is in general not transitive, but ≡ is transitive. Take an abstract rewriting relation with a → b and a → c. Then the equivalence closure relates b and c, but neither b →* c nor c →* b (symmetric_closure_not_equivalence_closure). A syntactic instance is c = (x ↦ S(x))((y ↦ y)(0)) with its two one-step reducts. The correct statement: ≡ is the equivalence closure of →. By Church–Rosser, this closure coincides with joinability."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 166,
+    "quote": "Church–Rosser property, type safety, termination ... The proofs of Church–Rosser and type safety are long and tedious ... termination ... has not been carried out in full detail",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "These are metatheorems about the type theory of the book, not internal statements. Narya has no termination checker (see README)."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 177,
+    "quote": "Testing whether or not two given well-typed terms are equal by definition ... e ≡ e' iff n ≡ n' iff there exists c ... since n and n' are irreducible the latter is equivalent to n and n' being identical",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "NormalForm",
+      "normal_form_steps",
+      "normal_forms_joinable_equal"
+    ],
+    "note": "Only the abstract-rewriting step is formalized: two normal forms with a common reduct are equal. The decision procedure and its correctness are metatheory."
+  },
+  {
+    "source": "metamath.tex",
+    "line": 233,
+    "quote": "INSERT AN INTRODUCTORY PARAGRAPH HERE. [Intuitively, the types of type theory can be modeled by topological spaces ... simplicial sets ...]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial placeholder and intuition about models."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 4,
+    "quote": "if we have choice for all families of 2-element sets, then we have choice for all families of 4-element sets (Tarski)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "tarski_choice_two_four"
+    ],
+    "note": "This is exactly the Tarski theorem of choicefin.tex:257."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 9,
+    "quote": "This is due to Tarski, see Jech p. 107",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an attribution."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 12,
+    "quote": "The axiom of choice is a principle that we may add to our type theory (it holds in the standard model), but there are many models where it doesn't hold",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "AxiomOfChoice"
+    ],
+    "note": "These are consistency and independence results about models. Here, AC is only ever a hypothesis."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 38,
+    "quote": "usually called Diaconescu's theorem or the Goodman–Myhill theorem, first observed in a problem in Bishop's book",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an attribution."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 47,
+    "quote": "Like any quotient map, q is surjective",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "quotient_surjective"
+    ],
+    "note": "This is module 41."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 61,
+    "quote": "restricted variants of the axiom of choice, that however are not always true",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an independence statement about models."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 103,
+    "quote": "for general ∞-groups the underlying type of a G-torsor is no longer a set, but can be any type; we need an even stronger version of the axiom of choice where P is arbitrary",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "UntruncatedChoice",
+      "UntruncatedLocalChoice",
+      "untruncated_local_choice_torsors_trivial"
+    ],
+    "note": "The stronger principle and its use are formalized. The formalization does not separately show that the torsor types of some ∞-group fail to be sets."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 110,
+    "quote": "[SC] is connected to AC_∞, much more constructive, yet still not true in all models",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "untruncated_choice_iff"
+    ],
+    "note": "The connection is the xca at line 119. The model-theoretic claims cannot be formalized."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 140,
+    "quote": "two partial converses to lem:ac-impl-triv-coh-sets, both due to Blass",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an attribution."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 166,
+    "quote": "Obviously, the same argument works if we consider all ∞-groups G and families of types that are all equivalent",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "blass_component_sections_infinity"
+    ],
+    "note": "The statement is for a family h : X → (component of a non-empty type S in Type). Here ‖X → BG‖₀ is contractible for all ∞-groups."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 182,
+    "quote": "This kind of higher inductive type is also known as a pushout, and its constructors fit together to give a commutative square",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The pinned Narya has no HITs. The proof of blass_two avoids C."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 191,
+    "quote": "Using the same kind of argument as in lem:wedgeofgpoidisgpoid and thm:free-group-elements ... c =_C f(x) is equivalent to a type of reduced words over Y ⊔ Y. In particular, C is a groupoid, and it's easy to check that it's connected.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "bword_paths_loops_equiv",
+      "bword_Paths",
+      "bword_Loops"
+    ],
+    "note": "The formalization does not construct C. Only the replacement is formalized: the reduced path sets T_x are sets, and T_x ≃ S whenever x has a preimage."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 202,
+    "quote": "Taking for each x the last y in the corresponding reduced word, we get a family of elements s(x) : Y such that p(s(x)) = x",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bword_endpoint",
+      "blass_two_core"
+    ],
+    "note": "This is the last letter of the transported empty word."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 208,
+    "quote": "It seems to be an open problem, whether we can do without the decidability assumption, i.e. whether the converse of lem:ac-impl-triv-coh-sets holds generally",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a remark on the state of research. The formalization uses the decidability of X only to make Σ X P decidable (blass_two_core)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 229,
+    "quote": "The key idea is the concept of \"reduction of the structure group\". [TODO, Elaborate: For a family of n-element sets P : X → BΣ_n there is a section if and only if there is a `` to a subgroup of Σ_n, whose action on the standard n-element set has a fixed point.]",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an unfinished TODO. A word is missing after 'there is a' (presumably 'reduction of the structure group'). The book never makes the intended statement precise."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 238,
+    "quote": "the general sufficient condition that ensures that X-AC(n) follows from X-AC(z) for each z : Z, where Z is a finite subset of ℕ",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "ConditionL"
+    ],
+    "note": "Only the condition is defined. The sufficiency theorem is not stated in the book, and it is not proved."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 252,
+    "quote": "the global case ... Tarski's result ... shows that we don't need choice for 3-element sets, in contrast to the local case",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "tarski_choice_two_four",
+      "local_choice_two_three_four"
+    ],
+    "note": "Both positive theorems are formalized. The implicit independence claim is that X-AC(2) alone does not give X-AC(4). This is a model-theoretic statement, and it is not formalized."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 286,
+    "quote": "B(x) can't be all of P(x), since that would mean that q_x is constant, and that is impossible, since the sum of q_x over the 4-element P(x) is 6",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "tarski_all_tables_true",
+      "tarski_unique_fin"
+    ],
+    "note": "The exhaustive check over all 64 tournaments on Fin 4 covers this indirectly. The formalization does not define q_x itself."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 300,
+    "quote": "The following appears as Theorem 6 in Blass",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an attribution."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 307,
+    "quote": "We use well-founded induction on n, the case n ≡ 1 being trivial",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "bsix_choice_up_to",
+      "choice_up_to_zero",
+      "choice_up_to_one"
+    ],
+    "note": "The proof uses strong induction through ChoiceUpTo. The case n = 0 is not mentioned. It is also trivial, because Π_x ‖P(x)‖ forces X to be empty."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 336,
+    "quote": "We get a section of P over X_1 by induction hypothesis by considering the family of the images of f_x",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsix_image_bound",
+      "ChoiceUpTo"
+    ],
+    "note": "The images have sizes between 1 and n−1, and these sizes vary with x. Thus AC(m) for a fixed m does not apply directly. For this reason, X₁ is split by size (ChoiceUpTo)."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 339,
+    "quote": "We get a section of P over X_2 by first choosing a cycle of f_x (there are fewer then n cycles because there are no 1-cycles), and then choosing an element of the chosen cycle",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsix_orbits_bound",
+      "bsix_orbit_elements_bound"
+    ],
+    "note": "The text has the typo 'fewer then'. The number of cycles is at least 2 and at most n/2. The chosen cycle has fewer than n elements because there are at least two cycles. The book does not say this. The sizes again vary with x."
+  },
+  {
+    "source": "choicefin.tex",
+    "line": 348,
+    "quote": "[TODO: State the general positive result due to Mostowski ... negative results, due to Gauntt (unpublished).]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial TODO."
   }
 ]

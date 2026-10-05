@@ -27,7 +27,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 13: Rings, fields and vector spaces](chapters/ch13/README.md) | 44 | 43 | 0 | 0 | 1 | 0 | 2 |
 | [Chapter 14: Geometry and groups](chapters/ch14/README.md) | 19 | 19 | 0 | 0 | 0 | 0 | 5 |
 | [Chapter 15: Galois theory](chapters/ch15/README.md) | 7 | 5 | 2 | 0 | 0 | 1 | 3 |
-| **Total** | **899** | **870** | **19** | **4** | **6** | | **79** |
+| [Appendix B: Metamathematical remarks](chapters/appB/README.md) | 18 | 18 | 0 | 0 | 0 | 1 | 10 |
+| **Total** | **917** | **888** | **19** | **4** | **6** | | **89** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:
