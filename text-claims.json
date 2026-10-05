@@ -11197,5 +11197,656 @@
       "free_word_decode_loop"
     ],
     "note": "The lemma free_word_decode_triangle says: [-] after transport along loop_a equals loop_a . [-] (concat [w] loop_a). This gives the dependent path free_word_decode_loop."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 13,
+    "quote": "a function f:B->C of sets is an injection if for all b,b' we have that f(b)=f(b') implies b=b'. This conforms with our definition",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "path_reflecting_set_embedding"
+    ],
+    "note": "For sets, path-reflecting maps are injections (chapter 2, xca:inj-sets)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 14,
+    "quote": "giving an element b:B is equivalent to giving a (necessarily constant) function c_b : 1 -> B ... by function extensionality we can replace 1 by any set A",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "unit_maps_point_equiv",
+      "set_injection_iff_cancellation"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 16,
+    "quote": "A smart way to say this is to say that the first projection from Sum_c ||f^-1(c)||, the propositional image of f, to C is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "surjective_image_include_equiv",
+      "image_include_equiv_surjective"
+    ],
+    "note": "The formal statement covers both directions."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 16,
+    "quote": "for a surjection f:B->C and family of propositions P:C->Prop, the propositions Prod_c P(c) and Prod_b P(f(b)) are equivalent",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "surjection_all_prop_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 17,
+    "quote": "This actually holds for any map f:B->C with B and C types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "all_prop_any_map_counterexample"
+    ],
+    "note": "Read for arbitrary maps, the claim is false as printed. A counterexample is f : Empty -> Unit with P constantly Empty. The claim holds for surjections between arbitrary types (surjection_all_prop_equiv), with no set hypothesis."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 17,
+    "quote": "if g,h:C->D are two functions into a set D the proposition Prod_c (g(c)=h(c)) is equivalent to Prod_b (gf(b)=hf(b))",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "surjection_homotopy_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 17,
+    "quote": "For the converse: take Prop for D and define g(c) := ||f^-1(c)|| and h(c) := true for all c:C, then gf=hf, whereas g=h expresses surjectivity of f.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "surjectivity_predicate_restriction",
+      "surjective_from_prop_cancellation",
+      "pre_cancellation_surjection"
+    ],
+    "note": "Refer to module 609 and module 900."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 40,
+    "quote": "a function of sets f:B->C is an injection iff for any set A postcomposition by f gives an injection ...; a surjection iff for any set D precomposition by f gives an injection",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "set_injection_mono",
+      "set_mono_injection",
+      "set_injection_iff_mono",
+      "set_surjection_iff_cancellation"
+    ],
+    "note": "The formalization states the injection half as mono in SetCat. It states the surjection half as pre-cancellation."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 56,
+    "quote": "In fact we did define monomorphisms of groups already in def:typeofmono. The two definitions are proved to be equivalent in lem:eq-mono-cover",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_monomorphism_mono_equiv",
+      "group_monomorphisms_into_equiv"
+    ],
+    "note": "Refer to module 687/900. lem:eq-mono-cover itself is module 938."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 106,
+    "quote": "for any group G, USym G is equivalent to Hom(Z,G) ... saying that USym f is an injection is equivalent to saying that postcomposition by f is an injection Hom(Z,G) -> Hom(Z,H)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "eqmc_usym_injective_post_circle_equiv"
+    ],
+    "note": "Refer to module 938. It uses fig:Znatural of module 435."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 275,
+    "quote": "Note that all these preimages are groupoids.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "hom_fiber_groupoid"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 277,
+    "quote": "the image will be a subgroup of G', the kernel will be a subgroup of G. In general the cokernel is a transitive, pointed G'-set",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "kernel",
+      "image_mono",
+      "image_subgroup",
+      "cokernel_transitive",
+      "cokernel_point"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 321,
+    "quote": "Written out, the classifying type of the kernel, BKer(f), is Sum_z Sum_p ||(sh_G,Bf_pt) = (z,p)|| pointed at (sh_G,Bf_pt,!) ... BKer(f) is the component of the action type of the restriction f^*P_{G'} at (sh_G, Bf_pt); Ker(f) as the stabilizer group",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "kernel_group_classifying",
+      "kernel_fiber_action_type",
+      "kernel_group_aut",
+      "kernel_gset"
+    ],
+    "note": "This holds definitionally (refl): Ker(f) is defined as the stabilizer group of Bf_pt in f^*P_{G'}."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 333,
+    "quote": "the symmetries of the shape sh_Ker(f) of the kernel of f are those g:USym G such that g.Bf_pt = Bf_pt, ie USym f(g) = refl",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "kernel_usym_equiv",
+      "eqmc_mono_kernel_trivial_equiv"
+    ],
+    "note": "kernel_usym_equiv gives the first description. The second description (USym f(g) = refl) is the conjugation identity that module 938 uses."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 348,
+    "quote": "In the vocabulary of ch:actions, coker(f) is the induced G'-set f_!(triv_G 1)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "coker_induced_fiber_equiv",
+      "cokernel_induced_path"
+    ],
+    "note": "This is an identification of G'-sets. Path inversion handles the fiber orientation w = Bf z versus Bf z = w."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 365,
+    "quote": "If a monomorphism i from G to G' is clear from the context, then (G,i,!):Mono(G') is a subgroup of G'... we may write G'/G for the cokernel of i",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cokernel",
+      "image_subgroup"
+    ],
+    "note": "This is notation."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 466,
+    "quote": "through univalence, H provides an identification (F1^-1(x1,p2), fst) = (f1^-1(x1), F2) in the type Sum_{X:U}(X -> (f2f1)^-1(x2))",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fibcomp_slice_path"
+    ],
+    "note": "Refer to module 950."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 471,
+    "quote": "F2 is the unique map such that (fst F2) = fst and H^-1 is similarly unique with respect to fst H^-1 = F2",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fiber_maps_over_equiv",
+      "fibcomp_F2_maps_over_equiv",
+      "fibcomp_H_inv_maps_over_equiv",
+      "fibcomp_F2_not_unique"
+    ],
+    "note": "The claim is false as printed. A non-propositional Pi-type classifies the maps over fst (counterexample fibcomp_F2_not_unique with X2 = U). The correct statement is the pullback universal property fiber_maps_over_equiv."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 762,
+    "quote": "The example above is not as general as possible since all fibers involved are connected.",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is commentary on exa:fibersofcomposites. Its maps classify epimorphisms, so the fibers are connected by lem:epi-surj."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 795,
+    "quote": "the map fst : im(Bf) -> BH is an equivalence, as ||(Bf)^-1(w)|| is contractible for all w:BH",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "eqmc_prop_image_include_equiv"
+    ],
+    "note": "Refer to module 938."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 814,
+    "quote": "The groupoid im_0(Bf) is also the action type of the cokernel of f, and is connected since the cokernel is transitive",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cokernel_action_type",
+      "cokernel_action_type_connected"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 823,
+    "quote": "the image is nothing but the subgroup of H associated with the cokernel as discussed in rem:imageandcokernel, including the choice of the shape",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "image_group",
+      "image_subgroup"
+    ],
+    "note": "This holds definitionally."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 843,
+    "quote": "Under these definitions we have Bf == Bi(f) o Bp(f) for the unpointed maps.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "image_factorization_function"
+    ],
+    "note": "This holds judgmentally (refl)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1211,
+    "quote": "the underlying set Mono(G)(sh_G) of the G-set Mono(G) is definitionally equal to the set Mono(G). Further, Mono(G)(z) can be unpacked as Sum_H Sum_f ismono(f)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "monos_gset_underlying",
+      "monos_gset"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1289,
+    "quote": "Sub(G)(z) can be unpacked as Sum_X (X(z) x istrans(X)) ... Hence the action of the G-set Sub(G) applied to (X,x) does nothing with X and applies the action of X to x",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subgroups_at_transitive_equiv",
+      "subgroups_gset_act",
+      "subgroups_move",
+      "subgroups_gset_underlying"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1308,
+    "quote": "Note that E_{sh_G} == E. Since the G-sets are equivalent (via E) we use Mono(G) and Sub(G) interchangeably.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "monos_to_subgroups_shape",
+      "monos_subgroups_gset_path"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1349,
+    "quote": "Restricting the equivalence E:Mono(G)->Sub(G) to the fixed sets, we get an equivalence from Prod_y Mono(G)(y) to Nor(G)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "monos_fixed_points_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1360,
+    "quote": "Our aim is twofold: show that ker:Epi(G)->Ker_G is an equivalence ...; show that the kernels correspond via E to the fixed points",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "kernels_equiv",
+      "associated_kernel_equiv",
+      "associated_kernel_subgroup"
+    ],
+    "note": "cor:normalisnormal and lem:normalsarekernels carry this out."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1368,
+    "quote": "the two functions i nor, E i ker : Epi(G) -> Sub(G) are identical. Since i nor is an injection, this forces the surjection ker to be injective too",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "diag_for_normal",
+      "epis_to_kernels_injective",
+      "normal_to_subgroup_injective"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1424,
+    "quote": "since ker:Epi(G)->Ker_G is a surjection, we only need to know it is an injection, and for this it is enough to show that nor is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "epis_to_kernels_injective",
+      "kernels_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1561,
+    "quote": "Ker q(N) := Aut_{Sum_x (X_x = X_sh)}(sh_G, refl) ... Ass(N) := Aut_{Sum_x X_sh(x)}(sh_G, pt_sh) ... the identification ev : i ker q(N) = ass(N) is given via lem:evaliseqwhennormal and univalence by ev_{x sh_G}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "quotient_kernel_fiber_equiv",
+      "associated_kernel_group",
+      "kernel_quotient_associated_path"
+    ],
+    "note": "The explicit fiber Sum_x (X_x = X_sh) is quotient_kernel_fiber_equiv. The proof of the identification ker q(N) = ass(N) in Mono(G) uses lem:diagfornormal and lem:qeq, not ev_{x sh_G}."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1831,
+    "quote": "the set of fixed points Prod_v X(v) is a subset of X(sh_G) via the evaluation map ... precomposition by F gives an H-set F^*X ... to consider these as elements in X(sh_G) we need to apply X(Bf_pt^-1)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "invariant_maps_eq_at_shape",
+      "invariant_maps_fixed_equiv",
+      "gset_restrict",
+      "IsSubgroupFixedPoint"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1836,
+    "quote": "we'll say that x:X(sh_G) is an H-fixed point if there is an f:Prod_v XF(v) such that x = X(Bf_pt^-1) f(sh_H)",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "IsSubgroupFixedPoint"
+    ],
+    "note": "This is the Sigma-type of such sections. The section is unique because BH is connected."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1910,
+    "quote": "the fiber at G' of Binn is Sum_y (G' = mkgroup(BG,y)) ~ Sum_y Sum_p (y = trp_p(sh_G')) ~ (BG'_div = BG_div)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "inn_fiber_path_equiv",
+      "inn_fiber_equiv",
+      "inn_fiber_equiv_value",
+      "inn_fiber_equiv_shape"
+    ],
+    "note": "Refer to module 955."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1925,
+    "quote": "Ker(inn) ~ Aut_{(BG_div = BG_div)}(refl) ~ Z(G). Under this equivalence the map incl_ker(inn) becomes the homomorphism grpcenterinc G",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "inn_kernel_center_hom",
+      "inn_kernel_center_iso",
+      "inn_kernel_center_path",
+      "inn_kernel_inclusion_center",
+      "inn_kernel_abelian_path"
+    ],
+    "note": "Refer to module 955. Z(G) is group_center of chapter 12 (module 1202)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2018,
+    "quote": "||a = b||_0 is equivalent to |a|_1 = |b|_1 in ||A||_1",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "universe_one_trunc_paths"
+    ],
+    "note": "The formalization has this for A = U (module 957). The general form is trunc_path_equiv of module 202."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2098,
+    "quote": "the definition itself never used that the subgroup was normal (but the quotient homomorphism did) and is important in this more general context",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "normal_quotient_is_weyl",
+      "weyl_group"
+    ],
+    "note": "G/N is definitionally the Weyl group of N(sh_G)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2100,
+    "quote": "The subgroup (X,pt_X,!) corresponds to (H,i_H,!) with H := Aut_{Sum_y X(y)}(sh_G,pt_X) and the first projection. Conversely the corresponding transitive G-set is G/H := coker i_H pointed at |sh_H, p_{i_H}|",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subgroup_to_mono",
+      "mono_subgroup_cokernel_path"
+    ],
+    "note": "For every monomorphism, E(H, i_H) = (coker i_H, |sh_H, p|_0, !) in Sub(G)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2118,
+    "quote": "While the projection ((sh_G,X,pt_X) = (y,Y,pt_Y)) -> (X = Y) may not be an equivalence, ... the propositional truncation ||(sh_G,X,pt_X) = (y,Y,pt_Y)|| -> ||X = Y|| is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "normalizer_sigma_path",
+      "normalizer_to_sigma",
+      "normalizer_sigma_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2152,
+    "quote": "pt_W = pt_W is nothing but (X =_{G-set} X) = Prod_y (X(y) = X(y)). ... Prod_y (X(y) = X(y)) ~ Prod_{Sum_y X(y)} X(y), so pt_W = pt_W is equivalent to the set Prod_x X(Bi_H x) of fixed points",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "gset_path_equiv",
+      "automorphism_group_usym_equiv",
+      "weyl_fixed_map_injective",
+      "weyl_fixed_equiv_finite"
+    ],
+    "note": "The middle step is false as printed: it identifies automorphisms with arbitrary self-maps. The conclusion holds as an injection in general, and as an equivalence when G/H is finite. Refer to lem:WGHisHfixofG/H."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 371,
+    "quote": "the map from cyclically ordered sets with cardinality n to the type of sets with cardinality n forgets structure, and represents an injective group homomorphism from the cyclic group of order n to Sigma_n",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is commentary. The forgetful homomorphism C_n -> Sigma_n and its injectivity are material of chapter 4/5 (cycles). The formalization does not state them again here."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 378,
+    "quote": "the map from pairs of n-element sets to n-element sets that projects onto the first factor ... represents a surjective group homomorphism",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "product_proj1_epi",
+      "gepi_product_proj1_usym_surjective"
+    ],
+    "note": "The statement is for arbitrary groups G1 x G2 -> G1, in particular for Sigma_n x Sigma_n."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 385,
+    "quote": "B phi factors as BG = Sum_w Sum_z (B phi(z) = w) ->* Sum_w ||...||_0 ->* Sum_w ||...||_{-1} = BH. The pointed, connected type in the middle represents a group that is called the image of phi",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "image_factorization_function",
+      "image_factorization_path",
+      "image_group",
+      "eqmc_prop_image_include_equiv"
+    ],
+    "note": "The (-1)-image is BH by footnote 795 (module 938)."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 407,
+    "quote": "TODO: Fix and move to Ch. 5",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial footnote of thm:fund-thm-homs."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 461,
+    "quote": "There is a canonical homomorphism from Z(G) to G given by the pointed map from BZ(G) to BG that evaluates at the point sh_G",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "center_evaluation_hom"
+    ],
+    "note": "Refer to module 960."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 463,
+    "quote": "The fiber of the evaluation map e : BZ(G) ->* BG is Sum_f ||f ~ id|| x (f sh_G = sh_G) ~ Sum_{f : BG ->* BG} ||f ~ id||",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "center_evaluation_fiber_equiv"
+    ],
+    "note": "The formalization uses the book orientation sh = f sh for pointed maps."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 468,
+    "quote": "this type is the loop type of the pointed, connected type BInn(G) := Sum_{H:Group} ||bunch(G) = bunch(H)||_0, thus giving the homomorphism Z(G) to G a normal structure with quotient group Inn(G)",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "inner_aut_classifying_equiv_group"
+    ],
+    "note": "BInn(G) ~ Sum_H ||BH = BG||_0 is formalized (module 956). The identification of its loop type with Sum_{f : BG ->* BG} ||f ~ id|| is not formalized."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 475,
+    "quote": "On loops, i gives the inclusion into Aut(G) of the subtype of automorphisms of G that become merely equal to the identity automorphism of bunch(G)",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an informal description of USym of the inclusion of Inn(G) into Aut(G)."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 478,
+    "quote": "The fiber of i is Sum_H ||bunch(G) = bunch(H)||_0 x (H = G) ~ ||bunch(G) = bunch(G)||_0",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "inner_inclusion_fiber_equiv"
+    ],
+    "note": "Refer to module 960."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 483,
+    "quote": "the pointed, connected groupoid BOut(G) := ||Sum_{X : Bunch} ||bunch(G) = X||||_1 ... Out(G) is always a 1-group, and it is the decategorification of Aut(bunch(G))",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "OutBunchClassifying",
+      "out_bunch_group",
+      "out_bunch_loops_equiv",
+      "out_bunch_loops_fiber_equiv"
+    ],
+    "note": "The formalization shows that BOut(G) is a pointed connected groupoid whose loops are the fiber of i. It does not prove that this Out(G) is the Out(G) of subgroups.tex. cons:simpler-version-Out relates the latter to Aut_{||U||_1}(|BG|). The word 'decategorification' is informal."
   }
 ]

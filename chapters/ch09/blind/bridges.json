@@ -1,0 +1,2251 @@
+[
+  {
+    "source": "subgroups.tex",
+    "line": 27,
+    "labels": [
+      "lem:injmonosurjepiSet",
+      "it:injmono",
+      "it:surjepi"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "BlindIff",
+      "blind_injmono_set",
+      "blind_surjepi_set"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_injmono_set",
+      "bridge_surjepi_set"
+    ],
+    "our_declarations": [
+      "set_injection_iff_cancellation",
+      "set_surjection_iff_cancellation"
+    ],
+    "note": "The blind SetTypes version is the main version with the set proofs unpacked. The cancellation conditions agree by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 62,
+    "labels": [
+      "def:monomorphism",
+      "def:epimorphism"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "BlindIsMono",
+      "BlindIsEpi",
+      "blind_is_mono_prop",
+      "blind_is_epi_prop",
+      "BlindIsProperMono",
+      "BlindIsProperEpi",
+      "BlindMonoType",
+      "BlindEpi"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_is_mono",
+      "bridge_def_is_epi",
+      "bridge_def_epi",
+      "bridge_def_mono_type",
+      "bridge_is_mono_prop",
+      "bridge_is_epi_prop",
+      "bridge_def_proper_mono",
+      "bridge_def_proper_epi"
+    ],
+    "our_declarations": [
+      "IsGroupMonomorphism",
+      "IsGroupEpi",
+      "GroupEpis",
+      "GroupMonomorphismsInto",
+      "is_group_monomorphism_prop",
+      "is_group_epi_prop",
+      "IsProperGroupMonomorphism",
+      "IsProperGroupEpi"
+    ],
+    "note": "All blind definitions are the main definitions by refl. GroupCat composition unfolds to group_hom_compose."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 98,
+    "labels": [
+      "exa:projections-epi"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "blind_projections_epi"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_projections_epi"
+    ],
+    "our_declarations": [
+      "product_proj1_epi",
+      "product_proj2_epi"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 103,
+    "labels": [
+      "xca:mono1st-epi2nd"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "blind_mono_compose",
+      "blind_epi_compose",
+      "blind_epi_second",
+      "blind_mono_first"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_mono_compose",
+      "bridge_epi_compose",
+      "bridge_epi_second",
+      "bridge_mono_first"
+    ],
+    "our_declarations": [
+      "group_monomorphism_compose",
+      "group_epi_compose",
+      "group_epi_cancel",
+      "group_monomorphism_cancel"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 129,
+    "labels": [
+      "lem:eq-mono-cover",
+      "lem:eq-epi-conn",
+      "it:mono",
+      "it:injection",
+      "it:cover"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "blind_eq_mono_cover"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_eq_mono_cover"
+    ],
+    "our_declarations": [
+      "eqmc_mono_injection_equiv",
+      "eqmc_injection_covering_equiv",
+      "eqmc_covering_zero_truncated_equiv"
+    ],
+    "note": "The blind chain of logical equivalences comes from the main equivalences of propositions. Thus the converse also holds."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 161,
+    "labels": [
+      "lem:epi-surj",
+      "it:epi",
+      "it:surjection",
+      "it:connfib"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "blind_epi_surj"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_epi_surj",
+      "bridge_connected_fibers_zero_connected"
+    ],
+    "our_declarations": [
+      "gepi_epi_usym_surjective_equiv",
+      "gepi_surjective_connected_fibers_equiv",
+      "zero_connected_connected"
+    ],
+    "note": "The blind 0-connected (NConnectedMap 1) is matched fiberwise with Connected through zero_connected_connected."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 204,
+    "labels": [
+      "con:monos-are-equalizers"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "BlindIsEqualizer",
+      "blind_monos_are_equalizers"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_monos_are_equalizers",
+      "bridge_equalizer_of_ours",
+      "bridge_flip_fiber_equiv"
+    ],
+    "our_declarations": [
+      "gepi_mono_equalizer",
+      "GepiIsEqualizer"
+    ],
+    "note": "The main equalizer fiber is Σ k' (k = i k'), and the blind one is Σ k' (i k' = k). Contractibility is transported along path inversion. W is the main W, not the Aut_E of the book draft, because the blind statement only asks for existence."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 238,
+    "labels": [
+      "lem:epimonoiso"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/01-epi-mono.ny"
+    ],
+    "blind_declarations": [
+      "blind_epimonoiso"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-01-epi-mono.ny",
+    "bridge_declarations": [
+      "bridge_epimonoiso"
+    ],
+    "our_declarations": [
+      "gepi_iso_mono_epi_equiv"
+    ],
+    "note": "The bridge is direct, in both directions."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 288,
+    "labels": [
+      "def:kernel"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "BlindHomFiber",
+      "blind_hom_fiber_groupoid",
+      "BlindKer",
+      "blind_kermap",
+      "blind_kermap_mono",
+      "blind_ker"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_ker_group",
+      "bridge_def_kermap",
+      "bridge_def_ker",
+      "bridge_def_hom_fiber"
+    ],
+    "our_declarations": [
+      "kernel_group",
+      "kernel_inclusion",
+      "kernel",
+      "HomFiber"
+    ],
+    "note": "The blind Ker(f), ker_f (with its mono proof) and ker are the main ones by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 341,
+    "labels": [
+      "def:cokernel"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_coker",
+      "blind_coker_point"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_coker",
+      "bridge_def_coker_point"
+    ],
+    "our_declarations": [
+      "cokernel",
+      "cokernel_point"
+    ],
+    "note": "The blind version is the main version by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 367,
+    "labels": [
+      "lem:isTrans(coker)"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_coker_transitive"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_coker_transitive"
+    ],
+    "our_declarations": [
+      "cokernel_transitive"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 388,
+    "labels": [
+      "rem:imageandcokernel"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_coker_subgroup",
+      "blind_coker_total_equiv",
+      "blind_coker_total_surjective",
+      "blind_coker_total_connected"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_coker_subgroup",
+      "bridge_coker_total_equiv",
+      "bridge_coker_total_surjective",
+      "bridge_coker_total_connected"
+    ],
+    "our_declarations": [
+      "image_subgroup",
+      "fiber_decomposition_equiv",
+      "set_trunc_surjective",
+      "cokernel_action_type_connected"
+    ],
+    "note": "The blind subgroup equals the main one for every transitivity proof. BG ≃ Σ_w fibers and the surjection onto the set-truncated total space are proved directly."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 409,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_trivial_hom",
+      "blind_mono_iff_kernel_trivial",
+      "blind_epi_iff_cokernel_contractible",
+      "blind_kernel_universal"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_def_trivial_hom",
+      "bridge_mono_iff_kernel_trivial",
+      "bridge_epi_iff_cokernel_contractible",
+      "bridge_kernel_universal"
+    ],
+    "our_declarations": [
+      "EqmcTrivialHom",
+      "eqmc_mono_kernel_trivial_equiv",
+      "eqmc_epi_cokernel_point_contractible_equiv",
+      "eqmc_kernel_universal_property"
+    ],
+    "note": "The blind trivial hom is the main one by refl. All three items follow from the main equivalences / contractibility."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 440,
+    "labels": [
+      "lem:fibersofcomposites"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "BlindTwoPtdMaps",
+      "BlindFib02",
+      "BlindFib12",
+      "BlindFib01",
+      "blind_F1",
+      "blind_F2",
+      "BlindFibF1",
+      "blind_H",
+      "blind_fibersofcomposites_H",
+      "blind_fibersofcomposites_square",
+      "blind_fibersofcomposites_triangle"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_def_F1",
+      "bridge_def_F2",
+      "bridge_def_H",
+      "bridge_fibersofcomposites_H",
+      "bridge_fibersofcomposites_square",
+      "bridge_fibersofcomposites_triangle"
+    ],
+    "our_declarations": [
+      "fibcomp_F1",
+      "fibcomp_F2",
+      "fibcomp_H",
+      "fibcomp_H_book_equiv",
+      "fibcomp_triangle_point",
+      "fibcomp_lower_square",
+      "fibcomp_right_triangle",
+      "fibcomp_upper_triangle"
+    ],
+    "note": "F1, F2 and H are the main ones by refl. The blind condition on the centre of the inverse fibre follows from F2 H = fst."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 480,
+    "labels": [
+      "xca:ptd-fibersofcomposites"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_a0",
+      "blind_ptd_fibersofcomposites"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_ptd_fibersofcomposites"
+    ],
+    "our_declarations": [
+      "fibcomp_H_inv",
+      "fibcomp_F1_pointed",
+      "fibcomp_upper_triangle_pointed",
+      "fibcomp_lower_square_pointed",
+      "fibcomp_right_triangle_pointed",
+      "pointed_map_path_equiv"
+    ],
+    "note": "d0 = H^-1(x0,p1), and the pointings are as in the main version. The bridge turns pointed homotopies into identifications of pointed maps."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 518,
+    "labels": [
+      "cor:cokermaps",
+      "it:H-equiv",
+      "it:F1",
+      "it:F2-mono",
+      "it:Ker-f1-F1",
+      "it:coker-f1-F1",
+      "it:monof2->isoF2",
+      "it:epif1->equivF'1"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "blind_fiber_path",
+      "blind_component_map",
+      "blind_f21",
+      "blind_cor_F1",
+      "blind_cor_F2",
+      "blind_cokermaps_H_iso",
+      "blind_cokermaps_F1_unique",
+      "blind_cokermaps_F1_square",
+      "blind_cokermaps_F2_unique",
+      "blind_cokermaps_F2_triangle",
+      "blind_cokermaps_Ker_f1_F1",
+      "blind_cokermaps_coker_f1_F1",
+      "blind_cokermaps_mono_F2_iso",
+      "blind_cokermaps_F1'",
+      "blind_cokermaps_epi_F1'_equiv"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge9_fiber_path_base",
+      "bridge9_fiber_path_agree",
+      "bridge9_F1_at",
+      "bridge9_blind_kp",
+      "bridge9_kp_path",
+      "bridge_def_cor_F1_blind",
+      "bridge_def_cor_F1_ours",
+      "bridge_def_cor_F1",
+      "bridge_def_cor_F2",
+      "bridge9_F1_transport",
+      "bridge9_H_iso_stmt",
+      "bridge_cokermaps_H_iso",
+      "bridge_cokermaps_F1_unique",
+      "bridge_cokermaps_F1_square",
+      "bridge_cokermaps_F2_unique",
+      "bridge_cokermaps_F2_triangle",
+      "bridge_cokermaps_Ker_f1_F1",
+      "bridge_cokermaps_coker_f1_F1_refuted",
+      "bridge_cokermaps_mono_F2_iso",
+      "bridge_def_cokermaps_F1'",
+      "bridge_cokermaps_epi_F1'_equiv"
+    ],
+    "our_declarations": [
+      "kc_F1",
+      "kc_F1_point",
+      "kc_F2",
+      "kc_H_group_iso",
+      "kc_F1_unique",
+      "kc_lower_square",
+      "kc_F2_unique",
+      "kc_upper_right",
+      "kc_F2_mono",
+      "kc_monos_path",
+      "kc_coker_restriction_counterexample",
+      "kc_F2_iso_of_mono",
+      "kc_coker_hom",
+      "kc_coker_hom_is_equiv_of_epi"
+    ],
+    "note": "The blind F1 has a J-defined fibre pointing. It equals the main pointing (p1, pathover), because the first component of a path in a fibre over a groupoid determines the path (bridge9_kp_path). Thus blind F1 = kc_F1, and F2 is the main one by refl. Items 1-4, 6 and 7 are bridged. Item 3 has the extra mono proof, which the equation implies. Item 5 literal is refuted (bridge_cokermaps_coker_f1_F1_refuted). The counterexample is the main one: G0 = 1, G1 = G2 = Σ3, f2 = id. The blind version has no corrected variant. The main corrected variant is kc_coker_restriction_path under connected fibers."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 687,
+    "labels": [
+      "exa:fibersofcomposites"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/03-kernel-examples.ny"
+    ],
+    "blind_declarations": [
+      "blind_four",
+      "BlindC4",
+      "BlindS4",
+      "BlindS2",
+      "blind_c4_gen",
+      "blind_mod4",
+      "blind_sgnprj",
+      "blind_comp4",
+      "BlindFixesPoint",
+      "BlindLoopMultiple",
+      "blind_exa_foc_sets",
+      "blind_exa_foc_generator_odd",
+      "blind_exa_foc_fibers_connected",
+      "blind_exa_foc_mod4_stabilizer",
+      "blind_exa_foc_sgnprj_stabilizer",
+      "blind_exa_foc_composite_stabilizer",
+      "blind_exa_foc_F1_symmetries"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-03-kernel-examples.ny",
+      "chapters/ch09/blind/bridge-03b-stabilizers.ny",
+      "chapters/ch09/blind/bridge-03c-coker-R4.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_F1_at",
+      "bridge9w_F1_point_type",
+      "bridge9w_F1_symmetries",
+      "bridge9w_blind_kp",
+      "bridge9w_blind_square",
+      "bridge9w_connected_fibers_of_shape",
+      "bridge9w_cycle_structures_equiv",
+      "bridge9w_fixes_inker",
+      "bridge9w_kp_path",
+      "bridge_def_R4",
+      "bridge_def_comp4",
+      "bridge_def_compR4",
+      "bridge_def_mod4",
+      "bridge_def_sgnprj",
+      "bridge_exa_foc_F1_symmetries",
+      "bridge_exa_foc_composite_stabilizer",
+      "bridge_exa_foc_fibers_connected",
+      "bridge_exa_foc_generator_odd",
+      "bridge_exa_foc_mod4_stabilizer",
+      "bridge_exa_foc_sets",
+      "bridge_exa_foc_sgnprj_stabilizer",
+      "bridge_xca_foc_F1_symmetries",
+      "bridge_xca_foc_R4_coker",
+      "bridge_xca_foc_R4_fiber_not_connected",
+      "bridge_xca_foc_other_fibers_connected"
+    ],
+    "our_declarations": [
+      "foc_mod4_stabilizer_iff",
+      "foc_sgnprj_stabilizer_iff",
+      "foc_composite_stabilizer_iff",
+      "ex_f1_connected_fibers",
+      "kernel_member_iff",
+      "kc_lower_square"
+    ],
+    "note": "The three stabilizer iffs (all g, every integer k) are the main ones (module 994: foc_*_stabilizer_iff). By definition, BlindFixesPoint, BlindIff and BlindLoopMultiple are KernelGsetFixes, Product and CircleLoopMultiple. F1 is transferred through kc_lower_square to the blind F1 (foc_phi_power of 994)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 764,
+    "labels": [
+      "xca:fibersofcomposites"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/03-kernel-examples.ny"
+    ],
+    "blind_declarations": [
+      "blind_R4",
+      "blind_sgn4",
+      "blind_compR4",
+      "blind_six",
+      "blind_xca_foc_R4_stabilizer",
+      "blind_xca_foc_sgn_stabilizer",
+      "blind_xca_foc_composite_stabilizer",
+      "blind_xca_foc_R4_coker",
+      "blind_xca_foc_R4_fiber_not_connected",
+      "blind_xca_foc_other_fibers_connected",
+      "blind_xca_foc_F1_symmetries"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-03-kernel-examples.ny",
+      "chapters/ch09/blind/bridge-03b-stabilizers.ny",
+      "chapters/ch09/blind/bridge-03c-coker-R4.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_F1_at",
+      "bridge9w_F1_point_type",
+      "bridge9w_F1_symmetries",
+      "bridge9w_blind_kp",
+      "bridge9w_blind_square",
+      "bridge9w_connected_fibers_of_shape",
+      "bridge9w_cycle_structures_equiv",
+      "bridge9w_kp_path",
+      "bridge_def_R4",
+      "bridge_def_compR4",
+      "bridge_xca_foc_F1_symmetries",
+      "bridge_xca_foc_R4_coker",
+      "bridge_xca_foc_R4_fiber_not_connected",
+      "bridge_xca_foc_R4_stabilizer",
+      "bridge_xca_foc_composite_stabilizer",
+      "bridge_xca_foc_other_fibers_connected",
+      "bridge_xca_foc_sgn_stabilizer"
+    ],
+    "our_declarations": [
+      "xr_R4_stabilizer_iff",
+      "xr_sgn_stabilizer_iff",
+      "xr_sR4_stabilizer_iff",
+      "xr_R4_not_usym_surjective",
+      "power_fiber_cycle_structures",
+      "cycle_structures_fin_count"
+    ],
+    "note": "The three stabilizer iffs are the main ones (module 994: xr_*_stabilizer_iff). coker(R_4)(sh) ≃ Fin 6 through cycle structures on Fin 4 (3! = 6)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 778,
+    "labels": [
+      "xca:abstract-kernel"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/02-kernels.ny"
+    ],
+    "blind_declarations": [
+      "BlindAbsKerWitness",
+      "BlindAbsKerFamily",
+      "blind_abs_ker_gset",
+      "blind_abs_ker_point",
+      "blind_abstract_kernel",
+      "blind_abstract_kernel_epi"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-02-kernels.ny",
+    "bridge_declarations": [
+      "bridge_def_abs_ker_gset",
+      "bridge_def_abs_ker_point",
+      "bridge_abstract_kernel",
+      "bridge_abstract_kernel_epi"
+    ],
+    "our_declarations": [
+      "abstract_kernel_gset",
+      "abstract_kernel_point",
+      "abstract_kernel_transitive",
+      "abstract_kernel_path",
+      "abstract_kernel_epi_equiv_of_epi",
+      "pointed_gset_path"
+    ],
+    "note": "X(f) and its point are the main ones by refl. The blind version states the epi part as an identification of pointed G-sets. This identification comes from the main fiberwise equivalence, and refl preserves the point."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 811,
+    "labels": [
+      "def:Im(grphom)"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_zero_image_path_aux",
+      "blind_zero_image_path",
+      "BlindImg",
+      "blind_im_proj_point",
+      "blind_im_proj",
+      "blind_im_incl",
+      "blind_im_incl_mono",
+      "blind_im_unpointed_factorization"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_def_Img",
+      "bridge_def_im_proj",
+      "bridge_def_im_incl",
+      "bridge_im_unpointed_factorization",
+      "bridge9_img_iso",
+      "bridge9_img_triple",
+      "bridge9_img_op_path",
+      "bridge9_proj_point_path",
+      "bridge9_zip_fst",
+      "bridge9_aux_fst",
+      "bridge9_transport_fst",
+      "bridge9_sigma_set_path_eq"
+    ],
+    "our_declarations": [
+      "image_group",
+      "image_projection",
+      "image_inclusion",
+      "image_mono",
+      "image_projection_point",
+      "image_factorization_function"
+    ],
+    "note": "BlindImg is different from image_group only in the connectedness proof. The blind pointing of Bp(f) (J/transport) equals the main pointing. The reason is that the first component of a path in the 0-image determines the path, and this component is Bf_pt for both. The whole blind image operation (group, p, i, mono proof) is identified with the main one (bridge9_img_op_path)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 845,
+    "labels": [
+      "xca:p-epi-i-mono"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_p_epi_i_mono",
+      "blind_im_factorization",
+      "blind_im_proj_epi"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_p_epi_i_mono",
+      "bridge_im_factorization",
+      "bridge_im_proj_epi",
+      "bridge9_S_factorizes",
+      "bridge9_S_proj_epi"
+    ],
+    "our_declarations": [
+      "image_projection_point",
+      "image_factorization_path",
+      "eqmc_image_projection_epi",
+      "zero_image_factor_connected_fibers",
+      "group_monomorphism_mono_equiv"
+    ],
+    "note": "The existence part uses the main pointing. The factorization and the epi property of the blind p(f) are transported from the main ones along the image-operation path."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 869,
+    "labels": [
+      "def:Im-fact"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "BlindEpiMonoPullback",
+      "BlindImProjEpi",
+      "blind_imfact"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_def_epi_mono_pullback",
+      "bridge9_pullback_map",
+      "bridge9_pullback_inv",
+      "bridge9_imfact_of",
+      "bridge_def_imfact"
+    ],
+    "our_declarations": [
+      "EpiMonoFactorizations",
+      "image_factorization_map"
+    ],
+    "note": "The blind Epi ×_Group Mono (with the monos of chapter 5) ≃ the main one (with categorical monos). The blind Imfact = the generic image-operation Imfact by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 879,
+    "labels": [
+      "lem:Im-fact-unique"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_im_fact_unique",
+      "blind_epimono_compose",
+      "blind_im_fact_inverse"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_im_fact_unique",
+      "bridge_im_fact_inverse",
+      "bridge9_S_imfact_equiv",
+      "bridge9_S_imfact_inverse",
+      "bridge9_our_imfact_equiv",
+      "bridge9_our_imfact_path",
+      "bridge9_our_compose_imfact",
+      "bridge9_section_of_retraction"
+    ],
+    "our_declarations": [
+      "image_factorization_equiv",
+      "image_factorization_is_equiv",
+      "image_factorization_path",
+      "group_path_iso_refl_hom"
+    ],
+    "note": "The bridge holds for every family hp of epi proofs. The blind composition map uses ptoe = group_path_iso_equiv. ptoe(refl) = id is group_path_iso_refl_hom (module 990). The right-inverse half follows from the equivalence."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 889,
+    "labels": [
+      "rem:n-im-ptd-map"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "BlindPtdFact",
+      "BlindPtdFactN",
+      "blind_ptd_n_image_contractible",
+      "BlindPtdFactMinusTwo",
+      "blind_ptd_minus_two_image_contractible",
+      "blind_n_image_factor_props",
+      "blind_n_image_fiber_equiv",
+      "blind_n_image_connected_groupoid"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04c-n-image.ny",
+    "bridge_declarations": [
+      "bridge_def_ptd_fact",
+      "bridge_def_ptd_fact_n",
+      "bridge_def_ptd_fact_minus_two",
+      "bridge_ptd_n_image_contractible",
+      "bridge_ptd_minus_two_image_contractible",
+      "bridge_n_image_factor_props",
+      "bridge_n_image_fiber_equiv",
+      "bridge_n_image_connected_groupoid"
+    ],
+    "our_declarations": [
+      "PfactPointed",
+      "PfactPointedN",
+      "pfact_n_image_pointed_contractible",
+      "n_image_factor_connected",
+      "n_image_include_truncated",
+      "n_image_universal_property_all",
+      "n_image_include_fiber_equiv",
+      "n_image_connected_groupoid",
+      "trunc_groupoid_of_groupoid",
+      "trunc_level_unit_equiv"
+    ],
+    "note": "The blind Fact^n_* (n = k - 1) is the main one at m = k + 1 by refl, and n = -2 is at m = 0. The fiber equivalence comes from the contractibility of n-image factorizations. The main formalization had the connected-groupoid claim only for n = 0, which is weaker than the book. Module 991 adds it for every n (n_image_connected_groupoid)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 978,
+    "labels": [
+      "def:image"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_into_component",
+      "BlindImage",
+      "blind_image_incl",
+      "blind_image_incl_mono",
+      "blind_image_prj",
+      "blind_img",
+      "BlindImageEpiProofs",
+      "blind_prjim",
+      "blind_image_factorization",
+      "blind_image_defs_agree",
+      "blind_image_prj_epi",
+      "blind_image_factorizes"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge9_aut_iso",
+      "bridge9_aut_triple",
+      "bridge9_aut_op_path",
+      "bridge_def_image",
+      "bridge_def_image_mono",
+      "bridge_def_prjim",
+      "bridge_image_defs_agree",
+      "bridge_image_prj_epi",
+      "bridge_image_factorizes",
+      "bridge9_S_prjim"
+    ],
+    "our_declarations": [
+      "image_group_aut",
+      "image_group_aut_path",
+      "image_mono",
+      "image_epi_projection",
+      "eqmc_image_projection_epi",
+      "image_factorization_path"
+    ],
+    "note": "BlindImage = image_group_aut by refl. The blind (Img, prj, incl, mono) is identified with the main one along the first-projection isomorphism. prjim is equal for every epi-proof family."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1010,
+    "labels": [
+      "ex:charsurinj"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_charsurinj_epi",
+      "blind_charsurinj_mono"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_charsurinj_epi",
+      "bridge_charsurinj_mono"
+    ],
+    "our_declarations": [
+      "chim_epi_usym_surjective_equiv",
+      "eqmc_epi_cokernel_point_contractible_equiv",
+      "chim_epi_image_inclusion_iso_equiv",
+      "chim_mono_usym_injective_equiv",
+      "chim_mono_kernel_trivial_equiv",
+      "chim_mono_covering_equiv",
+      "chim_mono_image_projection_iso_equiv"
+    ],
+    "note": "The bridge transports the main statements. They are equivalences, so the converses hold."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1045,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_image_g",
+      "blind_image_composite_mono",
+      "blind_image_composite_epi"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_image_composite_mono",
+      "bridge_image_composite_epi",
+      "bridge9_monos_of_categorical"
+    ],
+    "our_declarations": [
+      "chim_composite_factorization",
+      "chim_composite_image_mono_path",
+      "chim_composite_image_epi_path"
+    ],
+    "note": "The bridge handles nested images: it states the claim for an arbitrary image operation. The epi version holds for every epi-proof family."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1145,
+    "labels": [
+      "lem:kerandcoker"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_kerandcoker"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_kerandcoker"
+    ],
+    "our_declarations": [
+      "chim_kernel_projection_path"
+    ],
+    "note": "The statement is transported."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1160,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/04-images.ny"
+    ],
+    "blind_declarations": [
+      "blind_mono_is_own_image",
+      "blind_epi_is_own_image"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-04b-images.ny",
+    "bridge_declarations": [
+      "bridge_mono_is_own_image",
+      "bridge_epi_is_own_image",
+      "bridge9_S_mono_own",
+      "bridge9_our_mono_own",
+      "bridge9_S_epi_own",
+      "bridge9_our_epi_own"
+    ],
+    "our_declarations": [
+      "mono_image_ua_path",
+      "epi_image_ua_path",
+      "monos_ua_path",
+      "epis_ua_path",
+      "group_path_iso_refl_hom",
+      "chim_mono_image_projection_iso",
+      "chim_epi_image_inclusion_iso"
+    ],
+    "note": "The book and the blind version fix the group component of the identification: ua(prj) in the mono case and ua(incl)^-1 in the epi case. The main version (chim_mono_image_path) only gave some identification, which is weaker. Module 990 adds these identifications (mono_image_ua_path, epi_image_ua_path, through the J lemmas monos_ua_path / epis_ua_path). The blind statements are transported from them. The epi statement holds for every epi-proof family."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1186,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/03-kernel-examples.ny"
+    ],
+    "blind_declarations": [
+      "blind_deg_hom",
+      "blind_linalg_mono_iff_nonzero",
+      "blind_linalg_coker_card"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-03-kernel-examples.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_suc_ne_zero",
+      "bridge_def_deg_hom",
+      "bridge_linalg_coker_card",
+      "bridge_linalg_mono_iff_nonzero"
+    ],
+    "our_declarations": [
+      "matrix1_hom",
+      "matrix1_monomorphism",
+      "circle_multiplication_zero_not_mono",
+      "matrix1_cokernel_card"
+    ],
+    "note": "The bridge covers only the 1×1 statements of the blind version. blind_deg_hom (suc n) is the main matrix1_hom n by refl. The bridge does not use modules 980-989 (Smith normal form)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1200,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "BlindMonoGSet",
+      "blind_mono_gset_underlying"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_mono_gset_underlying"
+    ],
+    "our_declarations": [
+      "monos_gset",
+      "monos_gset_underlying"
+    ],
+    "note": "The blind version is the main version by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1217,
+    "labels": [
+      "rem:action-Mono(G)"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "blind_shape_move",
+      "blind_action_mono"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_action_mono",
+      "bridge_def_shape_move"
+    ],
+    "our_declarations": [
+      "group_at_move",
+      "monos_gset_act"
+    ],
+    "note": "The bridge is ap of monos_gset_act. blind_shape_move is group_at_move by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1249,
+    "labels": [
+      "lem:conj-abstract"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "BlindAbsMonos",
+      "BlindAbsMonoData",
+      "blind_abs_mono_data",
+      "blind_abs_conj_act",
+      "blind_conj_abstract"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny",
+      "chapters/ch09/blind/bridge-07c-abstract.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_abs_monos_trivial_q8",
+      "bridge9w_conj_equivariant",
+      "bridge9w_tr_inter",
+      "bridge9w_tr_inter_agrees",
+      "bridge9w_tr_inter_members",
+      "bridge_abstract_intersection",
+      "bridge_conj_abstract",
+      "bridge_def_abs_monos"
+    ],
+    "our_declarations": [
+      "concrete_abstract_monos_equiv",
+      "abstr_hom_compose",
+      "abstr_conj_hom_is_abstract_conj",
+      "monos_gset_usym_act"
+    ],
+    "note": "BlindAbsMonos is AbstractMonosInto (abstr G) by refl. The equivalence is the main one, with equivariance on (H, φ)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1264,
+    "labels": [
+      "xca:conj-abstract"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "blind_conj_abstract"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_conj_equivariant",
+      "bridge_conj_abstract"
+    ],
+    "our_declarations": [
+      "concrete_abstract_monos_equiv"
+    ],
+    "note": "The statement and the bridge are the same as for lem:conj-abstract."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1268,
+    "labels": [
+      "rem:typeofsubgpstrivifab"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "BlindActsTrivially",
+      "blind_abelian_iff_conj_trivial",
+      "blind_abs_monos_trivial_iff_abelian",
+      "blind_mono_gset_trivial_iff_abelian",
+      "blind_mono_gset_trivial_iff_abelian_corrected",
+      "blind_mono_gset_trivial_counterexample"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_abs_monos_trivial_q8",
+      "bridge9w_conj_equivariant",
+      "bridge_abelian_iff_conj_trivial",
+      "bridge_abs_monos_trivial_iff_abelian_refuted",
+      "bridge_mono_gset_trivial_counterexample",
+      "bridge_mono_gset_trivial_iff_abelian_corrected",
+      "bridge_mono_gset_trivial_iff_abelian_refuted"
+    ],
+    "our_declarations": [
+      "abelian_iff_conj_identity",
+      "abelian_monos_trivial",
+      "quaternion_monos_trivial",
+      "quaternion_not_abelian"
+    ],
+    "note": "Q8 refutes both literal iffs (Mono(G) trivial iff abelian, and the abstract form). All subgroups of Q8 are normal, but Q8 is not abelian. The corrected statement, the counterexample statement and 'abelian iff conj^g = id' are bridged."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1282,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "BlindSubGSet",
+      "blind_sub_gset_underlying",
+      "blind_sub_gset_action"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_sub_gset_action",
+      "bridge_sub_gset_underlying"
+    ],
+    "our_declarations": [
+      "subgroups_gset",
+      "subgroups_gset_act"
+    ],
+    "note": "The bridge is refl / ap of subgroups_gset_act."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1295,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "blind_E",
+      "blind_E_equiv",
+      "blind_E_at_shape"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_E_at_shape",
+      "bridge_E_equiv",
+      "bridge_def_E"
+    ],
+    "our_declarations": [
+      "monos_to_subgroups",
+      "monos_to_subgroups_equiv"
+    ],
+    "note": "E is the main one by refl. It is an equivalence at every z."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1311,
+    "labels": [
+      "xca:Sub(Sigma3)"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/05-subgroup-action.ny"
+    ],
+    "blind_declarations": [
+      "blind_sub_transitive_iff_trivial",
+      "blind_nat_four",
+      "blind_sub_sigma3_orbits",
+      "blind_sub_sigma3_orbits_corrected"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-05-subgroup-action.ny",
+      "chapters/ch09/blind/bridge-05b-sigma3.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_T0_move",
+      "bridge9w_T_ne_normal",
+      "bridge9w_T_orbit",
+      "bridge9w_classify_index",
+      "bridge9w_decide",
+      "bridge9w_fix",
+      "bridge9w_lem_decidable",
+      "bridge9w_orb",
+      "bridge9w_point_member",
+      "bridge9w_reflect",
+      "bridge9w_reflect_raw",
+      "bridge9w_rep",
+      "bridge9w_surjective",
+      "bridge_sub_sigma3_orbits_corrected",
+      "bridge_sub_sigma3_orbits_lem",
+      "bridge_sub_transitive_iff_trivial"
+    ],
+    "our_declarations": [
+      "subgroups_transitive_iff_trivial",
+      "sigma3_decidable_subgroup_classification",
+      "sigma3_classification_decides"
+    ],
+    "note": "Part (1) is bridged. Part (2): the corrected statement (excluded middle ⇒ Orbits(Sub Σ3) ≃ Fin 4) follows from 976, because under LEM every subgroup is decidable. The bridge proves that the literal statement implies ExcludedMiddle (bridge_sub_sigma3_orbits_lem, through 977). Thus the literal statement is not constructively provable. It is not refutable either."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1323,
+    "labels": [
+      "def:normalsubgroup"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "BlindNor",
+      "blind_nor_incl"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_nor",
+      "bridge_def_nor_incl"
+    ],
+    "our_declarations": [
+      "NormalSubgroups",
+      "normal_to_subgroup"
+    ],
+    "note": "The blind version is the main version by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1330,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_nor_incl_injective",
+      "BlindIsNormalSubgroup",
+      "blind_is_normal_subgroup_prop"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_nor_incl_injective",
+      "bridge_def_is_normal_subgroup",
+      "bridge_is_normal_subgroup_prop"
+    ],
+    "our_declarations": [
+      "normal_to_subgroup_injective",
+      "IsNormalSubgroup",
+      "is_normal_subgroup_prop"
+    ],
+    "note": "The bridge is direct / refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1352,
+    "labels": [
+      "def:setofkernels"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_ker_epi",
+      "BlindKernels",
+      "blind_ker_corestrict",
+      "blind_kernels_incl",
+      "blind_kernels_factorization"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_def_kernels",
+      "bridge_def_ker_corestrict",
+      "bridge_def_kernels_incl",
+      "bridge_kernels_factorization"
+    ],
+    "our_declarations": [
+      "KernelsOf",
+      "epis_to_kernels",
+      "kernels_include",
+      "epis_to_kernels_surjective",
+      "kernels_include_injective"
+    ],
+    "note": "The blind version is the main version by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1402,
+    "labels": [
+      "def:ker2"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_nor_gset",
+      "BlindNorTransitivity",
+      "blind_nor_transitive",
+      "blind_nor"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_def_nor_gset",
+      "bridge_nor_transitive",
+      "bridge_def_nor_map"
+    ],
+    "our_declarations": [
+      "nor_gset",
+      "nor"
+    ],
+    "note": "The blind G-sets are the main ones by refl. The main transitivity proofs give the parameter. For every parameter, blind nor = main nor, because transitivity is a proposition."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1408,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_nor_gset_torsor_iff_iso"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_nor_gset_torsor_iff_iso"
+    ],
+    "our_declarations": [
+      "nor_gset_torsor_iff_iso"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1412,
+    "labels": [
+      "lem:diagfornormal"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_diagfornormal"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_diagfornormal"
+    ],
+    "our_declarations": [
+      "diag_for_normal",
+      "epis_to_connected"
+    ],
+    "note": "The bridge holds for every transitivity parameter."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1433,
+    "labels": [
+      "lem:evaliseqwhennormal"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_evaliseqwhennormal",
+      "blind_normal_ap_surjective"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_evaliseqwhennormal",
+      "bridge_normal_ap_surjective"
+    ],
+    "our_declarations": [
+      "normal_evaluation_is_equiv",
+      "normal_family_map_surjective"
+    ],
+    "note": "The blind version is the main version by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1454,
+    "labels": [
+      "def:normalquotient"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "BlindQuotientGroup",
+      "blind_quotient_hom",
+      "blind_quotient_hom_epi",
+      "BlindQuotientEpi",
+      "blind_q"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_def_quotient_group",
+      "bridge_def_quotient_hom",
+      "bridge_quotient_hom_epi",
+      "bridge_def_q"
+    ],
+    "our_declarations": [
+      "normal_quotient_group",
+      "normal_quotient_hom",
+      "normal_quotient_epi",
+      "normal_quotient_epis",
+      "component_lift_project"
+    ],
+    "note": "The blind q_N (a strictly pointed component lift) equals the main q_N (pointed by a component path with first component refl) through component_lift_project. q is equal for every epi-proof family."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1466,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "BlindTypeQuotient",
+      "blind_principal_quotient",
+      "blind_torsor_quotient_component",
+      "blind_quotient_hom_via_torsors"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_def_type_quotient",
+      "bridge_principal_quotient",
+      "bridge_torsor_quotient_component",
+      "bridge_quotient_hom_via_torsors"
+    ],
+    "our_declarations": [
+      "normal_quotient_family",
+      "normal_quotient_paths_equiv",
+      "torsor_quotient_component",
+      "normal_quotient_paths_path"
+    ],
+    "note": "The blind version is the main version up to path inversion."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1481,
+    "labels": [
+      "lem:qeq"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_qeq"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_qeq"
+    ],
+    "our_declarations": [
+      "nor_equiv",
+      "nor_q_epi_path",
+      "q_nor_epi_path"
+    ],
+    "note": "The bridge holds for every ht, hq."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1521,
+    "labels": [
+      "cor:normalisnormal"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_normalisnormal"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_normalisnormal"
+    ],
+    "our_declarations": [
+      "kernels_equiv",
+      "kernels_set"
+    ],
+    "note": "Epi(G) is a set through the equivalence with Ker_G."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1539,
+    "labels": [
+      "lem:characterizations of normal"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "BlindFixMono",
+      "BlindFixAbsMonos",
+      "blind_characterizations_of_normal"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06b-characterizations.ny",
+    "bridge_declarations": [
+      "bridge_characterizations_of_normal_123",
+      "bridge_characterizations_of_normal",
+      "bridge9_fixed_abs_monos_equiv",
+      "bridge9_amono_data_path_equiv"
+    ],
+    "our_declarations": [
+      "kernels_equiv",
+      "associated_kernel_equiv",
+      "monos_fixed_points_equiv",
+      "abstract_monos_fixed_points_equiv"
+    ],
+    "note": "The blind fixed abstract monos compare only the data (H, φ). Paths of abstract monos are paths of their data. Thus the blind fixed abstract monos are the main fixed points of conj_abstract_agset."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1578,
+    "labels": [
+      "def:associatednormal"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_ass",
+      "blind_ass_E",
+      "blind_ass_is_ker_q",
+      "blind_ass_is_kernel",
+      "BlindAssKernelProofs",
+      "blind_ass_kernel"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_def_ass",
+      "bridge_ass_E",
+      "bridge_ass_is_ker_q",
+      "bridge_ass_is_kernel",
+      "bridge_def_ass_kernel"
+    ],
+    "our_declarations": [
+      "associated_kernel_mono",
+      "subgroup_stabilizer_mono_path",
+      "transitive_stabilizer_subgroup_path",
+      "kernel_quotient_associated_path",
+      "associated_kernel"
+    ],
+    "note": "The blind Ass(N) is the stabilizer form, and the main Ass(N) is the subgroup form. They are equal in Mono(G) (subgroup_stabilizer_mono_path). The bridge gives ass(N) as a kernel for every kernel-proof family."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1582,
+    "labels": [],
+    "blind_file": [],
+    "blind_declarations": [],
+    "status": "no-claim",
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "weyl_group"
+    ],
+    "note": "This is the margin remark that tells where normality is used. The blind version has no declaration. The main version formalizes the accompanying observation."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1593,
+    "labels": [
+      "lem:normalsarekernels"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/06-normal.ny"
+    ],
+    "blind_declarations": [
+      "blind_normalsarekernels",
+      "blind_ass_E"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-06-normal.ny",
+    "bridge_declarations": [
+      "bridge_normalsarekernels"
+    ],
+    "our_declarations": [
+      "associated_kernel_equiv",
+      "associated_kernel_nor_epi"
+    ],
+    "note": "The bridge holds for every ht, hk."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1801,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/07-intersections.ny"
+    ],
+    "blind_declarations": [
+      "blind_abs_of_mono",
+      "BlindAbsMember",
+      "blind_abstract_intersection"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-07c-abstract.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_tr_inter",
+      "bridge9w_tr_inter_agrees",
+      "bridge9w_tr_inter_members",
+      "bridge_abstract_intersection"
+    ],
+    "our_declarations": [
+      "concrete_abstract_monos_equiv",
+      "group_mono_intersection",
+      "intersection_picked_out_iff"
+    ],
+    "note": "The intersection operation is transported along Mono(G) ≃ abstract monos. Membership follows through intersection_picked_out_iff."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1804,
+    "labels": [
+      "lem:whatSylow2needs"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/07-intersections.ny"
+    ],
+    "blind_declarations": [
+      "BlindNcapH",
+      "blind_NcapH_to_H",
+      "blind_whatSylow2needs_kernel",
+      "blind_whatSylow2needs_kernel_in_G",
+      "blind_whatSylow2needs_mono"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-07-intersections.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_qhom_path",
+      "bridge_whatSylow2needs_kernel",
+      "bridge_whatSylow2needs_kernel_in_G",
+      "bridge_whatSylow2needs_mono"
+    ],
+    "our_declarations": [
+      "what_sylow_needs_induced",
+      "what_sylow_needs_quotient_subgroup",
+      "pullback_group_square",
+      "gepi_epi_connected_fibers"
+    ],
+    "note": "The bridge turns the blind epi hypothesis into connected fibers (lem:epi-surj, module 934)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1825,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/07-intersections.ny"
+    ],
+    "blind_declarations": [
+      "blind_sub_NcapH",
+      "blind_whatSylow2needs_sub"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-07-intersections.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_qhom_path",
+      "bridge9w_sub_ncaph_kernel",
+      "bridge_whatSylow2needs_sub"
+    ],
+    "our_declarations": [
+      "transitive_stabilizer_subgroup_path",
+      "stabilizer_subgroup_path",
+      "kernel_normal_subgroup_is_kernel",
+      "what_sylow_needs_induced"
+    ],
+    "note": "The H-orbit subgroup is E(ker(f i_S))."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1840,
+    "labels": [
+      "lem:thereisaconjugate"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/07-intersections.ny"
+    ],
+    "blind_declarations": [
+      "BlindIsHFixed",
+      "blind_conjugate_hom",
+      "blind_thereisaconjugate",
+      "blind_conjugate_hom_corrected",
+      "blind_thereisaconjugate_corrected"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-07b-conjugate.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_conjugate_hom",
+      "bridge_def_conjugate_hom_corrected",
+      "bridge_def_is_h_fixed",
+      "bridge_thereisaconjugate_corrected",
+      "bridge_thereisaconjugate_refuted"
+    ],
+    "our_declarations": [
+      "thereisaconjugate_printed_refuted",
+      "conjugate_fixed_point_iff",
+      "conjugate_mono"
+    ],
+    "note": "The literal statement (g⁻¹ first) is refuted. bridge_thereisaconjugate_refuted is the main thereisaconjugate_printed_refuted (module 992). It uses Σ3 acting on Fin 3, H = T_0, g = (0 1 2) and x = 2. The corrected variant (g then Bf_pt) is the main conjugate_fixed_point_iff."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1887,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "blind_inn_iso",
+      "blind_usym_inn"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_inn_iso",
+      "bridge_usym_inn_corrected",
+      "bridge_usym_inn_refuted"
+    ],
+    "our_declarations": [
+      "inn_usym_printed_refuted",
+      "inn_symmetry_iso",
+      "inn_usym_usym"
+    ],
+    "note": "The printed formula USym(USym inn(g)) = (h ↦ g⁻¹hg) is refuted. bridge_usym_inn_refuted is the main inn_usym_printed_refuted (module 992, with Σ3, g = (0 1 2) and h = (0 1)). The correct formula h ↦ g h g⁻¹ is the main inn_usym_usym. The blind version has no corrected variant. The bridge states it."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1938,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "blind_out"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_out"
+    ],
+    "our_declarations": [
+      "outer_gset"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1942,
+    "labels": [
+      "lemma:coker-out-action"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "blind_out_family",
+      "blind_coker_out_action"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_coker_out_action",
+      "bridge_def_out_family"
+    ],
+    "our_declarations": [
+      "outer_gset_path"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1956,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "BlindInn",
+      "blind_Inn_classifying"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_Inn_classifying",
+      "bridge_def_inn"
+    ],
+    "our_declarations": [
+      "inner_aut_group",
+      "inner_aut_classifying_equiv_group",
+      "image_group_aut_path"
+    ],
+    "note": "BlindInn = image_group_aut. image_group_aut_path relates it to the main version."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 1967,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "blind_Inn_normal"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_image_iso",
+      "bridge9w_img_path",
+      "bridge9w_inner_normal_blind_path",
+      "bridge_Inn_normal"
+    ],
+    "our_declarations": [
+      "inner_normal",
+      "inner_normal_path",
+      "ch9w2_monos_path_from_iso"
+    ],
+    "note": "The blind img(inn) (def:image form) equals the main image_mono."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2001,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "BlindOut",
+      "blind_Out_is_quotient"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_image_iso",
+      "bridge9w_img_path",
+      "bridge9w_inner_normal_blind_path",
+      "bridge_Out_is_quotient",
+      "bridge_def_out_group"
+    ],
+    "our_declarations": [
+      "outer_aut_group",
+      "outer_aut_group_quotient_path",
+      "invariant_maps_eq_at_shape"
+    ],
+    "note": "Any N with i(N) = E(img inn) equals inner_normal. Then the quotient is the main Out(G)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2007,
+    "labels": [
+      "cons:simpler-version-Out"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/08-automorphisms.ny"
+    ],
+    "blind_declarations": [
+      "BlindAutOneTrunc",
+      "blind_simpler_version_Out",
+      "blind_one_trunc_paths",
+      "blind_one_trunc_components"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-08-automorphisms.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_one_trunc_paths",
+      "bridge_def_aut_one_trunc",
+      "bridge_one_trunc_components",
+      "bridge_one_trunc_paths",
+      "bridge_simpler_version_Out"
+    ],
+    "our_declarations": [
+      "outer_simple_path",
+      "trunc_path_equiv"
+    ],
+    "note": "The bridge is direct. ‖a = b‖₀ ≃ (|a|₁ = |b|₁) for any type."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2105,
+    "labels": [
+      "def:Weyl",
+      "def:normalizer"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/09-weyl.ny"
+    ],
+    "blind_declarations": [
+      "blind_transitive_at",
+      "BlindWeyl",
+      "BlindNormalizer",
+      "blind_normalizer_incl",
+      "blind_normalizer_proj",
+      "blind_j_map",
+      "blind_j_point",
+      "blind_normalizer_j"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-09-weyl.ny",
+    "bridge_declarations": [
+      "bridge_def_weyl",
+      "bridge_def_normalizer",
+      "bridge_def_normalizer_incl",
+      "bridge_def_normalizer_proj",
+      "bridge_def_normalizer_j"
+    ],
+    "our_declarations": [
+      "weyl_group",
+      "normalizer_group",
+      "normalizer_inclusion",
+      "weyl_projection",
+      "normalizer_subgroup_hom",
+      "component_lift_project"
+    ],
+    "note": "W, N_GH and i are the main ones by refl. p_G^H and j_H agree with the main ones. They are maps into components with equal projections, and j is different only in the transitivity proofs."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2141,
+    "labels": [],
+    "blind_file": [
+      "chapters/ch09/blind/09-weyl.ny"
+    ],
+    "blind_declarations": [
+      "blind_weyl_incl_mono_proj_epi",
+      "blind_weyl_ker_proj",
+      "blind_weyl_j_normal",
+      "blind_weyl_incl_factor"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-09-weyl.ny",
+    "bridge_declarations": [
+      "bridge_weyl_incl_mono_proj_epi",
+      "bridge_weyl_ker_proj",
+      "bridge_weyl_j_normal",
+      "bridge_weyl_incl_factor"
+    ],
+    "our_declarations": [
+      "normalizer_inclusion_mono",
+      "weyl_projection_epi",
+      "weyl_kernel_mono_path",
+      "normalizer_subgroup_normal_element",
+      "normalizer_subgroup_normal_element_underlying",
+      "normalizer_inclusion_factor"
+    ],
+    "note": "As the main version does, the blind version reads the ill-typed (H, i_H) as (H, j_H)."
+  },
+  {
+    "source": "subgroups.tex",
+    "line": 2157,
+    "labels": [
+      "lem:WGHisHfixofG/H"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/09-weyl.ny"
+    ],
+    "blind_declarations": [
+      "blind_weyl_usym",
+      "blind_weyl_e",
+      "blind_WGH_is_H_fix"
+    ],
+    "status": "bridged-corrected",
+    "bridge_file": "chapters/ch09/blind/bridge-09-weyl.ny",
+    "bridge_declarations": [
+      "bridge_weyl_usym",
+      "bridge_def_weyl_e",
+      "bridge_WGH_is_H_fix_refuted",
+      "bridge_WGH_is_H_fix_finite",
+      "bridge_WGH_e_injective"
+    ],
+    "our_declarations": [
+      "automorphism_group_usym_equiv",
+      "weyl_fixed_map",
+      "weyl_fixed_printed_refuted",
+      "weyl_fixed_map_not_surjective",
+      "weyl_usym_fixed_equiv_finite",
+      "weyl_fixed_map_injective"
+    ],
+    "note": "blind_WGH_is_H_fix (e is an equivalence for every G, H) is refuted. bridge_WGH_is_H_fix_refuted is the main weyl_fixed_printed_refuted (module 993). There, G = Σ_{N+N} and H is the stabilizer of inl : N -> N+N. The H-fixed point \"drop the first value\" j ↦ j ∘ suc of G/H is not in the image of e. Corrected statement (derived): e is always an injection, and the blind statement holds for finite G/H. blind_weyl_usym and blind_weyl_e are bridged (e is the main one by refl)."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 398,
+    "labels": [
+      "lem:aut-orbit"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/09-weyl.ny"
+    ],
+    "blind_declarations": [
+      "blind_aut_orbit"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-09-weyl.ny",
+    "bridge_declarations": [
+      "bridge_aut_orbit",
+      "bridge9_aut_orbit_stmt",
+      "bridge9_coker_inclusion_path"
+    ],
+    "our_declarations": [
+      "aut_orbit_iso",
+      "normalizer_subgroup_normal_element",
+      "mono_subgroup_cokernel_path",
+      "subgroup_mono_roundtrip"
+    ],
+    "note": "G/H = coker(i_H) = X as G-sets. The iso is composed through paths of groups."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 403,
+    "labels": [
+      "thm:fund-thm-homs"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/09-weyl.ny"
+    ],
+    "blind_declarations": [
+      "blind_fund_thm_homs"
+    ],
+    "status": "bridged",
+    "bridge_file": "chapters/ch09/blind/bridge-09-weyl.ny",
+    "bridge_declarations": [
+      "bridge_fund_thm_homs"
+    ],
+    "our_declarations": [
+      "kernel_normal_subgroup",
+      "kernel_normal_subgroup_is_kernel",
+      "fundamental_theorem_homs_path",
+      "bridge9_aut_iso"
+    ],
+    "note": "There is an iso to the blind (def:image) Img(f) through the first-projection iso."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 440,
+    "labels": [
+      "def:center"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/10-center.ny"
+    ],
+    "blind_declarations": [
+      "BlindBunch",
+      "blind_bunch",
+      "BlindCenter",
+      "blind_center_adjoint_fixed",
+      "blind_center_aut_id",
+      "BlindBZ",
+      "blind_BZ_point",
+      "blind_BZ_pointed",
+      "blind_center_loops_BZ",
+      "BlindB2Z",
+      "blind_B2Z_pointed",
+      "blind_BZ_loops_B2Z",
+      "blind_B2Z_connected",
+      "blind_center_abelian_group"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-10-center.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_pointed_loops_equiv",
+      "bridge_B2Z_connected",
+      "bridge_BZ_loops_B2Z",
+      "bridge_center_abelian_group",
+      "bridge_center_adjoint_fixed",
+      "bridge_center_aut_id",
+      "bridge_center_loops_BZ",
+      "bridge_def_B2Z",
+      "bridge_def_BZ",
+      "bridge_def_bunch",
+      "bridge_def_bunch_of",
+      "bridge_def_center"
+    ],
+    "our_declarations": [
+      "center_fun_loops_equiv",
+      "btwo_center_loops_equiv",
+      "btwo_center_connected",
+      "center_fun_abelian"
+    ],
+    "note": "The bridge is for 1-groups, as in the main version. Right concatenation makes the loop equivalences pointed."
+  },
+  {
+    "source": "symmetry.tex",
+    "line": 490,
+    "labels": [
+      "thm:hom-mod-conj"
+    ],
+    "blind_file": [
+      "chapters/ch09/blind/10-center.ny"
+    ],
+    "blind_declarations": [
+      "BlindBInnSym",
+      "blind_BInn_sym_point",
+      "blind_hom_mod_conj_family",
+      "blind_hom_mod_conj_fiber",
+      "blind_hom_mod_conj"
+    ],
+    "status": "bridged",
+    "bridge_file": [
+      "chapters/ch09/blind/bridge-10-center.ny"
+    ],
+    "bridge_declarations": [
+      "bridge9w_binn_equiv",
+      "bridge9w_binn_fiber_equiv",
+      "bridge_def_binn_sym",
+      "bridge_hom_mod_conj",
+      "bridge_hom_mod_conj_fiber"
+    ],
+    "our_declarations": [
+      "hom_conj_gset",
+      "hom_mod_conj_equiv"
+    ],
+    "note": "The blind BInn(H) (Σ_K ‖bunch H = bunch K‖₀) is related to the main version over Group by path inversion."
+  }
+]

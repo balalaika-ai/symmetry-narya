@@ -20619,8 +20619,22 @@
       "it:injmono",
       "it:surjepi"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SetPostCancellation",
+      "SetPreCancellation",
+      "injection_post_cancellation",
+      "post_cancellation_injection",
+      "set_injection_iff_cancellation",
+      "surjection_pre_cancellation",
+      "pre_cancellation_surjection",
+      "set_surjection_iff_cancellation"
+    ],
+    "principal": [
+      "set_injection_iff_cancellation",
+      "set_surjection_iff_cancellation"
+    ],
+    "note": "Let B and C be sets and let f : B -> C. Then f is an injection (IsEmbedding) iff post-composition cancels for all sets A. Also, f is a surjection iff pre-composition cancels for all sets D. The formalization states both equivalences as pairs of implications. Cancellation is stated with f g = f h as an identification of functions."
   },
   {
     "chapter": 9,
@@ -20633,8 +20647,25 @@
       "def:monomorphism",
       "def:epimorphism"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsGroupMonomorphism",
+      "IsGroupEpi",
+      "is_group_monomorphism_prop",
+      "is_group_epi_prop",
+      "group_monomorphism_mono_equiv",
+      "IsProperGroupMonomorphism",
+      "IsProperGroupEpi",
+      "GroupMonomorphismsInto",
+      "group_monomorphisms_into_equiv",
+      "GroupEpis"
+    ],
+    "principal": [
+      "IsGroupMonomorphism",
+      "IsGroupEpi",
+      "GroupEpis"
+    ],
+    "note": "Monomorphisms and epimorphisms of groups are the categorical ones of GroupCat, as propositions. That is, post-composition (for monomorphisms) or pre-composition (for epimorphisms) is an injection of hom-sets. \"Proper\" means \"not an isomorphism\". Mono(H) with categorical monos is equivalent to GroupMonos H of chapter 5. Epi(G) = Sigma H Sigma f isepi(f)."
   },
   {
     "chapter": 9,
@@ -20646,8 +20677,18 @@
     "labels": [
       "exa:projections-epi"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_proj1_incl1_path",
+      "product_proj2_incl2_path",
+      "product_proj1_epi",
+      "product_proj2_epi"
+    ],
+    "principal": [
+      "product_proj1_epi",
+      "product_proj2_epi"
+    ],
+    "note": "The two projections G1 x G2 -> Gi are epimorphisms. The inclusions split them (precat_split_epi)."
   },
   {
     "chapter": 9,
@@ -20659,8 +20700,26 @@
     "labels": [
       "xca:mono1st-epi2nd"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "precat_mono_compose",
+      "precat_epi_compose",
+      "precat_epi_cancel_left",
+      "precat_mono_cancel_right",
+      "group_cat_precat",
+      "group_monomorphism_compose",
+      "group_epi_compose",
+      "group_epi_cancel",
+      "group_monomorphism_cancel",
+      "precat_split_epi"
+    ],
+    "principal": [
+      "group_monomorphism_compose",
+      "group_epi_compose",
+      "group_epi_cancel",
+      "group_monomorphism_cancel"
+    ],
+    "note": "A composite of monos is a mono, and a composite of epis is an epi. If f2 f1 is an epi, then f2 is an epi. If f2 f1 is a mono, then f1 is a mono. The formalization proves these statements in any precategory and then instantiates them to GroupCat."
   },
   {
     "chapter": 9,
@@ -20676,8 +20735,22 @@
       "it:injection",
       "it:cover"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "eqmc_mono_injection_equiv",
+      "group_monomorphism_mono_equiv",
+      "group_mono_usym_injective_equiv",
+      "eqmc_injection_covering_equiv",
+      "eqmc_mono_covering_equiv",
+      "eqmc_covering_zero_truncated_equiv",
+      "eqmc_usym_injective_post_circle_equiv"
+    ],
+    "principal": [
+      "eqmc_mono_injection_equiv",
+      "eqmc_injection_covering_equiv",
+      "eqmc_mono_covering_equiv"
+    ],
+    "note": "The formalization shows that three propositions are equivalent: (it:mono) IsMono (GroupCat .wild) G H f, (it:injection) IsGroupMono G H f (USym f is an embedding) and (it:cover) IsCovering (Bf÷). The phrase '(or: is 0-truncated)' is TruncatedMap 2 (eqmc_covering_zero_truncated_equiv). The step (it:mono)⇔(it:injection) uses module 687 again. The step (it:injection)⇔(it:cover) uses group_mono_covering/covering_group_mono of chapter 5. In the source, the stray label lem:eq-epi-conn is inside this lemma. Its content (epis and connected fibers) is lem:epi-surj."
   },
   {
     "chapter": 9,
@@ -20692,8 +20765,39 @@
       "it:surjection",
       "it:connfib"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gepi_connected_fibers_usym_surjective",
+      "gepi_usym_surjective_connected_fibers",
+      "gepi_surjective_connected_fibers_equiv",
+      "gepi_connected_fibers_hom_cancel",
+      "gepi_connected_fibers_epi",
+      "gepi_usym_surjective_epi",
+      "GepiPermRep",
+      "gepi_perm_rep",
+      "gepi_completion_faithful",
+      "gepi_orbit_cancel",
+      "gepi_monoid_cancel",
+      "gepi_twisted_point",
+      "gepi_twisted_compose_path",
+      "gepi_twisted_commute",
+      "gepi_test_hom",
+      "gepi_test_hom_twisted",
+      "gepi_test_homs_agree",
+      "gepi_core",
+      "gepi_epi_coker_contractible",
+      "gepi_epi_connected_fibers",
+      "gepi_epi_usym_surjective",
+      "gepi_epi_connected_fibers_equiv",
+      "gepi_epi_usym_surjective_equiv",
+      "gepi_epi_zero_connected"
+    ],
+    "principal": [
+      "gepi_epi_connected_fibers_equiv",
+      "gepi_epi_usym_surjective_equiv",
+      "gepi_surjective_connected_fibers_equiv"
+    ],
+    "note": "The formalization shows that (1') IsEpi (GroupCat .wild) G H f, (2') Surjective (USym f) and (3') ConnectedFibers (Bf÷) are pairwise equivalent, as equivalences of propositions. The hard direction (1')⇒(3') is constructive: it uses no excluded middle and no decidable equality. The book goes through con:monos-are-equalizers and an injection of the cosets into a free (abelian) group. The formalization does not use this route. Its test group is the permutation group of Y(sh_H) = ((sh_H = sh_H) → T). Here T is the group completion of finite S-labelled families, with S = coker(f)(sh_H). S acts faithfully on T. Cancellation follows from an orbit/pigeonhole argument. φ is the action homomorphism, and ψ is the same map with a twisted pointing. The book proves (2')⇒(1') through abstract groups. The formalization replaces this with (3')⇒(1'), which extends a pointed homotopy along Bf."
   },
   {
     "chapter": 9,
@@ -20705,8 +20809,21 @@
     "labels": [
       "con:monos-are-equalizers"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GepiEqualizes",
+      "GepiIsEqualizer",
+      "gepi_mono_lift",
+      "gepi_mono_lift_assemble",
+      "gepi_mono_equalizer_contractible",
+      "gepi_mono_equalizer_usym",
+      "gepi_mono_equalizer"
+    ],
+    "principal": [
+      "gepi_mono_equalizer",
+      "GepiIsEqualizer"
+    ],
+    "note": "Let i : Hom(H,G) be a monomorphism (categorical, and also in the IsGroupMono version). Then there are W and φ, ψ : Hom(G,W) with φ∘i = ψ∘i that satisfy this condition: for every k : Hom(K,G) with φ∘k = ψ∘k, the type Σ k' (k = i∘k') is contractible. Deviation: W is not the book's Aut_E(sh_G, cst) with an injection of G/H into a group A. W is the permutation group of (sh_G = sh_G) → T, where T is the faithful set of module 933. φ and ψ are the same as in module 934 with f := i. The existence of k' comes from a lift through the covering Bi. The lift uses a fixed point of the restricted G-set."
   },
   {
     "chapter": 9,
@@ -20718,8 +20835,24 @@
     "labels": [
       "lem:epimonoiso"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gepi_iso_mono",
+      "gepi_iso_epi",
+      "gepi_mono_epi_iso",
+      "gepi_iso_mono_epi_equiv",
+      "gepi_cat_iso_mono_epi_equiv",
+      "gepi_unit_to_sigma3_not_epi",
+      "gepi_unit_to_sigma3_not_iso",
+      "gepi_sigma3_to_unit_not_iso",
+      "gepi_sigma3_to_unit_epi",
+      "gepi_product_proj1_epi"
+    ],
+    "principal": [
+      "gepi_iso_mono_epi_equiv",
+      "gepi_cat_iso_mono_epi_equiv"
+    ],
+    "note": "IsGroupIso G H f (Bf÷ is an equivalence) is equivalent to IsMono × IsEpi in GroupCat. It is also equivalent to CatIsIso of GroupCat. The book proves this through the equivalence of groups and abstract groups (a TODO reference). The formalization uses a different proof: monos have set fibers (covering), and epis have connected fibers (lem:epi-surj). Thus the fibers are contractible. The book prints the lemma inside \\wip. Litmus tests (module 937): 1 → Σ3 is a mono but not an epi, Σ3 → 1 is an epi but not a mono, and product projections are epis."
   },
   {
     "chapter": 9,
@@ -20731,8 +20864,28 @@
     "labels": [
       "def:kernel"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "HomFiber",
+      "hom_fiber_groupoid",
+      "kernel_gset",
+      "kernel_shape",
+      "kernel_fiber_action_type",
+      "kernel_group",
+      "kernel_group_aut",
+      "kernel_group_classifying",
+      "kernel_inclusion",
+      "kernel_inclusion_function",
+      "kernel_inclusion_mono",
+      "kernel",
+      "kernel_usym_equiv"
+    ],
+    "principal": [
+      "kernel",
+      "kernel_group",
+      "kernel_inclusion_mono"
+    ],
+    "note": "The map is ker : Hom(G,G') -> Mono(G), with Ker(f) = Aut_{(Bf)^-1(sh_G')}(sh_G, Bf_pt). The formalization realises Ker(f) as the stabilizer group of Bf_pt in f^*P_{G'}. This group is definitionally the component of the fiber (kernel_group_aut is refl). The kernel map is the first projection, pointed by refl. It is a monomorphism (a covering). The running text says 'the symmetries of sh_Ker(f) are the g with g . Bf_pt = Bf_pt'. This statement is kernel_usym_equiv."
   },
   {
     "chapter": 9,
@@ -20744,8 +20897,16 @@
     "labels": [
       "def:cokernel"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cokernel",
+      "cokernel_point",
+      "cokernel_action_type"
+    ],
+    "principal": [
+      "cokernel"
+    ],
+    "note": "coker(f) : BG' -> Set, w |-> ||(Bf)^-1(w)||_0 (SetTrunc of HomFiber) is a G'-set. Its action type is definitionally the set image im_0(Bf)."
   },
   {
     "chapter": 9,
@@ -20757,8 +20918,15 @@
     "labels": [
       "lem:isTrans(coker)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cokernel_action_type_connected",
+      "cokernel_transitive"
+    ],
+    "principal": [
+      "cokernel_transitive"
+    ],
+    "note": "coker(f) is a transitive G'-set. The proof uses the second argument of rem:imageandcokernel: the set image of the connected BG is connected (lem:conistrans). It does not use the three-step reduction of the printed proof."
   },
   {
     "chapter": 9,
@@ -20770,8 +20938,16 @@
     "labels": [
       "rem:imageandcokernel"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "image_subgroup",
+      "cokernel_action_type_connected",
+      "cokernel_transitive"
+    ],
+    "principal": [
+      "image_subgroup"
+    ],
+    "note": "The formalization gives (coker(f), |(sh_G, Bf_pt)|_0, !) : Sub(G'). It also gives the alternative proof of transitivity through the connectedness of Sigma_w ||(Bf)^-1(w)||_0 (cokernel_action_type_connected). The proof of cokernel_transitive uses this result."
   },
   {
     "chapter": 9,
@@ -20781,8 +20957,30 @@
     "line": 409,
     "section_raw": "Images, kernels and cokernels}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "eqmc_mono_kernel_trivial",
+      "eqmc_kernel_trivial_mono",
+      "eqmc_mono_kernel_trivial_equiv",
+      "eqmc_ap_reflects_of_stabilizer_prop",
+      "eqmc_transport_path_family",
+      "EqmcCokernelContractible",
+      "eqmc_epi_cokernel_contractible_equiv",
+      "eqmc_epi_cokernel_point_contractible_equiv",
+      "EqmcTrivialHom",
+      "eqmc_unit_factor_trivial",
+      "EqmcFactorsThroughUnit",
+      "eqmc_trivial_hom_factor_equiv",
+      "eqmc_kernel_lift",
+      "eqmc_kernel_universal_property",
+      "eqmc_kernel_universal_property_factor"
+    ],
+    "principal": [
+      "eqmc_mono_kernel_trivial_equiv",
+      "eqmc_epi_cokernel_contractible_equiv",
+      "eqmc_kernel_universal_property"
+    ],
+    "note": "(1) IsMono f ≃ IsTrivialMono G (kernel G H f), that is, BKer is contractible. (2) IsEpi f ≃ (∀ w, coker(f)(w) contractible), and IsEpi f ≃ the contractibility of coker(f)(sh_H). (3) Suppose that f∘h = the trivial homomorphism (constant at sh_H, pointed by refl). Then Σ_{k : Hom(L, Ker f)} (h = ker_f ∘ k) is contractible. The formalization shows that this hypothesis is equivalent to 'f∘h factors through the trivial group'. It uses unit_group in place of the book's TG. Both groups are trivial."
   },
   {
     "chapter": 9,
@@ -20794,8 +20992,34 @@
     "labels": [
       "lem:fibersofcomposites"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fibcomp_F1",
+      "fibcomp_F2",
+      "FibcompF1Fiber",
+      "fibcomp_H",
+      "fibcomp_H_inv",
+      "fibcomp_pathover",
+      "fibcomp_H_equiv",
+      "fibcomp_H_H_inv",
+      "fibcomp_H_inv_H",
+      "fibcomp_H_book_equiv",
+      "fibcomp_lower_square",
+      "fibcomp_right_triangle",
+      "fibcomp_right_square",
+      "fibcomp_triangle_point",
+      "fibcomp_triangle_point_printed",
+      "fibcomp_upper_triangle",
+      "fibcomp_contract_type",
+      "fibcomp_contract_prop",
+      "ch9w2_pathover_from_contractible"
+    ],
+    "principal": [
+      "fibcomp_H_equiv",
+      "fibcomp_upper_triangle",
+      "fibcomp_lower_square"
+    ],
+    "note": "The statement is for arbitrary types and maps f1, f2 with p2 : x2 = f2 x1 (BookFiber orientation). F1, F2, H and H^-1 are as printed. The book's pathpair(p, r) is represented natively as a pair (p, dependent path over p). pathover_mapped_paths_type relates this pair to r : f2(p)p2 = q. H is an equivalence with the printed inverse (H H^-1 = id judgmentally). The lower square and the adjacent triangles hold by refl. F2 H = fst holds by funext. The proof identifies the pairs through the contraction of (q, r). The printed identification through r is fibcomp_triangle_point_printed."
   },
   {
     "chapter": 9,
@@ -20807,8 +21031,32 @@
     "labels": [
       "xca:ptd-fibersofcomposites"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fibcomp_pt_comp",
+      "fibcomp_pt_fib1",
+      "fibcomp_pt_fib2",
+      "fibcomp_pt_fibF1",
+      "fibcomp_F1_pointed",
+      "fibcomp_F2_pointed",
+      "fibcomp_H_pointed",
+      "fibcomp_H_pointed_equiv",
+      "fibcomp_fst_comp_pointed",
+      "fibcomp_fst_fib1_pointed",
+      "fibcomp_fst_fib2_pointed",
+      "fibcomp_fst_fibF1_pointed",
+      "fibcomp_lower_square_pointed",
+      "fibcomp_right_triangle_pointed",
+      "fibcomp_upper_triangle_pointed",
+      "fibcomp_triangle_point_base",
+      "fibcomp_right_square_pointed"
+    ],
+    "principal": [
+      "fibcomp_H_pointed_equiv",
+      "fibcomp_upper_triangle_pointed",
+      "fibcomp_lower_square_pointed"
+    ],
+    "note": "All objects of fig:fibersofcomposites are pointed. The fibers are pointed at (x0, f2(p1)p2), (x0,p1), (x1,p2) and H^-1(x0,p1). F1 is pointed by (p1, pathover). F2, H and fst are pointed by refl. H is a pointed equivalence. Every cell (the lower square, both upper triangles and the right square) is a PointedHomotopy. The formalization uses the BookPointedMap / book_pointed_compose conventions."
   },
   {
     "chapter": 9,
@@ -20827,8 +21075,65 @@
       "it:monof2->isoF2",
       "it:epif1->equivF'1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "ch9w2_component_map",
+      "ch9w2_aut_hom",
+      "ch9w2_component_equiv",
+      "ch9w2_subtype_component_equiv",
+      "ch9w2_component_fiber_equiv",
+      "ch9w2_component_map_embedding_equiv",
+      "kc_compose",
+      "kc_F1",
+      "kc_F1_point",
+      "kc_F2",
+      "kc_lower_square",
+      "kc_F1_unique",
+      "kc_upper_right",
+      "kc_F2_monomorphism",
+      "kc_F2_mono",
+      "kc_F2_unique",
+      "kc_D",
+      "kc_H_fun",
+      "kc_H",
+      "kc_H_equiv",
+      "kc_H_iso",
+      "kc_H_group_iso",
+      "ch9w2_component_homotopy",
+      "kc_upper_left",
+      "ch9w2_monos_path_from_iso",
+      "kc_monos_path",
+      "kc_F2_embedding",
+      "kc_F2_iso_of_mono",
+      "kc_H_prime",
+      "kc_H_prime_equiv",
+      "kc_H_prime_equiv_map",
+      "kc_coker_restriction_path",
+      "KcCokerRestrictionClaim",
+      "kc_counter_D_prop",
+      "kc_coker_restriction_counterexample_general",
+      "kc_coker_restriction_counterexample",
+      "ch9w2_sigma3_tau_nontrivial",
+      "ch9w2_set_trunc_map",
+      "ch9w2_set_trunc_map_equiv",
+      "kc_F1_general",
+      "kc_coker_hom",
+      "kc_coker_hom_equiv",
+      "kc_coker_hom_is_equiv",
+      "kc_coker_path",
+      "kc_coker_hom_is_equiv_of_epi",
+      "kc_coker_path_of_epi",
+      "ch9w2_trunc_sigma_prop_map",
+      "ch9w2_trunc_sigma_prop_map_beta",
+      "ch9w2_trunc_sigma_prop_equiv",
+      "ch9w2_trunc_sigma_mere_contractible"
+    ],
+    "principal": [
+      "kc_H_iso",
+      "kc_monos_path",
+      "kc_coker_restriction_counterexample"
+    ],
+    "note": "The formalization proves items 1-4, 6 and 7. H induces Ker(F1) ≅ Ker(f1) (kc_H_iso). F1 is unique with f1∘ker = ker∘F1 (kc_F1_unique, BookIsContr of the fiber of postcomposition). F2 is a monomorphism and is unique (kc_F2_monomorphism, kc_F2_unique). (Ker f1, F2) = (Ker F1, ker F1) in Mono(Ker(f2f1)) (kc_monos_path). If f2 is a mono, then F2 is an iso (kc_F2_iso_of_mono). Item 7 holds for f1 an epimorphism, as printed (kc_coker_hom_is_equiv_of_epi, kc_coker_path_of_epi, module 964). It follows through gepi_epi_connected_fibers of 934 from the connected-fibers version (kc_coker_hom_is_equiv, kc_coker_path). Item 5 is FALSE as printed. BF1 is the map of components. Thus BF1^-1(sh) only sees the part of F1^-1(x1,p2) in the component of the kernel shape, and the step 'H'(sh) ≡ H' of the proof fails. A counterexample is G0 = 1, G1 = G2 = Σ3, f2 = id (kc_coker_restriction_counterexample). The corrected statement has the hypothesis 'the fiber (B(f2f1))^-1(sh) is connected' (kc_coker_restriction_path, with H'(u) as printed). Footnote to (c): for P : ‖A‖0 → Prop, e(|(a,p)|) ≡ (|a|, p) is an equivalence ‖Σ_a P(|a|)‖0 ≃ Σ_{b:‖A‖0} P(b). The proof uses a quasi-inverse, not the fiber argument of the book. Footnote to (e): ‖Σ_a T(a)‖0 contractible ⇒ ‖Σ_a ‖T(a)‖‖0 contractible. The proof of item 7 itself goes through composite_fiber_map_connected (module 112), not through the chain (a)-(f)."
   },
   {
     "chapter": 9,
@@ -20840,8 +21145,83 @@
     "labels": [
       "exa:fibersofcomposites"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "InKer",
+      "usym_power",
+      "ch9w2_iterate",
+      "sign_power",
+      "sigma_two_sign_pow",
+      "sigma_two_unit_of_plus",
+      "sigma_two_not_unit_of_minus",
+      "ex_rho_inversions_odd",
+      "ex_rho_sign",
+      "ex_f1",
+      "ex_f2",
+      "ex_f21",
+      "ex_f1_pow",
+      "ex_prj_pow",
+      "ex_rho_pow_action",
+      "ex_prj_pow_action",
+      "ex_s2_action_0",
+      "ex_s2_action_1",
+      "ex_s2_action_2",
+      "ex_s2_action_3",
+      "ex_succ4_identity",
+      "ex_s4_unit",
+      "ex_s2_not_unit",
+      "ex_s1_not_unit",
+      "ex_f1_kernel_loop4k",
+      "ex_f1_not_kernel_loop2",
+      "ex_f1_not_kernel_loop",
+      "ex_f2_pow_sign",
+      "ex_f2_kernel_s2",
+      "ex_f2_kernel_s0",
+      "ex_f2_not_kernel_s1",
+      "ex_f2_not_kernel_s3",
+      "ex_f21_pow_sign",
+      "ex_f21_kernel_loop2k",
+      "ex_f21_not_kernel_loop",
+      "ex_f1_connected_fibers",
+      "sigma_two_surjective_of_odd",
+      "ex_f2_usym_surjective",
+      "ex_f21_usym_surjective",
+      "kernel_member_iff",
+      "kc_lower_square",
+      "fibcomp_H_equiv",
+      "foc_four",
+      "CircleLoopMultiple",
+      "foc_phi_power",
+      "foc_z_kernel_back",
+      "foc_z_kernel_fwd_at",
+      "foc_z_kernel_iff",
+      "foc_fin4_nonzero",
+      "foc_sign_order",
+      "KernelGsetFixes",
+      "stabilizer_iff_of_kernel_iff",
+      "foc_s_order",
+      "foc_nat_of_fin4",
+      "foc_fin4_iterate",
+      "foc_c4_val",
+      "foc_c4_pow",
+      "foc_c4_pow_val",
+      "foc_c4_enum_map",
+      "foc_c4_enum_reflects",
+      "foc_c4_is_power",
+      "foc_c4_classify",
+      "foc_mod4_kernel_iff",
+      "foc_composite_kernel_iff",
+      "foc_sgnprj_kernel_iff",
+      "foc_mod4_stabilizer_iff",
+      "foc_sgnprj_stabilizer_iff",
+      "foc_composite_stabilizer_iff"
+    ],
+    "principal": [
+      "foc_mod4_stabilizer_iff",
+      "foc_sgnprj_stabilizer_iff",
+      "foc_composite_stabilizer_iff"
+    ],
+    "note": "Let C be any circle (Z = circle_group C), f1 = mod_4 and f2 = sgn ∘ prj. Module 994 characterizes the stated stabilizers in full. The condition is g · Bf_pt = Bf_pt (KernelGsetFixes). By kernel_member_iff of 954, it is equivalent to InKer f g ≔ USym f(g) = e. For f1, it holds iff g = loop^{4k} for an integer k. For f2, it holds iff h = e or h = s^2. Here USym C_4 = {s^0..s^3} by pigeonhole, and the sign of s^i is (-1)^i. For f2 f1, it holds iff g = loop^{2k}. The loop cases use lem:order-divides and winding numbers. Module 961 has the memberships and non-memberships (s^2 = (0 2)(1 3), and the sign of ρ = (0 1 2 3) is −1 by refl). It also has the connected fibers of f1 and the surjectivity of f2 and f2f1 on symmetries. F1^abstr(loop^{2k}) = s^{2k} follows from kc_lower_square (951), and tests bridge it (bridge-03b). The relation of F1^-1 to the action type of mod_4 is fibcomp_H_equiv."
   },
   {
     "chapter": 9,
@@ -20853,8 +21233,53 @@
     "labels": [
       "xca:fibersofcomposites"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "xr_R4",
+      "xr_sR4",
+      "xr_R4_pow",
+      "xr_rho4_unit",
+      "xr_rho_pow_not_unit",
+      "xr_R4_kernel_loop4k",
+      "xr_R4_not_kernel_pow",
+      "xr_R4_not_kernel_loop2",
+      "xr_R4_not_kernel_loop",
+      "xr_sgn_pow_sign",
+      "xr_sgn_kernel_rho2",
+      "xr_sgn_not_kernel_rho",
+      "xr_sgn_not_kernel_swap01",
+      "xr_sR4_pow_sign",
+      "xr_sR4_kernel_loop2k",
+      "xr_sR4_not_kernel_loop",
+      "xr_R4_image_commutes",
+      "xr_swap_rho_noncommuting",
+      "xr_R4_not_usym_surjective",
+      "foc_four",
+      "CircleLoopMultiple",
+      "foc_phi_power",
+      "foc_z_kernel_back",
+      "foc_z_kernel_fwd_at",
+      "foc_z_kernel_iff",
+      "foc_fin4_nonzero",
+      "foc_sign_order",
+      "KernelGsetFixes",
+      "stabilizer_iff_of_kernel_iff",
+      "foc_rho_order",
+      "foc_perm_sym_eta",
+      "foc_usgn_perm_sign",
+      "xr_R4_kernel_iff",
+      "xr_sgn_kernel_iff",
+      "xr_sR4_kernel_iff",
+      "xr_R4_stabilizer_iff",
+      "xr_sgn_stabilizer_iff",
+      "xr_sR4_stabilizer_iff"
+    ],
+    "principal": [
+      "xr_R4_stabilizer_iff",
+      "xr_sgn_stabilizer_iff",
+      "xr_sR4_stabilizer_iff"
+    ],
+    "note": "The maps are Z --R4--> Σ4 --Bsgn--> Σ2. Module 994 gives the stabilizers in full. For R4, g · Bf_pt = Bf_pt iff g = loop^{4k} with k an integer (ρ has order 4). h is in the stabilizer of Bsgn iff its permutation is even (sign by inversions). g is in the stabilizer of sgn∘R4 iff g = loop^{2k}. Module 962 has the memberships/non-memberships. xr_R4_not_usym_surjective is a witness for the 'more general case' (non-connected fibers): the image of USym R4 commutes with ρ, but (0 1) does not. lem:epi-surj (module 930) turns this into non-connected fibers."
   },
   {
     "chapter": 9,
@@ -20866,8 +21291,29 @@
     "labels": [
       "xca:abstract-kernel"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ch9w2_transport_ap_path",
+      "kernel_member_iff",
+      "AbstractKernelWitness",
+      "abstract_kernel_gset",
+      "abstract_kernel_point",
+      "abstract_kernel_orbit_equiv",
+      "abstract_kernel_orbit_path",
+      "abstract_kernel_transitive",
+      "abstract_kernel_subgroup",
+      "abstract_kernel_path",
+      "abstract_kernel_epi_equiv",
+      "abstract_kernel_epi_path",
+      "abstract_kernel_epi_equiv_of_epi",
+      "abstract_kernel_epi_path_of_epi"
+    ],
+    "principal": [
+      "abstract_kernel_subgroup",
+      "abstract_kernel_path",
+      "abstract_kernel_epi_path"
+    ],
+    "note": "X(f)(z) ≔ Σ_{p : sh_H = Bf z} ∃_{g : sh_G = z} (p = Bf(g)Bf_pt), with Bf(g)Bf_pt = concat Bf_pt (ap Bf g), pointed at Bf_pt. It is the orbit G-set of Bf_pt in f^*P_H, and thus it is transitive. It equals E(ker f) in Sub(G) (through stabilizer_subgroup_path of 508). For an epimorphism f, X(f) = (z ↦ sh_H = Bf z) as G-sets, as printed (abstract_kernel_epi_path_of_epi, module 964, through gepi_epi_connected_fibers). More generally, this identification holds for every f with connected fibers."
   },
   {
     "chapter": 9,
@@ -20879,8 +21325,16 @@
     "labels": [
       "def:Im(grphom)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "image_group",
+      "image_group_classifying",
+      "cokernel_action_type"
+    ],
+    "principal": [
+      "image_group"
+    ],
+    "note": "Img(f) = mkgroup(im_0(Bf), (sh_H, |(sh_G, Bf_pt)|_0)). The formalization defines it as the underlying group of the subgroup image_subgroup. B is the action type of the cokernel, which is definitionally im_0(Bf). The connectedness in the footnote is cokernel_action_type_connected."
   },
   {
     "chapter": 9,
@@ -20892,8 +21346,21 @@
     "labels": [
       "xca:p-epi-i-mono"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "image_projection_point",
+      "image_projection",
+      "image_factorization_path",
+      "image_projection_connected_fibers",
+      "eqmc_image_projection_epi",
+      "eqmc_image_inclusion_monomorphism"
+    ],
+    "principal": [
+      "image_factorization_path",
+      "eqmc_image_projection_epi",
+      "eqmc_image_inclusion_monomorphism"
+    ],
+    "note": "Module 901 has the pointing of Bp(f) and f = i(f)∘p(f) as pointed maps. p(f) is an epimorphism of GroupCat by lem:epi-surj (3')⇒(1'), from the connected fibers of Bp(f). The proof does not use the hint lem:trunc-n-connected. i(f) is a categorical monomorphism by module 687, from USym-injectivity."
   },
   {
     "chapter": 9,
@@ -20905,8 +21372,18 @@
     "labels": [
       "def:Im-fact"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "EpiMonoFactorizations",
+      "image_epi_projection",
+      "image_mono_categorical",
+      "image_factorization_map"
+    ],
+    "principal": [
+      "EpiMonoFactorizations",
+      "image_factorization_map"
+    ],
+    "note": "Epi(G) ×_Group Mono(H) is Σ_{e:GroupEpis G} Σ_{m:GroupMonomorphismsInto H} (e.1 = m.1), with categorical epis/monos. Imfact(f) = ((Img f, p f, !), (Img f, i f, !), refl). Img f is image_group of module 901, the subgroup form of def:Im(grphom)."
   },
   {
     "chapter": 9,
@@ -20918,8 +21395,39 @@
     "labels": [
       "lem:Im-fact-unique"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "imfact_idtoiso",
+      "imfact_idtoiso_refl",
+      "imfact_compose",
+      "imfact_compose_refl_path",
+      "imfact_compose_section",
+      "ImfactGroupProperties",
+      "imfact_group_properties_equiv",
+      "imfact_group_factorizations_contractible",
+      "ImfactF1",
+      "ImfactF1Tail",
+      "ImfactF2",
+      "ImfactF3",
+      "imfact_f0_f1_equiv",
+      "imfact_f1_f2_equiv",
+      "imfact_f2_f3_equiv",
+      "imfact_f3_pointed_equiv",
+      "imfact_compose_fiber_contractible",
+      "imfact_compose_is_equiv",
+      "imfact_section_is_equiv",
+      "image_factorization_is_equiv",
+      "image_factorization_equiv",
+      "imfact_retract",
+      "imfact_connected_surjection",
+      "imfact_based_paths_contr"
+    ],
+    "principal": [
+      "image_factorization_is_equiv",
+      "imfact_compose_is_equiv",
+      "imfact_retract"
+    ],
+    "note": "Imfact is a BookIsEquiv (image_factorization_equiv). As in the printed proof, the formalization shows that the composition map ∘((Z,p),(Z',j),α) = j ∘ ptoe(α) ∘ p is an equivalence with Imfact as inverse. Its fibers are equivalent to the pointed 0-image factorizations of Bf (rem:n-im-ptd-map). The proof uses lem:epi-surj and lem:eq-mono-cover to identify epis/monos with 0-connected maps/coverings. ptoe(α) is the transport of the identity homomorphism along α, that is, the homomorphism that corresponds to α by path induction. It is not the group_path_iso_equiv map of the library."
   },
   {
     "chapter": 9,
@@ -20931,8 +21439,34 @@
     "labels": [
       "rem:n-im-ptd-map"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PfactPointed",
+      "PfactPointedWith",
+      "PfactUnpointedH",
+      "PfactPointData",
+      "pfact_split",
+      "pfact_unpointed_equiv",
+      "pfact_concat_right_equiv",
+      "pfact_point_data_contractible",
+      "pfact_contractible",
+      "PfactNProperties",
+      "PfactPointedN",
+      "pfact_n_image_pointed_contractible",
+      "PfactZeroProperties",
+      "pfact_zero_image_pointed_contractible",
+      "pfact_zero_image_connected_groupoid",
+      "pfact_unit_identity_factorization",
+      "n_image_connected_groupoid",
+      "trunc_groupoid_of_groupoid",
+      "trunc_level_unit_equiv"
+    ],
+    "principal": [
+      "pfact_n_image_pointed_contractible",
+      "pfact_contractible",
+      "pfact_zero_image_pointed_contractible"
+    ],
+    "note": "Fact_*(f) = Σ_{Y:Pointed} Σ_{p:X→*Y} Σ_{i:Y→*Z} (f = i∘p). Fact_*^n (n-connected p, n-truncated i) is contractible for all n ≥ -2 (index m = n+2, through thm:n-im-univ-prop of module 285). The formalization proves a general result. Let P be a property of (C,g,h) whose unpointed factorization type is contractible. Then the pointed factorization type is also contractible, because the pointing data (y0, p_pt, i_pt, 2-cell b) form a contractible type. 'If X, Z are connected groupoids so is the n-image' is formalized for n = 0 only (pfact_zero_image_connected_groupoid). The \\wip questions of the remark are not claims. The claim that the n-image of a map between connected groupoids is a connected groupoid holds for every n >= -1 (n_image_connected_groupoid, module 991). Before, only n = 0 was formalized."
   },
   {
     "chapter": 9,
@@ -20944,8 +21478,22 @@
     "labels": [
       "def:image"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "image_factorization_map",
+      "image_mono_categorical",
+      "image_epi_projection",
+      "image_group_aut",
+      "image_group_aut_path",
+      "image_inclusion",
+      "image_projection"
+    ],
+    "principal": [
+      "image_factorization_map",
+      "image_mono_categorical",
+      "image_epi_projection"
+    ],
+    "note": "∘⁻¹ = Imfact. img(f) = (Img f, incl_img f, !) : Mono(G') and prjim(f) = (Img f, prj_img f, !) : Epi(G), with categorical monos/epis. The book gives Img(f) in the explicit form Aut_{Σ coker(f)}(sh, |(sh_G, Bf_pt)|₀). This form is image_group_aut. image_group_aut_path (module 901) identifies it with image_group."
   },
   {
     "chapter": 9,
@@ -20957,8 +21505,26 @@
     "labels": [
       "ex:charsurinj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "chim_epi_usym_surjective_equiv",
+      "chim_epi_cokernel_contractible_equiv",
+      "chim_epi_image_inclusion_iso",
+      "chim_image_inclusion_iso_epi",
+      "chim_epi_image_inclusion_iso_equiv",
+      "chim_mono_usym_injective_equiv",
+      "chim_mono_kernel_trivial_equiv",
+      "chim_mono_covering_equiv",
+      "chim_mono_image_projection_iso",
+      "chim_image_projection_iso_mono",
+      "chim_mono_image_projection_iso_equiv"
+    ],
+    "principal": [
+      "chim_epi_image_inclusion_iso_equiv",
+      "chim_mono_image_projection_iso_equiv",
+      "chim_mono_kernel_trivial_equiv"
+    ],
+    "note": "(1) epi ≃ USym f surjective ≃ cokernel contractible ≃ incl_img(f) an isomorphism. (2) mono ≃ USym f injective ≃ kernel trivial ≃ Bf a covering ≃ prj_img(f) an isomorphism. All are equivalences of propositions, with the categorical epi/mono as the hub. The iso clauses use f = i∘p, xca:mono1st-epi2nd and lem:epimonoiso."
   },
   {
     "chapter": 9,
@@ -20968,8 +21534,19 @@
     "line": 1045,
     "section_raw": "Images, kernels and cokernels}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "chim_composite_factorization",
+      "chim_composite_factorization_compose",
+      "chim_composite_imfact_path",
+      "chim_composite_image_mono_path",
+      "chim_composite_image_epi_path"
+    ],
+    "principal": [
+      "chim_composite_image_mono_path",
+      "chim_composite_image_epi_path"
+    ],
+    "note": "Let g = prj_img(f2)∘incl_img(f1). Then img(f2 f1) = (Img g, incl_img(f2)∘incl_img(g), !) in Mono(G2), and prjim(f2 f1) = (Img g, prj_img(g)∘prj_img(f1), !) in Epi(G0). As in the book, these identifications come from uniqueness (Imfact∘∘ = id, imfact_retract). The proof applies uniqueness to the factorization that the compositions of epis/monos give."
   },
   {
     "chapter": 9,
@@ -20981,8 +21558,19 @@
     "labels": [
       "lem:kerandcoker"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "chim_kernel_compose_trivial",
+      "chim_trivial_postcompose",
+      "chim_mono_cancel",
+      "chim_inverse_homs_iso",
+      "chim_monos_path",
+      "chim_kernel_projection_path"
+    ],
+    "principal": [
+      "chim_kernel_projection_path"
+    ],
+    "note": "ker(prj_img f) = ker(f) in GroupMonos G (the Mono(G) of chapter 5, as the kernel of module 901). Deviation: the identification comes from the kernel universal property and from iso induction (homs_into_iso_path, module 905). Both kernels factor through each other, and by mono cancellation the factor maps are inverse isos. The proof does not use the printed map of preimages / cor:cokermaps."
   },
   {
     "chapter": 9,
@@ -20992,8 +21580,27 @@
     "line": 1160,
     "section_raw": "Images, kernels and cokernels}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "chim_mono_image_path",
+      "chim_epi_image_path",
+      "chim_monomorphisms_path",
+      "chim_epis_path",
+      "chim_mono_image_projection_iso",
+      "chim_epi_image_inclusion_iso",
+      "mono_image_ua_path",
+      "epi_image_ua_path",
+      "monos_ua_path",
+      "epis_ua_path",
+      "group_path_iso_refl_hom"
+    ],
+    "principal": [
+      "chim_mono_image_path",
+      "chim_epi_image_path",
+      "mono_image_ua_path",
+      "epi_image_ua_path"
+    ],
+    "note": "(1) For a monomorphism f : G → G', (G, f, !) = img(f) in Mono(G'). (2) For an epimorphism f : G → G', (G', f, !) = prjim(f) in Epi(G). The group identification is the one that the isomorphism prj_img(f) (in case 1) or incl_img(f) (in case 2) induces by iso induction (modules 905: homs_into_iso_path / homs_from_iso_path). That is, it is ua of this isomorphism, up to the identification group_path_iso_equiv. The formalization does not literally write it as ua(...). The identifications with the group component pinned down as in the book are ua(prj_img f) and ua(incl_img f)^-1. They are mono_image_ua_path / epi_image_ua_path (module 990)."
   },
   {
     "chapter": 9,
@@ -21003,8 +21610,272 @@
     "line": 1186,
     "section_raw": "Images, kernels and cokernels}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "matrix1_hom",
+      "matrix1_mono",
+      "matrix1_monomorphism",
+      "matrix1_zero_not_mono",
+      "matrix1_fiber_equiv",
+      "matrix1_fiber_set",
+      "matrix1_cokernel_card",
+      "int_inversion_hom",
+      "int_inversion_loop",
+      "int_inversion_involutive_usym",
+      "int_inversion_compose_id",
+      "int_inversion_function_equiv",
+      "matrix1_neg_hom",
+      "matrix1_neg_hom_path",
+      "matrix1_neg_hom_mono",
+      "matrix1_neg_mono",
+      "matrix1_neg_hom_cokernel_card",
+      "matrix1_neg_cokernel_card",
+      "int_abs_nat",
+      "IntNonzero",
+      "matrix1_neg_fiber_equiv",
+      "int_mult_fiber_card",
+      "int_mult_mono",
+      "int_power_group",
+      "diag_map",
+      "diag_hom",
+      "diag_fiber_equiv",
+      "diag_mono",
+      "fin_nat_prod",
+      "ch9w2_product_equiv_left",
+      "ch9w2_sum_unit_join",
+      "ch9w2_sum_unit_join_eta",
+      "ch9w2_pi_sum_unit_equiv",
+      "ch9w2_fin_zero_fun",
+      "ch9w2_fin_zero_path",
+      "fin_pi_card",
+      "diag_cokernel_pi",
+      "diag_cokernel_card",
+      "IntMatrix",
+      "int_fsum",
+      "int_vec_add",
+      "int_mat_vec",
+      "IntVecAdditive",
+      "IntVecUnimodular",
+      "int_diag_map",
+      "int_mat_vec_litmus",
+      "imat_bif",
+      "imat_bsign",
+      "imat_bnot_and",
+      "imat_fin_eqb",
+      "imat_remove",
+      "imat_empty",
+      "imat_sgn",
+      "imat_minor",
+      "int_det",
+      "int_det_litmus_two",
+      "imat_row3",
+      "int_det_litmus_three",
+      "int_det_litmus_empty",
+      "int_fsum_ext",
+      "int_fsum_zero",
+      "int_fsum_add",
+      "int_fsum_scale",
+      "int_fsum_neg",
+      "int_fsum_swap",
+      "int_mat_vec_additive",
+      "imat_minor_ext_rows",
+      "imat_minor_ext_cols",
+      "int_det_ext",
+      "imat_upd",
+      "imat_upd_at",
+      "imat_upd_self",
+      "imat_mul_swap_left",
+      "imat_lin_mul_right",
+      "imat_lin_term",
+      "imat_mul_interchange",
+      "imat_mul_neg_left",
+      "imat_neg_zero_self",
+      "imat_bif_zero",
+      "imat_bif_lin",
+      "imat_minor_linear",
+      "imat_fin_eqb_sym",
+      "imat_bnot_and_comm",
+      "imat_bsign_mul_same",
+      "imat_bsign_true",
+      "imat_sgn_antisym",
+      "imat_q_antisym",
+      "imat_step1_term",
+      "imat_step1",
+      "imat_q",
+      "imat_q_swap",
+      "imat_minor_last_two",
+      "imat_rows2",
+      "imat_rows2_upd_last",
+      "imat_rows2_upd_mid",
+      "imat_rows2_eta",
+      "imat_rows2_lin_last",
+      "imat_rows2_lin_mid",
+      "imat_rows2_swap",
+      "imat_minor_alt",
+      "imat_op_last",
+      "imat_op_row",
+      "imat_minor_op_last",
+      "imat_minor_op_row",
+      "imat_bif_false",
+      "imat_bnot_and_false",
+      "imat_bsign_false",
+      "imat_bnot_and_false_right",
+      "imat_empty_false",
+      "imat_fin_eqb_id",
+      "imat_bnot_and_true",
+      "imat_mul_zero_left",
+      "imat_zero_col_term",
+      "imat_minor_zero_col",
+      "imat_minor_restrict",
+      "int_det_block",
+      "IntMatFactor",
+      "int_mat_factor_map",
+      "int_mat_factor_card",
+      "int_mat_factors_eval",
+      "int_mat_factors_card",
+      "imat_upd_other",
+      "imat_upd_eqb_true",
+      "imat_unimod_id",
+      "imat_unimod_compose",
+      "ImatRel",
+      "imat_rel_refl",
+      "imat_rel_trans",
+      "imat_add_lin",
+      "imat_cancel_a",
+      "imat_cancel_b",
+      "imat_vop_last",
+      "imat_vop_row",
+      "imat_vop_last_unimod",
+      "imat_bif_add_lin",
+      "imat_bif_cancel_a",
+      "imat_bif_cancel_b",
+      "imat_vop_row_unimod",
+      "imat_mat_vec_rowcomb",
+      "imat_rel_op_last",
+      "imat_rel_op_row_inl",
+      "imat_rel_op_row",
+      "imat_divmod_pos",
+      "imat_divmod_neg",
+      "imat_divmod",
+      "ImatPairRes",
+      "imat_pair_prepend",
+      "imat_pair_finish",
+      "imat_pair_step",
+      "imat_pair",
+      "ImatInList",
+      "imat_list_inl",
+      "imat_in_list_inl",
+      "imat_fin_all",
+      "imat_fin_all_in",
+      "ImatCleared",
+      "imat_clear_keep",
+      "imat_clear_list",
+      "imat_eliminate",
+      "imat_eliminate_zero",
+      "imat_mul_zero_right_cancel",
+      "imat_mul_eq_zero",
+      "imat_additive_zero",
+      "ImatKernelVector",
+      "imat_kernel_transfer",
+      "imat_last_vector",
+      "imat_last_col_zero",
+      "imat_kernel_corner_zero",
+      "imat_kernel_extend",
+      "imat_kernel_cases",
+      "int_det_zero_kernel",
+      "imat_corner_diag",
+      "imat_lower",
+      "imat_block1",
+      "imat_rdot_add",
+      "imat_rdot_neg",
+      "imat_lower_unimod",
+      "imat_block1_unimod",
+      "imat_block_decomposition",
+      "ivh_happly_concat",
+      "int_power_winding",
+      "ivh_unwind",
+      "ivh_vec_path",
+      "ivh_wind_unwind",
+      "ivh_unwind_wind",
+      "ivh_winding_injective",
+      "ivh_winding_mul",
+      "ivh_winding_unit",
+      "ivh_abstract_map",
+      "ivh_abstract_law",
+      "ivh_abstract",
+      "int_vec_hom",
+      "ivh_usym",
+      "int_vec_hom_windings",
+      "ivh_hom_ext_windings",
+      "int_vec_hom_ext",
+      "int_vec_hom_compose",
+      "int_vec_hom_identity",
+      "int_vec_hom_mono",
+      "int_vec_hom_not_mono",
+      "ivh_respect",
+      "ivh_factor_additive",
+      "int_mat_factors_additive",
+      "ivh_int_mul_cancel",
+      "ivh_factor_injective",
+      "int_mat_factors_injective",
+      "ivh_path_inverse_equiv",
+      "ivh_comp_fiber_equiv",
+      "ivh_sigma_card",
+      "ivh_compose_fiber_card",
+      "ivh_fibers_from_shape",
+      "ivh_shape_fiber_of_cokernel",
+      "ivh_compose_additive",
+      "ivh_identity_additive",
+      "ivh_inverse_additive",
+      "ivh_inverse_hom_path",
+      "ivh_unimodular_fibers",
+      "ivh_happly_inverse",
+      "ivh_happly_ap",
+      "ivh_diag_usym_component",
+      "ivh_diag_windings",
+      "ivh_diag_path",
+      "ivh_diag_fibers",
+      "ivh_factor_fibers",
+      "int_vec_factors_fiber_card",
+      "int_vec_factors_hom_good",
+      "imat_flist_app",
+      "imat_flist_app_eval",
+      "imat_flist_app_card",
+      "imat_one_nonzero",
+      "imat_extend_one",
+      "imat_extend_one_nonzero",
+      "imat_factor_lift",
+      "imat_flist_lift",
+      "imat_factor_lift_map",
+      "imat_block1_id",
+      "imat_block1_ext",
+      "imat_block1_compose",
+      "imat_flist_lift_eval",
+      "imat_factor_lift_card",
+      "imat_flist_lift_card",
+      "imat_abs_neg",
+      "imat_abs_mul_pos",
+      "imat_abs_mul",
+      "imat_fin_prod_ones",
+      "IntMatrixFactorization",
+      "int_matrix_factorization",
+      "int_matrix_hom",
+      "int_matrix_hom_windings",
+      "int_matrix_hom_factor_path",
+      "int_matrix_mono_of_det",
+      "int_matrix_det_of_mono",
+      "int_matrix_mono_iff",
+      "int_matrix_cokernel_card",
+      "int_matrix_fiber_card",
+      "int_matrix_covering",
+      "int_matrix_factorization_litmus"
+    ],
+    "principal": [
+      "int_matrix_mono_iff",
+      "int_matrix_cokernel_card",
+      "int_matrix_fiber_card"
+    ],
+    "note": "A : Fin n → Fin n → Int acts on Z^n = power_group (Fin n) Z as int_matrix_hom. The classifying type of Z^n is the torus (S^1)^n. int_matrix_hom is the delooping of the abstract homomorphism that is A on winding vectors (int_matrix_hom_windings). det is the Laplace expansion along the last row (int_det, litmus values). The formalization proves these statements for all n. First, hom(A) is a monomorphism iff det A ≠ 0. If det A = 0, the proof gives an explicit nonzero kernel vector. Second, if det A ≠ 0, the cokernel at the shape merely has |det A| elements (Mere (Equiv _ (Fin |det A|)), the cardinality of the book). Third, the covering picture holds: B(hom A) is a covering, and all its fibers have |det A| elements. The proof uses Euclid's algorithm on the last column with determinant-preserving row operations. It factors A·x as unimodular and diagonal maps, with no Smith normal form and no multiplicativity of det. It also uses the multiplicativity of cokernel cardinality along monomorphisms. The 1×1 and diagonal cases (963-966) stay as before, as special cases. The final sentence (nullspace = kernel, rowspace = image for m×n matrices) is an informal analogy and is not formalized."
   },
   {
     "chapter": 9,
@@ -21014,8 +21885,15 @@
     "line": 1200,
     "section_raw": "The action on the set of subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "monos_gset",
+      "monos_gset_underlying"
+    ],
+    "principal": [
+      "monos_gset"
+    ],
+    "note": "The G-set Mono(G) : BG -> Set is z |-> Mono(mkgroup(BG_div, z)) (group_at G z, module 437). Its underlying set is definitionally Mono(G)."
   },
   {
     "chapter": 9,
@@ -21027,8 +21905,24 @@
     "labels": [
       "rem:action-Mono(G)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_at_move",
+      "group_at_move_shape",
+      "group_at_move_usym",
+      "group_at_move_mono",
+      "monos_conjugate",
+      "group_monos_path_same",
+      "group_at_move_refl",
+      "monos_gset_act",
+      "monos_gset_usym_act"
+    ],
+    "principal": [
+      "monos_gset_act",
+      "monos_gset_usym_act",
+      "group_at_move_usym"
+    ],
+    "note": "A move along p : z = z' acts on Mono(G) by postcomposition with the isomorphism mkgroup(id_BG, p^-1) (monos_gset_act). Thus the pointing Bf_pt becomes p^-1 then Bf_pt. At the shape, g.(H,f) = (H, conj^g o f). The footnote's Omega(id, p^-1) = p _ p^-1 is group_at_move_usym."
   },
   {
     "chapter": 9,
@@ -21040,8 +21934,28 @@
     "labels": [
       "lem:conj-abstract"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractMonosInto",
+      "concrete_to_abstract_mono",
+      "conj_abstract_family",
+      "concrete_abstract_monos_equiv",
+      "abstract_monos_set",
+      "amono_embedding_reflects",
+      "amono_conj_embedding",
+      "amono_conj_act",
+      "amono_family_path",
+      "conj_abstract_agset",
+      "conj_abstract_equivariant",
+      "conj_abstract_iso",
+      "conj_abstract_path"
+    ],
+    "principal": [
+      "conj_abstract_path",
+      "conj_abstract_iso",
+      "conj_abstract_agset"
+    ],
+    "note": "lem:actionsconcr2abstr (ev_{sh_G}, module 750) identifies the G-set Mono(G) with the abstr(G)-set of abstract monomorphisms. This set is Sigma_{H : AbsGroup} Sigma_{phi : absHom(H, abstr G)} ismono(phi), with the action g.(H, phi) = (H, conj^g o phi). ismono(phi) is the injectivity of the underlying function. The underlying equivalence is (H, f) |-> (abstr H, abstr f) (thm:concr-equiv-cats on objects, lem:homomabstrconcr on morphisms)."
   },
   {
     "chapter": 9,
@@ -21053,8 +21967,16 @@
     "labels": [
       "xca:conj-abstract"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "conj_abstract_iso",
+      "conj_abstract_path",
+      "conj_abstract_equivariant"
+    ],
+    "principal": [
+      "conj_abstract_path"
+    ],
+    "note": "The exercise asks for a proof of lem:conj-abstract. Refer to that block (module 916)."
   },
   {
     "chapter": 9,
@@ -21066,8 +21988,63 @@
     "labels": [
       "rem:typeofsubgpstrivifab"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "SubgroupHasSymmetry",
+      "abelian_conj_identity",
+      "conj_identity_abelian",
+      "abelian_iff_conj_identity",
+      "conj_hom_usym_abstract",
+      "conj_act_shift",
+      "conj_conj_inverse",
+      "gset_usym_act_cancel",
+      "subgroup_conjugate_fixed",
+      "subgroup_fixed_conj_closed",
+      "SubgroupConjClosed",
+      "conj_closed_fixed",
+      "conj_closed_normal",
+      "normal_conj_closed",
+      "normal_iff_conj_closed",
+      "SubgroupPickedOutConjClosed",
+      "normal_iff_picked_out_conj_closed",
+      "GSetActionTrivial",
+      "AGSetActionTrivial",
+      "all_normal_subgroups_trivial",
+      "subgroups_trivial_all_normal",
+      "monos_trivial_of_subgroups",
+      "subgroups_trivial_of_monos",
+      "ev_gset_trivial",
+      "conj_abstract_trivial_of_monos",
+      "abelian_conj_closed",
+      "abelian_subgroup_normal",
+      "abelian_subgroups_trivial",
+      "abelian_monos_trivial",
+      "abelian_conj_abstract_trivial",
+      "q8_mul",
+      "quaternion_eval_usym_mul",
+      "q8_table",
+      "q8_commute_or_flip",
+      "q8_conj_cases",
+      "subgroup_symmetry_inverse",
+      "q8_conj_closed",
+      "quaternion_subgroup_normal",
+      "quaternion_subgroups_trivial",
+      "quaternion_monos_trivial",
+      "quaternion_conj_abstract_trivial",
+      "q8_element",
+      "q8_element_eval",
+      "q8_product_value",
+      "quaternion_not_abelian",
+      "monos_trivial_not_abelian",
+      "abstract_monos_trivial_not_abelian",
+      "subgroups_trivial_not_abelian"
+    ],
+    "principal": [
+      "abelian_iff_conj_identity",
+      "abelian_conj_abstract_trivial",
+      "monos_trivial_not_abelian"
+    ],
+    "note": "(a) G is abelian iff conj^g = id for all g (as abstract homomorphisms abstr G → abstr G, ex:conjhom). The formalization proves both directions. (b) For abelian G, every subgroup is normal. Thus Sub(G), Mono(G) (through the G-set path E of module 902) and the abstr(G)-set of lem:conj-abstract (through conj_abstract_path, module 916) are trivial. That is, every g fixes every element (GSetActionTrivial/AGSetActionTrivial). The printed converse 'trivial only if abelian' is FALSE. Mono(G) is trivial iff every subgroup is normal (normal_iff_conj_closed). Here S is normal iff its symmetries are closed under conjugation, also in SymmetryPickedOut form. Q_8 is non-abelian, and g k g^-1 is in {k, k^-1} for all g, k. The proof uses a 64-case multiplication table on values at 0 in Fin 8. Thus all subgroups of Q_8 are normal. monos_trivial_not_abelian refutes the converse, also for Sub and for the abstract version."
   },
   {
     "chapter": 9,
@@ -21077,8 +22054,21 @@
     "line": 1282,
     "section_raw": "The action on the set of subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroups_gset",
+      "subgroups_gset_underlying",
+      "subgroup_transitive_move",
+      "subgroups_at_transitive_equiv",
+      "subgroups_move",
+      "subgroups_gset_act",
+      "subgroups_gset_usym_act"
+    ],
+    "principal": [
+      "subgroups_gset",
+      "subgroups_gset_act"
+    ],
+    "note": "The G-set Sub(G) : BG -> Set is z |-> Sub(mkgroup(BG_div, z)). Sub(G)(sh_G) is definitionally Sub(G). Sub(G)(z) unpacks as Sigma_X X(z) x istrans(X), with transitivity at any base point (subgroups_at_transitive_equiv). The action does nothing with X and acts on the point (subgroups_gset_act)."
   },
   {
     "chapter": 9,
@@ -21088,8 +22078,19 @@
     "line": 1295,
     "section_raw": "The action on the set of subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "monos_to_subgroups",
+      "monos_to_subgroups_shape",
+      "monos_subgroups_equiv",
+      "monos_to_subgroups_equiv",
+      "monos_subgroups_gset_path"
+    ],
+    "principal": [
+      "monos_to_subgroups",
+      "monos_subgroups_gset_path"
+    ],
+    "note": "E : Hom_G(Mono(G), Sub(G)), E_z(H, f) = (Bf^-1, (sh_H, Bf_pt)), is an equivalence at every z (lem:SubG=MonoG at the base point group_at G z). Thus it gives an identification of G-sets Mono(G) = Sub(G). E_{sh_G} is the E of chapter 5."
   },
   {
     "chapter": 9,
@@ -21101,8 +22102,114 @@
     "labels": [
       "xca:Sub(Sigma3)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroups_transitive_iff_trivial",
+      "subgroups_transitive_trivial_group",
+      "trivial_group_subgroups_transitive",
+      "trivial_group_subgroups_equal",
+      "trivial_group_has_symmetry",
+      "subgroup_symmetry_transport",
+      "principal_subgroup",
+      "principal_subgroup_symmetry_unit",
+      "principal_subgroup_conj_closed",
+      "principal_subgroup_normal",
+      "full_subgroup_has_symmetry",
+      "full_subgroup_normal",
+      "sigma3_point_subgroup",
+      "sigma3_point_subgroup_conjugate",
+      "sigma3_point_subgroups_differ",
+      "fin3_differ",
+      "sigma3_swap02",
+      "sigma3_T0_ne_T1",
+      "sigma3_T0_ne_T2",
+      "sigma3_T1_ne_T2",
+      "sigma3_T0_conjugate_T1",
+      "sigma3_T0_conjugate_T2",
+      "sigma3_point_subgroup_cases",
+      "sigma3_order_two_orbit",
+      "sigma3_moved_not_normal",
+      "sigma3_point_subgroup_not_normal",
+      "sign_surjective_case",
+      "sign_hom_usym_surjective",
+      "sign_hom_connected",
+      "alternating_subgroup",
+      "alternating_subgroup_normal",
+      "sigma3_alternating_normal",
+      "sigma3_trivial_normal",
+      "sigma3_full_normal",
+      "sigma3_tau_ne_unit",
+      "sigma3_trivial_ne_full",
+      "fixed_point_subgroup_group_path",
+      "fin3_rot",
+      "fin3_rot_inv",
+      "fin3_rot_equiv",
+      "fin3_rot_inv_equiv",
+      "Sigma3Name",
+      "sigma3_sym",
+      "sigma3_act",
+      "sigma3_ext",
+      "sigma3_mul_ext",
+      "sigma3_unit_named",
+      "sigma3_enum_values",
+      "sigma3_enum",
+      "sigma3_prod_cyc_cyc",
+      "sigma3_prod_cin_cin",
+      "sigma3_prod_t01_t02",
+      "sigma3_prod_t01_t12",
+      "sigma3_prod_t02_t12",
+      "sigma3_prod_t01_cyc",
+      "sigma3_prod_t02_cyc",
+      "sigma3_prod_t12_cyc",
+      "Sigma3Mem",
+      "subgroup_symmetry_mul",
+      "sigma3_mem_ide",
+      "sigma3_mem_prod",
+      "sigma3_sym_ne_unit",
+      "sigma3_not_trivial_mem",
+      "sigma3_a3_kernel_path",
+      "sigma3_a3_mem_of_plus",
+      "sigma3_a3_not_mem_of_minus",
+      "sigma3_sign_t01",
+      "sigma3_sign_t02",
+      "sigma3_sign_t12",
+      "sigma3_sign_cyc",
+      "sigma3_sign_cin",
+      "sigma3_same_members",
+      "Sigma3SixSubgroups",
+      "sigma3_leaf_ONE",
+      "sigma3_leaf_T0",
+      "sigma3_leaf_T1",
+      "sigma3_leaf_T2",
+      "sigma3_leaf_A3",
+      "sigma3_leaf_FULL",
+      "sigma3_classify",
+      "sigma3_decidable_subgroup_classification",
+      "sigma3_a3_ne_trivial",
+      "sigma3_a3_ne_full",
+      "sigma3_normal_ne_point_subgroup",
+      "sigma3_decidable_orbit_structure",
+      "InvolutionRelationType",
+      "involution_cancel",
+      "involution_relation",
+      "involution_gset",
+      "involution_class",
+      "involution_gset_act",
+      "involution_gset_transitive",
+      "involution_subgroup",
+      "involution_subgroup_has_t",
+      "involution_subgroup_member_prop",
+      "sigma3_t12_involution",
+      "sigma3_prop_subgroup",
+      "sigma3_prop_member",
+      "sigma3_classification_decides"
+    ],
+    "principal": [
+      "subgroups_transitive_iff_trivial",
+      "sigma3_decidable_orbit_structure",
+      "sigma3_classification_decides"
+    ],
+    "note": "Sub(G) is a transitive G-set iff G is trivial (IsTrivialGroup). The formalization proves both directions. For Σ_3, the order-2 subgroups are the point stabilizers T_k (module 583, underlying group Σ_2). Since g · T_k = T_{g(k)}, they form one orbit {T_0, T_1, T_2}. They are pairwise different, and none of them is normal. 1, Σ_3 and A_3 = E(ker sgn) are normal (fixed points). The six subgroups are pairwise different (1 ≠ Σ_3, A_3 ≠ 1, A_3 ≠ Σ_3, normal ≠ T_k). Correction: the formalization proves the classification 'every subgroup of Σ_3 is one of these six' for DECIDABLE subgroups (IsDecidableSubgroup, chapter 5). This gives the orbit structure {1}, {A_3}, {Σ_3}, {T_0, T_1, T_2} for them (sigma3_decidable_orbit_structure). For all subgroups, the classification is not constructively provable, because it implies excluded middle (sigma3_classification_decides). The proof uses the subgroup with symmetries {e} ∪ {(1 2) | P}, a quotient of the principal G-set. This subgroup decides any proposition P."
   },
   {
     "chapter": 9,
@@ -21114,8 +22221,17 @@
     "labels": [
       "def:normalsubgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "NormalSubgroups",
+      "normal_subgroups_set",
+      "normal_to_subgroup"
+    ],
+    "principal": [
+      "NormalSubgroups",
+      "normal_to_subgroup"
+    ],
+    "note": "Nor(G) = Pi_{y:BG} Sub(G)(y), that is, the invariant maps of the G-set Sub(G). The map i is i(N) = N(sh_G)."
   },
   {
     "chapter": 9,
@@ -21125,8 +22241,25 @@
     "line": 1330,
     "section_raw": "Normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_to_subgroup_injective",
+      "IsNormalSubgroup",
+      "is_normal_subgroup_prop",
+      "SubgroupFixedByAll",
+      "subgroup_fixed_by_all_prop",
+      "normal_subgroup_fixed",
+      "fixed_normal_subgroup",
+      "normal_iff_fixed",
+      "fixed_from_pointed_paths",
+      "pointed_paths_from_fixed"
+    ],
+    "principal": [
+      "normal_to_subgroup_injective",
+      "IsNormalSubgroup",
+      "normal_iff_fixed"
+    ],
+    "note": "i : Nor(G) -> Sub(G) is an injection: two sections of a set family over the connected BG that agree at sh_G are equal. 'H is normal' is the proposition that the fiber of i over H is inhabited. The formalization shows that this proposition is equivalent to a second condition: the action of every g : USym G on Sub(G) fixes H."
   },
   {
     "chapter": 9,
@@ -21138,8 +22271,22 @@
     "labels": [
       "def:setofkernels"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "epi_kernel",
+      "KernelsOf",
+      "kernels_include",
+      "kernels_include_injective",
+      "epis_to_kernels",
+      "epis_to_kernels_surjective",
+      "kernels_set"
+    ],
+    "principal": [
+      "KernelsOf",
+      "epis_to_kernels",
+      "kernels_include"
+    ],
+    "note": "Ker_G is the propositional image of ker : Epi(G) -> Mono(G). It comes with the surjection ker : Epi(G) -> Ker_G and the injection i : Ker_G -> Mono(G). Ker_G is a set."
   },
   {
     "chapter": 9,
@@ -21151,8 +22298,20 @@
     "labels": [
       "def:ker2"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "nor_gset",
+      "nor_gset_value",
+      "nor_subgroup",
+      "nor_conn",
+      "nor",
+      "epis_to_connected"
+    ],
+    "principal": [
+      "nor",
+      "nor_conn"
+    ],
+    "note": "nor(G', f, !)(y) = (P_{f(y)} o f, refl_{f(y)}, !) : Sub(G)(y). This gives nor : Epi(G) -> Nor(G). The transitivity of P_{f(y)} o f uses the fact that Bf has connected fibers (lem:epi-surj). nor_conn is the same map on homomorphisms with connected fibers."
   },
   {
     "chapter": 9,
@@ -21162,8 +22321,16 @@
     "line": 1408,
     "section_raw": "Normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "torsor_action_type_contractible",
+      "contractible_action_type_torsor",
+      "nor_gset_torsor_iff_iso"
+    ],
+    "principal": [
+      "nor_gset_torsor_iff_iso"
+    ],
+    "note": "The G-set P_{f(y)} o f is a G-torsor iff f is an isomorphism. The formalization proves both directions, for any homomorphism f. The action type of this G-set is the fiber of Bf at Bf(y). A G-set is a torsor iff its action type is contractible."
   },
   {
     "chapter": 9,
@@ -21175,8 +22342,23 @@
     "labels": [
       "lem:diagfornormal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsConnectedHom",
+      "is_connected_hom_prop",
+      "ConnectedEpis",
+      "connected_epi_kernel",
+      "kernel_gset_transitive",
+      "kernel_subgroup_path",
+      "kernel_nor_subgroup_path",
+      "diag_for_normal",
+      "kernel_normal"
+    ],
+    "principal": [
+      "diag_for_normal",
+      "kernel_normal"
+    ],
+    "note": "E(i(ker f)) = i(nor f) in Sub(G). Around the top, the result is z |-> (sh_G' = f z), pointed at Bf_pt. Around the bottom, the result is z |-> (f sh_G = f z), pointed at refl. Precomposition with Bf_pt^-1 identifies the two. The statement is for homomorphisms with connected fibers, that is, for the epimorphisms (lem:epi-surj). As a consequence, kernels of epimorphisms are normal (kernel_normal)."
   },
   {
     "chapter": 9,
@@ -21188,8 +22370,25 @@
     "labels": [
       "lem:evaliseqwhennormal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_family",
+      "normal_family_point",
+      "normal_family_map",
+      "normal_evaluation",
+      "nsub_eval_family_map",
+      "nsub_eval_family_surjective",
+      "nsub_evaluation_surjective",
+      "nsub_evaluation_injective",
+      "normal_evaluation_equiv",
+      "normal_evaluation_is_equiv",
+      "normal_family_map_surjective"
+    ],
+    "principal": [
+      "normal_evaluation_is_equiv",
+      "normal_family_map_surjective"
+    ],
+    "note": "Let N : Nor(G) with N(y) = (X_y, pt_y, !), and let y, z : BG. Then ev_yz : (X_y = X_z) -> X_z(y), f |-> f_y(pt_y), is an equivalence. Also, X : (y = z) -> (X_y = X_z) (ap of y |-> X_y) is surjective. The proof computes ev_yz(X(p)) = p^-1 . pt_z by path induction. It does not use the reduction of the book to y = z."
   },
   {
     "chapter": 9,
@@ -21201,8 +22400,24 @@
     "labels": [
       "def:normalquotient"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_quotient_group",
+      "normal_quotient_map",
+      "normal_quotient_point",
+      "normal_quotient_hom",
+      "normal_quotient_usym_surjective",
+      "normal_quotient_epi",
+      "normal_quotient_connected",
+      "normal_quotient_epis",
+      "normal_quotient_connected_epis"
+    ],
+    "principal": [
+      "normal_quotient_group",
+      "normal_quotient_hom",
+      "normal_quotient_epi"
+    ],
+    "note": "G/N = Aut_{G-Set}(X_{sh_G}), the automorphism group of X_{sh_G} in GSet G. The map q_N has Bq_N(z) = X_z. q_N is an epimorphism: USym q_N is surjective by lem:evaliseqwhennormal, and then lem:epi-surj applies. q(N) = (G/N, q_N, !) : Epi(G). Deviation: the book's q_N is strictly pointed. Here the pointing is the component path whose first component is refl. The second components are proofs of a proposition."
   },
   {
     "chapter": 9,
@@ -21212,8 +22427,20 @@
     "line": 1466,
     "section_raw": "Normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_quotient_family",
+      "normal_quotient_paths_equiv",
+      "normal_quotient_paths_path",
+      "normal_quotient_torsor_factorization",
+      "torsor_quotient_component"
+    ],
+    "principal": [
+      "normal_quotient_paths_path",
+      "torsor_quotient_component",
+      "normal_quotient_torsor_factorization"
+    ],
+    "note": "For a G-type Y, Y/N(y) = Sigma_z Y(z) x X_z(y). P_y/N = X_y as type families, in particular P_G/N = X_{sh_G}. Thus q_N is (-/N) after y |-> P_y on underlying families. For a G-torsor Y, the family Y/N is merely equal to X_{sh_G} (in its component). The statement is for families of types BG -> U."
   },
   {
     "chapter": 9,
@@ -21225,8 +22452,39 @@
     "labels": [
       "lem:qeq"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "epis_to_connected",
+      "epis_connected_equiv",
+      "nor",
+      "nor_equiv",
+      "nor_q_epi_path",
+      "q_nor_epi_path",
+      "HomsFrom",
+      "homs_from_iso_path",
+      "qeq_nor_q_equiv",
+      "qeq_nor_q_point",
+      "qeq_nor_q_at",
+      "nor_q_path",
+      "qeq_restricted_paths",
+      "qeq_Q_map",
+      "qeq_Q_point",
+      "qeq_Q",
+      "qeq_Q_ap_is_equiv",
+      "qeq_Q_iso",
+      "qeq_point_algebra",
+      "qeq_Q_compose_path",
+      "qeq_q_nor_homs_path",
+      "q_nor_path",
+      "nor_conn_equiv"
+    ],
+    "principal": [
+      "nor_equiv",
+      "nor_q_epi_path",
+      "q_nor_epi_path",
+      "nor_conn_equiv"
+    ],
+    "note": "nor : Epi(G) -> Nor(G) is an equivalence with inverse q (nor_equiv, nor_q_epi_path, q_nor_epi_path). The formalization proves this first on ConnectedEpis G, that is, on homomorphisms whose classifying map has connected fibers (lem:epi-surj (3')). Then it transfers the result through lem:epi-surj (epis_connected_equiv). Q : Hom(G', G/nor f), BQ(z) = P_z o Bf, is an isomorphism. The proof shows that ap BQ is an equivalence (lem:pathsptransportiseq and lem:epifullyfaithful). It does not use the preimage computation of the book."
   },
   {
     "chapter": 9,
@@ -21238,8 +22496,16 @@
     "labels": [
       "cor:normalisnormal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "epis_to_kernels_injective",
+      "kernels_equiv",
+      "connected_kernel_injective"
+    ],
+    "principal": [
+      "kernels_equiv"
+    ],
+    "note": "ker : Epi(G) -> Ker_G is an equivalence. It is injective because E i ker = i nor, and i nor is injective by lem:qeq. It is surjective because Ker_G is constructed as the image."
   },
   {
     "chapter": 9,
@@ -21251,8 +22517,23 @@
     "labels": [
       "lem:characterizations of normal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "characterizations_of_normal",
+      "kernels_equiv",
+      "nor_equiv",
+      "associated_kernel_equiv",
+      "monos_fixed_points_equiv",
+      "AgsetFixedPoints",
+      "agset_fixed_points_prop",
+      "ev_gset_fixed_points_equiv",
+      "abstract_monos_fixed_points_equiv"
+    ],
+    "principal": [
+      "characterizations_of_normal",
+      "abstract_monos_fixed_points_equiv"
+    ],
+    "note": "The five sets are equivalent. Epi(G) ~ Ker_G (kernels_equiv). Epi(G) ~ Nor(G) (nor_equiv). Ker_G ~ Nor(G) (through ass). The fixed points of the G-set Mono(G) ~ Nor(G), because E is an identification of G-sets. The fixed points of the abstr(G)-set of abstract monomorphisms of lem:conj-abstract ~ Nor(G). Item (5) says 'abstract subgroups'. But the abstract G-set of lem:conj-abstract consists of abstract monomorphisms, and the formalization uses these."
   },
   {
     "chapter": 9,
@@ -21264,8 +22545,18 @@
     "labels": [
       "def:associatednormal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "associated_kernel_mono",
+      "associated_kernel_group",
+      "kernel_quotient_associated_path",
+      "associated_kernel"
+    ],
+    "principal": [
+      "associated_kernel",
+      "kernel_quotient_associated_path"
+    ],
+    "note": "ass(N) = E^-1 i(N) : Mono(G). Its group is Ass(N) = subgroup_group G (N sh_G), with B = Sigma_x X_{sh_G}(x) at (sh_G, pt), and its map is the first projection. ker q(N) = ass(N) in Mono(G), so ass(N) : Ker_G. The identification comes from lem:diagfornormal, lem:qeq and lem:SubG=MonoG, not from the explicit ev_{x sh_G}."
   },
   {
     "chapter": 9,
@@ -21275,8 +22566,16 @@
     "line": 1582,
     "section_raw": "Normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "weyl_group",
+      "gset_path_eval_injective",
+      "normal_evaluation_equiv"
+    ],
+    "principal": [
+      "weyl_group"
+    ],
+    "note": "The margin remark tells where normality is used. For any transitive Y with a point, the group W = Aut_{G-Set}(Y) exists (weyl_group, def:Weyl). Evaluation (Y = Y) -> Y(z) is injective by transitivity alone (chapter 5, gset_path_eval_injective). Normality gives the surjectivity of evaluation (normal_evaluation_equiv). The remaining sentences ('we wouldn't know how to construct a homomorphism', 'we'd be stuck') are informal commentary."
   },
   {
     "chapter": 9,
@@ -21288,8 +22587,22 @@
     "labels": [
       "lem:normalsarekernels"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "associated_kernel_include",
+      "associated_kernel_subgroup",
+      "connected_epi_as_epi",
+      "associated_kernel_nor",
+      "associated_kernel_nor_epi",
+      "associated_kernel_equiv",
+      "kernel_from_nor_path"
+    ],
+    "principal": [
+      "associated_kernel_equiv",
+      "associated_kernel_nor_epi",
+      "associated_kernel_subgroup"
+    ],
+    "note": "The diagram commutes: i o ass = E^-1 o i (definitional), E o i o ass = i on Nor(G), and ass o nor = ker on Epi(G). Also, ker, nor and ass are equivalences (kernels_equiv, nor_equiv, associated_kernel_equiv). The formalization reads the printed Nor(G)' as Nor(G). The primed variant belongs to commented-out text."
   },
   {
     "chapter": 9,
@@ -21299,8 +22612,28 @@
     "line": 1801,
     "section_raw": "Intersecting with normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsAbstractSubgroup",
+      "AbstractSubgroups",
+      "abstract_subgroup_intersection",
+      "picked_out_unit",
+      "picked_out_mul",
+      "picked_out_inv",
+      "picked_out_abstract_subgroup",
+      "intersection_picked_out_both",
+      "both_picked_out_intersection",
+      "intersection_picked_out_iff",
+      "intersection_abstract_subgroup_agrees",
+      "picked_out_image",
+      "picked_out_self_intersection"
+    ],
+    "principal": [
+      "abstract_subgroup_intersection",
+      "picked_out_abstract_subgroup",
+      "intersection_picked_out_iff"
+    ],
+    "note": "An abstract subgroup of an abstract group is a family of propositions that contains the unit and is closed under multiplication and inverses. H ∩ K is the pointwise product. Let m, m' be monomorphisms into G. The symmetries that they pick out (SymmetryPickedOut) form abstract subgroups of abstr(G). Consider the intersection group_mono_intersection G m m' (the pullback group of chapter 8, def:intersectionofgroups). The symmetries that it picks out are exactly the symmetries that both m and m' pick out (pointwise iff, through pullback_group_usym_equiv). The formalization does not state that every abstract subgroup of abstr(G) comes from a monomorphism."
   },
   {
     "chapter": 9,
@@ -21312,8 +22645,40 @@
     "labels": [
       "lem:whatSylow2needs"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pullback_group",
+      "pbg_space",
+      "pbg_point",
+      "pullback_group_proj_right",
+      "WsnPullback",
+      "wsn_to_fiber",
+      "wsn_from_fiber",
+      "wsn_to_from",
+      "wsn_from_to",
+      "wsn_equiv",
+      "wsn_base_path",
+      "wsn_iso_map",
+      "wsn_iso_point",
+      "wsn_iso_hom",
+      "wsn_iso",
+      "wsn_iso_compose",
+      "wsn_intersection_homs_path",
+      "wsn_intersection_mono",
+      "wsn_intersection_as_mono",
+      "wsn_monos_reassoc",
+      "what_sylow_needs_kernel",
+      "WsnInduced",
+      "wsn_induced_base",
+      "wsn_induced",
+      "what_sylow_needs_induced",
+      "what_sylow_needs_quotient_subgroup"
+    ],
+    "principal": [
+      "what_sylow_needs_kernel",
+      "what_sylow_needs_induced"
+    ],
+    "note": "Let f : Hom(G,G') have connected fibers, so f is an epimorphism by lem:epi-surj. Let N = ker f and let (H, i) be a monomorphism. Then N cap H equals ker(fi) in Mono(H). Here N cap H is the pullback of the kernel inclusion and i (pullback_group of chapter 8, def:intersectionofgroups of congp.tex). Also, the induced homomorphism H/(N cap H) -> G' is a monomorphism k with k o q = fi. Here H/(N cap H) is the quotient of thm:fund-thm-homs for fi. Its normal subgroup has the underlying subgroup E(N cap H) (what_sylow_needs_quotient_subgroup). As in the book, the proof contracts away y : BG."
   },
   {
     "chapter": 9,
@@ -21323,8 +22688,20 @@
     "line": 1825,
     "section_raw": "Intersecting with normal subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "intersection_into_mono",
+      "subgroup_intersection_mono",
+      "subgroup_intersection_sub",
+      "sub_what_sylow_needs_kernel",
+      "sub_what_sylow_needs_induced"
+    ],
+    "principal": [
+      "subgroup_intersection_sub",
+      "sub_what_sylow_needs_kernel",
+      "sub_what_sylow_needs_induced"
+    ],
+    "note": "This is lem:whatSylow2needs with a subgroup S : Sub(G) in place of (H, i) : Mono(G), where H = subgroup_group G S and i = subgroup_inclusion G S. Also, N = E(ker f) : Sub(G). N ∩ S is defined for subgroups as the pullback of the two inclusions, as a subgroup of S through E. (1) E(ker f) ∩ S = E(ker(f ∘ i_S)) in Sub(S). (2) The induced S/(N ∩ S) → G' is a monomorphism with k ∘ q = f ∘ i_S. As in module 915, a hypothesis states that f has connected fibers (lem:epi-surj (3'))."
   },
   {
     "chapter": 9,
@@ -21336,8 +22713,23 @@
     "labels": [
       "lem:thereisaconjugate"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "IsSubgroupFixedPoint",
+      "conjugate_mono",
+      "conjugate_fixed_point_iff",
+      "conjugate_mono_action",
+      "subgroup_fixed_point_usym_fixed",
+      "sigma3_t0_mono",
+      "sigma3_t0_zero_fixed",
+      "thereisaconjugate_printed",
+      "thereisaconjugate_printed_refuted"
+    ],
+    "principal": [
+      "thereisaconjugate_printed_refuted",
+      "conjugate_fixed_point_iff"
+    ],
+    "note": "The lemma is refuted as printed. The conjugate gH ≔ (H, F, g^-1 Bf_pt) is ill-typed in the composition order of the book. Its only well-typed reading (g^-1 first, = conjugate_mono G g^-1 m) makes the lemma false (thereisaconjugate_printed_refuted, module 992). The counterexample is Σ3 on Fin 3, with H = T_0 = Stab(0), g = (0 1 2) and x = 2. Then g·2 = 0 is T_0-fixed. But then g^-1·2 = 1 would be T_0-fixed, while (1 2) ∈ T_0 moves it. Corrected statement (conjugate_fixed_point_iff, 913): g·x is H-fixed iff x is fixed for (H, F, g then Bf_pt). This is the pointing that the proof of the book computes with, that is, the action of g^-1 on Mono(G) (conjugate_mono_action)."
   },
   {
     "chapter": 9,
@@ -21347,8 +22739,27 @@
     "line": 1887,
     "section_raw": "Automorphisms of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "inn_symmetry_iso",
+      "inn_ap_iso_hom",
+      "inn_symmetry_iso_hom",
+      "inn_usym_usym",
+      "ch9w2_pointed_path_refl_homotopy",
+      "ch9w2_pointed_path_point_refl",
+      "inn_usym_fst",
+      "inn_group_path_shape",
+      "inn_usym_acts_by_conjugation",
+      "inn_usym_printed",
+      "conjugation_flip_act",
+      "inn_usym_printed_refuted"
+    ],
+    "principal": [
+      "inn_usym_printed_refuted",
+      "inn_usym_usym",
+      "inn_symmetry_iso_hom"
+    ],
+    "note": "USym inn(g) = ap_{Binn}(g) with B-component (refl, g) (module 437, judgmental). Through univalence (group_path_iso_equiv), it is the pointed equivalence (id_BG, g^-1) = conj_hom of 437 (inn_symmetry_iso_hom). Transport along refl is the identity only up to refl.liftr. The printed formula USym(USym inn(g)) = (h ↦ g^-1 h g) is false. inn_usym_printed_refuted (module 992) refutes it with Σ3, g = (0 1 2) and h = (0 1). The formula would force g g h = h g g, which is false at 0. Corrected formula: h ↦ g·h·g^-1 in the usym_mul convention (inn_usym_usym). The book's 'id pointed by the path p' must be pointed by p^-1 in its own orientation y = id(sh)."
   },
   {
     "chapter": 9,
@@ -21358,8 +22769,14 @@
     "line": 1938,
     "section_raw": "Automorphisms of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "outer_gset"
+    ],
+    "principal": [
+      "outer_gset"
+    ],
+    "note": "out(G) ≔ coker(inn) : GSet(Aut(G)). Literally, it is cokernel G (group_aut G) (inn G)."
   },
   {
     "chapter": 9,
@@ -21371,8 +22788,19 @@
     "labels": [
       "lemma:coker-out-action"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "outer_paths_gset",
+      "outer_gset_equiv",
+      "outer_gset_path",
+      "outer_gset_equiv_point",
+      "inn_fiber_equiv",
+      "ch9w2_set_trunc_equiv"
+    ],
+    "principal": [
+      "outer_gset_path"
+    ],
+    "note": "out(G) = (G' ↦ ‖BG'÷ = BG÷‖0) as Aut(G)-sets. The proof applies set truncation to inn_fiber_equiv. The point |(sh_G, Binn_pt)|0 goes to |refl|0 judgmentally."
   },
   {
     "chapter": 9,
@@ -21382,8 +22810,20 @@
     "line": 1956,
     "section_raw": "Automorphisms of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "inner_aut_group",
+      "inner_aut_classifying_equiv",
+      "inner_aut_classifying_group_equiv",
+      "inner_aut_classifying_equiv_group",
+      "outer_paths_component",
+      "ch9w2_group_path_sigma_equiv"
+    ],
+    "principal": [
+      "inner_aut_group",
+      "inner_aut_classifying_equiv_group"
+    ],
+    "note": "Inn(G) ≔ Img(inn) (image_group of 901). The formalization proves the running-text equivalence BInn(G) ≃ Σ_{G':Group} ‖BG'÷ = BG÷‖0 in two steps. The first step is Σ over BAut(G) (inner_aut_classifying_equiv). The second step is Σ over all of Group: an element of ‖BG'÷ = BG÷‖0 forces G' into the component of G (outer_paths_component)."
   },
   {
     "chapter": 9,
@@ -21393,8 +22833,24 @@
     "line": 1967,
     "section_raw": "Automorphisms of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "inner_normal_gset",
+      "inner_normal_point",
+      "inner_normal_outer_equiv",
+      "inner_normal_outer_path",
+      "inner_normal_transitive_shape",
+      "inner_normal_transitive",
+      "inner_normal",
+      "inner_normal_image_subgroup",
+      "inner_normal_path",
+      "inner_aut_normal"
+    ],
+    "principal": [
+      "inner_normal",
+      "inner_aut_normal"
+    ],
+    "note": "N(G') ≔ (H ↦ ‖BG'÷ = BH÷‖0, |refl|0, transitivity) : NormalSubgroups (group_aut G) (module 903). Transitivity comes from the connectedness of BAut(G), from out(G) (cokernel_transitive) through path inversion. N(sh) = E(img(inn)) (inner_normal_path, through image_subgroup and subgroup_mono_roundtrip). The formalization packages this as IsNormalSubgroup (inner_aut_normal)."
   },
   {
     "chapter": 9,
@@ -21404,8 +22860,15 @@
     "line": 2001,
     "section_raw": "Automorphisms of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "outer_aut_group",
+      "outer_aut_group_quotient_path"
+    ],
+    "principal": [
+      "outer_aut_group"
+    ],
+    "note": "Out(G) ≔ Aut_{GSet(Aut(G))}(out(G)), the right-hand side of the book. The formalization defines it directly, because its normal quotient (module 904) was not available. outer_aut_group_quotient_path identifies Aut_{GSet}(N(sh).gset) with it. Aut_{GSet}(N(sh).gset) is the normal-quotient form for N = inner_normal."
   },
   {
     "chapter": 9,
@@ -21417,8 +22880,32 @@
     "labels": [
       "cons:simpler-version-Out"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "UniverseOneTrunc",
+      "universe_one_trunc_unit",
+      "universe_one_trunc_groupoid",
+      "universe_one_trunc_paths",
+      "outer_simple_group",
+      "outer_family0",
+      "outer_family",
+      "outer_family_beta",
+      "outer_simple_point",
+      "outer_simple_hom",
+      "outer_simple_compute",
+      "outer_simple_eval_transitive",
+      "outer_simple_ap_equiv_gen",
+      "outer_simple_ap_equiv",
+      "outer_simple_iso",
+      "outer_simple_path",
+      "ch9w2_concat_right_equiv",
+      "ch9w2_equiv_of_embedding_composite"
+    ],
+    "principal": [
+      "outer_simple_iso",
+      "outer_simple_path"
+    ],
+    "note": "‖U‖1 is the concrete truncation Trunc 2 Type of module 202. It needs no hypothesis. BΦ is the component map of ψ : ‖U‖1 → GSet(Aut G). ψ is the extension of X ↦ (G' ↦ ‖BG'÷ = X‖0), pointed through lemma:coker-out-action. ap_ψ at |BG÷| is an equivalence for two reasons. First, evaluation at |refl|0 is injective, because out(G) is transitive. The book uses normality here (lem:evaliseqwhennormal). Second, ev ∘ conj ∘ ap_ψ ∘ (‖a=b‖0 ≃ (|a|=|b|)) is the identity on ‖BG÷=BG÷‖0 (outer_simple_compute, by path induction). connected_map_equiv_from_loops concludes the proof. The book has an intermediate claim: BAut_{‖U‖1}(|BG÷|) is the 1-truncation of the component of BG÷ in U. The formalization does not use or state this claim."
   },
   {
     "chapter": 9,
@@ -21431,8 +22918,25 @@
       "def:Weyl",
       "def:normalizer"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "weyl_group",
+      "normalizer_group",
+      "normalizer_inclusion",
+      "NormalizerSigma",
+      "weyl_component_transitive",
+      "weyl_component_connected",
+      "normalizer_to_sigma",
+      "normalizer_sigma_path",
+      "sigma_to_normalizer",
+      "normalizer_sigma_equiv"
+    ],
+    "principal": [
+      "weyl_group",
+      "normalizer_group",
+      "normalizer_sigma_equiv"
+    ],
+    "note": "Let S = (X, pt, !) : Sub(G) be a subgroup. Then W_G H = Aut_{G-Set}(X). N_G H is the stabilizer of S in the G-set Sub(G), that is, Aut_{Sigma_y Sub(G)(y)}(sh, X, pt). The running-text equivalence e : BN_G H = Sigma_{(y,Y)} Y(y) is normalizer_sigma_equiv. There, the sum is reordered as Sigma_{Y : BW} Sigma_{y : BG} Y(y). It includes the step from ||X = Y|| to ||(sh,X,pt) = (y,Y,v)|| through transitivity."
   },
   {
     "chapter": 9,
@@ -21442,8 +22946,51 @@
     "line": 2141,
     "section_raw": "The Weyl group}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normalizer_inclusion_mono",
+      "weyl_projection_map",
+      "weyl_projection_point",
+      "weyl_projection",
+      "weyl_projection_connected",
+      "weyl_projection_epi",
+      "normalizer_subgroup_point",
+      "normalizer_subgroup_base",
+      "normalizer_subgroup_map",
+      "normalizer_subgroup_point_path",
+      "normalizer_subgroup_hom",
+      "normalizer_inclusion_factor",
+      "HomsInto",
+      "homs_into_iso_path",
+      "WeylFiber",
+      "weyl_fiber_from",
+      "weyl_fiber_to",
+      "weyl_transport_inverse_refl",
+      "weyl_fiber_to_from",
+      "weyl_transport_right",
+      "weyl_fiber_from_to_base",
+      "weyl_fiber_from_to",
+      "weyl_fiber_equiv",
+      "weyl_kernel_map",
+      "weyl_kernel_point",
+      "weyl_kernel_hom",
+      "weyl_kernel_iso",
+      "weyl_kernel_compose",
+      "weyl_kernel_homs_path",
+      "normalizer_subgroup_mono",
+      "normalizer_subgroup_as_mono",
+      "weyl_kernel_mono_path",
+      "normalizer_subgroup_normal",
+      "normalizer_subgroup_normal_element",
+      "normalizer_subgroup_normal_element_underlying"
+    ],
+    "principal": [
+      "normalizer_inclusion_mono",
+      "weyl_projection_epi",
+      "weyl_kernel_mono_path",
+      "normalizer_inclusion_factor"
+    ],
+    "note": "i_{N_G H} is a monomorphism. p_G^H : N_G H -> W_G H is an epimorphism, because its fibers are the connected action types Sigma_y Y(y). j_H : H -> N_G H is a monomorphism with (H, j_H) = ker p_G^H in Mono(N_G H). Thus H is normal in N_G H (normalizer_subgroup_normal). Also, i_H = i_{N_G H} o j_H. The formalization resolves the book's '(?for?)' as Mono(N_G H). Bp is (y,Y,pt,!) |-> (Y,!), up to the propositional component."
   },
   {
     "chapter": 9,
@@ -21455,8 +23002,53 @@
     "labels": [
       "lem:WGHisHfixofG/H"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "weyl_fixed_map",
+      "weyl_fixed_map_injective",
+      "weyl_endo_surjective",
+      "weyl_endo_equiv_finite",
+      "weyl_fixed_map_surjective_finite",
+      "weyl_fixed_equiv_finite",
+      "weyl_usym_fixed_map",
+      "weyl_usym_fixed_equiv_finite",
+      "weyl_cx_set",
+      "weyl_cx_group",
+      "weyl_cx_shift",
+      "weyl_cx_shift_inv",
+      "weyl_cx_shift_retr",
+      "weyl_cx_shift_sect",
+      "weyl_cx_shift_equiv",
+      "weyl_cx_swap",
+      "weyl_cx_swap_involutive",
+      "weyl_cx_swap_equiv",
+      "WeylCxExtension",
+      "WeylCxExtends",
+      "weyl_cx_injections",
+      "weyl_cx_gset",
+      "WeylCxPoints",
+      "weyl_cx_points_path",
+      "weyl_cx_incl",
+      "weyl_cx_swapped",
+      "weyl_cx_left_code",
+      "weyl_cx_incl_ne_swapped",
+      "weyl_cx_transitive_at",
+      "weyl_cx_transitive",
+      "weyl_cx_subgroup",
+      "weyl_cx_drop",
+      "weyl_cx_drop_hom",
+      "weyl_cx_drop_identifies",
+      "weyl_cx_fixed_point",
+      "weyl_fixed_map_not_surjective",
+      "weyl_fixed_printed",
+      "weyl_fixed_printed_refuted"
+    ],
+    "principal": [
+      "weyl_fixed_printed_refuted",
+      "weyl_fixed_map_injective",
+      "weyl_usym_fixed_equiv_finite"
+    ],
+    "note": "As printed, the lemma is false. The printed statement is USym W_GH ≃ (G/H)^H through e(f)(y,v) = f_y(v), for all G, H. The proof identifies G-maps X -> X with automorphisms. weyl_fixed_printed_refuted (module 993) gives a counterexample. Let G = Σ_{N+N}, and let X(Y) be the maps j : N -> Y that merely extend to a bijection N+N ≃ Y along inl. X is transitive and pointed by inl, and H fixes the left copy pointwise. The map 'drop the first value' j ↦ j ∘ suc is a G-map, that is, an H-fixed point. It identifies inl with (inl 0, inr 0) ∘ inl. Thus it is not in the image of e (t^-1 H t ⊊ H for the shift t). Corrected statement: e is always an injection. It is an equivalence when G/H = X(sh_G) is finite (weyl_fixed_equiv_finite, weyl_usym_fixed_equiv_finite)."
   },
   {
     "chapter": 9,
@@ -21468,8 +23060,15 @@
     "labels": [
       "lem:aut-orbit"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "aut_orbit_iso",
+      "aut_orbit_compat"
+    ],
+    "principal": [
+      "aut_orbit_iso"
+    ],
+    "note": "Aut_{G-Set}(G/H), that is, the Weyl group W_G H, is isomorphic to N_G(H)/H. Here H is the normal subgroup nor(p_G^H) of N_G(H) whose underlying subgroup is (H, j_H) (normalizer_subgroup_normal_element_underlying). The isomorphism is compatible with the projections. The proof applies lem:qeq to the epimorphism p_G^H."
   },
   {
     "chapter": 9,
@@ -21481,8 +23080,23 @@
     "labels": [
       "thm:fund-thm-homs"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "image_projection_connected_epi",
+      "kernel_normal_subgroup",
+      "kernel_normal_subgroup_underlying",
+      "kernel_quotient_group",
+      "fundamental_theorem_homs",
+      "fundamental_theorem_homs_path",
+      "fundamental_theorem_homs_compat",
+      "fundamental_theorem_homs_sigma3",
+      "kernel_normal_subgroup_is_kernel"
+    ],
+    "principal": [
+      "fundamental_theorem_homs",
+      "fundamental_theorem_homs_compat"
+    ],
+    "note": "For f : Hom(G, G'), Img(f) is isomorphic to G/ker f, compatibly with the projections (Q o p(f) = q). The book leaves the map as TODO. The formalization realises ker f as the normal subgroup nor(p(f)) whose underlying subgroup is E(ker f) (kernel_normal_subgroup_is_kernel, through lem:kerandcoker). The isomorphism is the Q of lem:qeq."
   },
   {
     "chapter": 9,
@@ -21494,8 +23108,52 @@
     "labels": [
       "def:center"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Bunch",
+      "bunch",
+      "bunch_structure_prop",
+      "group_bunch_equiv",
+      "CenterFixedPoints",
+      "center_fixed_points_adjoint",
+      "center_identity_loops_equiv",
+      "CenterClassifying",
+      "center_classifying_point",
+      "center_classifying_groupoid",
+      "center_classifying_connected",
+      "center_fun_group",
+      "center_fun_loops_equiv",
+      "ch9w2_equiv_map_embedding",
+      "ch9w2_transport_map_embedding",
+      "center_trr_point",
+      "center_component_classifying_equiv",
+      "center_comparison_map",
+      "center_comparison_equiv",
+      "center_comparison_path",
+      "BTwoCenter",
+      "btwo_center_point",
+      "bunch_path_equiv",
+      "bunch_structure_transport",
+      "btwo_center_bb_equiv",
+      "btwo_center_bb_point",
+      "btwo_center_connected",
+      "btwo_center_loops_equiv",
+      "center_bb_loops_path",
+      "center_group_abelian",
+      "center_fun_abelian",
+      "center_abelian_group",
+      "center_of_abelian_path",
+      "center_of_abelian_usym_equiv",
+      "center_fixed_point_central",
+      "sigma3_tau_not_in_center"
+    ],
+    "principal": [
+      "center_fun_group",
+      "center_fun_loops_equiv",
+      "btwo_center_loops_equiv",
+      "center_fun_abelian"
+    ],
+    "note": "The statement is for 1-groups. Z(G) ≔ Π_z (z = z) ≃ (id = id) (funext). Judgmentally, Z(G) is InvariantMaps of the adjoint G-set. BZ(G) ≔ Σ_f ‖f ~ id‖ is a pointed connected groupoid whose loop type is Z(G). B²Z(G) ≔ Σ_{Y:Bunch} ‖bunch(G) = Y‖0 is connected with loop type BZ(G). The proof uses BB G of module 1204, the sum over Type, and the identification of group_center of 1202 with mkgroup(BZ(G)). Z(G) is abelian by Eckmann-Hilton on BB G (sc2_loop_group_abelian). Litmus tests: Z(G) = G for abelian G. Values of elements of Z(G) at sh are central, so τ ∈ Σ3 is not such a value (sigma3_tau_not_in_center)."
   },
   {
     "chapter": 9,
@@ -21507,8 +23165,23 @@
     "labels": [
       "thm:hom-mod-conj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "hom_conj_gset",
+      "hom_conj_gset_underlying",
+      "PcgStructure",
+      "HomConjTotal",
+      "HomConjUnfolded",
+      "hom_conj_unfold_equiv",
+      "hom_conj_core_equiv",
+      "hom_mod_conj_orbit_equiv",
+      "hom_mod_conj_equiv"
+    ],
+    "principal": [
+      "hom_conj_gset",
+      "hom_mod_conj_equiv"
+    ],
+    "note": "The statement is for (1-)groups G, H. The book allows higher groups. The action of Inn(H) is the Inn(H)-set z ↦ ‖Hom(G, K_z)‖0 over BInn(H) of module 956. Here BInn(H) comes from Img(inn), identified with Σ_{K:Group} ‖BK÷ = BH÷‖0. Up to path inversion, this is the book's ‖bunch(H) = bunch(K)‖0. The underlying set of the Inn(H)-set is ‖Hom(G,H)‖0 = ‖BG →* BH‖0. The equivalence ‖BG÷ → BH÷‖0 ≃ ‖X_{hInn(H)}‖0 follows the printed chain. The chain uses truncated_sum_equiv twice and groups as pointed bunches. Then it contracts the point and then the bunch."
   },
   {
     "chapter": 10,

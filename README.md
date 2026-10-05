@@ -20,7 +20,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 6: A categorical interlude](chapters/ch06/README.md) | 89 | 89 | 0 | 0 | 0 | 0 | 10 |
 | [Chapter 7: Groups, abstractly](chapters/ch07/README.md) | 51 | 48 | 3 | 0 | 0 | 0 | 4 |
 | [Chapter 8: Constructing groups](chapters/ch08/README.md) | 39 | 36 | 0 | 0 | 3 | 0 | 2 |
-| **Total** | **684** | **672** | **8** | **0** | **4** | | **47** |
+| [Chapter 9: Normal subgroups and quotients](chapters/ch09/README.md) | 71 | 66 | 5 | 0 | 0 | 0 | 5 |
+| **Total** | **755** | **738** | **13** | **0** | **4** | | **52** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:
