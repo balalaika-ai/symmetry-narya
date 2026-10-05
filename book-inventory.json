@@ -24822,8 +24822,16 @@
     "line": 23,
     "section_raw": "Abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_center",
+      "center_space_groupoid",
+      "center_space_equivalences"
+    ],
+    "principal": [
+      "group_center"
+    ],
+    "note": "The group Z(G) is automorphism_group on Id Type BG÷ BG÷ at refl, that is, Aut_{(BG÷ = BG÷)}(refl). The margin equivalence (BG÷ = BG÷) ≃ (BG ≃ BG) is center_space_equivalences (module 1212). Identifications of types are the native Id Type of Narya, and transport evaluates them (φ .trr)."
   },
   {
     "chapter": 12,
@@ -24835,8 +24843,20 @@
     "labels": [
       "lemma:center-is-subgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "center_inclusion_covering",
+      "center_evaluation",
+      "center_evaluation_point",
+      "center_inclusion",
+      "center_ap_evaluation",
+      "center_ap_injective",
+      "center_ap_embedding"
+    ],
+    "principal": [
+      "center_inclusion_covering"
+    ],
+    "note": "The map B z_G = center_evaluation G (φ ↦ φ .trr sh_G on the component of refl) has set fibers (IsCovering). The definitional ev(refl) ≡ sh_G of the book is the lifting path refl .liftr sh_G (center_evaluation_point). The proof uses the injectivity of ap_{B z_G} on paths (BG connected, BG a groupoid), not the three-step argument of the book."
   },
   {
     "chapter": 12,
@@ -24848,8 +24868,14 @@
     "labels": [
       "lemma:center-inc-inj-on-paths"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "center_inclusion_injective"
+    ],
+    "principal": [
+      "center_inclusion_injective"
+    ],
+    "note": "The homomorphism abstr(z_G) = usym_hom (group_center G) G (center_inclusion G) is an embedding (IsEmbedding: propositional fibers). For a map between sets, this is injectivity."
   },
   {
     "chapter": 12,
@@ -24861,8 +24887,20 @@
     "labels": [
       "lemma:center-inc-surj-on-paths"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "center_inclusion_central_fiber",
+      "CentralSymmetry",
+      "CentralExtensionFamily",
+      "central_extension_contractible",
+      "central_extension",
+      "central_lift",
+      "central_lift_value"
+    ],
+    "principal": [
+      "center_inclusion_central_fiber"
+    ],
+    "note": "Let g : USym G with gh = hg for all h (CentralSymmetry, in usym_mul order). Then the fiber of ap_{B z_G} = usym_hom of z_G over g has an element. The proof is as in the book. For every x, the family T_x(q) = Π(p : sh_G = x) (p g = q p) has a contractible total space (by connectedness, checked at sh_G). Its centre gives ĝ. Function extensionality/univalence turns ĝ into a loop at refl in BG÷ = BG÷."
   },
   {
     "chapter": 12,
@@ -24874,8 +24912,20 @@
     "labels": [
       "def:abelian-groups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_iff_center_iso",
+      "abelian_center_inclusion_iso",
+      "center_iso_abelian",
+      "center_usym_equiv",
+      "AbstractCenter",
+      "abelian_center_pointed_equiv",
+      "abelian_center_path"
+    ],
+    "principal": [
+      "abelian_iff_center_iso"
+    ],
+    "note": "IsAbelian G (ch4: Π g h, gh = hg) is equivalent to IsGroupIso (group_center G) G (center_inclusion G), that is, to the statement that B z_G is an equivalence. Both are propositions. The displayed equivalence before the lemma, USym Z(G) ≃ Σ(g) Π(h) gh = hg, is center_usym_equiv."
   },
   {
     "chapter": 12,
@@ -24885,8 +24935,14 @@
     "line": 224,
     "section_raw": "Abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_iff_center_iso"
+    ],
+    "principal": [
+      "abelian_iff_center_iso"
+    ],
+    "note": "The only mathematical content of the remark is that def:abelian-groups could serve as the definition of abelian groups. That is, it is equivalent to def:abgp (IsAbelian of chapter 4). This is abelian_iff_center_iso. The rest (why the book did not do so) is expository."
   },
   {
     "chapter": 12,
@@ -24896,8 +24952,19 @@
     "line": 252,
     "section_raw": "Abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "UnivCover",
+      "univ_cover_point",
+      "univ_cover_pointed",
+      "univ_cover_projection",
+      "univ_cover_projection_covering"
+    ],
+    "principal": [
+      "UnivCover",
+      "univ_cover_projection"
+    ],
+    "note": "The type Ũ_a A ≔ Σ(x : A) ‖a = x‖₀ (SetTrunc of the native identity type) comes with the first projection. It is pointed at (a, |refl a|₀), as stated after the definition. The lemma univ_cover_projection_covering records that fst is a covering (set fibers)."
   },
   {
     "chapter": 12,
@@ -24909,8 +24976,20 @@
     "labels": [
       "lemma:universal-cover-simply-connected"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "univ_cover_simply_connected",
+      "SimplyConnected",
+      "univ_cover_connected",
+      "univ_cover_loops_connected",
+      "univ_cover_loops_component_equiv",
+      "univ_cover_path_equiv",
+      "trunc_refl_mere_equiv"
+    ],
+    "principal": [
+      "univ_cover_simply_connected"
+    ],
+    "note": "SimplyConnected (Ũ_a A, (a, |refl|)) holds for every type A and a : A. Here SimplyConnected X ≔ Connected X÷ × Connected (Ω X), the definition in the running text. As in the book, Ω Ũ_a A ≃ the component of refl in a = a (univ_cover_loops_component_equiv), through eq:id-types-universal-cover."
   },
   {
     "chapter": 12,
@@ -24922,8 +25001,18 @@
     "labels": [
       "lemma:universal-cover-is-universal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "univ_cover_universal",
+      "univ_cover_pointed_covering",
+      "CoverSections",
+      "cover_sections_contractible",
+      "cover_lift_sections_equiv"
+    ],
+    "principal": [
+      "univ_cover_universal"
+    ],
+    "note": "IsUniversalPointedCover (Ũ_a A) (A, a) (fst) holds for an arbitrary pointed type, in the sense of def:univ-cover (module 98). That is, for every pointed covering g : C →* (A, a), the type of pointed lifts h with fst = g ∘ h is contractible (with equality of pointed maps). The proof uses pointed sections of the fiber family over Ũ_a A. Path induction determines them on |p|₀, as in the book."
   },
   {
     "chapter": 12,
@@ -24935,8 +25024,32 @@
     "labels": [
       "thm:abelian-groups-weq-sc2types"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_groups_sc2_equiv",
+      "abelian_groups_sc2_book_equiv",
+      "BB",
+      "bb_sc2",
+      "bb_two_type",
+      "bb_simply_connected",
+      "SimplyConnectedTwoType",
+      "SC2Structure",
+      "sc2_loops",
+      "sc2_loop_group",
+      "eckmann_hilton",
+      "horizontal_interchange",
+      "abelian_bb_loops_pointed_equiv",
+      "abelian_bb_loops_path",
+      "sc2_reconstruction",
+      "sc2_reconstruction_pointed_equiv",
+      "sc2_bb_loops_path"
+    ],
+    "principal": [
+      "abelian_groups_sc2_equiv",
+      "BB",
+      "SimplyConnectedTwoType"
+    ],
+    "note": "Equiv AbelianGroup SimplyConnectedTwoType has the map A ↦ BB(A) = (Ũ_{BG÷} U, (BG÷, |refl|)) and the inverse Ω. SimplyConnectedTwoType is the printed Σ((A, a) : U_*) isconn(A) × isconn(a = a) × isgrpd(a = a). The footnote of the book (BB G lives in a successor universe, Replacement) does not apply, because Narya has one universe. The proof of Eckmann-Hilton extends a 2-loop to a homotopy and uses naturality. The formalization also proves eq:horizontal-comp (horizontal_interchange). The reconstruction Φ : (A, a) ≃* BB(Ω(A, a)) follows the T-family argument of the book."
   },
   {
     "chapter": 12,
@@ -24946,8 +25059,16 @@
     "line": 678,
     "section_raw": "Abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WarnTorsor",
+      "PointedWarnTorsor"
+    ],
+    "principal": [
+      "WarnTorsor",
+      "PointedWarnTorsor"
+    ],
+    "note": "The formalization defines TX ≔ Σ(Y : Type) ‖Y‖ × Π(y : Y) BookPointedEquiv (Y, y) X and TX_* ≔ Σ(t : TX) fst t, as printed (single universe)."
   },
   {
     "chapter": 12,
@@ -24957,8 +25078,16 @@
     "line": 688,
     "section_raw": "Abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "warn_delooping",
+      "warn_loops_equiv",
+      "warn_delooping_path"
+    ],
+    "principal": [
+      "warn_delooping"
+    ],
+    "note": "If TX_* is contractible, then Ω(TX, t) ≃* X for every t : TX and y : fst t (and = X as pointed types). The proof follows the book. Two contractions give (t = t) ≃ Σ(u) fst u × (t = u) ≃ fst t. Then the equivalence of the torsor gives (fst t, y) ≃* X. The hypothesis of the book is a centre (t, y). The formal statement allows any pointed torsor. This is the same, because TX_* is contractible."
   },
   {
     "chapter": 12,
@@ -24970,8 +25099,15 @@
     "labels": [
       "xca:sections-as-dependent-functions"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sections_dependent_equiv",
+      "SectionsOf"
+    ],
+    "principal": [
+      "sections_dependent_equiv"
+    ],
+    "note": "SectionsOf A B f ≔ Σ(s : B → A) (f ∘ s = id_B) is equivalent to Π(b : B) Σ(a : A) b = f(a), with the printed orientation of both identifications. The proof uses funext, path inversion and choice."
   },
   {
     "chapter": 12,
@@ -24983,8 +25119,21 @@
     "labels": [
       "lem:warn-abelian-group"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "warn_abelian_torsor_equiv",
+      "warn_abelian_torsor_path",
+      "central_warn_torsor_equiv",
+      "IsCentral",
+      "abelian_bg_central",
+      "warn_torsor_sections_equiv",
+      "central_component_evaluation_equiv",
+      "evaluation_sections_component_equiv"
+    ],
+    "principal": [
+      "warn_abelian_torsor_equiv"
+    ],
+    "note": "For abelian G, T(BG) ≃ BB G .carrier (and = as types). As the footnote says, the proof works for every connected central pointed type X. Here IsCentral means that ev on the component of refl in X÷ = X÷ is an equivalence. For BG this is def:abelian-groups. Then TX ≃ Σ Y ‖Y‖ × sec(ev) ≃ Σ Y ‖X÷ = Y‖₀ = Ũ_{X÷} U. The map ev_{X÷,Y} is transport of the point. The book defines it by path induction. The two definitions agree up to the lifting path on refl."
   },
   {
     "chapter": 12,
@@ -24994,8 +25143,16 @@
     "line": 792,
     "section_raw": "Homomorphisms of abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_hom_group",
+      "pointed_maps_bb_groupoid",
+      "bb_hlevel_four"
+    ],
+    "principal": [
+      "abelian_hom_group"
+    ],
+    "note": "Hom(G, H) ≔ automorphism_group on BookPointedMap (BG G) (BB H) at book_pointed_constant (cst pointed by refl), for a group G and an abelian group H. The groupoid property is pointed_maps_bb_groupoid. This is the remark in the running text that BG →* BB H is a 1-type."
   },
   {
     "chapter": 12,
@@ -25005,8 +25162,21 @@
     "line": 802,
     "section_raw": "Homomorphisms of abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_hom_usym_equiv",
+      "abelian_hom_abstract_book_equiv",
+      "constant_loops_pointed_equiv",
+      "pointed_postcompose_equiv",
+      "abelian_hom_usym_function",
+      "abelian_hom_abstract_equiv",
+      "AbstrHomIsEquiv"
+    ],
+    "principal": [
+      "abelian_hom_usym_equiv",
+      "abelian_hom_abstract_book_equiv"
+    ],
+    "note": "The equivalence USym(Hom(G, H)) ≃ absHom(abstr G, abstr H) follows the printed chain. First, (cst = cst) ≃ (BG →* Ω BB H) ≃ (BG →* BH) ≃ Hom(G, H) (abelian_hom_usym_equiv, module 1207). Then lem:homomabstrconcr of chapter 7 (abstr_hom_is_equiv, module 710) gives the last step (abelian_hom_abstract_book_equiv, module 1219). Only H must be abelian: abelian_hom_usym_equiv and abelian_hom_abstract_book_equiv take G : Group and H : AbelianGroup. The statement of the construction assumes that both G and H are abelian."
   },
   {
     "chapter": 12,
@@ -25016,8 +25186,22 @@
     "line": 824,
     "section_raw": "Homomorphisms of abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_hom_abstract_mul",
+      "abelian_hom_usym_mul",
+      "pointwise_hom_mul",
+      "hom_of_symmetry",
+      "free_loop_symmetry",
+      "abelian_hom_group_abelian",
+      "abelian_hom_abelian_group",
+      "abelian_hom_abstract_book_equiv",
+      "abelian_hom_abstract_book_equiv_map"
+    ],
+    "principal": [
+      "abelian_hom_abstract_mul"
+    ],
+    "note": "The equivalence of construction 802 sends p·q to the pointwise product (abstract homomorphisms into abelian abstr H). Its map is p ↦ abstr(hom_of_symmetry p) (abelian_hom_abstract_book_equiv_map). The proof is different from the proof of the book. The book generalizes to pointed maps s, t : BG →* BB H and uses a pasting map Ω_g. The book source itself leaves the definition of Ω_g as a TODO ('[TODO: defn of pasting triangles on both sides of a square]', abelian.tex 859). The formal proof does not use it. For abelian H, Ω of a pointed map into BH does not depend on the pointing path (free_loop_symmetry), and ap of a pointwise concatenation splits. Consequence: Hom(G, H) is abelian (abelian_hom_group_abelian). Only H must be abelian: abelian_hom_usym_mul and abelian_hom_abstract_mul take G : Group and H : AbelianGroup. The lemma (through construction 802) assumes that both G and H are abelian."
   },
   {
     "chapter": 12,
@@ -25027,8 +25211,27 @@
     "line": 928,
     "section_raw": "Homomorphisms of abelian groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abelian_hom_usym_bb_equiv",
+      "bb_pointed_maps_equiv",
+      "bb_pointed_maps_equiv_square",
+      "bbmap_loops_compose_equiv",
+      "bbmap_loops_injective",
+      "bbmap_pointed",
+      "BBMapComp",
+      "bbmap_eval_equiv",
+      "bbmap_component_eval_equiv",
+      "bbmap_pointed_path_from_homotopy",
+      "bbmap_round_trip",
+      "bb_pointed_maps_equiv_identity",
+      "bb_unit_pointed_maps_contractible"
+    ],
+    "principal": [
+      "abelian_hom_usym_bb_equiv",
+      "bb_pointed_maps_equiv"
+    ],
+    "note": "For abelian G, H: USym(Hom(G, H)) ≃ (BB G →* BB H). The equivalence is composed of abelian_hom_usym_equiv (1207), group_hom_classifying_equiv and the inverse of bb_pointed_maps_equiv : (BB K →* BB L) ≃ (BK →* BL) for abelian K, L. The forward map of bb_pointed_maps_equiv is Ω, transported along Ω(BB -) ≃* B- (bb_pointed_maps_equiv_square). The book gives no proof. The formal proof has two parts. First, Ω is injective on pointed maps from a simply connected type into a type with groupoid path types (bbmap_loops_injective). Second, Ω is surjective through an explicit BB on maps (bbmap_pointed). This BB sends (Z, α) to the component of maps Z → BL that α determines. It is contravariant, so the proof applies it to ψ ∘ (-)⁻¹ ∘ ev⁻¹. The statement is a native Equiv. The formalization does not restate that both sides are sets."
   },
   {
     "chapter": 12,
@@ -25038,8 +25241,24 @@
     "line": 949,
     "section_raw": "Direct sums and reduced wreath products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "lamplighter_group",
+      "lamplighter_usym_equiv",
+      "reduced_wreath_product",
+      "reduced_power_group",
+      "finsupp_abstract_group",
+      "FinSupp",
+      "reduced_wreath_usym_equiv",
+      "lamplighter_unrestricted_group",
+      "lamplighter_unrestricted_usym_equiv",
+      "wreath_usym_functions_equiv"
+    ],
+    "principal": [
+      "lamplighter_group",
+      "lamplighter_usym_equiv"
+    ],
+    "note": "The example only names C₂ ≀ Z (with a \\wip note on infinite direct sums). The formalization follows the section title. Thus C₂ ≀ Z is the reduced wreath product Z ⋉ (z ↦ concr(⊕_{X(z)} C₂)), with X the principal Z-set and ⊕ the finitely supported functions. Finiteness here is Kuratowski finiteness, so decidability is not necessary. Its symmetries are USym Z × ⊕_{USym Z} C₂. With the wreath product of chapter 8 (congp.tex, H^X = all functions), C₂ ≀ Z is the unrestricted product with symmetries Z × (Z → C₂). This is not the lamplighter group. The formalization gives both."
   },
   {
     "chapter": 13,

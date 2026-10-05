@@ -1,0 +1,427 @@
+[
+  {
+    "source": "abelian.tex",
+    "line": 23,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/01-center.ny",
+    "blind_declarations": [
+      "BlindCenter",
+      "blind_universe_loops_groupoid",
+      "blind_center_ev",
+      "blind_center_ev_refl",
+      "blind_center_inc_B",
+      "blind_center_inc"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-01-center.ny",
+    "bridge_declarations": [
+      "bridge_def_center",
+      "bridge_def_center_bg",
+      "bridge_def_center_ev",
+      "bridge_def_center_point",
+      "bridge_def_center_inc",
+      "bridge_center_usym"
+    ],
+    "our_declarations": [
+      "group_center",
+      "center_space_groupoid",
+      "center_evaluation",
+      "center_evaluation_point",
+      "center_inclusion"
+    ],
+    "note": "BlindCenter G and group_center G are automorphism_group on (BG÷ = BG÷) at refl with different groupoid witnesses. They have the same BG by refl, and the groups are equal through group_path_pointed_equiv (bridge_def_center). Also, blind_center_ev = center_evaluation by refl. The blind pointing path inverse(inverse(refl .liftr sh_G)) is equal to ours by inverse_inverse. Thus the pointed maps B ζ_G agree (bridge_def_center_inc), and their Ω agree pointwise (bridge_center_usym)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 78,
+    "labels": [
+      "lemma:center-is-subgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/01-center.ny",
+    "blind_declarations": [
+      "blind_center_is_subgroup"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-01-center.ny",
+    "bridge_declarations": [
+      "bridge_center_is_subgroup",
+      "bridge_center_is_subgroup_converse"
+    ],
+    "our_declarations": [
+      "center_inclusion_covering"
+    ],
+    "note": "The blind map BZ(G)÷ → BG÷ is center_evaluation by refl. Ours and the blind statement imply each other directly."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 117,
+    "labels": [
+      "lemma:center-inc-inj-on-paths"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/01-center.ny",
+    "blind_declarations": [
+      "blind_center_inc_inj_on_paths"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-01-center.ny",
+    "bridge_declarations": [
+      "bridge_center_inc_inj_on_paths"
+    ],
+    "our_declarations": [
+      "center_inclusion_injective"
+    ],
+    "note": "IsEmbedding is transported along funext of bridge_center_usym. Ω of the blind ζ_G is different from ours only through the pointing path."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 126,
+    "labels": [
+      "lemma:center-inc-surj-on-paths"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/01-center.ny",
+    "blind_declarations": [
+      "blind_center_inc_surj_on_paths"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-01-center.ny",
+    "bridge_declarations": [
+      "bridge_center_fiber",
+      "bridge_center_inc_surj_on_paths"
+    ],
+    "our_declarations": [
+      "center_inclusion_central_fiber",
+      "CentralSymmetry"
+    ],
+    "note": "The blind hypothesis is CentralSymmetry G g by refl. Our fiber element is moved to the blind fiber of usym_hom (blind ζ_G) by concatenation with bridge_center_usym. The blind version reads ap as usym_hom, which is also our reading."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 208,
+    "labels": [
+      "def:abelian-groups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/01-center.ny",
+    "blind_declarations": [
+      "BlindIff",
+      "blind_abelian_iff_center_iso"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-01-center.ny",
+    "bridge_declarations": [
+      "bridge_abelian_iff_center_iso",
+      "bridge_abelian_iff_center_iso_converse"
+    ],
+    "our_declarations": [
+      "abelian_iff_center_iso",
+      "abelian_center_inclusion_iso",
+      "center_iso_abelian"
+    ],
+    "note": "IsGroupIso sees only the underlying map, which is ours by refl. Thus the two directions are ours. Converse: our BookEquiv comes from the blind 'if and only if' statement (both sides are propositions)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 224,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "This is an expository remark. The blind version agrees (no claim). Our inventory maps it to abelian_iff_center_iso, the implicit content of the remark. This result is bridged at line 208."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 252,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/02-universal-cover.ny",
+    "blind_declarations": [
+      "BlindUnivCover",
+      "blind_univ_cover_point",
+      "blind_univ_cover_pointed",
+      "blind_univ_cover_proj",
+      "blind_univ_cover_proj_pointed"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-02-universal-cover.ny",
+    "bridge_declarations": [
+      "bridge_def_univ_cover",
+      "bridge_def_univ_cover_pointed",
+      "bridge_def_univ_cover_proj"
+    ],
+    "our_declarations": [
+      "UnivCover",
+      "univ_cover_point",
+      "univ_cover_pointed",
+      "univ_cover_projection"
+    ],
+    "note": "The type Σ(x : A) ‖a = x‖₀ is the same, and the point and the projection pointed by refl are the same. All hold by refl."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 301,
+    "labels": [
+      "lemma:universal-cover-simply-connected"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/02-universal-cover.ny",
+    "blind_declarations": [
+      "BlindIsSimplyConnected",
+      "blind_universal_cover_simply_connected"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-02-universal-cover.ny",
+    "bridge_declarations": [
+      "bridge_def_simply_connected",
+      "bridge_universal_cover_simply_connected",
+      "bridge_universal_cover_simply_connected_converse"
+    ],
+    "our_declarations": [
+      "SimplyConnected",
+      "univ_cover_simply_connected"
+    ],
+    "note": "BlindIsSimplyConnected is SimplyConnected by refl. The statements are the same."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 331,
+    "labels": [
+      "lemma:universal-cover-is-universal"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/02-universal-cover.ny",
+    "blind_declarations": [
+      "blind_universal_cover_is_universal"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-02-universal-cover.ny",
+    "bridge_declarations": [
+      "bridge_universal_cover_is_universal",
+      "bridge_universal_cover_is_universal_converse"
+    ],
+    "our_declarations": [
+      "univ_cover_projection_covering",
+      "univ_cover_universal"
+    ],
+    "note": "The blind statement is covering × IsUniversalPointedCover. Ours gives both components (univ_cover_projection_covering, univ_cover_universal)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 409,
+    "labels": [
+      "thm:abelian-groups-weq-sc2types"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/03-abelian-sc2types.ny",
+    "blind_declarations": [
+      "BlindBB",
+      "BlindSimplyConnectedTwoTypes",
+      "BlindUUsc2",
+      "blind_abelian_groups_weq_sc2types",
+      "blind_abelian_groups_weq_sc2types_proof_codomain"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-03-abelian-sc2types.ny",
+    "bridge_declarations": [
+      "bridge_def_bb",
+      "bridge_def_uusc2",
+      "bridge_sc2_to_blind",
+      "bridge_sc2_of_blind",
+      "bridge_def_sc2_structure",
+      "bridge_def_sc2_types",
+      "bridge_abelian_groups_weq_sc2types",
+      "bridge_abelian_groups_weq_sc2types_proof_codomain"
+    ],
+    "our_declarations": [
+      "abelian_groups_sc2_equiv",
+      "abelian_groups_sc2_book_equiv",
+      "SimplyConnectedTwoType",
+      "SC2Structure",
+      "sc2_two_type",
+      "BB"
+    ],
+    "note": "The bridge covers both blind codomains. The U_*^{=2} in the proof is our SimplyConnectedTwoType by refl (bridge = abelian_groups_sc2_book_equiv). The codomain of the statement (simply connected, carrier of HLevel 4) is equivalent to ours fibrewise. Both are propositions, and sc2_two_type gives groupoid path types everywhere. This is composed with abelian_groups_sc2_equiv. Ours gives a specific equivalence (A ↦ BB A, inverse Ω). This is stronger than the blind mere existence."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 678,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/04-warn-torsors.ny",
+    "blind_declarations": [
+      "BlindTorsors",
+      "BlindPointedTorsors"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-04-warn-torsors.ny",
+    "bridge_declarations": [
+      "bridge_def_torsors",
+      "bridge_def_pointed_torsors"
+    ],
+    "our_declarations": [
+      "WarnTorsor",
+      "PointedWarnTorsor"
+    ],
+    "note": "TX and TX_* are ours by refl."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 688,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/04-warn-torsors.ny",
+    "blind_declarations": [
+      "BlindIsDelooping",
+      "blind_warn_delooping"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-04-warn-torsors.ny",
+    "bridge_declarations": [
+      "bridge_contr_path",
+      "bridge_warn_torsor_connected",
+      "bridge_warn_delooping",
+      "bridge_warn_delooping_converse"
+    ],
+    "our_declarations": [
+      "warn_delooping"
+    ],
+    "note": "The blind delooping is Connected TX × Ω(TX, t) ≃* X. The second component is warn_delooping. Our statement does not state the connectedness of TX. It follows the gloss of delooping in the book at abelian.tex 671-673 as ΩY = X. The bridge derives this connectedness from the contractibility of TX_*. Converse: ours is the second projection of the blind one."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 707,
+    "labels": [
+      "xca:sections-as-dependent-functions"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/04-warn-torsors.ny",
+    "blind_declarations": [
+      "BlindSections",
+      "blind_sections_as_dependent_functions"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-04-warn-torsors.ny",
+    "bridge_declarations": [
+      "bridge_def_sections",
+      "bridge_sections_as_dependent_functions"
+    ],
+    "our_declarations": [
+      "SectionsOf",
+      "sections_dependent_equiv"
+    ],
+    "note": "BlindSections is SectionsOf by refl (identity B unfolds to b ↦ b). The printed orientation b = f(a) is the same. BookEquiv comes from our native Equiv through book_equivalence."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 730,
+    "labels": [
+      "lem:warn-abelian-group"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/04-warn-torsors.ny",
+    "blind_declarations": [
+      "blind_warn_abelian_group"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-04-warn-torsors.ny",
+    "bridge_declarations": [
+      "bridge_warn_abelian_group"
+    ],
+    "our_declarations": [
+      "warn_abelian_torsor_equiv"
+    ],
+    "note": "BlindBB G is BB G by refl. The bridge is book_equivalence of warn_abelian_torsor_equiv."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 792,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/05-hom-abelian.ny",
+    "blind_declarations": [
+      "blind_grphom_cst",
+      "blind_grphom_classifying",
+      "BlindGrpHom",
+      "blind_grphom_well_defined",
+      "BlindGrpHomSym",
+      "blind_grphom_mul"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-05-hom-abelian.ny",
+    "bridge_declarations": [
+      "bridge_def_grphom_cst",
+      "bridge_def_grphom_classifying",
+      "bridge_aut_group_path",
+      "bridge_def_grphom",
+      "bridge_def_grphom_sym",
+      "bridge_def_grphom_mul",
+      "bridge_grphom_well_defined"
+    ],
+    "our_declarations": [
+      "abelian_hom_group",
+      "pointed_maps_bb_groupoid",
+      "book_pointed_constant"
+    ],
+    "note": "The constant cst, the classifying type, the symmetries and the multiplication are ours by refl. BlindGrpHom G H hH lvl is equal to abelian_hom_group G (H, hH) for any groupoid witness lvl. This is bridge_def_grphom, through bridge_aut_group_path: ap of automorphism_group along isgroupoid_isprop. The well-definedness claim is pointed_maps_bb_groupoid, which does not need H to be abelian."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 802,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/05-hom-abelian.ny",
+    "blind_declarations": [
+      "blind_grphom_abstract_hom_equiv"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-05-hom-abelian.ny",
+    "bridge_declarations": [
+      "bridge_grphom_abstract_hom_equiv"
+    ],
+    "our_declarations": [
+      "abelian_hom_abstract_book_equiv"
+    ],
+    "note": "This is directly abelian_hom_abstract_book_equiv (G .fst) H. Ours assumes only that H is abelian."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 824,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/05-hom-abelian.ny",
+    "blind_declarations": [
+      "blind_grphom_equiv_pointwise_hom"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-05-hom-abelian.ny",
+    "bridge_declarations": [
+      "bridge_grphom_equiv_pointwise_hom"
+    ],
+    "our_declarations": [
+      "abelian_hom_abstract_book_equiv",
+      "abelian_hom_abstract_mul",
+      "pointwise_hom_mul"
+    ],
+    "note": "The blind statement asks for some equivalence E with E(p·q)(g) = E(p)(g)·E(q)(g). It is weaker than the book. Our construction-802 equivalence is a witness, with the pointwise law from abelian_hom_abstract_mul. Ours is stronger. It is stated for the specific equivalence of 802, as the book says ('the previous equivalence'), and for any group G."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 928,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch12/blind/05-hom-abelian.ny",
+    "blind_declarations": [
+      "blind_grphom_bb_maps_equiv"
+    ],
+    "bridge_file": "chapters/ch12/blind/bridge-05-hom-abelian.ny",
+    "bridge_declarations": [
+      "bridge_grphom_bb_maps_equiv"
+    ],
+    "our_declarations": [
+      "abelian_hom_usym_bb_equiv"
+    ],
+    "note": "This is book_equivalence of abelian_hom_usym_bb_equiv. BlindBB = BB by refl."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 949,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "This is a title-only example with a \\wip note. Blind: no claim. We formalize the Lamplighter group through reduced wreath products (lamplighter_group, module 1220) and the unrestricted C₂ ≀ Z (module 1211). There is nothing to bridge."
+  }
+]

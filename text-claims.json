@@ -12803,5 +12803,522 @@
     "importance": "medium",
     "declarations": [],
     "note": "This is the proof of the conjugacy part of 946. Core graphs are not defined, and the conjugacy decision is not formalized."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 11,
+    "quote": "Recall that given a pointed type $X$, we coerce it silently to its underlying unpointed type $X_\\div$ ... we shall use the notation $\\BG \\ptdweto \\BG$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "BookPointedEquiv",
+      "BookPointedMap"
+    ],
+    "note": "Notation. The coercion X ↦ X÷ is the field projection .carrier. Pointed equivalences are BookPointedEquiv (module 162)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 28,
+    "quote": "We work transparently through the equivalence $(\\BG_\\div=\\BG_\\div) \\weq (\\BG \\weq \\BG)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "center_space_equivalences",
+      "transport_univalence_equiv"
+    ],
+    "note": "This is a margin note at the definition of the center: transport_univalence_equiv at BG÷ (module 1212)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 37,
+    "quote": "There is a natural map $\\ev_{\\shape_G} : (\\BG_\\div\\eqto\\BG_\\div) \\to \\BG_\\div$ ... In particular, $\\ev_{\\shape_G}(\\refl{\\BG_\\div}) \\jdeq \\shape_G$. ... it defines a group homomorphism $\\grpcenterinc G : \\Hom(\\grpcenter(G), G)$ such that $\\B \\grpcenterinc G \\defequi \\ev_{\\shape_G}$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "center_evaluation",
+      "center_evaluation_point",
+      "center_inclusion"
+    ],
+    "note": "The map ev is ev(φ) = φ .trr sh_G (transport). In Narya, transport along refl does not reduce. Thus ev(refl) ≡ sh_G becomes the lifting path refl .liftr sh_G : sh_G = refl .trr sh_G. The formalization uses this path as the pointing of B z_G."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 50,
+    "quote": "The homomorphism $\\grpcenterinc G$ induces a homomorphism of abstract groups from $\\abstr(\\grpcenter(G))$ to $\\abstr(G)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "abstr_hom",
+      "center_inclusion"
+    ],
+    "note": "This is abstr_hom (group_center G) G (center_inclusion G) (chapter 4, rem:first-abs-hom)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 53,
+    "quote": "By induction on $p:\\refl{\\BG_\\div} \\eqto \\varphi$ for $\\varphi:\\BG_\\div \\eqto \\BG_\\div$, one proves that $\\ap{\\B \\grpcenterinc G}(p) = p(\\shape_G)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "center_ap_evaluation",
+      "universe_path_homotopy_equiv"
+    ],
+    "note": "The formalization reads a path p of identifications of BG÷ as the homotopy universe_path_homotopy_equiv(p) : φ.trr ~ ψ.trr. By definition (refl), ap_{B z_G}(p) is its value at sh_G. No induction is necessary."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 56,
+    "quote": "One proves furthermore, again by induction on $p:\\refl{\\BG_\\div} \\eqto \\varphi$, that $\\ap \\varphi = (q\\mapsto \\inv{p(\\shape_G)} q p(\\shape_G))$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "center_path_naturality",
+      "refl_transport_symmetry",
+      "loops_map_homotopic_identity"
+    ],
+    "note": "The statement is the naturality square p(sh)·ap_φ(q) = ap_{refl.trr}(q)·p(sh) of the homotopy p (module 1212). It also uses ap_{refl.trr}(q) = q up to the lifting path (refl_transport_symmetry). The reason is that transport along refl is not definitionally the identity in Narya."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 67,
+    "quote": "In particular, when $\\varphi \\jdeq \\refl{\\BG_\\div}$, it shows that for every $p:\\refl{\\BG_\\div}\\eqto\\refl{\\BG_\\div}$, the following proposition holds: $\\prod_{g:\\USymG }p(\\shape_G) g = g p(\\shape_G)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "center_symmetry_central",
+      "CentralSymmetry"
+    ],
+    "note": "By center_symmetry_central, the image of every symmetry of Z(G) under abstr(z_G) commutes with every g. CentralSymmetry uses usym_mul, the product of the book."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 73,
+    "quote": "In other words, $\\abstr{(\\grpcenterinc G)}$ maps elements of $\\abstr(Z(G))$ to elements of $\\abstr(G)$ that commute with every other elements. (The set of these elements is usually called the center of the group $\\abstr(G)$ in ordinary group theory.)",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "AbstractCenter",
+      "center_to_abstract_center"
+    ],
+    "note": "AbstractCenter G ≔ Σ(g : USym G) Π(h) gh = hg. The map center_to_abstract_center is abstr(z_G), corestricted to it."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 195,
+    "quote": "Together, \\cref{lemma:center-inc-inj-on-paths} and \\cref{lemma:center-inc-surj-on-paths} show that $\\abstr{(\\grpcenterinc G)}$ establishes an equivalence $\\USym \\grpcenter(G) \\equivto \\sum_{g:\\USymG}\\prod_{h:\\USymG}gh=hg$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "center_usym_equiv"
+    ],
+    "note": "BookEquiv (USym (group_center G)) (AbstractCenter G), with the map center_to_abstract_center (embedding + surjection)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 202,
+    "quote": "In yet other words, $\\B \\grpcenter(G)\\defequi \\conncomp{(\\BG_\\div \\eqto \\BG_\\div)}{\\refl{\\BG_\\div}}$ is (equivalent to) the classifying type of a group whose abstract group is the ``abstract center'' of $\\abstr(G)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_center",
+      "center_usym_equiv",
+      "abstr_hom"
+    ],
+    "note": "By definition, BG(group_center G) is the component of refl. The equivalence center_usym_equiv identifies its abstract group with the abstract center. It is the underlying map of the abstract homomorphism abstr(z_G), so it preserves products."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 249,
+    "quote": "Let us say that a pointed type $(A,a)$ is {\\em simply connected} when both $A$ and $a\\eqto a$ are connected types.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "SimplyConnected",
+      "simply_connected_prop"
+    ],
+    "note": "SimplyConnected X ≔ Connected X÷ × Connected (Loop X) (module 1203)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 265,
+    "quote": "The number $1$ indicates that $\\univcover A a$ is the universal $1$-connected cover of $A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "univ_cover_simply_connected",
+      "univ_cover_universal"
+    ],
+    "note": "Footnote: 1-connected = simply connected (lemma:universal-cover-simply-connected) and universal (lemma:universal-cover-is-universal)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 268,
+    "quote": "When needed, we will consider $\\univcover A a$ as a pointed type, with distinguished point $(a,\\settrunc{\\refl a})$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "univ_cover_pointed",
+      "univ_cover_point"
+    ],
+    "note": "As printed."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 269,
+    "quote": "Note that when $A$ is a groupoid, then the set truncation is redundant and the universal \\covering of $A$ at $a$ is then the singleton at $a$. In particular, groupoids have contractible universal \\coverings.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "groupoid_univ_cover_singleton_equiv",
+      "groupoid_univ_cover_contractible"
+    ],
+    "note": "For a groupoid A, Ũ_a A ≃ Σ(x) a = x, because the set truncation of a set is the set itself. Thus Ũ_a A is contractible."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 274,
+    "quote": "The identity types in $\\univcover A a$ can be understood easily once we introduce the following function ... $\\settrunc{q} \\cdot \\settrunc{p} \\defequi \\settrunc{q\\cdot p}$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trunc_path_compose",
+      "trunc_path_compose_beta",
+      "trunc_path_compose_refl"
+    ],
+    "note": "The definition uses set-truncation recursion twice. The equation |q|·|p| = |p then q| holds by refl (trunc_path_compose_beta)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 288,
+    "quote": "Then one proves, by induction on $p:x\\eqto y$, that $\\trp[\\setTrunc{a\\eqto\\blank}]p$ is equal to the function $\\alpha\\mapsto \\settrunc{p}\\cdot \\alpha$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "univ_cover_transport"
+    ],
+    "note": "The proof is by path induction, pointwise in α."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 290,
+    "quote": "In particular, there exists an equivalence ... \\label{eq:id-types-universal-cover} $\\left((x,\\alpha) \\eqto (y,\\beta)\\right) \\equivto \\sum_{p:x\\eqto y}\\settrunc{p} \\cdot \\alpha = \\beta$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "univ_cover_path_equiv",
+      "UnivCoverPath",
+      "univ_cover_path_from"
+    ],
+    "note": "This is eq:id-types-universal-cover. The map sends r to (ap fst r, …)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 350,
+    "quote": "Recall that a type $A$ is called a {\\em $2$-truncated type}, or {\\em $2$-type} for short, when the identity type $x\\eqto y$ is a groupoid for every $x,y:A$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "bb_two_type",
+      "sc2_two_type",
+      "isGroupoid"
+    ],
+    "note": "The formalization uses it as (x y : A) → isGroupoid (Id A x y), for example in bb_two_type and sc2_two_type."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 415,
+    "quote": "This is slightly misleading: If $G$ is an abelian group in universe $\\UU$, then this definition makes $\\BB G$ a pointed type in a successor universe ... So really, $\\BB G$ should be the $\\UU$-small type equivalent to $\\univcover{\\UU}{\\BG_\\div}$.",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "BB"
+    ],
+    "note": "Size bookkeeping. The single universe Type of Narya contains Σ(X : Type) ‖BG÷ = X‖₀. Thus BB G : Type directly, and Replacement is not necessary (module 1204 header)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 426,
+    "quote": "MB: It seems that a large part of the proof doesn't use that $G$ is abelian.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "bb_two_type",
+      "bb_simply_connected",
+      "bb_sc2"
+    ],
+    "note": "This is a margin remark of the author. Indeed, BB G is a pointed simply connected 2-type for every group G (no abelianness hypothesis). Abelianness is used only for Ω(BB G) = BG."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 462,
+    "quote": "$\\UUsctwo \\defequi \\sum_{(A,a):\\UUp}\\left( \\isconn(A) \\times \\isconn(a\\eqto a) \\times \\isgrpd(a\\eqto a) \\right)$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "SimplyConnectedTwoType",
+      "SC2Structure",
+      "sc2_two_type"
+    ],
+    "note": "As printed. The lemma sc2_two_type shows that such types are 2-types."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 467,
+    "quote": "one can construct a group, denoted $\\loopspace (A,a)$, with classifying type: $\\B\\loopspace (A,a) \\defequi (a\\eqto a,\\refl a)$ ... Moreover, $\\loopspace (A,a)$ is abelian.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "sc2_loop_group",
+      "sc2_loops",
+      "sc2_loop_group_abelian"
+    ],
+    "note": "As printed."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 478,
+    "quote": "This property holds in even more generality and is usually called ``Eckmann-Hilton's argument'' ... \\label{eq:horizontal-comp} $\\ap{\\blank\\cdot q}(h) \\cdot \\ap{r\\cdot\\blank}(g) = \\ap{s\\cdot \\blank}(g) \\cdot \\ap{\\blank\\cdot p}(h)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "horizontal_interchange",
+      "eckmann_hilton"
+    ],
+    "note": "The equation eq:horizontal-comp is horizontal_interchange (proof by induction on h, as in the book). The proof of Eckmann-Hilton (2-loops commute) extends one 2-loop to a homotopy and uses naturality. This avoids a comparison of the two unit laws of concatenation at refl."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 542,
+    "quote": "Given an abelian group $G$, the proof of~\\cref{lemma:universal-cover-simply-connected} gives an equivalence between $\\B\\loopspace {(\\BB G)}$ and the connected component of $\\refl {\\BG_\\div}$ ... it yields an element of $\\loopspace {(\\BB G)} \\eqto_{\\typegroup} G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "univ_cover_loops_component_equiv",
+      "abelian_bb_loops_pointed_equiv",
+      "abelian_bb_loop_group_path"
+    ],
+    "note": "This is part of the proof of the theorem, recorded as named lemmas."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 552,
+    "quote": "If $X \\ptdweto Y$ denote the type of pointed equivalences between pointed types $X,Y:\\UUp$, then the univalence axiom implies that there is an equivalence $(X=Y) \\weq (X \\ptdweto Y)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_path_equiv"
+    ],
+    "note": "Margin note: pointed_path_equiv (module 162)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 671,
+    "quote": "The function $\\BB$ defined in the proof of~\\cref{thm:abelian-groups-weq-sc2types} provides a delooping of $\\BG$ whenever $G$ is abelian. That is, there is an identification $\\loops \\BB G \\eqto \\BG$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "abelian_bb_delooping",
+      "abelian_bb_loops_pointed_equiv"
+    ],
+    "note": "Id Pointed (Omega (BB G)) (BG G) for abelian G."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 673,
+    "quote": "A systematic way of obtaining such deloopings has been developed by David W\\\"{a}rn, that can be applied here to give an alternative definition of $\\BB G$, and to obtain further deloopings of it.",
+    "kind": "informal",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "warn_abelian_torsor_equiv",
+      "warn_delooping"
+    ],
+    "note": "Attribution. The alternative definition of BB G is lem:warn-abelian-group. The formalization does not construct higher deloopings B^n G (n ≥ 3). The chapter does not construct them either."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 715,
+    "quote": "Consider the evaluation function $\\ev_{X_\\div,Y} : (X_\\div \\eqto Y) \\to Y$ (defined by path-induction, sending $\\refl X$ to the distinguished point of $X$).",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "type_evaluation"
+    ],
+    "note": "The definition is transport of the point, r ↦ r .trr pt_X. On refl, it is the point up to the lifting path, because transport along refl does not reduce in Narya."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 720,
+    "quote": "Applying \\cref{xca:sections-as-dependent-functions} to $\\ev_{X_\\div,Y}$ we get an equivalence of type $TX \\equivto \\sum_{Y : \\UU} \\Trunc{Y} \\times \\secfun(\\ev_{X_\\div,Y})$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "warn_torsor_sections_equiv",
+      "warn_torsor_fibers_equiv",
+      "pointed_equiv_evaluation_fiber_equiv"
+    ],
+    "note": "As printed."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 763,
+    "quote": "Notice that the construction of an equivalence $TX \\equivto \\univcover \\UU {X_\\div}$ that we carried for $X\\jdeq\\BG$ relies only on $X_\\div$ being connected and $\\ev_{X_\\div,X_\\div}\\restriction_{\\refl {X_\\div}}$ being an equivalence. Such types $X$ are called \\emph{central}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "central_warn_torsor_equiv",
+      "IsCentral",
+      "abelian_bg_central"
+    ],
+    "note": "The formalization proves the lemma in this generality: central_warn_torsor_equiv for connected central X. IsCentral is the printed definition."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 776,
+    "quote": "Notice that where W\\\"arn's method shines, compared to our, is in producing further delooping $\\B^n G$ for $n\\geq 3$.",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a comparative remark. Higher deloopings are not part of the chapter."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 782,
+    "quote": "For concrete groups $G$ and $H$, we have defined the set $\\Hom(G,H)$ of group homomorphisms from $G$ to $H$ as the set $\\BG \\ptdto \\BH$. When the codomain $H$ is abelian, it turns out that $\\Hom(G,H)$ is an abstract abelian group. In this section, we define a concrete abelian group $\\grpHom(G,H)$ with an identification $\\Hom(G,H) = \\US{\\grpHom(G,H)}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "abelian_hom_usym_equiv",
+      "abelian_hom_abelian_group",
+      "abelian_hom_group_abelian",
+      "group_hom_classifying_equiv"
+    ],
+    "note": "USym(Hom(G, H)) ≃ GroupHom G H ≃ (BG →* BH), and Hom(G, H) is abelian (module 1208)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 789,
+    "quote": "Given types $X,Y$ and a point $y:Y$, recall that $\\cst y$ is the function that maps all $x:X$ to $y$. If $X$ and $Y$ are pointed, then the function $\\cst {\\pt_Y}$ is trivially pointed by $\\refl{\\pt_Y}$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "book_pointed_constant"
+    ],
+    "note": "As printed."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 799,
+    "quote": "Notice that, since $\\BB H$ is a 2-type, the type $\\BG \\ptdto \\BB H$ a is 1-type and thus $\\grpHom(G,H)$ is well-defined.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_maps_bb_groupoid",
+      "bb_hlevel_four",
+      "pointed_maps_truncation_level"
+    ],
+    "note": "This follows from ft:ptd-decr-h-lev (module 432): pointed maps from the connected BG into the 2-type BB H form a 1-type. This holds for every group H."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 935,
+    "quote": "\\section{The category of abelian groups}",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "AbCat",
+      "ab_cat_univalent",
+      "ab_internal_hom_usym_equiv",
+      "ab_group_inclusion_fully_faithful"
+    ],
+    "note": "The section is empty in the pinned book. Module 1210 records the full subcategory of abelian groups in GroupCat (univalent) and the internal hom Hom(G, H)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 942,
+    "quote": "We saw in~\\cref{sec:coprod} how to produce sums of groups, and noticed that a sum of abelian groups is rarely abelian. Indeed, the free group on two generators $\\FG_2$ is the sum of two copies of $\\ZZ$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_sum_not_abelian",
+      "constructed_circle_sum_not_abelian",
+      "free_bool_group_not_abelian",
+      "constructed_free_sum_wedge_path"
+    ],
+    "note": "Declarations of chapter 8 show the following. Z ∨ Z is not abelian (844, 849). F₂ is not abelian (877). Also F_{S+T} = F_S ∨ F_T (881, so F₂ = Z ∨ Z)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 947,
+    "quote": "But a very similar construction works to produce sums of \\emph{abelian groups}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "direct_sum_hom_equiv",
+      "direct_sum_abstract_equiv",
+      "abelian_product",
+      "reduced_wreath_product",
+      "finsupp_abstract_group"
+    ],
+    "note": "For two groups, the sum among abelian groups is the product: Hom(G × H, K) ≃ Hom(G, K) × Hom(H, K) for abelian K (module 1221). Infinite direct sums ⊕_S H (finitely supported functions) are finsupp_abstract_group (module 1220). The reduced wreath product uses them."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 951,
+    "quote": "\\wip{Wait: how do we do infinite direct sums in general?}",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "finsupp_abstract_group",
+      "reduced_power_group"
+    ],
+    "note": "Editorial note. The formalization answers it for the case that is necessary here: ⊕_S H as the abstract group of Kuratowski-finitely supported functions, made concrete by concr (chapter 7)."
+  },
+  {
+    "source": "abelian.tex",
+    "line": 954,
+    "quote": "\\section{Stabilization}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The section is empty in the pinned book."
   }
 ]
