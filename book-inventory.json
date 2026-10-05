@@ -23191,8 +23191,27 @@
     "line": 16,
     "section_raw": "",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "thirteen_sum_divisors_of_eight_has_one",
+      "fingp_thirteen_eight_has_singleton",
+      "sum_prime_power_divisors_has_one",
+      "cardinality_sigma_prime_power_has_singleton",
+      "fin_sum_prime_power_divisors_has_one",
+      "thirteen_sum_litmus_summands",
+      "thirteen_sum_litmus_divisors",
+      "thirteen_sum_litmus_total",
+      "thirteen_sum_litmus_witness",
+      "gset_orbit_card_divides",
+      "gset_orbit_card_one_fixed",
+      "gset_nonfixed_sum_equiv"
+    ],
+    "principal": [
+      "fingp_thirteen_eight_has_singleton",
+      "thirteen_sum_divisors_of_eight_has_one",
+      "gset_orbit_card_divides"
+    ],
+    "note": "A sum of 13 numbers that divide 8 has a summand 1. The formalization states this over Fin n and computes the index. In orbit form, a finite family of finite sets with |Σ| = 13 and all sizes dividing 8 merely has a singleton (fingp_thirteen_eight_has_singleton). This result is generalized to any prime power. The statement 'Orbits have cardinalities dividing |G|' is gset_orbit_card_divides (module 1022). An orbit of size 1 is a fixed point (gset_orbit_card_one_fixed). The summands are automatically positive, because they are divisors of 8."
   },
   {
     "chapter": 10,
@@ -23202,8 +23221,84 @@
     "line": 27,
     "section_raw": "",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "sigma3_unique_normal_order_three",
+      "sigma3_sylow_three",
+      "sigma3_sylow_three_is_sylow",
+      "sigma3_sylow_three_count",
+      "sigma3_unique_order_three",
+      "sigma3_sylow_three_normal",
+      "sigma3_largest_three",
+      "sylow_count_divides",
+      "sylow_card_one_unique",
+      "sylow_card_one_normal",
+      "cyclic_prime_sylow",
+      "fingp_sylow_of_card",
+      "cyclic_subgroup_member_power",
+      "cyclic_subgroup_power_member",
+      "perm3_equiv",
+      "perm3_symmetry_cube",
+      "perm_symmetry_power_action",
+      "sigma4_sylow_three_count",
+      "sigma4_sylow_three_count_cases",
+      "sigma4_sylow_conjugate",
+      "sigma4_sylow_p_not_normal",
+      "sigma4_sylow_p_ne_q",
+      "sigma4_sylow_p",
+      "sigma4_sylow_q",
+      "sigma4_sylow_p_is_sylow",
+      "sigma4_sylow_q_is_sylow",
+      "factorial_nine_divides",
+      "sigma6_largest_three",
+      "sigma6_order_nine_sylow",
+      "sigma6_d_subgroup",
+      "sigma6_d_subgroup_free",
+      "sigma6_d_subgroup_not_point_fixing",
+      "sigma6_cycle012_subgroup_ne_d",
+      "sigma6_cyclic_subgroups_conjugate",
+      "sigma6_three_subsets",
+      "sigma6_sylow_count_at",
+      "sigma6_factorial_eighty",
+      "sylow_three",
+      "sylow_subgroups_conjugate",
+      "normal_iff_fixed",
+      "FiniteOrderSubgroups",
+      "SubgroupHasMember",
+      "generated_order_p_subgroup",
+      "generated_subgroup_of_member",
+      "generated_fiber_members_equiv",
+      "nontrivial_members_card",
+      "order_p_subgroups_finite",
+      "order_p_period_count",
+      "order_p_subgroups_congruent",
+      "nat_congruent_of_shift",
+      "nat_congruent_one_of_divides",
+      "MovedPoints",
+      "perm_conjugate_moved_equiv",
+      "sn6_c_moved_fin",
+      "sn6_d_moved",
+      "sn6_d2_moved",
+      "sn6_c_subgroup",
+      "sn6_d_subgroup",
+      "sigma_n_order_three_not_conjugate",
+      "sigma_n_order_three_not_all_conjugate",
+      "sym_period_three_card",
+      "sym_order_three_subgroups_card",
+      "sigma_order_three_subgroups_finite",
+      "sigma3_order_three_subgroups_card",
+      "sigma4_order_three_subgroups_card",
+      "sigma5_order_three_subgroups_card",
+      "sigma6_order_three_subgroups_card"
+    ],
+    "principal": [
+      "sigma3_unique_normal_order_three",
+      "sigma4_sylow_three_count",
+      "sigma_n_order_three_not_all_conjugate",
+      "sigma5_order_three_subgroups_card",
+      "sigma6_order_three_subgroups_card"
+    ],
+    "note": "The formalization proves these facts. Sigma_3 has a unique subgroup of order 3, <(0 1 2)>, and this subgroup is normal. Sigma_4 has 1 or 4 subgroups of order 3 (3-Sylow), and they are all conjugate. In Sigma_4, <(0 1 2)> is not normal, so there are exactly 4. Also, 9 | n! for n > 5. For n > 5, the subgroups of order 3 of Sigma_n are not all conjugate. Module 1052 shows this with <(0 1 2)> and <(0 1 2)(3 4 5)> in Sigma_(m+6). The proof counts the moved points: 3 for the first subgroup and 6 for the second. <(0 1 2)> and <(3 4 5)> are conjugate. The formalization refutes three printed claims with formal counterexamples (Bridges, chapters/ch10/blind). The claim 'Sigma_n has n(n-1)(n-2)/6 subgroups of order 3' fails at n = 6. The reason: the number of subgroups of order p of a group with p | |G| is = 1 mod p (order_p_subgroups_congruent, module 1051), and 20 is not. The claim '<(1 2 3)> is not conjugate to <(4 5 6)>' is false. The claim 'one subgroup of order 9 for each 3-element subset' is false: binomial(6,3) = 20 is not = 1 mod 3, but |Syl_3(Sigma_6)| is. Modules 1053-1054 prove the exact numbers of subgroups of order 3 by enumeration. Sigma_3, Sigma_4, Sigma_5 and Sigma_6 have 1, 4, 10 and 40 (sigma5_order_three_subgroups_card, sigma6_order_three_subgroups_card). The book's formula counts only the subgroups generated by a 3-cycle. Two claims are not formalized: the 10 subgroups of order 9 of Sigma_6, and an order-9 subgroup that contains both 3-cycles. An enumeration over the 720 elements of Sigma_6 needs too much memory in the pinned Narya."
   },
   {
     "chapter": 10,
@@ -23215,8 +23310,28 @@
     "labels": [
       "rem:noofsubgps"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "partial",
+    "declarations": [
+      "DecidableSubgroups",
+      "ClosedBoolSubsets",
+      "closed_subset_subgroup",
+      "decidable_subgroups_closed_subsets_equiv",
+      "decidable_subgroups_finite",
+      "decidable_subgroups_card",
+      "c2pow_group",
+      "c2_power_decidable_subgroups_count_zero",
+      "c2_power_decidable_subgroups_count_one",
+      "c2_power_decidable_subgroups_count_two",
+      "c2_power_decidable_subgroups_lower_bound",
+      "c2_power_decidable_subgroups_dwarf",
+      "subgroups_finite_iff_excluded_middle"
+    ],
+    "principal": [
+      "decidable_subgroups_finite",
+      "c2_power_decidable_subgroups_count_two",
+      "c2_power_decidable_subgroups_dwarf"
+    ],
+    "note": "The formal statement is about decidable subgroups. A count of all subgroups is not constructive: the finiteness of all subgroups of finite groups is equivalent to excluded middle (module 1024). Modules 1040-1046 show that the decidable subgroups of any group are the Bool-valued abstract subgroups of USym G (decidable_subgroups_closed_subsets_equiv). Thus a finite group has finitely many decidable subgroups. C_2^0, C_2^1 and C_2^2 have 1, 2 and 5 of them (OEIS A006116). The number for C_2^(m+1) is at least 3^m, and it eventually exceeds k*2^n for every k. The formalization of the count is partial. The stated count 17741753171749626840952685 for C_2^18 needs the Goldman-Rota recurrence G(n+1) = 2G(n) + (2^n - 1)G(n-1) for subspaces of F_2^n. It also needs verified binary or decimal arithmetic, because unary numerals cannot hold this number. The asymptotic 7*2^(n^2/4) ('grows approximately as') is not formalized."
   },
   {
     "chapter": 10,
@@ -23228,8 +23343,21 @@
     "labels": [
       "def:finitegrd"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFiniteGroup",
+      "group_card",
+      "group_finite_set",
+      "finite_group_usym_component",
+      "finite_group_decidable_equality",
+      "is_finite_group_prop"
+    ],
+    "principal": [
+      "IsFiniteGroup",
+      "group_card",
+      "finite_group_usym_component"
+    ],
+    "note": "A finite group is IsFiniteGroup G = IsFinite (USym G) (chapter-4 core, def:finite-group). Its order is |G| = group_card G hG = Card(USym G). The parenthetical remark 'USym G : FinSet_{|G|}' is finite_group_usym_component (module 1020). In the literature, 'order' (line 65) is the same notion as 'cardinality'."
   },
   {
     "chapter": 10,
@@ -23239,8 +23367,30 @@
     "line": 59,
     "section_raw": "Lagrange's theorem, counting version}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fingp_example_group_orders",
+      "trivial_group_finite",
+      "trivial_group_card",
+      "unit_group_finite",
+      "unit_group_card",
+      "fingp_contractible_fin_one_equiv",
+      "cyclic_group_usym_fin_equiv",
+      "cyclic_group_finite",
+      "cyclic_group_card",
+      "symmetric_group_finite",
+      "symmetric_group_card",
+      "symmetric_group_three_card",
+      "int_not_finite",
+      "cyclic_group_zero_usym_int_equiv",
+      "cyclic_group_zero_not_finite"
+    ],
+    "principal": [
+      "fingp_example_group_orders",
+      "cyclic_group_card",
+      "trivial_group_card"
+    ],
+    "note": "The trivial group has order 1. C_n = cyclic_group n has order n for n = b+1 >= 1: evaluation at 0 identifies USym C_{b+1} with Z/(b+1). Sigma_n has order n! (symmetric_group_card, module 412). The card lemmas hold for an arbitrary finiteness proof. The book's C_n presupposes n >= 1. The formalization proves that cyclic_group 0 is not finite (cyclic_group_zero_not_finite, by pigeonhole). Here cyclic_group 0 = Aut_Cyc(Z, succ), and its USym is equivalent to Z."
   },
   {
     "chapter": 10,
@@ -23252,8 +23402,33 @@
     "labels": [
       "lem:Lagrangeascounting"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "lagrange_counting",
+      "lagrange_counting_equal_order",
+      "lagrange_counting_mono",
+      "lagrange_subgroup_divides",
+      "lagrange_index_divides",
+      "lagrange_index_one",
+      "gset_orbit_card_identity",
+      "subgroup_usym_stabilizer_equiv",
+      "subgroup_finiteness_conditions",
+      "subgroup_gset_finite",
+      "subgroup_group_finite",
+      "group_full_subgroup",
+      "subgroup_full_of_contractible",
+      "SubgroupsOfFiniteGroupsFinite",
+      "subgroups_finite_iff_excluded_middle",
+      "subgroups_finite_excluded_middle",
+      "excluded_middle_subgroups_finite",
+      "lem_collapse_subgroup"
+    ],
+    "principal": [
+      "lagrange_counting",
+      "lagrange_counting_equal_order",
+      "subgroups_finite_iff_excluded_middle"
+    ],
+    "note": "Let (X, pt) be a subgroup of a finite group G, with a finite underlying group H. Then |G| = |X(sh_G)|·|H|, where G/H = X(sh_G). The lemma lagrange_counting_mono states this for a monomorphism i : H → G with G/H = Bi⁻¹(sh_G). Also, |H| = |G| implies H = G as subgroups. Deviation: the book asserts that H and G/H are finite for every subgroup. Constructively, this assertion is equivalent to excluded middle (module 1024). The proof of this equivalence uses a subgroup of Σ_2 that collapses Fin 2 along a proposition P. Thus the finiteness of H is a hypothesis. By module 1020, it is equivalent to the finiteness of G/H and to the decidability of the subgroup. The free action of H on G in the proof is the orbit–stabilizer count gset_orbit_card_identity."
   },
   {
     "chapter": 10,
@@ -23265,8 +23440,26 @@
     "labels": [
       "cor:cyclicgroupsaresimple"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cyclic_prime_no_nontrivial_proper",
+      "cyclic_prime_subgroup_cases",
+      "cyclic_prime_fixed_contractible",
+      "stabilizer_trivial_subgroup",
+      "prime_order_element_generates",
+      "cyclic_group_power_order",
+      "stabilizer_power_fixed",
+      "double_negated_decidability",
+      "IsTrivialSubgroup",
+      "IsProperSubgroup",
+      "cyclic_two_no_nontrivial_proper",
+      "cyclic_three_no_nontrivial_proper"
+    ],
+    "principal": [
+      "cyclic_prime_no_nontrivial_proper",
+      "cyclic_prime_subgroup_cases"
+    ],
+    "note": "Let p = b+1 be prime. Every subgroup S of C_p = cyclic_group p satisfies ¬(¬trivial(S) × proper(S)), with the notions of def:triv-proper-Mono. The formalization proves this for all subgroups without Lagrange. The proof works under the double negation of 'some g ≠ e fixes the point'. Either such a g generates C_p (so X(sh) is a point), or the stabilizer is {e} (so S is trivial). For finite (decidable) subgroups, the book's Lagrange argument gives the stronger Sum (trivial) (S = full subgroup) (cyclic_prime_subgroup_cases). Constructively, this disjunction cannot hold for all subgroups (C_2 = Σ_2, module 1024). Litmus: C_2 and C_3."
   },
   {
     "chapter": 10,
@@ -23278,8 +23471,30 @@
     "labels": [
       "cor:whatSylow2needs"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "coprime_subgroup_in_kernel",
+      "coprime_subgroup_le_kernel",
+      "kernel_as_subgroup",
+      "kernel_gset_fixes_of_trivial",
+      "coprime_hom_trivial",
+      "usym_order",
+      "usym_order_data",
+      "usym_order_divides_card",
+      "usym_power_card_unit",
+      "usym_positive_period_exists",
+      "kernel_gset",
+      "kernel_gset_transitive",
+      "IsConnectedHom",
+      "SubgroupLe",
+      "subgroup_inclusion_usym",
+      "usym_order_litmus_cyclic_three"
+    ],
+    "principal": [
+      "coprime_subgroup_in_kernel",
+      "coprime_subgroup_le_kernel"
+    ],
+    "note": "Let f : Hom(G, G') and let H be a subgroup of G. Assume that H and G' are finite with coprime cardinalities. Then every symmetry of H is in the kernel (f(h) = e). If f is surjective (connected fibers, module 903), then H ⊆ N for the kernel subgroup N = (f^*P_{G'}, Bf_pt). Here ⊆ is SubgroupLe, that is, stabilizer containment (module 1030). Deviation in the proof: the proof works element-wise, not with images and Lagrange on both sides. The order of f(h) divides |H| and |G'|, so it is 1. Supporting lemmas: every symmetry of a finite group has an order (by pigeonhole) that divides |G|, and g^|G| = e. Surjectivity is necessary only to make N a subgroup."
   },
   {
     "chapter": 10,
@@ -23289,8 +23504,19 @@
     "line": 102,
     "section_raw": "Lagrange's theorem, counting version}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_group_finite",
+      "product_group_card",
+      "product_group_usym_equiv",
+      "cardinality_product",
+      "cyclic_two_square_card"
+    ],
+    "principal": [
+      "product_group_card",
+      "product_group_finite"
+    ],
+    "note": "If G and G' are finite, then G x G' (product_group) is finite. Also, |G x G'| = |G|.|G'| for any finiteness proof of the product. The proof uses USym(G x G') = USym G x USym G' (module 404) and cardinality_product (module 36). Litmus: |C_2 x C_2| = 4 (cyclic_two_square_card)."
   },
   {
     "chapter": 10,
@@ -23300,8 +23526,27 @@
     "line": 105,
     "section_raw": "Lagrange's theorem, counting version}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cyclic_two_power_finite",
+      "cyclic_two_power_card",
+      "fin_power_group_finite",
+      "fin_power_group_card",
+      "fin_functions_finite",
+      "fin_functions_card",
+      "fingp_fin_functions_split",
+      "fingp_fin_zero_functions_equiv",
+      "power_group",
+      "cyclic_two_cube_card",
+      "c2_power_decidable_subgroups_lower_bound",
+      "c2_power_decidable_subgroups_dwarf",
+      "c2_power_decidable_subgroups_dwarf_package"
+    ],
+    "principal": [
+      "cyclic_two_power_card",
+      "c2_power_decidable_subgroups_dwarf"
+    ],
+    "note": "The n-fold product of C_2 (rem:noofsubgps) is power_group (Fin n) C_2 (module 407). It is finite of order 2^n (cyclic_two_power_card). Modules 1044-1046 formalize 'dwarfed by the number of subgroups'. The number of decidable subgroups of C_2^n is finite. For every k, this number is at least k*2^n for n >= 4k+1. The proof uses 3^m <= the number for C_2^(m+1), which comes from an injective family of 3^m subgroups. Litmus: |C_2^3| = 8."
   },
   {
     "chapter": 10,
@@ -23313,8 +23558,30 @@
     "labels": [
       "lem:fixedptsize"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fixed_point_size",
+      "p_group_fixed_points_divisible",
+      "p_group_fixed_point_congruence",
+      "p_group_nonfixed_divisible",
+      "p_group_fiber_divisible_at",
+      "invariant_maps_finite",
+      "invariant_maps_card",
+      "p_group_fixed_point_exists",
+      "GSetFixedPoints",
+      "invariant_maps_fixed_equiv",
+      "gset_fixed_split_card",
+      "gset_nonfixed_sum_equiv",
+      "gset_orbit_card_divides",
+      "prime_power_divisor_nontrivial",
+      "cardinality_sigma_divisible"
+    ],
+    "principal": [
+      "fixed_point_size",
+      "p_group_fixed_point_congruence",
+      "p_group_fixed_points_divisible"
+    ],
+    "note": "Let |G| = p^n and let X be a finite G-set. Then |X(sh_G)| ≡ |X^G| (mod p), hence p | |X(sh_G)| ⇒ p | |X^G|. Here X^G = Π_{z:BG} X(z) is finite. Evaluation identifies it with the fixed points of X(sh_G) (module 563). The lemma fixed_point_size is the printed statement. Its hypotheses 'n positive' and 'X non-empty' are not necessary: the lemma keeps them but does not use them. The orbit decomposition uses the orbit relation ‖(sh,x) = (sh,y)‖ and finite quotients (module 1022). This sum-of-orbits count replaces the book's Burnside reference."
   },
   {
     "chapter": 10,
@@ -23326,8 +23593,56 @@
     "labels": [
       "thm:cauchys"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cauchy_theorem",
+      "cauchy_theorem_fin",
+      "cauchy_nontrivial_element",
+      "cauchy_at_least_p_elements",
+      "cauchy_period_elements_divisible",
+      "cauchy_period_elements_finite",
+      "cauchy_action_fixed_equiv",
+      "cauchy_rotation_action",
+      "cauchy_rotation_period",
+      "cauchy_rotation_symmetry",
+      "cauchy_rotation_power_action",
+      "cauchy_fixed_iff_forward",
+      "cauchy_fixed_iff_backward",
+      "cauchy_all_unit_absurd",
+      "cauchy_unit_decide",
+      "cauchy_card_nonzero",
+      "cauchy_divides_nonzero_le",
+      "McKaySet",
+      "McKayCondition",
+      "McKayConditionRotations",
+      "mckay_condition_rotations_equiv",
+      "mckay_product",
+      "mckay_rotate",
+      "mckay_rotate_equiv",
+      "mckay_rotate_period",
+      "mckay_set_tail_equiv",
+      "mckay_set_card",
+      "mckay_set_card_divisible",
+      "McKayFixedPoints",
+      "McKayPeriodElements",
+      "mckay_fixed_points_equiv",
+      "mckay_period_unit",
+      "p_group_fixed_points_divisible",
+      "delooped_fixed_points_equiv",
+      "delooped_card",
+      "cyclic_hom_of_element",
+      "cyclic_prime_subgroup",
+      "cyclic_prime_subgroup_group_path",
+      "prime_order_powers_nontrivial",
+      "sigma3_cauchy_three",
+      "sigma3_cauchy_two"
+    ],
+    "principal": [
+      "cauchy_theorem",
+      "cauchy_nontrivial_element",
+      "cauchy_at_least_p_elements"
+    ],
+    "note": "Let p = b+1 be prime and let G be finite with p | |G|. Then there merely is a subgroup S of G with subgroup_group G S = C_p (cauchy_theorem). The variant cauchy_theorem_fin is for the literal Aut_Cyc(Fin p, s). The proof gets merely g != e with g^p = e (cauchy_nontrivial_element). It also shows p <= |{g | g^p = e}| (the book's 'at least p fixed points'). Deviation: the formalization does not define the C_p-set X(S,j) on BC_p directly. Instead, it turns the rotation of McKay's set {(g_0..g_{p-1}) | g_0...g_{p-1} = e} into a C_p-action and deloops it. By rem:GSet=SetHomG, these two approaches are equivalent. The book's 'product along every rotation' condition is equivalent to the single product (mckay_condition_rotations_equiv). Constructive steps: the proof uses decidable equality of the finite set USym G and finite existential quantification to extract g != e."
   },
   {
     "chapter": 10,
@@ -23339,8 +23654,25 @@
     "labels": [
       "lem:nontrivcenter"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "p_group_center_divisible",
+      "p_group_center_nontrivial_element",
+      "p_group_center_not_trivial",
+      "center_card_fixed",
+      "adjoint_fixed_center_equiv",
+      "center_usym_fixed_equiv",
+      "center_finite",
+      "adjoint_fixed_central",
+      "group_center",
+      "p_group_central_nontrivial"
+    ],
+    "principal": [
+      "p_group_center_not_trivial",
+      "p_group_center_nontrivial_element",
+      "p_group_center_divisible"
+    ],
+    "note": "Let |G| = p^n with n > 0. Then p divides |Z(G)|. Here Z(G) is group_center of chapter 12 (module 1202), and its symmetries are the fixed points of Ad_G. Also, there merely is a central symmetry ≠ e, and Z(G) is not the trivial group. The formalization reads the printed 'finite subgroup of order p^n' as 'finite group'. The lemma p_group_central_nontrivial (module 1037) is the same fact without the chapter-12 center. Other modules can use it without an import of chapter 12."
   },
   {
     "chapter": 10,
@@ -23352,8 +23684,37 @@
     "labels": [
       "cor:orderpsquaredgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "order_p_squared_noncyclic",
+      "NotCyclicGroup",
+      "order_p_squared_exponent",
+      "order_p_squared_order_divides",
+      "order_full_cyclic",
+      "order_p_squared_outside",
+      "p_group_central_nontrivial",
+      "pair_hom",
+      "pair_map",
+      "pair_map_hom",
+      "pair_hom_usym",
+      "pair_map_kernel",
+      "pair_kernel_power",
+      "pair_hom_injective",
+      "pair_hom_mono",
+      "pair_hom_identification",
+      "central_power",
+      "usym_interchange",
+      "subgroup_full_order_group_path",
+      "full_subgroup_group_path",
+      "deloop_hom",
+      "cyclic_four_not_klein",
+      "cyclic_two_exponent_two"
+    ],
+    "principal": [
+      "order_p_squared_noncyclic",
+      "order_p_squared_exponent"
+    ],
+    "note": "Let |G| = p² with p = b+1 prime. Assume that G is not cyclic (NotCyclicGroup: not merely G = C_n for any n). Then merely G = C_p × C_p in the type of groups. The book proves only 'g^p = e for all g' (order_p_squared_exponent). It leaves the rest open ('to be continued: choosing nontrivial elements'). We complete the proof as follows. The goal is a proposition, so we can choose a central g ≠ e and an h that is not a power of g. The map (s,t) ↦ f_g(s) f_h(t) is an abstract homomorphism C_p × C_p → G. We deloop it with lem:homomabstrconcr (module 710). It has a trivial kernel (Bézout). Hence it is a mono between groups of order p², and thus an identification (Lagrange). Litmus: C_4 ≠ C_2 × C_2, so the hypothesis 'noncyclic' is necessary."
   },
   {
     "chapter": 10,
@@ -23365,8 +23726,40 @@
     "labels": [
       "thm:sylow1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sylow_one",
+      "sylow_one_at",
+      "sylow_one_step",
+      "sylow_one_step_generic",
+      "sylow_weyl_divisible",
+      "weyl_quotient_step",
+      "WeylStepResult",
+      "SubgroupOfOrder",
+      "fingp_trivial_subgroup",
+      "fingp_trivial_subgroup_card",
+      "weyl_quotient_subgroup",
+      "weyl_quotient_subgroup_card",
+      "weyl_quotient_subgroup_le",
+      "weyl_quotient_gset",
+      "weyl_orbit_equivalence",
+      "weyl_class_equiv",
+      "weyl_quotient_card",
+      "weyl_act_injective",
+      "subgroup_weyl_group",
+      "subgroup_weyl_card",
+      "subgroup_fixed_set_congruence",
+      "cauchy_nontrivial_element",
+      "sylow_exists",
+      "subgroup_weyl_group_agrees",
+      "subgroup_weyl_fixed_points_agree"
+    ],
+    "principal": [
+      "sylow_one",
+      "sylow_one_step",
+      "sylow_exists"
+    ],
+    "note": "Let p be prime with p^n | |G|. Then there merely is a finite subgroup of cardinality p^n. The proof is by induction, as in the book. Each step gives H ⊇ K with |H| = p·|K|. Deviation in the step: the book uses N_G K, the projection N_G K → W_G K and the pullback of a Cauchy subgroup L ⊆ W_G K. Instead, we take φ of order p in W_G K = Aut(X), where X is the G-set of K. By subgroup_weyl_card, |W_G K| = |(G/K)^K|. We also take the quotient G-set Y(z) = X(z)/⟨φ⟩, a family of quotient sets over BG. W acts freely, so |X| = p·|Y|. By Lagrange, H = (Y, [x]) has |H| = p|K|. This H is the book's preimage of ⟨φ⟩. The group subgroup_weyl_group is literally chapter 9's weyl_group (def:Weyl, module 910). Its fixed-point description agrees with the map of chapter 9's lem:WGHisHfixofG/H at the base point (module 1050)."
   },
   {
     "chapter": 10,
@@ -23378,8 +23771,26 @@
     "labels": [
       "def:sylowsubgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsSylowSubgroup",
+      "is_sylow_subgroup_prop",
+      "SylowExponent",
+      "sylow_exponent_prop",
+      "IsLargestPrimePower",
+      "largest_prime_power_exists",
+      "sylow_gsubset",
+      "sylow_gset",
+      "SylowSubgroups",
+      "sylow_gset_underlying",
+      "subgroups_gset"
+    ],
+    "principal": [
+      "IsSylowSubgroup",
+      "sylow_gsubset",
+      "sylow_gset"
+    ],
+    "note": "IsSylowSubgroup p G S is a proposition. It says that G and S are finite and that |S| = p^n, where p^n is the largest power of p that divides |G|. Here IsLargestPrimePower p n |G| = p^n | |G| and ¬ p^(n+1) | |G|. Syl_G^p is the G-subset of Sub_G (subgroups_gset of module 902, with the conjugation action). At z : BG, it is given by the Sylow subgroups of group_at G z. Its G-set sylow_gset has the underlying set SylowSubgroups p G = Σ_S IsSylowSubgroup p G S. The finiteness of G and S is part of the predicate. The book assumes that G is finite. Constructively, the finiteness of S is not automatic."
   },
   {
     "chapter": 10,
@@ -23391,8 +23802,25 @@
     "labels": [
       "lem:numberofconjofSylow"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sylow_conjugates_not_divisible",
+      "sylow_index_not_divisible",
+      "SubgroupConjugates",
+      "subgroup_conjugates_finite",
+      "subgroup_conjugates_card_mul",
+      "subgroup_conjugates_divides_index",
+      "subgroup_conjugates_orbit_iff",
+      "subgroup_conjugate",
+      "subgroup_conjugate_at",
+      "subgroup_at",
+      "subgroup_aut_fixed_equiv"
+    ],
+    "principal": [
+      "sylow_conjugates_not_divisible",
+      "subgroup_conjugates_card_mul"
+    ],
+    "note": "Let P = (X, x) be a p-Sylow subgroup. Its conjugates are the subgroups (X, y), or equivalently g·P for g : USym G (subgroup_conjugates_orbit_iff). The set of conjugates is finite, and p does not divide its cardinality. Proof variant: |X(sh_G)| = |conjugates|·|Aut(X)| (module 1031), and |X(sh_G)| = |G|/|P| is prime to p. The book's 'X ≃ G/Stab_P with P ⊆ Stab_P' is the same count, with the stabilizer in Sub(G) in place of N_G P."
   },
   {
     "chapter": 10,
@@ -23405,8 +23833,27 @@
       "thm:sylow2",
       "lem:sylowsareconjugates"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sylow_subgroups_conjugate",
+      "sylow_contains_conjugate",
+      "sylow_contains_subgroup_at",
+      "sylow_subgroup_is_at",
+      "sylow_conjugates_equiv",
+      "sylow_gset_transitive",
+      "SubgroupLe",
+      "subgroup_le_card_eq",
+      "subgroup_le_antisym",
+      "subgroup_fixed_gset_hom",
+      "subgroup_restricted_gset",
+      "p_group_fixed_point_exists"
+    ],
+    "principal": [
+      "sylow_subgroups_conjugate",
+      "sylow_contains_conjugate",
+      "sylow_gset_transitive"
+    ],
+    "note": "Any two p-Sylow subgroups are conjugate (merely Q = g·P). The G-set Syl_G^p is transitive. This form also uses existence (thm:sylow1). A subgroup H of order p^s is contained in a conjugate g·P. Here containment is SubgroupLe: stabilizer containment, or equivalently a pointed map of G-sets. Proof: H acts on X(sh_G), and |X| is prime to p. By lem:fixedptsize, this action has a fixed point y, that is, H ⊆ (X, y). The book's proof is unfinished. A sentence is missing, and the proof refers to lem:thereisaconjugate and to the normality of P in Stab_P. The fixed-point argument above completes the proof, and equal cardinalities give Q = g·P."
   },
   {
     "chapter": 10,
@@ -23418,8 +23865,28 @@
     "labels": [
       "thm:sylow3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sylow_three",
+      "sylow_three_divides",
+      "sylow_three_congruence",
+      "sylow_subgroups_finite",
+      "sylow_subgroups_card_conjugates",
+      "sylow_normalized_equal",
+      "sylow_normalized_equal_at",
+      "sylow_fixed_is_self",
+      "sylow_fixed_prop",
+      "sylow_gset_act",
+      "subgroup_fixed_set_congruence",
+      "subgroup_closed_subset_fixed_point",
+      "p_group_closed_subset_fixed_point"
+    ],
+    "principal": [
+      "sylow_three",
+      "sylow_three_divides",
+      "sylow_three_congruence"
+    ],
+    "note": "Let P be a p-Sylow subgroup. Then Syl_G^p is finite, |Syl| divides m where |G| = m·|P|, and |Syl| ≡ 1 (mod p). Part (1): Syl = conjugates of P (thm:sylow2), and |X(sh_G)| = |conjugates|·|Aut(X)|. Part (2): restrict the action to P. The only P-fixed Sylow subgroup is P. Deviation: the book uses N_G Q, with Q normal in it and P Sylow in it. Instead, assume that P normalizes Q = (X, y). Then the set of points of X fixed by Q is closed under P, and its cardinality is prime to p. So it contains a P-fixed point, and this gives P = Q (sylow_normalized_equal)."
   },
   {
     "chapter": 11,

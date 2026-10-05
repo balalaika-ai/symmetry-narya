@@ -11848,5 +11848,329 @@
       "out_bunch_loops_fiber_equiv"
     ],
     "note": "The formalization shows that BOut(G) is a pointed connected groupoid whose loops are the fiber of i. It does not prove that this Out(G) is the Out(G) of subgroups.tex. cons:simpler-version-Out relates the latter to Aut_{||U||_1}(|BG|). The word 'decategorification' is informal."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 9,
+    "quote": "Objects having only a finite number of symmetries can be analyzed through counting arguments.  The strength of this approach is stunning.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation. It contains no mathematical claim."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 11,
+    "quote": "if $G$ is a group and $X:\\BG\\to\\Set$ is a $G$-set, then $$X(\\shape_G)\\simeq \\coprod_{x:X/G}\\mathcal O_x$$ and each orbit set $\\mathcal O_x$ is equivalent to the cokernel of the inclusion $G_x\\subseteq G$ of the stabilizer subgroup of $x$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "burnside_orbit_member_equiv",
+      "burnside_chain_equiv",
+      "orbit_stabilizer_equiv",
+      "gset_nonfixed_sum_equiv",
+      "gset_nonfixed_fiber_orbit_equiv"
+    ],
+    "note": "This text recalls con:orbit-stabilizer (chapter 5). It recalls the decomposition of X(sh_G) into orbits (module 529). It also recalls the orbit of x as the cokernel, that is, the fiber of the stabilizer inclusion (orbit_stabilizer_equiv, module 525). Module 1022 gives the finite form that this chapter uses: the non-fixed points are the sum of their orbits."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 14,
+    "quote": "Consequently, if $X(\\shape_G)$ is a finite set, then its cardinality is the sum of the cardinality of these cokernels.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cardinality_sigma_arithmetic_sum",
+      "gset_fixed_split_card",
+      "gset_orbit_card_identity",
+      "gset_orbit_card_divides"
+    ],
+    "note": "The cardinality of a finite sum of finite sets is the arithmetic sum (module 1003). Module 1022/1023 applies this to the orbit decomposition (fixed points plus non-fixed orbits). Constructively, the orbit set is finite when G is finite, because the orbit relation is decidable (module 1022). For G infinite, the claim needs the orbit set to be finite. The book leaves this condition implicit."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 14,
+    "quote": "If also the set $\\USymG$ is finite much more can be said and simple arithmetical considerations often allow us to deduce deep statements like the size of a certain subset of $X(\\shape_G)$ and in particular whether or not there are any fixed points.",
+    "kind": "informal",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "p_group_fixed_point_exists",
+      "p_group_fixed_points_divisible",
+      "fingp_thirteen_eight_has_singleton"
+    ],
+    "note": "This is a programmatic remark. The typical instances are lem:fixedptsize and its variant where p does not divide |X| (module 1023). Another instance is the example at line 16 (module 1003)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 22,
+    "quote": "The classical theory of finite groups is all about symmetries coupled with simple counting arguments.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 23,
+    "quote": "if $H$ is a subgroup of $G$, then the cardinality ``$|G|$'' of $\\USymG$ is divisible by $|H|$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "lagrange_subgroup_divides",
+      "lagrange_counting"
+    ],
+    "note": "This is Lagrange for a finite subgroup H of a finite group G (module 1021). For a non-finite (non-decidable) subgroup of a finite group, the statement needs excluded middle (module 1024). So the formalization assumes that H is finite."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 23,
+    "quote": "For instance, if $|G|$ is a prime number, then $G$ has no nontrivial proper subgroups! (actually, $G$ is necessarily a cyclic group).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "prime_order_group_cyclic",
+      "prime_order_group_no_nontrivial_proper",
+      "fingp_full_subgroup_group_path",
+      "cyclic_prime_no_nontrivial_proper",
+      "sigma2_is_cyclic_two"
+    ],
+    "note": "Let |G| = p with p prime. Then merely G = C_p. Cauchy gives a subgroup S with group C_p, and |S| = |G| forces S = G. Transport cor:cyclicgroupsaresimple along this identification. Then no subgroup of G is both non-trivial and proper. This holds for all subgroups, not only for finite ones. The identification is truncated, because it depends on a choice of generator. Litmus: Sigma_2 = C_2."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 24,
+    "quote": "To prove this result we interpret $G$ as an $H$-set.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "lagrange_counting"
+    ],
+    "note": "This text describes the proof method of lem:Lagrangeascounting."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 26,
+    "quote": "Further examples come from considering the $G$-set $\\typesubgroup_G$ of subgroups of $G$ from \\cref{sec:subgroups}.  Knowledge about the $G$-set of subgroups is of vital importance for many applications and Sylow's theorems in  \\cref{sec:sylow} give the first restriction on what subgroups are possible and how they can interact.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "subgroups_gset",
+      "sylow_gset"
+    ],
+    "note": "This is an overview. Sub_G is subgroups_gset (module 902), and Syl_G^p is sylow_gset (module 1033)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 26,
+    "quote": "The first step is Cauchy's \\cref{thm:cauchys} which says that if $|G|$ is divisible by a prime $p$, then $G$ contains a cyclic subgroup of order $p$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cauchy_theorem",
+      "cauchy_theorem_fin"
+    ],
+    "note": "This is a restatement of thm:cauchys (module 1005)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 26,
+    "quote": "Sylow's theorems goes further, analyzing subgroups that have cardinality powers of $p$, culminating in very detailed and useful information about the structure of the subgroups with cardinality the maximal possible power of $p$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "sylow_one",
+      "sylow_subgroups_conjugate",
+      "sylow_three"
+    ],
+    "note": "This is an overview of sec:sylow. The theorems themselves are thm:sylow1-3 (modules 1033-1036)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 45,
+    "quote": "We start by giving the above-mentioned counting version \\cref{lem:Lagrangeascounting} of Lagrange's theorem \\cref{xca:lagrange}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a chapter overview."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 46,
+    "quote": "We then moves on to prove Cauchy's \\cref{thm:cauchys} stating that any finite group whose cardinality is divisible by a prime $p$ has a cyclic subgroup of cardinality $p$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cauchy_theorem"
+    ],
+    "note": "This is a restatement of thm:cauchys."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 47,
+    "quote": "Cauchchy's theorem has many applications, and we use it already in \\cref{sec:sylow} in the proof of Sylow's Theorems",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "sylow_one",
+      "sylow_one_step",
+      "sylow_one_step_generic",
+      "cauchy_nontrivial_element"
+    ],
+    "note": "The formal proof of thm:sylow1 (modules 1035-1036) applies Cauchy (cauchy_nontrivial_element) to the Weyl group W_G K."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 48,
+    "quote": "In particular, if $p^n$ divides the cardinality of $G$, but $p^{n+1}$ does not, then Sylow's Third \\cref{thm:sylow3} gives valuable information about the cardinality of the $G$-set of subgroups of $G$ of cardinality $p^n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "IsLargestPrimePower",
+      "sylow_three"
+    ],
+    "note": "This is a restatement of thm:sylow3 (module 1034). The condition 'p^n divides |G| but p^(n+1) does not' is IsLargestPrimePower (module 1003)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 65,
+    "quote": "In the literature, ``order'' and ``cardinality'' are used interchangeably for groups.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "group_card"
+    ],
+    "note": "This is terminology. Both terms are group_card."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 68,
+    "quote": "For finite groups, Lagrange's \\cref{xca:lagrange} takes on the form of a counting argument",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "lagrange_counting"
+    ],
+    "note": "This text introduces lem:Lagrangeascounting."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 78,
+    "quote": "\\footnote{\\cref{xca:lagrange} doesn't say this at present: fix it}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial note to the authors. It says that xca:lagrange does not state that i^*G is a free H-set. The formal proof of lem:Lagrangeascounting does not use freeness: module 1020 counts transporters directly."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 81,
+    "quote": "\\footnote{somewhere: prove that if $A$ is a finite set and $B(a)$ is a family of finite sets indexed over $a:A$, then $\\sum_{a:A}B(a)$ is a finite set of cardinality $\\sum_{i:\\bn n}|B(f(i))|$ for any $f:\\bn n=A$, hence if $m=|B(a)|$ for all $a$ then $|\\sum_AB(a)|=n\\cdot m$.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cardinality_sigma_arithmetic_sum",
+      "cardinality_sigma_constant",
+      "finite_sigma",
+      "arithmetic_sum_reindex"
+    ],
+    "note": "Module 1003 formalizes this. The finiteness of the sum is finite_sigma (module 35). The sum is arithmetic_sum A ha (a -> |B a|). It does not depend on the enumeration f (arithmetic_sum_reindex, module 36)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 117,
+    "quote": "\\footnote{or of $X$?  Reference for identification of orbits with quotients by stabilizers}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "gset_orbit_card_identity",
+      "gset_orbit_card_divides",
+      "orbit_stabilizer_equiv"
+    ],
+    "note": "This is an editorial question. The identification that it asks for is orbit_stabilizer_equiv (module 525). The counting consequence, |orbit| divides |G|, is gset_orbit_card_divides (module 1022)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 173,
+    "quote": "\\footnote{Two slight variations commented away.  Have to choose one.  The first needs some background essentially boiling down to $BC_n$ being the truncation of the $n$th Moore space.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial footnote in the proof of thm:cauchys. The variations themselves are commented out in the source."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 225,
+    "quote": "\\footnote{((To be continued: the classical proof involves choosing nontrivial elements  -- see what can be done about that.  At present this corollary is not used anywhere))}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial note on the unfinished proof of cor:orderpsquaredgroups. The lead formalizes this corollary in modules 1037-1038."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 234,
+    "quote": "%\\footnote{In this proof I refer to \\cref{lem:aut-orbit} (which says that $N_G(K)/K$ is equivalent to the set of automorphisms of $G/K$ in the orbit category) to claim that the $K$-fixed points of $G/K$ may be identified with $N_G(K)/K$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "subgroup_weyl_group",
+      "subgroup_aut_fixed_equiv",
+      "subgroup_weyl_group_agrees",
+      "subgroup_weyl_fixed_points_agree"
+    ],
+    "note": "This text is commented out in the source, so it is not printed. It mentions an identification: W_G K = Aut(G/K) and its relation to the K-fixed points of G/K. Module 1031/1036 uses this identification. Module 1050 proves subgroup_weyl_group = weyl_group (chapter 9). It also proves that the two fixed-point descriptions agree."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 275,
+    "quote": "\\footnote{  ((the approach below is on the abstract G-sets which may be ok given that this is what we're counting, but consider whether there is a more typie approach))}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial note on the proof of thm:sylow2."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 284,
+    "quote": "\\footnote{the end of the sentence appears to be missing}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial note: the proof of thm:sylow2 is incomplete as printed. Module 1033 gives a complete proof."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 309,
+    "quote": "((Should we include standard examples, or is this not really wanted in this book?))",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial question to the authors."
   }
 ]

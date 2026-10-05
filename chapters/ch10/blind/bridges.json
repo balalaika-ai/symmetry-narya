@@ -1,0 +1,625 @@
+[
+  {
+    "source": "fingp.tex",
+    "line": 16,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/05-examples.ny",
+    "blind_declarations": [
+      "BlindOrbitSet",
+      "blind_example_thirteen",
+      "blind_example_thirteen_orbits_divide"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-05a-thirteen.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_example_thirteen",
+      "bridge_example_thirteen_orbits_divide",
+      "bridge_orbits_decidable",
+      "bridge_orbits_finite",
+      "bridge_contractible_gset_fixed",
+      "bridge_orbit_path_point",
+      "bridge_orbit_set_point"
+    ],
+    "our_declarations": [
+      "fingp_thirteen_eight_has_singleton",
+      "gset_orbit_card_divides",
+      "gset_orbit_set_finite",
+      "orbit_splitting_members_equiv",
+      "finite_subset_decidable"
+    ],
+    "note": "The blind statement is for an arbitrary group G, which is not assumed to be finite. X(sh_G) has 13 elements, and every orbit is finite of a size that divides 8. X(sh_G) is the sum of the underlying sets of the orbits (chapter 5). Orbits are finite subsets of a finite set, so equality of orbits is decidable and X/G is finite. Our finite-family lemma gives an orbit with one element. A G-set with contractible X(sh_G) has a fixed point. The parenthetical remark (|G| = 8) is our gset_orbit_card_divides, transported to the blind orbit sets. These sets are definitionally our GSetOrbitSet."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 27,
+    "labels": [],
+    "status": "gap",
+    "blind_file": "chapters/ch10/blind/05-examples.ny",
+    "blind_declarations": [
+      "BlindSubgroupsOfOrder",
+      "blind_subgroup_image",
+      "blind_generated_subgroup",
+      "blind_sigma3_unique_order3",
+      "blind_sigma3_order3_normal",
+      "blind_sigma4_order3_one_or_four",
+      "blind_sigma4_order3_conjugate",
+      "blind_sigma4_image_not_normal",
+      "blind_sigma4_order3_count",
+      "blind_sigman_order3_count",
+      "blind_sigman_order3_count_corrected",
+      "blind_sigman_order3_conjugate_small",
+      "blind_sigman_order3_not_all_conjugate",
+      "blind_nine_divides_factorial",
+      "blind_f6_c012_equiv",
+      "blind_f6_c345_equiv",
+      "blind_sigma6_c012",
+      "blind_sigma6_c345",
+      "blind_sigma6_h123",
+      "blind_sigma6_h456",
+      "blind_sigma6_hdouble",
+      "blind_sigma6_h123_order",
+      "blind_sigma6_h123_h456_not_conjugate",
+      "blind_sigma6_h123_h456_not_conjugate_corrected",
+      "blind_sigma6_order9_join",
+      "blind_sigma6_order9_count",
+      "BlindTripleSubsets",
+      "blind_sigma6_order9_per_triple",
+      "blind_sigma6_order9_per_triple_corrected"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-05b-sigma-small.ny",
+      "chapters/ch10/blind/bridge-05c-sigma-six.ny",
+      "chapters/ch10/blind/bridge-05d-sigma-counts.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subgroups_of_order",
+      "bridge_order_sylow_equiv",
+      "bridge_sylow_order_data",
+      "bridge_sigma3_unique_order3",
+      "bridge_sigma3_order3_normal",
+      "bridge_sigma4_order_sylow",
+      "bridge_sigma4_order3_count",
+      "bridge_sigma4_order3_one_or_four",
+      "bridge_sigma4_order3_conjugate",
+      "bridge_symmetric_inclusion_mono",
+      "bridge_image_order",
+      "bridge_sigma4_image_not_normal",
+      "bridge_nine_divides_factorial",
+      "bridge_sigma5_largest_three",
+      "bridge_small_order3_conjugate",
+      "bridge_sigman_order3_conjugate_small",
+      "bridge_image_value_path",
+      "bridge_image_member_of_value",
+      "bridge_image_member_value",
+      "bridge_generated_subgroup_cyclic",
+      "bridge_fin6_c012",
+      "bridge_fin6_c345",
+      "bridge_fin6_double",
+      "bridge_sigma6_c012",
+      "bridge_sigma6_c345",
+      "bridge_sigma6_double",
+      "bridge_generated_path",
+      "bridge_sigma6_h123",
+      "bridge_sigma6_h456",
+      "bridge_sigma6_hdouble",
+      "bridge_sigma6_h123_order",
+      "bridge_perm_inv_left",
+      "bridge_sigma6_a_not_conj_d",
+      "bridge_sigma6_h123_h456_not_conjugate_corrected",
+      "bridge_sigma6_h123_h456_not_conjugate_refuted",
+      "bridge_twenty_not_one_mod_three",
+      "bridge_three_divides_sigma6",
+      "bridge_sigma6_order3_not_twenty",
+      "bridge_sigman_order3_count_refuted",
+      "bridge_sigman_order3_count_three",
+      "bridge_sigman_order3_count_four",
+      "bridge_triples_equiv",
+      "bridge_triples_fin",
+      "bridge_sigma6_order9_sylow",
+      "bridge_sigma6_order9_per_triple_refuted",
+      "bridge_sigman_order3_not_all_conjugate"
+    ],
+    "our_declarations": [
+      "sigma3_unique_order_three",
+      "sigma3_sylow_three_normal",
+      "sigma4_sylow_three_count",
+      "sigma4_sylow_p_ne_q",
+      "sylow_subgroups_conjugate",
+      "factorial_nine_divides_shift",
+      "sigma6_cyclic_subgroups_conjugate",
+      "sigma6_d_subgroup_not_point_fixing",
+      "sigma6_sylow_count_at",
+      "order_p_subgroups_congruent",
+      "order_p_period_count",
+      "FiniteOrderSubgroups",
+      "sigma_n_order_three_not_all_conjugate",
+      "sigma_n_order_three_not_conjugate"
+    ],
+    "note": "14 of the 18 blind claim statements are bridged or formally refuted. These statements are as follows. For Σ_3: the subgroup is unique and normal. For Σ_4: there are 1 or 4 subgroups, all conjugate, the image of ⟨(012)⟩ is not normal, and there are exactly 4. Also, 9 | n! (n > 5). All order-3 subgroups of Σ_3, Σ_4 and Σ_5 are conjugate, because they are 3-Sylow. They are not all conjugate for every n > 5 (module 1052). Also, |⟨(123)⟩| = 3. The corrected conjugacy statement is ⟨(123)⟩ ~ ⟨(456)⟩ and ⟨(123)⟩ ≁ ⟨(123)(456)⟩. Finally, there are formal refutations of three literal claims. The first is n(n-1)(n-2)/6 at n = 6: 20 ≢ 1 mod 3, but the number of subgroups of order p is ≡ 1 mod p (module 1051). The second is ⟨(123)⟩ not conjugate to ⟨(456)⟩. The third is \"one order-9 subgroup per 3-subset\": there are 20 subsets, but |Syl_3(Σ_6)| ≡ 1 mod 3. Gaps: blind_sigman_order3_count_corrected is bridged only for n = 3, 4. Modules 1053-1054 prove the numbers 10 (n = 5) and 40 (n = 6) (sigma5_order_three_subgroups_card, sigma6_order_three_subgroups_card). But the bridge to the blind statement is not included. Also open: blind_sigma6_order9_count (10 subgroups of order 9) and blind_sigma6_order9_per_triple_corrected (bijection with the splittings). The third open statement is blind_sigma6_order9_join (an order-9 subgroup that contains ⟨(123)⟩ and ⟨(456)⟩). They need the subgroups of order 9 of Σ_6. An enumeration over its 720 elements needs too much memory in the pinned Narya."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 35,
+    "labels": [
+      "rem:noofsubgps"
+    ],
+    "status": "gap",
+    "blind_file": "chapters/ch10/blind/01-finite-groups.ny",
+    "blind_declarations": [
+      "blind_c2_power",
+      "BlindDecSubgroups",
+      "BlindDigit",
+      "BlindDec",
+      "blind_dec_succ",
+      "blind_nat_to_dec",
+      "blind_dec_litmus",
+      "blind_a006116_18",
+      "blind_noofsubgps_c2_18",
+      "blind_noofsubgps_c2_18_corrected"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-01b-noofsubgps.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_c2_power",
+      "bridge_def_dec_subgroups",
+      "bridge_noofsubgps_small_counts",
+      "bridge_dec_litmus"
+    ],
+    "our_declarations": [
+      "decidable_subgroups_closed_subsets_equiv",
+      "decidable_subgroups_finite",
+      "c2_power_decidable_subgroups_count_zero",
+      "c2_power_decidable_subgroups_count_one",
+      "c2_power_decidable_subgroups_count_two",
+      "subgroups_finite_iff_excluded_middle"
+    ],
+    "note": "There are two blind statements: the literal one is about all subgroups, and the corrected one is about decidable subgroups. Both assert the 26-digit count for C_2^18, and neither is derived. Modules 1040-1043 show that the decidable subgroups of any group ≃ the Bool-valued abstract subgroups. Hence they are finite for a finite group. C_2^0, C_2^1 and C_2^2 have 1, 2 and 5 decidable subgroups (bridged in the blind format). The n = 18 count needs the Goldman-Rota recurrence for subspaces of F_2^n and verified non-unary arithmetic. This was not attempted. The literal reading (all subgroups finite in number) is constructively unprovable. Module 1024 shows that the finiteness of all subgroups of finite groups is equivalent to LEM. The asymptotic 7·2^(n^2/4) is not formalized, because it is vague in both readings."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 55,
+    "labels": [
+      "def:finitegrd"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/01-finite-groups.ny",
+    "blind_declarations": [
+      "BlindIsFiniteGroup",
+      "blind_group_order",
+      "BlindHasOrder",
+      "BlindHasCard",
+      "blind_pow",
+      "BlindIsPrime",
+      "BlindCoprime"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-01-finite-groups.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_pow",
+      "bridge_def_is_prime",
+      "bridge_def_coprime",
+      "bridge_def_is_finite_group",
+      "bridge_def_group_order",
+      "bridge_def_has_order"
+    ],
+    "our_declarations": [
+      "IsFiniteGroup",
+      "group_card",
+      "nat_power",
+      "NatIsPrime",
+      "NatCoprime"
+    ],
+    "note": "BlindIsFiniteGroup, blind_group_order, BlindIsPrime and BlindCoprime are ours by refl (Le 2 p is Lt 1 p). The function blind_pow has the same recursion as nat_power, and it agrees with it by induction."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 59,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/01-finite-groups.ny",
+    "blind_declarations": [
+      "blind_trivial_group_order",
+      "blind_cyclic_group_order",
+      "blind_symmetric_group_order"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-01-finite-groups.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_trivial_group_order",
+      "bridge_cyclic_group_order",
+      "bridge_symmetric_group_order"
+    ],
+    "our_declarations": [
+      "trivial_group_card",
+      "cyclic_group_card",
+      "symmetric_group_card",
+      "cyclic_group_finite",
+      "symmetric_group_finite"
+    ],
+    "note": "This follows directly from our order lemmas. Both sides use C_n for n ≥ 1."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 69,
+    "labels": [
+      "lem:Lagrangeascounting"
+    ],
+    "status": "gap",
+    "blind_file": "chapters/ch10/blind/02-lagrange.ny",
+    "blind_declarations": [
+      "BlindCosets",
+      "BlindMonoLe",
+      "BlindSubgroupLe",
+      "blind_full_subgroup",
+      "blind_lagrangeascounting",
+      "blind_lagrangeascounting_full"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-02-lagrange.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_cosets",
+      "bridge_mono_subgroup_finite",
+      "bridge_lagrangeascounting_finite",
+      "bridge_lagrangeascounting_of_lem",
+      "bridge_lagrangeascounting_lem",
+      "bridge_set_trunc_contr",
+      "bridge_def_full_subgroup",
+      "bridge_lagrangeascounting_full"
+    ],
+    "our_declarations": [
+      "lagrange_counting_mono",
+      "lagrange_counting_equal_order",
+      "group_full_subgroup",
+      "subgroups_finite_iff_excluded_middle"
+    ],
+    "note": "The blind G/H (the underlying set of coker i) is our Bi⁻¹(sh_G), up to the set truncation of a set. Part (2) is bridged: |H| = |G| ⇒ H = G. Here the blind full subgroup is the image of id, which is ours. Part (1) is stated literally for every subgroup, and it includes the finiteness of H and G/H. This literal statement is equivalent to excluded middle. Both directions are proved (bridge_lagrangeascounting_of_lem, bridge_lagrangeascounting_lem, through module 1024). So it is a deliberate gap. It is bridged for finite H (bridge_lagrangeascounting_finite = ours) and under LEM. The book is ambiguous, because its proof asserts the finiteness of H. Our statement assumes that H is finite, and book-inventory.json documents this."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 87,
+    "labels": [
+      "cor:cyclicgroupsaresimple"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/02-lagrange.ny",
+    "blind_declarations": [
+      "blind_cyclicgroupsaresimple"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-02-lagrange.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_cyclicgroupsaresimple"
+    ],
+    "our_declarations": [
+      "cyclic_prime_no_nontrivial_proper"
+    ],
+    "note": "The statement is the same for every subgroup: no subgroup is both non-trivial and proper. A prime is a successor."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 95,
+    "labels": [
+      "cor:whatSylow2needs"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/02-lagrange.ny",
+    "blind_declarations": [
+      "blind_whatsylow2needs"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-02-lagrange.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_usym_hom_trivial",
+      "bridge_whatsylow2needs"
+    ],
+    "our_declarations": [
+      "coprime_hom_trivial",
+      "eqmc_kernel_lift",
+      "pbg_hom_ext_usym"
+    ],
+    "note": "The blind form states H ≤ N as a factorization of i through the kernel mono. It follows from our element-wise lemma and the universal property of the kernel (module 938). The lemma says: f∘i trivial on symmetries ⇒ f∘i is the trivial hom. The blind form does not need the surjectivity of f. Our version (coprime_subgroup_le_kernel) states containment in the kernel subgroup for surjective f."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 102,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/01-finite-groups.ny",
+    "blind_declarations": [
+      "blind_product_order"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-01-finite-groups.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_product_order"
+    ],
+    "our_declarations": [
+      "product_group_finite",
+      "product_group_card"
+    ],
+    "note": "The bridge is direct."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 105,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/01-finite-groups.ny",
+    "blind_declarations": [
+      "blind_c2_power_order",
+      "blind_c2_power_subgroups_dwarf"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-01-finite-groups.ny",
+      "chapters/ch10/blind/bridge-01b-noofsubgps.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_c2_power_order",
+      "bridge_c2_power_subgroups_dwarf"
+    ],
+    "our_declarations": [
+      "cyclic_two_power_card",
+      "c2_power_decidable_subgroups_dwarf_package",
+      "c2_power_decidable_subgroups_lower_bound"
+    ],
+    "note": "The fact |C_2^n| = 2^n is ours. The blind form of \"dwarfed\" says that the number of decidable subgroups is finite and eventually ≥ k·2^n for every k. This is the result of module 1046, which was previously not formalized. It uses 3^m ≤ the number of decidable subgroups of C_2^(m+1) (module 1045)."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 111,
+    "labels": [
+      "lem:fixedptsize"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/03-cauchy.ny",
+    "blind_declarations": [
+      "BlindFixedPoints",
+      "blind_fixedptsize"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-03-cauchy.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_fixed_points",
+      "bridge_order_power",
+      "bridge_fixedptsize"
+    ],
+    "our_declarations": [
+      "fixed_point_size"
+    ],
+    "note": "X^G is InvariantMaps (refl). The blind |G| = p^(n+1) gives ours with n+1 > 0."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 124,
+    "labels": [
+      "thm:cauchys"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/03-cauchy.ny",
+    "blind_declarations": [
+      "blind_cauchys"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-03-cauchy.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_cauchys"
+    ],
+    "our_declarations": [
+      "cauchy_theorem"
+    ],
+    "note": "The statement is the same. A prime is a successor."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 203,
+    "labels": [
+      "lem:nontrivcenter"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/03-cauchy.ny",
+    "blind_declarations": [
+      "BlindCenter",
+      "blind_nontrivcenter",
+      "blind_nontrivcenter_element"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-03-cauchy.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_center_element",
+      "bridge_nontrivcenter_element",
+      "bridge_nontrivcenter"
+    ],
+    "our_declarations": [
+      "p_group_center_nontrivial_element",
+      "central_extension",
+      "central_extension_base"
+    ],
+    "note": "The blind center is Π_z (z = z). Our central symmetry g ≠ e extends to c with c(sh_G) = g (chapter 12, central_extension). So c ≠ (z ↦ refl z), and non-contractibility follows. Both sides read \"finite subgroup\" as \"finite group\"."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 218,
+    "labels": [
+      "cor:orderpsquaredgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/03-cauchy.ny",
+    "blind_declarations": [
+      "BlindIsCyclic",
+      "blind_orderpsquaredgroups"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-03-cauchy.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_is_cyclic",
+      "bridge_orderpsquaredgroups"
+    ],
+    "our_declarations": [
+      "order_p_squared_noncyclic",
+      "NotCyclicGroup"
+    ],
+    "note": "The condition 'not cyclic' is literally ours (NotCyclicGroup). Both sides take p prime."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 229,
+    "labels": [
+      "thm:sylow1"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/04-sylow.ny",
+    "blind_declarations": [
+      "blind_sylow1"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-04-sylow.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_divides_pow",
+      "bridge_sylow1"
+    ],
+    "our_declarations": [
+      "sylow_one",
+      "SubgroupOfOrder"
+    ],
+    "note": "The bridge is direct: it compares blind_pow with nat_power."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 261,
+    "labels": [
+      "def:sylowsubgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/04-sylow.ny",
+    "blind_declarations": [
+      "BlindLargestPowerDividing",
+      "BlindIsSylow",
+      "blind_sylow_gsubset",
+      "blind_sylow_gset",
+      "BlindSylowSet"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-04-sylow.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_sylow_to",
+      "bridge_def_sylow_from",
+      "bridge_def_sylow_gsubset",
+      "bridge_def_sylow_gset",
+      "bridge_def_sylow_set"
+    ],
+    "our_declarations": [
+      "IsSylowSubgroup",
+      "sylow_gsubset",
+      "sylow_gset",
+      "SylowSubgroups"
+    ],
+    "note": "The blind Sylow predicate and ours imply each other. The blind Syl_G^p (truncated predicate) is the same G-subset of Sub(G) as ours, by pointwise proposition extensionality. Hence it is the same G-set."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 265,
+    "labels": [
+      "lem:numberofconjofSylow"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/04-sylow.ny",
+    "blind_declarations": [
+      "blind_conj_subgroup",
+      "BlindConjugate",
+      "blind_numberofconjofsylow"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-04-sylow.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_def_conj",
+      "bridge_conjugate_to",
+      "bridge_conjugate_from",
+      "bridge_def_orbit_conjugates",
+      "bridge_numberofconjofsylow"
+    ],
+    "our_declarations": [
+      "sylow_conjugates_not_divisible",
+      "SubgroupConjugates",
+      "subgroups_gset_act",
+      "orbit_point_path_exists_equiv"
+    ],
+    "note": "The blind orbit of P in Sub(G) is our set of conjugates. This uses the orbit relation of chapter 5 and the G-action on Sub(G) of chapter 9."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 273,
+    "labels": [
+      "thm:sylow2",
+      "lem:sylowsareconjugates"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/04-sylow.ny",
+    "blind_declarations": [
+      "blind_sylow2_conjugate",
+      "blind_sylow2_transitive",
+      "blind_sylow2_subconjugate"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-04-sylow.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_sylow2_conjugate",
+      "bridge_sylow2_transitive",
+      "bridge_le_hom",
+      "bridge_subgroup_le",
+      "bridge_le_conj_inv",
+      "bridge_sylow2_subconjugate"
+    ],
+    "our_declarations": [
+      "sylow_subgroups_conjugate",
+      "sylow_gset_transitive",
+      "sylow_contains_conjugate"
+    ],
+    "note": "Blind containment of subgroups is a factorization of the inclusion homs. Our containment (stabilizer containment) gives it through the map of G-sets x ↦ y. Our statement gives H ⊆ g·P, but the blind statement needs g⁻¹·H ⊆ P. The bridge proves the necessary conjugation invariance."
+  },
+  {
+    "source": "fingp.tex",
+    "line": 292,
+    "labels": [
+      "thm:sylow3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch10/blind/04-sylow.ny",
+    "blind_declarations": [
+      "blind_sylow3"
+    ],
+    "bridge_file": [
+      "chapters/ch10/blind/bridge-04-sylow.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_nat_cases",
+      "bridge_sylow_witness_prop",
+      "bridge_sylow_witness",
+      "bridge_sylow_witness_at",
+      "bridge_sylow3"
+    ],
+    "our_declarations": [
+      "sylow_three",
+      "sylow_count_divides",
+      "sylow_three_congruence",
+      "sylow_subgroups_finite"
+    ],
+    "note": "Divisibility in the blind form \"k | q whenever |G| = q·|P|\" is our sylow_count_divides. The congruence witness t with |Syl| = t·p + 1 is unique. So the bridge extracts it from our truncated congruence."
+  }
+]
