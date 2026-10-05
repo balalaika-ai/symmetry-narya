@@ -4823,8 +4823,38 @@
       "def:circle",
       "fig:circle-induction"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CircleSignature",
+      "constructed_circle",
+      "int_maps_equiv",
+      "circle_universal_equiv",
+      "circle_induction_from_recursion",
+      "circle_loop",
+      "circle_loop_equiv",
+      "int_small_in_universe",
+      "permutation_isomorphisms_small",
+      "SmallCarrierCycles",
+      "small_carrier_cycles_locally_small",
+      "constructed_circle_essentially_small",
+      "constructed_circle_small",
+      "constructed_circle_code",
+      "small_circle_signature",
+      "circle_carrier_essentially_small",
+      "total_constructed_circle_essentially_small",
+      "circle_rec",
+      "circle_rec_beta",
+      "int_maps_evaluation",
+      "int_maps_evaluation_equiv",
+      "int_maps_evaluation_map",
+      "sigma_reindex_equiv"
+    ],
+    "principal": [
+      "CircleSignature",
+      "constructed_circle",
+      "constructed_circle_essentially_small"
+    ],
+    "note": "CircleSignature (module 05) is the circle as an interface. It is a type with base, loop and dependent induction for every family P : C → Type. Its computation rule is one identification (f(base), apd_f(loop)) = (a, l) of the whole boundary datum. Thus the book's judgmental f(base) ≡ a is an identification. This is a missing feature: Narya efafad2 has no HITs. Recursion is circle_rec, with the rule circle_rec_beta. The term constructed_circle (modules 220–223) inhabits the interface without postulates. It follows Bezem–Buchholtz–Grayson–Shulman. The carrier is the component Cyc_0 of (ℤ, succ) in Cycles. The base is (ℤ, succ), and the loop is its successor symmetry (circle_loop). Maps from (ℤ, succ) into a type with an automorphism are determined by the image of one point (int_maps_equiv). The version whose map is evaluation at 0 itself is int_maps_evaluation_equiv (module 284). This gives (Cyc_0 → A) ≃ Σ(a:A)(a = a) for every type A (circle_universal_equiv). Then it gives dependent induction (circle_induction_from_recursion). The choice of the loop generator has no effect, because all chapter-3 results are stated for an arbitrary circle. The book postulates \"S¹ : U\". The formalization proves it for every model universe U that satisfies replacement (pri:replacement). The cycles with a U-small carrier form a locally U-small type (small_carrier_cycles_locally_small). Its component at (ℤ, succ) is Cyc_0. Thus the constructed circle is essentially U-small (constructed_circle_essentially_small). Hence it is an element of U (constructed_circle_small, constructed_circle_code, small_circle_signature). Also, every circle is essentially U-small (circle_carrier_essentially_small). The only concrete model universe is the universe of all types (total_constructed_circle_essentially_small). Induction over all families P : C → Type uses Narya's single universe Type : Type. The formalization also gives freeness with the evaluation map: int_maps_evaluation_equiv (module 284) is an equivalence (Z, succ) → (Y, F) ≃ Y. By definition, its map is evaluation at 0 (int_maps_evaluation_map). It is the chain of int_maps_equiv with an explicit reindexing of sums (sigma_reindex_equiv). The map of int_maps_equiv itself is not definitionally evaluation at 0."
   },
   {
     "chapter": 3,
@@ -4836,8 +4866,23 @@
     "labels": [
       "lem:freeloopspace"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "book_circle_universal_property",
+      "S1_book_circle_universal_property",
+      "constructed_circle",
+      "book_circle_universal_property_book_map",
+      "book_circle_universal_property_inverse",
+      "BookEquiv",
+      "BookIsEquiv",
+      "circle_rec",
+      "circle_rec_beta"
+    ],
+    "principal": [
+      "book_circle_universal_property_book_map",
+      "book_circle_universal_property_inverse"
+    ],
+    "note": "For every circle C and every type A, ev_A(g) = (g(base), ap_g(loop)) is a BookIsEquiv (book_circle_universal_property_book_map). The center of its book fiber over (a, l) is the inverse. By refl, this center is ve_A(a, l) = circle_rec (a, l) (book_circle_universal_property_inverse). The declaration book_circle_universal_property packages this as a BookEquiv. The identification ev_A(ve_A(a, l)) = (a, l) is circle_rec_beta. It is an identification also at base, where the book has f(base) ≡ a (Narya efafad2 has no HITs). The instance at the constructed circle is S1_book_circle_universal_property (module 250)."
   },
   {
     "chapter": 3,
@@ -4849,8 +4894,23 @@
     "labels": [
       "cor:circle-loopspace"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_circle_loop_eval",
+      "pointed_circle_universal_property",
+      "pointed_circle_loop_rec",
+      "pointed_circle_loop_rec_beta",
+      "pointed_circle_loop_rec_eta",
+      "S1_pointed_circle_universal_property",
+      "constructed_circle",
+      "pointed_circle_universal_property_book_map",
+      "BookIsEquiv",
+      "circle_rec_beta"
+    ],
+    "principal": [
+      "pointed_circle_universal_property_book_map"
+    ],
+    "note": "For every circle C, type A and a : A, the map (g, p) ↦ p⁻¹·g(loop)·p on book-pointed maps is a BookIsEquiv (pointed_circle_universal_property_book_map). Here the pointing path is p : a = g(base). The declaration pointed_circle_universal_property is the Equiv with this map (pointed_circle_loop_eval). In concatenation order, the map is p, then ap_g(loop), then p⁻¹. This is the book's right-to-left composite. The footnote's inverse l ↦ (ve_A(a, l), refl a) is pointed_circle_loop_rec. It has both inverse laws: pointed_circle_loop_rec_beta, and pointed_circle_loop_rec_eta as an equality of pointed maps that includes the pointing path. Its pointing path is the inverse of the base part of circle_rec_beta, not refl a. The reason is that ve_A(a, l)(base) ≡ a is not judgmental (Narya efafad2 has no HITs). The instance at the constructed circle is S1_pointed_circle_universal_property (module 250)."
   },
   {
     "chapter": 3,
@@ -4862,8 +4922,22 @@
     "labels": [
       "rem:dep-univ-prop-circle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_sections_equal",
+      "circle_dependent_rec",
+      "circle_dependent_rec_eta",
+      "circle_dependent_universal_property",
+      "S1_circle_dependent_universal_property",
+      "constructed_circle",
+      "circle_dependent_universal_property_book_map",
+      "BookIsEquiv",
+      "CircleSignature"
+    ],
+    "principal": [
+      "circle_dependent_universal_property_book_map"
+    ],
+    "note": "The statement holds for every circle C and every family P : C → Type, with no set or groupoid restriction. The dependent evaluation g ↦ (g(base), apd_g(loop)) into Σ(a : P(base)) pathover(a, loop, a) is a BookIsEquiv (circle_dependent_universal_property_book_map). The declaration circle_dependent_universal_property is the Equiv with this map and with the inverse circle_dependent_rec. One inverse law is the computation rule of CircleSignature, which is an identification of the whole boundary datum. The other inverse law (circle_dependent_rec_eta) comes from circle_sections_equal and function extensionality. The proof of circle_sections_equal uses induction on the family of pointwise identifications, with the transposed boundary square. No dependent universal property is assumed. The instance at the constructed circle is S1_circle_dependent_universal_property (module 250)."
   },
   {
     "chapter": 3,
@@ -4873,8 +4947,18 @@
     "line": 297,
     "section_raw": "The circle and its universal property}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pointed_circle_universal_property",
+      "pointed_circle_loop_type_path",
+      "S1_pointed_circle_universal_property",
+      "S1_pointed_circle_loop_type_path",
+      "constructed_circle"
+    ],
+    "principal": [
+      "pointed_circle_loop_type_path"
+    ],
+    "note": "The mathematical content is that cor:circle-loopspace and univalence identify (S¹, base) →* (A, a) with a = a. This content is pointed_circle_loop_type_path, for every circle C, type A and a : A. It is the ua-path of the equivalence pointed_circle_universal_property. The lasso picture is informal. The instances at the constructed circle are S1_pointed_circle_universal_property and S1_pointed_circle_loop_type_path (module 250)."
   },
   {
     "chapter": 3,
@@ -4886,8 +4970,19 @@
     "labels": [
       "lem:circleisconnected"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_is_connected",
+      "native_circle_connected",
+      "S1_native_circle_connected",
+      "constructed_circle",
+      "TruncationSignature"
+    ],
+    "principal": [
+      "native_circle_connected",
+      "circle_is_connected"
+    ],
+    "note": "The book's connectedness means a point and a mere path between any two points. The formalization proves it for every circle C and every truncation (circle_is_connected, which takes a TruncationSignature). The instance at the constructed propositional truncation Mere is native_circle_connected. The instance at the constructed circle is S1_native_circle_connected (module 250)."
   },
   {
     "chapter": 3,
@@ -4899,8 +4994,47 @@
     "labels": [
       "def:zet"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Int",
+      "int_succ_equiv",
+      "int_neg_equiv",
+      "int_dec_eq",
+      "int_set",
+      "int_nonpositive",
+      "int_zero_glue",
+      "IntegerBoundary",
+      "integer_gluing_universal_property",
+      "integer_boundary_beta",
+      "integer_gluing_positive_beta",
+      "integer_gluing_negative_beta",
+      "integer_gluing_pathover",
+      "int_add_assoc",
+      "int_translation_equiv",
+      "int_sub",
+      "int_add_sub",
+      "int_sub_add",
+      "IntLe",
+      "IntLt",
+      "int_le_decidable",
+      "int_lt_decidable",
+      "int_le_naturals",
+      "int_lt_naturals",
+      "int_le_translation_equiv",
+      "int_lt_translation_equiv",
+      "integer_gluing_universal_property_book_map",
+      "BookEquiv",
+      "BookIsEquiv",
+      "circle_rec_beta",
+      "int_le_total",
+      "int_of_nat",
+      "integer_boundary_eta"
+    ],
+    "principal": [
+      "integer_gluing_universal_property_book_map",
+      "Int"
+    ],
+    "note": "The formalization defines ℤ as the ordinary inductive type Int = pos n | neg n, where neg n is −(n+1). It is not the book's higher inductive type, because Narya efafad2 has no HITs. Here ι₊ = int_of_nat and ι₋ = int_nonpositive. Also, zeq = int_zero_glue is refl, because −0 and 0 are one point. The book's induction principle with its rules is the dependent gluing universal property. For every family, f ↦ (f∘ι₊, f∘ι₋, apd_f(zeq)) is a BookIsEquiv (integer_gluing_universal_property_book_map). The BookEquiv is integer_gluing_universal_property. The equations f(n) ≡ g(n) and f(−(n+1)) ≡ h(−(n+1)) hold judgmentally (integer_gluing_positive_beta, integer_gluing_negative_beta). But f(−0) = h(−0) holds only as an identification, which is the inverse of q. The equation apd_f(zeq) = q is an identification in the book too. It is part of integer_boundary_beta (integer_gluing_pathover). As for circle_rec_beta/_eta, integer_boundary_beta is the computation law and integer_boundary_eta is uniqueness. Module 50 compares Int with the quotient of pairs of natural numbers. The formalization also covers the adjacent unnumbered text. Int is a set with decidable equality (int_set, int_dec_eq). Negation and successor are equivalences (int_neg_equiv, int_succ_equiv). The formalization uses the book's iterative definitions. Addition is z + y = s^y(z). Subtraction is z − y = z + (−y). Multiplication is zy = (w ↦ z + w)^y(0). The formalization also gives the translation equivalence and the inverse laws (int_translation_equiv, int_sub, int_add_sub, int_sub_add, int_add_assoc). IntLe and IntLt are decidable (int_le_decidable, int_lt_decidable). The relation ≤ is total (int_le_total). Both relations extend the relations on ℕ (int_le_naturals, int_lt_naturals). They are invariant under translation (int_le_translation_equiv, int_lt_translation_equiv)."
   },
   {
     "chapter": 3,
@@ -4912,8 +5046,16 @@
     "labels": [
       "xca:addition-on-Z-and-N"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "int_add_naturals",
+      "int_mul_naturals"
+    ],
+    "principal": [
+      "int_add_naturals",
+      "int_mul_naturals"
+    ],
+    "note": "The formalization proves both clauses for all n, m : ℕ. The first clause is ι₊(n + m) = ι₊(n) + ι₊(m) (int_add_naturals). The second clause is ι₊(nm) = ι₊(n)ι₊(m) (int_mul_naturals). Both clauses use the book's operations. Addition is signed iteration of the successor. Multiplication is signed iteration of the translation w ↦ z + w, and module 52 proves the inverse of this translation. The proofs compare these operations with formulas on natural numbers. No operation is redefined."
   },
   {
     "chapter": 3,
@@ -4925,8 +5067,16 @@
     "labels": [
       "xca:commutative-add-Z"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "int_add_comm",
+      "int_mul_comm"
+    ],
+    "principal": [
+      "int_add_comm",
+      "int_mul_comm"
+    ],
+    "note": "The formalization proves both clauses for all x, y : ℤ: x + y = y + x (int_add_comm) and xy = yx (int_mul_comm). Both clauses use the book's iterative operations. The proofs use comparisons with natural-number formulas, not replacement definitions."
   },
   {
     "chapter": 3,
@@ -4938,8 +5088,26 @@
     "labels": [
       "def:covering"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsCovering",
+      "Coverings",
+      "ConnectedCoverings",
+      "CoveringFinite",
+      "FiniteCoverings",
+      "CoveringDecidable",
+      "DecidableCoverings",
+      "BookPointedCoverings",
+      "pointed_map_chosen_target_equiv",
+      "pointed_map_chosen_target_map",
+      "BookPointedMap"
+    ],
+    "principal": [
+      "IsCovering",
+      "Coverings",
+      "BookPointedCoverings"
+    ],
+    "note": "IsCovering f says that every book fiber f⁻¹(b) = Σ(a:A)(b = f a) is a set. The formalization defines Coverings B = Σ(A : Type) Σ(f : A → B) IsCovering f. Here A ranges over Narya's single universe Type. The formalization has all flavors. Connected coverings are ConnectedCoverings: the domain A is connected. Finite coverings are CoveringFinite and FiniteCoverings: every fiber is finite. Decidable coverings are CoveringDecidable and DecidableCoverings: every fiber has decidable equality. Pointed coverings are BookPointedCoverings. Such a covering is a BookPointedMap, with pointing path pt_B = f(pt_A), whose underlying map is a covering. The fibers are not pointed. The formalization proves the footnote. The forgetful map Σ(b:B)((A, a) →* (B, b)) → (A → B) is an equivalence (pointed_map_chosen_target_equiv). Its map is the projection by refl (pointed_map_chosen_target_map)."
   },
   {
     "chapter": 3,
@@ -4951,8 +5119,23 @@
     "labels": [
       "lem:setbundle-is-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "coverings_groupoid",
+      "predicate_coverings_groupoid",
+      "finite_coverings_groupoid",
+      "decidable_coverings_groupoid",
+      "connected_coverings_groupoid",
+      "connected_finite_coverings_groupoid",
+      "connected_decidable_coverings_groupoid",
+      "SetTypes",
+      "coverings_setfamilies_equiv"
+    ],
+    "principal": [
+      "coverings_groupoid",
+      "predicate_coverings_groupoid"
+    ],
+    "note": "Coverings B is a groupoid for every type B (coverings_groupoid). As in the book's proof, the proof uses the equivalence of coverings with set-valued families B → SetTypes (coverings_setfamilies_equiv). The formalization also proves the following unnumbered claim. For every proposition-valued P, Σ (Coverings B) P is a groupoid (predicate_coverings_groupoid). There are instances for the connected, finite and decidable flavors. There are also instances for the combinations connected-finite and connected-decidable. As the book says, this does not apply to pointed coverings, because points are structure. The formalization makes no claim for them."
   },
   {
     "chapter": 3,
@@ -4966,8 +5149,22 @@
       "it:left-cancel-cover",
       "it:cover-n-type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "finite_one_covering_equiv",
+      "constant_finite_one_covering_equiv",
+      "coverings_compose",
+      "coverings_left_cancel",
+      "covering_connected_loops_contractible",
+      "covering_domain_hlevel",
+      "HLevel"
+    ],
+    "principal": [
+      "covering_connected_loops_contractible",
+      "covering_domain_hlevel",
+      "coverings_left_cancel"
+    ],
+    "note": "The formalization proves all six items for arbitrary types. (1) A map A → Fin 1 is a covering iff A is a set (finite_one_covering_equiv, for every such map). (2) The constant map Fin 1 → B at b is a covering iff b = b is a set (constant_finite_one_covering_equiv). Both are equivalences of propositions, and the book's 1 is read as Fin 1. (3) Composites of coverings are coverings (coverings_compose). (4) If g and gf are coverings, then f is a covering (coverings_left_cancel). (5) Assume that A is connected, a = a is connected for one given a, B is a groupoid and f is a covering. Then A is contractible in the book sense (covering_connected_loops_contractible). (6) If B has HLevel(n+2), then A also has HLevel(n+2) (covering_domain_hlevel). That is, if B is a book n-type with n ≥ 0, then A is also a book n-type."
   },
   {
     "chapter": 3,
@@ -4979,8 +5176,27 @@
     "labels": [
       "xca:twoS1coverings"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "constant_boolean_total_not_connected",
+      "constant_boolean_circle_rec_path",
+      "swapping_boolean_total_connected",
+      "constant_boolean_not_swapping",
+      "swapping_boolean_circle_monodromy",
+      "S1_constant_boolean_total_not_connected",
+      "S1_swapping_boolean_total_connected",
+      "S1_constant_boolean_not_swapping",
+      "constructed_circle",
+      "SetTypes",
+      "circle_rec",
+      "S1_constant_boolean_circle_rec_path"
+    ],
+    "principal": [
+      "constant_boolean_total_not_connected",
+      "swapping_boolean_total_connected",
+      "constant_boolean_not_swapping"
+    ],
+    "note": "The formalization does all four tasks for every circle C. It uses families C → SetTypes for the book's S¹ → Set, and ve_Set = circle_rec into SetTypes. Part 1: Σ(z:S¹) Bool is not connected (constant_boolean_total_not_connected). Also, c_Bool = ve_Set(Bool, refl Bool) (constant_boolean_circle_rec_path). Part 2: let swap be the ua-path of negation. The total space of ve_Set(Bool, swap) is connected (swapping_boolean_total_connected). Also, c_Bool = ve_Set(Bool, swap) implies Empty (constant_boolean_not_swapping). The monodromy of ve_Set(Bool, swap) is the Boolean swap (swapping_boolean_circle_monodromy). The instances at the constructed circle are S1_constant_boolean_total_not_connected, S1_swapping_boolean_total_connected and S1_constant_boolean_not_swapping (module 250). The instance of constant_boolean_circle_rec_path at the constructed circle is S1_constant_boolean_circle_rec_path (module 289)."
   },
   {
     "chapter": 3,
@@ -4990,8 +5206,27 @@
     "line": 625,
     "section_raw": "\\Coverings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "covering_connected_fibers_equiv",
+      "equivalence_covering",
+      "boolean_identity_covering",
+      "boolean_not_connected",
+      "swapping_boolean_connected_cover",
+      "swapping_boolean_cover_not_equivalence",
+      "equivalence_fibers_finite",
+      "circle_identity_fibers_finite",
+      "circle_not_finite",
+      "S1_swapping_boolean_cover_not_equivalence",
+      "S1_circle_not_finite",
+      "constructed_circle"
+    ],
+    "principal": [
+      "covering_connected_fibers_equiv",
+      "swapping_boolean_cover_not_equivalence",
+      "circle_not_finite"
+    ],
+    "note": "The formalization gives formal witnesses for the distinctions in the remark. A covering has connected fibers iff it is an equivalence (covering_connected_fibers_equiv). Equivalences are coverings (equivalence_covering). The identity of Bool is a covering (boolean_identity_covering), but its domain is not connected (boolean_not_connected). The swapping Boolean covering of a circle is connected (swapping_boolean_connected_cover), but it is not an equivalence (swapping_boolean_cover_not_equivalence). The identity of a circle has finite fibers (equivalence_fibers_finite, circle_identity_fibers_finite). But the circle is not a finite set (circle_not_finite). The general statements and the Boolean example hold for all types. The circle witnesses are for every circle C. The formalization gives no formal content to \"usually\". The instances at the constructed circle are S1_swapping_boolean_cover_not_equivalence and S1_circle_not_finite (module 250)."
   },
   {
     "chapter": 3,
@@ -5001,8 +5236,16 @@
     "line": 640,
     "section_raw": "\\Coverings}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsCovering",
+      "Coverings"
+    ],
+    "principal": [
+      "IsCovering",
+      "Coverings"
+    ],
+    "note": "This is an informal remark that relates coverings to covering spaces and locally constant sheaves. It makes no formal claim. The notion that it refers to is IsCovering, that is, maps with set fibers. Coverings B is the type of coverings over B."
   },
   {
     "chapter": 3,
@@ -5014,8 +5257,32 @@
     "labels": [
       "rem:subtype-diagram"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subtype_diagram_fillers_prop",
+      "subtype_projection_embedding",
+      "SubtypeDiagramFillers",
+      "RespectsSubtypes",
+      "RespectsSubtypesOnCarrier",
+      "respects_subtypes_prop",
+      "respects_subtypes_carrier_prop",
+      "subtype_diagram_fillers_is_prop",
+      "subtype_induced_map",
+      "subtype_induced_filler",
+      "subtype_filler_respects",
+      "subtype_diagram_carrier_to_pointwise",
+      "subtype_diagram_pointwise_to_carrier",
+      "subtype_diagram_pointwise_fillers_equiv",
+      "subtype_diagram_carrier_pointwise_equiv",
+      "subtype_induced_equiv",
+      "IsEmbedding"
+    ],
+    "principal": [
+      "subtype_diagram_fillers_prop",
+      "subtype_diagram_pointwise_fillers_equiv",
+      "subtype_induced_equiv"
+    ],
+    "note": "Let i₁ be any map and i₂ any injection (IsEmbedding: propositional fibers). Then the type Σ(g : S → T)(f∘i₁ = i₂∘g) is a proposition (subtype_diagram_fillers_prop). The proof uses postcomposition with an embedding. The book also assumes that i₁ is an injection, but this is not necessary. Consider predicate subtypes X_P and Y_Q with Q proposition-valued. Then three propositions are logically equivalent: respect on the carrier, pointwise respect, and a filler g. The declarations are subtype_diagram_carrier_pointwise_equiv and subtype_diagram_pointwise_fillers_equiv, which are equivalences between propositions. The induced map (x, p) ↦ (f x, q(x, p)) is subtype_induced_map. Its triangle f∘fst = fst∘g holds by refl (subtype_induced_filler). Assume that f is an equivalence and that f⁻¹ also respects the subtypes. Then the induced maps of f and f⁻¹ are mutually inverse (subtype_induced_equiv, whose map and inverse are the induced maps)."
   },
   {
     "chapter": 3,
@@ -5027,8 +5294,27 @@
     "labels": [
       "thm:coveringsofS1perms"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "coverings_setfamilies_equiv",
+      "circle_families_automorphisms",
+      "circle_setfamilies_permutations",
+      "circle_coverings_permutations",
+      "coverings_diagram_left",
+      "coverings_diagram_right",
+      "circle_covering_monodromy",
+      "book_circle_coverings_permutations",
+      "S1_circle_setfamilies_permutations",
+      "S1_circle_coverings_permutations",
+      "constructed_circle",
+      "BookEquiv",
+      "SetTypes"
+    ],
+    "principal": [
+      "circle_coverings_permutations",
+      "circle_setfamilies_permutations"
+    ],
+    "note": "The statement holds for every circle C. The third-row maps are equivalences. The map f : Coverings(S¹) ≃ (S¹ → SetTypes) sends a covering to its fiber family (coverings_setfamilies_equiv, for any base type). The map g : (S¹ → SetTypes) ≃ Permutations sends S to (S(base), transport along S(loop)) (circle_setfamilies_permutations). Their composite is circle_coverings_permutations. The upper-row g is circle_families_automorphisms. Both forgetful squares commute by refl (coverings_diagram_left, coverings_diagram_right). This pins the maps in the types. By refl, the monodromy of a covering is the transport of its fibers along loop (circle_covering_monodromy). The declaration book_circle_coverings_permutations states the same classification with BookEquiv and BookEquiv-permutations. The proof is different: the inverse of g lands in sets by recursion into SetTypes, not through connectedness. The instances at the constructed circle are S1_circle_setfamilies_permutations and S1_circle_coverings_permutations (module 250)."
   },
   {
     "chapter": 3,
@@ -5040,8 +5326,32 @@
     "labels": [
       "def:universalcover"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_cover_family",
+      "path_cover",
+      "path_cover_contractible",
+      "path_cover_pointed",
+      "book_pointed_path_projection",
+      "pointed_path_cover",
+      "pointed_path_cover_universal",
+      "unit_path_cover_equiv",
+      "unit_path_cover_pointed_map",
+      "unit_path_cover_pointed_triangle",
+      "finite_one_path_cover_equiv",
+      "finite_one_path_cover_pointed_map",
+      "finite_one_path_cover_pointed_triangle",
+      "constant_finite_one_cover",
+      "constant_finite_one_cover_universal",
+      "constant_unit_pointed_cover",
+      "constant_unit_cover_universal"
+    ],
+    "principal": [
+      "path_cover_family",
+      "pointed_path_cover",
+      "constant_finite_one_cover"
+    ],
+    "note": "Let B be a groupoid and b₀ : B. Then b ↦ (b₀ = b) is a family of sets (path_cover_family), and it gives the covering path_cover. Its total space is contractible (path_cover_contractible). The pointed form fst : Σ(b:B)(b₀ = b) → B is pointed at (b₀, refl b₀) with pointing path refl b₀. The declarations are path_cover_pointed, book_pointed_path_projection and pointed_path_cover. The constant map cst_{b₀} : Fin 1 → B with pointing path refl b₀ is the pointed covering constant_finite_one_cover. Equivalences of carriers relate this covering and the Unit presentation to the path form. These equivalences preserve the points and have commuting pointed triangles. The declarations are unit_path_cover_equiv, unit_path_cover_pointed_map, unit_path_cover_pointed_triangle, finite_one_path_cover_equiv, finite_one_path_cover_pointed_map and finite_one_path_cover_pointed_triangle. The path projection and the constant Fin 1 map are universal (def:univ-cover). The proofs are pointed_path_cover_universal and constant_finite_one_cover_universal. The constant Unit presentation is also a pointed covering (constant_unit_pointed_cover). It is universal too (constant_unit_cover_universal, module 285). Thus all three presentations are universal."
   },
   {
     "chapter": 3,
@@ -5053,8 +5363,25 @@
     "labels": [
       "def:univ-cover"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "BookPointedMap",
+      "book_pointed_to_native",
+      "native_pointed_to_book",
+      "pointed_map_conventions_equiv",
+      "BookPointedCoverings",
+      "book_pointed_compose",
+      "PointedCoverLifts",
+      "IsUniversalPointedCover",
+      "universal_pointed_cover_prop",
+      "PointedMap"
+    ],
+    "principal": [
+      "IsUniversalPointedCover",
+      "PointedCoverLifts",
+      "BookPointedMap"
+    ],
+    "note": "PointedCoverLifts is the book's type Σ(h : A →* C)(f = g∘h). Its equality is in the full pointed-map type A →* B, which includes the pointing paths. Its composite pointing is the book's g₀·ap_g(h₀) (book_pointed_compose). IsUniversalPointedCover f says this type is contractible in the book sense for every pointed type C and every pointed covering g : C →* B. Here C ranges over Narya's single universe. IsUniversalPointedCover f is a proposition (universal_pointed_cover_prop). BookPointedMap uses the book's pointing path pt_B = f(pt_A). It is equivalent to the native PointedMap, whose path has the opposite direction (pointed_map_conventions_equiv). The definition does not require that f itself is a covering. That hypothesis enters in lem:univ-cover-of-groupoid."
   },
   {
     "chapter": 3,
@@ -5066,8 +5393,24 @@
     "labels": [
       "lem:univ-cover-of-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "contractible_domain_evaluation",
+      "contractible_domain_pointed_maps",
+      "contractible_map_book_fiber",
+      "contractible_cover_universal",
+      "constant_pointed_unit_cover",
+      "book_pointed_identity_triangle",
+      "book_pointed_constant_triangle",
+      "book_pointed_unit_factor_constant",
+      "universal_cover_contractible",
+      "universal_cover_contractibility_equiv",
+      "BookEquiv"
+    ],
+    "principal": [
+      "universal_cover_contractibility_equiv"
+    ],
+    "note": "Let (A, a₀) be a pointed type, (B, b₀) a pointed groupoid and f a pointed covering. Then the universality of f is BookEquiv-equivalent to the contractibility of A (universal_cover_contractibility_equiv). Thus both directions hold. If A is contractible, then f is universal (contractible_cover_universal). This direction needs neither the groupoid hypothesis nor the covering hypothesis. Its proof contracts the full pointed-map space and the book fiber of composition. The converse is universal_cover_contractible. Here f factors through the constant pointed covering Unit → B (constant_pointed_unit_cover). By universality, the resulting constant self-lift is identified with the identity self-lift. This gives a contraction of A centered at a₀."
   },
   {
     "chapter": 3,
@@ -5079,8 +5422,28 @@
     "labels": [
       "def:RtoS1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_integer_family",
+      "circle_integer_family_beta",
+      "circle_integer_monodromy",
+      "code_is_set",
+      "circle_integer_cover",
+      "circle_integer_total_pointed",
+      "circle_exponential_map",
+      "S1_circle_integer_cover",
+      "S1_circle_exponential_map",
+      "constructed_circle",
+      "PointedMap",
+      "book_circle_exponential_map",
+      "int_universe_loop"
+    ],
+    "principal": [
+      "circle_integer_family",
+      "circle_integer_cover",
+      "circle_exponential_map"
+    ],
+    "note": "The statement holds for every circle C. R = circle_integer_family is the circle recursor into Type with R(base) = ℤ and R(loop) = ua(s) (int_universe_loop). Its computation rule circle_integer_family_beta replaces R(base) ≡ ℤ by an identification (circle β: Narya efafad2 has no HITs). The transport of the identity enumeration along this identification gives e : ℤ ≃ R(base) with R(loop)(e n) = e(n+1) (circle_integer_monodromy). This property is derived, not assumed. Every R(z) is a set (code_is_set). The proof uses circle induction into propositions, but the book argues by connectedness. Thus R gives the covering circle_integer_cover. Tot(R) is pointed at (base, e(0)) (circle_integer_total_pointed), that is, at 0 transported along the base identification. The map exp = fst has the pointing path refl base (circle_exponential_map, a native PointedMap). The book-oriented version is book_circle_exponential_map (see cor:univ-covers-S1). The instances at the constructed circle are S1_circle_integer_cover and S1_circle_exponential_map (module 250)."
   },
   {
     "chapter": 3,
@@ -5092,8 +5455,22 @@
     "labels": [
       "rem:expforreal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "exponential_base_fiber",
+      "exponential_family_integers",
+      "exponential_fibers_integers",
+      "circle_exponential_map",
+      "circle_integer_family",
+      "S1_exponential_fibers_integers",
+      "S1_circle_exponential_map",
+      "constructed_circle",
+      "exponential_base_preimage"
+    ],
+    "principal": [
+      "exponential_fibers_integers"
+    ],
+    "note": "The analogy with the complex exponential is informal. Its formal content holds for every circle C. Every preimage exp⁻¹(z) is the book fiber of fst : Tot(R) → S¹. It is merely equivalent to ℤ (exponential_fibers_integers). Every R(z) is merely equivalent to ℤ (exponential_family_integers). Also, R(base) ≃ ℤ by the base identification of R (exponential_base_fiber). This statement is about the family, not the preimage. An exact equivalence exp⁻¹(base) ≃ ℤ is not declared separately. The instances at the constructed circle are S1_exponential_fibers_integers and S1_circle_exponential_map (module 250). At the base point, the preimage itself is exactly equivalent to Z: exponential_base_preimage : fst⁻¹(base) ≃ Z, for every CircleSignature (module 284). The declaration exponential_base_fiber is the family value R(base) ≃ Z."
   },
   {
     "chapter": 3,
@@ -5105,8 +5482,19 @@
     "labels": [
       "rem:univalence-transparent"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "transport_function_family",
+      "transport_endomorphism_ua",
+      "ua",
+      "transport_equiv",
+      "circle_integer_monodromy"
+    ],
+    "principal": [
+      "transport_function_family",
+      "transport_endomorphism_ua"
+    ],
+    "note": "This is a notational convention: it leaves ua and transport implicit. The formalization always writes ua and transport explicitly. The formal content of the convention is lem:trp-in-function-type: the transport of h : P(a) → Q(a) along p is pointwise trp_Q(p)∘h∘trp_P(p⁻¹) (transport_function_family). For p = ua(g) on endomorphisms, it is conjugation by g (transport_endomorphism_ua). The example R(loop)(0) = 1 is the step field of circle_integer_monodromy at 0. It is read through the enumeration e : ℤ ≃ R(base) (def:RtoS1)."
   },
   {
     "chapter": 3,
@@ -5118,8 +5506,21 @@
     "labels": [
       "def:fPtoR"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "code_root",
+      "code_encode",
+      "circle_integer_enumeration_coherence",
+      "circle_winding_is_transport",
+      "S1_circle_winding_is_transport",
+      "constructed_circle",
+      "circle_integer_family",
+      "circle_integer_monodromy"
+    ],
+    "principal": [
+      "code_encode"
+    ],
+    "note": "For every circle C, f is code_encode, specialized to R = circle_integer_family and its monodromy data circle_integer_monodromy. Thus f(z)(p) is the transport of code_root along p. That is, it is literally R(p)(e 0) for the enumeration e : ℤ ≃ R(base). The book's 0 : R(base) is e(0), because R(base) ≡ ℤ is only an identification (circle β: Narya efafad2 has no HITs). The relation of e with that identification is circle_integer_enumeration_coherence. The declaration circle_winding_is_transport shows that e⁻¹(f(base)(p)) equals f(base)(p) carried to ℤ along the identification. The instance at the constructed circle is S1_circle_winding_is_transport (module 250)."
   },
   {
     "chapter": 3,
@@ -5131,8 +5532,22 @@
     "labels": [
       "lem:windingnumber"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loop_power",
+      "code_encode_power",
+      "circle_winding_power",
+      "circle_integer_trivialization_enumeration",
+      "S1_circle_winding_power",
+      "constructed_circle",
+      "S1_circle_integer_trivialization_enumeration"
+    ],
+    "principal": [
+      "circle_winding_power",
+      "code_encode_power",
+      "circle_integer_trivialization_enumeration"
+    ],
+    "note": "The statement holds for every circle C and every n : ℤ, including negative n. Here loop^(−(k+1)) = (loop⁻¹)^(k+1) (loop_power). Then f(base)(loopⁿ) = e(n) in R(base) (code_encode_power). Hence wdg(loopⁿ) = n (circle_winding_power). R(base) ≡ ℤ is only an identification (circle β: Narya efafad2 has no HITs). Thus the book's equation f(base)(loopⁿ) = n is read through e : ℤ ≃ R(base). After the base identification, the value of e(n) is n (circle_integer_trivialization_enumeration). The instances at the constructed circle are S1_circle_winding_power and S1_circle_integer_trivialization_enumeration (module 250)."
   },
   {
     "chapter": 3,
@@ -5144,8 +5559,24 @@
     "labels": [
       "def:gRtoP"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "code_decode_base",
+      "code_decode_loop",
+      "code_decode",
+      "code_decode_beta",
+      "S1_code_decode",
+      "constructed_circle",
+      "S1_code_decode_beta",
+      "circle_integer_family",
+      "circle_integer_monodromy",
+      "loop_power_succ"
+    ],
+    "principal": [
+      "code_decode",
+      "code_decode_beta"
+    ],
+    "note": "For every circle C, g is code_decode, specialized to R = circle_integer_family and circle_integer_monodromy. It is defined by circle induction. Its base case is code_decode_base, x ↦ loop^(e⁻¹(x)). This is the book's n ↦ loopⁿ, read through the enumeration e : ℤ ≃ R(base), because R(base) ≡ ℤ is only an identification. Also, g(base) = code_decode_base holds as an identification (code_decode_beta), not judgmentally. Both facts come from circle β: Narya efafad2 has no HITs. The loop case (code_decode_loop) is the book's square. It is built from loop_power_succ and the monodromy step R(loop)(e n) = e(n+1). Here loop_power_succ says that loopⁿ followed by loop is loopⁿ⁺¹. The instances at the constructed circle are S1_code_decode and S1_code_decode_beta (module 250)."
   },
   {
     "chapter": 3,
@@ -5157,8 +5588,24 @@
     "labels": [
       "lem:univisexp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "code_decode_encode",
+      "code_encode_decode",
+      "circle_paths_integer_family_equiv",
+      "circle_integer_total_contractible",
+      "S1_circle_paths_integer_family_equiv",
+      "S1_circle_integer_total_contractible",
+      "constructed_circle",
+      "circle_paths_integer_family_equiv_book_map",
+      "BookIsEquiv",
+      "code_decode_beta"
+    ],
+    "principal": [
+      "circle_paths_integer_family_equiv_book_map",
+      "circle_paths_integer_family_equiv"
+    ],
+    "note": "For every circle C and every z, f(z) and g(z) are inverse. The proof of code_decode_encode uses path induction. The proof of code_encode_decode uses circle induction into propositions. Thus f(z) : (base = z) ≃ R(z) (circle_paths_integer_family_equiv). The companion states that f(z)(p) = R(p)(e 0) is a BookIsEquiv. In it, the book's 0 is read as e(0) for e : ℤ ≃ R(base). The book's H(base, refl) ≔ refl uses g(base)(f(base)(refl)) ≡ refl. Here this is an identification. It combines transport along refl (Jβ is typal by design) and g(base) (code_decode_beta, circle β: Narya efafad2 has no HITs). The formalization also proves that Tot(R) is contractible (circle_integer_total_contractible). The universality of exp is cor:univ-covers-S1. The instances at the constructed circle are S1_circle_paths_integer_family_equiv and S1_circle_integer_total_contractible (module 250)."
   },
   {
     "chapter": 3,
@@ -5170,8 +5617,23 @@
     "labels": [
       "cor:S1groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_based_paths_set",
+      "circle_groupoid",
+      "circle_integer_loop_equiv",
+      "S1_circle_groupoid",
+      "S1_circle_integer_loop_equiv",
+      "constructed_circle",
+      "circle_integer_loop_equiv_book_map",
+      "BookEquiv",
+      "BookIsEquiv"
+    ],
+    "principal": [
+      "circle_groupoid",
+      "circle_integer_loop_equiv_book_map"
+    ],
+    "note": "Let C be a circle. Then C is a groupoid (circle_groupoid). The proof uses circle_based_paths_set: base = z is a set because R(z) is a set. Also, n ↦ loopⁿ is a BookIsEquiv ℤ → (base = base) (circle_integer_loop_equiv_book_map). The BookEquiv with this map and the inverse wdg is circle_integer_loop_equiv. The instances at the constructed circle are S1_circle_groupoid and S1_circle_integer_loop_equiv (module 250)."
   },
   {
     "chapter": 3,
@@ -5183,8 +5645,25 @@
     "labels": [
       "cor:univ-covers-S1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "book_circle_exponential_map",
+      "circle_exponential_pointing_comparison",
+      "circle_integer_book_pointed_cover",
+      "circle_path_cover_universal",
+      "circle_integer_cover_universal",
+      "S1_circle_path_cover_universal",
+      "S1_circle_integer_cover_universal",
+      "constructed_circle",
+      "circle_groupoid",
+      "circle_integer_total_contractible",
+      "contractible_cover_universal"
+    ],
+    "principal": [
+      "circle_path_cover_universal",
+      "circle_integer_cover_universal"
+    ],
+    "note": "For every circle C, both pointed coverings are universal (def:univ-cover). As in the book, the proof uses the contractibility of their domains (contractible_cover_universal, lem:univ-cover-of-groupoid). The first covering is the path projection fst : Σ(z)(base = z) → S¹. It is pointed at (base, refl) with pointing path refl (circle_path_cover_universal, which uses circle_groupoid). The second covering is exp : Tot(R) → S¹. It is pointed at (base, e(0)) with pointing path refl base (circle_integer_cover_universal, which uses circle_integer_total_contractible). The declaration book_circle_exponential_map is exp as a book-pointed map. It is equal to the native pointed map of def:RtoS1 (circle_exponential_pointing_comparison). The declaration circle_integer_book_pointed_cover packages it as a pointed covering. The instances at the constructed circle are S1_circle_path_cover_universal and S1_circle_integer_cover_universal (module 250)."
   },
   {
     "chapter": 3,
@@ -5196,8 +5675,30 @@
     "labels": [
       "def:windingnumber"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_winding",
+      "circle_loop_integer_equiv",
+      "circle_winding_is_transport",
+      "circle_winding_refl",
+      "circle_winding_loop",
+      "circle_winding_inverse_loop",
+      "circle_winding_successor",
+      "circle_winding_predecessor",
+      "circle_winding_composition",
+      "S1_circle_loop_integer_equiv",
+      "S1_circle_winding_is_transport",
+      "S1_circle_winding_composition",
+      "constructed_circle",
+      "circle_loop_integer_equiv_book_map",
+      "BookEquiv",
+      "BookIsEquiv"
+    ],
+    "principal": [
+      "circle_loop_integer_equiv_book_map",
+      "circle_winding"
+    ],
+    "note": "For every circle C, wdg = circle_winding is p ↦ e⁻¹(R(p)(e 0)). This is the book's f(base), read through the enumeration e : ℤ ≃ R(base). The reason is that R(base) ≡ ℤ holds only as an identification, by circle β (Narya efafad2 has no HITs). The map wdg is a BookIsEquiv (base = base) → ℤ (circle_loop_integer_equiv_book_map). The BookEquiv with the inverse n ↦ loopⁿ is circle_loop_integer_equiv. Equivalently, wdg(p) is f(base)(p) carried to ℤ along the base identification (circle_winding_is_transport). The formalization also proves six equations. First, wdg(refl) = 0 (circle_winding_refl) and wdg(loop) = 1 (circle_winding_loop). Next, wdg(loop⁻¹) = −1 (circle_winding_inverse_loop). Also, wdg(p·loop) = wdg(p) + 1 (circle_winding_successor) and wdg(p·loop⁻¹) = wdg(p) − 1 (circle_winding_predecessor). Finally, wdg(p·q) = wdg(p) + wdg(q) (circle_winding_composition). The instances at the constructed circle are S1_circle_loop_integer_equiv, S1_circle_winding_is_transport and S1_circle_winding_composition (module 250)."
   },
   {
     "chapter": 3,
@@ -5209,8 +5710,26 @@
     "labels": [
       "lem:S1-delooping"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LoopMapUnit",
+      "LoopMapComposition",
+      "loop_map_power",
+      "circle_rec_based_power",
+      "circle_delooping_action",
+      "circle_delooping_loops",
+      "circle_delooping_equiv",
+      "S1_circle_delooping_equiv",
+      "constructed_circle",
+      "circle_delooping_equiv_book_map",
+      "BookEquiv",
+      "BookIsEquiv",
+      "circle_rec"
+    ],
+    "principal": [
+      "circle_delooping_equiv_book_map"
+    ],
+    "note": "Let C be a circle, A a connected type and a : A. Let e : (base = base) ≃ (a = a) be an equivalence with e(refl) = refl (LoopMapUnit) and e(p·q) = e(p)·e(q) (LoopMapComposition). Then the map ě = circle_rec (a, e(loop)) is a BookIsEquiv (circle_delooping_equiv_book_map). The BookEquiv is circle_delooping_equiv. As in the book, the action of ě on loops agrees with e on every loopⁿ (circle_rec_based_power, loop_map_power). The preservation of inverses follows from the two laws. The connected-map criterion of cor:fib-vs-path applies (circle_delooping_loops). However, ě(base) ≡ a is only an identification (circle β: Narya efafad2 has no HITs). Thus the action on loops is transported along it before the comparison. The instance at the constructed circle is S1_circle_delooping_equiv (module 250)."
   },
   {
     "chapter": 3,
@@ -5222,8 +5741,30 @@
     "labels": [
       "xca:general-winding"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "winding_function_boundary",
+      "circle_general_winding",
+      "circle_general_winding_base",
+      "circle_general_winding_equiv",
+      "circle_general_winding_transport",
+      "circle_general_winding_composition",
+      "circle_coordinate_loop_equiv",
+      "circle_translation",
+      "circle_translation_base",
+      "S1_circle_general_winding_equiv",
+      "S1_circle_translation",
+      "constructed_circle",
+      "circle_translation_book_map",
+      "BookEquiv",
+      "BookIsEquiv",
+      "circle_rec"
+    ],
+    "principal": [
+      "circle_general_winding_equiv",
+      "circle_translation_book_map"
+    ],
+    "note": "The formalization proves both parts for every circle C. Circle induction defines wdg_x for all x (circle_general_winding). Its base case is wdg. Its loop case (winding_function_boundary) uses the commutativity of addition, because wdg is invariant under conjugation by loop. The map wdg_x is an equivalence (x = x) ≃ ℤ (circle_general_winding_equiv). At base, it agrees with wdg up to the computation identification (circle_general_winding_base). It is invariant under transport (circle_general_winding_transport). It is additive (circle_general_winding_composition). By lem:S1-delooping, f_x = circle_rec (x, wdg_x⁻¹(wdg(loop))) is a BookIsEquiv S¹ → S¹ (circle_translation_book_map). The BookEquiv is circle_translation, with the loop map circle_coordinate_loop_equiv. The book's f_x(base) ≡ x holds as an identification (circle_translation_base, circle β: Narya efafad2 has no HITs). The instances at the constructed circle are S1_circle_general_winding_equiv and S1_circle_translation (module 250)."
   },
   {
     "chapter": 3,
@@ -5235,8 +5776,28 @@
     "labels": [
       "xca:S1=S1-components"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_reflection",
+      "circle_degree_identity",
+      "circle_degree_reflection",
+      "circle_identity_reflection_different_components",
+      "circle_equivalence_degree_sign",
+      "circle_equivalence_two_components",
+      "book_circle_equivalence_two_components",
+      "S1_circle_identity_reflection_different_components",
+      "S1_circle_equivalence_two_components",
+      "constructed_circle",
+      "BookEquiv",
+      "circle_map_degree",
+      "circle_rec",
+      "isEquiv"
+    ],
+    "principal": [
+      "circle_identity_reflection_different_components",
+      "circle_equivalence_two_components"
+    ],
+    "note": "The formalization proves both parts for every circle C. Here −id = circle_rec (base, loop⁻¹) (circle_reflection). The equation −id(base) ≡ base holds only as an identification, by circle β. (1) Mere(id = −id) in C → C implies Empty (circle_identity_reflection_different_components). The reason is the degree, that is, the winding of ap_f(loop) (circle_map_degree). The degree is 1 for id and −1 for −id (circle_degree_identity, circle_degree_reflection). (2) For every self-equivalence e, the formalization proves Mere(id = e) ⊔ Mere(−id = e) (circle_equivalence_two_components). This statement uses the equality of underlying maps. It is equivalent to the book's equality of equivalences, because isEquiv is a proposition. The degree of an equivalence is a unit of ℤ. Hence it is 1 or −1 by a constructive classification (circle_equivalence_degree_sign). The BookEquiv version is book_circle_equivalence_two_components. The instances at the constructed circle are S1_circle_identity_reflection_different_components and S1_circle_equivalence_two_components (module 250)."
   },
   {
     "chapter": 3,
@@ -5248,8 +5809,26 @@
     "labels": [
       "xca:(S1->S1)_(f)-eqv-S1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_mapping_coordinates",
+      "circle_map_degree",
+      "circle_degree_component_equiv",
+      "circle_map_component_equiv",
+      "circle_reflection_equiv",
+      "circle_symmetries_two_circles",
+      "circle_type_symmetries_two_circles",
+      "S1_circle_mapping_coordinates",
+      "S1_circle_map_component_equiv",
+      "S1_circle_symmetries_two_circles",
+      "S1_circle_type_symmetries_two_circles",
+      "constructed_circle"
+    ],
+    "principal": [
+      "circle_map_component_equiv",
+      "circle_symmetries_two_circles"
+    ],
+    "note": "For every circle C and every f : C → C, the formalization proves C ≃ (C → C)_(f) (circle_map_component_equiv). Here (C → C)_(f) is the component Σ(g : C → C) Mere(f = g). The proof has two steps. First, C → C ≃ C × ℤ by evaluation at base and the general winding of ap_f(loop) (circle_mapping_coordinates). Second, two maps are in the same component iff their degrees agree (circle_degree_component_equiv). The proof does not use the book's hint (lem:S1-delooping). The formalization also proves the following unnumbered remark. The self-equivalences C ≃ C and the identity type C = C in Type are each equivalent to C ⊔ C (circle_symmetries_two_circles, circle_type_symmetries_two_circles). Also, circle_reflection_equiv gives −id as an equivalence. The instances at the constructed circle are S1_circle_mapping_coordinates, S1_circle_map_component_equiv, S1_circle_symmetries_two_circles and S1_circle_type_symmetries_two_circles (module 250)."
   },
   {
     "chapter": 3,
@@ -5261,8 +5840,16 @@
     "labels": [
       "rem:bang"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "power_commutation_prop",
+      "integer_cycle_power_path",
+      "integer_endomorphism_power_path"
+    ],
+    "principal": [
+      "power_commutation_prop"
+    ],
+    "note": "The formal content is as follows. For every set A, self-equivalence e and z : ℤ, the type e^z∘e = e∘e^z is a proposition (power_commutation_prop). This type is an equality of maps. Its instance at (ℤ, s) is not declared separately. Every power sⁿ gives a symmetry (sⁿ, !) of (ℤ, s). In Σ(X:Type)(X → X), this is integer_endomorphism_power_path (module 94). In Cycles, it is integer_cycle_power_path. The naming convention \"!\" has no formal content."
   },
   {
     "chapter": 3,
@@ -5274,8 +5861,25 @@
     "labels": [
       "lem:IdCisZet"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Endomorphisms",
+      "EndomorphismCycleStructure",
+      "cycles_endomorphism_subtype",
+      "cycle_endomorphism_paths",
+      "InfiniteCycles",
+      "infinite_endomorphism_cycle_component",
+      "infinite_endomorphism_evaluation",
+      "integer_endomorphism_power_path",
+      "integer_endomorphism_power_evaluation",
+      "infinite_endomorphism_evaluation_book_map",
+      "BookEquiv",
+      "BookIsEquiv"
+    ],
+    "principal": [
+      "infinite_endomorphism_evaluation_book_map"
+    ],
+    "note": "InfCyc is the component of Endomorphisms = Σ(X:Type)(X → X) at (ℤ, s). It is InfiniteCycles, and the component is taken with Mere. The map ev₀ sends p to the transport of 0 along the type component of p, that is, to the book's e(0). For every (X, t) in InfCyc, this map ev₀ is a BookIsEquiv (infinite_endomorphism_evaluation_book_map). The BookEquiv is infinite_endomorphism_evaluation. The proof is different from the printed one. It compares Cycles with a propositional subtype of Endomorphisms (cycles_endomorphism_subtype). It compares identifications of cycles with identifications of their endomorphisms by ap of the forgetful map (cycle_endomorphism_paths). By cor:ConnCycles, the evaluation of cycle identifications is an equivalence. Also, the powers of s give symmetries of (ℤ, s) with ev₀(sⁿ) = n (integer_endomorphism_power_path, integer_endomorphism_power_evaluation). No circle and no classical principle is used."
   },
   {
     "chapter": 3,
@@ -5287,8 +5891,26 @@
     "labels": [
       "def:S1toC"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Endomorphisms",
+      "integer_endomorphism",
+      "InfiniteCycles",
+      "infinite_endomorphism_point",
+      "integer_predecessor_isomorphism",
+      "integer_predecessor_endomorphism_path",
+      "infinite_predecessor_loop",
+      "infinite_predecessor_loop_coordinate",
+      "circle_infinite_cycle_map",
+      "circle_infinite_cycle_boundary",
+      "S1_circle_infinite_cycle_map",
+      "constructed_circle"
+    ],
+    "principal": [
+      "InfiniteCycles",
+      "circle_infinite_cycle_map"
+    ],
+    "note": "InfCyc is InfiniteCycles, the component of Endomorphisms = Σ(X:Type)(X → X) at (ℤ, s). It is pointed at infinite_endomorphism_point. For every circle C, c = circle_infinite_cycle_map is the circle recursor with c(base) = (ℤ, s). Its value c(loop) is the predecessor symmetry (s⁻¹, !) (infinite_predecessor_loop). This symmetry is built from integer_predecessor_isomorphism with its commuting proof. Its coordinate is −1 (infinite_predecessor_loop_coordinate). The computation rule, including c(base) = (ℤ, s), is not judgmental. It is the identification circle_infinite_cycle_boundary (circle β: Narya efafad2 has no HITs). The instance at the constructed circle is S1_circle_infinite_cycle_map (module 250)."
   },
   {
     "chapter": 3,
@@ -5300,8 +5922,31 @@
     "labels": [
       "xca:TTYoneda"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "YonedaSections",
+      "yoneda_transport",
+      "yoneda_evaluate",
+      "yoneda_transport_evaluate",
+      "yoneda_section_eta",
+      "yoneda_transport_eta",
+      "type_theoretic_yoneda",
+      "representable_section_equiv",
+      "representable_equivalences_sections",
+      "representable_path_decode_equiv",
+      "representable_path_decode_ap",
+      "representable_ap_equiv",
+      "representable_embedding",
+      "representable_fiber_proposition",
+      "type_theoretic_yoneda_book_map",
+      "BookEquiv",
+      "BookIsEquiv"
+    ],
+    "principal": [
+      "type_theoretic_yoneda_book_map",
+      "representable_embedding"
+    ],
+    "note": "The formalization proves both clauses for every type X. (1) The map e_x(u) = (y, p) ↦ transport_F(p)(u) is a BookIsEquiv F(x) → Π(y:X)((x = y) → F(y)) (type_theoretic_yoneda_book_map). The BookEquiv is type_theoretic_yoneda, and its inverse is evaluation at (x, refl x). The law e_x⁻¹(e_x(u)) = u is transport along refl. This is the identity only up to an identification, because Jβ is typal by design. For F = (z = –), every such family of maps is a family of equivalences (representable_section_equiv, representable_equivalences_sections). (2) The map x ↦ (y ↦ x = y) is an injection in the book's sense. That is, it has propositional book fibers (representable_embedding, representable_fiber_proposition). This needs no set or groupoid hypothesis on X. Its ap is a BookEquiv (representable_ap_equiv). The proof uses pointwise univalence, (1) and path inversion (representable_path_decode_equiv, representable_path_decode_ap)."
   },
   {
     "chapter": 3,
@@ -5313,8 +5958,17 @@
     "labels": [
       "lem:conn-eq-f-ap-f-x"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "connected_equivalence_loop_criterion",
+      "BookEquiv",
+      "BookIsEquiv",
+      "TruncationSignature"
+    ],
+    "principal": [
+      "connected_equivalence_loop_criterion"
+    ],
+    "note": "The formalization proves both directions for connected X and Y (connected_equivalence_loop_criterion). The result is a BookEquiv between the propositions BookIsEquiv f and BookIsEquiv(ap_f : (x = x) → (f(x) = f(x))). Connectedness is taken with respect to an arbitrary TruncationSignature. This is a harmless generalization. The book's notion is the instance at the constructed truncation Mere. No circle is involved."
   },
   {
     "chapter": 3,
@@ -5326,8 +5980,39 @@
     "labels": [
       "thm:S1bysymmetries"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infinite_cycle_loop_coordinate_equiv",
+      "infinite_cycle_loop_coordinate_refl",
+      "infinite_cycle_loop_coordinate_composition",
+      "circle_negative_winding_equiv",
+      "circle_infinite_loop_equiv",
+      "circle_infinite_loop_unit",
+      "circle_infinite_loop_composition",
+      "circle_infinite_loop_generator",
+      "circle_infinite_cycle_action_comparison",
+      "circle_infinite_cycle_power_coordinate",
+      "circle_infinite_cycles_equiv",
+      "representable_component_equiv",
+      "circle_universal_family_component",
+      "S1_circle_infinite_cycles_equiv",
+      "constructed_circle",
+      "circle_infinite_cycles_equiv_book_map",
+      "BookEquiv",
+      "BookIsEquiv",
+      "circle_rec",
+      "constructed_circle_infinite_cycles",
+      "circle_first_proof_left_triangle",
+      "circle_first_proof_right_triangle",
+      "circle_first_proof_c_iff_universal_family",
+      "circle_first_proof_universal_family_iff_unit_cover",
+      "circle_infinite_cycle_map_first_proof",
+      "S1_circle_infinite_cycle_map_first_proof"
+    ],
+    "principal": [
+      "circle_infinite_cycles_equiv_book_map"
+    ],
+    "note": "For every circle C, the map c of def:S1toC is a BookIsEquiv C → InfCyc (circle_infinite_cycles_equiv_book_map). Literally, c is circle_rec ((ℤ, s), predecessor symmetry). The BookEquiv is circle_infinite_cycles_equiv. This follows the printed proof. The loops at base and at (ℤ, s) are both identified with ℤ (cor:S1groupoid, lem:IdCisZet, infinite_cycle_loop_coordinate_equiv). The action of c on loops is negated winding (circle_negative_winding_equiv, circle_infinite_loop_equiv, circle_infinite_cycle_action_comparison). This action preserves unit and composition. It sends loop to the predecessor symmetry (circle_infinite_loop_generator). The coordinate of ap_c(loopᶻ) is −z (circle_infinite_cycle_power_coordinate). The equivalence follows by lem:S1-delooping. However, c(base) ≡ (ℤ, s) is only an identification (circle β: Narya efafad2 has no HITs). Thus the action on loops is transported along it. The diagram of the first proof is not formalized. In this diagram, c is compared with the fibers of the universal covering through thm:coveringsofS1perms. But the Yoneda step of its footnote is formalized for every connected type. It says that X is equivalent to the component of its representable family (representable_component_equiv, circle_universal_family_component). The instance at the constructed circle is S1_circle_infinite_cycles_equiv (module 250). Another instance is constructed_circle_infinite_cycles (module 224). The book's first proof is also formalized (module 288). The formalization gives both triangles of eq:setbundle-Sc-univ-comp (circle_first_proof_left_triangle, circle_first_proof_right_triangle). Also, c is an equivalence iff uc_– is an equivalence, and uc_– is an equivalence iff (1, cst_–) is an equivalence. The declarations are circle_first_proof_c_iff_universal_family and circle_first_proof_universal_family_iff_unit_cover. Finally, (1, cst_–) is an equivalence onto its component. This gives circle_infinite_cycle_map_first_proof."
   },
   {
     "chapter": 3,
@@ -5339,8 +6024,20 @@
     "labels": [
       "def:connected-by-t"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OrbitWitness",
+      "SameOrbit",
+      "orbit_relation",
+      "same_orbit_refl",
+      "same_orbit_sym",
+      "same_orbit_trans"
+    ],
+    "principal": [
+      "SameOrbit",
+      "orbit_relation"
+    ],
+    "note": "The relation x ∼ x' is SameOrbit. It is the mere existence (Mere) of n : ℤ with x' = tⁿ(x) (OrbitWitness, in the book's orientation). It is an equivalence relation (orbit_relation, same_orbit_refl, same_orbit_sym, same_orbit_trans). The proof uses the addition and inverse laws of signed iteration. The result holds for any type with an equivalence. The book assumes a set, but this is not necessary here."
   },
   {
     "chapter": 3,
@@ -5352,8 +6049,27 @@
     "labels": [
       "con:cycset-connS1cover"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "family_monodromy",
+      "family_transport_winding",
+      "total_path_orbit",
+      "orbit_total_path",
+      "base_component_surjective",
+      "circle_orbits_components_equiv",
+      "circle_components_orbits_equiv",
+      "circle_orbits_components_beta",
+      "circle_components_orbits_beta",
+      "permutation_family_monodromy",
+      "permutation_cover_components",
+      "S1_circle_components_orbits_equiv",
+      "constructed_circle"
+    ],
+    "principal": [
+      "circle_components_orbits_equiv",
+      "permutation_cover_components"
+    ],
+    "note": "The statement holds for every circle C. It is stated for any family R over C, which is more general than a permutation. The set of components ‖Σ_z R(z)‖₀ is equivalent to the quotient of R(base) by the orbit relation of the monodromy. The monodromy is transport along loop (family_monodromy). The book's h, [x] ↦ |(base, x)|, is circle_orbits_components_equiv. Its value on classes holds by refl (circle_orbits_components_beta). The book's g is its inverse circle_components_orbits_equiv, with g(|(base, x)|) = [x] (circle_components_orbits_beta). The proof is different from the printed one. It does not define g by circle induction. Instead, it shows that ‖ΣR‖₀ is a quotient of R(base) (base_component_surjective). In this proof, paths between points over base correspond to orbit witnesses (total_path_orbit, orbit_total_path, family_transport_winding). Consider a given permutation (X, t) (permutation_cover_components). Then E is the family given by the inverse of the classification of thm:coveringsofS1perms. This family is ve_U(X, ua t) up to that equivalence. Its monodromy is t (permutation_family_monodromy). The instance at the constructed circle is S1_circle_components_orbits_equiv (module 250)."
   },
   {
     "chapter": 3,
@@ -5365,8 +6081,22 @@
     "labels": [
       "def:Cyc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Cyclic",
+      "cyclic_prop",
+      "Cycles",
+      "integer_successor_cyclic",
+      "infinite_cycle",
+      "cyclic_transfer",
+      "SetTypes",
+      "cycles_endomorphism_subtype"
+    ],
+    "principal": [
+      "Cycles",
+      "Cyclic"
+    ],
+    "note": "The formalization defines Cycles = Σ(p : Permutations) Cyclic(p). Here Permutations = Σ(X : SetTypes)(X ≃ X). Also, Cyclic X t = ‖X‖ × Π(x, x' : X) ∃(n : ℤ)(x' = tⁿ(x)). This is exactly the printed formula. Sets range over Narya's single universe Type, and ∃ and ‖X‖ use Mere. The formalization also shows that Cycles is equivalent to a subtype of Σ(X : Type)(X → X) by a proposition (cycles_endomorphism_subtype, module 92). This is as in the book's first sentence. The formalization also includes the infinite cycle (ℤ, s) (integer_successor_cyclic, infinite_cycle). It also includes the transfer of cyclicity along an intertwining equivalence (cyclic_transfer)."
   },
   {
     "chapter": 3,
@@ -5378,8 +6108,21 @@
     "labels": [
       "thm:cycset-connS1cover"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cyclic_quotient_equiv",
+      "circle_total_connected_cyclic",
+      "circle_covering_connected_cyclic",
+      "circle_connected_coverings_cycles",
+      "connected_coverings_classification_underlying",
+      "S1_circle_connected_coverings_cycles",
+      "constructed_circle",
+      "BookEquiv"
+    ],
+    "principal": [
+      "circle_connected_coverings_cycles"
+    ],
+    "note": "For every circle C, connected coverings over C are equivalent to cycles as a BookEquiv (circle_connected_coverings_cycles). This equivalence is the restriction of the classification of thm:coveringsofS1perms: by refl, its underlying permutation is that classification (connected_coverings_classification_underlying). A covering is connected iff its monodromy is cyclic (circle_covering_connected_cyclic, circle_total_connected_cyclic). The proof uses con:cycset-connS1cover. It also uses the fact that (X, t) is cyclic iff X/∼ is contractible (cyclic_quotient_equiv). The instance at the constructed circle is S1_circle_connected_coverings_cycles (module 250)."
   },
   {
     "chapter": 3,
@@ -5391,8 +6134,23 @@
     "labels": [
       "def:dgm-map"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_degree_map",
+      "circle_degree_boundary",
+      "circle_degree_based_action",
+      "circle_degree_action_is_power",
+      "circle_degree_winding",
+      "degree_winding_image_multiples",
+      "S1_circle_degree_map",
+      "S1_degree_winding_image_multiples",
+      "constructed_circle",
+      "circle_degree_loops_injective"
+    ],
+    "principal": [
+      "circle_degree_map"
+    ],
+    "note": "The statement holds for every circle C and m : ℕ. The book takes m positive. Here dg_m = circle_degree_map is the circle recursor with dg_m(base) = base and dg_m(loop) = loopᵐ. Its computation rule circle_degree_boundary is an identification. Thus dg_m(base) ≡ base does not hold judgmentally (circle β: Narya efafad2 has no HITs). The formalization also proves the following text. On loops, the action of dg_m is p ↦ pᵐ (circle_degree_action_is_power). This action is transported along that identification (circle_degree_based_action). It multiplies winding numbers by m (circle_degree_winding). For positive m, it is injective (circle_degree_loops_injective, see cor:dgm-conncov). Its image in ℤ is exactly mℤ (degree_winding_image_multiples). The instances at the constructed circle are S1_circle_degree_map and S1_degree_winding_image_multiples (module 250)."
   },
   {
     "chapter": 3,
@@ -5402,8 +6160,24 @@
     "line": 1840,
     "section_raw": "Connected \\coverings over the circle}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "modular_successor",
+      "modular_successor_small",
+      "modular_successor_last",
+      "modular_predecessor_at",
+      "modular_predecessor",
+      "modular_successor_predecessor",
+      "modular_predecessor_successor",
+      "modular_successor_equiv",
+      "finite_fin_successor",
+      "fin_book_below_equiv"
+    ],
+    "principal": [
+      "modular_successor_equiv",
+      "finite_fin_successor"
+    ],
+    "note": "The statement is for positive m = n+1. The book also fixes m positive. On the remainders Σ(k : ℕ)(k < m), s is modular_successor. This is the remainder of k+1 on division by m. It satisfies the printed case formula as identifications. The case k < m−1 is modular_successor_small, and the case k = m−1 is modular_successor_last. The explicit inverse is modular_predecessor, with 0 ↦ m−1 and r+1 ↦ r. It has both inverse laws (modular_successor_predecessor, modular_predecessor_successor). The package is modular_successor_equiv. The declaration finite_fin_successor carries this to the literal Fin m. It conjugates with the book's Fin m ≃ Σ(k : ℕ)(k < m) (fin_book_below_equiv). The book itself takes this route."
   },
   {
     "chapter": 3,
@@ -5415,8 +6189,38 @@
     "labels": [
       "def:RmtoS1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "power_fiber_set",
+      "power_fiber_rotation",
+      "power_circle_family",
+      "power_circle_family_beta",
+      "PowerBundleTotal",
+      "power_base_trivialization",
+      "power_bundle_zero",
+      "power_bundle_pointed",
+      "power_bundle_map",
+      "power_bundle_cover",
+      "power_rotation_permutation",
+      "power_circle_monodromy",
+      "power_bundle_connected",
+      "power_connected_cover",
+      "power_family_fiber_size",
+      "power_bundle_fiber_size",
+      "S1_power_bundle_cover",
+      "S1_power_circle_monodromy",
+      "S1_power_connected_cover",
+      "S1_power_bundle_fiber_size",
+      "constructed_circle",
+      "SetTypes",
+      "finite_fin_successor"
+    ],
+    "principal": [
+      "power_circle_family",
+      "power_bundle_map",
+      "power_connected_cover"
+    ],
+    "note": "The statement holds for every circle C and positive m = n+1. R_m = power_circle_family is the circle recursor into SetTypes with R_m(base) = Fin m. Its value R_m(loop) is the ua-path of the standard successor s (finite_fin_successor). Its computation rule power_circle_family_beta is an identification. Thus R_m(base) ≡ Fin m holds only through power_base_trivialization (circle β: Narya efafad2 has no HITs). Tot(R_m) (PowerBundleTotal) is pointed at (base, 0), where 0 is transported along that identification (power_bundle_zero, power_bundle_pointed). The map p_m = fst has the pointing path refl base (power_bundle_map). The formalization also proves these facts. R_m gives a covering (power_bundle_cover) whose monodromy is (Fin m, s) (power_circle_monodromy). This covering is connected (power_bundle_connected, power_connected_cover). Every fiber is merely Fin m (power_family_fiber_size, power_bundle_fiber_size). The instances at the constructed circle are S1_power_bundle_cover, S1_power_circle_monodromy, S1_power_connected_cover and S1_power_bundle_fiber_size (module 250)."
   },
   {
     "chapter": 3,
@@ -5429,8 +6233,22 @@
       "rem:finitecoveringsofS1",
       "fig:m-th-power"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "power_family_fiber_size",
+      "power_bundle_fiber_size",
+      "degree_fiber_size",
+      "degree_fiber_cardinality",
+      "S1_power_bundle_fiber_size",
+      "S1_degree_fiber_size",
+      "S1_degree_fiber_cardinality",
+      "constructed_circle"
+    ],
+    "principal": [
+      "power_bundle_fiber_size",
+      "degree_fiber_size"
+    ],
+    "note": "The picture of p_m as an m-sheeted covering, like z ↦ zᵐ, is informal. Its formal content holds for every circle C and m = n+1. Every fiber of p_m and of dg_m is merely equal to Fin m (power_bundle_fiber_size, degree_fiber_size). Every finiteness witness of a fiber of dg_m gives cardinality m (degree_fiber_cardinality). The instances at the constructed circle are S1_power_bundle_fiber_size, S1_degree_fiber_size and S1_degree_fiber_cardinality (module 250)."
   },
   {
     "chapter": 3,
@@ -5442,8 +6260,96 @@
     "labels": [
       "con:psi-alpha-m"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "power_cover_cycle_path",
+      "fin_remainder_cycle_path",
+      "power_degree_connected_cover_path",
+      "power_degree_maps_path",
+      "maps_path_comparison",
+      "PowerDegreeComparison",
+      "power_degree_psi_alpha",
+      "power_comparison_base_fiber_equiv",
+      "power_degree_base_fiber_equiv",
+      "S1_power_degree_psi_alpha",
+      "S1_power_degree_base_fiber_equiv",
+      "constructed_circle",
+      "power_fiber",
+      "power_base_enumeration",
+      "power_base_value",
+      "set_freeloop_path_transport",
+      "power_monodromy_trivialization",
+      "power_enumeration_monodromy",
+      "power_clock_split",
+      "power_clock",
+      "power_psi_family",
+      "power_psi_datum",
+      "power_psi_curried",
+      "power_psi",
+      "power_psi_base",
+      "power_psi_boundary_loop",
+      "power_psi_loop",
+      "concat_right_inverse_cancel",
+      "PowerClockKey",
+      "power_clock_key_small",
+      "power_clock_key_last",
+      "power_clock_key",
+      "power_value_successor",
+      "power_square_reduction_refl",
+      "power_square_reduction",
+      "power_alpha_base_value",
+      "power_alpha_square",
+      "power_alpha_family",
+      "power_alpha_datum",
+      "power_alpha_curried",
+      "power_alpha_homotopy",
+      "power_alpha_base",
+      "power_alpha",
+      "loop_power_nat_inverse",
+      "power_alpha_book_base",
+      "power_psi_fiber_map",
+      "power_psi_fiber_map_base",
+      "power_psi_fiber_map_explicit",
+      "power_psi_base_fiber_is_equiv",
+      "power_psi_fiber_is_equiv",
+      "power_psi_is_equiv",
+      "power_degree_explicit_comparison",
+      "power_explicit_comparison_fiber_map",
+      "power_mark",
+      "power_mark_enumeration",
+      "power_mark_remainder",
+      "power_mark_closing",
+      "power_arc",
+      "power_arcs",
+      "power_arc_loop",
+      "power_psi_inverse_map",
+      "power_psi_inverse_base",
+      "power_clock_product",
+      "power_psi_arcs",
+      "power_psi_base_natural",
+      "power_clock_split_small",
+      "power_clock_split_last",
+      "power_mark_value",
+      "power_clock_mark_small",
+      "power_clock_mark_last",
+      "power_clock_product_prefix",
+      "power_psi_arc_loop",
+      "power_psi_inverse_boundary",
+      "power_psi_section",
+      "power_psi_inverse_agrees",
+      "power_psi_inverse_retraction",
+      "power_psi_inverse_equiv",
+      "S1_power_degree_explicit_comparison",
+      "circle_degree_boundary",
+      "fin_book_below_equiv",
+      "power_base_trivialization"
+    ],
+    "principal": [
+      "power_degree_explicit_comparison",
+      "power_psi",
+      "power_alpha"
+    ],
+    "note": "This is the book's clock construction (module 282), for every circle C and positive m = n+1. Circle induction defines ψ_m = power_psi as an element of Π(z:S¹)(R_m(z) → S¹). Its base value is ψ_m(base) = const base. The value ψ_m(loop) sends the arc from the mark k to refl for k < m−1 and to loop for k = m−1 (power_clock). The value on every arc is power_psi_loop. Circle induction also defines α_m = power_alpha : dg_m∘ψ_m = p_m, in the orientation of the statement. At (base, k), it is loopᵏ (power_alpha_base_value). The inverse of this value is the implementation's α_m(base, k) = loop⁻ᵏ : p_m(base, k) = dg_m(ψ_m(base, k)) (power_alpha_book_base). The book's statement and implementation use opposite orientations. The loop part of α_m is the squares α_m(loop, k) (power_alpha_square). These squares reduce to the book's two cases (power_clock_key_small, power_clock_key_last). The first case is refl·loop⁻ᵏ = loop⁻⁽ᵏ⁺¹⁾·loop. The second case is loopᵐ·loop⁻⁽ᵐ⁻¹⁾ = loop⁻⁰·loop. The map ψ_m is an equivalence (power_psi_is_equiv). The reason is that its map of fibers over base is an equivalence Fin m ≃ dg_m⁻¹(base) and S¹ is connected. The package is power_degree_explicit_comparison : PowerDegreeComparison C n. The book leaves the inverse as an exercise: base ↦ (base, 0) and loop ↦ a_{m−1}⋯a_0. This inverse is power_psi_inverse_map. It has both inverse laws (power_psi_section, power_psi_inverse_retraction). It agrees with the inverse of ψ_m (power_psi_inverse_agrees). Through xca:preim-eq (power_comparison_base_fiber_equiv), (ψ_m, α_m) sends k to (base, loop⁻ᵏ) (power_explicit_comparison_fiber_map). The formalization deviates from the book in these points. The computation rules of circle induction and recursion are identifications (Narya efafad2 has no HITs). Thus three identifications appear as explicit factors. They are dg_m(base) = base (β = circle_degree_boundary .fst), ψ_m(base, x) = base (power_psi_base) and R_m(base) = Fin m (power_base_trivialization). For example, the fiber element is (base, loop⁻ᵏ·β⁻¹). The arcs use the path lifting of R_m along loop instead of refl_{s(k)}. The identification x_m = x_0 closes the loop a_{m−1}⋯a_0. In the book, this is judgmental. The marks k : Fin m are read as numbers through fin_book_below_equiv. The earlier ψ_m and α_m remain (power_degree_psi_alpha, module 172). They come from transport along a classification path. The instances at the constructed circle are S1_power_degree_explicit_comparison (module 282), S1_power_degree_psi_alpha and S1_power_degree_base_fiber_equiv (module 250)."
   },
   {
     "chapter": 3,
@@ -5455,8 +6361,48 @@
     "labels": [
       "cor:dgm-conncov"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "positive_integer_multiplication_injective",
+      "circle_degree_loops_injective",
+      "circle_degree_is_covering",
+      "circle_degree_cover",
+      "circle_degree_connected_cover",
+      "degree_cover_periods",
+      "degree_cover_standard_cycle",
+      "principal_degree_cover_path",
+      "degree_fiber_size",
+      "degree_fiber_cardinality",
+      "degree_cover_decidable",
+      "S1_circle_degree_connected_cover",
+      "S1_degree_fiber_size",
+      "S1_degree_fiber_cardinality",
+      "constructed_circle",
+      "book_fiber_transport_formula",
+      "loop_power_nat_succ_left",
+      "loop_negative_power_nat",
+      "fin_book_value",
+      "degree_fiber_monodromy_power",
+      "commuting_map_iterate",
+      "degree_enumeration_base_point",
+      "degree_enumeration_value",
+      "power_degree_explicit_remainder_map",
+      "degree_enumeration_explicit",
+      "power_degree_explicit_remainder_equiv",
+      "power_degree_explicit_fiber_map",
+      "power_degree_explicit_fiber_equiv",
+      "power_degree_explicit_fiber_equiv_map",
+      "degree_base_fiber_enumeration_explicit",
+      "S1_power_degree_explicit_fiber_equiv",
+      "degree_base_fiber_enumeration",
+      "fin_book_below_equiv"
+    ],
+    "principal": [
+      "circle_degree_connected_cover",
+      "degree_fiber_size",
+      "power_degree_explicit_fiber_equiv"
+    ],
+    "note": "The statement holds for every circle C and positive m. The map dg_m has set fibers, because its action on loops is injective (circle_degree_loops_injective, positive_integer_multiplication_injective, circle_degree_is_covering). Its domain is connected. Thus it is a connected covering (circle_degree_connected_cover). Every fiber is merely Fin m (degree_fiber_size). Every fiber has cardinality m for every finiteness witness (degree_fiber_cardinality). The fibers are also decidable (degree_cover_decidable). The monodromy of dg_m has periods mℤ and equals the standard m-cycle (degree_cover_periods, degree_cover_standard_cycle). The covering equals the covering reconstructed from this monodromy (principal_degree_cover_path). No LPO is used. The book states an explicit equivalence after the corollary (circle.tex:2068): Fin m ≃ dg_m⁻¹(base), k ↦ (base, loop⁻ᵏ). This equivalence is power_degree_explicit_fiber_equiv (module 282). Its map is literally k ↦ (base, loop⁻ᵏ·β⁻¹) (power_degree_explicit_fiber_equiv_map, by refl). Here β : dg_m(base) = base is the computation identification (circle β: Narya efafad2 has no HITs). Also, k is read through fin_book_below_equiv. Module 83's degree_base_fiber_enumeration equals this map (degree_base_fiber_enumeration_explicit). The instances at the constructed circle are S1_circle_degree_connected_cover, S1_degree_fiber_size, S1_degree_fiber_cardinality (module 250) and S1_power_degree_explicit_fiber_equiv (module 282)."
   },
   {
     "chapter": 3,
@@ -5468,8 +6414,19 @@
     "labels": [
       "xca:preim-eq"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "preimage_transfer",
+      "preimage_transfer_is_equivalence",
+      "preimage_transfer_equiv",
+      "BookEquiv",
+      "power_explicit_comparison_fiber_map"
+    ],
+    "principal": [
+      "preimage_transfer_is_equivalence",
+      "preimage_transfer"
+    ],
+    "note": "Let A, B, C, f and g be arbitrary, let e be an equivalence and let h : Π(x:A) f(x) = g(e(x)). Consider the map (a, p) ↦ (e(a), h(a)p) on book fibers (c = f(a)). This map is literally preimage_transfer. In concatenation order, it is (a, p) ↦ (e a, p followed by h(a)). It is an equivalence by equivalence induction (preimage_transfer_is_equivalence). The BookEquiv is preimage_transfer_equiv. No circle is involved. Module 282 uses it (power_explicit_comparison_fiber_map) to get k ↦ (base, loop⁻ᵏ) from ψ_m and α_m."
   },
   {
     "chapter": 3,
@@ -5481,8 +6438,21 @@
     "labels": [
       "def:subgroup-zet-of-cycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PowerPeriod",
+      "power_period_prop",
+      "cycle_periods",
+      "power_period_zero",
+      "power_period_add",
+      "power_period_neg",
+      "CyclePeriods"
+    ],
+    "principal": [
+      "cycle_periods",
+      "PowerPeriod"
+    ],
+    "note": "H_t is cycle_periods (CyclePeriods on Cycles, module 66). It is n ↦ (tⁿ = id), where tⁿ = id is an equality of functions (PowerPeriod). For a set, this equality is a proposition (power_period_prop). It is equivalent to the equality of equivalences. The formalization also proves that H_t contains 0 and is closed under addition and negation (power_period_zero, power_period_add, power_period_neg)."
   },
   {
     "chapter": 3,
@@ -5495,8 +6465,31 @@
       "lem:cycle-order-point-ap",
       "eq:order-composite"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_fix_from_point",
+      "cycle_period_from_point",
+      "cycle_period_evaluation",
+      "cycle_periods_at_point",
+      "based_loop_winding",
+      "family_periods_image",
+      "family_based_periods_image",
+      "covering_periods_based_image",
+      "circle_general_winding",
+      "circle_general_winding_equiv",
+      "general_loop_winding",
+      "general_loop_image",
+      "general_based_loop_images",
+      "covering_periods_general_image",
+      "S1_circle_general_winding_equiv",
+      "S1_covering_periods_general_image",
+      "constructed_circle"
+    ],
+    "principal": [
+      "covering_periods_general_image",
+      "cycle_periods_at_point"
+    ],
+    "note": "The formalization proves both equalities as equalities in Sub(ℤ). (1) For every x : X, H_t = {n | tⁿ(x) = x} (cycle_periods_at_point, cycle_fix_from_point, cycle_period_from_point). (2) Let C be a circle, (A, f) a connected covering and a : A. Then H_t for the cycle of thm:cycset-connS1cover equals the image of wdg_{f(a)} ∘ ap_f (covering_periods_general_image, general_loop_winding, general_loop_image). Here wdg_{f(a)} is the general winding of xca:general-winding (circle_general_winding, circle_general_winding_equiv). No path from f(a) to base is an input. The version with a chosen path (covering_periods_based_image, family_based_periods_image) is compared with the general one (general_based_loop_images). Connectedness is used only to prove the proposition. The instances at the constructed circle are S1_circle_general_winding_equiv and S1_covering_periods_general_image (module 250)."
   },
   {
     "chapter": 3,
@@ -5511,8 +6504,22 @@
       "nr:HtSubZYu",
       "nr:eXtYuPtd"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_paths_equiv",
+      "cycle_path_evaluate_transport",
+      "pointed_cycle_paths_equiv",
+      "CyclePointedUniqueness",
+      "cycle_components_periods_equiv",
+      "cycle_periods_pointed_equiv",
+      "cycle_components_pointed_equiv"
+    ],
+    "principal": [
+      "cycle_components_periods_equiv",
+      "cycle_periods_pointed_equiv",
+      "cycle_components_pointed_equiv"
+    ],
+    "note": "All three conditions are equivalent, as equivalences of propositions. The equivalence (i) ⇔ (ii) is cycle_components_periods_equiv. The equivalence (ii) ⇔ (iii) is cycle_periods_pointed_equiv. The equivalence (i) ⇔ (iii) is cycle_components_pointed_equiv. Condition (iii) is the book's statement that Σ(e : (X, t) = (Y, u)) e(x₀) = y₀ is contractible for all x₀, y₀ (CyclePointedUniqueness). The formalization compares identifications of cycles with isomorphisms of permutations (cycle_paths_equiv) and their pointed versions (pointed_cycle_paths_equiv). By refl, the evaluation of an identification is the transport of the point along its underlying type path (cycle_path_evaluate_transport)."
   },
   {
     "chapter": 3,
@@ -5524,8 +6531,22 @@
     "labels": [
       "cor:ConnCycles"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_evaluation_from_pointed",
+      "cycle_evaluation_from_periods",
+      "cycle_evaluation_from_component",
+      "cycle_automorphisms_evaluation",
+      "cycle_automorphisms_identity_beta",
+      "BookEquiv",
+      "cycle_path_evaluate"
+    ],
+    "principal": [
+      "cycle_evaluation_from_component",
+      "cycle_evaluation_from_periods",
+      "cycle_evaluation_from_pointed"
+    ],
+    "note": "Consider the map ev₀(e) = e(x₀) from the identity type of cycles (X, t) = (Y, u) to Y. Under each of the equivalent hypotheses of lem:IdCycle, this map is an equivalence. The declarations are cycle_evaluation_from_pointed, cycle_evaluation_from_periods and cycle_evaluation_from_component. The last two give a BookEquiv. The map is cycle_path_evaluate, that is, the transport of x₀ along the underlying type path. The formalization also includes the case (X, t) = (Y, u) (cycle_automorphisms_evaluation). It also includes ev₀(refl) = x₀ (cycle_automorphisms_identity_beta). This is an identification, because transport along refl is the identity only up to identification (Jβ is typal by design)."
   },
   {
     "chapter": 3,
@@ -5537,8 +6558,23 @@
     "labels": [
       "cor:id-m-cycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_generating_loop",
+      "cycle_generating_loop_action",
+      "finite_fin_cycle",
+      "finite_cycle_loop_equiv",
+      "finite_cycle_loop_refl",
+      "finite_cycle_loop_successor_right",
+      "finite_cycle_loop_successor_left",
+      "BookEquiv"
+    ],
+    "principal": [
+      "finite_cycle_loop_equiv",
+      "finite_cycle_loop_successor_left",
+      "finite_cycle_loop_successor_right"
+    ],
+    "note": "The statement holds for every positive m = n+1. It uses the standard cycle (Fin m, s) with the literal Fin m (finite_fin_cycle). In it, 0 is inr star, the right-hand summand. The map ev₀ : ((Fin m, s) = (Fin m, s)) → Fin m is a BookEquiv (finite_cycle_loop_equiv). Also, ev₀(refl) = 0 (finite_cycle_loop_refl). This is an identification: Jβ is typal by design. The identification (s, !) is cycle_generating_loop. It is built from its isomorphism and has the evaluation law cycle_generating_loop_action. Composition with (s, !) on either side corresponds to s (finite_cycle_loop_successor_left, finite_cycle_loop_successor_right). That is, both squares of the margin diagram commute. No circle and no classical principle is used."
   },
   {
     "chapter": 3,
@@ -5550,8 +6586,43 @@
     "labels": [
       "rem:thenonuniquenessofgeneratorsofmodulararithmetic1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "iterate_orbit",
+      "orbit_steps_closed",
+      "CycleGenerators",
+      "cycle_generators_prop",
+      "inverse_cyclic",
+      "inverse_generator",
+      "integer_inverse_generator",
+      "nat_add_zero_right_part",
+      "nat_mul_suc_zero",
+      "nat_mul_one_factor",
+      "nat_divides_one",
+      "coprime_power_cyclic",
+      "power_cyclic_coprime",
+      "CoprimeResidues",
+      "standard_power_value",
+      "standard_power_map",
+      "generator_is_power",
+      "standard_cycle_generators_equiv",
+      "PositiveCoprime",
+      "coprime_positive",
+      "coprime_positive_equiv",
+      "standard_generators_positive_coprime",
+      "positive_below_one_empty",
+      "positive_coprime_one_empty",
+      "one_cycle_generator",
+      "cycle_generators_family",
+      "fin_cycle_generators_equiv",
+      "cycle_structures_cardinality"
+    ],
+    "principal": [
+      "CycleGenerators",
+      "standard_cycle_generators_equiv",
+      "standard_generators_positive_coprime"
+    ],
+    "note": "The formalization reads \"the stated property\" as follows: s is a generator of the cycle (Fin m, s). That is, a generator is an automorphism g of Fin m that commutes with s. In addition, (Fin m, g) is again a cycle. The first condition makes (g, !) a symmetry of (Fin m, s). The second condition makes the powers of (g, !) exhaust the symmetries. This is CycleGenerators, a proposition-valued condition on g (cycle_generators_prop). The inverse of the permutation of any cycle is a generator (inverse_generator). As the remark says, this includes (ℤ, s) (integer_inverse_generator). For the standard m-cycle, the generators are exactly the powers s^r with gcd(r, m) = 1 (generator_is_power, coprime_power_cyclic, power_cyclic_coprime). Here gcd is Euclid's algorithm of module 148, characterized by aℤ + bℤ = gcd(a, b)ℤ. Thus the generators form a type equivalent to the residues 0 ≤ r < m with gcd(r, m) = 1 (CoprimeResidues). On (ℤ/m, s), this is standard_cycle_generators_equiv. On the literal (Fin m, s), it is fin_cycle_generators_equiv, by transport along (Fin m, s) = (ℤ/m, s). For m ≥ 2, these are equivalent to the positive integers below m coprime to m, as printed (standard_generators_positive_coprime). For m = 1, the printed count is off by one. The identity generates the 1-cycle (one_cycle_generator), but no positive integer lies below 1 (positive_coprime_one_empty). The residue count 0 ≤ r < m is correct for every m ≥ 1. This note also considers two alternative readings. (a) The first reading uses only the commuting square of cor:id-m-cycle: ev₀ turns composition with (g, !) into g. This holds for every symmetry of (Fin m, s), that is, for every power s^r with 0 ≤ r < m. It gives m choices. This is not stated separately, but cor:id-m-cycle counts the symmetries. (b) The second reading allows any permutation g that makes Fin m a cycle and does not necessarily commute with s. It gives (m−1)! choices (cycle_structures_cardinality, module 242). Only the generator reading gives the printed count for m ≥ 2. Under all three readings, there is exactly one choice for m = 1."
   },
   {
     "chapter": 3,
@@ -5563,8 +6634,21 @@
     "labels": [
       "cor:set-trunc-cyc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IntegerSubgroupLaws",
+      "subgroup_relation",
+      "subgroup_cycle",
+      "subgroup_cycle_periods",
+      "period_image_characterization",
+      "period_image_is_subgroups",
+      "cycle_period_image_equiv"
+    ],
+    "principal": [
+      "period_image_is_subgroups",
+      "subgroup_cycle_periods"
+    ],
+    "note": "The formalization proves both inclusions as an equality of predicates on Sub(ℤ) = Subtypes Int (period_image_is_subgroups). The pointwise form is period_image_characterization. H is merely H_t for a cycle iff H contains 0 and is closed under addition and negation (IntegerSubgroupLaws). For the converse, every such H gives the relation z ∼ z' iff z − z' ∈ H (subgroup_relation). It also gives the quotient ℤ/∼ with the successor, which is a cycle (subgroup_cycle). The period subset of this cycle is H (subgroup_cycle_periods). The image is also equivalent to the type of subgroups (cycle_period_image_equiv)."
   },
   {
     "chapter": 3,
@@ -5576,8 +6660,20 @@
     "labels": [
       "xca:map-of-cycles"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_map_period_inclusion",
+      "cycle_map_surjective",
+      "cycle_map_injective",
+      "cycle_map_equiv",
+      "PermutationMap"
+    ],
+    "principal": [
+      "cycle_map_period_inclusion",
+      "cycle_map_surjective",
+      "cycle_map_injective"
+    ],
+    "note": "The formalization proves all three clauses for cycles (X, t), (Y, u) and f with uf = ft (a PermutationMap). (i) H_t ⊆ H_u holds (cycle_map_period_inclusion). (ii) The map f is surjective (cycle_map_surjective). (iii) If H_u ⊆ H_t, then f is injective (cycle_map_injective). The resulting bijection is also packaged as an equivalence (cycle_map_equiv). Nonemptiness and orbit witnesses are used only through the truncation. No representative is selected globally."
   },
   {
     "chapter": 3,
@@ -5589,8 +6685,38 @@
     "labels": [
       "def:Order"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Order",
+      "cycle_order",
+      "infinite_order",
+      "order_periods",
+      "order_periods_injective",
+      "orders_subgroups_equiv",
+      "OrderDivides",
+      "order_divides_prop",
+      "order_divides_trans",
+      "order_divides_antisym",
+      "finite_cycle_order",
+      "principal_cycle",
+      "principal_order",
+      "principal_order_injective",
+      "NatDivides",
+      "nat_divides_prop",
+      "principal_order_periods",
+      "self_multiple",
+      "multiple_nat_divides_at",
+      "multiple_nat_divides",
+      "principal_divides_equiv",
+      "SetTrunc",
+      "fin_remainder_cycle_path"
+    ],
+    "principal": [
+      "Order",
+      "OrderDivides",
+      "principal_order"
+    ],
+    "note": "The formalization defines Order = SetTrunc Cycles, with ord = cycle_order. The order of (ℤ, s) is infinite_order. The order of the standard m-cycle is finite_cycle_order m. This cycle is built on (ℤ/m, modular successor), which equals (Fin m, s) as a cycle (fin_remainder_cycle_path, module 172). As printed, d | k is OrderDivides, the reverse inclusion H_k ⊆ H_d of period subgroups. It is a proposition, transitive and antisymmetric (order_divides_prop, order_divides_trans, order_divides_antisym). Orders are equivalent to the subgroups of ℤ (order_periods, order_periods_injective, orders_subgroups_equiv). The formalization also proves the following text. There is the canonical injection ℕ → Order, with 0 ↦ infinite order (principal_cycle, principal_order, principal_order_injective). A principal order d is dℤ as a subset of ℤ (principal_order_periods). The divisibility of principal orders is equivalent to the divisibility of natural numbers (NatDivides, principal_divides_equiv). Here d | k iff k = qd for some q. Thus the relation on orders extends the relation on ℕ. The margin note on universe levels is not formalized: Narya efafad2 has a single universe Type : Type."
   },
   {
     "chapter": 3,
@@ -5602,8 +6728,19 @@
     "labels": [
       "def:standard-cycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "standard_cycle",
+      "standard_cycle_order",
+      "subgroup_relation",
+      "subgroup_successor",
+      "subgroup_power_class"
+    ],
+    "principal": [
+      "standard_cycle",
+      "standard_cycle_order"
+    ],
+    "note": "For every d : Order, the standard cycle is the quotient of ℤ by the relation z ∼ z' iff z − z' ∈ H_d. This relation is subgroup_relation for the period subgroup of d. The successor of the cycle is induced by s (subgroup_successor). Its order is d (standard_cycle_order). The relation ∼_d is defined from the period subgroup of d. Thus it does not depend on a chosen cycle. No representative is selected from the set truncation."
   },
   {
     "chapter": 3,
@@ -5615,8 +6752,22 @@
     "labels": [
       "LPO"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Bit",
+      "bit_zero_index",
+      "bit_one_index",
+      "BitMinimum",
+      "BitConstantZero",
+      "LPOInstance",
+      "lpo_instance_prop",
+      "LimitedOmniscience"
+    ],
+    "principal": [
+      "LimitedOmniscience",
+      "LPOInstance"
+    ],
+    "note": "The formalization defines LimitedOmniscience = Π(P : ℕ → Fin 2) LPOInstance(P). Here LPOInstance(P) is the sum of two cases. The first case is a least n₀ with P(n₀) = 1 (BitMinimum). The second case is that P is equal to the constant function 0 (BitConstantZero). Fin 2 is the literal book type. Its elements 0 and 1 are the elements of index 0 and 1 (bit_zero_index, bit_one_index). Each instance is a proposition (lpo_instance_prop). The principle is only defined. It is never postulated. Where it is used, it is given as an explicit hypothesis."
   },
   {
     "chapter": 3,
@@ -5626,8 +6777,15 @@
     "line": 2385,
     "section_raw": "Connected \\coverings over the circle}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "excluded_middle_implies_lpo",
+      "least_number"
+    ],
+    "principal": [
+      "excluded_middle_implies_lpo"
+    ],
+    "note": "LEM, given as an explicit argument, implies LPO (excluded_middle_implies_lpo). The proof applies LEM to the proposition that some n has P(n) = 1. In the positive case, least_number gives the least such n. In the other case, P is equal to the constant function 0."
   },
   {
     "chapter": 3,
@@ -5639,8 +6797,15 @@
     "labels": [
       "xca:not-not-lpoP"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "double_negated_lpo_instance",
+      "LPOInstance"
+    ],
+    "principal": [
+      "double_negated_lpo_instance"
+    ],
+    "note": "For every P : ℕ → Fin 2, the formalization proves ¬¬LPOInstance(P) constructively, without LEM or LPO (double_negated_lpo_instance). As printed, this statement is pointwise. The formalization makes no claim ¬¬LPO, with the double negation outside the quantifier."
   },
   {
     "chapter": 3,
@@ -5652,8 +6817,66 @@
     "labels": [
       "lem:componentsofcoversofS1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "DecidableCycles",
+      "cycle_period_decidable",
+      "no_positive_periods_infinite_order",
+      "no_positive_periods_infinite_component",
+      "lpo_cycle_period_alternative",
+      "least_subgroup_is_multiples",
+      "least_cycle_periods_multiples",
+      "cycle_finite_enumeration",
+      "cycle_least_period_cardinality",
+      "finite_standard_cycle",
+      "finite_standard_minimum",
+      "cycle_remainder_commutes",
+      "finite_cycle_component",
+      "lpo_cycle_classification",
+      "DecidableOrders",
+      "lpo_decidable_orders_equiv",
+      "lpo_cycle_order_unique",
+      "lpo_cycle_component_decomposition",
+      "lpo_cycle_component_sum",
+      "connected_covering_decidable_at",
+      "circle_connected_decidable_coverings_cycles",
+      "principal_covering_monodromy",
+      "lpo_connected_covering_components",
+      "lpo_connected_covering_component_sum",
+      "degree_cover_standard_cycle",
+      "principal_degree_cover_path",
+      "universal_cover_periods",
+      "universal_cover_infinite_cycle",
+      "principal_universal_cover_path",
+      "principal_book_standard_cover_path",
+      "lpo_book_covering_components",
+      "lpo_book_covering_component_sum",
+      "enumerated_cycle_positive_period",
+      "finite_cycle_positive_period",
+      "finite_cycle_minimum",
+      "finite_cycle_classification",
+      "finite_cycle_cardinality",
+      "finite_cycle_index_unique",
+      "finite_cycle_classification_unique",
+      "finite_cycle_component_decomposition",
+      "connected_covering_finite_at",
+      "circle_connected_finite_coverings_cycles",
+      "finite_covering_index_cardinality",
+      "finite_connected_covering_classification",
+      "finite_book_covering_components",
+      "S1_circle_connected_decidable_coverings_cycles",
+      "S1_lpo_book_covering_component_sum",
+      "S1_finite_book_covering_components",
+      "constructed_circle",
+      "BookEquiv",
+      "ConnectedDecidableCoverings",
+      "circle_universal_cover",
+      "power_degree_connected_cover_path"
+    ],
+    "principal": [
+      "lpo_book_covering_component_sum"
+    ],
+    "note": "The statement holds for every circle C, with an explicit LPO hypothesis. The connected decidable coverings over C (ConnectedDecidableCoverings) are BookEquiv-equivalent to a sum of components in Coverings(C) (lpo_book_covering_component_sum). The first summand is the component of the universal covering, that is, the path covering circle_universal_cover. The other summands are the components of the degree-m maps dg_m, one for each positive m. The book's m-fold covering p_m of def:RmtoS1 equals dg_m as a connected covering (power_degree_connected_cover_path, module 172). Thus the components agree. The proof follows the preceding text. LPO, applied to the decidable period subset, gives infinite order or a least positive period m. Euclidean division gives H_t = mℤ (lpo_cycle_period_alternative, least_cycle_periods_multiples, lpo_cycle_component_sum). The reconstructed representatives are identified with these coverings (principal_book_standard_cover_path). The equivalence keeps the identifications inside components. The formalization also proves the following results without LPO. By pigeonhole, every finite cycle has a positive period. Thus finite cycles are the sum of the finite standard-cycle components (finite_cycle_component_decomposition). Connected coverings with finite fibers are the sum of the components of dg_m, m ≥ 1 (finite_book_covering_components). Each such covering is merely equal to dg_m, where m is its fiber cardinality (finite_connected_covering_classification, finite_covering_index_cardinality). This does not remove LPO from the printed decidable statement. The instances at the constructed circle are S1_circle_connected_decidable_coverings_cycles, S1_lpo_book_covering_component_sum and S1_finite_book_covering_components (module 250)."
   },
   {
     "chapter": 3,
@@ -5665,8 +6888,57 @@
     "labels": [
       "rem:flipthecircle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "precompose_equivalence_path",
+      "precompose_equivalence_covering",
+      "precompose_equivalence_covering_path",
+      "equivalence_is_covering",
+      "equivalence_covering_decidable",
+      "equivalence_connected_decidable_cover",
+      "connected_decidable_cover_path",
+      "circle_flip_cover",
+      "circle_identity_cover",
+      "circle_flip_identity_cover",
+      "circle_map_general_winding",
+      "circle_map_degree_compose",
+      "circle_degree_map_degree",
+      "degree_flip_cover",
+      "degree_flip_cover_path",
+      "degree_flip_degree",
+      "degree_flip_maps_differ",
+      "cycle_inverse",
+      "int_succ_neg_succ",
+      "negation_iso",
+      "negation_cycle_path",
+      "negation_cycle_evaluation",
+      "infinite_inverse_component",
+      "infinite_inverse",
+      "infinite_inverse_literal",
+      "infinite_negation_pointing",
+      "negation_pointing_evaluate",
+      "negation_pointing_inverse",
+      "infinite_inverse_ap_evaluate",
+      "infinite_inverse_pointed",
+      "circle_reflection_pointed_map",
+      "inverse_after_circle",
+      "circle_after_reflection",
+      "inverse_after_circle_coordinate",
+      "circle_after_reflection_coordinate",
+      "circle_flip_pointed",
+      "circle_flip_maps",
+      "circle_flip_conjugation",
+      "S1_circle_flip_pointed",
+      "S1_circle_flip_maps",
+      "S1_circle_flip_conjugation",
+      "circle_reflection"
+    ],
+    "principal": [
+      "circle_flip_identity_cover",
+      "degree_flip_maps_differ",
+      "circle_flip_conjugation"
+    ],
+    "note": "The general case holds for all types. Let e : A → A' be an equivalence and f : A' → C. Then (A, fe) = (A', f) as maps and as coverings (precompose_equivalence_path, precompose_equivalence_covering_path). Let C be a circle and r = circle_reflection. Then (C, r) = (C, id) as connected decidable coverings (circle_flip_identity_cover). For m > 0, (C, dg_m r) = (C, dg_m) as coverings (degree_flip_cover_path). However, dg_m r ≠ dg_m as maps (degree_flip_maps_differ). The reason is that degrees are multiplicative (circle_map_degree_compose) and deg(dg_m r) = −m (degree_flip_degree). The formalization proves the footnote. On the endomorphism component InfCyc, inv(X, t) = (X, t⁻¹) (infinite_inverse). It is literally (X, t⁻¹) by infinite_inverse_literal. It is pointed by the negation identification (ℤ, s) = (ℤ, s⁻¹) (infinite_inverse_pointed). Also, inv∘c = c∘r as pointed maps S¹ →* InfCyc (circle_flip_pointed). Both loops have coordinate +1. The equation also holds as maps (circle_flip_maps). Hence c∘r∘c⁻¹ = inv as maps InfCyc → InfCyc (circle_flip_conjugation). Here c is the equivalence of thm:S1bysymmetries. The footnote results are instantiated at the constructed circle as S1_circle_flip_pointed, S1_circle_flip_maps and S1_circle_flip_conjugation (module 251)."
   },
   {
     "chapter": 3,
@@ -5678,8 +6950,65 @@
     "labels": [
       "rem:cycle-vs-cycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "iterate_list",
+      "iterate_list_length",
+      "iterate_shift",
+      "InjectiveBelow",
+      "injective_below_shift",
+      "injective_below_not_start",
+      "iterate_list_lookup_small",
+      "iterate_list_lookup_last",
+      "iterate_list_not_in",
+      "iterate_list_distinct",
+      "cycle_iterates_injective",
+      "cycle_orbit_notation_at",
+      "cycle_orbit_notation",
+      "cycle_orbit_distinct",
+      "finite_cycle_orbit_notation",
+      "finite_cycle_orbit_length",
+      "cycle_notation_support",
+      "int_list_bound",
+      "int_list_avoid",
+      "integer_successor_not_cycle_notation",
+      "orbit_class",
+      "orbit_class_step",
+      "orbit_class_back",
+      "OrbitCarrier",
+      "orbit_carrier_set",
+      "orbit_restriction",
+      "orbit_restriction_power",
+      "orbit_cyclic",
+      "orbit_cycle",
+      "permutation_sum",
+      "permutation_orbit_decomposition",
+      "permutation_orbit_decomposition_path",
+      "cycle_single_orbit",
+      "moved_size",
+      "fiberwise_transport_natural",
+      "component_member_path",
+      "component_membership_prop",
+      "truncated_component_connected",
+      "component_fiber_reassoc",
+      "component_covering_property",
+      "component_covering",
+      "component_connected_covering",
+      "circle_component_cycle",
+      "components_base_fiber_equiv",
+      "circle_components_permutation_iso",
+      "circle_permutation_covering",
+      "circle_permutation_cycles_sum",
+      "circle_permutation_cycle_decomposition",
+      "circle_permutation_cycle_decomposition_path",
+      "S1_circle_permutation_cycle_decomposition",
+      "S1_circle_permutation_cycle_decomposition_path"
+    ],
+    "principal": [
+      "permutation_orbit_decomposition_path",
+      "finite_cycle_orbit_notation"
+    ],
+    "note": "A cycle is the single-orbit case: its set of orbits is contractible (cycle_single_orbit). Consider a cycle whose least positive period is n+1, for example a finite cycle with n+1 elements. For any x₀, t is exactly the cycle notation (x₀ t(x₀) ⋯ tⁿ(x₀)) of module 174. Its entries are pairwise distinct, and its length is correct (cycle_orbit_notation, finite_cycle_orbit_notation, cycle_orbit_distinct, finite_cycle_orbit_length). The formalization proves directly, not through coverings, that an arbitrary permutation (X, t) of a set decomposes into cycles. Each orbit O with the restricted permutation is a cycle (orbit_cycle). Then (X, t) is isomorphic to the sum of these cycles over the set of orbits. Hence it is equal to this sum as a permutation (permutation_orbit_decomposition, permutation_orbit_decomposition_path). The printed route is also assembled (module 286). It holds for every circle and is instantiated at constructed_circle. The covering of p given by thm:coveringsofS1perms has as total space the sum of its set-truncation components. Each component is a connected covering (truncated_component_connected, component_covering_property). Hence each component is a cycle by thm:cycset-connS1cover (circle_component_cycle). Then p is isomorphic, hence equal, to the sum of these cycles over the set of components. The declarations are circle_permutation_cycle_decomposition, circle_permutation_cycle_decomposition_path and S1_circle_permutation_cycle_decomposition. A cyclic permutation moves only its listed entries (cycle_notation_support). A k-cycle moves exactly k elements (moved_size). (ℤ, s) equals no cycle notation (integer_successor_not_cycle_notation). The decidability comment has no formal content."
   },
   {
     "chapter": 3,
@@ -5691,8 +7020,20 @@
     "labels": [
       "def:support-permutation"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FixedPoint",
+      "MovedPoint",
+      "fixed_point_prop",
+      "permutation_support",
+      "fixed_or_moved"
+    ],
+    "principal": [
+      "permutation_support",
+      "MovedPoint",
+      "FixedPoint"
+    ],
+    "note": "Let σ be a permutation of a type A. A point a is a fixed point if σ(a) = a (FixedPoint). It is moved if σ(a) ≠ a (MovedPoint, a proposition). The support is the subset of moved points (permutation_support : Subtypes A). The definitions do not need A to be a set. The formalization proves the following remark: with decidable equality, each point is fixed or moved (fixed_or_moved)."
   },
   {
     "chapter": 3,
@@ -5702,8 +7043,19 @@
     "line": 2540,
     "section_raw": "Interlude: combinatorics of permutations}\\label{sec:permutations}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "DisjointSupports",
+      "moved_image_moved",
+      "disjoint_moved_fixed",
+      "disjoint_supports_symmetric",
+      "disjoint_supports_commute_at",
+      "disjoint_supports_commute"
+    ],
+    "principal": [
+      "disjoint_supports_commute"
+    ],
+    "note": "Consider a type with decidable equality, that is, the book's decidable set. Let σ and τ be permutations with disjoint supports (DisjointSupports: no point is moved by both). Then στ = τσ as an equality of equivalences (disjoint_supports_commute)."
   },
   {
     "chapter": 3,
@@ -5715,8 +7067,42 @@
     "labels": [
       "xca:perm-prod-transpositions"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "decide_branch",
+      "decide_branch_elim",
+      "decide_branch_yes",
+      "decide_branch_no",
+      "transposition",
+      "transposition_left",
+      "transposition_right",
+      "transposition_fixed",
+      "transposition_at_b",
+      "transposition_involutive",
+      "transposition_equiv",
+      "NotInList",
+      "PairwiseDistinct",
+      "cycle_next_head",
+      "cycle_lookup",
+      "cycle_notation",
+      "cycle_lookup_absent",
+      "cycle_lookup_found",
+      "cycle_notation_fixed",
+      "cycle_notation_successor",
+      "cycle_notation_first",
+      "cycle_notation_step",
+      "transposition_chain",
+      "cycle_transposition_product_at",
+      "cycle_transposition_product",
+      "transposition_chain_equiv",
+      "transposition_chain_equiv_map",
+      "cycle_notation_equiv"
+    ],
+    "principal": [
+      "cycle_transposition_product",
+      "cycle_notation"
+    ],
+    "note": "For a type with decidable equality, (a_1 … a_k) is cycle_notation, defined by lookup in the list. The formalization proves its defining behavior. Points outside the list are fixed, a_i ↦ a_{i+1} and a_k ↦ a_1 (cycle_notation_fixed, cycle_notation_step, cycle_notation_successor, cycle_notation_first). For pairwise distinct entries (PairwiseDistinct), it equals (a_1 a_k)(a_1 a_{k−1})⋯(a_1 a_2). This is a product of k−1 transpositions, and the rightmost one is applied first (cycle_transposition_product, transposition_chain). Thus it is a permutation (cycle_notation_equiv). For k ≥ 2, this notation agrees with the k-cycles of module 243 (module 286, see the xca at 2590). That is, (a_1 ... a_k) sends a(i) to a(i+1) for the enumeration a(i) = a_{i+1}, and it fixes all other points (cycle_notation_list_kcycle)."
   },
   {
     "chapter": 3,
@@ -5726,8 +7112,98 @@
     "line": 2555,
     "section_raw": "Interlude: combinatorics of permutations}\\label{sec:permutations}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Transpositions",
+      "transposition_word_map",
+      "TranspositionWord",
+      "transposition_diagonal",
+      "option_extend",
+      "option_extend_homotopy",
+      "lift_transposition",
+      "lift_word",
+      "inl_ne_inr",
+      "lift_transposition_at",
+      "lift_word_at",
+      "option_extension_extend",
+      "option_word_step",
+      "option_transposition_word",
+      "fin_transposition_word",
+      "TranspositionGenerated",
+      "transposition_generated_of_word",
+      "AllTranspositionGenerated",
+      "fin_all_transposition_generated",
+      "finite_transposition_generated",
+      "permutation_orbit_decomposition",
+      "orbit_cycle",
+      "permutation_option_equiv",
+      "PointPeriod",
+      "iterate_equiv_injective",
+      "iterate_offset_period",
+      "iterate_collision_ordered",
+      "nat_order_trichotomy",
+      "iterate_collision_period",
+      "finite_point_period",
+      "LeastPeriods",
+      "finite_least_period",
+      "finite_least_periods",
+      "least_period_bound",
+      "least_period_injective",
+      "OrbitMember",
+      "orbit_member_cycle",
+      "orbit_nonmember_cycle",
+      "orbit_nonmember_step_at",
+      "orbit_nonmember_step",
+      "orbit_member_next",
+      "orbit_member_prev_at",
+      "orbit_member_prev",
+      "iterate_invariant",
+      "orbit_member_power",
+      "bounded_index_decide",
+      "orbit_member_decide",
+      "orbit_member_same_orbit",
+      "same_orbit_member",
+      "OrbitOf",
+      "orbit_of_symmetric",
+      "orbit_of_transitive",
+      "OrbitCovered",
+      "orbit_covered_decide",
+      "orbit_covered_transfer",
+      "orbit_covered_of_occurs",
+      "CycleFactors",
+      "cycle_factors_product",
+      "cycle_notation_singleton",
+      "orbit_factor_cons",
+      "orbit_factor_cons_product",
+      "orbit_factors_step",
+      "orbit_factors",
+      "OrbitFactorsInvariant",
+      "orbit_factors_step_invariant",
+      "orbit_factors_invariant",
+      "cycle_decomposition_of_list",
+      "fin_all_elements",
+      "map_not_in_list_reflect",
+      "fin_all_elements_occurs",
+      "equiv_all_elements_occurs",
+      "fin_cycle_decomposition",
+      "finite_cycle_decomposition",
+      "kcycle_factors_product",
+      "kcycle_factors_of_cycle_factors",
+      "kcycle_factors_product_agree",
+      "finite_kcycle_decomposition",
+      "cycle_transposition_word",
+      "transposition_word_append",
+      "cycle_transposition_word_map",
+      "cycle_factors_word",
+      "cycle_factors_word_map",
+      "fin_transposition_word_via_cycles",
+      "finite_transposition_generated_via_cycles"
+    ],
+    "principal": [
+      "finite_transposition_generated",
+      "fin_transposition_word"
+    ],
+    "note": "Every permutation of Fin n has an explicit word of transpositions (a b) with a ≠ b. For any finite set, the word exists merely. There are two proofs. (1) The first proof is by induction through eq:type-factorial (module 176: fin_transposition_word, finite_transposition_generated, via permutation_option_equiv). (2) The second proof follows the book's route (module 286). A permutation σ of a finite set is written as a composite of cyclic permutations (x σx ... σ^n x), n ≥ 1. These use the cycle notation of module 174. By construction, the proof takes one point x of each orbit with at least two elements. Orbits are in the sense of module 58. The least period of each point comes from the pigeonhole principle. This decomposition is explicit for Fin n (fin_cycle_decomposition) and mere for a finite set (finite_cycle_decomposition). Each factor is a k-cycle in the sense of module 243 (finite_kcycle_decomposition). Then xca:perm-prod-transpositions (cycle_transposition_product_at) writes each factor as k-1 transpositions (a_1 a_i). This gives fin_transposition_word_via_cycles and finite_transposition_generated_via_cycles. The disjointness of the factors is not stated as a theorem."
   },
   {
     "chapter": 3,
@@ -5740,8 +7216,42 @@
       "xca:factorial",
       "eq:type-factorial"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "unit_decidable_equality",
+      "option_decidable_equality",
+      "inl_injective",
+      "option_value_inl",
+      "fixed_point_avoid",
+      "fixed_restriction_map",
+      "fixed_restriction_beta",
+      "inverse_fixes_point",
+      "fixed_restriction_roundtrip",
+      "fixed_restriction",
+      "option_extension",
+      "option_swap_normalize",
+      "option_swap_normalize_fix",
+      "permutation_option_to",
+      "permutation_option_from",
+      "fixed_restriction_extension",
+      "permutation_option_eta",
+      "permutation_option_epsilon",
+      "permutation_option_equiv",
+      "empty_automorphisms_equiv",
+      "factorial",
+      "fin_automorphisms_equiv",
+      "automorphisms_finite",
+      "automorphisms_cardinality",
+      "universe_loops_finite",
+      "universe_loops_cardinality",
+      "fin_zero_loops_equiv"
+    ],
+    "principal": [
+      "automorphisms_cardinality",
+      "permutation_option_equiv",
+      "empty_automorphisms_equiv"
+    ],
+    "note": "The formalization proves Aut(A + 1) ≃ (A + 1) × Aut(A) for every type A with decidable equality (permutation_option_equiv). This is the generality of the footnote. The equivalence sends σ to σ(pt) and the restriction of (pt σ(pt))σ. Aut(Fin 0) ≃ Fin 1 is empty_automorphisms_equiv. For Fin 0 = Fin 0, it is fin_zero_loops_equiv. The factorial is defined by 0! = 1 and (k+1)! = (k+1)·k! (factorial). Also, Aut(Fin n) ≃ Fin(n!) (fin_automorphisms_equiv). Let A be finite of cardinality n. Then both A ≃ A and A = A are finite with cardinality n!, for every finiteness witness. The declarations are automorphisms_finite, automorphisms_cardinality, universe_loops_finite and universe_loops_cardinality. Escardó's version for arbitrary types is not formalized."
   },
   {
     "chapter": 3,
@@ -5751,8 +7261,176 @@
     "line": 2590,
     "section_raw": "Interlude: combinatorics of permutations}\\label{sec:permutations}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bool_to_nat",
+      "true_count",
+      "binomial",
+      "binomial_zero",
+      "BoolSubsets",
+      "BoolSubsetsSplit",
+      "fin_extend",
+      "bool_subsets_split_equiv",
+      "bool_subsets_fin",
+      "empty_bool_function",
+      "KSubsets",
+      "decidable_iff",
+      "decision_bool",
+      "subset_member_decidable",
+      "subset_characteristic",
+      "BoolCarrier",
+      "bool_true_fin",
+      "bool_carrier_fin",
+      "subset_characteristic_carrier",
+      "subsets_to_bool",
+      "bool_predicate",
+      "bool_to_subsets",
+      "ksubsets_bool_equiv",
+      "ksubsets_fin_equiv",
+      "ksubsets_finite",
+      "ksubsets_cardinality",
+      "mul_one_left",
+      "mul_one_right",
+      "binomial_vanish",
+      "binomial_self",
+      "binomial_factorial_zero",
+      "binomial_factorial_diagonal",
+      "mul_regroup_right",
+      "mul_regroup_left",
+      "binomial_factorial",
+      "binomial_factorial_formula",
+      "CycleStructures",
+      "finite_cycle_periods_multiples",
+      "cycles_period_inclusion",
+      "FixedAutomorphisms",
+      "conjugate_equiv",
+      "conjugate_step",
+      "fin_structure_cycle",
+      "fin_structure_periods",
+      "fin_standard_periods",
+      "fin_structure_pointed",
+      "pointed_cycle_equivalence_fixed",
+      "cycle_structures_fixed_equiv",
+      "fixed_automorphisms_restriction",
+      "cycle_structures_fin_count",
+      "cycle_structures_finite",
+      "cycle_structures_cardinality",
+      "remainder_is_finite",
+      "remainder_fin_path",
+      "one_not_multiple",
+      "finite_cycle_moves",
+      "modular_successor_moves",
+      "KCycleEnumeration",
+      "IsKCycle",
+      "KCyclePermutations",
+      "MovedIff",
+      "moved_iff_of_path",
+      "moved_preimage_moved",
+      "subtype_carrier_set",
+      "moved_restriction",
+      "enumeration_moved",
+      "enumeration_to_moved",
+      "enumeration_restriction_commutes",
+      "moved_restriction_cyclic",
+      "moved_size",
+      "dep_branch",
+      "dep_branch_elim",
+      "subset_extension_map",
+      "subset_extension_in",
+      "subset_extension_out",
+      "subset_extension_retraction",
+      "subset_extension",
+      "KCycleFiber",
+      "extension_enumeration",
+      "extension_is_kcycle",
+      "extension_support_path",
+      "kcycle_fiber_equiv",
+      "kcycle_support_map",
+      "kcycle_support_decomposition",
+      "k_cycle_decomposition_finite",
+      "k_cycle_permutations_finite",
+      "fin_cardinality",
+      "k_cycle_permutations_cardinality",
+      "cycle_notation",
+      "remainder_successor",
+      "BookKCycleEnumeration",
+      "IsBookKCycle",
+      "BookKCyclePermutations",
+      "book_kcycle_enumeration_agrees",
+      "book_kcycle_permutations_agree",
+      "remainder_zero_empty",
+      "empty_cycle_fixes",
+      "empty_cycle_enumeration",
+      "contractible_fin_one_equiv",
+      "zero_cycle_permutations_contractible",
+      "zero_cycle_permutations_finite",
+      "zero_cycle_count",
+      "lt_one_zero",
+      "remainder_one_prop",
+      "remainder_one_origin",
+      "one_cycle_fixes",
+      "one_cycle_is_identity",
+      "one_cycle_at",
+      "one_cycle_permutations_prop",
+      "one_cycle_permutations_mere_equiv",
+      "one_cycle_permutations_contractible",
+      "one_cycle_count_nonempty",
+      "one_cycle_count_empty",
+      "binomial_one",
+      "one_cycle_printed_formula",
+      "finite_positive_nonempty",
+      "one_cycle_count_formula_fails",
+      "cycle_list_map",
+      "cycle_list_map_length",
+      "cycle_list_tail",
+      "cycle_list_entry",
+      "not_in_list_prop",
+      "pairwise_distinct_prop",
+      "not_in_list_decide",
+      "map_not_in_list",
+      "map_pairwise_distinct",
+      "map_not_in_image",
+      "map_list_member",
+      "cycle_next_head_map",
+      "cycle_lookup_map",
+      "iterate_list_map_entry",
+      "iterate_list_map_by_entries",
+      "not_in_map_iterate",
+      "cycle_list_entry_not_in",
+      "cycle_list_entry_injective",
+      "cycle_injective_prop",
+      "remainder_iterate_base",
+      "InjectiveCycleEnumerations",
+      "CycleNotationLists",
+      "cycle_notation_list_equiv",
+      "enumeration_rest",
+      "enumeration_to_list",
+      "list_to_enumeration",
+      "enumeration_list_roundtrip",
+      "list_enumeration_roundtrip",
+      "enumeration_list_equiv",
+      "enumeration_cycle_equiv",
+      "enumeration_cycle_step",
+      "enumeration_cycle_fixed",
+      "enumeration_kcycle",
+      "kcycle_enumeration_unique_at",
+      "kcycle_enumeration_cycle_notation",
+      "KCycleLaws",
+      "kcycle_laws_prop",
+      "kcycle_enumerations_equiv",
+      "kcycle_enumerations_lists_equiv",
+      "kcycle_enumerations_lists_commute",
+      "cycle_notation_list_laws",
+      "cycle_notation_list_kcycle",
+      "is_kcycle_cycle_notation_equiv",
+      "kcycle_permutations_cycle_notation"
+    ],
+    "principal": [
+      "k_cycle_permutations_cardinality",
+      "ksubsets_cardinality",
+      "binomial_factorial_formula"
+    ],
+    "note": "First part (module 178): the statement holds for a finite set A of cardinality n and every k. The k-element subsets of A form a finite type of cardinality binomial(n, k) (ksubsets_finite, ksubsets_cardinality). These are KSubsets, that is, subsets whose carrier is merely Fin k. The function binomial is defined by Pascal's rule. For k ≤ n, binomial(n, k)·k!·(n−k)! = n! (binomial_factorial_formula). This gives the printed n!/(k!(n−k)!). Second part (modules 242–244): this is the formalization's answer to \"find a formula\". For k = j+2 ≥ 2, a finite set of cardinality n has binomial(n, k)·(k−1)! k-cycle permutations (k_cycle_permutations_finite, k_cycle_permutations_cardinality). A k-cycle (a_1 … a_k) is encoded by the book's description (circle.tex:2506–2511). The pairwise distinct entries are given as an injective a : ℤ/k → A with a_1 = a(0). The k-cycle sends a_i to a_{i+1} and a_k to a_1, and it fixes every other element (KCycleEnumeration, IsKCycle, KCyclePermutations). Its support is exactly its entries and has k elements (moved_size). The permutation restricted to its support is a cycle (moved_restriction_cyclic). The k-cycles with a given k-element support correspond to the cycle structures on that support (kcycle_support_decomposition). This correspondence uses restriction and extension by the identity. A (j+1)-element set has j! cycle structures (cycle_structures_cardinality). The proof uses the unique pointed identification with the standard cycle and eq:type-factorial. Finite choice over the k-subsets gives the count. The restriction k ≥ 2 comes from this formalization, not from the book. The exercise allows 0 ≤ k ≤ n, but the formula binomial(n, k)·(k−1)! fails for k = 1 and for k = 0. For k = 1, every 1-cycle is the identity. Thus there is exactly one 1-cycle permutation, but the formula gives n. For k = 0, (−1)! is undefined, and the empty cycle is again the identity. Module 285 states these cases (see the end of this note). This encoding agrees with the list notation of module 174 (module 286). For any type A, injective enumerations ℤ/k → A are equivalent to lists of k pairwise distinct entries, a ↦ [a(0), …, a(k−1)] (enumeration_list_equiv). Now let the type be a set with decidable equality. Then pairs of a permutation and a k-cycle enumeration of it are equivalent to such lists. Under this equivalence, the permutation is the cycle notation (a_1 … a_k) of the list (kcycle_enumerations_lists_equiv, kcycle_enumerations_lists_commute). Thus σ is a k-cycle iff merely σ = (a_1 … a_k) for such a list (is_kcycle_cycle_notation_equiv). Both encodings fix a_1 = a(0). Thus no identification up to rotation is involved. Module 285 states k = 0 and k = 1 for the book's k-cycle at every k (BookKCycleEnumeration). For k >= 2, this notion is judgmentally module 243's notion. The empty cycle is the identity. Thus there is exactly one 0-cycle (count 1), and the printed (0-1)! is undefined. Every 1-cycle of a decidable set is the identity, and a 1-cycle exists iff the set is nonempty. Thus the count is 1 for n >= 1 and 0 for n = 0. Because binomial(n,1)·0! = n, the printed formula fails at k = 1 exactly for n >= 2 (one_cycle_count_formula_fails)."
   },
   {
     "chapter": 3,
@@ -5764,8 +7442,21 @@
     "labels": [
       "def:Cyc-components"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CycleComponent",
+      "infinite_cycle_point",
+      "InfiniteCycles",
+      "infinite_cycle_forget_equiv",
+      "infinite_cycle_forget_base",
+      "fin_remainder_cycle_path",
+      "principal_cycle"
+    ],
+    "principal": [
+      "CycleComponent",
+      "infinite_cycle_forget_equiv"
+    ],
+    "note": "CycleComponent k is the component of Cycles at principal_cycle k. Index 0 is Cyc_0, the component of (ℤ, s), with base point infinite_cycle_point. Index m = b+1 is Cyc_m, the component of the standard m-cycle. This cycle is built on (ℤ/m, modular successor), not on (Fin m, s). The two cycles are equal (fin_remainder_cycle_path, module 172). Thus the type is the book's Cyc_m, and only the name of its base point is different. The formalization proves the margin note. The map that forgets the cycle structure is an equivalence Cyc_0 ≃ InfCyc onto the endomorphism component of def:S1toC (infinite_cycle_forget_equiv). The map of infinite_cycle_forget_equiv is the forgetful map. It sends base point to base point (infinite_cycle_forget_base). The book then treats Cyc_0 and InfCyc as definitionally equal. Here, this explicit equivalence relates them."
   },
   {
     "chapter": 3,
@@ -5777,8 +7468,23 @@
     "labels": [
       "con:root"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "root_remainder_decision",
+      "root_remainder",
+      "root_finite",
+      "root_finite_small",
+      "root_finite_last",
+      "root_finite_full_turn",
+      "root_remainder_multiple_turns",
+      "fin_book_below_equiv"
+    ],
+    "principal": [
+      "root_finite",
+      "root_finite_small",
+      "root_finite_last"
+    ],
+    "note": "Let X be a type, t : X → X and m = n+1 positive. Then ᵐ√t = root_finite on the literal Fin m × X. It is defined through the bounded-number enumeration of Fin m (fin_book_below_equiv). The printed cases hold as identifications. For k < m−1, (k, x) ↦ (k+1, x) (root_finite_small). Also, (m−1, x) ↦ (0, t(x)) (root_finite_last). The formalization proves the following unnumbered claim for arbitrary t: (ᵐ√t)ᵐ(k, x) = (k, t(x)) (root_finite_full_turn). More generally, (ᵐ√t)^(mq)(k, x) = (k, t^q(x)) in bounded-number coordinates (root_remainder_multiple_turns)."
   },
   {
     "chapter": 3,
@@ -5790,8 +7496,17 @@
     "labels": [
       "def:root"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "formal_root",
+      "cycle_root",
+      "cycle_root_endomorphism"
+    ],
+    "principal": [
+      "formal_root",
+      "cycle_root"
+    ],
+    "note": "Let m = n+1 be positive. The map ρ_m = formal_root sends every endomorphism (X, t) in Σ(X : Type)(X → X) to (Fin m × X, ᵐ√t). There is no restriction to sets or equivalences. Its restriction to cycles is cycle_root (lem:root-pres-equiv and the unnumbered lemma after it). If the cycle structure of cycle_root(X, t) is forgotten, the result is formal_root(X, t) by refl (cycle_root_endomorphism)."
   },
   {
     "chapter": 3,
@@ -5803,8 +7518,19 @@
     "labels": [
       "lem:root-pres-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "root_remainder_inverse",
+      "root_remainder_retraction",
+      "root_remainder_section",
+      "root_remainder_equiv",
+      "root_finite_equiv",
+      "cycle_root_endomorphism"
+    ],
+    "principal": [
+      "root_finite_equiv"
+    ],
+    "note": "Let t be an equivalence on an arbitrary type X, with no set hypothesis, and let m = n+1 be positive. Then root_finite_equiv is an equivalence whose map is ᵐ√t. This holds definitionally, because cycle_root_endomorphism holds by refl. The proof does not use the printed contractible-fiber argument. Instead, it uses the explicit inverse that the margin note mentions. This inverse is built in bounded-number coordinates with both inverse laws (root_remainder_inverse, root_remainder_retraction, root_remainder_section, root_remainder_equiv)."
   },
   {
     "chapter": 3,
@@ -5814,8 +7540,21 @@
     "line": 2779,
     "section_raw": "The \\texorpdfstring{$m$\\th}{mᵗʰ} root:",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "same_orbit_power_steps",
+      "same_orbit_map_steps",
+      "root_remainder_zero_step",
+      "root_remainder_position_orbit",
+      "root_remainder_cyclic",
+      "root_finite_cyclic",
+      "cycle_root"
+    ],
+    "principal": [
+      "cycle_root",
+      "root_finite_cyclic"
+    ],
+    "note": "Let m = n+1 be positive. If (X, t) is a cycle, then ρ_m(X, t) = (Fin m × X, ᵐ√t) is also a cycle (cycle_root, root_finite_cyclic). As in the printed proof, Fin m × X is a nonempty set and ᵐ√t is an equivalence. Any two points are merely connected by a power of ᵐ√t (root_remainder_cyclic, root_remainder_position_orbit, same_orbit_power_steps). Orbit witnesses of the source are transferred for all signed powers. For negative powers, the transfer uses backward steps. Neither a global point nor a period is selected."
   },
   {
     "chapter": 3,
@@ -5827,8 +7566,43 @@
     "labels": [
       "lem:deg-m-on-Cyc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "integer_radix_value",
+      "integer_radix_digits",
+      "integer_radix_equiv",
+      "integer_radix_recover",
+      "integer_radix_recompose",
+      "integer_radix_quotient_beta",
+      "integer_radix_remainder_beta",
+      "integer_scaling_successor",
+      "root_integer_digits_step",
+      "integer_root_radix_commutes",
+      "root_infinite_cycle_path",
+      "formal_root_integer_path",
+      "formal_root_infinite_component",
+      "formal_root_infinite_pointed",
+      "int_mul_pos_add",
+      "int_mul_pos_mul",
+      "scaled_multiples",
+      "root_finite_standard_periods",
+      "root_principal_path",
+      "principal_component_point",
+      "cycle_root_component",
+      "cycle_root_pointed",
+      "cycle_root_ap_evaluate",
+      "cycle_paths_ext",
+      "cycle_inverse_loop_evaluate",
+      "cycle_loop_power_evaluate",
+      "root_inverse_generator_power",
+      "root_infinite_ap_evaluate",
+      "root_degree_maps"
+    ],
+    "principal": [
+      "cycle_root_pointed",
+      "formal_root_infinite_pointed"
+    ],
+    "note": "Let m = n+1 be positive and k : ℕ. Then cycle_root_pointed n k : (Cyc_k, pt_k) →* (Cyc_{mk}, pt_{mk}) is a book-pointed map with underlying map ρ_m (cycle_root_component). Here index 0 is Cyc_0, and index b+1 is the standard (b+1)-cycle. The product m·(b+1) reduces to a successor. Thus the target is literally the standard m(b+1)-cycle. For finite k, the pointing identification pt_{mk} = ρ_m(pt_k) is the pointed cycle identification from the equality of period subgroups. The declarations are root_principal_path, root_finite_standard_periods and scaled_multiples. This identification sends 0 to (0, 0). For k = 0, it is the printed φ(k, z) = k + mz (integer_radix_equiv). Here φ∘ᵐ√s = s∘φ by integer_root_radix_commutes. This also gives the pointed map on the endomorphism component InfCyc (formal_root_infinite_pointed). The formalization also proves the following text on paths. The first component of ap_{ρ_m}(e, !) is id × e, for identifications of cycles and in InfCyc (cycle_root_ap_evaluate, root_infinite_ap_evaluate). Let (X, t) be a cycle. Then ap_{ρ_m} of the inverse generating loop (t⁻¹, !) is the m-th power of the inverse generating loop ((ᵐ√t)⁻¹, !) of ρ_m(X, t). This is root_inverse_generator_power. The printed ᵐ√(t⁻¹) is read as (ᵐ√t)⁻¹. The reason is that ᵐ√(t⁻¹) need not commute with ᵐ√t, so it need not be a symmetry of the root cycle. However, (ᵐ√(t⁻¹))ᵐ = id × t⁻¹ also holds as functions. The comparison ρ_m∘c = c∘dg_m that follows in the text is root_degree_maps (xca:pointed-maps-circle)."
   },
   {
     "chapter": 3,
@@ -5840,8 +7614,42 @@
     "labels": [
       "xca:pointed-maps-circle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infinite_pointed",
+      "infinite_path_evaluate",
+      "infinite_conjugate_evaluate",
+      "infinite_inverse_roundtrip",
+      "root_infinite_ap_evaluate",
+      "root_infinite_path_evaluation",
+      "root_pointing",
+      "root_pointing_underlying",
+      "root_pointing_radix",
+      "root_radix_injective",
+      "root_pointing_zero",
+      "root_pointing_inverse",
+      "root_loop_coordinate",
+      "conjugate_refl",
+      "pointed_conjugate_compose",
+      "conjugate_inverse_transport",
+      "circle_infinite_pointed_map",
+      "circle_degree_pointed_map",
+      "root_after_circle",
+      "circle_after_degree",
+      "root_after_circle_coordinate",
+      "circle_after_degree_coordinate",
+      "root_degree_loops_equal",
+      "root_degree_pointed",
+      "root_degree_maps",
+      "S1_root_degree_pointed",
+      "S1_root_degree_maps",
+      "pointed_circle_loop_rec"
+    ],
+    "principal": [
+      "root_degree_pointed",
+      "root_degree_maps"
+    ],
+    "note": "Let C be a circle and m = n+1 positive. Then ρ_m∘c = c∘dg_m as an identification of book-pointed maps S¹ →* InfCyc (root_degree_pointed). By projection, it also holds as an identification of maps (root_degree_maps). This is also the unpointed comparison in the preceding text. Here c is the recursor with the predecessor generator (def:S1toC), and dg_m is the degree map. Both are pointed by the inverse of their base computation identification (pointed_circle_loop_rec). In the book, this pointing is refl, because c(base) ≡ (ℤ, s) and dg_m(base) ≡ base hold judgmentally. The map ρ_m on InfCyc is pointed by pt = ρ_m(pt) (root_pointing). This is the inverse of φ(k, z) = k + mz from lem:deg-m-on-Cyc. Pointed maps from the circle are equivalent to loops (cor:circle-loopspace), and loops of InfCyc are equivalent to ℤ. Thus the proof compares the two maps through the coordinates of their loops. The declarations are root_loop_coordinate, root_after_circle_coordinate, circle_after_degree_coordinate and root_degree_loops_equal. The loop of a composite pointed map is the image loop conjugated by the pointing path. The map ap_{ρ_m} acts as id × e. Conjugation by the pointing path multiplies coordinates by m. This is the printed statement that the transport of id × s⁻¹ along φ is s⁻ᵐ. The book's Cyc_0 is taken as InfCyc, as in def:S1toC. The instances at the constructed circle are S1_root_degree_pointed and S1_root_degree_maps (module 251)."
   },
   {
     "chapter": 3,
@@ -5853,8 +7661,20 @@
     "labels": [
       "lem:sum-cycle-point-contr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CyclesOfOrder",
+      "PointedCyclesOfOrder",
+      "cycle_order_paths",
+      "pointed_cycle_of_order_path",
+      "pointed_cycles_of_order_contractible_at",
+      "pointed_cycles_of_order_contractible",
+      "SetTrunc"
+    ],
+    "principal": [
+      "pointed_cycles_of_order_contractible"
+    ],
+    "note": "For every d : Order = SetTrunc Cycles, Σ((X, t) : Cyc_d) X is contractible in the book sense (pointed_cycles_of_order_contractible). Here Cyc_d is the fiber of ord over d (CyclesOfOrder, PointedCyclesOfOrder). The proof follows the book. The goal is a proposition. Thus set-truncation induction reduces the goal to d = |c₀|. A point of c₀ is chosen merely. Then the pointed-path contractibility of lem:IdCycle shows that the type is a retract of a singleton at c₀."
   },
   {
     "chapter": 3,
@@ -5866,8 +7686,27 @@
     "labels": [
       "lem:m-root-id"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "permutation_power_scaled",
+      "root_remainder_first",
+      "root_finite_remainder_first",
+      "root_period_standard",
+      "root_periods_standard",
+      "root_order_divisible",
+      "root_period_multiple",
+      "root_scaled_power",
+      "root_period_quotient",
+      "root_period_from_scaled",
+      "ScaledSubtype",
+      "root_cycle_periods"
+    ],
+    "principal": [
+      "root_period_multiple",
+      "root_period_quotient",
+      "root_order_divisible"
+    ],
+    "note": "Let (X, t) be a cycle and m = n+1 positive. A period z of ᵐ√t is merely a multiple of m (root_period_multiple). For every witness z = qm, t^q = id (root_period_quotient, for any type and equivalence). The formalization proves the reformulation \"m divides the order of ᵐ√t\" literally (root_order_divisible). Here the divisibility of orders is the reverse inclusion of period subgroups. The formalization also proves the converse: a period q of t gives the period qm of ᵐ√t. Thus the period subgroup of ᵐ√t is exactly m·H_t (root_cycle_periods, ScaledSubtype). As in the book, the proof looks at the first coordinate, where ᵐ√t acts as the modular successor. It also uses the full-turn law."
   },
   {
     "chapter": 3,
@@ -5879,8 +7718,33 @@
     "labels": [
       "lem:X-mod-m-chosen"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ModWitness",
+      "mod_power",
+      "mod_relation",
+      "ModQuotient",
+      "mod_relation_book",
+      "CycleResidues",
+      "cycle_residue",
+      "residue_power",
+      "residue_respects",
+      "residue_reflects",
+      "residue_quotient_map",
+      "residue_quotient_injective",
+      "residue_quotient_surjective",
+      "residue_quotient_equiv",
+      "residue_class",
+      "residue_class_position",
+      "residue_class_injective",
+      "residue_class_surjective",
+      "residue_class_equiv",
+      "OrderDivides"
+    ],
+    "principal": [
+      "residue_class_equiv"
+    ],
+    "note": "X/m is the quotient ModQuotient of X by the orbit relation of t^m (mod_relation). The formalization proves that this relation is equivalent to the printed relation ∃(r : ℤ)(x' = t^(mr)(x)) (mod_relation_book). Consider a cycle whose order is divisible by m, and any x₀ : X. The hypothesis is OrderDivides m (ord t), that is, H_t ⊆ mℤ. Then the map k ↦ [t^k(x₀)] from the literal Fin m (residue_class) is an equivalence (residue_class_equiv). The proof is different from the printed one. A map of cycles into the standard m-cycle (xca:map-of-cycles) descends to a bijection X/m ≃ ℤ/m (residue_quotient_equiv). The composite of this bijection with residue_class is the enumeration of Fin m (residue_class_position). In the same way, every map of cycles into the standard m-cycle identifies X/m with ℤ/m."
   },
   {
     "chapter": 3,
@@ -5892,8 +7756,40 @@
     "labels": [
       "thm:fiber-cdg"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "RootFiberCondition",
+      "root_fiber_condition_prop",
+      "root_fiber_condition_divides",
+      "QuotientPeriods",
+      "quotient_periods_laws",
+      "quotient_order",
+      "quotient_periods_scaled",
+      "RootFiber",
+      "root_path_residue",
+      "root_path_condition",
+      "root_fiber_class",
+      "root_fiber_map",
+      "root_fiber_class_members",
+      "RootFiberAt",
+      "root_fiber_map_fiber_equiv",
+      "root_path_periods",
+      "root_fiber_at_contractible",
+      "root_fiber_map_is_equiv",
+      "root_fiber_equiv",
+      "BookEquiv",
+      "root_fiber_inverse_map",
+      "root_fiber_map_inverse_section",
+      "root_fiber_inverse_retraction",
+      "root_fiber_map_is_equiv_by_inverse",
+      "class_unwind_is_equiv",
+      "lpo_root_fiber_alternative"
+    ],
+    "principal": [
+      "root_fiber_equiv",
+      "root_fiber_map"
+    ],
+    "note": "Let (X, t) be a cycle and m = n+1 positive. The fiber of ρ_m over (X, t) is RootFiber = Σ((Y, u) : Cyc)((X, t) = ρ_m(Y, u)), in the book's orientation. The book's map g from this fiber to P × X/m is a BookEquiv (root_fiber_equiv, with map root_fiber_map). Here P = (H_t ⊆ mℤ) (RootFiberCondition). The formalization also proves that P is equivalent to m | ord(t) (root_fiber_condition_divides). The map g sends an identification e to the proof of P from lem:m-root-id. This proof transports H_t along e explicitly (root_path_condition). The map g also sends e to the class V_e. This class is characterized as the subset {x | fst(e(x)) = 0} (root_fiber_class, root_fiber_class_members). The formalization does not use the book's inverse h. Instead, it shows that every fiber of g is contractible (root_fiber_map_is_equiv). First, a representative of the class is chosen merely. Then the fiber is a retract of Σ((Y, u) : Cyc_d) Y. Here d is the order of the subgroup {q | qm ∈ H_t} (QuotientPeriods, quotient_order). This type is contractible by lem:sum-cycle-point-contr. The LPO footnote is not formalized. No circle is involved. The book's own proof is also formalized (module 288). For every cycle, the inverse is h : P × X/m → cdg_m⁻¹(X,t) (root_fiber_inverse_map). The formalization proves g∘h = id (root_fiber_map_inverse_section). It also proves h∘g = id, which the book leaves to the reader (root_fiber_inverse_retraction). Thus g is an equivalence by lem:weq-iso (root_fiber_map_is_equiv_by_inverse). For every cycle that satisfies P, e′ is an equivalence (class_unwind_is_equiv). The LPO footnote is lpo_root_fiber_alternative."
   },
   {
     "chapter": 3,
@@ -5905,8 +7801,17 @@
     "labels": [
       "xca:cancel-injection"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pi_equiv",
+      "funext_equiv",
+      "cancel_injection",
+      "IsEmbedding"
+    ],
+    "principal": [
+      "cancel_injection"
+    ],
+    "note": "Let A, B and X be arbitrary types, and let f, g : X → A. Let i : A → B be an injection in the book's sense (IsEmbedding: propositional fibers). Then ap of postcomposition with i is an equivalence (f = g) ≃ (if = ig) (cancel_injection). By construction, its map is ap. The proof uses pointwise path equivalences and function extensionality (pi_equiv, funext_equiv). This result alone gives the uniqueness of e claimed at circle.tex:3096. The book derives this uniqueness from this exercise and the next exercise."
   },
   {
     "chapter": 3,
@@ -5918,8 +7823,29 @@
     "labels": [
       "xca:cancel-surjection"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "surjection_cancellation_universe_counterexample",
+      "two_sets_base_surjective",
+      "two_sets_groupoid",
+      "two_sets_base_restrictions_equal",
+      "two_sets_identity_not_constant",
+      "surjection_cancellation_counterexample",
+      "cancel_surjection_into_set",
+      "TwoSets",
+      "n_connected_extend",
+      "n_connected_extend_beta",
+      "n_connected_extend_eta",
+      "n_connected_sections_equiv",
+      "cancel_n_connected",
+      "surjection_minus_one_connected",
+      "cancel_surjection_into_set_minus_one_case"
+    ],
+    "principal": [
+      "surjection_cancellation_counterexample",
+      "cancel_surjection_into_set"
+    ],
+    "note": "The printed claim, stated for all types Y, is false. The formalization refutes it. The counterexample uses A = Unit, B = Y = TwoSets and p the inclusion of the base point. Here TwoSets is the groupoid of two-element sets. The map p is surjective (two_sets_base_surjective). The identity and the constant map at the base agree after precomposition with p (two_sets_base_restrictions_equal). But they are not equal (two_sets_identity_not_constant). Thus ap(− ∘ p) is not an equivalence (surjection_cancellation_counterexample implies Empty). Also, two_sets_groupoid shows that Y is a groupoid. Thus the claim already fails one level above sets. Another counterexample uses Y = Type, the universe, with the tautological family and the constant family at Bool. It is surjection_cancellation_universe_counterexample. The corrected statement, with Y a set, is proved separately (cancel_surjection_into_set, with the book's map ap). It does not replace the printed claim. Module 285 formalizes the general form. Let p be n-connected (n = k-1 >= -1) and Y an (n+1)-type. Then ap_{-p} : (f = g) → (fp = gp) is an equivalence whose map is literally ap_{-p} (cancel_n_connected). The proof uses HoTT book Lemma 7.5.7 for families of n-types (n_connected_sections_equiv). The declaration cancel_surjection_into_set is its n = -1 case, equal as an equivalence (cancel_surjection_into_set_minus_one_case)."
   },
   {
     "chapter": 3,
@@ -5931,8 +7857,35 @@
     "labels": [
       "def:n-image"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MinusTwoImage",
+      "Image",
+      "ZeroImage",
+      "zero_image_factor",
+      "zero_image_include",
+      "zero_image_triangle",
+      "zero_image_include_fiber_equiv",
+      "zero_image_include_covering",
+      "zero_image_factor_zero_connected",
+      "zero_image_factorization",
+      "NImage",
+      "n_image_factor",
+      "n_image_include",
+      "n_image_triangle",
+      "n_image_minus_one",
+      "n_image_zero_equiv",
+      "n_image_include_fiber_equiv",
+      "n_image_include_truncated",
+      "n_image_factor_fiber_equiv",
+      "n_image_factor_connected"
+    ],
+    "principal": [
+      "NImage",
+      "n_image_factor",
+      "n_image_include"
+    ],
+    "note": "For every n = k−1 ≥ −1, im_n(f) = Σ(b : B) ‖f⁻¹(b)‖_n, with book fibers (NImage). It uses the n-truncations Trunc k, which are built by the book's construction (def:join-construction-of-truncation). For n = −2, it is MinusTwoImage, Σ(b : B) Unit (module 108). The formalization also proves the following text. The equation im_{−1}(f) ≡ im(f) holds judgmentally (n_image_minus_one, by refl). Also, im_0(f) is equivalent to the earlier ZeroImage (n_image_zero_equiv). Consider the factorization f = i∘p with p(a) = (f a, |(a, refl)|_n) and i = fst. It commutes by refl (n_image_triangle). The map i is n-truncated, and its fiber at b is ‖f⁻¹(b)‖_n (n_image_include_fiber_equiv, n_image_include_truncated). As in the footnote, p is n-connected (n_image_factor_fiber_equiv, n_image_factor_connected)."
   },
   {
     "chapter": 3,
@@ -5944,8 +7897,35 @@
     "labels": [
       "def:n-connected"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MinusTwoConnectedMap",
+      "MinusOneConnectedMap",
+      "minus_one_connected_map_equiv",
+      "ZeroConnectedMap",
+      "zero_connected_map_fibers",
+      "connected_fibers_zero_map",
+      "connected_set_trunc_equiv",
+      "NConnectedType",
+      "NConnectedMap",
+      "n_connected_type_prop",
+      "n_connected_map_prop",
+      "n_connected_type_equiv",
+      "minus_one_connected_nonempty",
+      "zero_connected_connected",
+      "minus_one_connected_map_surjective",
+      "zero_connected_map_compare",
+      "MinusTwoTrunc",
+      "minus_two_trunc_unit",
+      "MinusTwoConnectedType",
+      "minus_two_connected_type",
+      "minus_two_connected_map_fibers"
+    ],
+    "principal": [
+      "NConnectedType",
+      "NConnectedMap"
+    ],
+    "note": "The formalization defines n-connected types and n-connected maps for every n = k−1 ≥ −1. A type A is n-connected if ‖A‖_n is contractible in the book sense (NConnectedType). A map is n-connected if every book fiber is n-connected (NConnectedMap). For n = −2, the maps are MinusTwoConnectedMap (module 108), which is trivially inhabited. Both predicates are propositions (n_connected_type_prop, n_connected_map_prop). The formalization proves the following remarks. The (−1)-connected types are exactly the nonempty ones (minus_one_connected_nonempty). The 0-connected types are exactly the connected ones of def:connected (zero_connected_connected). The (−1)-connected maps are exactly the surjections (minus_one_connected_map_surjective, minus_one_connected_map_equiv). The 0-connected maps agree with the earlier ZeroConnectedMap (zero_connected_map_compare). The formalization states \"Every type is (−2)-connected\" only for maps. The remark 'any type is (-2)-connected' is minus_two_connected_type (module 285), with ||A||_{-2} = Unit. MinusTwoConnectedMap is literally 'all fibers are (-2)-connected' (minus_two_connected_map_fibers)."
   },
   {
     "chapter": 3,
@@ -5957,8 +7937,19 @@
     "labels": [
       "def:n-truncated"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TruncatedMap",
+      "truncated_map_prop",
+      "truncated_map_raise",
+      "minus_two_truncated_map_equiv",
+      "minus_one_truncated_map_equiv",
+      "zero_truncated_map_equiv"
+    ],
+    "principal": [
+      "TruncatedMap"
+    ],
+    "note": "For every n ≥ −2, TruncatedMap (n+2) f says that every book fiber of f has h-level n+2. That is, every fiber is an n-type. Here h-level 0 is contractible. This predicate is a proposition (truncated_map_prop). It is preserved when the level is raised (truncated_map_raise). The formalization proves the remarks after the definition. The (−2)-truncated maps are the equivalences (minus_two_truncated_map_equiv). The (−1)-truncated maps are the injections, that is, the embeddings (minus_one_truncated_map_equiv). The 0-truncated maps are the coverings (zero_truncated_map_equiv)."
   },
   {
     "chapter": 3,
@@ -5970,8 +7961,28 @@
     "labels": [
       "lem:trunc-n-connected"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "set_trunc_fiber_connected_at_point",
+      "set_trunc_fibers_connected",
+      "set_trunc_constructor_zero_connected",
+      "trunc_maps_path",
+      "trunc_maps_path_beta",
+      "trunc_ind",
+      "pathover_inverse_transport",
+      "trunc_ind_beta",
+      "trunc_unit_fiber_center",
+      "trunc_unit_fiber_center_beta",
+      "trunc_unit_fiber_contract_point",
+      "trunc_unit_fiber_contract",
+      "trunc_unit_connected",
+      "SetTrunc",
+      "minus_two_trunc_unit_connected"
+    ],
+    "principal": [
+      "trunc_unit_connected"
+    ],
+    "note": "For every type A and every n = k−1 ≥ −1, |−|_n : A → ‖A‖_n is n-connected (trunc_unit_connected). The proof follows the book. The centers c(x) are defined by n-truncation elimination with c(|a|) = |(a, refl)| (trunc_unit_fiber_center). The contraction is defined by elimination into the (n−1)-type of identifications and path induction on x = |a| (trunc_unit_fiber_contract). The n-truncations are constructed (def:join-construction-of-truncation), and they are not higher inductive types. Thus dependent elimination is derived from the universal property (trunc_ind). The book's c(|a|) ≔ |(a, refl)| holds as an identification (trunc_ind_beta, trunc_unit_fiber_center_beta). Level 0 was also proved earlier for SetTrunc (set_trunc_constructor_zero_connected). For n = -2, the constructor A → ||A||_{-2} = Unit is (-2)-connected (minus_two_trunc_unit_connected, module 285)."
   },
   {
     "chapter": 3,
@@ -5983,8 +7994,22 @@
     "labels": [
       "con:fibcomp=fibfib"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fiber_decomposition",
+      "fiber_decomposition_equiv",
+      "composite_fiber_decomposition",
+      "composite_double_fiber_equiv",
+      "composite_double_fiber_printed_map",
+      "composite_double_fiber_printed_section",
+      "composite_double_fiber_equiv_is_printed",
+      "composite_double_fiber_printed_equiv"
+    ],
+    "principal": [
+      "composite_double_fiber_equiv",
+      "composite_fiber_decomposition"
+    ],
+    "note": "For arbitrary types, g̃ = composite_fiber_decomposition is exactly a ↦ (h(g(a)), g(a), refl(h(g(a)))). For all b, there are equivalences (hg)⁻¹(b) ≃ Σ(y : h⁻¹(b)) g̃⁻¹(b, y) (composite_double_fiber_equiv). They are built by the contract-away alternative that the following exercise allows (xca:fibcomp=fibfib). Module 285 defines the printed map (a,p) ↦ ((g a,p),(a,q)). Here q is componentwise p, refl(g a) and the connection square, that is, the easy path over p from p to refl. Module 285 shows that composite_double_fiber_equiv has this map (composite_double_fiber_equiv_is_printed). Thus the printed e(b) is an equivalence (composite_double_fiber_printed_equiv)."
   },
   {
     "chapter": 3,
@@ -5996,8 +8021,19 @@
     "labels": [
       "xca:fibcomp=fibfib"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pathover_domain_contractible",
+      "projection_composite_fiber_split",
+      "projection_composite_fiber_equiv",
+      "composite_double_fiber_equiv",
+      "composite_double_fiber_printed_equiv"
+    ],
+    "principal": [
+      "composite_double_fiber_equiv",
+      "projection_composite_fiber_equiv"
+    ],
+    "note": "The formalization uses the alternative that the exercise allows. It contracts away (cor:contract-away) the pathover part of the double fiber together with its specified path. The declarations are pathover_domain_contractible, projection_composite_fiber_split and projection_composite_fiber_equiv. This gives the fiberwise equivalence composite_double_fiber_equiv for arbitrary types. The formalization also proves that the map of the printed implementation is a fiberwise equivalence (module 285)."
   },
   {
     "chapter": 3,
@@ -6009,8 +8045,32 @@
     "labels": [
       "xca:trunc-sum-type+fam"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fiberwise_set_trunc",
+      "truncated_sum_to",
+      "truncated_sum_from",
+      "truncated_sum_retraction",
+      "truncated_sum_section",
+      "truncated_sum_equiv",
+      "truncated_sum_set_base_equiv",
+      "trunc_sum_to",
+      "trunc_sum_inner",
+      "trunc_sum_from",
+      "trunc_sum_retraction",
+      "trunc_sum_section_inner",
+      "trunc_sum_section",
+      "trunc_sum_equiv",
+      "trunc_of_level_equiv",
+      "trunc_sum_level_base_equiv",
+      "SetTrunc",
+      "minus_two_trunc_sum_equiv",
+      "minus_two_trunc_sum_level_base_equiv"
+    ],
+    "principal": [
+      "trunc_sum_equiv"
+    ],
+    "note": "For every n = k−1 ≥ −1 and arbitrary X and Y, ‖Σ_x Y(x)‖_n ≃ ‖Σ_x ‖Y(x)‖_n‖_n, with |(x, y)| ↦ |(x, |y|)| (trunc_sum_equiv). Truncation elimination proves both inverse laws. The earlier level-0 version for SetTrunc is truncated_sum_equiv. Also, the n-truncation of an n-type is the type itself (trunc_of_level_equiv). Thus over an n-type base, only the summands need truncation (trunc_sum_level_base_equiv). The proof of thm:n-im-univ-prop uses this form. Module 285 treats n = -2: both sides are Unit (minus_two_trunc_sum_equiv). Over a contractible base, ||Σ_x Y x||_{-2} ≃ Σ_x ||Y x||_{-2} (minus_two_trunc_sum_level_base_equiv)."
   },
   {
     "chapter": 3,
@@ -6022,8 +8082,17 @@
     "labels": [
       "def:type-of-factorizations"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Factorizations",
+      "ImageFactorizationTriangles",
+      "ZeroFactorizationProperties",
+      "zero_factorization_regroup"
+    ],
+    "principal": [
+      "Factorizations"
+    ],
+    "note": "The formalization defines Fact(f) = Σ(Z : Type) Σ(g : X → Z) Σ(h : Z → Y) (f = h∘g). It includes the specified identification. This is Factorizations, which is equal to ImageFactorizationTriangles. Here Z ranges over Narya's single universe Type. The declaration zero_factorization_regroup regroups the six-component type of 0-image factorizations as a subtype of Fact(f)."
   },
   {
     "chapter": 3,
@@ -6035,8 +8104,69 @@
     "labels": [
       "thm:n-im-univ-prop"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MinusTwoImageFactorizations",
+      "minus_two_image_universal_property",
+      "image_factorizations_contractible",
+      "ZeroImageFactorizations",
+      "zero_image_factorization",
+      "connected_map_sections_equiv",
+      "connected_section_extensions_contractible",
+      "truncated_sum_set_base_equiv",
+      "zero_connected_set_reflection",
+      "composite_fiber_map_connected",
+      "composite_truncated_fiber_equiv",
+      "factorization_equivalence_comparison",
+      "zero_composite_carrier_equiv",
+      "zero_composite_comparison_coherence",
+      "zero_image_triangular_contraction",
+      "zero_image_factorization_contraction",
+      "zero_image_universal_property",
+      "zero_image_book_universal_property",
+      "connected_level_inverse",
+      "connected_level_section",
+      "connected_level_retraction",
+      "connected_level_reflection",
+      "postequivalence_n_connected",
+      "cancel_preequivalence_n_connected",
+      "total_n_connected_fiberwise",
+      "composite_fiber_map_n_connected",
+      "n_composite_truncated_fiber_equiv",
+      "NImageFactorizations",
+      "n_image_factorization",
+      "NFactorizationProperties",
+      "n_factorization_properties_prop",
+      "n_factorization_regroup",
+      "n_composite_section",
+      "n_composite_lift",
+      "n_composite_carrier_equiv",
+      "n_composite_right_triangle",
+      "n_composite_unit_path",
+      "n_composite_pointwise",
+      "n_composite_factor_path",
+      "n_composite_two_path",
+      "n_composite_comparison_coherence",
+      "n_image_triangular_factorization",
+      "n_composite_factorization_path",
+      "n_image_triangle_path_from_reverse",
+      "n_image_triangular_contraction",
+      "n_image_factorization_contraction",
+      "n_image_universal_property",
+      "n_image_book_universal_property",
+      "NConnectedMapFrom",
+      "NFactorizationPropertiesFrom",
+      "MinusTwoFactorizationProperties",
+      "minus_two_factorization_regroup",
+      "minus_two_properties_equiv",
+      "minus_two_image_book_universal_property",
+      "n_image_universal_property_all"
+    ],
+    "principal": [
+      "n_image_book_universal_property",
+      "minus_two_image_universal_property"
+    ],
+    "note": "Let n ≥ −2, and let A, B and f be arbitrary. Then the type Σ((C, g, h, r) : Fact(f)) (g n-connected × h n-truncated) is contractible in the book sense. Its center is the n-image factorization. For n = k−1 ≥ −1, this is n_image_book_universal_property. For the regrouped six-component type, it is n_image_universal_property. For n = −2, it is minus_two_image_universal_property (module 108). This version is stated for the equivalent flat type with h an equivalence. Here C ranges over all of Type. The proof is different from the printed reduction to projections. An n-connected map into an n-type presents that type as the n-truncation of its domain (connected_level_reflection). The induced map of fibers (hg)⁻¹(b) → h⁻¹(b) is n-connected (composite_fiber_map_n_connected). Thus ‖(hg)⁻¹(b)‖_n ≃ h⁻¹(b), and the n-image is equivalent to C over B. Univalence turns this into an identification of factorizations. Truncation elimination computes only up to identification. Thus the two-dimensional coherence of the triangles is proved explicitly (n_composite_two_path). Module 285 gives a single statement for all n >= -2. For m = n+2, n_image_universal_property_all (m : Nat) gives the contractibility of Σ_{(C,g,h,r):Fact(f)} (isnconn(g) × isntrunc(h)). The case n = -2 is transferred from module 108 through minus_two_truncated_map_equiv and regrouping."
   },
   {
     "chapter": 3,
@@ -6048,8 +8178,21 @@
     "labels": [
       "xca:im_preserves_conn"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ReflectedImage",
+      "reflected_image_factor_fiber_equiv",
+      "reflected_image_factor_surjective",
+      "reflected_images_preserve_connectedness",
+      "propositional_image_connected",
+      "zero_image_connected",
+      "n_image_connected",
+      "trunc_unit_surjective"
+    ],
+    "principal": [
+      "n_image_connected"
+    ],
+    "note": "For every n = k−1 ≥ −1, every connected type A and arbitrary B and f, im_n(f) is connected (n_image_connected). This is an instance of a general statement for reflections with surjective units (reflected_images_preserve_connectedness). The instance is at the constructed n-truncations, whose units are surjective (trunc_unit_surjective). The cases n = −1 and n = 0 were also proved earlier (propositional_image_connected, zero_image_connected)."
   },
   {
     "chapter": 3,
@@ -6061,8 +8204,44 @@
     "labels": [
       "thm:image-Z-to-Cm"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "quotient_prop_induction",
+      "mod_power_commutes",
+      "mod_respects_commuting",
+      "quotient_successor",
+      "quotient_predecessor",
+      "quotient_successor_equiv",
+      "quotient_successor_power",
+      "quotient_successor_cyclic",
+      "QuotientCycle",
+      "residue_quotient_commutes",
+      "quotient_cycle_residue_path",
+      "quotient_cycle_standard",
+      "cycle_path_family_transport_evaluate",
+      "quotient_cycle_ap_evaluate",
+      "infinite_quotient_set",
+      "infinite_component_divides",
+      "infinite_quotient_cycle",
+      "cycle_component_set",
+      "quotient_set_triangle",
+      "cycle_component_set_covering",
+      "infinite_quotient_base_path",
+      "infinite_quotient_fiber_connected",
+      "infinite_quotient_connected_fibers",
+      "infinite_quotient_zero_connected",
+      "infinite_quotient_factorization",
+      "infinite_quotient_factorization_unique",
+      "quotient_connected_fibers_from_standard",
+      "quotient_zero_connected_from_standard",
+      "quotient_n_connected_from_standard",
+      "infinite_quotient_factorization_via_standard_fiber"
+    ],
+    "principal": [
+      "infinite_quotient_factorization",
+      "infinite_quotient_factorization_unique"
+    ],
+    "note": "Let m = n+1 be positive. The map −/m : Cyc_0 → Set sends (X, t) to the quotient X/m (infinite_quotient_set). The map q : Cyc_0 → Cyc_m sends (X, t) to the cycle (X/m, t̄) with t̄[x] = [t x] (infinite_quotient_cycle, QuotientCycle, quotient_successor). This cycle lies in the component of the standard m-cycle (quotient_cycle_standard). The map r : Cyc_m → Set is the underlying set (cycle_component_set). The equation r∘q = −/m holds by refl (quotient_set_triangle). The map r has set fibers (cycle_component_set_covering). The map q has connected fibers, hence it is 0-connected (infinite_quotient_connected_fibers, infinite_quotient_zero_connected). The first proof of connectedness is different from the printed one. The printed proof identifies the fiber over the standard m-cycle with Cyc_0 through ρ_m. Instead, this proof compares identifications of cycles by evaluation at a merely chosen point. It uses the pointed identifications of lem:IdCycle. The next exercise carries out the printed route. The resulting factorization (infinite_quotient_factorization) is proved equal to the canonical 0-image factorization by thm:n-im-univ-prop (infinite_quotient_factorization_unique). No circle is involved. Module 285 also reproduces the printed step. Cyc_m is connected, and connectedness is a proposition. Thus the connectedness of q⁻¹(pt_m) from φ/ψ (quotient_fiber_connected) transports to every fiber. Hence q is 0-connected (quotient_zero_connected_from_standard). This gives the 0-image factorization by the printed route (infinite_quotient_factorization_via_standard_fiber)."
   },
   {
     "chapter": 3,
@@ -6072,8 +8251,52 @@
     "line": 3419,
     "section_raw": "Higher images}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infinite_quotient_fiber_connected",
+      "infinite_quotient_connected_fibers",
+      "order_quotient_preimage_classes",
+      "root_quotient_preimage_equiv",
+      "cycle_path_evaluate_inverse",
+      "iso_path_evaluate",
+      "subset_restrict_equiv",
+      "class_step_forward",
+      "class_step_backward",
+      "ClassCarrier",
+      "class_carrier_set",
+      "class_permutation",
+      "class_power_first",
+      "class_cyclic",
+      "class_cycle",
+      "class_cycle_periods",
+      "class_cycle_infinite",
+      "first_residue",
+      "first_residue_equiv",
+      "root_quotient_path",
+      "root_quotient_path_zero",
+      "first_zero_class_intro",
+      "first_zero_class_elim",
+      "QuotientFiber",
+      "quotient_fiber_phi",
+      "quotient_fiber_class",
+      "quotient_fiber_psi",
+      "quotient_fiber_psi_phi",
+      "class_unwind",
+      "class_unwind_remainder",
+      "class_unwind_remainder_step",
+      "class_unwind_commutes",
+      "class_unwind_back",
+      "class_unwind_equiv",
+      "quotient_fiber_transport_fst",
+      "quotient_fiber_phi_psi",
+      "quotient_fiber_equiv",
+      "quotient_fiber_connected"
+    ],
+    "principal": [
+      "quotient_fiber_equiv",
+      "quotient_fiber_connected"
+    ],
+    "note": "The formalization completes the details of the printed proof of thm:image-Z-to-Cm for positive m = n+1, with the literal maps. The map φ : Cyc_0 → q⁻¹(pt_m) sends (X, t) to (ρ_m(X, t), e⁻¹) (quotient_fiber_phi). Here e : (Fin m × X)/m ≃ ℤ/m, [(k, x)] ↦ k, is induced by the residue of the root. This residue preserves the cycle structure. The resulting identification pt_m = q(ρ_m(X, t)) is e⁻¹. The standard m-cycle is the project's ℤ/m on remainders. The map ψ sends ((Y, u), e') to the class e'(0) of Y/m, taken as a set, with u^m restricted. The formalization shows that this is an infinite cycle, because its periods are zero (quotient_fiber_psi, class_cycle, class_cycle_infinite). The proof of ψ∘φ = id uses two facts. The class e⁻¹(0) consists exactly of the pairs (0, x). Also, x ↦ (0, x) is an isomorphism of cycles (quotient_fiber_psi_phi). The proof of φ∘ψ = id shows that (k, v) ↦ u^k(v) is an isomorphism of cycles Fin m × V ≅ Y (quotient_fiber_phi_psi). It compares the second components by evaluation at 0. Hence φ is an equivalence Cyc_0 ≃ q⁻¹(pt_m) with inverse ψ (quotient_fiber_equiv). As the printed proof concludes, the fiber is connected (quotient_fiber_connected). The 0-connectedness of q in thm:image-Z-to-Cm is proved independently and does not use this result."
   },
   {
     "chapter": 3,
@@ -6085,8 +8308,46 @@
     "labels": [
       "xca:image-Cmd-to-Cm"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "int_mul_cancel_pos",
+      "scaled_member_cancel",
+      "order_root",
+      "order_root_periods",
+      "root_order_divides",
+      "cycle_root_of_order",
+      "order_component_divides",
+      "order_quotient_cycle",
+      "order_quotient_set",
+      "order_quotient_fiber_connected",
+      "order_quotient_zero_connected",
+      "order_quotient_factorization",
+      "root_order_fibers",
+      "root_order_target_periods",
+      "root_fiber_order_eq",
+      "root_order_fiber_forget",
+      "root_order_condition",
+      "root_order_fiber_equiv",
+      "root_order_fiber_set",
+      "root_order_fiber_triangle",
+      "root_fibers_factorization",
+      "StandardQuotientIsos",
+      "iso_residue",
+      "residue_iso",
+      "standard_quotient_isos_residues",
+      "residues_set",
+      "residue_equal",
+      "class_residue",
+      "residue_zero_class",
+      "residues_classes_equiv",
+      "order_quotient_preimage_classes",
+      "root_quotient_preimage_equiv"
+    ],
+    "principal": [
+      "root_fibers_factorization",
+      "root_quotient_preimage_equiv"
+    ],
+    "note": "Let d be an order and m = n+1 positive. Then md is read as the order of the root (order_root), with period subgroup m·H_d. The notation \"md\" is literal only for principal d. The map ρ_m restricts to Cyc_d → Cyc_md (cycle_root_of_order). Every fiber of this restriction is equivalent to X/m (root_order_fiber_equiv, root_order_fiber_set). The proof uses thm:fiber-cdg and the cancellation of m in period subgroups. Thus −/m is literally the family of fibers of ρ_m (root_order_fibers). It lifts to q : Cyc_md → Cyc_m, (X, t) ↦ (X/m, t̄) (order_quotient_cycle). Here r : Cyc_m → Set is the underlying set. The triangle is a proved identification of families (root_order_fiber_triangle). The result is a 0-image factorization (root_fibers_factorization). More generally, −/m on Cyc_e factors this way for every order e divisible by m (order_quotient_factorization). A chain of equivalences identifies the preimage of q at the standard m-cycle with Cyc_d (root_quotient_preimage_equiv). Identifications (ℤ/m, s) = (X/m, t̄) correspond to maps of cycles X → ℤ/m. These maps correspond to classes in X/m (order_quotient_preimage_classes). These classes correspond to fibers of ρ_m. The sum of the fibers is Cyc_d."
   },
   {
     "chapter": 3,
@@ -6098,8 +8359,60 @@
     "labels": [
       "prop:ump-cycn-into-groupoids"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CycleComponent",
+      "principal_component_point",
+      "standard_predecessor_iso",
+      "standard_predecessor_loop",
+      "cyc_generator",
+      "cyc_loop_equiv",
+      "cyc_loop_left",
+      "cyc_loop_right",
+      "cyc_generator_order",
+      "cyc_loops_set",
+      "cyc_loops_cyclic",
+      "cyc_loops_period_inclusion",
+      "loop_concat_equiv",
+      "CycLiftData",
+      "cyc_lift_base_contractible",
+      "cyc_lift_contractible",
+      "CycSymmetryData",
+      "cyc_evaluation",
+      "cyc_extension",
+      "cyc_extension_evaluation",
+      "cyc_lift_naturality",
+      "cyc_lift_coherence",
+      "cyc_symmetry_path",
+      "cyc_evaluation_extension",
+      "cyc_universal_property",
+      "cyc_evaluation_is_equiv",
+      "cyc_set_families_permutations",
+      "set_loop_order_equiv",
+      "cyc_family_monodromy",
+      "cyc_family_connected_cyclic",
+      "cyc_connected_set_families",
+      "cycle_period_order_divides",
+      "BookEquiv",
+      "BookIsEquiv",
+      "loop_power_nat",
+      "CyclePowerPeriod",
+      "cycle_power_period_prop",
+      "DecidableCyclesDividing",
+      "cyc_family_decidable_at_point",
+      "cyc_decidable_connected_families_cycles",
+      "decidable_dividing_cycle_finite",
+      "dividing_cycle_decidable_finite",
+      "standard_cycle_power_period_divides",
+      "component_power_period_divides",
+      "decidable_dividing_cycles_classification",
+      "cyc_decidable_connected_coverings_classification"
+    ],
+    "principal": [
+      "cyc_evaluation_is_equiv",
+      "cyc_universal_property"
+    ],
+    "note": "Let n = b+1 > 0 and let A be a groupoid. Consider the map ev_{n,A}(f) = (f(pt_n), ap_f(σ_n), !). It goes from Cyc_n (CycleComponent (b+1)) → A to Σ(a : A) Σ(s : a = a) (refl a = sⁿ). This map is a BookIsEquiv (cyc_evaluation_is_equiv). The BookEquiv with map cyc_evaluation is cyc_universal_property. Here σ_n is literally the symmetry (s⁻¹, !) whose permutation is the modular predecessor (cyc_generator, standard_predecessor_loop). The formalization proves refl = σ_nⁿ in pt_n = pt_n (cyc_generator_order). The power sⁿ is loop_power_nat, with the book's orientation refl a = sⁿ. T(x) is the book's type, with the condition π(τσ_n) = π(τ)s (CycLiftData). T(pt_n) is contractible (cyc_lift_base_contractible). The reason is that the loops at pt_n under σ_n-composition form a cycle. Also, maps of cycles into (a = b, s·) are determined by their value at refl. Connectedness gives T(x) for all x (cyc_lift_contractible). Unlike the book, the formalization replaces the proposition part (U, V, χ) by a quasi-inverse. The law ev∘g = id uses the naturality of the lifts, which is proved by path induction (cyc_lift_naturality, cyc_lift_coherence). The formalization proves the formal parts of the corollary after the proof. Families of sets over Cyc_n are equivalent to sets with a permutation t such that tⁿ = id. This equivalence uses transport along ap_S(σ_n) (cyc_set_families_permutations). The total space is connected iff this monodromy is cyclic (cyc_family_connected_cyclic). Hence connected set families over Cyc_n are equivalent to the cycles with tⁿ = id (cyc_connected_set_families). Also, tⁿ = id is equivalent to \"the order divides n\" (cycle_period_order_divides). Module 285 formalizes the sentence about decidable coverings. Families S : Cyc_n → Set of decidable sets with connected total space are equivalent to decidable cycles with t^n = id. By connectedness, decidability at all points is the same as decidability at pt_n. Such cycles are finite, because decidability gives a least positive period. Without LPO, they are equivalent to Σ_m ((m+1) | n) × Component(Z/(m+1), s) (cyc_decidable_connected_coverings_classification). These are the usual finite cycles of order dividing n."
   },
   {
     "chapter": 3,
@@ -6109,8 +8422,18 @@
     "line": 3613,
     "section_raw": "Getting our cycles in order}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_map_to_point",
+      "cycle_map_from_point",
+      "cycle_map_point_equiv",
+      "cycle_map_divides",
+      "divides_cycle_map"
+    ],
+    "principal": [
+      "cycle_map_point_equiv"
+    ],
+    "note": "Let (X, t) and (Y, u) be cycles and x₀ : X. A map of cycles is an f with uf = ft pointwise. The type of maps of cycles is equivalent to P × Y through f ↦ (!, f(x₀)) (cycle_map_point_equiv). Here P = ord(u) | ord(t), that is, H_t ⊆ H_u. The formalization proves the following remark: ord(u) | ord(t) iff there merely is a map of cycles (X, t) → (Y, u) (cycle_map_divides, divides_cycle_map). This block is in a draft (wip) section of the book."
   },
   {
     "chapter": 3,
@@ -6120,8 +8443,63 @@
     "line": 3622,
     "section_raw": "Getting our cycles in order}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "order_divides_refl",
+      "order_divides_trans",
+      "order_divides_antisym",
+      "order_set",
+      "SubgroupSumWitness",
+      "SubgroupSum",
+      "SubgroupIntersection",
+      "subgroup_sum_laws",
+      "subgroup_intersection_laws",
+      "order_periods_of_subgroup",
+      "subgroup_of_order_periods",
+      "order_meet",
+      "order_join",
+      "order_meet_divides_left",
+      "order_meet_divides_right",
+      "order_meet_greatest",
+      "order_join_divided_left",
+      "order_join_divided_right",
+      "order_join_least",
+      "one_divides",
+      "divides_infinite",
+      "int_add_right_swap",
+      "int_add_cancel_mix",
+      "int_mul_division_expand",
+      "multiples_laws",
+      "multiple_of",
+      "sum_division_invariant",
+      "sum_zero_multiples",
+      "gcd_fuel",
+      "nat_gcd",
+      "gcd_fuel_sum",
+      "nat_gcd_sum",
+      "nat_divides_multiples",
+      "nat_gcd_divides_left",
+      "nat_gcd_divides_right",
+      "nat_gcd_greatest",
+      "principal_meet_gcd",
+      "multiples_decidable",
+      "product_decidability",
+      "lcm_positive_search",
+      "nat_lcm",
+      "zero_intersection_left",
+      "zero_intersection_right",
+      "nat_lcm_intersection",
+      "nat_lcm_multiple_left",
+      "nat_lcm_multiple_right",
+      "nat_lcm_least",
+      "principal_join_lcm"
+    ],
+    "principal": [
+      "order_meet",
+      "order_join",
+      "principal_meet_gcd"
+    ],
+    "note": "(Order, |) is a partial order on a set (order_set, order_divides_refl, order_divides_trans, order_divides_antisym). It has binary meets and joins. The meet has period subgroup H_d + H_k, and the join has H_d ∩ H_k (order_meet, order_join, SubgroupSum, SubgroupIntersection). The formalization also proves their universal properties (order_meet_divides_left, order_meet_divides_right, order_meet_greatest, order_join_divided_left, order_join_divided_right, order_join_least). The finite order 1 is least (one_divides), and the infinite order is greatest (divides_infinite). The words \"gcd\" and \"lcm\" are literal only for principal orders, where 0 is the infinite order. For these orders, the meet and join are the principal orders of the numerical gcd and lcm (principal_meet_gcd, principal_join_lcm). Euclid's algorithm computes gcd, with aℤ + bℤ = gcd(a, b)ℤ (nat_gcd, nat_gcd_sum). The lcm is the least positive common multiple, or 0 if a factor is 0. It satisfies aℤ ∩ bℤ = lcm(a, b)ℤ (nat_lcm, nat_lcm_intersection). The formalization proves that both are the greatest common divisor and the least common multiple for the divisibility of natural numbers. This theorem is in a draft (wip) section of the book."
   },
   {
     "chapter": 4,

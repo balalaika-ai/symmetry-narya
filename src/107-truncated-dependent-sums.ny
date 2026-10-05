@@ -1,0 +1,67 @@
+export "106-zero-images"
+
+def fiberwise_set_trunc (X : Type) (Y : X → Type) : Σ X Y → Σ X (x ↦ SetTrunc (Y x))
+  ≔ totalize X Y (x ↦ SetTrunc (Y x)) (x ↦ set_trunc (Y x))
+
+def truncated_sum_to (X : Type) (Y : X → Type)
+  : SetTrunc (Σ X Y) → SetTrunc (Σ X (x ↦ SetTrunc (Y x)))
+  ≔ set_trunc_rec (Σ X Y) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+      (set_trunc_set (Σ X (x ↦ SetTrunc (Y x))))
+      (compose (Σ X Y) (Σ X (x ↦ SetTrunc (Y x))) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (set_trunc (Σ X (x ↦ SetTrunc (Y x)))) (fiberwise_set_trunc X Y))
+
+def truncated_sum_from_point (X : Type) (Y : X → Type) : Σ X (x ↦ SetTrunc (Y x)) → SetTrunc (Σ X Y)
+  ≔ z ↦ set_trunc_rec (Y (z .fst)) (SetTrunc (Σ X Y)) (set_trunc_set (Σ X Y))
+      (y ↦ set_trunc (Σ X Y) (z .fst, y)) (z .snd)
+
+def truncated_sum_from (X : Type) (Y : X → Type)
+  : SetTrunc (Σ X (x ↦ SetTrunc (Y x))) → SetTrunc (Σ X Y)
+  ≔ set_trunc_rec (Σ X (x ↦ SetTrunc (Y x))) (SetTrunc (Σ X Y)) (set_trunc_set (Σ X Y))
+      (truncated_sum_from_point X Y)
+
+def truncated_sum_retraction (X : Type) (Y : X → Type)
+  : Id (SetTrunc (Σ X Y) → SetTrunc (Σ X Y))
+      (compose (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))) (SetTrunc (Σ X Y))
+        (truncated_sum_from X Y) (truncated_sum_to X Y)) (identity (SetTrunc (Σ X Y)))
+  ≔ surjection_function_ext (Σ X Y) (SetTrunc (Σ X Y)) (SetTrunc (Σ X Y))
+      (set_trunc (Σ X Y)) (set_trunc_surjective (Σ X Y)) (set_trunc_set (Σ X Y))
+      (compose (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))) (SetTrunc (Σ X Y))
+        (truncated_sum_from X Y) (truncated_sum_to X Y)) (identity (SetTrunc (Σ X Y)))
+      (refl (set_trunc (Σ X Y)))
+
+def truncated_sum_section_point (X : Type) (Y : X → Type) (x : X) (z : SetTrunc (Y x))
+  : Id (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+      (truncated_sum_to X Y (truncated_sum_from_point X Y (x, z)))
+      (set_trunc (Σ X (x ↦ SetTrunc (Y x))) (x, z))
+  ≔ set_trunc_induction (Y x)
+      (z ↦ Id (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (truncated_sum_to X Y (truncated_sum_from_point X Y (x, z)))
+        (set_trunc (Σ X (x ↦ SetTrunc (Y x))) (x, z)))
+      (z ↦ prop_is_set (Id (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (truncated_sum_to X Y (truncated_sum_from_point X Y (x, z)))
+        (set_trunc (Σ X (x ↦ SetTrunc (Y x))) (x, z)))
+        (set_trunc_set (Σ X (x ↦ SetTrunc (Y x)))
+          (truncated_sum_to X Y (truncated_sum_from_point X Y (x, z)))
+          (set_trunc (Σ X (x ↦ SetTrunc (Y x))) (x, z))))
+      (y ↦ refl (set_trunc (Σ X (x ↦ SetTrunc (Y x))) (x, set_trunc (Y x) y))) z
+
+def truncated_sum_section (X : Type) (Y : X → Type)
+  : Id (SetTrunc (Σ X (x ↦ SetTrunc (Y x))) → SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+      (compose (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))) (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (truncated_sum_to X Y) (truncated_sum_from X Y)) (identity (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))))
+  ≔ surjection_function_ext (Σ X (x ↦ SetTrunc (Y x))) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+      (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))) (set_trunc (Σ X (x ↦ SetTrunc (Y x))))
+      (set_trunc_surjective (Σ X (x ↦ SetTrunc (Y x)))) (set_trunc_set (Σ X (x ↦ SetTrunc (Y x))))
+      (compose (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))) (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (truncated_sum_to X Y) (truncated_sum_from X Y)) (identity (SetTrunc (Σ X (x ↦ SetTrunc (Y x)))))
+      (funext (Σ X (x ↦ SetTrunc (Y x))) (_ ↦ SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+        (z ↦ truncated_sum_to X Y (truncated_sum_from_point X Y z)) (set_trunc (Σ X (x ↦ SetTrunc (Y x))))
+        (z ↦ truncated_sum_section_point X Y (z .fst) (z .snd)))
+
+{` xca:trunc-sum-type+fam, n=0, for arbitrary X and Y. Both maps have
+   their printed value at constructors and both inverse laws are proved. `}
+def truncated_sum_equiv (X : Type) (Y : X → Type)
+  : Equiv (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+  ≔ quasi_inverse_equiv (SetTrunc (Σ X Y)) (SetTrunc (Σ X (x ↦ SetTrunc (Y x))))
+      (truncated_sum_to X Y) (truncated_sum_from X Y)
+      (z ↦ truncated_sum_retraction X Y (refl z)) (z ↦ truncated_sum_section X Y (refl z))

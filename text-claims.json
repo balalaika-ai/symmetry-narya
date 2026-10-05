@@ -2130,5 +2130,2197 @@
       "zero_image_factor_connected_fibers"
     ],
     "note": "The last map is the embedding of the image. It forgets at most properties."
+  },
+  {
+    "source": "circle.tex",
+    "line": 12,
+    "quote": "a function 1 → A provides exactly the same information as picking an element in A",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "unit_evaluation_equiv"
+    ],
+    "note": "This is a Chapter-2 fact (xca:Xequiv1toX). The chapter introduction recalls it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 18,
+    "quote": "a function A → Prop provides exactly the same information as picking a subtype of A",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "subtypes_injections_equiv",
+      "proposition_families_equiv"
+    ],
+    "note": "These are Chapter-2 facts (def:subtype, lem:Sub(T)=Inj(T)). The introduction recalls them."
+  },
+  {
+    "source": "circle.tex",
+    "line": 49,
+    "quote": "if there is an identification of type p = refl_a, then all the iterations of p can be identified with each other",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "loop_power_nat_trivial",
+      "loop_power_trivial",
+      "trivial_loop_powers_equal"
+    ],
+    "note": "Module 288 proves that if p = refl_a, then every power p^z is refl_a. Thus all iterations of p are identified with each other."
+  },
+  {
+    "source": "circle.tex",
+    "line": 194,
+    "quote": "f(base) :≡ a and f(loop) := l ... f(loop) and l are not equal by definition, but an identification is given",
+    "kind": "convention",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "CircleSignature",
+      "circle_rec_beta"
+    ],
+    "note": "This is notation for circle recursion. In the project, even the base computation is an identification (README computation-rule policy)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 245,
+    "quote": "The inverse to ev_A^a sends l : a = a to (ve_A(a,l), refl_a). Try to verify this!",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_circle_loop_rec",
+      "pointed_circle_loop_rec_beta",
+      "pointed_circle_loop_rec_eta"
+    ],
+    "note": "This is a footnote of cor:circle-loopspace. The formalization proves both inverse laws of the footnote recursor."
+  },
+  {
+    "source": "circle.tex",
+    "line": 325,
+    "quote": "having an element of type ∏_{z:S¹}(base = z) contradicts the univalence axiom",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_based_paths_section_absurd",
+      "S1_circle_based_paths_section_absurd",
+      "circle_not_set"
+    ],
+    "note": "Module 288 shows that an element of ∏_z(base = z) makes S¹ contractible. Hence S¹ is a set, and circle_not_set refutes this."
+  },
+  {
+    "source": "circle.tex",
+    "line": 337,
+    "quote": "it also turns out that the type base = base is equivalent to the type x = x, for any x : S¹",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_coordinate_loop_equiv",
+      "circle_general_winding_equiv"
+    ],
+    "note": "This is a footnote. The equivalence circle_coordinate_loop_equiv is exactly (base = base) ≃ (x = x)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 341,
+    "quote": "The latter type [S¹ =_U S¹] is equivalent to S¹ ⊔ S¹, as follows from xca:S1=S1-components and xca:(S1->S1)_(f)-eqv-S1",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_type_symmetries_two_circles",
+      "circle_symmetries_two_circles",
+      "S1_circle_type_symmetries_two_circles"
+    ],
+    "note": "This is the same statement as circle.tex:1211. The formalization proves it for every CircleSignature."
+  },
+  {
+    "source": "circle.tex",
+    "line": 351,
+    "quote": "alternatives: 2n/2n+1 in N; N ⊔ N; N ⊔ 1 ⊔ N; quotient of N×N; canonical-representative subset; loops base = base",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_nat_to_int",
+      "parity_nat_to_int_even",
+      "parity_nat_to_int_odd",
+      "parity_nat_int_equiv",
+      "parity_nat_int_book_map",
+      "book_nat_sum_int_equiv",
+      "book_nat_sum_int_book_map",
+      "nat_unit_nat_int_equiv",
+      "nat_unit_nat_int_book_map",
+      "integer_quotient_equiv",
+      "int_normal_balance_equiv",
+      "circle_integer_loop_equiv"
+    ],
+    "note": "Module 288 adds the parity encoding (2n ↦ n, 2n+1 ↦ −n−1). It also adds ℕ ⊔ ℕ in the book's labelling and ℕ ⊔ 1 ⊔ ℕ. Each of these has the decoding map as BookIsEquiv. The formalization already proves that the quotient, normal-form and loop encodings are equivalent to Int."
+  },
+  {
+    "source": "circle.tex",
+    "line": 374,
+    "quote": "we can leave out the constructor symbols ι± when the type is clear from context",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a notational convention. The project writes the constructors pos./neg. explicitly."
+  },
+  {
+    "source": "circle.tex",
+    "line": 393,
+    "quote": "Like the type N, the type ℤ is a set with decidable equality and ordering relations.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "int_set",
+      "int_dec_eq",
+      "IntLe",
+      "IntLt",
+      "int_le_decidable",
+      "int_lt_decidable"
+    ],
+    "note": "The formalization proves all three properties for the native Int."
+  },
+  {
+    "source": "circle.tex",
+    "line": 396,
+    "quote": "negation −ι₊(n) :≡ ι₋(−n), −ι₋(m) :≡ ι₊(−m), ap₋(zeq) := zeq⁻¹",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "int_neg",
+      "int_neg_equiv"
+    ],
+    "note": "The definition uses pattern matching on the native Int."
+  },
+  {
+    "source": "circle.tex",
+    "line": 414,
+    "quote": "Negation is its own inverse.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "int_neg_neg",
+      "int_neg_equiv"
+    ],
+    "note": "The formalization proves the involution law pointwise and packages it as an equivalence."
+  },
+  {
+    "source": "circle.tex",
+    "line": 416,
+    "quote": "The successor function s is likewise defined inductively, setting s(n) :≡ succ(n), s(−0) :≡ 1, s(−succ(n)) :≡ −n",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "int_succ"
+    ],
+    "note": "This is the native successor on Int."
+  },
+  {
+    "source": "circle.tex",
+    "line": 424,
+    "quote": "The successor function s is an equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "int_succ_equiv",
+      "int_pred_succ",
+      "int_succ_pred"
+    ],
+    "note": "The explicit inverse is int_pred, with both laws."
+  },
+  {
+    "source": "circle.tex",
+    "line": 435,
+    "quote": "The inverse of s is called the predecessor function ... this defines the iteration s^z for all z; likewise f^z for any equivalence f",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "int_pred",
+      "int_iterate",
+      "permutation_power",
+      "permutation_power_equiv",
+      "loop_power"
+    ],
+    "note": "The formalization defines signed iteration for any equivalence (module 57) and for loops (module 26)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 443,
+    "quote": "Addition of integers is now defined by iteration: z + y :≡ s^y(z) ... subtraction z − y :≡ z + (−y)",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "int_add",
+      "int_sub"
+    ],
+    "note": "The function int_add is literally signed iteration of int_succ. The function int_sub is z + (−y)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 448,
+    "quote": "Since addition and subtraction are mutually inverse, the function w ↦ z + w is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "int_add_sub",
+      "int_sub_add",
+      "int_translation_equiv"
+    ],
+    "note": "The formalization proves both inverse laws and the translation equivalence."
+  },
+  {
+    "source": "circle.tex",
+    "line": 450,
+    "quote": "we may iterate it to define multiplication: zy :≡ (w ↦ z + w)^y(0)",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "int_mul"
+    ],
+    "note": "The function int_mul is literally signed iteration of translation. The iteration starts at 0."
+  },
+  {
+    "source": "circle.tex",
+    "line": 458,
+    "quote": "The ordering relations < and ≤ on ℤ are easily defined and shown to extend those on N.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "IntLe",
+      "IntLt",
+      "int_le_naturals",
+      "int_lt_naturals"
+    ],
+    "note": "The formalization shows that both relations agree with the book order on naturals."
+  },
+  {
+    "source": "circle.tex",
+    "line": 462,
+    "quote": "we will often give f(0) directly, and define g′ and h′ ... f(z+1) ≡ g′(z, f(z)) for all z ≥ 0",
+    "kind": "convention",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a derived induction principle with judgmental rules. Narya pattern matching on Int plays this role, but no declaration states it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 500,
+    "quote": "Here it suffices that A is a pointed type ... the forgetful map Σ_b((A,a) →* (B,b)) → (A → B) is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_map_chosen_target_equiv",
+      "pointed_map_chosen_target_map"
+    ],
+    "note": "This is a footnote of def:covering. The formalization proves it with the actual forgetful map."
+  },
+  {
+    "source": "circle.tex",
+    "line": 510,
+    "quote": "SetBundle(B) :≡ Σ_{A:U} Σ_{f:A→B} ∏_{b:B} isset(f⁻¹(b)), with variations according to the flavor",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "Coverings",
+      "IsCovering",
+      "ConnectedCoverings",
+      "FiniteCoverings",
+      "DecidableCoverings"
+    ],
+    "note": "This covers the type of coverings and its flavors, with book-oriented fibers."
+  },
+  {
+    "source": "circle.tex",
+    "line": 514,
+    "quote": "Recall the equivalence ... between B → Set and the type of coverings over B. We shall frequently use this equivalence, even without explicit mention.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "coverings_setfamilies_equiv",
+      "set_families_equiv"
+    ],
+    "note": "This is the Chapter-2 lem:Set-families, repackaged for Coverings."
+  },
+  {
+    "source": "circle.tex",
+    "line": 527,
+    "quote": "all variations of coverings defined by a predicate are groupoids as well. This does not apply to pointed coverings",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "predicate_coverings_groupoid",
+      "finite_coverings_groupoid",
+      "decidable_coverings_groupoid",
+      "connected_coverings_groupoid"
+    ],
+    "note": "The formalization proves the predicate variants. The remark on pointed coverings says only that the argument does not apply. It carries no formal claim."
+  },
+  {
+    "source": "circle.tex",
+    "line": 566,
+    "quote": "A′ :≡ Σ_{z:S¹} Bool = (S¹ × Bool) = (S¹ + S¹), and the latter type is not connected",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_constant_boolean_product_path",
+      "product_bool_sum_equiv",
+      "circle_constant_boolean_sum_equiv",
+      "circle_constant_boolean_sum_path",
+      "sum_self_not_connected",
+      "circle_sum_not_connected",
+      "constant_boolean_total_not_connected"
+    ],
+    "note": "Module 288 proves Σ_{z:S¹} Bool ≡ S¹ × Bool (refl) ≃ S¹ + S¹. It also gives the displayed chain as an identification of types (ua). Finally, it proves that A + A is never connected."
+  },
+  {
+    "source": "circle.tex",
+    "line": 752,
+    "quote": "the left subtype diagram is fully general: it also holds when we replace S¹ by any type B. This is not true for the right",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "coverings_diagram_left",
+      "coverings_setfamilies_equiv"
+    ],
+    "note": "The formalization proves the left square for arbitrary B. The negative claim about the right diagram has no declaration. This claim needs a connected base."
+  },
+  {
+    "source": "circle.tex",
+    "line": 757,
+    "quote": "In slogan form: A covering over the circle is a set with a permutation of its elements.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_coverings_permutations",
+      "circle_covering_monodromy"
+    ],
+    "note": "This is a slogan for thm:coveringsofS1perms. Monodromy is transport along loop."
+  },
+  {
+    "source": "circle.tex",
+    "line": 795,
+    "quote": "In the above definition we get that h : A →* C is a covering as well by xca:covering-utils(left-cancel)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "pointed_cover_lift_covering",
+      "coverings_left_cancel"
+    ],
+    "note": "Let f and g be coverings. Module 288 proves that the h of every lift (h, f = gh) in PointedCoverLifts is a covering. The proof uses coverings_left_cancel."
+  },
+  {
+    "source": "circle.tex",
+    "line": 797,
+    "quote": "The examples preceding def:univ-cover are indeed universal coverings according to the following lemma.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_path_cover_universal",
+      "constant_finite_one_cover_universal"
+    ],
+    "note": "This is the universality of the path covering and of the constant map from Fin 1 over any pointed groupoid."
+  },
+  {
+    "source": "circle.tex",
+    "line": 914,
+    "quote": "In the next section we will see that the exponential covering of the circle is in fact universal.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_integer_cover_universal",
+      "S1_circle_integer_cover_universal"
+    ],
+    "note": "This is a forward reference to cor:univ-covers-S1."
+  },
+  {
+    "source": "circle.tex",
+    "line": 925,
+    "quote": "under this equivalence 0 corresponds to refl_base, 1 to loop, −1 to loop⁻¹; the successor corresponds to composition with loop",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_winding_refl",
+      "circle_winding_loop",
+      "circle_winding_inverse_loop",
+      "circle_winding_successor",
+      "circle_winding_predecessor"
+    ],
+    "note": "The formalization proves all compatibilities of the winding number for every CircleSignature."
+  },
+  {
+    "source": "circle.tex",
+    "line": 930,
+    "quote": "It follows directly that addition of integers corresponds to composition of loops.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_winding_composition",
+      "S1_circle_winding_composition"
+    ],
+    "note": "This is a margin note."
+  },
+  {
+    "source": "circle.tex",
+    "line": 980,
+    "quote": "giving h(z) : P(z) → Q(z) for all z : S¹ is the same as h(base) with h(loop) : Q(loop) h(base) P(loop)⁻¹ = h(base)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "CircleFamilyMapLoop",
+      "circle_family_map_loop_equiv",
+      "circle_family_maps_equiv",
+      "circle_family_maps_book_map",
+      "circle_family_map_loop_square_equiv",
+      "S1_circle_family_maps_equiv"
+    ],
+    "note": "Module 288 proves Π_z(P z → Q z) ≃ Σ_{h : P base → Q base}(Q(loop) ∘ h ∘ P(loop)⁻¹ = h). BookIsEquiv holds for the map h ↦ (h(base), h(loop)). When Q(base) is a set, the identification is the commuting square Q(loop) ∘ h = h ∘ P(loop) (line 994)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1122,
+    "quote": "the type of G(base) is a proposition (as ℤ is a set), so the information for G(loop) is redundant",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_ind_prop"
+    ],
+    "note": "This is a general principle: circle induction into a family of propositions needs only the base case."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1188,
+    "quote": "If we think of the circle as unit length complex numbers, then f_x(y) corresponds to the usual product xy",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This footnote is an analogy with complex multiplication and rotations. It is outside the type-theoretic setting."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1211,
+    "quote": "combining the above two exercises yields an equivalence from (S¹ = S¹) to (S¹ ⊔ S¹)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_type_symmetries_two_circles",
+      "circle_symmetries_two_circles",
+      "S1_circle_type_symmetries_two_circles"
+    ],
+    "note": "This is the unnumbered conclusion after xca:(S1->S1)_(f)-eqv-S1. That inventory entry notes it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1226,
+    "quote": "By cor:univ-covers-S1, exp and its friends uc_base : S¹ → Set and cst_base : 1 → S¹ are appearances of the universal covering",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_integer_cover_universal",
+      "circle_path_cover_universal",
+      "constant_finite_one_cover_universal",
+      "circle_groupoid"
+    ],
+    "note": "The generic lemma for pointed groupoids, together with circle_groupoid, covers cst_base. The formalization does not instantiate it separately."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1231,
+    "quote": "the circle is equivalent to the connected component of (ℤ,s) in the type Σ_{X:U}(X → X)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_infinite_cycles_equiv",
+      "InfiniteCycles",
+      "S1_circle_infinite_cycles_equiv"
+    ],
+    "note": "This is a forward statement of thm:S1bysymmetries."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1234,
+    "quote": "infinite cycles: sets X with a successor function t such that (X,t) can be merely identified with (ℤ,s)",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "InfiniteCycles",
+      "infinite_endomorphism_structure"
+    ],
+    "note": "This is a footnote. The formalization shows that elements of the component carry the cycle structure."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1262,
+    "quote": "When restricting to corresponding connected components, we get equivalences between these.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "component_equiv",
+      "principal_covering_component_equiv"
+    ],
+    "note": "This is the generic restriction of equivalences to components, applied to coverings of the circle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1265,
+    "quote": "components of Σ_{X:Set}(X ≃ X), which correspond to components of Σ_{X:U}(X → X) at pairs (X,t), where X is a set with a permutation t",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "permutation_component_forget_equiv",
+      "permutation_component_forget_map",
+      "permutations_endomorphism_subtype",
+      "permutation_endomorphism",
+      "covering_component_endomorphism_equiv"
+    ],
+    "note": "Let X be a set with a permutation t. Module 288 proves that the component of ((X,_),t) in Σ_{X:Set}(X ≃ X) is equivalent to the component of (X,t) in Σ_{X:U}(X → X). The equivalence forgets the structure. The same is true for the component of a covering and its monodromy."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1271,
+    "quote": "for any (Y,u) in the same connected component of Σ_{X:U}(X → X) as (X,t), Y also is a set and u also a permutation",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "PermutationStructure",
+      "permutation_structure_prop",
+      "permutation_endomorphism_structure",
+      "permutation_component_structure"
+    ],
+    "note": "Module 288 proves that the property of being a set with an equivalence is a proposition on Σ_{X:U}(X → X). Thus every (Y,u) in the component of a set with a permutation is again a set with a permutation."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1300,
+    "quote": "we have an equivalence between the identity type (X,t) = (Y,u) and the sum type Σ_{e:X≃Y} et = ue",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "endomorphism_pathover_equiv",
+      "EndomorphismIsomorphisms",
+      "endomorphism_paths_equiv",
+      "endomorphism_paths_equiv_first",
+      "sigma_over_equivalence_isequiv",
+      "permutation_paths_equiv",
+      "cycle_paths_equiv"
+    ],
+    "note": "Module 288 proves (X,t) = (Y,u) in Σ_{X:U}(X → X) ≃ Σ_{e : X ≃ Y}(e∘t = u∘e) for arbitrary types. The equivalence uses the book's map: the transport equivalence of the type path, and the image of the path over it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1312,
+    "quote": "These types are sets whenever X and Y are, and then we may write et = ue.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "endomorphism_commutation_prop",
+      "endomorphism_isomorphisms_set",
+      "endomorphism_paths_set"
+    ],
+    "note": "Module 288 proves that these types are sets when Y is a set. The book assumes that X and Y are sets. Then et = ue is a proposition."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1351,
+    "quote": "given a set X with a permutation t, we have an equivalence from (ℤ,s) = (X,t) to Σ_{e:ℤ≃X} es = te",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "permutation_paths_equiv",
+      "cycle_paths_equiv"
+    ],
+    "note": "This is a special case of the path characterization for sets with permutations."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1355,
+    "quote": "any power s^n of s itself gives a symmetry (s^n,p) : (ℤ,s) = (ℤ,s), where p is a proof of s^n s = s s^n",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "integer_cycle_power_path",
+      "integer_endomorphism_power_path",
+      "power_commutation_prop"
+    ],
+    "note": "The commutation type is a proposition (rem:bang). Every power gives a loop."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1402,
+    "quote": "In particular, ev_0 : ((ℤ,s) = (ℤ,s)) → ℤ is an equivalence, mapping s^n to n for all n : ℤ.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "infinite_endomorphism_evaluation",
+      "integer_endomorphism_power_evaluation"
+    ],
+    "note": "The proof of thm:S1bysymmetries uses this."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1470,
+    "quote": "we often leave out the propositional data pertaining to InfCyc (and other subtypes) from the notation",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a notational convention. The project always carries the propositional components."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1481,
+    "quote": "ev_U maps uc_base to (base = base, loop·–), identified with (ℤ,s); hence ev_U restricts to an equivalence between the components",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_family_endomorphism",
+      "circle_family_endomorphism_ev",
+      "circle_universal_family_endomorphism",
+      "circle_universal_family_integer_path",
+      "circle_universal_family_integer_path_evaluate",
+      "circle_family_infinite_map",
+      "circle_family_component_equiv",
+      "S1_circle_family_component_equiv",
+      "component_rebase_equiv"
+    ],
+    "note": "Module 288 shows that ev_U(uc_base) is literally (base = base, p ↦ p·loop). It identifies this with (ℤ,s) through n ↦ loopⁿ. Also, ev_U restricts to an equivalence from the component of uc_base in S¹ → U onto InfCyc."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1490,
+    "quote": "The equivalence preim maps cst_base to (x:S¹) ↦ Σ_{_:1}(x = base) which can be identified with uc_base",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "unit_fibers_representable",
+      "circle_unit_cover_preimage",
+      "constant_unit_fiber_equiv"
+    ],
+    "note": "Module 288 identifies preim(1, cst_z) = (x ↦ Σ_{_:1}(x = z)) with uc_z as a family, for every z."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1503,
+    "quote": "Both the left and the right triangle represent identity types ... we apply circle induction to construct an element of ∏_z c(z) = ev_U(uc_z)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_first_proof_left_triangle",
+      "circle_first_proof_right_triangle",
+      "circle_first_proof_right_triangle_at",
+      "circle_first_proof_pointed_triangle",
+      "circle_unit_cover_component",
+      "circle_universal_family_map",
+      "circle_unit_preimage_map",
+      "circle_unit_preimage_equiv",
+      "circle_universal_family_loop_coordinate",
+      "circle_infinite_map_loop_coordinate",
+      "S1_circle_first_proof_right_triangle"
+    ],
+    "note": "Module 288 proves both triangles of eq:setbundle-Sc-univ-comp: preim ∘ (1, cst_–) = uc_– and ev_U ∘ uc_– = c. It uses the book's element of ∏_z c(z) = ev_U(uc_z). The right triangle compares the two pointed maps by their loops (both have coordinate −1). It uses the pointed universal property, not a literal circle induction."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1522,
+    "quote": "Another option would have been ... sending n to loop^{−n} ... You can move the minus sign around, but it has to pop up somewhere.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a footnote on orientation conventions. It has no mathematical claim beyond def:S1toC."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1525,
+    "quote": "we see that c is an equivalence if and only if either of the two other downward maps are",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_first_proof_c_iff_universal_family",
+      "circle_first_proof_universal_family_iff_unit_cover"
+    ],
+    "note": "Module 288 proves BookIsEquiv c ≃ BookIsEquiv uc_– ≃ BookIsEquiv (1, cst_–). The proof uses 2-out-of-3 on the triangles."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1527,
+    "quote": "At this point we could conclude with an appeal to xca:TTYoneda, yielding that uc_– is an equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "representable_component_equiv",
+      "circle_universal_family_component"
+    ],
+    "note": "This is a footnote. The formalization proves it for every connected type."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1531,
+    "quote": "We now show that the map (1, cst_–) on the left is an equivalence ... Σ_{z:S¹}(base = z) is indeed contractible",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "maps_into_paths_equiv",
+      "domain_pathover_equiv",
+      "unit_automorphisms_contractible",
+      "contractible_factor_equiv",
+      "unit_cover_paths_equiv",
+      "circle_unit_cover_base_fiber_contractible",
+      "circle_unit_cover_component_is_equiv",
+      "circle_infinite_cycle_map_first_proof",
+      "S1_circle_unit_cover_component_is_equiv",
+      "S1_circle_infinite_cycle_map_first_proof"
+    ],
+    "note": "Module 288 shows that the fiber of (1, cst_–) over (1, cst_base) is Σ_{z:S¹}(base = z). This fiber is contractible, so (1, cst_–) is an equivalence onto its component. With the triangles, this assembles the book's first proof that c is an equivalence."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1612,
+    "quote": "f is a covering over S¹ if and only if each map induced by f on identity types is injective",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fibers_hlevel_to_ap",
+      "ap_hlevel_to_fibers"
+    ],
+    "note": "This is the Chapter-2 cor:fib-vs-path(set-fib-vs-path) for an arbitrary codomain."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1615,
+    "quote": "By xca:covering-utils(cover-n-type) A is a groupoid.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "covering_domain_groupoid",
+      "covering_domain_hlevel",
+      "circle_groupoid"
+    ],
+    "note": "This is a margin note."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1617,
+    "quote": "the condition that each ap_f is injective can be relaxed to ap_f : (a₀ = a₀) → (f(a₀) = f(a₀)) being injective",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "loop_fibers_to_fibers",
+      "loop_fibers_to_all_ap"
+    ],
+    "note": "This is the Chapter-2 cor:fib-vs-path(set-fib-vs-path-point) for connected A."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1632,
+    "quote": "Since A is connected, the proposition g_f⁻¹(n) does not depend on the choice of a₀, so the subset only depends on f",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "covering_periods_general_image",
+      "general_based_loop_images"
+    ],
+    "note": "This is a margin note. The images at every point are equal to H_t."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1644,
+    "quote": "Such subsets of ℤ are closed under addition and negation ... since ap_f, wdg and loop^– are compatible with these operations",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "covering_periods_general_image",
+      "power_period_add",
+      "power_period_neg",
+      "circle_winding_composition"
+    ],
+    "note": "The proof uses the identification of the image with H_t (lem:cycle-order-point-ap) and the closure of H_t."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1662,
+    "quote": "The relation ∼ is an equivalence relation. (Exercise: Check this.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "same_orbit_refl",
+      "same_orbit_sym",
+      "same_orbit_trans",
+      "orbit_relation"
+    ],
+    "note": "This is an embedded exercise inside def:connected-by-t."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1703,
+    "quote": "It's easy to check that g and h are mutually inverse.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_orbits_components_equiv",
+      "circle_components_orbits_equiv"
+    ],
+    "note": "This is a left-to-the-reader step of con:cycset-connS1cover."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1706,
+    "quote": "the set {1,2,3,4,5} with the permutation 1↦2↦3↦1, 4↦5↦4. There are two components",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a concrete example (fig:two-comp-S1-cover). It follows from con:cycset-connS1cover, but the formalization does not compute it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1772,
+    "quote": "Our cycles are a special case of what is elsewhere called cyclically ordered sets ... closely related to the cyclic sets of Connes",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a footnote about external notions."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1790,
+    "quote": "the universal covering ... equal to the exponential covering, which in turn corresponds to the infinite cycle (ℤ,s) ... Another example is the left one",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "universal_cover_infinite_cycle",
+      "principal_universal_cover_path",
+      "swapping_boolean_total_connected"
+    ],
+    "note": "The formalization proves that both examples are connected coverings with the stated cycles."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1800,
+    "quote": "Eventually we'll show -- assuming a weak form of LEM -- that these (with the universal covering) are all the decidable connected coverings",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "lpo_book_covering_component_sum",
+      "S1_lpo_book_covering_component_sum"
+    ],
+    "note": "This is a forward reference to lem:componentsofcoversofS1."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1812,
+    "quote": "On loops, the degree m function is (–)^m, which is indeed an injection for positive m, so dg_m is a covering",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_degree_action_is_power",
+      "circle_degree_loops_injective",
+      "circle_degree_is_covering",
+      "degree_winding_image_multiples"
+    ],
+    "note": "This includes the subset {loop^{mn}} as the winding image mℤ."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1814,
+    "quote": "Note that (–)^0 : (base = base) → (base = base) is constant and hence not injective.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "loop_power_zero_constant",
+      "loop_power_zero_not_injective",
+      "S1_loop_power_zero_not_injective"
+    ],
+    "note": "Module 288 proves p^0 ≡ refl for all p. If (–)^0 is injective, then it identifies loop⁰ and loop¹. This contradicts ℤ ≃ (base = base)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1818,
+    "quote": "As a subset of ℤ, this is simply all multiples of m.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "degree_winding_image_multiples"
+    ],
+    "note": "This is a margin note."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1832,
+    "quote": "define a successor map s : Fin m → Fin m by s(k) :≡ k+1 if k < m−1, and 0 if k = m−1",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "modular_successor",
+      "modular_successor_small",
+      "modular_successor_last",
+      "finite_fin_successor"
+    ],
+    "note": "This is the printed case formula on remainders, transported to Fin m."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1844,
+    "quote": "Thus, (Fin m, s) is another key example of a cycle called the standard finite m-element cycle.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "finite_fin_cycle",
+      "finite_standard_cycle"
+    ],
+    "note": "The formalization proves the cyclicity of the standard finite cycle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1918,
+    "quote": "To identify dg_m and pow_m as coverings over S¹, it suffices to define an equivalence ψ_m and an identification α_m",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "power_degree_connected_cover_path",
+      "power_degree_maps_path",
+      "power_degree_explicit_comparison"
+    ],
+    "note": "The formalization proves the resulting identification of coverings."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1935,
+    "quote": "a_k :≡ pair(loop, refl_{s(k)}) : (base,k) = (base,s(k)). The m-th power map sends each mark to base and each arc to loop.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "power_arc",
+      "power_arcs",
+      "power_arc_loop"
+    ],
+    "note": "The arcs use the path lifting of R_m along loop, not refl_{s(k)}."
+  },
+  {
+    "source": "circle.tex",
+    "line": 1987,
+    "quote": "We leave it as an exercise to prove that this really defines an inverse to ψ_m.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "power_psi_inverse_map",
+      "power_psi_section",
+      "power_psi_inverse_retraction",
+      "power_psi_inverse_agrees"
+    ],
+    "note": "This is a left-to-the-reader step of con:psi-alpha-m."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2068,
+    "quote": "We get an explicit equivalence Fin m ≃ dg_m⁻¹(base) from ψ_m and α_m: send k to (base, loop^{−k})",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "power_degree_explicit_fiber_equiv",
+      "power_degree_explicit_fiber_equiv_map"
+    ],
+    "note": "The underlying map is (base, loop^{−k}·β⁻¹). Here β is the computation rule dg_m(base) = base."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2084,
+    "quote": "the type of coverings over the circle is a groupoid",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "coverings_groupoid"
+    ],
+    "note": "This is an instance of lem:setbundle-is-groupoid."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2100,
+    "quote": "Recall that Sub(ℤ) ≡ (ℤ → Prop) is a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "subtypes_set"
+    ],
+    "note": "The formalization proves that Subtypes T is a set for every T."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2183,
+    "quote": "It's easy to prove the proposition that this e is indeed an equivalence, so this is left to the reader.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cycle_periods_pointed_equiv",
+      "cycle_map_equiv"
+    ],
+    "note": "This is a left-to-the-reader step in the proof of lem:IdCycle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2250,
+    "quote": "By H ⊆ ℤ being closed under addition and negation, we simply mean that if z,z′ are in H, then so are z+z′ and −z.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "IntegerSubgroupLaws"
+    ],
+    "note": "This is a footnote of cor:set-trunc-cyc."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2270,
+    "quote": "This is an equivalence relation ... t([z]) :≡ [s(z)] ... It is clear that (X,t) is a cycle with H_t = H.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subgroup_relation",
+      "subgroup_cycle",
+      "subgroup_cycle_periods"
+    ],
+    "note": "The formalization proves the 'it is clear' step of cor:set-trunc-cyc."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2292,
+    "quote": "we should write SetBundle(S¹)_U, Cyc_U, Order_U, etc. ... We trust that the reader can fill these in",
+    "kind": "convention",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a margin note on universe levels. Narya has a single Type. Modules 190–193 model universes as predicates."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2308,
+    "quote": "We have a canonical injection N ↪ Order, mapping 0 to the infinite order and each positive n to the finite order n.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "principal_order",
+      "principal_order_injective"
+    ],
+    "note": "Zero is sent to the infinite order. The formalization proves injectivity."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2313,
+    "quote": "a principal order is simply dℤ, so we see that the divisibility relation on orders extends that on natural numbers",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "principal_order_periods",
+      "principal_divides_equiv"
+    ],
+    "note": "The value of order_periods at the principal order k is Multiples k. Divisibility of principal orders matches NatDivides."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2318,
+    "quote": "we get a map Order → Cyc, mapping H to the cycle (ℤ/∼_H, s). This generalizes the definition of the standard cycles",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "standard_cycle",
+      "standard_cycle_order",
+      "subgroup_cycle"
+    ],
+    "note": "The standard cycle of any order is ℤ modulo the period subgroup. The formalization proves that its order is equal to d."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2331,
+    "quote": "Note that ∼_d doesn't depend on the chosen cycle.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "order_periods",
+      "standard_cycle",
+      "subgroup_relation"
+    ],
+    "note": "The formalization defines ∼_d from order_periods d (set-truncation elimination). Thus the independence of the representative is built in."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2334,
+    "quote": "Is it true that any order is principal? ... the proof is unfortunately not constructive.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a metatheoretic non-constructivity claim. The formalization has no weak counterexample (principality ⇒ LPO)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2340,
+    "quote": "This rules out certain pathological cycles, such as ... (e^{2παi})^n ... where α is an unknown real number",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a footnote example with the reals."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2357,
+    "quote": "the Limited Principle of Omniscience does not imply the Law of Excluded Middle ... model ... using sheaves over the real line",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an independence result about models. It is not expressible inside the theory."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2360,
+    "quote": "the Limited Principle of Omniscience is not constructive ... we could simply decide ... Goldbach conjecture",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a Brouwerian argument in a footnote."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2404,
+    "quote": "LPO makes it possible to prove that the canonical map N → Order^dec ... is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "lpo_decidable_orders_equiv",
+      "DecidableOrders"
+    ],
+    "note": "LPO is an explicit hypothesis. The formalization assumes nothing classical globally."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2410,
+    "quote": "the map is an injection, and a cycle (X,t) has infinite order iff H_t = {0}, and finite order m iff H_t = mℤ",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "principal_order_injective",
+      "order_periods_injective",
+      "principal_order_periods"
+    ],
+    "note": "This follows from the injectivity of order_periods and the computation of principal period subgroups."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2420,
+    "quote": "a decidable subset, since t^n = id is a proposition, and n is in H iff t^n(x) = x for some/all x",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cycle_period_decidable",
+      "cycle_period_from_point",
+      "cycle_fix_from_point"
+    ],
+    "note": "Decidable equality of the carrier gives decidability of the period predicate. Fixed points at one point give periods."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2425,
+    "quote": "If P(n) is constant 0, then H = {0}, so (X,t) has infinite order. (As a covering, it is then equivalent to the universal covering.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "no_positive_periods_infinite_order",
+      "lpo_cycle_period_alternative",
+      "universal_cover_infinite_cycle",
+      "principal_universal_cover_path"
+    ],
+    "note": "This includes the identification of the infinite-order covering with the universal covering."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2429,
+    "quote": "if n₀ is the smallest natural number with m :≡ n₀+1 in H, then we claim H = mℤ",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "least_subgroup_is_multiples",
+      "least_cycle_periods_multiples"
+    ],
+    "note": "The proof uses Euclidean division, as in the book."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2456,
+    "quote": "As an operation on infinite cycles, c r c⁻¹ : InfCyc → InfCyc maps (X,t) to (X,t⁻¹), flipping the arrows.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_flip_conjugation",
+      "infinite_inverse_literal"
+    ],
+    "note": "This is a footnote of rem:flipthecircle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2503,
+    "quote": "Since the starting point in a cycle doesn't matter, we could also have written, e.g., (3 1 2)(5 4).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cycle_notation_rotate",
+      "cycle_notation_rotate_at",
+      "cycle_notation_example_rotation"
+    ],
+    "note": "Module 288 proves (a_1 a_2 … a_k) = (a_2 … a_k a_1) for pairwise distinct entries of a decidable set. It also proves the book's (1 2 3)(4 5) = (3 1 2)(5 4) on Fin 5 by computation."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2506,
+    "quote": "if a₁,…,a_k are pairwise distinct elements of a decidable set A, then we write (a₁ a₂ ⋯ a_k) for the permutation",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cycle_notation",
+      "PairwiseDistinct",
+      "transposition",
+      "cycle_notation_equiv"
+    ],
+    "note": "This also covers k-cycle and transposition. The definition uses list lookup. The formalization proves the behaviour that defines it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2538,
+    "quote": "if A is decidable, then we can decide whether an element is moved or is a fixed point",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fixed_or_moved"
+    ],
+    "note": "This is the remark after def:support-permutation."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2544,
+    "quote": "Thus, disjoint cycles commute, so when we express a permutation ... as a product of disjoint cycles, the order doesn't matter.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "disjoint_supports_commute"
+    ],
+    "note": "This is a footnote."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2559,
+    "quote": "To show this, first write the permutation as a composition of cyclic permutations, then apply xca:perm-prod-transpositions",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fin_cycle_decomposition",
+      "finite_cycle_decomposition",
+      "finite_kcycle_decomposition",
+      "fin_transposition_word_via_cycles",
+      "finite_transposition_generated_via_cycles"
+    ],
+    "note": "Module 286 proves that every permutation of a finite set is an explicit composite of cyclic permutations (a_1 … a_k), k ≥ 2. There is one cyclic permutation per orbit. Each factor is then written as k−1 transpositions. This gives the corollary by the book's route."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2561,
+    "quote": "This representation is not unique, as for example (1 2) = (2 3)(1 3)(2 3) as permutations of {1,2,3}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "transposition_product_example"
+    ],
+    "note": "Module 288 proves (1 2) = (2 3)(1 3)(2 3) as self-equivalences of Fin 3 (rightmost factor first). The check is pointwise, by computation."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2563,
+    "quote": "we'll show that the parity (odd/even) of the number of transitions is invariant",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a forward reference to cor:sign-defined in a later chapter, outside chapters 2–3."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2575,
+    "quote": "the bijection eq:type-factorial can be constructed for any decidable set. Escardó constructed ... for any type X ... Y′ is a subtype of Y",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "IsolatedPoint",
+      "IsolatedPoints",
+      "isolated_paths_prop",
+      "isolated_point_prop",
+      "isolated_swap_equiv",
+      "escardo_option_equiv",
+      "permutation_option_equiv"
+    ],
+    "note": "Module 288 proves Escardó's Aut(X+1) ≃ (X+1)′ × Aut(X) for every type X. The proof uses transpositions of isolated points. Local Hedberg (paths from an isolated point form propositions) makes Y′ a subtype of Y. The decidable-set case is permutation_option_equiv (module 175)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2619,
+    "quote": "Binomial coefficients are familiar from Pascal's triangle ... where each number is the sum of the two above, e.g. C(4,2) = 6.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "binomial",
+      "binomial_factorial_formula"
+    ],
+    "note": "The formalization defines binomial by Pascal's rule. It shows that binomial satisfies the factorial formula."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2643,
+    "quote": "The forgetful map from Cyc₀ to InfCyc is an equivalence. Therefore we consider Cyc₀ and InfCyc as definitionally equal.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "infinite_cycle_forget_equiv",
+      "infinite_cycle_forget_base"
+    ],
+    "note": "This is a margin note. This explicit equivalence replaces the definitional identification."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2657,
+    "quote": "the universal covering over Cyc₀ is represented by the constant function cst_{pt₀} : 1 → Cyc₀",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "constant_finite_one_cover_universal",
+      "constructed_circle_groupoid",
+      "cycles_groupoid"
+    ],
+    "note": "This is an instance of the generic universality lemma for pointed groupoids with constructed_circle_groupoid (Cyc₀ is a groupoid). The formalization does not state the instance separately."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2661,
+    "quote": "the fiber of this universal covering over (X,t) : Cyc₀ is (equivalent to) X itself",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "infinite_cycle_constant_fiber_equiv",
+      "infinite_cycle_constant_fiber_map"
+    ],
+    "note": "Module 288 proves that the fiber of cst_{pt₀} : 1 → Cyc₀ over (X,t) is equivalent to X. The equivalence sends (★, q) to the transport of 0 along q⁻¹ (lem:IdCisZet)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2678,
+    "quote": "only the loop^k where k is a multiple of k [sic: m] is in the image of dg_m",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "degree_winding_image_multiples"
+    ],
+    "note": "The formalization reads the printed 'multiple of k' as 'multiple of m'. It proves the corrected statement."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2740,
+    "quote": "iterating the m-th root we get an identification of type (ᵐ√t)^m(k,x) = (k,t(x)); hence the term m-th root is apt",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_finite_full_turn",
+      "root_remainder_multiple_turns"
+    ],
+    "note": "This is used in lem:deg-m-on-Cyc and thm:fiber-cdg."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2775,
+    "quote": "Of course, it's also quite easy to write down an inverse of ᵐ√t given an inverse of t.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "root_remainder_inverse",
+      "root_finite_equiv"
+    ],
+    "note": "This is a margin note."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2800,
+    "quote": "the product of Fin m with an n-element set is an mn-element set",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cardinality_product"
+    ],
+    "note": "This is the generic cardinality of products of finite types."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2813,
+    "quote": "In terms of iterated addition, we have φ(k,r) = (z ↦ z+m)^r(k).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "integer_radix_iterated_addition",
+      "int_translations_commute"
+    ],
+    "note": "Module 288 proves that φ(k,r) = k + m·r is equal to the r-th power of translation by m at k. Here translation by m is int_translation_equiv, z ↦ m + z."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2836,
+    "quote": "the first projection of ap_{cdg_m}(e,!) is id × e : (Fin m × X) = (Fin m × X′)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cycle_root_ap_evaluate"
+    ],
+    "note": "The lem:deg-m-on-Cyc inventory entry notes this."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2842,
+    "quote": "(id × e)(k,x) = (k,e(x)) equals (ᵐ√e)^m(k,x) ... ap_{cdg_m}(t⁻¹,!) is indeed the m-th power of a generating loop",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_inverse_generator_power",
+      "cycle_loop_power_evaluate"
+    ],
+    "note": "The formalization proves it with (ᵐ√t)⁻¹. The printed ᵐ√(t⁻¹) is not a symmetry of the root cycle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2867,
+    "quote": "the composite c dg_m is given by ((ℤ,s),s^{−m}) and cdg_m c by ((Fin m × ℤ, ᵐ√s), id × s⁻¹)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_degree_maps",
+      "root_degree_loops_equal",
+      "root_loop_coordinate",
+      "integer_root_radix_commutes"
+    ],
+    "note": "This is the unpointed correspondence of dg_m and cdg_m under c. It includes 'transport of id × s⁻¹ along φ is s^{−m}'."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2880,
+    "quote": "the inverse of φ maps z : ℤ to the remainder and the integer quotient of z under Euclidean division by m",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "integer_radix_digits",
+      "integer_radix_equiv",
+      "integer_radix_recover"
+    ],
+    "note": "This is a footnote."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2892,
+    "quote": "the fiber of cdg_m at an infinite cycle (X,t) is an m-element set ... X/m, x ∼_m x′ iff ∃_{r:ℤ}(x′ = t^{mr}(x))",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_order_fiber_equiv",
+      "residue_class_equiv",
+      "infinite_component_divides",
+      "ModQuotient",
+      "mod_relation_book"
+    ],
+    "note": "This is the composite of the fiber equivalence with Fin m ≃ X/m. The formalization defines X/m as printed."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2897,
+    "quote": "(Such an r is unique if it exists.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "infinite_mod_witness_prop",
+      "infinite_cycle_component_period_zero"
+    ],
+    "note": "Module 288 proves that for an infinite cycle, the witness r with x′ = t^{mr}(x) is unique (ModWitness is a proposition)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2908,
+    "quote": "Then (Y,t^m) is an infinite cycle and we can construct a natural identification i : (X,t) = (Fin m × Y, ᵐ√(t^m))",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "infinite_root_fiber_sketch",
+      "infinite_root_fiber_sketch_is_equiv",
+      "InfiniteRootFiber",
+      "infinite_root_fiber_sketch_component",
+      "infinite_root_fiber_sketch_component_is_equiv",
+      "infinite_root_fiber_path",
+      "infinite_root_fiber_condition",
+      "class_cycle_infinite",
+      "class_unwind_equiv"
+    ],
+    "note": "For an infinite cycle, module 288 shows that the sketched map Y ↦ (Y, t^m, i) : X/m → cdg_m⁻¹(X,t) is h(P, –). Here e(k,x) = t^k(x) gives the identification i. The map is an equivalence into the fiber over Cycles. It is also an equivalence into the book's fiber Σ_{(Y,u):Cyc₀}((X,t) = cdg_m(Y,u)) of cdg_m : Cyc₀ → Cyc₀."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2910,
+    "quote": "The map defined by e(k,x) :≡ t^k(x) is an equivalence from Fin m × Y to X such that te = e ᵐ√(t^m).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "class_unwind",
+      "class_unwind_commutes",
+      "class_unwind_equiv"
+    ],
+    "note": "This is a footnote. It applies to infinite cycles."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2916,
+    "quote": "The reader will no doubt have noticed that X/m is a finite cycle.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "QuotientCycle",
+      "quotient_cycle_standard",
+      "infinite_quotient_cycle"
+    ],
+    "note": "This is the basis of thm:image-Z-to-Cm."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2950,
+    "quote": "By lem:IdCycle, a necessary condition ... is H_t = H_{ᵐ√u} ... the fiber cdg_m⁻¹(X,t) is nonempty only if m divides the order of t",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_path_condition",
+      "root_fiber_condition_divides"
+    ],
+    "note": "The formalization extracts the divisibility of the order from any identification with a root cycle."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2968,
+    "quote": "Here we take V not as a set, but as an element of the set X → Prop.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ModQuotient",
+      "Quotient"
+    ],
+    "note": "This is a margin note. Quotients are images in predicates (module 41)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 2993,
+    "quote": "When X is a decidable set then LPO allows for a simpler formulation: P is either false ... or true, ... the preimage is X/m",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "lpo_root_fiber_alternative",
+      "RootFiberLPOAlternative",
+      "lpo_root_fiber_condition_decidable",
+      "root_fiber_class_equiv_given",
+      "nat_divides_decidable",
+      "nat_divides_multiple"
+    ],
+    "note": "Module 288 assumes LPO (LimitedOmniscience) as an explicit hypothesis and that X is a decidable set. Under these hypotheses, P is decidable. If ¬P, the fiber of cdg_m is empty. If P, the class map (Y,u,e) ↦ V_e is an equivalence onto X/m."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3007,
+    "quote": "Note that this doesn't depend on y, so that thm:wconstant-elim applies: (0,y) and (0,y′) are a distance mr apart",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "root_fiber_class_at",
+      "root_fiber_class_independent",
+      "root_fiber_class_members"
+    ],
+    "note": "Module 288 proves that V_e is the class [e⁻¹(0,y)] for every y : Y. Here V_e is the subset fst(e(x)) = 0 (module 140). Hence V_e is independent of y. The proof uses membership in V_e, not thm:wconstant-elim."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3010,
+    "quote": "As a subset of X, V_e = {x : X | fst(e(x)) = 0}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "root_fiber_class_members"
+    ],
+    "note": "The formalization characterizes membership in V_e by the condition that the first coordinate of e is 0."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3012,
+    "quote": "to define the function h : P × X/m → cdg_m⁻¹(X,t), fix an equivalence class V of X/m, and assume that m divides the order",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "root_fiber_inverse_map",
+      "class_cycle",
+      "class_unwind_iso",
+      "class_unwind_path",
+      "root_fiber_inverse_evaluate"
+    ],
+    "note": "Module 288 gives the book's h : P × X/m → cdg_m⁻¹(X,t), (pr, V) ↦ ((V, t^m), i), for every cycle. Here i is the identification (X,t) = (Fin m × V, ᵐ√(t^m)) given by e′(k,v) = t^k(v)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3020,
+    "quote": "Then (V,t^m) is a cycle. Indeed t^m is properly restricted to V: if x lies in V, then so does t^m(x).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "class_cycle",
+      "class_permutation",
+      "class_cyclic"
+    ],
+    "note": "The formalization proves it for every cycle, not only for infinite cycles."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3025,
+    "quote": "e′ : Fin m × V → X, e′(k,v) :≡ t^k(v), which preserves cycle structure ... e′ is an equivalence if H_t ⊆ H_{ᵐ√(t^m)}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "class_unwind_is_equiv_of_periods",
+      "class_unwind_periods",
+      "class_power_period",
+      "class_unwind_general_equiv",
+      "class_unwind_is_equiv",
+      "class_unwind_commutes"
+    ],
+    "note": "Module 288 proves that e′ is an equivalence whenever H_t ⊆ H_{ᵐ√(t^m)} (xca:map-of-cycles). P gives this inclusion for every cycle by the printed computation. Module 272 covers only infinite cycles."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3044,
+    "quote": "Straight from these definitions, we see that g∘h = id.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "root_fiber_map_inverse_section"
+    ],
+    "note": "Module 288 proves g ∘ h = id for every cycle. The class of h(pr,V) is V because e′(0,v) = v."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3045,
+    "quote": "We leave to the reader to check that h∘g = id.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "root_fiber_inverse_retraction",
+      "root_fiber_retraction_agree",
+      "root_fiber_class_equiv",
+      "root_fiber_class_iso",
+      "root_fiber_class_path",
+      "root_fiber_path_by_evaluation",
+      "cycle_path_evaluation_injective",
+      "root_finite_natural",
+      "root_fiber_inverse_equiv",
+      "root_fiber_inverse_is_equiv",
+      "root_fiber_map_is_equiv_by_inverse"
+    ],
+    "note": "Module 288 proves h ∘ g = id directly. For (Y,u,e), the class V_e with t^m is isomorphic to (Y,u) by v ↦ snd(e(v)). The inverse is y ↦ e⁻¹(0,y). Also, e agrees with e′⁻¹ followed by this isomorphism. The reason is that both are maps of cycles that agree on V_e. With g ∘ h = id, this proves thm:fiber-cdg by the book's route (lem:weq-iso). This proof does not depend on module 140."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3053,
+    "quote": "to say something about the fact that each fiber of cdg_m carries a cycle structure",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "QuotientCycle",
+      "order_quotient_cycle",
+      "root_order_fiber_equiv"
+    ],
+    "note": "The fibers of cdg_m are identified with X/m. X/m carries the quotient cycle structure."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3070,
+    "quote": "Here p is surjective and i is injective, and any such factorization is equivalent to this one.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "image_factor_surjective",
+      "image_include_embedding",
+      "image_factorizations_contractible"
+    ],
+    "note": "This recalls chapter-2 xca:unique-fact-image."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3078,
+    "quote": "for any surjection g and injection h with f = hg one can construct a (unique) equivalence e with g = ep, i = he",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "image_universal_property",
+      "coherent_image_diagonals_contractible"
+    ],
+    "note": "This is eqn:image-univ-prop. The uniqueness is of e with both triangles and their coherence with the square."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3096,
+    "quote": "Uniqueness of e above also follows from the following two exercises.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "image_diagonal_unique_by_cancel_injection",
+      "ImageDiamondEquivalences",
+      "image_diamond_equivalence_unique",
+      "image_diagonal_unique_left_set",
+      "cancel_injection",
+      "surjection_cancellation_counterexample",
+      "cancel_surjection_into_set"
+    ],
+    "note": "Module 288 shows that the uniqueness of e follows from xca:cancel-injection alone, through the triangle i = he. This holds for e as a map, and as an equivalence with both triangles. The printed xca:cancel-surjection is false (module 40). Its restriction to sets gives uniqueness from the other triangle when X is a set."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3123,
+    "quote": "Observe that im_{−1}(f) ≡ im(f).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "n_image_minus_one"
+    ],
+    "note": "This holds judgmentally."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3124,
+    "quote": "If A and B are sets ... im_0(f) amounts to the set of pairs (b,a) such that b = f(a)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "set_map_fiber_set",
+      "zero_image_of_sets_pairs",
+      "zero_image_of_sets_set"
+    ],
+    "note": "Let A and B be sets. Module 288 proves that the fibers of f are sets. It also proves im₀(f) ≃ Σ_{b:B}Σ_{a:A}(b = f(a)), and this type is a set."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3136,
+    "quote": "Thus, any type is (−2)-connected, since its (−2)-truncation is contractible.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "MinusTwoConnectedType",
+      "minus_two_connected_type"
+    ],
+    "note": "Module 285 states the (−2)-connectedness of types with the (−2)-truncation Unit. Every type is (−2)-connected."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3137,
+    "quote": "the (−1)-connected types are precisely the nonempty ones, and the 0-connected types are those we have called connected",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "minus_one_connected_nonempty",
+      "zero_connected_connected"
+    ],
+    "note": "Both comparisons are equivalences of propositions."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3145,
+    "quote": "One may verify now that the (−1)-connected functions are the surjections, and the (−1)-truncated functions are the injections.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "minus_one_connected_map_surjective",
+      "minus_one_connected_map_equiv",
+      "minus_one_truncated_map_equiv"
+    ],
+    "note": "(−1)-connected maps agree judgmentally with the earlier surjection notion. The formalization compares (−1)-truncated maps with embeddings."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3148,
+    "quote": "There is a factorization f = ip ... p(a) :≡ (f(a), |(a, refl)|_n), and i :≡ fst",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "n_image_factor",
+      "n_image_include",
+      "n_image_triangle"
+    ],
+    "note": "This is eqn:n-image-factorization. The triangle holds by reflexivity."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3153,
+    "quote": "Every map f is trivially (−2)-connected. Moreover, fst : im_{−2}(f) → B is an equivalence and (−2)-truncated maps are precisely equivalences.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "minus_two_connected_map",
+      "MinusTwoImage",
+      "minus_two_truncated_map_equiv",
+      "minus_two_image_universal_property"
+    ],
+    "note": "This is a margin note. The map fst is an equivalence because MinusTwoImage :≡ Σ B Unit."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3166,
+    "quote": "The map i is n-truncated, because ... the fiber i⁻¹(b) is equivalent to ||f⁻¹(b)||_n. Furthermore ... p is n-connected.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "n_image_include_fiber_equiv",
+      "n_image_include_truncated",
+      "n_image_factor_connected"
+    ],
+    "note": "The inventory note of def:n-image states this."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3169,
+    "quote": "the fiber of p′ at any (b,t′) is equivalent to the fiber of |–|_n at t′",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "n_image_factor_fiber_equiv"
+    ],
+    "note": "This is a footnote."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3350,
+    "quote": "Since P(b) is an n-type, we have the canonical equivalence ||Σ_{y:P(b)} Q(b,y)||_n → Σ_{y:P(b)} ||Q(b,y)||_n",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trunc_sum_level_base_equiv",
+      "truncated_sum_set_base_equiv"
+    ],
+    "note": "This is a separate fact. The proof of thm:n-im-univ-prop uses it."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3375,
+    "quote": "we have a map –/m : Cyc₀ → Set, which we identify with the family R_m : S¹ → Set by precomposing with c",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_quotient_power_family",
+      "circle_quotient_family",
+      "book_circle_cycle_zero_map",
+      "circle_quotient_monodromy",
+      "quotient_predecessor_monodromy",
+      "quotient_inverse_fin_path",
+      "inverse_cycle_periods",
+      "infinite_forget_inverse_point"
+    ],
+    "note": "Module 288 proves –/m ∘ c = R_m in S¹ → Set for every CircleSignature. Here c : S¹ → Cyc₀ is the inverse of forgetting, composed with circle_infinite_cycle_map. The value c(loop) is the predecessor. Thus the pointed identification (ℤ/m, t̄⁻¹) = (Fin m, succ) with [0] ↦ 0 matches the monodromies."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3380,
+    "quote": "For every infinite cycle (X,t), the set X/m has m elements",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "residue_class_equiv",
+      "infinite_component_divides"
+    ],
+    "note": "Every infinite cycle has an order that is divisible by m. Thus Fin m ≃ X/m by lem:X-mod-m-chosen."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3381,
+    "quote": "the (−1)-image is readily identified with FinSet_m, the groupoid of m-element sets",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "infinite_quotient_image_finsets",
+      "infinite_quotient_fin_path",
+      "infinite_quotient_image_finsets_carrier"
+    ],
+    "note": "Module 288 proves that each X/m for (X,t) : Cyc₀ is merely Fin m. It also proves that the (−1)-image of –/m is equivalent, over Set, to the book's FinSet_m = Set_(Fin m)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3411,
+    "quote": "To see that e is well defined ... Also, e preserves cycle structure.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "first_residue",
+      "first_residue_equiv",
+      "root_quotient_path"
+    ],
+    "note": "This is a footnote in the proof of thm:image-Z-to-Cm."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3423,
+    "quote": "The theorem and its proof in fact generalize to cycles of all orders.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "order_quotient_factorization",
+      "root_fibers_factorization"
+    ],
+    "note": "This is the content of xca:image-Cmd-to-Cm."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3448,
+    "quote": "This point has a symmetry σ_n :≡ (s⁻¹,!) ... all symmetries of pt_n are of the form σ_n^i for i = 0,…,n−1",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cyc_generator",
+      "standard_predecessor_loop",
+      "cyc_loop_equiv",
+      "cyc_loops_cyclic"
+    ],
+    "note": "σ_n is the predecessor symmetry. Remainder n enumerates the loops at pt_n."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3457,
+    "quote": "Proofs of the equation refl = σ_n^n ... are mapped by ap_f to proofs of refl = ap_f(σ_n)^n. Hence ... ev_{n,A} is well defined",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cyc_generator_order",
+      "cyc_evaluation"
+    ],
+    "note": "The formalization proves refl = σ_n^n in pt_n = pt_n. It defines ev_{n,A} on this basis."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3558,
+    "quote": "The construction of f is really a special case of the delooping of the abstract group homomorphism σ_n^i ↦ σ^i",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a margin note that points to sec:delooping (later chapter)."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3599,
+    "quote": "for any G-set X, the type of fixed points of X is equivalent to the type of sections of Σ_{z:BG} X(z) → BG",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a wip margin note. It is group-theoretic and not formalized."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3602,
+    "quote": "the corresponding families S : Cyc_n → Set are precisely those cycles (X,t) with t^n = id, i.e., whose order divides n",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cyc_connected_set_families",
+      "cycle_period_order_divides",
+      "cyc_set_families_permutations",
+      "cyc_family_connected_cyclic"
+    ],
+    "note": "This is the corollary after prop:ump-cycn-into-groupoids."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3605,
+    "quote": "If we restrict to decidable connected coverings, equivalently, decidable cycles, these are the usual finite cycles with order dividing n.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cyc_decidable_connected_coverings_classification",
+      "cyc_decidable_connected_families_cycles",
+      "decidable_dividing_cycles_classification",
+      "DecidableCyclesDividing"
+    ],
+    "note": "Module 285 proves that decidable connected coverings over Cyc_n are the decidable cycles with tⁿ = id. These are the finite cycles (ℤ/(m+1), s) where m+1 divides n."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3619,
+    "quote": "an order p divides an order q iff there is a map of cycles from a cycle of order q to one of order p",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cycle_map_divides",
+      "divides_cycle_map"
+    ],
+    "note": "This is a wip section."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3629,
+    "quote": "subgroups of C_n: C_k where k | n, connected set bundles of Cyc_n",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a wip outline. The covering part is formalized (cyc_connected_set_families). The subgroup statement is not formalized."
+  },
+  {
+    "source": "circle.tex",
+    "line": 3637,
+    "quote": "Bijective proof of mn = lcm(m,n) × gcd(m,n) via the product of cycles. Chinese remainder stuff.",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "The identity is not formalized (gcd/lcm exist in module 148)."
   }
 ]
