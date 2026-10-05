@@ -19008,8 +19008,23 @@
     "labels": [
       "def:semidirect-product"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "semidirect_product",
+      "semidirect_classifying_type",
+      "semidirect_shape",
+      "semidirect_classifying_groupoid",
+      "semidirect_classifying_connected",
+      "semidirect_product_classifying",
+      "hlevel_sigma",
+      "native_connected_sigma"
+    ],
+    "principal": [
+      "semidirect_product",
+      "semidirect_classifying_type",
+      "semidirect_shape"
+    ],
+    "note": "Let G be a group and let H : BG → Group be an action. Then G ⋉ H ≔ mkgroup(Σ_{t:BG} BH(t)), pointed at (sh_G, sh_{H(sh_G)}). The book gives the base point (sh_G, sh_H). The formalization reads H in it as the acted-on group H(sh_G). The lemma semidirect_product_classifying shows by refl that the pointed classifying type is exactly this Σ-type. The footnote gives two facts: the type is a groupoid (lem:level-n-utils(sum)) and it is connected (xca:connected-trivia-1). These facts are the proof fields semidirect_classifying_groupoid and semidirect_classifying_connected."
   },
   {
     "chapter": 8,
@@ -19019,8 +19034,38 @@
     "line": 79,
     "section_raw": "Semidirect products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "DihedralRel",
+      "dihedral_rel_prop",
+      "dihedral_relation",
+      "dihedral_two_set_cancel",
+      "DihedralCycleSet",
+      "dihedral_class",
+      "dihedral_step",
+      "dihedral_step_respects",
+      "dihedral_move",
+      "dihedral_move_self",
+      "dihedral_move_other",
+      "dihedral_point",
+      "DihedralThreeFacts",
+      "dihedral_three_facts",
+      "dihedral_three_map",
+      "dihedral_three_commutes",
+      "dihedral_three_injective",
+      "dihedral_three_surjective",
+      "dihedral_three_equiv",
+      "dihedral_s2c3_path",
+      "dihedral_three_point_path",
+      "dihedral_three_action_path",
+      "dihedral_three_semidirect_path"
+    ],
+    "principal": [
+      "dihedral_move",
+      "dihedral_three_point_path",
+      "dihedral_three_action_path"
+    ],
+    "note": "First part: quotient_rec defines f_s on X = (S × Z)/~ from (s',z) ↦ [(s', z ± 1)]. The definition uses a case split on the decidable equality of the 2-element set S. The respect proof is dihedral_step_respects. The value f_s[(s',z)] computes judgmentally. The relation agrees with the book: (s = s' and z - z' ∈ nZ) or (s ≠ s' and z + z' ∈ nZ). It is proposition-valued because the two cases exclude each other. The second part is for n = principal_order 3. The map e : 1 ⊔ S → X, with inl 0 ↦ x_0 and inr t ↦ [(t,1)], is an S-equivariant bijection. Thus it gives an identification (1 ⊔ S, f) = (X, f) in T_S for every 2-element set S (dihedral_three_point_path). Here T_S = Σ_{X:Set}(S → X → X). Hence C̃_3 is equal to the action of ex:S2-acts-on-C3 (module 568) as functions BΣ_2 → Group. Also, D_3 = Σ_2 ⋉ that action. The arithmetic facts 3 ∈ 3Z and -1, 1, 2 ∉ 3Z are computed in the standard 3-cycle. For performance, the proofs are stated for any subgroup with these facts (DihedralThreeFacts)."
   },
   {
     "chapter": 8,
@@ -19032,8 +19077,38 @@
     "labels": [
       "def:gen-dihedral"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "dihedral_action_group",
+      "dihedral_order_action",
+      "generalized_dihedral_group",
+      "order_cyclic_group",
+      "semidirect_product",
+      "DihedralInversePair",
+      "dihedral_permutation_types_equiv",
+      "dihedral_action_cyclic_path",
+      "dihedral_order_action_shape_path",
+      "generalized_dihedral_usym_equiv",
+      "generalized_dihedral_finite",
+      "generalized_dihedral_card",
+      "dihedral_three_card",
+      "dihedral_one_card",
+      "dihedral_rotation",
+      "section_loop_action_eval",
+      "dihedral_class_transport",
+      "dihedral_swap_action_nontrivial",
+      "semidirect_nontrivial_action_not_abelian",
+      "dihedral_semidirect_not_abelian",
+      "generalized_dihedral_not_abelian",
+      "DihedralNotAbelian",
+      "dihedral_three_not_abelian"
+    ],
+    "principal": [
+      "generalized_dihedral_group",
+      "dihedral_order_action_shape_path",
+      "generalized_dihedral_not_abelian"
+    ],
+    "note": "The formalization defines D_n ≔ Σ_2 ⋉ C̃_n with C̃_n(S) ≔ Aut_{T_S}(X, f) (dihedral_order_action n). This is the book's action on BΣ_2, the type of 2-element sets. The semidirect product is the semidirect product of module 800. C_n is Aut_Cyc of the standard n-cycle (order_cyclic_group n). For every 2-element S and s : S, C̃_n(S) = C_n. The proof uses T_S ⊇ {f_{s̄} inverse to f_s} ≃ Permutations and then (X, f_s) = standard cycle. So C̃_n is an action of Σ_2 on C_n. Litmus: |D_{k+1}| = 2(k+1). This proof uses USym(G ⋉ H) ≃ USym G × USym H(sh) and a mere identification C_n = C_{k+1}. The book derives the count from bicycles. Also |D_3| = 6 and |D_1| = 2. The swap acts on the rotation r = f_yes by r^σ = r⁻¹ on X. So D_n is not abelian in all cases where 2 ∉ nZ. The formalization states that D_3 is non-abelian for every witness of the subgroup laws of 3Z (dihedral_three_not_abelian, a one-field record). The reason is that an instantiation at the concrete proof of the laws is too slow in Narya."
   },
   {
     "chapter": 8,
@@ -19045,8 +19120,66 @@
     "labels": [
       "con:bidirectional-bicycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "DihedralClassifyingType",
+      "dihedral_classifying_base",
+      "dihedral_classifying_type_path",
+      "dihedral_classifying_base_path",
+      "dihedral_classifying_connected",
+      "dbc_inverse_pair",
+      "dbc_a_equiv",
+      "dbc_b_equiv",
+      "dbc_a",
+      "dbc_b",
+      "dihedral_phi_connected",
+      "dihedral_bicycle",
+      "dihedral_bicycle_a_litmus",
+      "dihedral_bicycle_b_litmus",
+      "DihedralStandardCarrier",
+      "dihedral_standard_a",
+      "dihedral_standard_b",
+      "dihedral_standard_a_litmus",
+      "dihedral_standard_b_litmus",
+      "dihedral_standard_connected",
+      "dihedral_standard_bicycle",
+      "standard_dihedral_bicycle",
+      "dihedral_base_iso_map",
+      "dihedral_base_iso_equiv",
+      "dihedral_bicycle_base_iso",
+      "dihedral_bicycle_base_path",
+      "DihedralBicycleComponent",
+      "dihedral_bicycle_map",
+      "dihedral_bicycle_map_point",
+      "dihedral_bicycle_pointed_map",
+      "DFrame",
+      "DFrameIsos",
+      "dframe_paths_equiv",
+      "dihedral_classifying_paths_equiv",
+      "dihedral_classifying_paths_equiv_two",
+      "dihedral_classifying_paths_equiv_set",
+      "dihedral_frame_product",
+      "dihedral_frame_decompose",
+      "dihedral_frame_product_equiv",
+      "dihedral_loops_bicycle_isos_equiv",
+      "dihedral_loops_bicycle_isos_agree",
+      "dihedral_bicycle_loops_equiv",
+      "dihedral_bicycle_equiv",
+      "dihedral_bicycle_pointed_equiv",
+      "bidirectional_bicycle_pointed_equiv",
+      "bidirectional_bicycle_map_value",
+      "dihedral_bicycle_group_iso",
+      "connected_map_equiv_from_loops",
+      "bicycle_paths_equiv",
+      "generalized_dihedral_group",
+      "Bicycles"
+    ],
+    "principal": [
+      "bidirectional_bicycle_pointed_equiv",
+      "dihedral_bicycle",
+      "standard_dihedral_bicycle"
+    ],
+    "note": "For every order n, the formalization gives bidirectional_bicycle_pointed_equiv n : BookPointedEquiv (BG D_n) (Bicyc_(std_n), std_n). Its underlying map is phi(S,X,f) = (S x X, a, b), with a(s,x) = (s, f_s x) and b(s,x) = (swap s, x). The litmus holds by refl. Here std_n = standard_dihedral_bicycle n = (Z/~n + Z/~n, a, b). In it, a(inl[z]) = inl[z+1], a(inr[z]) = inr[z-1], and b swaps the summands. These equations are judgmental on classes. The proof follows the hint, not the book's inverse. By cor:fib-vs-path (connected_map_equiv_from_loops), phi is an equivalence because Omega phi is a bijection. The loops of BD_n at the shape are pairs (sigma, g) with g f_s = f_{sigma s} g (structure identity principle, module 815). Omega phi sends such a pair to sigma x g. Every automorphism of phi(sh) has this form (module 816). Deviations: the base point of BD_n is our (Fin 2, (Fin 2 x Z)/~, f), not ({+-1}, Z/~n, [z] -> [z+s]). It is identified with std_n by inl q -> (yes, [(yes,q)]) and inr q -> (no, [(yes,q)]). Through the identification X = Z/~n of module 806, this is the book's (+1,x) -> inl x and (-1,x) -> inr x. All statements are made for an arbitrary subgroup (H,h) of Z and instantiated at order_periods n. The pointed equivalence also gives D_n = Aut_Bicyc(std_n) as groups (dihedral_bicycle_group_iso)."
   },
   {
     "chapter": 8,
@@ -19056,8 +19189,47 @@
     "line": 189,
     "section_raw": "Semidirect products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PsiOrbitsA",
+      "PsiOrbitsB",
+      "psi_class_a",
+      "psi_class_b",
+      "PsiIntersection",
+      "PsiUniqueIntersections",
+      "psi_move",
+      "psi_frame",
+      "PsiProps",
+      "dps_props",
+      "dps_props_standard",
+      "dps_props_phi",
+      "dihedral_bicycle_psi",
+      "dihedral_bicycle_psi_parts",
+      "dihedral_bicycle_psi_move",
+      "DpsOrbitsA",
+      "DpsOrbitsB",
+      "dihedral_orbits_a_equiv",
+      "dihedral_orbits_b_equiv",
+      "dihedral_orbits_a_class",
+      "dihedral_orbits_b_class",
+      "dps_transitive",
+      "dps_abstract_unique",
+      "dps_unique_intersections",
+      "dps_commutes",
+      "dps_frame_path",
+      "dihedral_psi_phi",
+      "dihedral_phi_psi",
+      "dihedral_bicycle_inverse_equiv",
+      "bidirectional_bicycle_inverse",
+      "OrbitQuotient",
+      "orbit_relation"
+    ],
+    "principal": [
+      "dihedral_bicycle_psi",
+      "dihedral_bicycle_inverse_equiv",
+      "bidirectional_bicycle_inverse"
+    ],
+    "note": "The formalization defines the book's inverse psi(Y,a,b) = (Y/a, Y/b, f) literally. Y/a and Y/b are the orbit quotients (y ~ y' iff exists z, y' = a^z y). Also f_{[y]_a}([y']_b) = [a(y'')]_b, where y'' is the center of the contractible type of elements in both classes. The litmus holds by refl. Three propositions are necessary to land in BD_n. The intersections are unique, Y/a is a 2-element set, and (Y/b, f) is in the component of the bidirectional cycle. They are proved for phi(x) and transported to the standard bicycle. Then they are transported along the mere path to every bicycle of the component. The formalization proves psi o phi = id (dihedral_psi_phi), via (S x X)/a = S, (S x X)/b = X and the structure identity principle. It also proves phi o psi = id (dihedral_phi_psi). This second proof uses psi o phi = id and the fact that phi is an equivalence (L109). It does not use a direct computation on an arbitrary bicycle. The declaration dihedral_bicycle_inverse_equiv packages phi and psi as inverse equivalences."
   },
   {
     "chapter": 8,
@@ -19067,8 +19239,29 @@
     "line": 196,
     "section_raw": "Semidirect products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AtMostOneInvolution",
+      "quaternion_eval",
+      "quaternion_square_cases",
+      "quaternion_involution_value",
+      "quaternion_at_most_one_involution",
+      "InvolutionWitness",
+      "dihedral_four_group",
+      "dihedral_four_two_involutions",
+      "cyclic_four_involution",
+      "dihedral_four_cyclic_mere_path",
+      "dihedral_four_not_at_most_one",
+      "quaternion_dihedral_not_isomorphic",
+      "quaternion_group",
+      "quaternion_usym_equiv"
+    ],
+    "principal": [
+      "quaternion_dihedral_not_isomorphic",
+      "quaternion_at_most_one_involution",
+      "dihedral_four_not_at_most_one"
+    ],
+    "note": "No GroupIso exists between Q_8 of chapter 4 (Aut_Bicyc of the quaternion bicycle) and D_4 = generalized_dihedral_group (principal_order 4). As the hint says, the proof compares the involutions and does not count them. Q_8 has at most one symmetry g ≠ e with g·g = e. The proof uses evaluation at the element 0 of the normal quaternion bicycle. Here g commutes with the word that reaches g(0), and the proof computes the eight cases: only 0 and 4 square to 0. But D_4 has two different such symmetries, s(σ) and j(x). Here σ is the swap of Σ_2, and x is the element 2 of C_4. The property is transported along group_path_from_iso."
   },
   {
     "chapter": 8,
@@ -19080,8 +19273,23 @@
     "labels": [
       "lem:pathpairsection"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_pair_section_equiv",
+      "path_pair_section_book_equiv",
+      "path_pair_section_map",
+      "path_pair_section_inverse",
+      "section_pathover_loop_equiv",
+      "section_pathover_loop",
+      "section_pathover_loop_refl",
+      "identity_equiv",
+      "quasi_inverse_equiv"
+    ],
+    "principal": [
+      "path_pair_section_equiv",
+      "path_pair_section_book_equiv"
+    ],
+    "note": "Let X be a type, Y : X → Type, f : Π_x Y(x) and x, x' : X. Then ((x, f x) = (x', f x')) ≃ (x = x') × (f x = f x), as an Equiv and as a BookEquiv. The printed right-hand side (loops at f(x), not f x = f x') is correct. Thus the statement is literal. The map follows the proof of the book. An identification of pairs is (e .fst, e .snd) (lem:isEq-pair=, eta of Narya's Id of Σ). After it comes the fiberwise equivalence (paths over p from f x to f x') ≃ (f x = f x) (lem:fiberwise). J defines this equivalence with the identity at refl. The book says 'equal by definition' at refl. In the formalization, this becomes the proved identification section_pathover_loop_refl (typal Jβ)."
   },
   {
     "chapter": 8,
@@ -19093,8 +19301,20 @@
     "labels": [
       "def:pathsectionaction"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "section_loop_action",
+      "section_loop_action_refl",
+      "section_loop_action_transport",
+      "section_loop_action_transport_base",
+      "semidirect_loop_action",
+      "semidirect_loop_action_unit"
+    ],
+    "principal": [
+      "section_loop_action",
+      "section_loop_action_refl"
+    ],
+    "note": "Let p : x = x'. As printed, J on (x', p) defines q' ↦ q'^p : (f x' = f x') → (f x = f x). Its value at refl is q'. The book has the definitional rule q'^{refl x} ≡ q'. In the formalization, this rule is the proved identification section_loop_action_refl, because the J of Narya has only a typal β-rule. The lemma section_loop_action_transport identifies q'^p with the transport of q' along p⁻¹ in the loop family. The declaration semidirect_loop_action is the instance for G ⋉ H (X ≔ BG, Y ≔ BH, f(t) ≔ sh_{H(t)})."
   },
   {
     "chapter": 8,
@@ -19106,8 +19326,19 @@
     "labels": [
       "def:pathsectionactionassoc"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "section_loop_action_assoc",
+      "section_loop_action_assoc_base",
+      "section_loop_action_refl",
+      "concat_p1",
+      "semidirect_loop_action_mul"
+    ],
+    "principal": [
+      "section_loop_action_assoc",
+      "semidirect_loop_action_mul"
+    ],
+    "note": "Let p : x = x', p' : x' = x'' and q : f x'' = f x''. Then (q^{p'})^p = q^{p'·p}. The book's p'·p (first p, then p') is concat p p'. The proof uses induction on p' only. The book also uses induction on p. The base case uses section_loop_action_refl and concat_p1, not the definitional equalities of the book. The declaration semidirect_loop_action_mul is the G ⋉ H instance with usym_mul G p' p."
   },
   {
     "chapter": 8,
@@ -19119,8 +19350,27 @@
     "labels": [
       "lem:pathpairsectionmult"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_pair_section_mult",
+      "path_pair_section_concat",
+      "path_pair_section_combine",
+      "path_pair_section_concat_type",
+      "path_pair_section_concat_general",
+      "path_pair_section_concat_left",
+      "path_pair_section_concat_base",
+      "path_pair_section_concat_snd",
+      "map_path_concat",
+      "section_pathover_loop_refl",
+      "section_loop_action_refl",
+      "path_pair_section_split",
+      "section_pathover_loop_apd"
+    ],
+    "principal": [
+      "path_pair_section_mult",
+      "path_pair_section_concat"
+    ],
+    "note": "The statement is as printed, for arbitrary x, x', x''. Let Φ = path_pair_section_map, the map of lem:pathpairsection. The hypotheses are identifications. If Φ(e) = (p, q) and Φ(e') = (p', q'), then Φ(e'·e) = (p'·p, (q'^p)·q). That is, Φ(e'·e) = (concat p p', concat q (q'^p)) with e'·e = concat e e'. The lemma path_pair_section_concat is the hypothesis-free form Φ(e'·e) = combine(Φ e, Φ e'). As in the book, the proof uses induction on p' and then on p. The refl case uses map_path_concat (lem:apcomp) for y ↦ (x, y) and the Jβ identifications. Here def:applfun2comp is judgmental. An extra result is path_pair_section_split: every e is (refl, q) followed by (p, apd_f p)."
   },
   {
     "chapter": 8,
@@ -19130,8 +19380,46 @@
     "line": 291,
     "section_raw": "Semidirect products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "semidirect_inclusion_kernel_lemma",
+      "semidirect_inclusion_mono",
+      "semidirect_inclusion_kernel",
+      "semidirect_inclusion_retraction",
+      "semidirect_usym_pair_inclusion",
+      "fiber_kernel",
+      "fiber_kernel_group",
+      "fiber_kernel_fiber",
+      "fiber_kernel_fiber_groupoid",
+      "fiber_kernel_point",
+      "fiber_kernel_inclusion",
+      "fiber_kernel_inclusion_covering",
+      "fiber_kernel_inclusion_mono",
+      "semidirect_kernel_fiber_equiv",
+      "semidirect_kernel_fiber_connected",
+      "semidirect_kernel_iso",
+      "semidirect_kernel_iso_hom",
+      "semidirect_kernel_iso_map",
+      "semidirect_kernel_iso_inverse",
+      "semidirect_kernel_iso_equiv",
+      "semidirect_kernel_iso_inclusion",
+      "sdp_group_monos_path_from_iso",
+      "sdp_group_monos_path_base",
+      "sdp_group_monos_path_motive",
+      "sdp_group_iso_total_contractible",
+      "book_projection_inclusion_equiv",
+      "IsGroupMono",
+      "GroupMonos",
+      "covering_group_mono",
+      "semidirect_inclusion",
+      "semidirect_projection"
+    ],
+    "principal": [
+      "semidirect_inclusion_kernel_lemma",
+      "semidirect_inclusion_mono",
+      "semidirect_inclusion_kernel"
+    ],
+    "note": "The map j : H(sh_G) → G ⋉ H is a monomorphism in the sense of def:typeofmono. This is IsGroupMono of module 502: USym j is injective. Module 687 shows that these maps are the monomorphisms of the category of groups. Also, (H(sh_G), j, !) = ker p as elements of Mono(G ⋉ H) (GroupMonos). That is, they give the same subgroup. The kernel is def:kernel of chapter 9 (subgroups.tex:289), defined locally as fiber_kernel. It is Aut of the BookFiber of Bp at sh_G, pointed at (sh_G, Bp_pt). Its first projection is a covering and thus a mono. Chapter 9 can supersede this local definition. The proof follows the book: lem:fst-fiber(a)=B(a), a connected fiber, and an iso H ≅ Ker p whose composite with the inclusion is j. It also uses univalence via the contractibility of Σ_{K'} Iso(K, K'). Not formalized: the parenthetical '(normal)', because def:normalsubgroup is a chapter-9 notion. The red footnote is editorial."
   },
   {
     "chapter": 8,
@@ -19141,8 +19429,33 @@
     "line": 328,
     "section_raw": "Wreath products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "wreath_product",
+      "wreath_power_action",
+      "wreath_power_groupoid",
+      "wreath_constant_shape",
+      "wreath_product_classifying",
+      "semidirect_product",
+      "GSet",
+      "wreath_unit_gset",
+      "wreath_unit_finite",
+      "wreath_unit_function_equiv",
+      "wreath_unit_classifying_equiv",
+      "wreath_unit_pointed_equiv",
+      "wreath_unit_product_path",
+      "wreath_unit_classifying_map_check",
+      "wreath_square_group",
+      "wreath_square_acted_on_usym_equiv",
+      "wreath_square_usym_equiv",
+      "semidirect_usym_equiv",
+      "standard_symmetric_gset"
+    ],
+    "principal": [
+      "wreath_product",
+      "wreath_power_action"
+    ],
+    "note": "For groups G, H and a G-set X : BG → Set (GSet G of chapter 5), H ≀_X G ≔ G ⋉ H^X. Here H^X(z) ≔ Aut_{X(z) → BH}(_ ↦ sh_H), as displayed before the definition (wreath_power_action). This is the automorphism_group of the constant function in the groupoid X(z) → BH. The lemma wreath_product_classifying records by refl that B(H ≀_X G) ≡ Σ_{z:BG} (component of X(z) → BH at the constant map). Litmus: for the one-point G-set, the wreath product is identified with G × H (wreath_unit_product_path). Also take Σ_2 ≀ Σ_2 via the standard Σ_2-set (symmetries of the square). Its symmetries are in bijection with Fin 2 × (Fin 2 → Fin 2), that is, 8 elements (wreath_square_usym_equiv)."
   },
   {
     "chapter": 8,
@@ -19152,8 +19465,10 @@
     "line": 340,
     "section_raw": "Wreath products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "The example 'The symmetry group of a hypercubes' has an empty body in the pinned book. It has only a title. It contains no mathematical claim."
   },
   {
     "chapter": 8,
@@ -19163,8 +19478,10 @@
     "line": 344,
     "section_raw": "Wreath products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "The example 'Sudoku' has an empty body in the pinned book. It has only a title. It contains no mathematical claim."
   },
   {
     "chapter": 8,
@@ -19174,8 +19491,10 @@
     "line": 348,
     "section_raw": "Wreath products}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "The example 'Symmetry groups of trees' has an empty body in the pinned book. It has only a title. It contains no mathematical claim."
   },
   {
     "chapter": 8,
@@ -19188,8 +19507,100 @@
       "ex:pullbackandgcd",
       "fig:circle-pullback"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pbg_suc_ne_zero",
+      "pbg_one_not_zero",
+      "cpo_point",
+      "cpo_points_equal_period",
+      "cpo_period_points_equal",
+      "cpo_e_power_point",
+      "cpo_sum_to_shift",
+      "cpo_shift_to_sum",
+      "cpo_class",
+      "cpo_gcd_relation",
+      "cpo_gcd_to_sum",
+      "cpo_sum_to_gcd",
+      "cpo_class_respects",
+      "cpo_class_reflects",
+      "cpo_class_surjective",
+      "cycle_power_orbits_equiv",
+      "CirclePowerPullback",
+      "cpp_fam",
+      "cpp_family",
+      "cpp_total_equiv",
+      "cpp_set_trunc_equiv",
+      "cpp_free_loop_orbits",
+      "cpp_power_loop",
+      "cpp_monodromy_power",
+      "cpp_orbits_transport",
+      "cpp_cycle",
+      "cpp_cycle_monodromy",
+      "cpp_cycle_per",
+      "cpp_cycle_rep",
+      "cpp_power_winding",
+      "cpp_monodromy_power_he",
+      "circle_power_pullback_components",
+      "cpp_multiples_quotient_remainder",
+      "cpp_multiples_quotient_fin",
+      "cpp_divisor_positive",
+      "cpp_gcd_positive",
+      "cpp_multiples_quotient_fin_any",
+      "circle_power_pullback_components_fin",
+      "cpl_power_hom",
+      "cpl_power_hom_function",
+      "cpl_circle_conjugate_trivial",
+      "cpl_conjugate_move",
+      "cpl_twisted_hom",
+      "cpl_twisted_hom_loop",
+      "cpl_component_group",
+      "cpl_point",
+      "cpl_component_group_classifying",
+      "cpl_component_lcm_cover",
+      "cpl_move_to_base",
+      "cpl_twist_cancel",
+      "CplComponent",
+      "cpl_component_has_point",
+      "cpl_component_native_equiv",
+      "CplLcmCover",
+      "circle_pullback_component_lcm_cover",
+      "cpl_component_index",
+      "cpl_fiber_component_equiv",
+      "CplProductDecomposition",
+      "cpl_product_from_choice",
+      "circle_pullback_product_decomposition",
+      "circle_pullback_pair_map",
+      "circle_power_pullback_six_nine",
+      "circle_power_pullback_one_one",
+      "circle_power_pullback_two_two",
+      "CircleHomLoop",
+      "circle_hom_winding",
+      "circle_hom_mono",
+      "CircleHomIntersection",
+      "circle_hom_intersection_map",
+      "circle_hom_intersection_map_iso",
+      "circle_hom_intersection_triangle",
+      "circle_hom_intersection_proj_left",
+      "circle_hom_intersection_proj_right",
+      "cpx_quotient_left_eq",
+      "cpx_quotient_right_eq",
+      "cpx_lcm_identities",
+      "cpx_point",
+      "cpx_point_class",
+      "cpx_fin_quotient_equiv",
+      "cpx_index_hits",
+      "cpx_choice",
+      "circle_pullback_explicit_decomposition",
+      "circle_pullback_explicit_coordinates",
+      "circle_pullback_explicit_square",
+      "cpx_same_component_iff"
+    ],
+    "principal": [
+      "circle_power_pullback_components_fin",
+      "circle_pullback_explicit_square",
+      "circle_pullback_component_lcm_cover"
+    ],
+    "note": "Let P = S¹ ×_{S¹} S¹ be the pullback of the degree maps (-)^a and (-)^b, for any CircleSignature C. Here a = a1+1 and b = b1+1. (1) ‖P‖₀ ≃ Fin(gcd(a,b)) (circle_power_pullback_components_fin). The proof uses monodromy orbits (modules 60, 825, 826). (2) Module 891 gives the displayed square explicitly. Let d = gcd(a,b), a = da' and b = db'. Then circle_pullback_explicit_square is an equivalence S¹ × Fin d ≃ P with coordinates z ↦ z^{b'} and z ↦ z^{a'} on every copy. The book's ζ^k z^{b'} is homotopic to z^{b'}. The rotation sits in the path component. The composite is (x,k) ↦ x^{lcm}. Each component gets an explicit point pt_n from the deck transformation of the b-fold covering. The component equivalence sends pt_n to [n] (cpx_point_class). The map n ↦ [n] is an explicit bijection Fin d ≃ ℤ/dℤ. The formalization proves lcm(a,b)/a = b', lcm(a,b)/b = a' and lcm = a'b = da'b' = ab' (cpx_quotient_*_eq, cpx_lcm_identities). (3) Every component of P is merely a copy of the lcm-fold covering (circle_pullback_component_lcm_cover). Here a point must be chosen. Also (ζ^k z, w) ~ (z, w) iff d | k (cpx_same_component_iff, with the roles of a and b exchanged). Litmus: (6,9) ↦ Fin 3, (1,1) ↦ Fin 1 and (2,2) ↦ Fin 2. Complex numbers are not modelled."
   },
   {
     "chapter": 8,
@@ -19201,8 +19612,17 @@
     "labels": [
       "def:intersectionand unionofsets"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SubsetIntersection",
+      "SubsetUnion",
+      "subset_inclusion"
+    ],
+    "principal": [
+      "SubsetIntersection",
+      "SubsetUnion"
+    ],
+    "note": "Subsets of S are families of propositions (Subtypes S, module 21). A ∩ B is s ↦ P(s) × Q(s), and A ∪ B is s ↦ P(s) ∨ Q(s). Here ∨ is Disjunction, the propositional truncation of the sum (module 160). The book writes \"A(s) ∨ B(s)\" for the union. The families are P and Q. The definitions work for any type S. The book assumes a set."
   },
   {
     "chapter": 8,
@@ -19215,8 +19635,54 @@
       "xca:intersectionpullbackofsets",
       "xca:cardinalityintersectionunion"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SubsetPullback",
+      "subset_pullback_to_intersection",
+      "subset_intersection_to_pullback",
+      "subset_intersection_roundtrip",
+      "subset_pullback_roundtrip_at",
+      "subset_pullback_intersection_equiv",
+      "subset_pullback_intersection_book_equiv",
+      "pbg_product_decidable",
+      "pbg_disjunction_decidable",
+      "subset_intersection_decidable",
+      "subset_union_decidable",
+      "pbg_or_extract",
+      "pbg_split_to",
+      "pbg_split_from",
+      "pbg_split_from_to",
+      "pbg_split_to_from",
+      "pbg_split_equiv",
+      "subset_sum_union_intersection_equiv",
+      "subset_finite",
+      "subset_cardinality_union_intersection",
+      "subset_finite_decidable",
+      "subset_finite_decidable_equiv",
+      "unit_subset",
+      "all_unit_subsets_finite_lem",
+      "bool_true_subset",
+      "bool_false_subset",
+      "pbg_bool_eq_decidable",
+      "pbg_bool_finite",
+      "subset_litmus_cardinality",
+      "subset_litmus_pullback_map",
+      "pbg_bool_inter",
+      "pbg_bool_union",
+      "pbg_bool_inter_empty",
+      "pbg_bool_inter_empty_equiv",
+      "pbg_bool_union_point",
+      "pbg_bool_union_point_fst",
+      "pbg_bool_union_equiv",
+      "subset_litmus_intersection_card",
+      "subset_litmus_union_card"
+    ],
+    "principal": [
+      "subset_pullback_intersection_equiv",
+      "subset_cardinality_union_intersection",
+      "all_unit_subsets_finite_lem"
+    ],
+    "note": "(1) Let S be any type. The pullback A ×_S B of the two inclusions (TypePullback, module 666) is equivalent to A ∩ B, also as a BookEquiv. (2) As printed, S is finite and A, B are arbitrary subsets. Then the cardinalities are not necessarily defined. A subset of a finite set is finite iff it is decidable (subset_finite_decidable_equiv). Thus the finiteness of all subsets of 1 is excluded middle (all_unit_subsets_finite_lem). The formalization proves a corrected statement. For decidable subsets A, B of a finite S, |A| + |B| = |A ∪ B| + |A ∩ B| (subset_cardinality_union_intersection). The proof uses A + B ≃ (A ∪ B) + (A ∩ B). Litmus on Bool with {true} and {false}: 1 + 1 = 2 + 0."
   },
   {
     "chapter": 8,
@@ -19228,8 +19694,48 @@
     "labels": [
       "def:intersectionofgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pbg_fam",
+      "pbg_square_base",
+      "pbg_square_equiv",
+      "pbg_twist",
+      "PbgSquareCondition",
+      "PbgConjugateCondition",
+      "pbg_twist_refl",
+      "pbg_twist_left",
+      "pbg_twist_right",
+      "pbg_conditions_base",
+      "pbg_conditions",
+      "pbg_space",
+      "pbg_twist_point",
+      "pbg_point",
+      "pbg_space_groupoid",
+      "pullback_group",
+      "pullback_group_classifying",
+      "pullback_group_proj_left",
+      "pullback_group_proj_right",
+      "pullback_group_square_coherence",
+      "pullback_group_square",
+      "pullback_group_litmus_shape",
+      "PullbackUSym",
+      "pullback_group_usym_equiv",
+      "pbg_usym_reflects",
+      "pullback_group_proj_left_reflects",
+      "pullback_group_proj_right_reflects",
+      "pullback_group_proj_left_mono",
+      "pullback_group_proj_right_mono",
+      "pbg_compose_mono",
+      "group_mono_intersection",
+      "PointedPullback",
+      "pointed_pullback_groups"
+    ],
+    "principal": [
+      "pullback_group",
+      "group_mono_intersection",
+      "pullback_group_proj_left_mono"
+    ],
+    "note": "The group pullback_group G H H' f f' is the automorphism_group of pbg_space = BH ×_{BG} BH' at pbg_point. Here pbg_space is a TypePullback with third component Bf(x) = Bf'(y). Also pbg_point = (sh_H, sh_H', p_f⁻¹ p_{f'}). This is the book's p_{f'}p_f⁻¹ in concatenation order: concat (inverse p_f) p_{f'}. That is, the group is the pointed component. The formalization adds the projections prj_H and prj_H', pointed by refl. It also adds the commuting square f ∘ prj_H = f' ∘ prj_H' (pullback_group_square). For monomorphisms (IsGroupMono / GroupMonos of chapter 5), the intersection is group_mono_intersection. This is the pullback with f ∘ prj_H. If f' is a mono, prj_H is a mono, and symmetrically. Composites of monos are monos."
   },
   {
     "chapter": 8,
@@ -19239,8 +19745,65 @@
     "line": 471,
     "section_raw": "The pullback}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pbg_inverse_abstract_hom",
+      "pbg_hom_ext_usym",
+      "pbg_group_iso_from_usym_inverse",
+      "pbg_group_iso_from_usym_equiv",
+      "pbg_circle_hom_ext",
+      "circle_multiplication_hom",
+      "pbg_winding_injective",
+      "CircleHomLoop",
+      "circle_hom_winding",
+      "circle_multiplication_loop",
+      "circle_multiplication_winding",
+      "circle_hom_reflects",
+      "circle_hom_mono",
+      "circle_multiplication_mono",
+      "circle_multiplication_mono_object",
+      "circle_multiplication_zero_not_mono",
+      "pbg_pos_injective",
+      "pbg_exact_quotient_prop",
+      "pbg_exact_quotient",
+      "pbg_lcm_quotient_left",
+      "pbg_lcm_quotient_right",
+      "CircleHomIntersection",
+      "circle_hom_intersection_mono",
+      "pbg_hom_power_winding",
+      "circle_hom_intersection_generator_data",
+      "circle_hom_intersection_generator",
+      "circle_hom_intersection_map",
+      "pbg_hom_generator_left",
+      "circle_hom_intersection_proj_left",
+      "pbg_hom_generator_right",
+      "circle_hom_intersection_proj_right",
+      "circle_hom_intersection_triangle",
+      "pbg_quotient_positive",
+      "pbg_lcm_quotient_left_positive",
+      "pbg_hom_proj_phi_winding",
+      "circle_hom_intersection_map_reflects",
+      "circle_hom_intersection_map_surjective",
+      "circle_hom_intersection_usym_equiv",
+      "circle_hom_intersection_map_iso",
+      "circle_hom_intersection_lcm",
+      "IntegerIntersection",
+      "integer_intersection_mono",
+      "integer_intersection_lcm",
+      "IntegerIntersection",
+      "integer_intersection_subgroups",
+      "mono_iso_of_same_symmetries",
+      "multiples_subgroup",
+      "multiples_subgroup_mono",
+      "isub_picked_multiple",
+      "isub_multiple_picked"
+    ],
+    "principal": [
+      "integer_intersection_subgroups",
+      "integer_intersection_lcm",
+      "integer_intersection_mono"
+    ],
+    "note": "The statement holds for ALL a, b : ℕ. The earlier version excluded 0. For such a, b, integer_intersection_subgroups C a b (module 890) gives a group isomorphism φ from aℤ ∩ bℤ to lcm(a,b)ℤ. Here aℤ ∩ bℤ is group_mono_intersection (def:intersectionofgroups). Also incl ∘ φ is equal to the inclusion of the intersection. For a > 0, aℤ is the chapter-5 subgroup (R_a, 0). For a = 0, aℤ is the trivial subgroup (R, 0) (ex:Rm0-subgroup). The proof has these steps. A symmetry is picked out by aℤ iff a divides its winding number. Intersections pick out the common symmetries (module 973). The proof also uses nat_lcm_intersection (module 148). Two monos that pick out the same symmetries are isomorphic over ℤ (mono_iso_of_same_symmetries). The variant with multiplication homomorphisms ℤ → ℤ (integer_intersection_lcm, module 824) needs a, b > 0. The reason is that multiplication by 0 is not a monomorphism (circle_multiplication_zero_not_mono)."
   },
   {
     "chapter": 8,
@@ -19250,8 +19813,63 @@
     "line": 479,
     "section_raw": "The pullback}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PullbackUSym",
+      "pullback_usym_set",
+      "pullback_usym_path",
+      "pbg_loop_condition",
+      "pbg_loop_usym_condition",
+      "pbg_loop_condition_equiv",
+      "pbg_loops_sigma_equiv",
+      "pullback_group_usym_chain",
+      "pullback_group_usym_square",
+      "pullback_group_usym_map",
+      "pullback_group_usym_chain_map",
+      "pullback_group_usym_equiv",
+      "pullback_group_usym_equiv_book",
+      "pullback_usym_unit",
+      "pullback_usym_mul",
+      "pullback_usym_inv",
+      "pullback_usym_laws",
+      "pullback_abstract_group",
+      "pullback_group_usym_map_hom",
+      "pullback_group_abstract_iso",
+      "pbg_usym_reflects",
+      "PointedPullback",
+      "pointed_pullback_groups",
+      "PbgConeData",
+      "pbg_cone_gap",
+      "pbg_cone_split",
+      "PbgConeLeft",
+      "PbgConeRight",
+      "pbg_twist_left_path",
+      "pbg_cone_conditions_base",
+      "pbg_cone_conditions",
+      "PbgPointedCone",
+      "pbg_pointed_cone_split_equiv",
+      "PbgConeQ",
+      "PbgConeL",
+      "PbgConeR",
+      "pbg_pointed_cone_left_equiv",
+      "pbg_pointed_cone_lr_equiv",
+      "PbgPointedPullbackOfMaps",
+      "PbgPointedHomotopyPairs",
+      "pbg_pointed_reassoc_equiv",
+      "pointed_pullback_universal_property",
+      "HomPullback",
+      "pbg_hom_pullback_classifying_equiv",
+      "pullback_group_hom_equiv",
+      "pullback_group_hom_equiv_book",
+      "pullback_group_hom_equiv_left",
+      "pullback_group_hom_equiv_right"
+    ],
+    "principal": [
+      "pullback_group_hom_equiv",
+      "pullback_group_usym_equiv",
+      "pullback_group_abstract_iso"
+    ],
+    "note": "(1) The lemma pointed_pullback_universal_property is about pointed maps f : B →* D and g : C →* D, with D a groupoid. It gives (X →* (B ×_D C, (pt, pt, f_pt⁻¹ g_pt))) ≃ (X →* B) ×_{(X →* D)} (X →* C). With xca:ptd-conn-to-comp (module 436), it gives pullback_group_hom_equiv for all K. This is Hom(K, H ×_G H') ≃ Hom(K,H) ×_{Hom(K,G)} Hom(K,H'). The book's direction has the suffix _book. The components are prj ∘ k (pullback_group_hom_equiv_left/right). (2) pullback_group_usym_equiv is USym(H ×_G H') ≃ USym H ×_{USym G} USym H', with map ω ↦ (USym prj_H ω, USym prj_H' ω, !). The proof is direct (squares ↔ conjugation equations). It does not use the hint A ≔ S¹. (3) Elevation: the set pullback with componentwise operations is an abstract group (pullback_abstract_group). The equivalence is an abstract isomorphism abstr(H ×_G H') ≅ that group (pullback_group_abstract_iso, AbstractIso of module 701)."
   },
   {
     "chapter": 8,
@@ -19261,8 +19879,21 @@
     "line": 497,
     "section_raw": "The pullback}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pbg_two_components_not_connected",
+      "circle_power_pullback_six_nine",
+      "circle_power_pullback_one_one",
+      "circle_power_pullback_two_two",
+      "circle_power_pullback_not_connected",
+      "CirclePointPullback",
+      "circle_point_pullback_not_connected"
+    ],
+    "principal": [
+      "circle_power_pullback_not_connected",
+      "circle_point_pullback_not_connected"
+    ],
+    "note": "\"A construction of types not preserving connectivity\": the formalization gives two instances of a pullback of connected types that is not connected. First, the pullback of z ↦ z² along itself has two components. This comes from ex:pullbackandgcd (circle_power_pullback_not_connected via pbg_two_components_not_connected). Second, 1 ×_{S¹} 1 (base along base, ≃ ΩS¹) is not connected, because the windings of refl and loop are different. The fact that the pointed component gives the pullback group is def:intersectionofgroups. The forward reference to subgroups (\"the other components have group theoretic importance\") contains no claim that is formalized here."
   },
   {
     "chapter": 8,
@@ -19274,8 +19905,50 @@
     "labels": [
       "def:wedge"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WedgeSignature",
+      "WedgeBoundary",
+      "wedge_evaluate",
+      "wedge_point",
+      "wedge_pointed",
+      "wedge_incl1_pointed",
+      "wedge_incl2_pointed",
+      "wedge_loop1",
+      "wedge_loop2",
+      "wedge_loop1_loops_map",
+      "wedge_loop2_loops_map",
+      "wedge_boundary",
+      "wedge_eval",
+      "wedge_ind",
+      "wedge_ind_beta",
+      "wedge_ind_incl1",
+      "wedge_ind_incl2",
+      "wedge_sections_equal",
+      "wedge_ind_eta",
+      "wedge_dependent_universal_property",
+      "wedge_ind_prop",
+      "pathover_backward_equiv",
+      "WedgeBookBoundary",
+      "wedge_book_boundary_equiv",
+      "WedgeCocone",
+      "wedge_cocone",
+      "wedge_rec",
+      "wedge_rec_beta",
+      "wedge_rec_incl1",
+      "wedge_rec_incl2",
+      "wedge_universal_property",
+      "wedge_from_pushout",
+      "wedge_unit_pointed",
+      "wedge_points_contractible",
+      "constructed_circle_wedge"
+    ],
+    "principal": [
+      "WedgeSignature",
+      "wedge_pointed",
+      "wedge_loop2"
+    ],
+    "note": "The HIT A1 ∨ A2 is the signature parameter WedgeSignature A1 A2 (module 841). The signature has a carrier, i1, i2, a glue g and a dependent eliminator. It is pointed at a12 ≔ i1 a1. The computation rules of the book are one proved identification (wedge_ind_beta). The boundary condition s(a1) = C(g⁻¹)s(a2) of the book is equivalent to the dependent path over g that the signature uses (wedge_book_boundary_equiv). The map i2^g(p) ≔ g⁻¹ i2(p) g is wedge_loop2 = concat g (concat (i2 p) g⁻¹), with g first. This is Ω(i2, g) (wedge_loop2_loops_map). Also i1^g = ap i1. Litmus: for every signature, the wedge of two points is contractible (wedge_points_contractible). An actual instance S¹ ∨ S¹ without HITs is constructed_circle_wedge (module 879). A pushout of A1 ← 1 → A2 is a wedge (wedge_from_pushout)."
   },
   {
     "chapter": 8,
@@ -19287,8 +19960,28 @@
     "labels": [
       "lem:univvee"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "wedge_restrict",
+      "wedge_pointed_universal_property",
+      "wedge_restrict_book_equiv",
+      "WedgePointedPairs",
+      "wedge_pairs_to_cocone",
+      "wedge_cocone_to_pairs",
+      "wedge_pointed_pairs_equiv",
+      "wedge_restrict_total",
+      "wedge_restrict_total_equiv",
+      "wedge_pointed_cocone",
+      "wedge_pointed_extend",
+      "wedge_restrict_extend",
+      "wedge_extend_restrict"
+    ],
+    "principal": [
+      "wedge_restrict",
+      "wedge_pointed_universal_property",
+      "wedge_restrict_book_equiv"
+    ],
+    "note": "For every pointed B, the map i^*(f) = (f ∘ (i1, refl), f ∘ (i2, g)) is an equivalence. It uses book_pointed_compose with the pointed structure maps of module 841. Module 842 gives Equiv and BookIsEquiv versions. The proof identifies both sides with cocones (f1, f2, f1(a1) = f2(a2)), over a variable base point of B. The inverse is wedge_pointed_extend, a recursion on (f1, f2, f1_pt⁻¹ · f2_pt). This is the remark of the book: the pointedness gives the missing identity f1(a1) = f2(a2)."
   },
   {
     "chapter": 8,
@@ -19300,8 +19993,27 @@
     "labels": [
       "def:sumofgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "wedge_automorphism_group",
+      "sum_of_groups_pcg",
+      "sum_of_groups",
+      "sum_of_groups_classifying",
+      "sum_of_groups_aut_path",
+      "sum_of_groups_incl1",
+      "sum_of_groups_incl2",
+      "sum_of_groups_incl1_usym",
+      "sum_of_groups_incl2_usym",
+      "decidable_sum_groupoid",
+      "decidable_sum_of_groups",
+      "decidable_sum_words_letters"
+    ],
+    "principal": [
+      "sum_of_groups",
+      "decidable_sum_of_groups",
+      "sum_of_groups_incl1"
+    ],
+    "note": "The definition G1 ∨ G2 ≔ Aut_{BG1∨BG2}(a12) needs the wedge to be a groupoid. The book proves this only for decidable groups (lem:wedgeofgpoidisgpoid). For other groups, it cites the result. So sum_of_groups G1 G2 W hW (module 843) takes the groupoid property hW of the wedge signature W as an explicit hypothesis. It is the mkgroup of the wedge, so B(G1 ∨ G2) ≡ (BG1 ∨ BG2, a12). The lemma sum_of_groups_aut_path identifies it with the literal automorphism group. The declaration decidable_sum_of_groups (module 848) discharges hW for decidable groups. The structure maps i1 and i2 are the homomorphisms classified by (i1, refl) and (i2, g). On symmetries, they are i1^g and i2^g (sum_of_groups_incl1_usym/incl2_usym)."
   },
   {
     "chapter": 8,
@@ -19313,8 +20025,22 @@
     "labels": [
       "lem:sumofgroupsISsum"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sum_of_groups_restrict",
+      "sum_of_groups_hom_equiv",
+      "sum_of_groups_hom_book_equiv",
+      "sum_of_groups_hom_extend",
+      "sum_of_groups_restrict_extend",
+      "sum_of_groups_extend_restrict",
+      "sum_of_groups_extend_loop1",
+      "sum_of_groups_extend_loop2"
+    ],
+    "principal": [
+      "sum_of_groups_hom_equiv",
+      "sum_of_groups_hom_book_equiv"
+    ],
+    "note": "Restriction along the structure maps, Hom(G1 ∨ G2, G) → Hom(G1, G) × Hom(G2, G), is an equivalence (module 843). As in the book, the proof derives it from lem:univvee with B ≔ BG via group_hom_classifying_equiv. Here G1 ∨ G2 is sum_of_groups with the groupoid hypothesis hW (see def:sumofgroup). The inverse sum_of_groups_hom_extend sends i1^g(g) to f1(g) and i2^g(g) to f2(g)."
   },
   {
     "chapter": 8,
@@ -19326,8 +20052,38 @@
     "labels": [
       "cor:ZplusZuniv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_sum_group",
+      "circle_sum_hom_ev",
+      "circle_sum_hom_equiv",
+      "circle_sum_hom_book_equiv",
+      "circle_sum_hom_equiv_map",
+      "circle_sum_hom_from_symmetries",
+      "circle_sum_hom_from_symmetries_gen1",
+      "circle_sum_hom_from_symmetries_gen2",
+      "circle_wedge_generator1",
+      "circle_wedge_generator2",
+      "circle_wedge_pointed_maps_equiv",
+      "circle_wedge_pointed_maps_equiv_map",
+      "wedge_extend_loop1",
+      "wedge_extend_loop2",
+      "circle_decidable_sum_group",
+      "circle_decidable_sum_hom_equiv",
+      "circle_decidable_sum_hom_book_equiv",
+      "circle_wedge_sigma3_map",
+      "circle_wedge_sigma3_gen1",
+      "circle_wedge_sigma3_gen2",
+      "circle_wedge_generators_noncommuting",
+      "circle_sum_sigma3_hom",
+      "circle_sum_generators_noncommuting",
+      "circle_sum_not_abelian"
+    ],
+    "principal": [
+      "circle_sum_hom_book_equiv",
+      "circle_decidable_sum_hom_equiv"
+    ],
+    "note": "Here Z = circle_group C for an arbitrary circle signature C. Also Z ∨ Z = sum_of_groups on an arbitrary wedge signature W of two circles. The map Hom(Z ∨ Z, G) → Hom(Z, G) × Hom(Z, G) ≃ USym G × USym G is an equivalence. Module 844 proves this with the groupoid hypothesis hW. The map is the evaluation at the generators i1^g(loop) and i2^g(loop). Module 851 removes hW: by lem:wedgeofgpoidisgpoid, the wedge of two circles is a groupoid (circle_decidable_sum_hom_equiv). Litmus: the generators do not commute. The homomorphism to Σ_3 that sends them to two transpositions shows this (circle_sum_not_abelian). The word description shows it independently (circle_decidable_sum_not_abelian, module 848)."
   },
   {
     "chapter": 8,
@@ -19339,8 +20095,46 @@
     "labels": [
       "xca:whatAREabeliangroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "wedge_one_point_union",
+      "wedge_fold_book",
+      "wedge_incl_book",
+      "wedge_fold_book_sum",
+      "wedge_incl_book_sum",
+      "wsum_extend_glue",
+      "wsum_extend_glue_compare",
+      "wedge_fold_book_eq",
+      "wedge_incl_book_eq",
+      "WsumPointedExtension",
+      "WedgeFoldExtension",
+      "wedge_fold_extension_factorization_equiv",
+      "wedge_fold_extension_abelian_equiv",
+      "wedge_fold_extension_prop",
+      "abelian_wedge_fold_extension",
+      "UnpointedWedgeFoldExtension",
+      "wsum_solve_pointing",
+      "unpointed_extension_map",
+      "unpointed_extension_homotopy",
+      "unpointed_extension_pointed",
+      "pointed_extension_unpointed",
+      "unpointed_extension_abelian",
+      "unpointed_extension_roundtrip",
+      "unpointed_wedge_fold_extension_prop",
+      "unpointed_wedge_fold_extension_abelian_equiv",
+      "sigma2_wedge_fold_extension",
+      "sigma3_no_unpointed_wedge_fold_extension",
+      "wedge_factorization_abelian_equiv",
+      "wedge_factorization_prop",
+      "abelian_factorization",
+      "factorization_abelian"
+    ],
+    "principal": [
+      "wedge_fold_extension_abelian_equiv",
+      "wedge_fold_extension_prop",
+      "unpointed_wedge_fold_extension_abelian_equiv"
+    ],
+    "note": "Let W be a wedge signature of BG with itself. Let fold be the pointed map that corresponds to (id, id) under lem:univvee. When the wedge is a groupoid, fold is the classifying map of the extension of (id_G, id_G) in lem:sumofgroupsISsum (wedge_fold_book_sum). Let i be the pointed map that corresponds to B incl_1, B incl_2 : BG →* B(G × G). Then the type of pointed h : BG × BG →* BG with h ∘ i = fold is equivalent to isAb(G) (module 850). The proof is transferred from chapter 4 (rem:whatAREabeliangroups, module 422). Module 422 uses its own OnePointUnionSignature with the same fields, and defines fold/inclusion by recursion on (id, id, refl). The lemmas wedge_fold_book_eq and wedge_incl_book_eq identify the maps. The direction abelian ⇒ extension uses the multiplication of module 422, not chapter 12. Margin questions: for every G, the extension type is a proposition (wedge_fold_extension_prop). The question whether i is an epimorphism in general is not formalized. The 'cute aside' holds: an unpointed extension already forces G to be abelian (unpointed_extension_abelian). Also, the type of unpointed extensions is again a proposition equivalent to isAb(G). So no truncation is necessary."
   },
   {
     "chapter": 8,
@@ -19352,8 +20146,98 @@
     "labels": [
       "lem:wedgeofgpoidisgpoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsDecidableGroup",
+      "WsumAlt",
+      "wsum_alt_length",
+      "wsum_alt_decidable_equality",
+      "WsumNontrivial",
+      "wsum_nontrivial_decidable_equality",
+      "WsumTail",
+      "WsumString",
+      "wsum_string_decidable_equality",
+      "wsum_head",
+      "wsum_shift",
+      "wsum_shift_trivial_head",
+      "wsum_shift_nontrivial_head",
+      "wsum_shift_head",
+      "wsum_shift_inverse",
+      "wsum_shift_equiv",
+      "wsum_alt_loop",
+      "wsum_alt_act",
+      "wsum_alt_transport",
+      "WedgeWords",
+      "wedge_word_tail1",
+      "wedge_word_tail2",
+      "WedgeLetter1",
+      "wedge_code1",
+      "wedge_code2",
+      "wedge_code12",
+      "wedge_code_cocone",
+      "wedge_letter1",
+      "wedge_letter2",
+      "wedge_tail1_loop",
+      "wedge_tail2_loop",
+      "wedge_word_path1",
+      "wedge_word_path2",
+      "wedge_words_compose",
+      "wedge_cocone_act1",
+      "wedge_cocone_act2",
+      "wedge_cocone_tail1_act",
+      "wedge_cocone_eval",
+      "WedgeWordPackage",
+      "wedge_code_tail1_act",
+      "wedge_word_glue_std",
+      "wedge_word_package_std",
+      "wedge_word_code",
+      "wedge_word_package",
+      "wedge_word_encode",
+      "wedge_word_decode",
+      "wedge_word_decode_encode",
+      "wedge_tail1_transport",
+      "wedge_words_decompose",
+      "wedge_words_roundtrip",
+      "wedge_words_compose_decompose",
+      "wedge_words_equiv",
+      "wedge_words_book_equiv",
+      "wedge_loops_decidable_equality",
+      "wedge_loops_set",
+      "wsum_groupoid_from_based_loops",
+      "wedge_decidable_groupoid",
+      "wedge_merely_based",
+      "wedge_connected",
+      "wedge_code1_set",
+      "wedge_code2_set",
+      "decidable_sum_groupoid",
+      "decidable_sum_of_groups",
+      "decidable_sum_of_groups_decidable",
+      "decidable_sum_words_equiv",
+      "decidable_sum_words_book_equiv",
+      "wedge_loops_noncommuting",
+      "circle_group_decidable",
+      "circle_decidable_sum_group",
+      "circle_decidable_sum_group_decidable",
+      "circle_decidable_sum_not_abelian",
+      "circle_sum_word_example",
+      "circle_sum_word_example_compose",
+      "circle_sum_word_example_decompose",
+      "constructed_circle_sum_group",
+      "constructed_circle_sum_group_decidable",
+      "constructed_circle_sum_not_abelian",
+      "constructed_circle_sum_word_example",
+      "constructed_circle_sum_words_equiv",
+      "wedge_word_paths_code_equiv",
+      "wedge_word_encode_decode",
+      "wedge_word_code_set",
+      "wedge_words_distinct"
+    ],
+    "principal": [
+      "decidable_sum_of_groups_decidable",
+      "decidable_sum_words_book_equiv",
+      "wedge_decidable_groupoid"
+    ],
+    "note": "The book does not define 'Decidable group'. The formalization defines IsDecidableGroup G ≔ DecidableEquality (USym G). Let G1, G2 be decidable and let W be any wedge signature. Then the wedge is a groupoid (wedge_decidable_groupoid). The proof uses connectivity and the loop set. Also, G1 ∨ G2 (decidable_sum_of_groups) is a decidable group. The displayed β : C1(a1) → USym(G1 ∨ G2) is an equivalence (decidable_sum_words_book_equiv). Here β(p0, n, p1, …) = i1^g p0 · i2^g p1 · … (wedge_words_compose). The tails (n, p1, …, pn) form the inductive alternating type WsumAlt. This equivalence holds for any pointed types with decidable loop types, without a groupoid hypothesis. The proof follows the book. First, C12 is an equivalence (wsum_shift). The formula and the printed table are checked. The family C ≔ wedge_rec(C1, C2, ua C12) has only propositional computation rules. So the encode-decode data are transported along wedge_rec_beta (WedgeWordPackage). Path induction gives βα = id. The fiberwise equivalence C(x) ≃ (a12 = x) holds for every x (wedge_word_paths_code_equiv, module 893). Printed slips: the book has '(\\refl{a_2}0,)' for (refl_{a2}, 0). The induction-step display has off-by-one lengths: n−k−1 for n−k, and n−k for n−k+1. It also suppresses the conjugation by g in i_k^g. Litmus at the constructed S¹ ∨ S¹ (module 849): Z ∨ Z is decidable and non-abelian. Also β(loop, 2, loop, loop) = i1^g loop · i2^g loop · i1^g loop."
   },
   {
     "chapter": 8,
@@ -19365,8 +20249,31 @@
     "labels": [
       "def:bfree"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FreeGroupSignature",
+      "free_pointed",
+      "free_ind",
+      "free_ind_base",
+      "free_ind_beta",
+      "free_rec",
+      "free_rec_beta",
+      "free_connected",
+      "free_infty_group",
+      "free_signature_groupoid",
+      "free_group_pcg",
+      "free_group",
+      "free_group_decidable_set",
+      "free_group_classifying",
+      "free_group_generator",
+      "free_group_infty_group"
+    ],
+    "principal": [
+      "FreeGroupSignature",
+      "free_group",
+      "free_infty_group"
+    ],
+    "note": "The HIT B F_S is the signature parameter FreeGroupSignature S of module 860. So the judgmental rule f(base) = a of the book is the proved identification free_ind_base. The last sentence, F_S = mkgroup(B F_S, base), is free_group S dec F (module 865). This needs the groupoid proof free_signature_groupoid. Thus it is stated for S with decidable equality, as the book does from congp.tex:768 on. For an arbitrary type S, free_infty_group S F is the infinity-group mk_infty_group(B F_S, base) (module 866). For decidable S, free_group_infty_group identifies the two."
   },
   {
     "chapter": 8,
@@ -19376,8 +20283,26 @@
     "line": 782,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SignedLetter",
+      "letter_complement",
+      "letter_complement_left",
+      "letter_complement_right",
+      "letter_complement_involutive",
+      "letter_complement_equiv",
+      "letter_complement_distinct",
+      "signed_letter_decidable_equality",
+      "signed_letter_decidable_set",
+      "signed_letter_set",
+      "fw_litmus_complement"
+    ],
+    "principal": [
+      "SignedLetter",
+      "letter_complement",
+      "letter_complement_equiv"
+    ],
+    "note": "S~ = Sum S S (inl a = a, inr a = A) is a decidable set when S has decidable equality (signed_letter_decidable_set via hedberg). Complementation swaps the summands. It is an involution (letter_complement_involutive) and thus an equivalence. The convention a-bar = A, A-bar = a of the next paragraph holds judgmentally (letter_complement_left/right). Also, no letter is its own complement."
   },
   {
     "chapter": 8,
@@ -19387,8 +20312,34 @@
     "line": 811,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SignedWord",
+      "IsReducedWord",
+      "WordHeadNotComplement",
+      "is_reduced_word_prop",
+      "ContainsComplementaryPair",
+      "is_reduced_word_iff_no_pair",
+      "ReducedWord",
+      "word_reduction",
+      "word_letter_reduce",
+      "WordDeletionStep",
+      "WordDeletions",
+      "WordReducesTo",
+      "word_reduction_characterization",
+      "word_reduces_to_reduction",
+      "word_reduction_unique",
+      "word_deletions_reduction",
+      "word_reduction_delete_pair",
+      "is_reduced_word_decidable",
+      "fw_litmus_reduction"
+    ],
+    "principal": [
+      "IsReducedWord",
+      "word_reduction",
+      "word_reduction_characterization"
+    ],
+    "note": "IsReducedWord has a recursive definition: x w is reduced iff w is reduced and does not start with x-bar. The formalization shows that it is equivalent to the literal reading 'no factorization u x x-bar t' (is_reduced_word_iff_no_pair). The nested induction of the next xca defines rho_S. The procedural description 'repeatedly delete consecutive complementary pairs until none remain' is the proved characterization. It says three things. First, rho(w) is reached from w by finitely many single deletions. Second, it is reduced. Third, every reduced word reached from w by deletions equals rho(w) (word_reduction_characterization). So the result does not depend on the order of deletions. Decidable equality of S is a hypothesis of rho, as in the hint of the xca. It is not a hypothesis of reducedness."
   },
   {
     "chapter": 8,
@@ -19398,8 +20349,37 @@
     "line": 819,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "word_reduction",
+      "word_letter_reduce",
+      "fw_cancel_or_cons",
+      "word_reduction_nil",
+      "word_reduction_cons",
+      "word_reduction_reduced",
+      "word_reduction_of_reduced",
+      "word_reduction_idempotent",
+      "word_reduced_of_fixed",
+      "word_letter_reduce_cancel",
+      "word_letter_reduce_cancel_inverse",
+      "word_reduction_cancel_pair",
+      "word_reduction_cancel_pair_inverse",
+      "word_reduction_append",
+      "word_reduction_append_left",
+      "word_reduction_append_right",
+      "fw_litmus_reduction",
+      "fw_litmus_reduction_aA",
+      "fw_litmus_reduction_Bb",
+      "ReductionFunction",
+      "decidable_equality_reduction_function",
+      "reduction_function_decidable_equality"
+    ],
+    "principal": [
+      "word_reduction",
+      "word_letter_reduce",
+      "word_reduction_characterization"
+    ],
+    "note": "Nested induction: rho(eps) = eps and rho(x w) = s_x(rho w). The inner case is on the head y of rho(w). It deletes y if y = x-bar, and otherwise it conses x. The case is decided with dec : DecidableEquality S, exactly the point that the hint names. The formalization proves these facts: rho lands in reduced words, fixes reduced words and is idempotent. Also rho(x x-bar w) = rho(w) and rho(u v) = rho(rho u rho v). It also proves the characterization recorded at congp.tex:811. Litmus by refl over S = Bool: rho(a b B A a) = a and rho(aA) = rho(Bb) = eps. The hint is also formalized: a reduction function exists iff S has decidable equality (reduction_function_decidable_equality)."
   },
   {
     "chapter": 8,
@@ -19409,8 +20389,35 @@
     "line": 824,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ReducedWordImage",
+      "reduced_image_factor",
+      "reduced_image_empty",
+      "reduced_image_reduced",
+      "reduced_image_word_fixed",
+      "reduced_word_image_equiv",
+      "reduced_word_to_image",
+      "reduced_image_to_word",
+      "reduced_image_set",
+      "reduced_image_decidable_equality",
+      "DyckWord",
+      "dyck_word_close_open",
+      "dyck_word_long_example",
+      "OneSidedDyckTree",
+      "one_sided_dyck_word",
+      "OneSidedDyckWord",
+      "one_sided_dyck_reduction",
+      "one_sided_dyck_to_dyck",
+      "one_sided_dyck_in_dyck",
+      "close_open_not_one_sided"
+    ],
+    "principal": [
+      "ReducedWordImage",
+      "reduced_word_image_equiv",
+      "DyckWord"
+    ],
+    "note": "R_S is literally the image of rho_S (Image of module 39, with the book fiber orientation). The phrase 'whose elements are the reduced words' is the equivalence with the subtype of reduced words. This equivalence keeps the underlying word (reduced_word_image_equiv). D_S is the BookFiber of rho_S over eps. Footnote: let S = 1, '(' = inl star and ')' = inr star. Then the words ')(' and '))(()(' are Dyck words (by refl). The formalization models the 1-sided Dyck language as the words of the grammar D ::= eps | ( D ) D. Every such word lies in D_1, and ')(' is not one of them."
   },
   {
     "chapter": 8,
@@ -19420,8 +20427,21 @@
     "line": 842,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "word_reduction_relation",
+      "WordReductionQuotient",
+      "word_quotient_class",
+      "word_quotient_to_image",
+      "word_image_to_quotient",
+      "word_quotient_image_equiv",
+      "word_quotient_image_class"
+    ],
+    "principal": [
+      "word_reduction_relation",
+      "word_quotient_image_equiv"
+    ],
+    "note": "The relation u ~ v is the proposition rho(u) = rho(v), an EquivalenceRelation of module 41. S~*/~ is the set quotient Quotient of module 41. The map induced by rho is an equivalence S~*/~ = R_S. It sends the class of w to rho(w) by refl (word_quotient_image_class)."
   },
   {
     "chapter": 8,
@@ -19431,8 +20451,25 @@
     "line": 857,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "free_signed_loop",
+      "free_word_interpretation",
+      "free_word_interpretation_nil",
+      "free_word_interpretation_generator",
+      "free_word_interpretation_inverse_generator",
+      "free_group_word",
+      "free_group_word_generator",
+      "free_group_word_inverse_generator",
+      "free_word_interpretation_cancel",
+      "free_word_interpretation_append",
+      "free_word_interpretation_reduction"
+    ],
+    "principal": [
+      "free_word_interpretation",
+      "free_group_word"
+    ],
+    "note": "The map is defined for every type S and FreeGroupSignature S F by induction on words. The clauses are [eps] = refl base, [a w] = loop_a . [w] and [A w] = loop_a^-1 . [w]. They use the composition order of the book. That is, loop_a . [w] is concat [w] loop_a (first [w], then loop_a). The clauses hold by refl. The codomain is base = base, which is judgmentally USym F_S after F_S is formed. The lemma free_group_word restates the clauses with usym_mul and usym_inv of module 400 (refl). Further results: [x x-bar w] = [w], [u v] = [u] . [v] and [rho w] = [w]."
   },
   {
     "chapter": 8,
@@ -19444,8 +20481,47 @@
     "labels": [
       "thm:free-group-elements"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "free_group_elements_equiv",
+      "free_group_elements_book_equiv",
+      "free_group_elements_decidable_set",
+      "free_reduced_interpretation",
+      "free_group_elements_inverse",
+      "free_group_elements_retraction",
+      "free_group_elements_section",
+      "free_group_reduced_words_equiv",
+      "free_group_reduced_words_equiv_map",
+      "free_word_bouquet",
+      "free_word_family",
+      "FreeWordMonodromy",
+      "standard_free_word_monodromy",
+      "free_word_monodromy",
+      "free_word_enumeration",
+      "free_word_step",
+      "free_word_root",
+      "free_word_encode",
+      "free_word_decode",
+      "free_word_decode_base",
+      "free_word_decode_loop",
+      "free_word_decode_triangle",
+      "free_word_step_index",
+      "free_word_decode_beta",
+      "free_word_decode_encode",
+      "free_word_encode_interpretation",
+      "free_word_family_set",
+      "free_word_encode_decode",
+      "free_word_path_code_equiv",
+      "image_letter_action",
+      "image_letter_action_equiv",
+      "free_group_usym_equiv"
+    ],
+    "principal": [
+      "free_group_elements_equiv",
+      "free_word_path_code_equiv",
+      "free_group_usym_equiv"
+    ],
+    "note": "Take a FreeGroupSignature S F with dec : DecidableEquality S, the decidable-set hypothesis. The variant free_group_elements_decidable_set takes DecidableSet S. Then r |-> [r], restricted to the image R_S, is an equivalence R_S = (base = base). This also holds as a BookEquiv and on the subtype of reduced words. The proof is the encode-decode proof of the book. R_S(x) is free_rec into Type with R_S(base) = R_S and R_S(loop_a) = ua(s_a). Here s_a(w) = rho(a w), with inverse rho(A w). The computation rule is only an identification. Thus a transported enumeration identifies R_S(base) with R_S (FreeWordMonodromy). Also tau_x(p) transports the enumerated eps. R_S(x) is a type family whose fibers are proved to be sets (free_word_family_set). It is not a map into Set. Path induction gives [-]_x o tau_x = id. Induction gives tau([w]) = rho(w) for all words w. The fiberwise equivalences (base = x) = R_S(x) follow by free_ind_prop."
   },
   {
     "chapter": 8,
@@ -19455,8 +20531,28 @@
     "line": 929,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "xca_reduced_words_one_integers",
+      "reduced_words_one_integers_equiv",
+      "reduced_words_one_degree",
+      "reduced_words_one_zero",
+      "reduced_words_one_successor",
+      "unit_word_degree",
+      "integer_unit_word",
+      "integer_to_reduced_image",
+      "integer_unit_word_degree",
+      "integer_unit_word_degree_reduction",
+      "unit_word_degree_reduction",
+      "word_quotient_one_integers_equiv",
+      "fw_litmus_degree_two",
+      "fw_litmus_integer_minus_two"
+    ],
+    "principal": [
+      "xca_reduced_words_one_integers",
+      "word_quotient_one_integers_equiv"
+    ],
+    "note": "The degree gives a BookEquiv R_1 = Int (Int of module 03). In the degree, a counts +1 and A counts -1. The inverse sends n |-> a^n and -(n+1) |-> A^(n+1). The equivalence sends eps to 0 judgmentally, and e(s_*(r)) = succ(e(r)) for all r. The composite with the remark at congp.tex:842 gives S~_1*/~ = Int (word_quotient_one_integers_equiv). These are the two new options for ft:many-integers."
   },
   {
     "chapter": 8,
@@ -19466,8 +20562,50 @@
     "line": 937,
     "section_raw": "Free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "free_sum_wedge_signature",
+      "free_sum_wedge_property",
+      "wedge_bouquet_equiv",
+      "wedge_bouquet_map",
+      "free_sum_bouquet_equiv",
+      "free_sum_comparison",
+      "free_sum_incl1",
+      "free_sum_incl2",
+      "free_sum_glue",
+      "wedge_signature_from_recursion",
+      "wedge_induction_from_recursion",
+      "NondependentWedgeProperty",
+      "circle_free_signature",
+      "free_group_unit_circle",
+      "free_signatures_pointed_equiv",
+      "free_signatures_pointed_path",
+      "wedge_signatures_pointed_equiv",
+      "wedge_signatures_pointed_path",
+      "wedge_pointed_path_along",
+      "free_succ_wedge",
+      "free_succ_wedge_own_path",
+      "free_succ_wedge_path",
+      "free_succ_sum_group",
+      "free_succ_sum_group_path",
+      "WedgeTower",
+      "wedge_tower",
+      "wedge_tower_top",
+      "free_group_wedge_tower",
+      "wedge_tower_group",
+      "free_group_wedge_tower_group",
+      "unit_free_signature_empty",
+      "constructed_free_group_signature",
+      "constructed_free_group",
+      "constructed_circle_wedge",
+      "free_group_two_circle_wedge"
+    ],
+    "principal": [
+      "free_succ_wedge_path",
+      "free_succ_sum_group_path",
+      "free_group_wedge_tower_group"
+    ],
+    "note": "The statement is F_{n⊔1} ≃ F_n ∨ Z, with n⊔1 = Fin (n+1) = Fin n + 1. The new letter inr star generates Z. For every n and EVERY choice of signatures, the pointed classifying types are identified (free_succ_wedge_path). The signatures are a FreeGroupSignature on Fin (n+1) and on Fin n, and a CircleSignature C. The last signature is a WedgeSignature W of (B F_n, base) and (S¹, base). The proof uses the universal properties. B F_{n⊔1} itself carries a wedge structure (module 879). Maps out of it are bouquets on Fin n + 1 ≃ wedge cocones. Wedges and free groups are unique by recursion in both directions (wedge_signatures_pointed_path, free_signatures_pointed_path). The statement as groups (free_succ_sum_group_path) uses the constructed free groups. In it, the sum F_n ∨ Z = Aut_W(a12) (def:sumofgroup) is a group because W is identified with a groupoid. The identifications F_n = ((Z ∨ Z) ∨ ⋯) ∨ Z are stated for every 'wedge tower'. A wedge tower is any choice of the n-1 intermediate wedge signatures. For n = 0 it gives the point, and for n = 1 it gives S¹ itself. At the pointed level, the statement holds for every free group signature on Fin n (free_group_wedge_tower). As groups, it holds for the constructed F_n (free_group_wedge_tower_group). The book's '≃' and '=' are identifications of pointed types/groups. By univalence, these are equivalent to pointed equivalences/isomorphisms."
   },
   {
     "chapter": 9,

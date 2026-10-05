@@ -19,7 +19,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 5: Actions](chapters/ch05/README.md) | 112 | 110 | 1 | 0 | 1 | 0 | 11 |
 | [Chapter 6: A categorical interlude](chapters/ch06/README.md) | 89 | 89 | 0 | 0 | 0 | 0 | 10 |
 | [Chapter 7: Groups, abstractly](chapters/ch07/README.md) | 51 | 48 | 3 | 0 | 0 | 0 | 4 |
-| **Total** | **645** | **636** | **8** | **0** | **1** | | **45** |
+| [Chapter 8: Constructing groups](chapters/ch08/README.md) | 39 | 36 | 0 | 0 | 3 | 0 | 2 |
+| **Total** | **684** | **672** | **8** | **0** | **4** | | **47** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:

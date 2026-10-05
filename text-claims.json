@@ -9836,5 +9836,1366 @@
       "abstract_group_pointed_heap_equiv"
     ],
     "note": "The exercise xca:heap-variety makes this precise (modules 785, 787). The heap structures on a set S with ternary operation t form a proposition. This proposition is equivalent to Mere S plus the heap equations. The equivalence abstract_group_pointed_heap_equiv shows that abstract groups are pointed heaps."
+  },
+  {
+    "source": "congp.tex",
+    "line": 9,
+    "quote": "In this section we describe a generalization of the product of two groups, recall~\\cref{ex:productofgroups}, called the \\emph{semidirect} product, which gives us a new way of building new groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_product",
+      "semidirect_trivial_product_path",
+      "semidirect_trivial_pair_mul"
+    ],
+    "note": "G ⋉ H generalizes G × K. For the trivial action t ↦ K, G ⋉ H is identified with product_group G K. Its multiplication formula then becomes the componentwise formula."
+  },
+  {
+    "source": "congp.tex",
+    "line": 13,
+    "quote": "Like the product, both its classifying type and its set of symmetries consist of pairs.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_product_classifying",
+      "semidirect_usym_equiv",
+      "path_pair_section_equiv"
+    ],
+    "note": "By refl, B(G ⋉ H) is the Σ-type Σ_{t:BG} BH(t). By lem:pathpairsection, USym(G ⋉ H) ≃ USym G × USym H(sh_G)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 15,
+    "quote": "It takes as input the action of a group on a group.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "semidirect_product"
+    ],
+    "note": "The definition semidirect_product G H takes G : Group and H : BG G .carrier → Group."
+  },
+  {
+    "source": "congp.tex",
+    "line": 17,
+    "quote": "Recall from~\\cref{def:action} that an action of a group $G$ \\emph{in} groups is a function $H : \\BG \\to \\Group$. This acts \\emph{on} the group $H(\\sh_G)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "semidirect_product",
+      "semidirect_inclusion",
+      "semidirect_loop_action"
+    ],
+    "note": "The action is a function BG G .carrier → Group. The acted-on group is H (shape G). It is the domain of j and the target of q' ↦ q'^p."
+  },
+  {
+    "source": "congp.tex",
+    "line": 20,
+    "quote": "If the group being acted on is fixed, say $H : \\Group$, then an action of $G$ on $H$ is given by a homomorphism from $G$ to $\\Aut(H)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "hom_aut_action",
+      "hom_aut_action_point",
+      "hom_aut_action_equiv",
+      "hom_aut_action_equiv_map",
+      "semidirect_product_hom",
+      "group_aut",
+      "component_lift",
+      "component_project",
+      "sdp_trivial_aut_hom",
+      "sdp_trivial_aut_hom_product"
+    ],
+    "note": "A homomorphism φ : Hom(G, Aut(H)), with Aut(H) = group_aut H = Aut_Group(H), gives the action t ↦ Bφ(t) .fst. Here H = H(sh_G) comes from Bφ_pt. The lemma hom_aut_action_equiv shows Hom(G, Aut H) ≃ Σ (A : BG → Group) (H = A(sh_G)) (xca:ptd-conn-to-comp, module 436). Litmus: the trivial homomorphism gives the trivial action and G × H."
+  },
+  {
+    "source": "congp.tex",
+    "line": 34,
+    "quote": "We deduce from \\cref{lem:level-n-utils}\\ref{level-n-utils-sum}, that $\\sum_{t:\\BG} \\BH(t)$ is a groupoid. See \\cref{xca:connected-trivia-1} for a proof that $\\sum_{t:\\BG} \\BH(t)$ is connected.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_classifying_groupoid",
+      "semidirect_classifying_connected",
+      "hlevel_sigma",
+      "native_connected_sigma"
+    ],
+    "note": "This is the footnote of def:semidirect-product: the formalization uses hlevel_sigma at level 3 (groupoids) and connected_sigma for the native truncation."
+  },
+  {
+    "source": "congp.tex",
+    "line": 41,
+    "quote": "Observe that if the action of $G$ is trivial, then $H(t) \\jdeq H(\\sh_G)$ for all $t$, so $G \\ltimes H \\jdeq G \\times H(\\sh_G)$, reproducing the ordinary product of groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "semidirect_trivial_classifying",
+      "semidirect_trivial_usym",
+      "semidirect_trivial_usym_mul",
+      "semidirect_trivial_product_path",
+      "semidirect_trivial_loop_action",
+      "semidirect_trivial_usym_pair",
+      "semidirect_trivial_pair_mul",
+      "product_group_usym_mul_components",
+      "section_loop_action_constant",
+      "section_pathover_loop_constant"
+    ],
+    "note": "Take the trivial action t ↦ K. Then judgmentally H(t) ≡ K, and BG(G ⋉ K) ≡ BG(G × K) as pointed types. The reason is that Product is Σ over a constant family. USym and usym_mul also agree. All of these hold by refl. The Group records differ only in the proofs of connectedness/groupoidness (connected_sigma and connected_product). So semidirect_trivial_product_path is a path whose carrier and point components are refl. Its proof components come from the fact that connectedness and groupoidness are propositions. The bijection of lem:pathpairsection is the product bijection. The formula is componentwise (propositional, via Jβ)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 45,
+    "quote": "Before we study the underlying symmetries in $G \\ltimes H$, let us pause to look at some examples.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a transition sentence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 47,
+    "quote": "In~\\cref{ex:S2-acts-on-C3} we saw an action of $\\SG_2$ on $\\CG_3$. Let us generalize this by giving an action of $\\SG_2$ on the cyclic group $\\CG_n$ for any $n : \\Order$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This announces the construction of lines 62–95 (def:gen-dihedral). Our dihedral modules formalize this construction. There is no further claim."
+  },
+  {
+    "source": "congp.tex",
+    "line": 50,
+    "quote": "Recall from~\\cref{def:standard-cycle} that we may represent $\\CG_n$ as the automorphism group of the standard $n$-cycle $(\\zet/\\sim_n, \\zs)$, where $z \\sim_n z'$ if and only for $t^z = t^{z'}$ for any/all cycles $(T,t)$ of order $n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "standard_cycle",
+      "standard_cycle_order",
+      "order_periods",
+      "subgroup_relation",
+      "order_cyclic_group",
+      "order_relation_powers",
+      "order_relation_all",
+      "order_relation_any",
+      "order_relation_standard",
+      "cyclic_group",
+      "principal_order"
+    ],
+    "note": "C_n = Aut_Cyc(Z/~_n, s) is order_cyclic_group n (module 807), with the standard n-cycle of def:standard-cycle. Here z ~_n z' is z − z' ∈ order_periods n (subgroup_relation). The characterization is order_relation_powers (module 892). For every cycle (T, t) with cycle_order (T, t) = n, z ~_n z' iff t^z = t^{z'} as maps T → T. The words 'any/all' are order_relation_all and order_relation_any. The first says that the characterization holds for all cycles of order n. The second says that it is sufficient if it holds merely for some cycle of order n. The standard cycle is such a cycle (standard_cycle_order, order_relation_standard)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 54,
+    "quote": "If $n$ is principal, then either $n$ is infinite and $(\\zet, \\zs) \\to (\\zet/\\sim_n, \\zs)$ is an equivalence, or $n$ is finite, then this map factors through $\\bn n$ to give an equivalence $(\\bn n,\\zs) \\to (\\zet/\\sim_n, \\zs)$. If LPO (\\cref{LPO}) holds, then every order is principal and these are the only possibilities by~\\cref{lem:componentsofcoversofS1}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "principal_infinite_class_equiv",
+      "principal_infinite_class_commutes",
+      "principal_finite_fin_equiv",
+      "principal_finite_fin_commutes",
+      "principal_fin_of_int",
+      "principal_finite_factorization",
+      "principal_order",
+      "fin_remainder_cycle_path",
+      "lpo_decidable_orders_equiv",
+      "lpo_principal_orders_surjective",
+      "lpo_cycle_order_unique",
+      "lpo_book_covering_component_sum"
+    ],
+    "note": "Module 892. Infinite case n = principal_order 0: z ↦ [z] is an equivalence Z ≃ Z/~_n (principal_infinite_class_equiv). It commutes with the successors (principal_infinite_class_commutes, refl). Finite case n = principal_order (m+1): z ↦ [z] factors as Z → Fin (m+1) followed by k ↦ s^k[0]. The first map is the Euclidean remainder (principal_fin_of_int). The factorization is principal_finite_factorization. The second map is an equivalence of cycles (Fin (m+1), s) ≃ (Z/~_n, s) (principal_finite_fin_equiv, principal_finite_fin_commutes). LPO part: as in the cited lem:componentsofcoversofS1, which is about decidable coverings, the formalization reads 'every order is principal' for orders of decidable cycles. Under LPO, principal_order is a bijection onto these orders (lpo_decidable_orders_equiv, chapter 3). For orders of arbitrary (non-decidable) cycles, LPO alone does not decide the periods. This literal stronger reading is not formalized."
+  },
+  {
+    "source": "congp.tex",
+    "line": 67,
+    "quote": "Let $X \\defeq S\\times\\zet/\\sim$ be the set quotient ... Check that $\\sim$ defines an equivalence relation.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "DihedralRel",
+      "dihedral_rel_prop",
+      "dihedral_rel_symmetric",
+      "dihedral_rel_transitive",
+      "dihedral_relation",
+      "DihedralCycleSet"
+    ],
+    "note": "The relation is proposition-valued and an equivalence relation. Transitivity in the case s ≠ s' ≠ s'' uses the fact that S has exactly two elements (dihedral_two_set_cancel)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 77,
+    "quote": "we can construct the element $x_0\\defeq [(s,0)]$ of $X$ unambiguously, as we always have $0 \\sim_n -0$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_zero_unambiguous",
+      "DihedralBasePoint",
+      "dihedral_base_point_prop",
+      "dihedral_base_point"
+    ],
+    "note": "For all s, s', [(s,0)] = [(s',0)]. The construction of x_0 does not choose s: x_0 is the center of the proposition Σ_x Π_s x = [(s,0)]. Here S is merely inhabited."
+  },
+  {
+    "source": "congp.tex",
+    "line": 87,
+    "quote": "For any $s:S$ ... get an identification $(X,f_s) \\eqto (\\zet/\\sim_n,\\zs)$ by sending $[(s,z)]$ to $[z]$ (and $[(s',z)]$ to $[-z]$ for $s'\\ne s$). Thus, we've constructed an action of $\\SG_2$ on $\\CG_n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "dihedral_eval",
+      "dihedral_insert",
+      "dihedral_eval_equiv",
+      "dihedral_eval_move",
+      "dihedral_move_equiv",
+      "dihedral_cycle_path",
+      "dihedral_eval_self",
+      "dihedral_eval_other",
+      "dihedral_action_cyclic_path",
+      "dihedral_order_action_shape_path"
+    ],
+    "note": "The identification is a path in Cycles (dihedral_cycle_path) whose underlying map is dihedral_eval. The action statement is C̃_n(S) = C_n for every S with s : S. In particular, it holds at the base point of BΣ_2."
+  },
+  {
+    "source": "congp.tex",
+    "line": 100,
+    "quote": "We shall later see that if $n$ is finite, then $\\D_n$ is a finite group of cardinality $2n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "generalized_dihedral_finite",
+      "generalized_dihedral_card",
+      "dihedral_three_card"
+    ],
+    "note": "The formalization proves this for every finite (principal, positive) order. The proof uses the semidirect-product bijection directly, not bicycles."
+  },
+  {
+    "source": "congp.tex",
+    "line": 102,
+    "quote": "it would be confusing to call $\\D_n$ the dihedral group of \\emph{order} $n$",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a terminology footnote."
+  },
+  {
+    "source": "congp.tex",
+    "line": 103,
+    "quote": "But first we need to remedy the potential clash with our previous definition of $\\D_\\infty$ from~\\cref{def:Dinfty-Q}. Rather than just construct a comparison for the infinite order, we'll do it for all orders, thus also constructing bicycles realizing all dihedral groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "dihedral_bicycle_group_iso",
+      "generalized_dihedral_infinite_path",
+      "infinite_standard_dihedral_bicycle_path",
+      "dbn_infinite_quotient_equiv"
+    ],
+    "note": "For every order n, D_n is isomorphic to Aut_Bicyc of the standard dihedral bicycle of degree n (dihedral_bicycle_group_iso, from con:bidirectional-bicycle). So a bicycle realizes every dihedral group. For the infinite order, the standard dihedral bicycle is identified with the bicycle (Z + Z, a, b) of chapter 4. Here Z/~infinity = Z, because 0 is the only period of the infinite cycle. This gives the path D_infinity(def:gen-dihedral) = D_infinity(def:Dinfty-Q) (generalized_dihedral_infinite_path)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 154,
+    "quote": "The idea is to think of an element of $\\BD_n$, which is a subtype of $\\sum_{S:\\BSG_2}\\sum_{X:\\Set}(S \\to X \\to X)$, as a ``bidirectional cycle'', from which we can construct a bicycle on two copies of $X$, more precisely on $S\\times X$, as depicted in~\\cref{fig:bidirectional-cycle}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_classifying_type_path",
+      "DihedralFrameSubtype",
+      "dbc_regroup_equiv",
+      "DihedralFrameProps"
+    ],
+    "note": "BD_n is judgmentally Sigma_{S:BSigma_2} of the component of T_S = Sigma_{X:Set}(S -> X -> X) at the bidirectional cycle. The lemma dihedral_classifying_type_path is refl. This type is a subtype of Sigma_S Sigma_X (S -> X -> X). The lemma dbc_regroup_equiv shows it as a subtype of the type DFrame. DFrame is the type of triples of sets S, X and f : S -> X -> X."
+  },
+  {
+    "source": "congp.tex",
+    "line": 164,
+    "quote": "We identify the image of the base point of $\\BD_n$, $(\\set{\\pm1}, \\zet/\\sim_n, f)$, where $f_s([z]) = [z + s]$, with the standard dihedral bicycle of degree $n$ by letting $(+1,x) \\mapsto \\inl x$ and $(-1,x)\\mapsto \\inr x$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "dihedral_base_iso_map",
+      "dihedral_base_iso_equiv",
+      "dihedral_bicycle_base_iso",
+      "dihedral_bicycle_base_path",
+      "dihedral_bicycle_map_point"
+    ],
+    "note": "phi(sh) = (Fin 2 x X, a, b) is identified with the standard dihedral bicycle. The identification is inl q -> (yes, [(yes,q)]), inr q -> (no, [(yes,q)]). Module 806 identifies X with Z/~n. With this, the identification is the book's (+1,x) -> inl x, (-1,x) -> inr x. Here yes is the forward direction, and f_yes = successor. This is the pointing path of phi."
+  },
+  {
+    "source": "congp.tex",
+    "line": 174,
+    "quote": "Then we set $S\\defeq Y/a$, the set quotient of $Y$ where we equate $y$ and $y'$ if $y'=a^z(y)$ for some $z:\\zet$, \\ie if $y$ and $y'$ are connected by the $a$ equivalence. Then $S$ is a $2$-element set, because it is so in the standard case.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_psi_orbits_a_two",
+      "dps_props_standard",
+      "dps_props",
+      "dihedral_orbits_a_equiv"
+    ],
+    "note": "Take a bicycle (Y,a,b) in the component of the standard dihedral bicycle. Then the orbit quotient Y/a is merely equal to Fin 2 as a set. As in the book, the proof shows the proposition in the standard case and transports it along the mere path. The standard case uses phi(sh), where (S x X)/a = S."
+  },
+  {
+    "source": "congp.tex",
+    "line": 175,
+    "quote": "Similarly, we set $X\\defeq Y/b$, which is merely equivalent to the underlying set of the standard $n$-cycle, $\\zet/\\sim_n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_psi_orbits_b_mere_equiv",
+      "dihedral_orbits_b_equiv"
+    ],
+    "note": "For every bicycle of the component, Y/b is merely equivalent to Z/~n. The proof uses the component condition on (Y/b, f) and X_S = Z/~n of module 806."
+  },
+  {
+    "source": "congp.tex",
+    "line": 178,
+    "quote": "The key observation is now that any equivalence classes $[y]_a:Y/a$ and $[y']_b:Y/b$, thought of a subsets of $Y$, intersect in unique element $y'':Y$. In the bottom of~\\cref{fig:bidirectional-cycle},",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "PsiUniqueIntersections",
+      "dps_abstract_unique",
+      "dps_unique_intersections",
+      "dps_props"
+    ],
+    "note": "Every a-class and every b-class intersect in a unique element. That is, Sigma_y ([y]_a = alpha) x ([y]_b = beta) is contractible. For phi(x), the intersection of alpha and beta is (sigma alpha, g beta). The result is transported to every bicycle of the component."
+  },
+  {
+    "source": "congp.tex",
+    "line": 193,
+    "quote": "Thus, since we easily verify that the standard dihedral bicycles are normal (\\cref{def:normal-bicycle}), we see that if $n$ is finite, then $\\D_n$ has the same cardinality as $\\bn n \\amalg\\bn n$, \\ie $2n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "dihedral_standard_bicycle_normal",
+      "standard_dihedral_bicycle_normal",
+      "dbn_rotation",
+      "dbn_reflection",
+      "generalized_dihedral_usym_standard_equiv",
+      "generalized_dihedral_card"
+    ],
+    "note": "The standard dihedral bicycles are normal (normal_bicycle_from_point_surjective). The rotations inl[r] -> inl[r+k], inr[r] -> inr[r+k] and the reflections inl[r] -> inr[k-r], inr[r] -> inl[k-r] reach every element from inl[0]. Thus USym D_n = Z/~n + Z/~n for every order n (generalized_dihedral_usym_standard_equiv). This equivalence is Omega phi, then evaluation at inl[0]. The count 2n for finite n is generalized_dihedral_card of module 808."
+  },
+  {
+    "source": "congp.tex",
+    "line": 203,
+    "quote": "To better understand the underlying symmetries of a general semidirect product $G\\ltimes H$, we note that~\\cref{lem:isEq-pair=} (on paths in $\\Sigma$-types) takes a simpler form when $y$ and $y'$ are values of a family $x \\mapsto f(x)$ of elements of the family $x \\mapsto Y(x)$, as the following lemma shows.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "path_pair_section_equiv",
+      "sigma_path_equiv"
+    ],
+    "note": "This is the motivation of lem:pathpairsection. The lemma is formalized."
+  },
+  {
+    "source": "congp.tex",
+    "line": 232,
+    "quote": "The lemma above shows how to rewrite certain paths between pairs as pairs of paths.  Now we wish to establish the formula for composition of paths, rewritten in terms of pairs of paths, but first we introduce a convenient definition for the transport of loops in $Y(x)$ along paths in $X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "section_loop_action_transport",
+      "section_loop_action"
+    ],
+    "note": "By induction on p, q'^p is identified with the transport of q' along p⁻¹ in the family of loops z ↦ (f(z) = f(z))."
+  },
+  {
+    "source": "congp.tex",
+    "line": 244,
+    "quote": "We turn now to associativity for the operation just defined.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a transition sentence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 259,
+    "quote": "Observe that the operation depends on $f$, but $f$ is not included as part of the notation.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "section_loop_action"
+    ],
+    "note": "This is a notational remark. In the formalization, f is an explicit argument of section_loop_action."
+  },
+  {
+    "source": "congp.tex",
+    "line": 261,
+    "quote": "The next lemma contains the formula we are seeking.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a transition sentence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 281,
+    "quote": "The lemma above will be applied mostly in the case where $x'$ and $x''$ are $x$, but if it had been stated only for that case, we would not have been able to argue by induction on $p$ and $p'$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "path_pair_section_concat_general",
+      "semidirect_usym_mul"
+    ],
+    "note": "This is a methodological remark on the proof. Accordingly, the formalization proves the general lemma (free endpoints). Then it specializes the lemma to x ≡ x' ≡ x'' ≡ sh_G (semidirect_usym_mul)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 284,
+    "quote": "Projection onto the first factor gives a homomorphism $p \\defeq \\mkgroup \\fst : G \\ltimes \\tilde H \\to G$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_projection",
+      "semidirect_usym_projection"
+    ],
+    "note": "The formalization defines p ≔ mkhom (fst, refl sh_G). The book writes mkgroup for the homomorphism classified by a pointed map. From here on, the book writes H̃ for the action. The formalization writes H."
+  },
+  {
+    "source": "congp.tex",
+    "line": 285,
+    "quote": "Moreover, there is a homomorphism $s : G \\to G \\ltimes \\tilde H$ defined by $ s \\defeq \\mkgroup {\\left( t \\mapsto (t,\\shape_{\\tilde H(t)}) \\right) }$, for $t : \\B G$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_section",
+      "semidirect_usym_section",
+      "semidirect_usym_pair_section"
+    ],
+    "note": "The formalization defines s ≔ mkhom (t ↦ (t, sh_{H(t)}), refl). Then USym s(p) = (p, apd p), and its pair is (p, e)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 287,
+    "quote": "The two maps are homomorphisms because they are made from basepoint-preserving maps.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "semidirect_projection",
+      "semidirect_section"
+    ],
+    "note": "Both classifying maps are pointed by refl."
+  },
+  {
+    "source": "congp.tex",
+    "line": 288,
+    "quote": "The map $s$ is a \\emph{section} of $p$ in the sense the $p \\circ s = \\id_G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "semidirect_projection_section",
+      "semidirect_projection_section_usym"
+    ],
+    "note": "This is an identification in Hom(G, G). The underlying functions agree judgmentally. The pointing paths (concat refl refl and refl) agree by concat_p1. On symmetries, USym p (USym s g) = g."
+  },
+  {
+    "source": "congp.tex",
+    "line": 289,
+    "quote": "There is also a homomorphism $j : H \\to G \\ltimes \\tilde H$ defined by $j \\defeq \\mkgroup { \\left( u \\mapsto (\\shape_G,u) \\right) }$, for $u : \\B H$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_inclusion",
+      "semidirect_usym_inclusion",
+      "semidirect_usym_pair_inclusion"
+    ],
+    "note": "The formalization defines j ≔ mkhom (u ↦ (sh_G, u), refl) on H ≔ H(sh_G). Then USym j(q) = (refl, q), and its pair is (e, q)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 294,
+    "quote": "MUST BE MOVED TO THE SUBGROUP CHAPTER",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial footnote (red) on the kernel lemma."
+  },
+  {
+    "source": "congp.tex",
+    "line": 303,
+    "quote": "Our next goal is to present the explicit formula for the multiplication operation in $\\USym { G \\ltimes \\tilde H }$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a transition sentence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 304,
+    "quote": "First we apply \\cref{lem:pathpairsection} to get a bijection $\\USym { G \\ltimes \\tilde H } \\weq \\USymG \\times \\USymH$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "semidirect_usym_equiv",
+      "semidirect_usym_pair",
+      "semidirect_usym_unpair",
+      "path_pair_section_equiv",
+      "semidirect_usym_split"
+    ],
+    "note": "The formalization gives semidirect_usym_equiv G H : USym(G ⋉ H) ≃ USym G × USym H(sh_G). It is the instance of lem:pathpairsection at x ≡ x' ≡ sh_G. The lemma semidirect_usym_split says that the pair of s(p)·j(q) is (p, q)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 305,
+    "quote": "Now use that to transport the multiplication operation of the group $\\USym { G \\ltimes \\tilde H }$ to the set $\\USymG \\times \\USymH$. Now \\cref{lem:pathpairsectionmult} tells us the formula for that transported operation is given as follows. $$ (p',q') \\cdot (p,q) = (p' \\cdot p , ({q'} ^ p) \\cdot q) $$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "semidirect_transported_mul",
+      "semidirect_transported_mul_formula",
+      "semidirect_usym_mul",
+      "semidirect_pair_mul",
+      "semidirect_loop_action",
+      "sdp_litmus_pair_js",
+      "sdp_litmus_js_value",
+      "sdp_litmus_sj_value"
+    ],
+    "note": "The formalization defines semidirect_transported_mul (a', a) ≔ Φ(Φ⁻¹ a' · Φ⁻¹ a). The lemma semidirect_transported_mul_formula says that it equals (usym_mul G p' p, usym_mul H (q'^p) q). This is the book's (p'·p, (q'^p)·q) in the composition order of the book. Litmus (module 804): on (e, q')·(σ, e) in Σ_2 ⋉ Σ_2^X, it gives (σ, q'^σ) with q'^σ = (refl, σ) pointwise."
+  },
+  {
+    "source": "congp.tex",
+    "line": 308,
+    "quote": "In a traditional algebra course dealing with abstract groups, this formula is used as the definition of the multiplication operation on the set $\\USymG \\times \\USymH$, but then one must prove that the operation satisfies the properties of \\cref{def:abstractgroup}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "semidirect_abstract_group",
+      "semidirect_pair_laws",
+      "sdp_transported_laws",
+      "semidirect_usym_abstract_hom",
+      "semidirect_pair_unit",
+      "semidirect_pair_inv"
+    ],
+    "note": "The formula, the unit (e, e) and the transported inverse form an abstract group (def:abstractgroup). Its laws are transported from abstr(G ⋉ H) along the bijection (sdp_transported_laws). They are not verified directly. The bijection is an abstract homomorphism. Thus it is an isomorphism abstr(G ⋉ H) ≅ (USym G × USym H, formula)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 310,
+    "quote": "The advantage of our approach is that the formula emerges from the underlying logic that governs how composition of paths works.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a methodological comment."
+  },
+  {
+    "source": "congp.tex",
+    "line": 316,
+    "quote": "A special class of semidirect products are prominent enough to be given special attention: These are the wreath products.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "wreath_product"
+    ],
+    "note": "This is motivation. The definition wreath_product is literally a semidirect_product."
+  },
+  {
+    "source": "congp.tex",
+    "line": 318,
+    "quote": "Then $G$ acts on the power $H^{X(\\sh_G)}$, i.e., the symmetries of the constant function $\\blank \\mapsto \\sh_H$ in the function type $X(\\sh_G) \\to \\BH$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wreath_power_action",
+      "wreath_acted_on_group",
+      "wreath_power_is_power_group",
+      "wreath_power_component_equiv"
+    ],
+    "note": "The action H^X : BG → Group acts on H^X(sh_G) = Aut_{X(sh_G) → BH}(_ ↦ sh_H). When X(sh_G) is finite, this group is identified with the power group H^{X(sh_G)} of module 407 (wreath_acted_on_group)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 320,
+    "quote": "consider the map $H^X : \\BG \\to \\Group$ with $H^X(z) \\defeq \\Aut_{X(z) \\to \\BH}(\\blank \\mapsto \\sh_H)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "wreath_power_action",
+      "wreath_constant_shape",
+      "wreath_power_groupoid",
+      "sdp_litmus_action"
+    ],
+    "note": "The formalization is literal: it is the automorphism_group of the constant map in the groupoid X(z) → BH."
+  },
+  {
+    "source": "congp.tex",
+    "line": 324,
+    "quote": "Recall that if the underlying set of $X$ is finite, then the classifying space of $H^X(z)$ can be identified with the whole function type $X(z) \\to \\BH$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wreath_power_classifying_equiv",
+      "wreath_fibers_finite",
+      "connected_pi_finite",
+      "connected_component_fst_equiv"
+    ],
+    "note": "Let X(sh_G) be finite. Then every X(z) is finite, because BG is connected (wreath_fibers_finite). So X(z) → BH is connected (xca:bigproductfunext (i), module 407). Thus the first projection from its component is an equivalence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 334,
+    "quote": "Note that when $X(\\sh_G)$ is finite, then the classifying type of $H \\wr_X G$ is the type $\\B(H \\wr_X G) \\equivto \\sum_{z:\\BG}X(z) \\to \\BH$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wreath_classifying_equiv",
+      "wreath_classifying_equiv_map",
+      "wreath_classifying_equiv_shape"
+    ],
+    "note": "The equivalence is (z, u) ↦ (z, u .fst), judgmentally. It sends the shape to (sh_G, _ ↦ sh_H)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 358,
+    "quote": "the greatest common divisor d≔gcd(a,b) of a,b:N is another name for the number of components you get if you pull back the a-fold and the b-fold coverings of the circle: for a,b > 0, have a pullback S¹×UCG_{gcd(a,b)} → S¹ ...",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_power_pullback_components_fin",
+      "circle_power_pullback_components",
+      "circle_pullback_product_decomposition"
+    ],
+    "note": "For a, b > 0, ‖S¹ ×_{S¹} S¹‖₀ ≃ Fin(gcd(a,b)). Also, merely P ≃ S¹ × Fin(gcd(a,b)) over the composite map. The pullback square itself is not restated."
+  },
+  {
+    "source": "congp.tex",
+    "line": 370,
+    "quote": "think of the circle as the unit circle in the complex numbers so that the a-fold covering is simply taking the a-fold power. With this setup, the pullback should consist of pairs (z,w) of unit length complex numbers with the property that z^a=w^b.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "CirclePowerPullback"
+    ],
+    "note": "This is a geometric motivation with complex numbers. The synthetic counterpart is CirclePowerPullback C a b = Σ_{(z,w)} z^a = w^b with the degree maps."
+  },
+  {
+    "source": "congp.tex",
+    "line": 375,
+    "quote": "Taking an arbitrary unit length complex number z, then the pair (z^{b'},z^{a'}) is in the pullback (since a'b=ab').",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_pullback_pair_map",
+      "circle_pullback_explicit_coordinates",
+      "circle_pullback_explicit_square",
+      "cpx_quotient_left_eq",
+      "cpx_quotient_right_eq",
+      "cpx_lcm_identities"
+    ],
+    "note": "Synthetic analogue: on every copy of the explicit square (module 891), the map S¹ → P has the coordinates z ↦ z^{b'} and z ↦ z^{a'}. This is circle_pullback_explicit_square. It comes from circle_pullback_pair_map with lcm(a,b)/a = b' and lcm(a,b)/b = a'. The reason for a'b = ab' is cpx_lcm_identities. The circle replaces the complex numbers."
+  },
+  {
+    "source": "congp.tex",
+    "line": 377,
+    "quote": "If (z,w) is in the pullback, then so is (ζz,w), where ζ is any a-th root of unity. Taking ζ=e^{2πi/a}, we have that (ζ^k z,w) lies in the same component as (z,w) if and only if d | k",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cpx_point",
+      "cpx_point_class",
+      "cpx_same_component_iff",
+      "cycle_power_orbits_equiv",
+      "cpp_monodromy_power_he"
+    ],
+    "note": "This is the synthetic counterpart with a and b exchanged, as in module 826. The deck transformation m of the b-fold covering has the role of ζ. The explicit points pt_n of P are built from m^n(y0). The points pt_n and pt_{n'} lie in the same component iff gcd(a,b) | n − n' (cpx_same_component_iff, module 891). The proof uses cpx_point_class: the component equivalence sends pt_n to [n] in ℤ/dℤ. 'So is (ζz,w)' is the fact that m is an automorphism of the fiber. Roots of unity in ℂ are not modelled."
+  },
+  {
+    "source": "congp.tex",
+    "line": 433,
+    "quote": "In more detail: the left vertical map sends (z,k) to the product ζ^k z^{b'} and the top horizontal map S¹×UCG_d → S¹ sends (z,k) to z^{a'}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_pullback_explicit_square",
+      "circle_pullback_explicit_decomposition",
+      "circle_pullback_explicit_coordinates"
+    ],
+    "note": "The statement is explicit (no longer merely). The equivalence circle_pullback_explicit_square gives S¹ × Fin d ≃ P. On every copy k, its first coordinate is z ↦ z^{b'} and its second coordinate is z ↦ z^{a'}. The book's ζ^k z^{b'} is homotopic to z^{b'} (rotation). The k-dependence sits in the path component. Fin d stands for the underlying set of C_d."
+  },
+  {
+    "source": "congp.tex",
+    "line": 437,
+    "quote": "Also, the least common multiple lcm(a,b)=a'b=da'b'=ab' is hidden in the pullback; in the present example it is demonstrated that composite diagram map in the diagram makes each component of the pullback a copy of the lcm(a,b)-fold covering.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cpx_lcm_identities",
+      "circle_pullback_component_lcm_cover",
+      "circle_pullback_explicit_square"
+    ],
+    "note": "The identity lcm(a,b) = a'b = da'b' = ab' is cpx_lcm_identities (module 891), for a = da', b = db' and d = gcd. The proof never evaluates nat_lcm. Each component is a copy of the lcm-fold covering. For an arbitrary component, this holds merely (circle_pullback_component_lcm_cover), because a choice of point is necessary. For the components of the square, it holds explicitly (circle_pullback_explicit_square, composite (x,k) ↦ x^{lcm})."
+  },
+  {
+    "source": "congp.tex",
+    "line": 488,
+    "quote": "Hint: set A≔S¹, B≔BH, C≔BH' and D≔BG.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "pullback_group_usym_equiv",
+      "pointed_pullback_universal_property"
+    ],
+    "note": "This is the footnote hint for the USym part. The formalization proves the USym equivalence directly instead. It is equivalent to the pointed universal property at A ≔ S¹ via ex:Zinitial."
+  },
+  {
+    "source": "congp.tex",
+    "line": 499,
+    "quote": "We get the pullback of groups by restricting to a pointed component, but also the other components have group theoretic importance. We will return to this when discussing subgroups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "pullback_group"
+    ],
+    "note": "This is a forward reference to chapter 9. The first sentence is def:intersectionofgroups."
+  },
+  {
+    "source": "congp.tex",
+    "line": 505,
+    "quote": "\\section{Pushouts of types} (TBW)",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "PushoutSignature",
+      "PushoutBoundary",
+      "pushout_universal_property",
+      "pushout_dependent_universal_property",
+      "pushout_ind_prop",
+      "wedge_from_pushout"
+    ],
+    "note": "The section is not written in the pinned book. The pinned Narya has no HITs. Thus the formalization introduces pushouts as a signature parameter (PushoutSignature). The signature has constructors, a dependent eliminator, and computation laws as one identification of boundary data. The formalization proves the universal property and its dependent version for every signature. A pushout of A1 ← 1 → A2 is a wedge (wedge_from_pushout)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 510,
+    "quote": "We have seen how the group of integers Z=(S^1,base) synthesizes the notion of one symmetry with no relations: every symmetry in the circle is of the form loop^n for some unique n.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_integer_loop_equiv",
+      "circle_group_usym_integers"
+    ],
+    "note": "For every circle signature, n ↦ loopⁿ is a (book) equivalence Int ≃ (base = base) (module 28). Module 404 gives it as USym of circle_group C."
+  },
+  {
+    "source": "congp.tex",
+    "line": 510,
+    "quote": "Also, given any group G=Aut_A(a), the set a=a of symmetries of a corresponds to the set of homomorphisms Z→G, i.e. to pointed functions (S^1,base)→_*(A,a) by evaluation at loop.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_group_hom_ev",
+      "pointed_circle_universal_property"
+    ],
+    "note": "Evaluation at loop gives Hom(Z, G) ≃ USym G (module 435, ex:Zinitial). Also, the pointed maps satisfy (S¹, base) →* (A, a) ≃ (a = a) (module 129)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 512,
+    "quote": "For instance, is there a group Z∨Z so that for any group G=Aut_A(a) a homomorphism Z∨Z→G corresponds to two symmetries of a?",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_decidable_sum_hom_equiv",
+      "circle_sum_hom_equiv"
+    ],
+    "note": "The answer is cor:ZplusZuniv. Module 851 proves it for every wedge signature of two circles without extra hypotheses."
+  },
+  {
+    "source": "congp.tex",
+    "line": 513,
+    "quote": "At the very least, Z∨Z itself would have to have two symmetries and these two can't have any relation, since in a general group G=Aut_A(a) there is a priori no telling what the relation between the symmetries of a might be.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_decidable_sum_group",
+      "circle_sum_words_equiv",
+      "circle_sum_no_relations",
+      "circle_decidable_sum_hom_equiv",
+      "circle_sum_generators_noncommuting",
+      "circle_decidable_sum_not_abelian",
+      "wedge_loops_noncommuting"
+    ],
+    "note": "Formal reading: Z ∨ Z has the two generator symmetries i_1(loop) and i_2^g(loop), and they satisfy no relation. Every symmetry is the composite β(c) of a unique alternating word c in nontrivial powers of the two generators (circle_sum_words_equiv). Two words with the same composite are equal (circle_sum_no_relations, module 893). In particular, the generators do not commute (circle_sum_generators_noncommuting, circle_decidable_sum_not_abelian). Also, the homomorphisms Z ∨ Z → G are exactly the pairs of symmetries (cor:ZplusZuniv, circle_decidable_sum_hom_equiv). The clause about a general group G is motivation."
+  },
+  {
+    "source": "congp.tex",
+    "line": 514,
+    "quote": "Now, one symmetry is given by a pointed function (S^1,base)→_*(A,a) and so a pair of symmetries is given by a function f:S^1+S^1→A with the property that f sends each of the base points of the circles to a.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "WsumBasedSumMaps",
+      "wsum_based_sum_maps_equiv",
+      "circle_sum_symmetry_pairs"
+    ],
+    "note": "Σ (f : S¹+S¹ → A) (a = f(inl base)) × (a = f(inr base)) ≃ (a = a) × (a = a) (module 851). The proof uses the universal property of the sum and of the pointed circle."
+  },
+  {
+    "source": "congp.tex",
+    "line": 514,
+    "quote": "But S^1+S^1 is not connected, and so not a group.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_sum_not_connected",
+      "sum_self_not_connected"
+    ],
+    "note": "The lemma circle_sum_not_connected (module 288, chapter 3 text claims) states exactly this for every circle signature. The formalization uses it again and does not define it again."
+  },
+  {
+    "source": "congp.tex",
+    "line": 514,
+    "quote": "To fix this we take the clue from the requirement that both the base points were to be sent to a common base point and define S^1∨S^1 to be what we get from S^1+S^1 when we insert an identity between the two basepoints.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "WedgeSignature",
+      "wedge_from_pushout",
+      "constructed_circle_wedge"
+    ],
+    "note": "The definition def:wedge (WedgeSignature) makes this precise. An S¹ ∨ S¹ is a wedge signature of the pointed circle with itself. A pushout of the span S¹ ← 1 → S¹ is such a signature (wedge_from_pushout). An actual instance without HITs is constructed_circle_wedge (module 879)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 518,
+    "quote": "The amazing thing is that this works -- an enormous simplification of the classical construction of the ``free products'' or ``amalgamated sum'' of groups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a historical/expository comparison with the classical construction. It has no mathematical claim beyond those formalized for lem:wedgeofgpoidisgpoid."
+  },
+  {
+    "source": "congp.tex",
+    "line": 518,
+    "quote": "We need to show that the ``wedge'' S^1∨S^1 is indeed a group, and this proof simultaneously unpacks the classical description.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_decidable_sum_group",
+      "circle_decidable_sum_group_decidable",
+      "wedge_decidable_groupoid",
+      "decidable_sum_words_equiv",
+      "constructed_circle_sum_group"
+    ],
+    "note": "For every wedge signature of two circles, the wedge is a pointed connected groupoid. So Z ∨ Z is a group (circle_decidable_sum_group, module 848). Its symmetries are the reduced alternating words (decidable_sum_words_equiv). Module 849 instantiates this at the constructed S¹ ∨ S¹."
+  },
+  {
+    "source": "congp.tex",
+    "line": 520,
+    "quote": "We start by giving a definition of the wedge construction which is important for pointed types in general and then prove that the wedge of two groups is a group whose symmetries are arbitrary ``words'' in the original symmetries.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "WedgeSignature",
+      "decidable_sum_of_groups",
+      "decidable_sum_words_book_equiv"
+    ],
+    "note": "As in the book's own lemma, the formalization proves this for decidable groups (lem:wedgeofgpoidisgpoid). For arbitrary groups, the book does not prove the groupoid property of the wedge. This property would follow from Wärn's theorem (see line 767). It is a hypothesis of sum_of_groups (module 843). The status stays partly for the reason given at line 767."
+  },
+  {
+    "source": "congp.tex",
+    "line": 539,
+    "quote": "Unraveling the induction principle we see that if B is a pointed type, then a pointed function f:A_1∨A_2→_* B is given by providing pointed functions f_1:A_1→_* B and f_2:A_2→_* B -- the identity f_1(a_1)=f_2(a_2) which seems to be missing is provided by the requirement of the functions being pointed.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "wedge_pointed_extend",
+      "wedge_pointed_cocone",
+      "wedge_restrict_extend",
+      "wedge_extend_restrict",
+      "wedge_pointed_universal_property"
+    ],
+    "note": "The map wedge_pointed_extend (module 842) is recursion on the cocone (f1, f2, f1_pt⁻¹ · f2_pt). The glue identity is built from the two pointings. The map inverts i^* (lem:univvee)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 565,
+    "quote": "it is the symmetry of the base point a_{12}:=i_1a_1 you get by first moving to i_2a_2 with g, then travel around with p (i_2p, really) and finally go home to the basepoint with the inverse of g.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "wedge_loop2",
+      "wedge_loop2_loops_map"
+    ],
+    "note": "The formalization defines wedge_loop2 p = concat g (concat (i2 p) g⁻¹): first g, then i2 p, then g⁻¹. That is the book's g⁻¹ i2(p) g. By refl, it equals Ω(i2, g)(p)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 567,
+    "quote": "The idea is that an identity in a_{12}=x can be factored into a string of identities, each lying solely in A_1 or in A_2.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wedge_word_paths_code_equiv",
+      "wedge_word_encode_is_equiv",
+      "wedge_word_encode_decode",
+      "wedge_word_decode_encode",
+      "wedge_word_decode",
+      "wedge_word_encode",
+      "wedge_words_equiv",
+      "wwf_charts"
+    ],
+    "note": "Let A_1, A_2 be pointed connected with decidable loop types. This is the setting of lem:wedgeofgpoidisgpoid, and groupoid hypotheses are not necessary. Then, for EVERY x of the wedge, α_x : (a_12 = x) → C(x) is an equivalence (wedge_word_paths_code_equiv, module 893). Its inverse is the composition of strings β_x. That is, β_x α_x = id (wedge_word_decode_encode) and α_x β_x = id (wedge_word_encode_decode). So every identity a_12 = x is β_x of a unique string of identities that lie in A_1 or A_2. Proof: β_{a12} is the word composition through the chart C(a_12) ≃ C_1(a_1) (wwf_charts). Thus it is an equivalence. The property 'is an equivalence' is a proposition, and the wedge is connected."
+  },
+  {
+    "source": "congp.tex",
+    "line": 567,
+    "quote": "We define a family of sets consisting of exactly such strings of identities -- it is a set since A_1 and A_2 are groupoids -- and prove that it is equivalent to the family P(x):=(a_{12}=x) which consequently must be a family of sets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wedge_code1_set",
+      "wedge_code2_set",
+      "wedge_word_code",
+      "wedge_word_code_set",
+      "wedge_word_paths_code_equiv",
+      "wedge_decidable_groupoid",
+      "wedge_loops_set"
+    ],
+    "note": "When A_1, A_2 are groupoids with decidable loops, C_1(x) and C_2(x) are sets (wedge_code1_set, wedge_code2_set, module 851). For every x, the family C (wedge_word_code) is equivalent to P(x) = (a_12 = x) (wedge_word_paths_code_equiv, module 893). Thus C is a family of sets (wedge_word_code_set). Also, P is a family of sets: the wedge is a groupoid (wedge_decidable_groupoid). Hypotheses: A_1, A_2 are pointed connected with decidable loop types. The groupoid hypothesis is used only for C_1, C_2."
+  },
+  {
+    "source": "congp.tex",
+    "line": 568,
+    "quote": "We need to be able to determine whether a symmetry is reflexivity or not, but once we know that, the symmetries of the base point in the wedge are then given by ``words p_0p_1...p_n'' where the p_j alternate between being symmetries in the first or the second group, and none of the p_j for positive j are allowed to be reflexivity.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "wedge_words_equiv",
+      "wedge_words_book_equiv",
+      "WsumString",
+      "WsumNontrivial"
+    ],
+    "note": "The decidability of p = refl is the hypothesis DecidableEquality (Loop A_i). Under this hypothesis, β : WedgeWords A1 A2 → (a12 = a12) is an equivalence (module 847)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 568,
+    "quote": "Note that there order of the p_js is not negotiable: if I shuffle them I get a new symmetry.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "wedge_words_distinct",
+      "wedge_words_equiv",
+      "wedge_loops_noncommuting",
+      "circle_sum_no_relations"
+    ],
+    "note": "Formal reading: different strings (p_0, n, p_1, ..., p_n) give different symmetries. So a reordering of the letters that is again a string, but a different one, gives a different symmetry (wedge_words_distinct, module 893). This follows from the fact that β is an equivalence. The basic instance is wedge_loops_noncommuting: i_1^g(l_1) i_2^g(l_2) ≠ i_2^g(l_2) i_1^g(l_1) for nontrivial l_1, l_2. A reordering that is not alternating is not a string and has no β-value. So it is outside the claim."
+  },
+  {
+    "source": "congp.tex",
+    "line": 585,
+    "quote": "Specializing further, we return to our initial motivation and see that mapping out of a wedge of two circles exactly captures the information of two independent symmetries",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_wedge_pointed_maps_equiv",
+      "circle_decidable_sum_hom_equiv"
+    ],
+    "note": "For every pointed B, the pointed maps S¹ ∨ S¹ →* B are pairs of loops of B (module 844). The homomorphisms Z ∨ Z → G are pairs of symmetries (cor:ZplusZuniv)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 624,
+    "quote": "We end the section by proving that wedges of decidable groups are decidable groups and that they can be given the classical description in terms of words.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "decidable_sum_of_groups_decidable",
+      "decidable_sum_words_book_equiv"
+    ],
+    "note": "This is lem:wedgeofgpoidisgpoid (module 848)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 719,
+    "quote": "We have seen in ex:Zinitial that the group of integers Z is the free group on one generator in the sense that the set of homomorphisms from Z to any group G is equivalent (by evaluation at the loop) to the underlying set of symmetries in G, USym G.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_group_hom_ev",
+      "circle_group_hom_ev_map",
+      "circle_group_is_free_on_unit",
+      "constructed_free_group",
+      "constructed_free_group_generator",
+      "constructed_free_group_hom_equiv",
+      "constructed_free_group_hom_equiv_evaluation",
+      "free_pointed_universal_property"
+    ],
+    "note": "This is circle_group_hom_ev (module 435, ex:Zinitial) for every CircleSignature C. The lemma circle_group_is_free_on_unit states that circle_group C with iota = loop is free on 1 in the sense of IsFreeGroupOn."
+  },
+  {
+    "source": "congp.tex",
+    "line": 723,
+    "quote": "This set is of course equivalent (by evaluation at the unique element) to the set of maps (1 -> USym G).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "unit_function_equiv",
+      "circle_group_hom_unit_equiv"
+    ],
+    "note": "The composite of unit_function_equiv (module 10) with circle_group_hom_ev gives Hom(Z, G) = (1 -> USym G)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 726,
+    "quote": "Likewise, we have seen in cor:ZplusZuniv that the binary sum Z v Z is the free group on two generators, corresponding to the left and right summands.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_sum_wedge_signature",
+      "circle_wedge_from_free_bool",
+      "constructed_circle_wedge",
+      "free_group_wedge_tower",
+      "free_group_two_circle_wedge",
+      "wedge_signatures_pointed_path",
+      "free_pointed_universal_property"
+    ],
+    "note": "B F_{S+T} carries a wedge structure of B F_S and B F_T. In it, the letter inl s goes to the left summand (incl1). The letter inr t goes to the right summand (incl2, conjugated by the glue). In particular, a free group on Bool gives an actual S¹ ∨ S¹ without HITs (constructed_circle_wedge). For EVERY wedge signature W of two circles, (W, a12) = (B F_2, base) (free_group_wedge_tower at n = 2). So Z ∨ Z has the universal property of the free group on two generators (module 860)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 729,
+    "quote": "In general, a free group on a set of generators S is a group F_S with specified elements iota_s : USym F_S labeled by s : S, such that evaluation gives an equivalence Hom(F_S, G) = (S -> USym G) for each group G.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "IsFreeGroupOn",
+      "free_group_is_free",
+      "free_group_hom_equiv",
+      "free_group_hom_equiv_map",
+      "circle_group_is_free_on_unit"
+    ],
+    "note": "IsFreeGroupOn S Phi iota says: for every group G, f |-> (s |-> usym_hom Phi G f (iota s)) is an equivalence. The lemma free_group_is_free proves it for F_S = free_group S dec F with iota_s = loop_s. The lemma circle_group_is_free_on_unit proves it for Z and S = 1."
+  },
+  {
+    "source": "congp.tex",
+    "line": 734,
+    "quote": "We now give a definition of the classifying type of a free group as a higher inductive type that is very much like that of the circle, except that instead of having a single generating loop, it has a loop loop_s for each element s : S.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "FreeGroupSignature",
+      "circle_free_signature",
+      "circle_free_signature_pointed",
+      "free_group_unit_circle",
+      "constructed_free_group_unit_integers"
+    ],
+    "note": "For S = 1, the two notions agree. Every CircleSignature is a FreeGroupSignature on Unit with the same carrier, base and loop (circle_free_signature). The converse also holds (free_group_unit_circle). The constructed free group on 1 has USym ≃ Int (n ↦ loop^n)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 759,
+    "quote": "A priori, F_S is only an infinity-group.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_connected",
+      "free_infty_group",
+      "free_group_infty_group"
+    ],
+    "note": "For every type S, (B F_S, base) is pointed and connected (free_connected, module 860). This gives the infinity-group free_infty_group S F (InftyGroup of module 485). For decidable S, it is the same as free_group (free_group_infty_group, refl)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 760,
+    "quote": "Nevertheless, we get immediately from the induction principle that evaluation at the elements of S gives an equivalence Hom(F_S, G) = (S -> USym G) for each infinity-group G.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "free_pointed_universal_property",
+      "free_infty_group_hom_equiv",
+      "free_group_hom_equiv",
+      "free_group_hom_equiv_map"
+    ],
+    "note": "For every pointed type, free_pointed_universal_property (module 860, lead) gives (B F_S, base) ->* (A, a) = (S -> a = a). The lemma free_infty_group_hom_equiv states it for InftyGroupHom and every infinity-group G. The lemma free_group_hom_equiv states it for GroupHom when S is decidable. The map is the evaluation at the loops (free_group_hom_equiv_map, refl)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 765,
+    "quote": "In order to see that F_S is a group, we need to know that B F_S is a groupoid.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "free_signature_groupoid",
+      "free_based_paths_set",
+      "free_base_loops_set",
+      "free_group_pcg",
+      "free_group",
+      "free_sset_classifying_groupoid",
+      "fsc_loops_equiv",
+      "constructed_free_group",
+      "constructed_free_group_usym_equiv"
+    ],
+    "note": "For S with decidable equality, B F_S is a groupoid (free_signature_groupoid). The proof shows that base = base is a set by thm:free-group-elements, and then uses free_ind_prop twice. This makes free_group S dec F = mkgroup(B F_S, base) a group."
+  },
+  {
+    "source": "congp.tex",
+    "line": 767,
+    "quote": "This follows from a general theorem on identifications in pushouts due to [Warn2023].",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [],
+    "note": "Not formalized. Wärn's theorem says that B F_S is a groupoid for an arbitrary set S. More generally, it says that a pushout of groupoids along 0-truncated maps is a groupoid. This theorem is not tractable here. Every known proof (Wärn 2023, the zigzag construction) presents identity types of pushouts as sequential colimits of explicit approximations. That needs a sequential-colimit signature, because the pinned Narya has no HITs. It also needs the commutation of sequential colimits with Σ and identity types, and the zigzag induction. This is a development of a size comparable to a chapter. Encode–decode with reduced words, as used here, needs decidable equality of S to define ρ_S. The lemma reduction_function_decidable_equality shows that a reduction function exists iff S has decidable equality. Our torsor-style construction (877) also needs it. With S arbitrary, it is not even possible to construct an instance of FreeGroupSignature without HITs. Only the decidable case is formalized (free_signature_groupoid). The declaration free_infty_group covers arbitrary S as an ∞-group."
+  },
+  {
+    "source": "congp.tex",
+    "line": 768,
+    "quote": "Here we restrict our discussion to decidable sets S, where we can give a more concrete proof.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "free_group",
+      "free_group_decidable_set",
+      "free_group_elements_decidable_set"
+    ],
+    "note": "The decidability hypothesis is dec : DecidableEquality S. By hedberg, it is equivalent to DecidableSet S. The wrappers that take DecidableSet S are free_group_decidable_set and free_group_elements_decidable_set."
+  },
+  {
+    "source": "congp.tex",
+    "line": 771,
+    "quote": "We can follow that same strategy as in lem:univisexp and lem:wedgeofgpoidisgpoid and show this by giving a description of F_S as an abstract group.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_group_usym_equiv",
+      "free_group_reduced_unit",
+      "free_group_reduced_mul",
+      "free_group_reduced_inverse",
+      "free_group_word_mul",
+      "free_group_word_inverse",
+      "word_inverse"
+    ],
+    "note": "USym F_S = R_S (thm:free-group-elements). Under this equivalence, the unit is eps and the product of r and s is rho(r s). The inverse of r is rho(r^-1), where r^-1 is the reversed complemented word (free_group_reduced_unit/mul/inverse)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 776,
+    "quote": "We can compose these out of loop_s and loop_s^-1 with various generators s. However, if we at any point have loop_s loop_s^-1 or loop_s^-1 loop_s, then these cancel.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_word_interpretation_cancel",
+      "free_word_interpretation_reduction",
+      "free_group_elements_equiv"
+    ],
+    "note": "For both signs of x, [x x-bar w] = [w] (free_word_interpretation_cancel). Every symmetry of base is such a composite, because [-] restricted to R_S is surjective (thm:free-group-elements)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 792,
+    "quote": "If a : S, we'll also write a : S~ for the left inclusion, and we'll write A = a-bar : S~ for the right inclusion, so that a-bar = A and A-bar = a (judgmentally), i.e. a and A are complementary.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "letter_complement_left",
+      "letter_complement_right"
+    ],
+    "note": "The equations are inl a = a and inr a = A. Both hold by refl."
+  },
+  {
+    "source": "congp.tex",
+    "line": 796,
+    "quote": "Recall the definition of lists T* over a set T, def:lists ... Instead of lists we shall often speak about words formed from letters taken from the set T.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "SignedWord",
+      "empty_word"
+    ],
+    "note": "SignedWord S = List (SignedLetter S), with List of module 01. Here nil = eps, and cons t l = t l with head t."
+  },
+  {
+    "source": "congp.tex",
+    "line": 805,
+    "quote": "If we have a, b : S, we find among the elements of S~* the following: eps, a, b, A, B, aa, ab, aA, aB, ba, bb, bA, bB, Aa, Ab, AA, AB, ...",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "words_of_length",
+      "fw_litmus_words_length_two",
+      "fw_litmus_reduced_length_zero",
+      "fw_litmus_reduced_length_one",
+      "fw_litmus_reduced_length_two"
+    ],
+    "note": "For S = Bool, the formalization lists the words of length 2 over a, b, A, B (by refl). The order is exactly the order of the book. Of these words, 12 are reduced. Also, 1 + 4 + 12 words of length at most 2 are reduced. The counts hold by refl."
+  },
+  {
+    "source": "congp.tex",
+    "line": 809,
+    "quote": "When we interpret these as symmetries in B F_S, i.e. as elements in USym F_S, the words aA and Bb, etc., become trivial.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_word_interpretation_aA",
+      "free_word_interpretation_Bb",
+      "free_word_interpretation_cancel"
+    ],
+    "note": "For every FreeGroupSignature Bool F, [aA] = refl and [Bb] = refl. In general, [x x-bar w] = [w]."
+  },
+  {
+    "source": "congp.tex",
+    "line": 820,
+    "quote": "Hint: This is precisely the point where we need S to have decidable equality.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ReductionFunction",
+      "decidable_equality_reduction_function",
+      "reduction_function_decidable_equality"
+    ],
+    "note": "A reduction function r exists iff S has decidable equality. Here r(w) is reduced and is reached from w by deletion of complementary pairs. The hypothesis dec gives word_reduction. Conversely, r(a B) decides a = b."
+  },
+  {
+    "source": "congp.tex",
+    "line": 829,
+    "quote": "Considered as a set of words, D_S is called the 2-sided Dyck language ... the 1-sided Dyck language for S~ = {(,)} consists of all balanced words ..., e.g. (), (()), ()(), etc., while our D_S in this case also has words like )( and ))(()(.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "dyck_word_close_open",
+      "dyck_word_long_example",
+      "OneSidedDyckTree",
+      "one_sided_dyck_word",
+      "OneSidedDyckWord",
+      "one_sided_dyck_reduction",
+      "one_sided_dyck_in_dyck",
+      "close_open_not_one_sided"
+    ],
+    "note": "Let S = 1, '(' = inl star and ')' = inr star. Then ')(' and '))(()(' are in D_1 (refl). The grammar D ::= eps | ( D ) D models the balanced words, and all of them lie in D_1. The word ')(' is not balanced."
+  },
+  {
+    "source": "congp.tex",
+    "line": 852,
+    "quote": "We are now ready to prove that set R_S of reduced words is equivalent to USym F_S.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "free_group_elements_equiv",
+      "free_group_usym_equiv"
+    ],
+    "note": "This announces thm:free-group-elements."
+  },
+  {
+    "source": "congp.tex",
+    "line": 887,
+    "quote": "The set R_S is very much like Z, but instead of having only one successor equivalence s, it has one for each element of S.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "image_letter_action_equiv",
+      "reduced_letter_action_equiv",
+      "xca_reduced_words_one_integers",
+      "reduced_word_act",
+      "reduced_words_free",
+      "reduced_word_free_sset",
+      "reduced_word_sset_maps_equiv",
+      "int_maps_equiv",
+      "constructed_free_group_unit_integers"
+    ],
+    "note": "R_S carries the S-indexed family of equivalences s_a (image_letter_action_equiv (inl a)). For S = 1, the xca at congp.tex:929 identifies (R_1, s_*) with (Int, succ)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 899,
+    "quote": "In a picture, the case for loop_a should prove that it does not matter what path you take around the square R_S -> (base = base), s_a, loop_a . -.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "free_word_decode_triangle",
+      "free_word_decode_loop"
+    ],
+    "note": "The lemma free_word_decode_triangle says: [-] after transport along loop_a equals loop_a . [-] (concat [w] loop_a). This gives the dependent path free_word_decode_loop."
   }
 ]

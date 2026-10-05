@@ -1,0 +1,1010 @@
+[
+  {
+    "source": "congp.tex",
+    "line": 24,
+    "labels": [
+      "def:semidirect-product"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "BlindSemidirectCarrier",
+      "blind_semidirect",
+      "blind_sigma_groupoid"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_def_semidirect"
+    ],
+    "our_declarations": [
+      "semidirect_product"
+    ],
+    "note": "By refl, blind_semidirect G H is our semidirect_product G H. When the definitions are unfolded, they have the same Σ-type, the same base point, and the same connectedness and groupoid proof terms."
+  },
+  {
+    "source": "congp.tex",
+    "line": 79,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/02-dihedral.ny",
+    "blind_declarations": [
+      "BlindZn",
+      "BlindDihRel",
+      "blind_dihedral_relation_equivalence",
+      "BlindDihX",
+      "blind_dih_class",
+      "BlindDihedralF",
+      "blind_xca_dihedral_well_defined",
+      "blind_xca_dihedral_three"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-02-dihedral.ny",
+    "bridge_declarations": [
+      "bridge_def_zn",
+      "bridge_def_dih_rel",
+      "bridge_def_dih_x",
+      "bridge_def_dih_x_class",
+      "bridge_def_dihedral_f_unique",
+      "bridge_def_dihedral_shape",
+      "bridge_dihedral_relation_equivalence",
+      "bridge_xca_dihedral_well_defined",
+      "bridge_xca_dihedral_three",
+      "b02_blind_relation",
+      "b02_f_unique"
+    ],
+    "our_declarations": [
+      "SubgroupQuotient",
+      "standard_cycle",
+      "DihedralRel",
+      "dihedral_relation",
+      "DihedralCycleSet",
+      "dihedral_move",
+      "dihedral_move_self",
+      "dihedral_move_other",
+      "dihedral_point",
+      "dihedral_s2c3_path",
+      "dihedral_three_point_path"
+    ],
+    "note": "BlindZn is literally our Z/~_n (refl). The blind relation uses [z]=[z'] and [z]=[-z'] in Z/~_n for the two cases. Ours uses z-z' and z+z' in nZ, respectively. The two relations are logically equivalent. The blind X is the image of the truncated relation, and it is judgmentally a Quotient. So X_blind ~ DihedralCycleSet, and the classes are preserved by refl. Every f that satisfies the two printed equations equals our dihedral_move, transported (b02_f_unique), because the classes cover X. So (X, f) = dihedral_point in T_S for every witness. The n = 3 claim follows from dihedral_three_point_path."
+  },
+  {
+    "source": "congp.tex",
+    "line": 90,
+    "labels": [
+      "def:gen-dihedral"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/02-dihedral.ny",
+    "blind_declarations": [
+      "BlindDihedralData",
+      "blind_dihedral_shape",
+      "blind_cyclic_action",
+      "blind_dihedral"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-02-dihedral.ny",
+    "bridge_declarations": [
+      "bridge_def_cyclic_action",
+      "bridge_def_dihedral",
+      "bridge_def_semidirect_dihedral",
+      "b02_shape_path"
+    ],
+    "our_declarations": [
+      "dihedral_order_action",
+      "generalized_dihedral_group",
+      "semidirect_product",
+      "dihedral_point"
+    ],
+    "note": "For every order n and every witness w, blind_cyclic_action n w = dihedral_order_action n and blind_dihedral n w = generalized_dihedral_group n as identifications. These come from ap along the path of points S -> (X_S, f). Judgmentally, blind_semidirect is our semidirect_product."
+  },
+  {
+    "source": "congp.tex",
+    "line": 109,
+    "labels": [
+      "con:bidirectional-bicycle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/02-dihedral.ny",
+    "blind_declarations": [
+      "blind_std_dih_a",
+      "blind_std_dih_b",
+      "blind_std_dih_connected",
+      "blind_std_dihedral_bicycle",
+      "blind_con_bidirectional_bicycle"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-02-dihedral.ny",
+    "bridge_declarations": [
+      "bridge_def_std_dihedral_bicycle",
+      "bridge_con_bidirectional_bicycle"
+    ],
+    "our_declarations": [
+      "standard_dihedral_bicycle",
+      "bidirectional_bicycle_pointed_equiv"
+    ],
+    "note": "The blind standard dihedral bicycle has our carrier and the same a, b pointwise. The identification uses bicycle_path_from_iso with the identity. The blind pointed equivalence is bidirectional_bicycle_pointed_equiv, transported along that path and along bridge_def_dihedral."
+  },
+  {
+    "source": "congp.tex",
+    "line": 189,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/02-dihedral.ny",
+    "blind_declarations": [
+      "BlindPreBicycle",
+      "blind_bicycle_forget",
+      "blind_bidirectional_formula",
+      "blind_xca_bidirectional_inverse"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-02-dihedral.ny",
+    "bridge_declarations": [
+      "b02_formula",
+      "B02Inverse",
+      "b02_inverse_ours",
+      "bridge_xca_bidirectional_inverse"
+    ],
+    "our_declarations": [
+      "bidirectional_bicycle_pointed_equiv",
+      "dihedral_bicycle_map",
+      "dihedral_bicycle",
+      "bidirectional_bicycle_inverse"
+    ],
+    "note": "For our point, the formula holds by refl for our phi (dihedral_bicycle_map). Also, phi is a BookIsEquiv (bidirectional_bicycle_pointed_equiv .snd). The statement is written as a family over the point S -> (X_S, f) and the target bicycle. It is transported to every blind witness. The blind statement does not name the book's inverse psi. So our bidirectional_bicycle_inverse (psi from orbit quotients, module 819) is stronger than necessary and is not used."
+  },
+  {
+    "source": "congp.tex",
+    "line": 196,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/02-dihedral.ny",
+    "blind_declarations": [
+      "blind_four",
+      "blind_xca_q8_d4"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-02-dihedral.ny",
+    "bridge_declarations": [
+      "bridge_xca_q8_d4"
+    ],
+    "our_declarations": [
+      "quaternion_dihedral_not_isomorphic",
+      "dihedral_four_group",
+      "quaternion_group"
+    ],
+    "note": "For every witness w, the proof transports quaternion_dihedral_not_isomorphic along bridge_def_dihedral (principal_order 4) w."
+  },
+  {
+    "source": "congp.tex",
+    "line": 210,
+    "labels": [
+      "lem:pathpairsection"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_pathpair",
+      "blind_lem_pathpairsection",
+      "blind_lem_pathpairsection_map"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_lem_pathpairsection",
+      "bridge_lem_pathpairsection_map",
+      "bridge_pathpair_section",
+      "bridge_pathpair_eta",
+      "bridge_pathpair_injective",
+      "bridge_pathpair_epsilon"
+    ],
+    "our_declarations": [
+      "path_pair_section_book_equiv",
+      "path_pair_section_equiv",
+      "path_pair_section_map"
+    ],
+    "note": "The literal BookEquiv is ours. The named inverse Ψ(p,q) = ap_{(x,-)}(q)·ap_{(-,f -)}(p) satisfies Φ∘Ψ = id (induction on p). Because Φ is an equivalence, Ψ is also an equivalence."
+  },
+  {
+    "source": "congp.tex",
+    "line": 236,
+    "labels": [
+      "def:pathsectionaction"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_path_section_action"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_def_path_section_action"
+    ],
+    "our_declarations": [
+      "section_loop_action"
+    ],
+    "note": "The J term is the same: blind_path_section_action is section_loop_action by refl (eta)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 246,
+    "labels": [
+      "def:pathsectionactionassoc"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_lem_pathsectionactionassoc"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_lem_pathsectionactionassoc"
+    ],
+    "our_declarations": [
+      "section_loop_action_assoc"
+    ],
+    "note": "The statement is identical. It uses concat p p' for the book's p'·p."
+  },
+  {
+    "source": "congp.tex",
+    "line": 263,
+    "labels": [
+      "lem:pathpairsectionmult"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_lem_pathpairsectionmult"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_lem_pathpairsectionmult"
+    ],
+    "our_declarations": [
+      "path_pair_section_mult",
+      "path_pair_section_concat"
+    ],
+    "note": "The blind Ψ form follows from our Φ form because Φ is injective. The proof uses path_pair_section_mult with the hypotheses Φ(Ψ(p,q)) = (p,q)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 291,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_semidirect_proj",
+      "blind_semidirect_section",
+      "blind_semidirect_incl",
+      "BlindKerCarrier",
+      "blind_ker_group",
+      "blind_ker_map",
+      "blind_lem_semidirect_kernel"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_def_ker_group",
+      "bridge_def_ker_map",
+      "bridge_def_semidirect_maps",
+      "bridge_lem_semidirect_kernel",
+      "bridge_lem_semidirect_kernel_converse"
+    ],
+    "our_declarations": [
+      "semidirect_inclusion_mono",
+      "semidirect_kernel_iso",
+      "semidirect_kernel_iso_inclusion",
+      "semidirect_inclusion_kernel",
+      "fiber_kernel_group"
+    ],
+    "note": "By refl, the blind kernel group and p, s, j are ours. The blind statement is a mono and an iso φ with ker∘φ = j. It is (semidirect_inclusion_mono, semidirect_kernel_iso, semidirect_kernel_iso_inclusion). Converse: our identification in Mono(G⋉H) follows from the blind statement."
+  },
+  {
+    "source": "congp.tex",
+    "line": 328,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/01-semidirect.ny",
+    "blind_declarations": [
+      "blind_power_action",
+      "blind_wreath"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-01-semidirect.ny",
+    "bridge_declarations": [
+      "bridge_def_wreath"
+    ],
+    "our_declarations": [
+      "wreath_product",
+      "wreath_power_action"
+    ],
+    "note": "By refl, blind_wreath G H X is our wreath_product H G X. The order of the group arguments is different."
+  },
+  {
+    "source": "congp.tex",
+    "line": 340,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "The example is empty (title only). It is also informal in ours."
+  },
+  {
+    "source": "congp.tex",
+    "line": 344,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "The example is empty (title only). It is also informal in ours."
+  },
+  {
+    "source": "congp.tex",
+    "line": 348,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "The example is empty (title only). It is also informal in ours."
+  },
+  {
+    "source": "congp.tex",
+    "line": 355,
+    "labels": [
+      "ex:pullbackandgcd",
+      "fig:circle-pullback"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "BlindCirclePullback",
+      "blind_ex_pullbackandgcd_components",
+      "blind_ex_pullbackandgcd_square",
+      "blind_ex_pullbackandgcd_lcm"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03c-pullbackgcd.ny",
+    "bridge_declarations": [
+      "bridge_ex_pullbackandgcd_components",
+      "bridge_ex_pullbackandgcd_square",
+      "bp_square_at_gcd",
+      "bridge_ex_pullbackandgcd_lcm",
+      "bp_lcm_at"
+    ],
+    "our_declarations": [
+      "circle_power_pullback_components_fin",
+      "circle_pullback_explicit_square",
+      "circle_pullback_explicit_decomposition",
+      "cpx_quotient_left_eq",
+      "cpx_quotient_right_eq",
+      "circle_pullback_component_lcm_cover"
+    ],
+    "note": "Part (1) is circle_power_pullback_components_fin. Part (2) is the untruncated square S¹ × Fin d ≃ P with coordinates z^{b'}, z^{a'} on every copy. In ours, it was only merely available (finite choice), which is weaker than the book. Module 891 fixes this with explicit points per component and an explicit equivalence. It also proves lcm(a,b)/a = b' and lcm(a,b)/b = a'. The result is transported along d = gcd. Part (3) holds per component, merely, from circle_pullback_component_lcm_cover (set-truncation component versus native component)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 443,
+    "labels": [
+      "def:intersectionand unionofsets"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "BlindSetIntersection",
+      "BlindSetUnion",
+      "BlindSubsetType"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03a-pullback.ny",
+    "bridge_declarations": [
+      "bridge_def_set_intersection"
+    ],
+    "our_declarations": [
+      "SubsetIntersection",
+      "SubsetUnion"
+    ],
+    "note": "The families are the same by refl. The blind union is Mere of the sum, that is, our Disjunction."
+  },
+  {
+    "source": "congp.tex",
+    "line": 447,
+    "labels": [
+      "xca:intersectionpullbackofsets",
+      "xca:cardinalityintersectionunion"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "blind_subset_incl",
+      "blind_xca_intersectionpullbackofsets",
+      "blind_xca_cardinalityintersectionunion"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03a-pullback.ny",
+    "bridge_declarations": [
+      "bridge_xca_intersectionpullbackofsets",
+      "bridge_xca_cardinalityintersectionunion",
+      "bp_card_irrelevant",
+      "bridge_xca_cardinality_converse"
+    ],
+    "our_declarations": [
+      "subset_pullback_intersection_book_equiv",
+      "subset_cardinality_union_intersection",
+      "subset_finite_decidable"
+    ],
+    "note": "Part (1) is ours. The map lands over the first point up to t.snd. Part (2): the blind version assumes that the four subsets are finite. A finite subset of a finite set is decidable (subset_finite_decidable). So ours applies, and the cardinality does not depend on the finiteness proof. Converse: ours follows from the blind one. Both readings agree with our note that the printed statement needs a hypothesis."
+  },
+  {
+    "source": "congp.tex",
+    "line": 457,
+    "labels": [
+      "def:intersectionofgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "BlindGroupPullbackType",
+      "blind_group_pullback_point",
+      "blind_group_pullback",
+      "blind_group_pullback_proj1",
+      "blind_group_pullback_proj2",
+      "blind_mono_intersection"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03a-pullback.ny",
+    "bridge_declarations": [
+      "bridge_def_group_pullback_type",
+      "bridge_def_group_pullback",
+      "bp_grp",
+      "bp_transport"
+    ],
+    "our_declarations": [
+      "pullback_group",
+      "pbg_space",
+      "pbg_point"
+    ],
+    "note": "The pointed type and the point (p_f⁻¹ · p_f') are the same. The groups differ only in the groupoid proof, which is a proposition. The identification is bridge_def_group_pullback. Statements are transported along it (bp_transport)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 471,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "blind_multiples_subgroup",
+      "blind_multiples_mono",
+      "blind_multiples_intersection_incl",
+      "blind_mono_intersection",
+      "blind_ex_lcm_intersection"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03b-lcm.ny",
+    "bridge_declarations": [
+      "b03_multiples_eq",
+      "b03_multiples_path",
+      "B03PbSpace",
+      "B03Lcm",
+      "b03_blind_groupoid",
+      "b03_our_groupoid",
+      "bridge_ex_lcm_intersection"
+    ],
+    "our_declarations": [
+      "integer_intersection_subgroups",
+      "mono_iso_of_same_symmetries",
+      "multiples_subgroup",
+      "multiples_subgroup_mono",
+      "group_mono_intersection",
+      "nat_lcm_intersection",
+      "integer_intersection_lcm"
+    ],
+    "note": "Our original integer_intersection_lcm (module 824) covers only a, b > 0 with multiplication-hom monos. This is weaker than the book. Module 890 proves the book statement for all a, b : Nat in the subgroup formulation. In it, 0Z is the trivial subgroup (R, 0). The proof uses picked-out symmetries (a | winding) and nat_lcm_intersection. It also uses a generic result: 'monos with the same picked-out symmetries are isomorphic over G'. The blind statement is that theorem, transported along the pointwise identification of the two aZ functions. It is also transported along the groupoid proof of the pullback space, which is a proposition."
+  },
+  {
+    "source": "congp.tex",
+    "line": 479,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "BlindHomPullback",
+      "blind_xca_pullback_homs",
+      "BlindUSymPullback",
+      "BlindUSymPullbackEquiv",
+      "blind_xca_pullback_usym",
+      "blind_xca_pullback_abstract"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03a-pullback.ny",
+    "bridge_declarations": [
+      "bridge_xca_pullback_homs",
+      "bridge_xca_pullback_usym",
+      "bridge_xca_pullback_abstract",
+      "bp_homs_type",
+      "bp_usym_type",
+      "bp_usym_ours"
+    ],
+    "our_declarations": [
+      "pullback_group_hom_equiv",
+      "pullback_group_hom_equiv_left",
+      "pullback_group_hom_equiv_right",
+      "pullback_group_usym_equiv",
+      "pullback_group_usym_map_hom",
+      "pullback_group_abstract_iso"
+    ],
+    "note": "All three parts follow from ours, transported along the groupoid-proof identification."
+  },
+  {
+    "source": "congp.tex",
+    "line": 497,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/03-pullback.ny",
+    "blind_declarations": [
+      "blind_rem_pullback_not_connected"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-03a-pullback.ny",
+    "bridge_declarations": [
+      "bridge_rem_pullback_not_connected",
+      "bp_base_hom"
+    ],
+    "our_declarations": [
+      "circle_point_pullback_not_connected",
+      "constructed_circle"
+    ],
+    "note": "Counterexample: H = H' = trivial group, and G = Z of the constructed circle. Both homs point at base. Then BH ×_{BG} BH' is our CirclePointPullback, which is not connected."
+  },
+  {
+    "source": "congp.tex",
+    "line": 522,
+    "labels": [
+      "def:wedge"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_wedge_inc",
+      "BlindWedgeBoundary",
+      "blind_wedge_evaluate",
+      "BlindWedgeStructure",
+      "BlindWedge",
+      "blind_wedge_pointed",
+      "BlindWedgeInductionPrinted",
+      "blind_wedge_i1g",
+      "blind_wedge_i2g"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04a-wedge.ny ; chapters/ch08/blind/bridge-04d-wedge-converse.ny",
+    "bridge_declarations": [
+      "bridge_wedge_signature",
+      "bw_conv",
+      "bw_back",
+      "bw_back_conv",
+      "bw_induction",
+      "bridge_def_wedge_pointed",
+      "bridge_def_wedge_loops",
+      "bridge_wedge_signature_converse",
+      "bridge_wedge_converse_roundtrip",
+      "bridge_wedge_converse_roundtrip_data",
+      "bridge_wedge_converse_roundtrip_blind"
+    ],
+    "our_declarations": [
+      "WedgeSignature",
+      "wedge_pointed",
+      "wedge_loop1",
+      "wedge_loop2",
+      "wedge_book_boundary_equiv"
+    ],
+    "note": "Every blind wedge, with the book boundary datum s(a1) = C(g⁻¹)s(a2), is a WedgeSignature of ours on the same carrier/constructors. The blind path datum is bw_conv of our dependent path, and bw_back is a retraction. On the result, the pointed wedge and i1^g, i2^g are ours by refl. Conversely, every WedgeSignature of ours is a blind wedge (bridge_wedge_signature_converse). Here bw_conv ∘ bw_back = id follows from the injectivity of bw_back. Both round trips are refl on carrier, constructors and glue. The induction fields are not compared."
+  },
+  {
+    "source": "congp.tex",
+    "line": 540,
+    "labels": [
+      "lem:univvee"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_wedge_in1",
+      "blind_wedge_in2",
+      "blind_wedge_restrict",
+      "blind_lem_univvee"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04a-wedge.ny",
+    "bridge_declarations": [
+      "bridge_lem_univvee"
+    ],
+    "our_declarations": [
+      "wedge_restrict_book_equiv"
+    ],
+    "note": "The restriction map is the same on the converted signature."
+  },
+  {
+    "source": "congp.tex",
+    "line": 571,
+    "labels": [
+      "def:sumofgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_group_sum",
+      "blind_group_sum_in1",
+      "blind_group_sum_in2"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04a-wedge.ny",
+    "bridge_declarations": [
+      "bridge_def_group_sum",
+      "bw_sum_pre"
+    ],
+    "our_declarations": [
+      "sum_of_groups",
+      "sum_of_groups_aut_path",
+      "wedge_automorphism_group"
+    ],
+    "note": "The blind G1 ∨ G2 is the literal Aut_W(a12), that is, our wedge_automorphism_group. Ours is mkgroup(W, a12). The lemma sum_of_groups_aut_path identifies the two. Both take the groupoid hypothesis hW."
+  },
+  {
+    "source": "congp.tex",
+    "line": 577,
+    "labels": [
+      "lem:sumofgroupsISsum"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_lem_sumofgroupsISsum"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04a-wedge.ny",
+    "bridge_declarations": [
+      "bridge_lem_sumofgroupsISsum",
+      "bw_sum_in1_compat",
+      "bw_sum_in2_compat",
+      "b8_two_of_three"
+    ],
+    "our_declarations": [
+      "sum_of_groups_hom_equiv"
+    ],
+    "note": "Restriction along the blind structure maps equals ours after precomposition with fst : (W_(a12), pt) ≃ (W, a12). The reason is that the blind structure maps followed by fst are our pointed structure maps up to concat with refl. The proof then uses two-out-of-three."
+  },
+  {
+    "source": "congp.tex",
+    "line": 586,
+    "labels": [
+      "cor:ZplusZuniv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_cor_ZplusZuniv"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04a-wedge.ny",
+    "bridge_declarations": [
+      "bridge_cor_ZplusZuniv"
+    ],
+    "our_declarations": [
+      "circle_sum_hom_equiv"
+    ],
+    "note": "The proof is as for 577, followed by evaluation at loop."
+  },
+  {
+    "source": "congp.tex",
+    "line": 593,
+    "labels": [
+      "xca:whatAREabeliangroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "blind_pointed_id",
+      "BlindFoldExtension",
+      "BlindFoldData",
+      "blind_xca_whatAREabeliangroups",
+      "blind_loop_mul",
+      "blind_xca_whatAREabeliangroups_aside"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04b-wedge.ny ; chapters/ch08/blind/bridge-04c-wedge-aside.ny",
+    "bridge_declarations": [
+      "bw_restrict_injective",
+      "bw_fold_eq",
+      "bw_incl_eq",
+      "bw_fold_extension_equiv",
+      "bridge_xca_whatAREabeliangroups",
+      "bridge_xca_whatAREabeliangroups_untruncated",
+      "bw_commutator_trivial",
+      "bw_fold_loop1",
+      "bw_fold_loop2",
+      "bw_aside_abelian",
+      "bridge_xca_whatAREabeliangroups_aside"
+    ],
+    "our_declarations": [
+      "wedge_fold_extension_abelian_equiv",
+      "wedge_fold_book",
+      "wedge_incl_book",
+      "unpointed_extension_abelian"
+    ],
+    "note": "The blind fold/i are any pointed maps with the prescribed restrictions. Because i^* is injective, they are ours, and the extension types are identified. This gives an untruncated equivalence with isAb, which is stronger than the blind Mere form. Aside: our unpointed_extension_abelian and Ω fold ∘ i_k^g = id give Ω fold(x y x⁻¹ y⁻¹) = refl."
+  },
+  {
+    "source": "congp.tex",
+    "line": 627,
+    "labels": [
+      "lem:wedgeofgpoidisgpoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/04-wedge.ny",
+    "blind_declarations": [
+      "BlindNonRefl",
+      "BlindAltTail",
+      "BlindAltStrings",
+      "blind_alt_eval",
+      "blind_wedge_beta",
+      "blind_lem_wedgeofgpoidisgpoid"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-04b-wedge.ny",
+    "bridge_declarations": [
+      "bw_tail_to",
+      "bw_tail_from",
+      "bw_strings_equiv",
+      "bw_alt_eval_eq",
+      "bw_beta_compat",
+      "bridge_lem_wedgeofgpoidisgpoid"
+    ],
+    "our_declarations": [
+      "wedge_connected",
+      "wedge_decidable_groupoid",
+      "wedge_loops_decidable_equality",
+      "wedge_words_equiv",
+      "wedge_words_compose"
+    ],
+    "note": "Blind strings (length-indexed nested Σ) ≃ our alternating lists. The blind β has literally our nesting. So β_blind = β_ours ∘ that bijection."
+  },
+  {
+    "source": "congp.tex",
+    "line": 738,
+    "labels": [
+      "def:bfree"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "BlindFreeBoundary",
+      "blind_free_evaluate",
+      "BlindFreeGroupSignature",
+      "blind_free_pointed",
+      "blind_free_connected",
+      "blind_free_infty_group",
+      "blind_free_group"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "bridge_def_free_signature",
+      "bridge_def_free_pointed",
+      "bridge_def_free_infty_group",
+      "bridge_def_free_group",
+      "b05_sig"
+    ],
+    "our_declarations": [
+      "FreeGroupSignature",
+      "free_pointed",
+      "free_infty_group",
+      "free_group",
+      "free_connected",
+      "free_signature_groupoid"
+    ],
+    "note": "A blind signature on a set S is fieldwise our FreeGroupSignature (S .fst). The boundary and the evaluation are the same terms. This gives an equivalence with refl round trips. The pointed types agree by refl. The blind infinity-group and group (under any groupoid hypothesis) are identified with free_infty_group and free_group. The reason is that the connectedness and groupoid proofs are propositions."
+  },
+  {
+    "source": "congp.tex",
+    "line": 782,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "BlindSigned",
+      "blind_complement",
+      "blind_signed_claims"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "bridge_def_complement",
+      "bridge_signed_claims"
+    ],
+    "our_declarations": [
+      "SignedLetter",
+      "letter_complement",
+      "signed_letter_decidable_set",
+      "letter_complement_involutive",
+      "letter_complement_equiv"
+    ],
+    "note": "The function blind_complement equals letter_complement pointwise. The decidable-set claim is signed_letter_decidable_set. The involution and BookIsEquiv claims are ours, transported along the function path."
+  },
+  {
+    "source": "congp.tex",
+    "line": 811,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "BlindIsReducedFrom",
+      "BlindIsReduced",
+      "BlindDeleteStep",
+      "BlindReducesIn",
+      "BlindReducesTo",
+      "BlindReductionSpec"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "bridge_def_is_reduced",
+      "bridge_def_delete_step",
+      "bridge_def_reduces_to"
+    ],
+    "our_declarations": [
+      "IsReducedWord",
+      "WordDeletionStep",
+      "WordDeletions",
+      "WordReducesTo"
+    ],
+    "note": "Definition block: by induction on words, blind reducedness (head-to-tail recursion) and ours are logically equivalent. One deletion step and n-step deletions agree up to the order of the Sigma components and the complement function. The proof gives maps in both directions, by induction on n."
+  },
+  {
+    "source": "congp.tex",
+    "line": 819,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_signed_decidable",
+      "blind_reduce_choose",
+      "blind_reduce_cons",
+      "blind_rho",
+      "blind_xca_rho"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "b05_rho_eq",
+      "bridge_def_rho",
+      "bridge_xca_rho"
+    ],
+    "our_declarations": [
+      "word_reduction",
+      "word_letter_reduce",
+      "word_reduction_reduced",
+      "word_reduces_to_reduction"
+    ],
+    "note": "By induction on words, the blind rho_S (DecidableSet, own complement) equals our word_reduction at decidable_set_equality pointwise. The spec says that rho w is reduced and is reached by deletions. It is our word_reduction_reduced and word_reduces_to_reduction, transported along that path. The 811 bridges convert it."
+  },
+  {
+    "source": "congp.tex",
+    "line": 824,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "BlindReducedWords",
+      "BlindDyckWords"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "b05_image_equiv",
+      "bridge_def_reduced_words",
+      "bridge_def_reduced_words_fst",
+      "bridge_def_dyck_words"
+    ],
+    "our_declarations": [
+      "ReducedWordImage",
+      "DyckWord"
+    ],
+    "note": "Both R_S are images (same orientation) of pointwise equal maps. So a map that is the identity on the underlying word makes them equivalent. Both D_S are book fibers over eps, and they are equivalent in the same way."
+  },
+  {
+    "source": "congp.tex",
+    "line": 842,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_rem_reduction_quotient"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "bridge_rem_reduction_quotient"
+    ],
+    "our_declarations": [
+      "word_reduction_relation",
+      "WordReductionQuotient",
+      "word_quotient_image_equiv"
+    ],
+    "note": "R = our word_reduction_relation. Logically, it is rho u = rho v via the rho path. The equivalence is word_quotient_image_equiv followed by the R_S bridge. It sends [u] to rho(u), by refl up to the rho path."
+  },
+  {
+    "source": "congp.tex",
+    "line": 857,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_interp"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "b05_interp_eq",
+      "bridge_def_interp"
+    ],
+    "our_declarations": [
+      "free_word_interpretation",
+      "free_signed_loop"
+    ],
+    "note": "By induction on words, the blind interpretation equals free_word_interpretation of the converted signature. The composition order is the same."
+  },
+  {
+    "source": "congp.tex",
+    "line": 869,
+    "labels": [
+      "thm:free-group-elements"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_decidable_settype",
+      "blind_thm_free_group_elements"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "bridge_thm_free_group_elements"
+    ],
+    "our_declarations": [
+      "free_group_elements_equiv",
+      "free_reduced_interpretation"
+    ],
+    "note": "Let S be any decidable set and F any blind signature. The R_S bridge followed by free_group_elements_equiv (dec = decidable_set_equality) is a BookIsEquiv with map r -> ours[r .fst]. It is transported along the interpretation path to the blind map."
+  },
+  {
+    "source": "congp.tex",
+    "line": 929,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_fin_one",
+      "blind_fin_one_dset",
+      "blind_fin_one_star",
+      "blind_rs_empty",
+      "blind_rs_succ",
+      "blind_xca_reduced_one_integers"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05a-free.ny",
+    "bridge_declarations": [
+      "B05OneIntegers",
+      "b05_unit_one_integers",
+      "bridge_xca_reduced_one_integers"
+    ],
+    "our_declarations": [
+      "reduced_words_one_integers_equiv",
+      "unit_word_degree_reduction",
+      "xca_reduced_words_one_integers"
+    ],
+    "note": "Ours is for the alphabet Unit. The blind claim (alphabet Fin 1) is proved for Unit with any decidable-set structure and any point. The proof uses reduced_words_one_integers_equiv, that is, the degree. It sends eps -> 0 by refl, and the successor property comes from unit_word_degree_reduction. Then the result is transported along ua(Unit = Fin 1)."
+  },
+  {
+    "source": "congp.tex",
+    "line": 937,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch08/blind/05-free.ny",
+    "blind_declarations": [
+      "blind_xca_free_wedge_step",
+      "BlindCircleTower",
+      "blind_xca_free_iterated_wedge"
+    ],
+    "bridge_file": "chapters/ch08/blind/bridge-05b-free.ny",
+    "bridge_declarations": [
+      "bridge_xca_free_wedge_step",
+      "b05_tower",
+      "bridge_xca_free_iterated_wedge"
+    ],
+    "our_declarations": [
+      "free_succ_wedge_path",
+      "WedgeTower",
+      "wedge_tower_top",
+      "free_group_wedge_tower",
+      "wedge_pointed_path_along",
+      "pointed_path_to_equiv"
+    ],
+    "note": "(1) This holds for all n, C, signatures F', F and every blind wedge W. The proof uses free_succ_wedge_path with W converted by bridge_wedge_signature (same pointed type). It turns the result into a BookPointedEquiv. (2) Induction on m converts a blind circle tower of height m to our WedgeTower of height m+1. Each chosen wedge is transported along the identification of the previous stage. The tops are identified by wedge_pointed_path_along. Then free_group_wedge_tower gives the pointed equivalence. Ours also covers n = 0 (the point), which the blind statement omits."
+  }
+]
