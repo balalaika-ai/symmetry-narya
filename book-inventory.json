@@ -23896,8 +23896,20 @@
     "line": 106,
     "section_raw": "Brief overview of the chapter}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SignedLetter",
+      "letter_complement",
+      "free_word_cancel_pair",
+      "free_bool_aA",
+      "free_bool_Aa"
+    ],
+    "principal": [
+      "free_word_cancel_pair",
+      "free_bool_aA",
+      "free_bool_Aa"
+    ],
+    "note": "Notation: in SignedLetter S (module 861), a generator a is inl. a and its inverse A is inr. a. The claim aA = Aa = 1 is free_word_cancel_pair. It interprets the word x x̄ as the unit of F_S, for every free group signature. The instances for S = {a, b} are free_bool_aA and free_bool_Aa."
   },
   {
     "chapter": 11,
@@ -23909,8 +23921,20 @@
     "labels": [
       "def:gens-gp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GeneratesGroup",
+      "free_induced_hom",
+      "free_induced_hom_generator",
+      "generates_iff_surjective",
+      "GeneratesSurjectively"
+    ],
+    "principal": [
+      "GeneratesGroup",
+      "free_induced_hom",
+      "generates_iff_surjective"
+    ],
+    "note": "GeneratesGroup S dec G ι says that the homomorphism F_S → G induced by ι : S → USym G is an epimorphism (IsGroupEpi, chapter 9). This homomorphism is free_induced_hom, the inverse of the universal property of the constructed free group (module 881). S must have decidable equality, because the formalization uses the constructed F_S. The book says that S is finite or decidable (line 138). The map ι need not be injective. The lemma generates_iff_surjective gives the equivalence with surjectivity on symmetries (line 209), through lem:epi-surj (module 934)."
   },
   {
     "chapter": 11,
@@ -23922,8 +23946,29 @@
     "labels": [
       "lem:gens-gp-iff"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "rho_map",
+      "RhoTarget",
+      "RhoEmbedding",
+      "gens_gp_only_if",
+      "rho_embedding_of_connected",
+      "gens_gp_if_counterexample",
+      "gens_gp_if_refuted",
+      "empty_rho_embedding",
+      "empty_not_generates",
+      "sigma_two",
+      "empty_iota",
+      "rho_ev_path",
+      "restricted_representable_embedding",
+      "ev_embedding"
+    ],
+    "principal": [
+      "gens_gp_only_if",
+      "gens_gp_if_counterexample",
+      "gens_gp_if_refuted"
+    ],
+    "note": "The definition is ρ_S(t) = (t = sh_G, s ↦ (p ↦ ι(s)·p)) with ι(s)·p = concat p (ι s). The formalization proves the 'only if' direction (gens_gp_only_if). It identifies ρ_S with Ev ∘ Y, where Y is the representable family restricted along Bφ. This is an embedding because Bφ has connected fibers. The 'if' direction is false as printed. Take S = ∅ and G = Σ_2. Then ρ_∅ is t ↦ (t = sh), up to the contractible second component. This is an embedding, because a 2-element set A is equivalent to (Fin 2 = A). But ∅ does not generate Σ_2 (gens_gp_if_counterexample). The lemma gens_gp_if_refuted negates the general implication. The book's proof is 'TBD'."
   },
   {
     "chapter": 11,
@@ -23933,8 +23978,26 @@
     "line": 219,
     "section_raw": "Graphs and Cayley graphs}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LabeledGraph",
+      "UnlabeledGraph",
+      "IsFunctionalGraph",
+      "function_graph",
+      "function_graph_functional",
+      "functional_graphs_equiv",
+      "labeled_graph_forget",
+      "contractible_labels_equiv",
+      "TotalLabeledGraph",
+      "labeled_total_equiv",
+      "total_graph_forget"
+    ],
+    "principal": [
+      "LabeledGraph",
+      "functional_graphs_equiv",
+      "labeled_total_equiv"
+    ],
+    "note": "The formal definition is literally LabeledGraph S = Σ_{V:U} (S → V → V → U). Here E(s,x,y) is the type of s-coloured edges from x to y. Module 1100 also formalizes the surrounding claims. They are: functional graphs = graphs of maps, one colour, the removal of colours, and total edge types with source/target/colour maps."
   },
   {
     "chapter": 11,
@@ -23946,8 +24009,19 @@
     "labels": [
       "def:cayley-graph"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cayley_graph",
+      "cayley_rho_graph",
+      "cayley_edges_equiv",
+      "cayley_rho_edge_type",
+      "cayley_sigma3_litmus"
+    ],
+    "principal": [
+      "cayley_graph",
+      "cayley_edges_equiv"
+    ],
+    "note": "The definition cayley_graph G S ι is the book's tuple (TotalLabeledGraph). The vertices are USym G, and the edges are S × USym G. The edge (s,g) has source g, target ι(s)·g (usym_mul) and colour s. The definition does not need the generating hypothesis. Line 240 says that it is ρ_S(sh_G) as an S-coloured graph. For this claim, cayley_edges_equiv identifies its edges with the total edges of the graph of the functions of ρ_S(sh_G). This identification is compatible with source/target/colour. Litmus: in Σ_3 with S = {τ, σ}, the σ-edge out of τ ends at σ·τ, which sends 0 to 2."
   },
   {
     "chapter": 11,
@@ -23957,8 +24031,29 @@
     "line": 259,
     "section_raw": "Graphs and Cayley graphs}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GraphQuotientSignature",
+      "GraphQuotientInduction",
+      "GraphQuotientBoundary",
+      "gq_ind",
+      "gq_ind_beta",
+      "gq_ind_vertex",
+      "gq_rec",
+      "gq_rec_beta",
+      "gq_dependent_universal_property",
+      "gq_universal_property",
+      "gq_ind_prop",
+      "graph_quotient_equiv",
+      "gq_carrier_transfer",
+      "gq_vertex_transfer",
+      "gq_edge_transfer"
+    ],
+    "principal": [
+      "GraphQuotientSignature",
+      "graph_quotient_equiv"
+    ],
+    "note": "The pinned Narya has no HITs. Thus a graph quotient of (V, E) is a signature (carrier, [x], edge_e, dependent eliminator). The computation rules are ONE identification of boundary data (gq_ind_beta). The book's judgmental f([x]) ≡ a_x is the proved identification gq_ind_vertex. The formalization states each claim about 'the' graph quotient for every signature. The lemma graph_quotient_equiv shows that any two are equivalent. The coequalizer footnote is the same notion with a total edge type (labeled_total_equiv)."
   },
   {
     "chapter": 11,
@@ -23968,8 +24063,21 @@
     "line": 279,
     "section_raw": "Graphs and Cayley graphs}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OneVertex",
+      "OneVertexEdges",
+      "free_to_one_vertex",
+      "one_vertex_to_free",
+      "one_vertex_free_equiv",
+      "constructed_one_vertex_quotient"
+    ],
+    "principal": [
+      "free_to_one_vertex",
+      "one_vertex_to_free",
+      "one_vertex_free_equiv"
+    ],
+    "note": "The one-vertex graph (1, S) uses OneVertex = sig () (judgmental η). So a FreeGroupSignature S and a graph quotient of (1, S) are the same data. The maps free_to_one_vertex and one_vertex_to_free convert between them with the same carrier, base and loops. Their round trips hold on the nose. The lemma one_vertex_free_equiv gives 1/S ≃ B F_S for any two such structures."
   },
   {
     "chapter": 11,
@@ -23979,8 +24087,16 @@
     "line": 285,
     "section_raw": "Graphs and Cayley graphs}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "graph_set_quotient_equiv",
+      "graph_set_quotient_to",
+      "graph_set_quotient_from"
+    ],
+    "principal": [
+      "graph_set_quotient_equiv"
+    ],
+    "note": "Let R be an equivalence relation on A (EquivalenceRelation, module 41), and let Q be any graph quotient of (A, R). Then ‖Q‖₀ ≃ A/R, the set quotient of def:quotient-set. The hypothesis that A is a set is not necessary."
   },
   {
     "chapter": 11,
@@ -23992,8 +24108,20 @@
     "labels": [
       "def:graph-quotient-flattening"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FlatVertices",
+      "FlatEdges",
+      "flattening_signature",
+      "flattening_induction",
+      "graph_quotient_flattening",
+      "graph_quotient_flattening_vertex"
+    ],
+    "principal": [
+      "flattening_signature",
+      "graph_quotient_flattening"
+    ],
+    "note": "Let V' = Σ_v X([v]) and E'((v,x),(w,y)) = Σ_{e:E(v,w)} (x =^{edge_e} y), exactly as printed. Then Σ_{z:V/E} X(z) itself is a graph quotient of (V', E') (flattening_signature). The induction data correspond judgmentally, because dependent identifications in z ↦ (X z → P) are functions of dependent identifications. So flt : Σ_z X(z) ≃ V'/E' for every quotient (graph_quotient_flattening), with flt([v],x) = [(v,x)]."
   },
   {
     "chapter": 11,
@@ -24003,8 +24131,17 @@
     "line": 333,
     "section_raw": "Graphs and Cayley graphs}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "graph_quotient_flattening",
+      "graph_quotient_roundtrip",
+      "graph_quotient_map"
+    ],
+    "principal": [
+      "graph_quotient_flattening",
+      "graph_quotient_roundtrip"
+    ],
+    "note": "The implementation has two round trips, ψ∘φ = id and φ∘ψ = id. Both are graph_quotient_roundtrip for the maps that the constructors induce between the two quotients. The two quotients are flattening_signature and any quotient of (V', E'). The equivalence is graph_quotient_flattening."
   },
   {
     "chapter": 11,
@@ -24016,8 +24153,19 @@
     "labels": [
       "xca:graph-quotient-in-steps"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ImageEdges",
+      "SumEdges",
+      "steps_signature",
+      "steps_induction",
+      "graph_quotient_in_steps"
+    ],
+    "principal": [
+      "steps_signature",
+      "graph_quotient_in_steps"
+    ],
+    "note": "The edges E0 ⊔ E1 are in family form (SumEdges). The edges of E1 are glued to V/E0 along E1 ⇉ V → V/E0. The family ImageEdges expresses this gluing (an E1-edge x→y with [x] = a and [y] = b). This is the book's total-edge description. By steps_signature, (V/E0)/E1 is a graph quotient of (V, E0 ⊔ E1). Hence V/(E0 ⊔ E1) ≃ (V/E0)/E1 for every quotient (graph_quotient_in_steps)."
   },
   {
     "chapter": 11,
@@ -24029,8 +24177,21 @@
     "labels": [
       "xca:graph-quotient-whisker"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "WhiskerEdges",
+      "whisker_vertex",
+      "whisker_edge",
+      "whisker_signature",
+      "graph_quotient_whisker",
+      "WhiskerRevEdges",
+      "whisker_rev_signature"
+    ],
+    "principal": [
+      "whisker_signature",
+      "graph_quotient_whisker"
+    ],
+    "note": "The vertices are X ⊔ 1. The family WhiskerEdges gives the single edge from inl x to inr 0: WhiskerEdges (inl y)(inr _) = (y = x), and it is Empty otherwise. The total type is contractible: it has one edge, which starts at inl x. X with inl y ↦ y and inr ↦ x is a graph quotient, so X ≃ (X⊔1)/1. The formalization also adds the reversed whisker (an edge from inr 0 to inl x) for spanning trees."
   },
   {
     "chapter": 11,
@@ -24042,8 +24203,22 @@
     "labels": [
       "def:finite-index"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSetHasIndex",
+      "SubgroupHasIndex",
+      "gset_has_index_prop",
+      "gset_index_iff_shape",
+      "subgroup_index_point_independent",
+      "gset_index_finite",
+      "principal_gset_index_cyclic",
+      "trivial_gset_index_one"
+    ],
+    "principal": [
+      "SubgroupHasIndex",
+      "gset_index_iff_shape"
+    ],
+    "note": "A subgroup (Subgroups G of chapter 5) has index m iff every X(z) is merely equal to Fin m. That is, X is a family of finite sets of cardinality m. The lemma gset_index_iff_shape states that this is equivalent to the condition that X(sh_G) has cardinality m. The definition ignores the point (line 615). Litmus (module 1113): the principal C_{n+1}-set has index n+1, and the trivial G-set has index 1."
   },
   {
     "chapter": 11,
@@ -24053,8 +24228,20 @@
     "line": 626,
     "section_raw": "Subgroups of free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsConnectedGraph",
+      "graph_connected_invariant",
+      "GraphTreeStructure",
+      "graph_tree_signature",
+      "graph_tree_iff_contractible"
+    ],
+    "principal": [
+      "IsConnectedGraph",
+      "GraphTreeStructure",
+      "graph_tree_iff_contractible"
+    ],
+    "note": "Connected: Connected (Q .carrier) for a graph quotient Q. This does not depend on Q (graph_connected_invariant). Tree: GraphTreeStructure, that is, Unit with the trivial cocone is a graph quotient. The lemma graph_tree_iff_contractible shows that this is equivalent to 'V/E is contractible' for every quotient Q. So it is not necessary to give a quotient."
   },
   {
     "chapter": 11,
@@ -24064,8 +24251,19 @@
     "line": 631,
     "section_raw": "Subgroups of free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Subgraph",
+      "subgraph_edges",
+      "SubgraphEdgeTotal",
+      "DecidableSubgraphVertices",
+      "DecidableSubgraphEdges"
+    ],
+    "principal": [
+      "Subgraph",
+      "subgraph_edges"
+    ],
+    "note": "A subgraph is a type U with an embedding h : U ↪ V and, for u, w in U, a subtype D(u,w) of E(h u, h w). This subtype is a predicate into PropTypes. The graph of the subgraph is (U, subgraph_edges). The decidability of the embeddings (line 656) is DecidableSubgraphVertices / DecidableSubgraphEdges."
   },
   {
     "chapter": 11,
@@ -24075,8 +24273,14 @@
     "line": 649,
     "section_raw": "Subgroups of free groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SpanningTree"
+    ],
+    "principal": [
+      "SpanningTree"
+    ],
+    "note": "As printed, this is a subgraph that is a tree (GraphTreeStructure) and whose vertex embedding is an equivalence (BookIsEquiv)."
   },
   {
     "chapter": 11,
@@ -24088,8 +24292,18 @@
     "labels": [
       "lem:crossing-edge"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "crossing_edge",
+      "CrossingEdge",
+      "crossing_edge_sum",
+      "crossing_vertex_prop",
+      "crossing_edge_prop"
+    ],
+    "principal": [
+      "crossing_edge"
+    ],
+    "note": "Take a connected graph (Connected Q for a graph quotient Q), a decomposition ψ : V0 ⊔ V1 ≃ V and v0 : V0, v1 : V1. Then there merely is an edge between some ψ(inl u0) and ψ(inr u1), in one of the two directions. The proof is as in the book. It transfers the vertices to V ≡ V0 ⊔ V1, defines a Prop-valued family on V/E by recursion, and transports along connectedness."
   },
   {
     "chapter": 11,
@@ -24101,8 +24315,25 @@
     "labels": [
       "lem:spanning-tree-step"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "spanning_tree_step",
+      "SpanningTreeStepConclusion",
+      "StepData",
+      "step_subgraph",
+      "step_edge_total",
+      "step_quotient",
+      "StepQuotientExtension",
+      "step_tree",
+      "step_vertices_decidable",
+      "side_equiv"
+    ],
+    "principal": [
+      "spanning_tree_step",
+      "step_subgraph",
+      "step_quotient"
+    ],
+    "note": "The hypotheses are as printed. The graph is connected, V has decidable equality and the edge types E are sets. The vertex embedding is decidable, u ∈ U and v ∉ U. The conclusion gives mere step data: a new vertex w ∉ U, an old vertex u0 and a crossing edge. The subgraph on U ⊔ 1 (literally) has the edges D ⊔ 1 (step_edge_total). For EVERY graph quotient R of (U, D), R itself with the vertex map extended by [inr] ↦ [u0] is a graph quotient of (U⊔1, D⊔1) (step_quotient). This is the book's 'induced map U/D → (U⊔1)/(D⊔1) is an equivalence'. The new vertex is the endpoint of the crossing edge. As in the book's proof, it is not necessarily the given v."
   },
   {
     "chapter": 11,
@@ -24114,8 +24345,21 @@
     "labels": [
       "lem:spanning-tree"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "spanning_tree",
+      "SpanningTreeWithEdges",
+      "tree_growth",
+      "tree_growth_step",
+      "outside_vertex_merely",
+      "full_subgraph_surjective",
+      "equal_card_injection_fiber"
+    ],
+    "principal": [
+      "spanning_tree",
+      "SpanningTreeWithEdges"
+    ],
+    "note": "Assume that V is merely equal to Fin n, that each E(x,y) has decidable equality, and that the graph is connected. Then there merely is a spanning tree with k edges, where suc k = n. Its edge predicate is also decidable. This is the book's 'exactly n-1 edges'. Connectedness excludes n = 0. The proof is by induction on the number of vertices, as in the book. The last step uses Blass counting (module 1720): an injection between n-element sets is surjective."
   },
   {
     "chapter": 11,
@@ -24127,8 +24371,24 @@
     "labels": [
       "thm:nielsen-schreier"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "nielsen_schreier",
+      "nielsen_schreier_finite",
+      "NielsenSchreierBasis",
+      "NielsenSchreierBasisCount",
+      "nielsen_schreier_connected",
+      "free_flattening_signature",
+      "tree_complement_signature",
+      "ComplementTotal",
+      "flat_total_equiv",
+      "tree_count_split"
+    ],
+    "principal": [
+      "nielsen_schreier",
+      "nielsen_schreier_finite"
+    ],
+    "note": "Let S have decidable equality, let F be any FreeGroupSignature S, and let X : B F_S → Set be transitive with finite index m. Then Σ_z X(z) is merely equivalent to the constructed B F_T for a set T with decidable equality (nielsen_schreier). Here T is the set of edges outside a spanning tree. The proof is as in the book and has no HIT hypotheses. Second claim (nielsen_schreier_finite): if S has n elements, then T is finite of cardinality c with c + m = m·n + 1. This is m(n-1)+1, stated without subtraction. With truncated subtraction, the printed formula is wrong for n = 0."
   },
   {
     "chapter": 11,
@@ -24138,8 +24398,28 @@
     "line": 839,
     "section_raw": "Intersecting subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FgautoInSubgroup",
+      "fgauto_stallings",
+      "fgauto_stallings_edges",
+      "fgauto_stallings_base",
+      "fgauto_fold",
+      "fgauto_bouquet",
+      "FgautoStallingsAccepts",
+      "FgautoStallingsRecognizes",
+      "fgauto_stallings_recognizes_subgroup",
+      "fgauto_stallings_accepts_iff_member",
+      "fgauto_fg_subgroup",
+      "fgauto_stallings_theorem"
+    ],
+    "principal": [
+      "fgauto_stallings_theorem",
+      "fgauto_stallings_recognizes_subgroup",
+      "fgauto_stallings",
+      "fgauto_stallings_accepts_iff_member"
+    ],
+    "note": "H is given by a finite list gens of words. FgautoInSubgroup gens w says that rho(w) = rho(word in the generators). The book never defines S(H). In the formalization, fgauto_stallings folds the bouquet of the generators (vertices = prefixes, base = eps) with fgauto_fold until it is deterministic. Let u be reduced. Then u in H iff there is a run base -u-> base in S(H) (fgauto_stallings_recognizes_subgroup). Equivalently, the deterministic run of S(H) on u ends at the base (fgauto_stallings_accepts_iff_member). The theorem fgauto_stallings_theorem states this for [u] in the subgroup fgauto_fg_subgroup of USym(constructed_free_group S dec)."
   },
   {
     "chapter": 11,
@@ -24149,8 +24429,31 @@
     "line": 844,
     "section_raw": "Intersecting subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FgautoRightCosets",
+      "fgauto_coset_relation",
+      "FgautoFiniteIndex",
+      "fgauto_index",
+      "FgautoStallingsTotal",
+      "FgautoTotal",
+      "fgauto_stallings_vertices",
+      "fgauto_stallings_vertex_count",
+      "FgautoStallingsVertex",
+      "fgauto_cosets_vertices_equiv",
+      "fgauto_total_finite_index",
+      "fgauto_finite_index_total",
+      "fgauto_finite_index_iff_total",
+      "fgauto_index_vertex_count",
+      "fgauto_coset_collision_edge",
+      "fgauto_stallings_vertex_reachable"
+    ],
+    "principal": [
+      "fgauto_finite_index_iff_total",
+      "fgauto_index_vertex_count",
+      "fgauto_cosets_vertices_equiv"
+    ],
+    "note": "The index is the number of right cosets Hw. FgautoRightCosets is the set quotient of words by u v^-1 in H. Words modulo reduction are F(S). Finite index means IsFinite of this quotient, and the index is its cardinality. S(H) is total when every vertex has an x-edge for every signed letter x. The vertices are the elements of the duplicate-free list base :: endpoints. The formalization proves that the index is finite iff S(H) is total. If S(H) is total, then cosets ~ vertices and the index equals the vertex count. The index here is the word-level one. Our def:finite-index (module 1110) is the F_S-set version. The two are not connected formally."
   },
   {
     "chapter": 11,
@@ -24160,8 +24463,21 @@
     "line": 851,
     "section_raw": "Intersecting subgroups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroup_free_rank",
+      "HasFreeRank",
+      "pointed_iso_from_equiv",
+      "free_rank_unique",
+      "free_hom_two_equiv",
+      "pow_two_injective",
+      "free_one_not_free_two"
+    ],
+    "principal": [
+      "subgroup_free_rank",
+      "free_rank_unique"
+    ],
+    "note": "Let H be a subgroup of index m in F_S with |S| = k. Then the group of H is merely isomorphic to a free group F_T with |T| = c (subgroup_free_rank). Here c + m = m·k + 1. This is the book's 1 + n(card S - 1), with m for the index. The rank is well defined (free_rank_unique), because |Hom(F_T, C_2)| = 2^|T|. Litmus: F_1 ≇ F_2. The formalization does not use the corollary's route 'by the Stallings automaton'. The result follows from Nielsen–Schreier."
   },
   {
     "chapter": 11,
@@ -24173,8 +24489,22 @@
     "labels": [
       "thm:howson-neumann"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "howson_neumann",
+      "subgroup_intersection",
+      "gset_product",
+      "schreier_orbit_decidable",
+      "schreier_orbit_reach",
+      "schreier_run_path",
+      "decidable_subset_card_bound"
+    ],
+    "principal": [
+      "howson_neumann",
+      "subgroup_intersection",
+      "schreier_orbit_decidable"
+    ],
+    "note": "Here F = F_S, with S finite of cardinality k. This is the standing assumption of the chapter, and the constructive proof needs it. H1 ∩ H2 is the orbit subgroup of (x1, x2) in X1 × X2. Its classifying type is the component of BH1 ×_{BF} BH2. The lemma howson_neumann states that it merely has an index c ≤ h1·h2. The proof of finiteness uses the decidability of orbits in finite F_S-sets (breadth-first search, module 1155). Note: the printed bound is about indices (Poincaré). The margin attributes it to Hanna Neumann's inequality, but that inequality bounds ranks. So the attribution does not match the statement."
   },
   {
     "chapter": 11,
@@ -24184,8 +24514,30 @@
     "line": 874,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fgauto_benois",
+      "fgauto_benois_rational_regular",
+      "fgauto_benois_regular_rational",
+      "FgautoRational",
+      "FgautoRegular",
+      "FgautoIotaImage",
+      "fgauto_free_group_monoid",
+      "fgauto_free_group_monoid_laws",
+      "fgauto_lift_expr",
+      "fgauto_lift_expr_correct",
+      "fgauto_short_enfa",
+      "fgauto_enfa_regular",
+      "fgauto_reduction_regular",
+      "fgauto_thompson_correct",
+      "fgauto_ky_expr",
+      "fgauto_ky_correct",
+      "fgauto_automaton_image_rational"
+    ],
+    "principal": [
+      "fgauto_benois"
+    ],
+    "note": "Let X ⊆ F(S) be a proposition-valued predicate on reduced words. Here F(S) = reduced words with product rho(uv), a monoid by fgauto_free_group_monoid_laws. Then X is rational iff iota(X) = {w reduced | (w,_) in X} is regular. Direction '=>': lift the expression to single-letter atoms over S~*, build the Thompson automaton and remove the empty transitions. Then rho preserves regularity (879). Direction '<=': use McNaughton-Yamada expressions in F(S) for the valuation x |-> [x]. The formalization proves the general monoid version."
   },
   {
     "chapter": 11,
@@ -24195,8 +24547,24 @@
     "line": 879,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FgautoRegular",
+      "FgautoReductionImage",
+      "fgauto_reduction_regular",
+      "fgauto_red_nfa",
+      "fgauto_red_nfa_language",
+      "fgauto_red_factorization",
+      "fgauto_dyck_first_return",
+      "fgauto_dsat",
+      "FgautoDRel",
+      "fgauto_drel_complete",
+      "fgauto_drel_sound"
+    ],
+    "principal": [
+      "fgauto_reduction_regular"
+    ],
+    "note": "Let S have decidable equality, and let L ⊆ S~* be regular. Then rho(L) = {rho(v) | v in L} (FgautoReductionImage) is regular. Construction: first compute the Dyck reachability D of the automaton by saturation. It is complete by the first-return decomposition of Dyck words. Then take the edges i -x-> j through D x D that do not cancel the last letter. The proof of correctness uses the factorization v = d0 x1 d1 ... xn dn."
   },
   {
     "chapter": 11,
@@ -24206,8 +24574,21 @@
     "line": 885,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "partial",
+    "declarations": [
+      "FgautoSenizerguesStatement",
+      "FgautoDisjunctive",
+      "FgautoSyntacticEquivalent",
+      "FgautoRational",
+      "FgautoRecognizable",
+      "fgauto_free_group_monoid",
+      "fgauto_disjunctive_not_recognizable"
+    ],
+    "principal": [
+      "FgautoSenizerguesStatement",
+      "fgauto_disjunctive_not_recognizable"
+    ],
+    "note": "Exact statement (FgautoSenizerguesStatement): every rational X ⊆ F(S) is merely disjunctive or recognizable. Here F(S) = reduced words with product rho(uv). Disjunctive means that the syntactic congruence is equality. Recognizable refers to a finite right action. The dichotomy is NOT proved (research level). The formalization proves that for S nonempty, the two cases exclude each other (fgauto_disjunctive_not_recognizable)."
   },
   {
     "chapter": 11,
@@ -24217,8 +24598,26 @@
     "line": 891,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fgauto_matched_hom",
+      "fgauto_matched_letter",
+      "FgautoGeneratesGroup",
+      "FgautoRecognizable",
+      "FgautoRegular",
+      "FgautoPreimage",
+      "fgauto_recognizable_preimage_regular",
+      "fgauto_regular_preimage_recognizable",
+      "fgauto_recognizable_iff_regular_preimage",
+      "fgauto_syntactic_relation",
+      "fgauto_nfa_sim",
+      "fgauto_nfa_accepts_sim",
+      "fgauto_finite_gset_recognizable"
+    ],
+    "principal": [
+      "fgauto_recognizable_iff_regular_preimage"
+    ],
+    "note": "The book marks this claim [?]. It holds, and the formalization proves it. G is an abstract group with a : S -> G, and S is finite (IsFinite S, decidable equality). The matched homomorphism alpha~ is surjective, and direction '<=' needs this. X is a proposition-valued subset of G. Recognizable means recognized by a finite right G-action (Fin n, Bool-valued accepting set). Direction '=>' uses an automaton on the states of the action. Direction '<=': the right syntactic congruence of X has finitely many classes (subset simulation of the automaton), and it is decidable."
   },
   {
     "chapter": 11,
@@ -24228,8 +24627,21 @@
     "line": 896,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "partial",
+    "declarations": [
+      "FgautoChomskySchutzenbergerStatement",
+      "FgautoGrammar",
+      "FgautoRewriteStep",
+      "FgautoGrammarLanguage",
+      "FgautoContextFree",
+      "FgautoDyck",
+      "fgauto_word_hom",
+      "FgautoRegular"
+    ],
+    "principal": [
+      "FgautoChomskySchutzenbergerStatement"
+    ],
+    "note": "The printed statement is ill-typed: h : T* -> S~* cannot be applied to R ∩ D_S ⊆ S~*. The formal statement uses h : S~* -> T*, given on letters, and S = Fin n. D_S is the 2-sided Dyck language (rho(v) = eps). CF languages are defined by grammars with rewriting derivations. This is a statement only, and neither direction is proved. The one-sided variant of the footnote is not stated."
   },
   {
     "chapter": 11,
@@ -24239,8 +24651,20 @@
     "line": 907,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "partial",
+    "declarations": [
+      "FgautoMullerSchuppStatement",
+      "FgautoVirtuallyFree",
+      "FgautoFreeSubgroupOn",
+      "FgautoNormalSubset",
+      "FgautoContextFree",
+      "fgauto_matched_hom",
+      "FgautoGeneratesGroup"
+    ],
+    "principal": [
+      "FgautoMullerSchuppStatement"
+    ],
+    "note": "This is a statement only. Let G have generators a : S -> G with a surjective matched hom alpha~. Then G is virtually free iff {w | alpha~(w) = 1} is context-free. Virtually free means that G has a normal subgroup of finite index that is free on a finite basis b : Fin k -> G. Free here means that each element of the subgroup is the image of exactly one reduced word. The statement is not proved (research level)."
   },
   {
     "chapter": 11,
@@ -24250,8 +24674,10 @@
     "line": 911,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "The block is an empty theorem environment (\\begin{theorem} \\end{theorem}) with no content. Thus there is nothing to formalize."
   },
   {
     "chapter": 11,
@@ -24261,8 +24687,27 @@
     "line": 924,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "FgautoIsCoset",
+      "FgautoInverseAutomaton",
+      "FgautoReducedLanguage",
+      "FgautoIsInverseAutomatonLanguage",
+      "FgautoNonempty",
+      "fgauto_coset_automaton",
+      "fgauto_coset_automaton_language",
+      "fgauto_coset_to_automaton",
+      "fgauto_automaton_to_coset",
+      "fgauto_coset_iff_inverse_automaton",
+      "fgauto_coset_automata_counterexample",
+      "fgauto_loop_gens",
+      "fgauto_tree_word"
+    ],
+    "principal": [
+      "fgauto_coset_iff_inverse_automaton",
+      "fgauto_coset_automata_counterexample"
+    ],
+    "note": "The printed statement has a typo (X and Y are mixed up), and it is false. We use X ⊆ F(S) as a predicate on reduced words. Counterexample: the inverse automaton with two vertices and no edges has an empty reduced language, which is not a coset (fgauto_coset_automata_counterexample). The corrected statement is proved. X is a coset Hw of a finitely generated H iff X is nonempty and X = rho(L(A)) for a finite inverse automaton A. Here A is deterministic, with reverse edges and an initial and a terminal vertex. Direction '=>' uses the Stallings automaton of H with a hair for w. Direction '<=' takes H generated by spanning-tree loop words, and it does not need determinism."
   },
   {
     "chapter": 11,
@@ -24272,8 +24717,21 @@
     "line": 932,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fgauto_generalized_word_problem",
+      "fgauto_generalized_word_problem_free_group",
+      "fgauto_member_bool",
+      "fgauto_litmus_abA_not_in_a",
+      "fgauto_litmus_aa_in_aa_b",
+      "fgauto_litmus_AAbaa_in_aa_b",
+      "fgauto_litmus_abbA_in"
+    ],
+    "principal": [
+      "fgauto_generalized_word_problem",
+      "fgauto_generalized_word_problem_free_group"
+    ],
+    "note": "The formalization proves Decidable (FgautoInSubgroup S dec gens w) for every word w, and Decidable ([g] in H) for g : USym F(S). The decision procedure runs S(H) on rho(w). Only DecidableEquality S is necessary: the proof does not use the book's finiteness of S. Litmus by refl: a b A not in <a>, a a in <a a, b>, A A b a a in <a a, b>, and a b b A in <a b A, a a>."
   },
   {
     "chapter": 11,
@@ -24283,8 +24741,21 @@
     "line": 946,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "FgautoNormal",
+      "FgautoVertexTransitive",
+      "FgautoStallingsAutomorphism",
+      "fgauto_normal_vertex_transitive_counterexample",
+      "fgauto_litmus_bab_not_in_a",
+      "fgauto_total_normal_iff_vertex_transitive",
+      "fgauto_translate_automorphism"
+    ],
+    "principal": [
+      "fgauto_normal_vertex_transitive_counterexample",
+      "fgauto_total_normal_iff_vertex_transitive"
+    ],
+    "note": "The second sentence is false as printed. H = <a> in F(a,b) has a one-vertex S(H), which is vertex-transitive. But b a B is not in H, and refl computes this with the 932 decision procedure. The corrected statement is proved. If S(H) is total (finite index, 844), then H is normal iff S(H) is vertex-transitive. Here an automorphism is a bijection of the vertex set that preserves and reflects labelled edges. The first sentence is NOT formalized. It says that conjugacy of finitely generated subgroups is decidable, with the proof 'cores equal'. The formalization has no core graphs, and this gap is noted."
   },
   {
     "chapter": 11,
@@ -24294,8 +24765,26 @@
     "line": 956,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FgautoGenerated",
+      "fgauto_generated_subgroup",
+      "fgauto_generated_least",
+      "FgautoFinitelyGeneratedSubgroup",
+      "fgauto_finitely_generated_rational",
+      "fgauto_rational_subgroup_finitely_generated",
+      "fgauto_anisimov_seifert",
+      "fgauto_thompson",
+      "fgauto_thompson_correct",
+      "fgauto_as_gens",
+      "fgauto_as_telescope",
+      "FgautoRational",
+      "FgautoRatExpr"
+    ],
+    "principal": [
+      "fgauto_anisimov_seifert"
+    ],
+    "note": "G is any abstract group, and no finiteness is necessary. H is a subgroup, that is, a subset closed under unit/product/inverse. Finitely generated: H = <gs> for a finite list gs. Here <gs> is the set of products of lists of elements of gs and their inverses. The formalization shows that it is the least subgroup that contains gs. Rational: H is the rational subset of a rational expression over G. The iff is proved. Direction '<=': H = (gs ∪ gs^-1)*. Direction '=>' uses Thompson's construction, which is proved correct for any monoid. It also uses the spanning-tree generators c_p x c_q^-1 and c_end."
   },
   {
     "chapter": 11,
@@ -24305,8 +24794,25 @@
     "line": 959,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FgautoAbstractSubgroup",
+      "FgautoGroupCosets",
+      "FgautoGroupFiniteIndex",
+      "FgautoRecognizable",
+      "FgautoFiniteAction",
+      "FgautoGeneratesGroup",
+      "fgauto_matched_hom",
+      "fgauto_finite_index_recognizable",
+      "fgauto_recognizable_finite_index",
+      "fgauto_recognizable_iff_finite_index",
+      "fgauto_trans_edges",
+      "fgauto_reach"
+    ],
+    "principal": [
+      "fgauto_recognizable_iff_finite_index"
+    ],
+    "note": "G is the finitely generated group of 891. It is an abstract group with generators a : S -> G (S finite, IsFinite S), and its matched homomorphism is surjective. H is a subset closed under unit/product/inverse. Recognizable means recognized by a finite right G-action on Fin n with a Bool-valued accepting set. The formalization proves that H is recognizable iff the set of right cosets is finite. Finite generation is a hypothesis (book context). Direction '=>' uses it constructively (BFS over maps Fin n -> Fin n)."
   },
   {
     "chapter": 12,

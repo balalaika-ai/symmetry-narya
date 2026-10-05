@@ -12172,5 +12172,636 @@
     "importance": "low",
     "declarations": [],
     "note": "This is an editorial question to the authors."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 7,
+    "quote": "TODO: ... (list of planned topics)",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the author's TODO list (Cayley actions, exotic S_6 automorphism, icosahedron, Stallings folding, and other items). These are planning notes, not claims."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 116,
+    "quote": "Do we fix $S$, a finite set $S=\\{a,b,\\ldots\\}$? Mostly $F$ will denote the free group on $S$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "constructed_free_group",
+      "howson_neumann",
+      "nielsen_schreier_finite"
+    ],
+    "note": "S has decidable equality throughout. S is finite where the statements need it (counting, Howson, automata)."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 126,
+    "quote": "Indeed, $\\BCG_n \\jdeq \\Cyc_n$ ... and $\\B\\ZZ\\jdeq\\Sc$ ... equivalent to the type of infinite cycles, $\\Cyc_0$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cyclic_group_classifying_type",
+      "integer_group_classifying_type"
+    ],
+    "note": "This is in chapter 4. By refl, BG (cyclic_group m) is CycleComponent m. Also by refl, BZ for the constructed circle is CycleComponent 0."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 129,
+    "quote": "we can equivalently consider components of $\\sum_{X:\\UU}(X\\to X)$, since the former is a subtype of the latter.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "equiv_endo_structures_embedding"
+    ],
+    "note": "The map Σ_X (X ≃ X) → Σ_X (X → X) is an embedding."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 133,
+    "quote": "By thinking of functions in terms of their graphs, we might as well look at components of $\\sum_{X:\\UU}(X \\to X \\to \\UU)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "function_graph_structures_embedding",
+      "function_graph_unlabeled_embedding"
+    ],
+    "note": "The map that takes graphs is an embedding Σ_X (X → X) → Σ_X (X → X → U)."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 141,
+    "quote": "Cayley's lem:allgpsarepermutationgps: any group G can be realized as a subgroup of the permutation group on USym G.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is Cayley's lemma from chapter 5 (module 541). This text only recalls it."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 149,
+    "quote": "It may happen that already $\\alpha$ restricted to a subset $S$ of $\\USymG$ suffices to specify the action. In that case we say that $S$ generates $G$",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation. The official definition is def:gens-gp."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 171,
+    "quote": "We use $t \\eqto \\sh_G$ rather than the equivalent $\\sh_G \\eqto t$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "path_flip_equiv"
+    ],
+    "note": "Path inversion is an equivalence."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 174,
+    "quote": "In this case, then, $G$ can be identified with the automorphism group of $\\rho_S(\\sh_G)$ in the type $\\sum_{X:\\UU}(S \\to X \\to X)$, or even in the larger type ... $\\sum_{X:\\UU}(S \\to X \\to X \\to \\UU)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gens_gp_automorphisms",
+      "gens_gp_automorphisms_graphs",
+      "gens_gp_graph_embedding"
+    ],
+    "note": "If S generates G, then ρ_S is an embedding, and so is ρ_S followed by the map that takes graphs. So USym G ≃ Aut(ρ_S(sh_G)) in both types."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 209,
+    "quote": "Also note that $S$ generates $G$ if and only if the map on elements $\\UFG_S \\to \\USymG$ is surjective",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "generates_iff_surjective",
+      "constructed_free_group_interpretation_equiv"
+    ],
+    "note": "The proof uses lem:epi-surj (module 934). The elements of F_S are reduced words (module 882)."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 213,
+    "quote": "This is the case for example for $S$ consisting of the transpositions $(1\\;2)$, $(2\\;3)$ in $\\SG_3$, as illustrated in fig:cayley-s3",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "sigma3_generators",
+      "cayley_graph",
+      "cayley_sigma3_litmus"
+    ],
+    "note": "The formalization defines the generating set and the Cayley graph of Σ_3, and it computes one edge (litmus). But the surjectivity of F_{a,b} → Σ_3 is not formalized. This surjectivity says that each of the 6 permutations is a word in the two transpositions. A 27-case proof was written, but it did not typecheck within 50 minutes in the pinned Narya. The slow part is the evaluation of the induced homomorphism of the constructed free group at concrete letters."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 227,
+    "quote": "If for every vertex $x:V$ and every color $s:S$ there is unique $s$-colored edge out of $x$ ... then we say that the graph is functional. This means that the graph lives in the subtype $\\sum_{V:\\UU}(S \\to V \\to V)$, as is the case for the graph $\\rho_S(\\sh_G)$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "IsFunctionalGraph",
+      "functional_graphs_equiv",
+      "function_graph_functional",
+      "cayley_rho_graph"
+    ],
+    "note": "Functional S-graphs on V ≃ maps S → V → V. The equivalence takes the graph of a function."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 240,
+    "quote": "Convince yourself that this is really an equivalent description of $\\rho_S(\\sh_G)$ considered as an $S$-colored graph.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cayley_edges_equiv",
+      "cayley_rho_edge_type"
+    ],
+    "note": "The edges S × USym G of the Cayley graph ≃ the total edges of the graph of ρ_S(sh_G). This equivalence is compatible with source, target and colour."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 243,
+    "quote": "If $S$ is contractible ... we just say graph, and then we simplify the type of edges to $V \\to V \\to \\UU$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "contractible_labels_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 245,
+    "quote": "every $S$-labeled graph $(V,E)$ gives rise to such an unlabeled label by summing over the colors",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "labeled_graph_forget"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 249,
+    "quote": "Another way to represent a graph is to sum over all the sources and targets (and colors) ... as a tuple $(V,E,s,t,c)$ ... to get the unlabeled graph we simply drop the last component.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "TotalLabeledGraph",
+      "labeled_total_equiv",
+      "total_graph_forget"
+    ],
+    "note": "The proof uses lem:typefamiliesandfibrations (module 19)."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 261,
+    "quote": "If the graph is represented by source and target maps ... the graph quotient is also called the coequalizer of $s$ and $t$.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "labeled_total_equiv",
+      "GraphQuotientSignature"
+    ],
+    "note": "This is terminology. The total-edge description is labeled_total_equiv."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 292,
+    "quote": "While we're building up to the proof of lem:gens-gp-iff we need a description of a sum type over a graph quotient. By the above remark, this applies also to sum types over $\\BFG_S$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_flattening_signature"
+    ],
+    "note": "This is flattening, specialised to B F_S (the one-vertex graph). The proof of Nielsen–Schreier uses it."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 306,
+    "quote": "Implementation of def:graph-quotient-flattening: φ([(v,x)]) ≔ ([v],x), ap_φ(edge_(e,q)) = pair(edge_e, q), ψ̃([v]) ≔ (x ↦ [(v,x)]) ...",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "flat_vertex",
+      "flat_edge",
+      "flattening_induction",
+      "graph_quotient_map"
+    ],
+    "note": "The maps φ and ψ are the maps induced by the constructors. The judgmental correspondence of boundary data (flattening_boundary_map) replaces the transport argument for h."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 378,
+    "quote": "Proof of lem:gens-gp-iff: TBD (perhaps put in graph quotients first)",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "gens_gp_only_if",
+      "gens_gp_if_counterexample"
+    ],
+    "note": "The book gives no proof. Module 1121 proves the 'only if' direction and refutes the 'if' direction."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 384,
+    "quote": "Cayley graph for $A_5$ with respect to $S = \\{a,b\\}$, where $a$ is a $1/5$-rotation about a vertex and $b$ is a $1/2$-rotation about an edge in an icosahedron.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a figure caption. The icosahedral group A_5 is not constructed here."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 600,
+    "quote": "We'll eventually prove the Nielsen--Schreier theorem, which states that a finite index subgroup $H$ of a free group $\\FG_S$ is itself a free group. Furthermore, when $S$ is finite, the set of free generators of $H$ is itself finite.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "nielsen_schreier",
+      "nielsen_schreier_finite",
+      "subgroup_free_rank"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 607,
+    "quote": "a subgroup is (or can be represented by) a transitive $G$-set $X : \\BG \\to \\Set$ along with an element of $X(\\sh_G)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "Subgroups"
+    ],
+    "note": "This is Subgroups G from chapter 5."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 613,
+    "quote": "The is the case, of course, if and only if the set acted on, $X(\\sh_G)$, is finite of cardinality $m$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_index_iff_shape"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 615,
+    "quote": "Notice that the definition doesn't depend on the chosen element of $X(\\sh_G)$, so applies equally to all conjugacy classes of the subgroup.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "subgroup_index_point_independent"
+    ],
+    "note": "This holds by refl."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 618,
+    "quote": "the classifying type of the subgroup is the total type $\\sum_{t:\\BG}X(t)$ (which is pointed via the chosen point of $X(\\sh_G)$).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subgroup_group_classifying"
+    ],
+    "note": "This is in chapter 5 (module 502), and it holds by refl."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 619,
+    "quote": "We'll use the Flattening ... so we need to show that the quotient of the resulting graph is equivalent to $\\bn 1/T$ for some set $T$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_flattening_signature",
+      "tree_complement_signature"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 636,
+    "quote": "If we represent graphs by source and target maps, then this amounts to embeddings $h : U \\hookrightarrow V$ and $k : D \\hookrightarrow E$ along with witnesses that the following squares commute",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [
+      "Subgraph"
+    ],
+    "note": "Only the family description (the definition at line 631) is formalized. The equivalence with the total-edge description is not formalized."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 654,
+    "quote": "Equivalently, it's given by subtypes of the edges (leaving the vertices alone) such that the underlying graph is a tree.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "tree_complement_signature",
+      "gq_vertex_transfer",
+      "TreeEdges"
+    ],
+    "note": "The formalization uses this in one direction. A spanning tree gives the edge subtype TreeEdges on V, whose graph is a tree. This uses vertex transfer along the equivalence U ≃ V. The converse is immediate (U = V), but it is not stated."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 656,
+    "quote": "Very often we'll require that the edge embeddings are decidable",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "DecidableSubgraphEdges",
+      "SpanningTreeWithEdges"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 716,
+    "quote": "Keep in mind that subgraphs consist not only of the vertices and edges, but also of the corresponding embeddings into the supergraph. It's for the sake of these that we only prove mere existence.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This text explains the mere existence."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 783,
+    "quote": "we use that $V/E$ is connected to get that $V$ merely has a vertex",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "graph_vertex_merely"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 789,
+    "quote": "Since $V$ is finite, there exists vertices $u \\in U$ and $v \\in V \\setminus U$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "outside_vertex_merely"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 794,
+    "quote": "any embedding of an $n$-element set in another $n$-element set is an equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "equal_card_injection_fiber",
+      "full_subgraph_surjective"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 795,
+    "quote": "Assuming the Axiom of Choice, we can show the mere existence of a spanning tree in any graph $(V,E)$ with a sets of vertices and edges.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is Swan's result with choice. It is not formalized."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 813,
+    "quote": "By the finite index assumption, $V$ is a finite set, say, of cardinality $m>0$, and since both $S$ and $X(\\base)$ are decidable, so is $E$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "free_flat_edges_decidable",
+      "finite_of_card"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 827,
+    "quote": "the graph $(V,E)$ has $mn$ edges, as there are precisely $n$ outgoing edges from each vertex.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "flat_total_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 832,
+    "quote": "(This also has an automata theoretic proof, see below.)",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a cross reference."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 837,
+    "quote": "Stallings folding\\footcite{Stallings1991}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_fold",
+      "fgauto_merge",
+      "fgauto_conflict_search",
+      "fgauto_fold_deterministic",
+      "fgauto_bouquet"
+    ],
+    "note": "The book only gives a citation. The formalization defines the folding procedure: it merges the targets of two equally labelled edges from one vertex. It also shows that the procedure terminates with a deterministic inverse graph."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 859,
+    "quote": "The qualitative part of thm:howson-neumann is known as Howson's theorem, while the inequality is known as Hanna Neumann's inequality. Hanna's son, Walter Neumann, conjectured that the 2 could be removed, and this was later proved independently by Joel Friedman and Igor Mineyev.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a historical note. It does not match the printed theorem. Howson's theorem says that intersections of finitely generated subgroups are finitely generated. Hanna Neumann's inequality bounds rk(H∩K) - 1 by 2(rk H - 1)(rk K - 1). The printed bound h1·h2 on indices (Poincaré) contains no factor 2."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 868,
+    "quote": "($S$ is still a fixed finite set.)",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "The theorems of the section take S with decidable equality. They assume finiteness (IsFinite S) exactly where they use it (891, 959). The Stallings results (839, 844, 924, 932, 946) need only decidable equality."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 870,
+    "quote": "Let $\\iota : F(S) \\to \\tilde S^*$ map an element of the free group to the corresponding reduced word. The kernel of $\\iota$ is the \\emph{2-sided Dyck language} $\\mathcal D_S$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_iota",
+      "fgauto_iota_section",
+      "fgauto_kernel_dyck",
+      "DyckWord"
+    ],
+    "note": "The map iota is injective. So the formalization reads 'kernel of iota' as the kernel of the projection S~* -> F(S), w |-> [w]. Here iota is the inverse of the equivalence R_S ~ USym F_S, and it is a section. The result: [w] = 1 iff rho(w) = eps. This holds for the free group of any FreeGroupSignature, including the constructed one."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 889,
+    "quote": "Given a surjective monoid homomorphism $\\alpha : S^* \\to G$, we define the corresponding \\emph{matched homomorphism} $\\tilde\\alpha : \\tilde S^* \\to G$ by $(\\tilde\\alpha(a^{-1}) \\defeq \\alpha(a)^{-1}$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_matched_hom",
+      "fgauto_matched_letter",
+      "FgautoGeneratesGroup",
+      "fgauto_matched_hom_append"
+    ],
+    "note": "The map alpha : S* -> G is given by its values a : S -> G on letters. The map alpha~ sends a to a(a) and A to a(a)^-1, and it is multiplicative (fgauto_matched_hom_append). Surjectivity is FgautoGeneratesGroup. It is stated for alpha~, and for a group G it is equivalent to the book's condition."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 914,
+    "quote": "The Stallings automaton is an \\emph{inverse automaton}: it's deterministic, and there's an edge $(p,a,q)$ if and only if there's one $(q,A,p)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_stallings_deterministic",
+      "fgauto_stallings_symmetric",
+      "FgautoInverseAutomaton"
+    ],
+    "note": "The automaton is deterministic and closed under reversed edges. FgautoInverseAutomaton packages the definition."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 917,
+    "quote": "We can always think of the latter as the \\emph{reverse} edge.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fgauto_reverse_edges",
+      "fgauto_symmetrize"
+    ],
+    "note": "Reverse edges are explicit: the bouquet is symmetrized, and folding keeps it symmetric."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 918,
+    "quote": "(It's then also deterministic in the reverse direction.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fgauto_stallings_codeterministic"
+    ],
+    "note": "Two edges with the same target and label have the same source."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 920,
+    "quote": "Two vertices $p,q$ get identified in the Stallings graph/automaton if and only if there is a run from $p$ to $q$ with a word $w$ whose reduction is $1$. (So a word like $aAAaBBbb$.)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_identified_iff_dyck_run",
+      "fgauto_fold_image",
+      "FgautoDyckRun",
+      "fgauto_fold_ind_fun",
+      "fgauto_fold_edges_indep"
+    ],
+    "note": "Let v and w be vertices of the bouquet. Their images in S(H) are the same iff the bouquet has a run v -> w whose label reduces to eps."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 937,
+    "quote": "The Stallings automaton for $H$ can be constructed in time $O(n \\log^*n)$ ... Once this has been constructed, we can solve membership in $H$ in linear time.",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "fgauto_stallings_run",
+      "fgauto_member_decide_with",
+      "fgauto_generalized_word_problem"
+    ],
+    "note": "Complexity bounds cannot be expressed here. The formalization shows that one deterministic run of S(H) on rho(u) decides membership."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 943,
+    "quote": "As above, we get a basis for $H$ as a free group from a spanning tree in $\\mathcal{S}(H)$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "fgauto_reach",
+      "fgauto_tree_word",
+      "fgauto_loop_gens",
+      "fgauto_loop_gens_generate",
+      "fgauto_loop_gens_loop"
+    ],
+    "note": "Formalized: the words t_p x t_q^-1 are loops, and they generate the loops at the base. The spanning tree comes from BFS, and there is one word per edge with a reachable source. For S(H), these words generate H. Not formalized: the claim that the non-tree edges give a free basis. There is no freeness/independence statement."
+  },
+  {
+    "source": "fggroups.tex",
+    "line": 952,
+    "quote": "$G,H$ are conjugate of and only if their cores are equal.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [],
+    "note": "This is the proof of the conjugacy part of 946. Core graphs are not defined, and the conjugacy decision is not formalized."
   }
 ]

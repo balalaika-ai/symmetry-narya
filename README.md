@@ -22,7 +22,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 8: Constructing groups](chapters/ch08/README.md) | 39 | 36 | 0 | 0 | 3 | 0 | 2 |
 | [Chapter 9: Normal subgroups and quotients](chapters/ch09/README.md) | 71 | 66 | 5 | 0 | 0 | 0 | 5 |
 | [Chapter 10: Finite groups](chapters/ch10/README.md) | 19 | 17 | 1 | 1 | 0 | 3 | 5 |
-| **Total** | **774** | **755** | **14** | **1** | **4** | | **57** |
+| [Chapter 11: Group presentations](chapters/ch11/README.md) | 36 | 29 | 3 | 3 | 1 | — | 10 |
+| **Total** | **810** | **784** | **17** | **4** | **5** | | **67** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:
