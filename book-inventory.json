@@ -11322,8 +11322,32 @@
     "labels": [
       "def:Gset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSet",
+      "gset_family",
+      "gset_family_set",
+      "gset_underlying",
+      "gset_underlying_set",
+      "gset_act",
+      "gset_usym_act",
+      "gset_act_equiv",
+      "gset_act_equiv_map",
+      "gset_act_refl",
+      "gset_act_concat",
+      "gset_act_unit",
+      "gset_act_mul",
+      "gset_act_inv_left",
+      "gset_act_inv_right",
+      "gset_act_inverse_left",
+      "gset_act_inverse_right"
+    ],
+    "principal": [
+      "GSet",
+      "gset_act",
+      "gset_usym_act"
+    ],
+    "note": "GSet G is BG÷ → SetTypes. X(p) and p ·_X a are transport in z ↦ X z .fst (gset_act). For g : USym G, the action on X(sh_G) is gset_usym_act. With the chapter-4 product g·h = concat h g, it is a left action: (g·h)·a = g·(h·a) and e·a = a (gset_act_mul, gset_act_unit). These laws are typal identifications, because J has only a typal β-rule. The formalization also gives X(p) as an equivalence (gset_act_equiv). The map of this equivalence is gset_act."
   },
   {
     "chapter": 5,
@@ -11335,8 +11359,17 @@
     "labels": [
       "def:trivGset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_trivial",
+      "gset_trivial_act",
+      "trivial_gset_fixed"
+    ],
+    "principal": [
+      "gset_trivial",
+      "gset_trivial_act"
+    ],
+    "note": "triv_G S is the constant family z ↦ S. Its action is the identity up to the typal transport law in a constant family (gset_trivial_act)."
   },
   {
     "chapter": 5,
@@ -11348,8 +11381,19 @@
     "labels": [
       "rem:G-set-vs-set-bundle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_coverings_equiv",
+      "gset_coverings_equiv_total",
+      "gset_coverings_equiv_projection",
+      "gset_coverings_equiv_inverse",
+      "coverings_setfamilies_equiv",
+      "action_type_projection_covering"
+    ],
+    "principal": [
+      "gset_coverings_equiv"
+    ],
+    "note": "gset_coverings_equiv : GSet G ≃ Coverings(BG) is the inverse of the chapter-3 equivalence coverings_setfamilies_equiv. Its map sends X to the first projection Σ_{z:BG} X(z) → BG, and refl checks both components. The inverse sends a covering to its fiber family. The core declaration action_type_projection_covering records that this projection is a covering."
   },
   {
     "chapter": 5,
@@ -11362,8 +11406,29 @@
       "def:principaltorsor",
       "eq:pathsp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "principal_gset",
+      "gset_paths",
+      "principal_gset_underlying",
+      "gset_paths_act",
+      "principal_gset_act",
+      "principal_gset_universal_cover",
+      "gset_paths_universal_cover",
+      "path_cover_family",
+      "gset_paths_map_equiv",
+      "gset_paths_map_equiv_value",
+      "gset_paths_transport",
+      "gset_paths_ap_equiv",
+      "Torsors",
+      "bg_torsors_equiv"
+    ],
+    "principal": [
+      "principal_gset",
+      "gset_paths",
+      "gset_paths_map_equiv_value"
+    ],
+    "note": "Core: P_G(z) ≔ (sh_G = z) and P_y(z) ≔ (y = z) (gset_paths). Definitionally, P_G(sh_G) ≡ USym G and the action is p · q ≡ concat q p (the book's p q). gset_paths_map_equiv_value: P_- applied to q : y = y' is the family of equivalences that sends p : y = z to p q⁻¹ = concat q⁻¹ p (typal, core gset_paths_transport). principal_gset_universal_cover: P_G and every P_y are literally the family path_cover_family of def:universalcover (refl). lem:BGbytorsor and the G-torsors of the footnote are core (Torsors, bg_torsors_equiv)."
   },
   {
     "chapter": 5,
@@ -11376,8 +11441,24 @@
       "def:adjointrep",
       "ft:adjoint-transport"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "adjoint_gset",
+      "adjoint_gset_act",
+      "adjoint_gset_usym_act",
+      "gset_paths_act",
+      "adjoint_free_loops_equiv",
+      "adjoint_free_loops_inverse_fst",
+      "adjoint_free_loops_base",
+      "adjoint_free_loops_projection",
+      "circle_universal_property"
+    ],
+    "principal": [
+      "adjoint_gset",
+      "adjoint_gset_act",
+      "adjoint_free_loops_equiv"
+    ],
+    "note": "Core: Ad_G(z) ≔ (z = z) with Ad_G(p)(q) = p q p⁻¹ (adjoint_gset_act, typal). In concatenation order, this is concat p⁻¹ (concat q p). Compare the contrasting P_G(p)(q) = p q (gset_paths_act, refl). adjoint_free_loops_equiv : Σ_{z:BG} Ad_G(z) ≃ (S¹ → BG) holds for every CircleSignature C (lem:freeloopspace). Its inverse is f ↦ (f(base), ap_f(loop)), so the first projection is evaluation at base (refl). The map evaluated at base is fst (typal, circle_rec_beta). The remark that Ad_G makes sense for ∞-groups is not formalized, because the formalization defines only groups."
   },
   {
     "chapter": 5,
@@ -11389,8 +11470,24 @@
     "labels": [
       "ex:HomHGasGset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_pair_gset",
+      "group_hom_gset",
+      "group_hom_gset_restrict",
+      "group_hom_gset_underlying",
+      "group_hom_pair_unfold",
+      "group_at",
+      "group_hom_set",
+      "product_group",
+      "product_group_incl2",
+      "gset_restrict"
+    ],
+    "principal": [
+      "group_hom_pair_gset",
+      "group_hom_gset"
+    ],
+    "note": "group_hom_pair_gset : GSet (H × G) sends (x, y) to Hom(mkgroup(BH÷, x), mkgroup(BG÷, y)). It uses group_at of module 437, and these are sets by lem:hom-is-set. It uses B(H × G) ≡ BH × BG. group_hom_gset H G (y) ≔ Hom(H, G)(sh_H, y) is literally the restriction along the inclusion G → H × G (refl). Its underlying set is Hom(H, G) (refl, record eta). group_hom_pair_unfold: Hom(H,G)(x,y) ≃ Σ_{f : BH÷ → BG÷} (y = f(x)). Here the record Copy_mkgroup is around the pointed map, and both round trips are refl."
   },
   {
     "chapter": 5,
@@ -11402,8 +11499,24 @@
     "labels": [
       "xca:HomZGvsAdG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "hom_z_adjoint_equiv",
+      "hom_z_adjoint_value",
+      "hom_z_adjoint_path",
+      "adjoint_hom_z_path",
+      "hom_z_adjoint_path_transport",
+      "adjoint_hom_integer_path",
+      "circle_group_hom_ev",
+      "group_hom_gset",
+      "adjoint_gset",
+      "gset_path_from_equivs"
+    ],
+    "principal": [
+      "adjoint_hom_z_path",
+      "hom_z_adjoint_path_transport"
+    ],
+    "note": "Let Z = circle_group C for any CircleSignature C. Then adjoint_hom_z_path : Ad_G = Hom(Z, G) in GSet G. The proof builds it from the equivalences Hom(Z, mkgroup(BG÷, y)) ≃ (y = y), f ↦ Ω(Bf)(loop) (ex:Zinitial, circle_group_hom_ev of module 435). Module 435 contains the contract-away hint of the book. Transport along this identification is f ↦ f(loop) (typal). adjoint_hom_integer_path is the instance Z = integer_group."
   },
   {
     "chapter": 5,
@@ -11415,8 +11528,19 @@
     "labels": [
       "def:map-of-Gsets"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSetHom",
+      "gset_hom_set",
+      "gset_hom_id",
+      "gset_hom_compose",
+      "gset_hom_ext"
+    ],
+    "principal": [
+      "GSetHom",
+      "gset_hom_set"
+    ],
+    "note": "Hom_G(X,Y) ≔ Π_{z:BG} (X(z) → Y(z)), as printed. It is a set (gset_hom_set). The formalization adds identity, composition (g ∘ f, f first) and extensionality for later use."
   },
   {
     "chapter": 5,
@@ -11428,8 +11552,20 @@
     "labels": [
       "xca:equivariant-map-totalization"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fiberwise_maps_over_equiv",
+      "gset_hom_totalization_equiv",
+      "gset_hom_totalization_map",
+      "GSetHom",
+      "ActionType",
+      "totalize"
+    ],
+    "principal": [
+      "gset_hom_totalization_equiv",
+      "fiberwise_maps_over_equiv"
+    ],
+    "note": "gset_hom_totalization_equiv : Hom_G(X,Y) ≃ Σ_{f : Tot(X) → Tot(Y)} (fst = fst ∘ f). As in the book, this uses the identification of functions Tot(X) → BG. The map sends h to its totalization with reflexivity (refl check). It is the G-set instance of fiberwise_maps_over_equiv for families over any type (choice, lem:contract-away, currying)."
   },
   {
     "chapter": 5,
@@ -11441,8 +11577,19 @@
     "labels": [
       "rem:map-of-Gsets"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_hom_natural",
+      "gset_hom_equivariant",
+      "gsubset_invariant",
+      "gsubset_invariant_iff",
+      "gset_trivial_act"
+    ],
+    "principal": [
+      "gset_hom_natural",
+      "gsubset_invariant_iff"
+    ],
+    "note": "Core (module 500): gset_hom_natural states f_w(g ·_X x) = g ·_Y f_z(x) for g : z = w (the commuting square). gset_hom_equivariant is its restriction to USym G. For Y = triv_G Prop, gsubset_invariant identifies P_w(g · x) with P_z(x) in Prop, and gsubset_invariant_iff gives the two implications. The trivial action is typal (gset_trivial_act)."
   },
   {
     "chapter": 5,
@@ -11455,8 +11602,22 @@
       "def:Gsubset",
       "ft:SubTotX"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSubsets",
+      "gsubsets_unfold",
+      "gsubsets_set",
+      "gsubset_gset",
+      "gsubset_prop_set",
+      "gsubsets_total_equiv",
+      "gsubsets_total_equiv_map"
+    ],
+    "principal": [
+      "GSubsets",
+      "gsubset_gset",
+      "gsubsets_total_equiv"
+    ],
+    "note": "Core: Sub_G(X) ≔ Hom_G(X, triv_G Prop). This is definitionally Π_{z:BG} Sub(X(z)) (gsubsets_unfold, refl), and it is a set (gsubsets_set). X_P(z) ≔ Σ_{x:X(z)} P(z)(x) (gsubset_gset). Footnote ft:SubTotX: gsubsets_total_equiv : Sub_G(X) ≃ (Tot(X) → Prop) by uncurrying (curry_equiv). The map is uncurrying (refl check)."
   },
   {
     "chapter": 5,
@@ -11468,8 +11629,24 @@
     "labels": [
       "xca:SubGX-closedSubXshG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSetClosedSubsets",
+      "gset_closed_condition_prop",
+      "gsubset_restrict_closed",
+      "gsubset_extend",
+      "gsubset_extend_restrict",
+      "gsubset_restrict_extend",
+      "gsubsets_closed_equiv",
+      "gsubsets_closed_equiv_eval",
+      "gsubset_full_closed",
+      "gsubset_full_extend_true"
+    ],
+    "principal": [
+      "gsubsets_closed_equiv",
+      "GSetClosedSubsets"
+    ],
+    "note": "gsubsets_closed_equiv : Sub_G(X) ≃ Σ_{Q : Sub(X(sh_G))} Π_x (Q(x) → Π_{g:USym G} Q(g · x)). The first component of the map is evaluation at sh_G (refl). The closure proof comes from rem:map-of-Gsets. The inverse sends Q to (z, x) ↦ Π_{p : z = sh_G} Q(p · x). The round trips use proposition extensionality and the connectedness of BG."
   },
   {
     "chapter": 5,
@@ -11481,8 +11658,22 @@
     "labels": [
       "xca:ptd-conn-to-comp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ptd_conn_to_comp_equiv",
+      "pointed_maps_into_component",
+      "component_lift",
+      "component_project",
+      "component_lift_project",
+      "ptd_conn_to_comp_values",
+      "ptd_conn_to_comp_pointing",
+      "ptd_conn_to_comp_inverse"
+    ],
+    "principal": [
+      "ptd_conn_to_comp_equiv",
+      "pointed_maps_into_component"
+    ],
+    "note": "Chapter-4 module 436 proves this (pointed_maps_into_component, which that module uses for xca:BGtotype). ptd_conn_to_comp_equiv restates it for pointed types (A,a), (B,b) with A connected: ((A,a) →* (B,b)) ≃ ((A,a) →* (B_(b),(b,!))), with BookPointedMap (b = f(a)). The map is (f,p) ↦ (x ↦ (f(x),!), component path over p). This agrees with the commented hint of the book. The values, the pointing path and the inverse round trip are refl checks."
   },
   {
     "chapter": 5,
@@ -11494,8 +11685,33 @@
     "labels": [
       "rem:GSet=SetHomG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_action_equiv",
+      "gset_action_equiv_map",
+      "gset_action_equiv_inverse",
+      "gset_action_composite_equiv",
+      "gset_action_composite_map",
+      "gset_action_composite_inverse",
+      "action_in_type_split_equiv",
+      "action_in_type_equiv",
+      "action_in_type_group_equiv",
+      "ptd_conn_to_comp_equiv",
+      "gset_to_action",
+      "action_to_gset",
+      "gset_to_action_usym_act",
+      "action_to_gset_transport",
+      "action_to_gset_usym_act",
+      "transport_inverse_section",
+      "gset_to_action_sigma3_tau_zero",
+      "gset_action_equiv_underlying"
+    ],
+    "principal": [
+      "gset_action_equiv",
+      "gset_to_action_usym_act",
+      "action_to_gset_usym_act"
+    ],
+    "note": "gset_action_equiv : GSet G ≃ Σ_{S:Set} Hom(G, Σ_S) has the map X ↦ (X(sh_G), gset_to_action G X) and the inverse action_to_gset. The round trip on GSet is refl. It agrees with the chain of the book up to the propositional component witnesses. The chain is: contract away, pointed maps, xca:ptd-conn-to-comp, and Hom ≡ pointed maps into Set_(S). The formalization of this chain is gset_action_composite_equiv. gset_to_action_usym_act: g acts through the homomorphism as g ·_X - (typal). action_to_gset_usym_act: the pointing path of f identifies the underlying set of the delooped G-set with S, and the action is f(g). The word 'delooping' in the footnote is a forward reference (sec:delooping)."
   },
   {
     "chapter": 5,
@@ -11507,8 +11723,18 @@
     "labels": [
       "def:Gaction"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GroupActionOnSet",
+      "gset_to_action",
+      "action_to_gset",
+      "action_to_gset_underlying",
+      "gset_to_action_to_gset"
+    ],
+    "principal": [
+      "GroupActionOnSet"
+    ],
+    "note": "An action of G on a set S is GroupHom G (permutation_group S), which is literally Hom(G, Σ_S). The two directions of the identification with G-sets (rem:GSet=SetHomG) are gset_to_action and action_to_gset. One round trip is refl."
   },
   {
     "chapter": 5,
@@ -11520,8 +11746,27 @@
     "labels": [
       "xca:Ad-triv-abelian"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "adjoint_trivial_iff_abelian",
+      "abelian_adjoint_trivial_path",
+      "adjoint_trivial_path_abelian",
+      "adjoint_trivial_path_conj",
+      "adjoint_abelian_conj_trivial",
+      "adjoint_to_usym_gset",
+      "adjoint_to_usym_fix",
+      "abelian_adjoint_family",
+      "abelian_adjoint_family_equiv",
+      "gset_fixed_point_extension",
+      "gset_fixed_point_wconst",
+      "gset_fixed_point_extension_beta",
+      "gset_cancel_path",
+      "sigma3_adjoint_not_trivial"
+    ],
+    "principal": [
+      "adjoint_trivial_iff_abelian"
+    ],
+    "note": "The formalization reads 'identical' as an identification in GSet G: IsAbelian G ⇔ Ad_G = triv_G(USym G). (⇒) The identity of USym G is a fixed point of z ↦ (Ad_G(z) → USym G), because conjugation is trivial. So it extends to an invariant family (gset_fixed_point_extension, through weakly constant maps into sets). By connectedness, this family consists of equivalences. (⇐) The equivariance of the transport makes g h g⁻¹ = h. Litmus: Ad ≠ triv for Σ_3."
   },
   {
     "chapter": 5,
@@ -11533,8 +11778,23 @@
     "labels": [
       "xca:Ad-princ-trivial"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "adjoint_principal_iff_trivial",
+      "trivial_adjoint_principal_path",
+      "adjoint_principal_path_trivial",
+      "trivial_group_path",
+      "path_trivial_group",
+      "IsTrivialGroup",
+      "unit_group_adjoint_principal",
+      "sigma3_adjoint_not_principal"
+    ],
+    "principal": [
+      "adjoint_principal_iff_trivial",
+      "trivial_adjoint_principal_path",
+      "adjoint_principal_path_trivial"
+    ],
+    "note": "adjoint_principal_iff_trivial: G = TG (the trivial group of the book, module 506) iff Ad_G = P_G in GSet G. The proof goes through IsTrivialGroup (BG contractible). Contractible path types give the fiberwise equivalences. Conversely, transport of the invariant section z ↦ refl_z of Ad_G gives a contraction z ↦ (sh_G = z) of BG. Litmus: Ad = P for the unit group, and Ad ≠ P for Σ_3."
   },
   {
     "chapter": 5,
@@ -11546,8 +11806,24 @@
     "labels": [
       "def:finite-G-set"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFiniteGSet",
+      "is_finite_gset_prop",
+      "gset_card",
+      "gset_set_property_at_iff",
+      "gset_finite_at_iff",
+      "gset_finite_everywhere_iff",
+      "GSetNElementAt",
+      "gset_n_element_at_iff",
+      "gset_n_element_everywhere_iff"
+    ],
+    "principal": [
+      "IsFiniteGSet",
+      "gset_card",
+      "gset_finite_at_iff"
+    ],
+    "note": "Core: IsFiniteGSet G X ≔ IsFinite(X(sh_G)) and Card(X) ≔ Card(X(sh_G)). Footnote: gset_finite_at_iff states that, for each z : BG, X(sh_G) is finite iff X(z) is finite. gset_finite_everywhere_iff gives the equivalence with the statement that all X(z) are finite. The same results hold for n-element sets ‖(Fin n,!) = X(z)‖ (as in BookFiniteSetsAt). They come from the general gset_set_property_at_iff for propositional properties of sets and from the connectedness of BG."
   },
   {
     "chapter": 5,
@@ -11559,8 +11835,15 @@
     "labels": [
       "def:transitiveGset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsTransitive",
+      "is_transitive_prop"
+    ],
+    "principal": [
+      "IsTransitive"
+    ],
+    "note": "istrans(X) ≔ ∃_{x:X(sh)} Π_{y:X(sh)} ∃_{g:USym G} (x = g·y), literally, with Mere for ∃. It is a proposition."
   },
   {
     "chapter": 5,
@@ -11572,8 +11855,30 @@
     "labels": [
       "eq:Gset-trans-gen"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GSetOrbitMapSurjective",
+      "transitive_surjective_iff",
+      "gset_act_solve",
+      "GSetTransitiveAt",
+      "GSetTransitiveEverywhere",
+      "transitive_at_shape",
+      "transitive_everywhere_iff",
+      "GSetTransitivePairwise",
+      "transitive_pair_step",
+      "transitive_pairwise_iff",
+      "gset_transitive_nonempty",
+      "gset_empty_not_transitive",
+      "gset_empty_underlying",
+      "principal_gset_pairwise",
+      "IsTransitive"
+    ],
+    "principal": [
+      "transitive_surjective_iff",
+      "transitive_everywhere_iff",
+      "transitive_pairwise_iff"
+    ],
+    "note": "The formalization proves that each reformulation is logically equivalent to IsTransitive. First: ∃x such that - · x : USym G → X(sh_G) is surjective (Surjective, with the book's fibers y = g · x). Second: eq:Gset-trans-gen at every z : BG (GSetTransitiveAt at sh_G is literally IsTransitive, refl). Third: X(sh_G) is merely inhabited and ∀x y ∃g (x = g · y). 'The empty G-set is not transitive': gset_empty_not_transitive for triv_G ∅ (through gset_transitive_nonempty)."
   },
   {
     "chapter": 5,
@@ -11585,8 +11890,22 @@
     "labels": [
       "lem:conistrans"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "transitive_connected_equiv",
+      "transitive_action_type_connected",
+      "connected_action_type_transitive",
+      "transitive_iff_connected_covering",
+      "action_type_projection_covering",
+      "ActionType",
+      "transitive_point_reach"
+    ],
+    "principal": [
+      "transitive_connected_equiv",
+      "transitive_action_type_connected",
+      "connected_action_type_transitive"
+    ],
+    "note": "X is transitive iff the domain Tot(X) = Σ_{z:BG} X(z) of the associated covering fst : Tot(X) → BG is connected. This map is a covering by action_type_projection_covering. As in the book, the proof reduces to the base point by the connectedness of BG."
   },
   {
     "chapter": 5,
@@ -11598,8 +11917,16 @@
     "labels": [
       "lem:evisinjwhentransitive"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_hom_eval",
+      "gset_hom_eval_injective",
+      "gset_hom_eval_reflects"
+    ],
+    "principal": [
+      "gset_hom_eval_injective"
+    ],
+    "note": "For transitive X, ev_x : Hom_G(X,Y) → Y(z), f ↦ f_z(x), is an injection (all fibers are propositions, IsEmbedding). As in the book, the proof transports the equation f_z(x) = f'_z(x) along merely existing identifications (z,x) = (w,x') in Tot(X)."
   },
   {
     "chapter": 5,
@@ -11611,8 +11938,67 @@
     "labels": [
       "xca:not-normal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CircleWedgeBoundary",
+      "circle_wedge_evaluate",
+      "CircleWedgeSignature",
+      "circle_wedge_ind_prop",
+      "circle_wedge_connected",
+      "circle_wedge_group",
+      "wedge_cycle_map",
+      "wedge_cycle_equiv",
+      "wedge_gset_data",
+      "wedge_family",
+      "wedge_family_beta",
+      "wedge_identify",
+      "wedge_monodromy",
+      "wedge_monodromy1",
+      "wedge_monodromy2",
+      "wedge_swap_fixed_two",
+      "wedge_cycle_no_fixed",
+      "wedge_fin3_rigid",
+      "wedge_conjugate_commutes",
+      "wedge_rigid_transfer",
+      "wedge_gset",
+      "wedge_gset_symmetry_trivial",
+      "wedge_gset_symmetries_contractible",
+      "wedge_eval_injective",
+      "wedge_eval_not_surjective",
+      "wedge_gset_not_normal",
+      "wedge_gset_transitive",
+      "circle_wedge_loop_family",
+      "circle_wedge_boundary_to_free",
+      "circle_wedge_boundary_from_free",
+      "circle_wedge_boundary_free_eta",
+      "circle_wedge_evaluate_free",
+      "circle_wedge_free_signature",
+      "circle_wedge_carrier_groupoid",
+      "free_bool_boundary_restrict",
+      "free_bool_boundary_lift",
+      "free_bool_circle_wedge_signature",
+      "circle_wedge_to_wedge_signature",
+      "circle_wedge_to_wedge_signature_carrier",
+      "chapter8_circle_wedge_groupoid",
+      "chapter8_circle_wedge_pointed_path",
+      "constructed_circle_wedge_signature",
+      "constructed_circle_wedge_signature_carrier",
+      "circle_wedge_free_group",
+      "constructed_circle_wedge_group_path",
+      "wedge_gset_unconditional",
+      "wedge_gset_symmetries_contractible_unconditional",
+      "wedge_gset_transitive_unconditional",
+      "wedge_eval_injective_unconditional",
+      "wedge_eval_not_surjective_unconditional",
+      "wedge_gset_not_normal_unconditional",
+      "constructed_wedge_gset_not_normal"
+    ],
+    "principal": [
+      "wedge_gset_not_normal_unconditional",
+      "wedge_gset_symmetries_contractible_unconditional",
+      "circle_wedge_carrier_groupoid"
+    ],
+    "note": "S¹ ∨ S¹ is a parameter CircleWedgeSignature (base, two loops, dependent induction with a typal computation law). Its carrier is a groupoid for every such signature (circle_wedge_carrier_groupoid, module 596). The reason is that a CircleWedgeSignature is a free-group signature on Bool (def:bfree, chapter 8). By the encode-decode method of chapter 8, the carrier of such a signature is a groupoid (free_signature_groupoid). So the results hold without hypothesis (*_unconditional, for example wedge_gset_not_normal_unconditional). The results are also not vacuous. constructed_circle_wedge_signature (no HITs) has the carrier of the constructed S¹ ∨ S¹ of chapter 8, and mkgroup(S¹ ∨ S¹) = F_2 (constructed_circle_wedge_group_path). Every chapter-8 wedge signature of two circles is a groupoid. It is pointed-equal to the wedge of any CircleWedgeSignature (chapter8_circle_wedge_groupoid, chapter8_circle_wedge_pointed_path). X (wedge_gset) sends base to Fin 3, loop₁ to s = (0 1 2) and loop₂ to t = (0 1). This is the graph of the figures after the relabelling n1 ↦ 2, n2 ↦ 0, n3 ↦ 1, so x = n2 = 0. X(base) ≃ Fin 3 holds only through the computation law (wedge_identify). X = X is contractible. For every x, ev_x is injective but not surjective. X is not normal."
   },
   {
     "chapter": 5,
@@ -11624,8 +12010,16 @@
     "labels": [
       "def:normal-action"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsNormalGSet",
+      "is_normal_gset_prop",
+      "gset_path_eval"
+    ],
+    "principal": [
+      "IsNormalGSet"
+    ],
+    "note": "IsNormalGSet G X ≔ every ev_x : (X = X) → X(z), e ↦ e_z(x), is a BookIsEquiv. Here e_z(x) is the transport along e at z. The book has the standing hypothesis that X is transitive. The formalization keeps it as a separate hypothesis where it is necessary, and does not build it into the predicate."
   },
   {
     "chapter": 5,
@@ -11637,8 +12031,22 @@
     "labels": [
       "xca:normal-action-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_eval_equiv_everywhere",
+      "normal_eval_equiv_same_fiber",
+      "normal_action_equiv",
+      "book_isequiv_homotopic",
+      "IsNormalGSet",
+      "gset_path_eval",
+      "concat_left_equiv",
+      "action_type_path"
+    ],
+    "principal": [
+      "normal_eval_equiv_everywhere",
+      "normal_action_equiv"
+    ],
+    "note": "normal_eval_equiv_everywhere: if ev_x : (X = X) → X(z) is a (book) equivalence for one z and x : X(z), then IsNormalGSet G X holds. That is, ev at every pair is an equivalence. Transitivity is not necessary. For x' = ev_x(e), ev_{x'} = ev_x ∘ (e · -). The proof reaches the other fibers by a mere path z = w and transport in Tot(X). normal_action_equiv is the setting of the book (X transitive)."
   },
   {
     "chapter": 5,
@@ -11650,8 +12058,29 @@
     "labels": [
       "def:action"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ActionInType",
+      "action_object",
+      "ActionOnElement",
+      "action_on_element_group_hom_equiv",
+      "ActionInTypePointed",
+      "action_in_type_pointed",
+      "action_in_type_pointed_counit",
+      "action_in_type_split_equiv",
+      "action_in_type_equiv",
+      "action_in_type_equiv_map",
+      "action_in_type_equiv_object",
+      "action_in_type_equiv_values",
+      "action_in_type_equiv_inverse",
+      "action_in_type_group_equiv"
+    ],
+    "principal": [
+      "ActionInType",
+      "ActionOnElement",
+      "action_in_type_equiv"
+    ],
+    "note": "Core: an action of G in A is X : BG → A, which acts on X(sh_G). An action on a : A is ActionOnElement G A a ≔ BG →* (A_(a),(a,!)). When A is a groupoid, this is literally Hom(G, Aut_A(a)) (action_on_element_group_hom_equiv). The displayed equivalence of the subsequent text is action_in_type_equiv : (BG → A) ≃ Σ_{a:A} ActionOnElement G A a for every type A. Its map is X ↦ (X(sh_G), z ↦ (X(z),!)) (refl check). action_in_type_group_equiv gives Σ_a Hom(G, Aut_A(a)) for groupoids A (compare bg_to_type_one_four, module 436)."
   },
   {
     "chapter": 5,
@@ -11663,8 +12092,16 @@
     "labels": [
       "std-action"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "standard_action",
+      "standard_action_object",
+      "ActionInType"
+    ],
+    "principal": [
+      "standard_action"
+    ],
+    "note": "The standard action is id : BG → BG as an action in A ≔ BG. Its object is sh_G by definition."
   },
   {
     "chapter": 5,
@@ -11676,8 +12113,42 @@
     "labels": [
       "ex:S2-acts-on-C3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TwoElementSets",
+      "two_set_carrier",
+      "two_set_prop_transfer",
+      "two_set_decidable",
+      "two_set_other_contractible",
+      "two_set_swap",
+      "two_set_other_is_swap",
+      "s2c3_one_plus",
+      "s2c3_move",
+      "s2c3_move_zero",
+      "s2c3_move_self",
+      "s2c3_move_swap",
+      "S2C3Type",
+      "s2c3_type_groupoid",
+      "s2c3_point",
+      "s2c3_group",
+      "s2_acts_on_c3",
+      "s2c3_fy_equiv",
+      "s2c3_fn_square",
+      "s2c3_psi_equiv",
+      "s2c3_psi_commutes",
+      "s2c3_permutation_path",
+      "s2c3_cycle",
+      "s2c3_cycle_path",
+      "S2C3Prop",
+      "s2c3_sub_cycles_equiv",
+      "s2c3_group_c3_path",
+      "s2c3_point_cycle"
+    ],
+    "principal": [
+      "s2_acts_on_c3",
+      "s2c3_group_c3_path"
+    ],
+    "note": "Let S be a 2-element set (BΣ_2 ≡ 2-element sets). Then T_S ≔ Σ_{X:Set} (S → X → X). The point is (1 ⊔ S, f) with f_s(inl 0) = inr s, f_s(inr s) = inr(swap s) and f_s(inr swap s) = inl 0. Here swap s is the other element, which comes from contractibility. The case split uses the decidable equality of S, and the three equations hold typally. G(S) ≔ Aut_{T_S}(1 ⊔ S, f) gives s2_acts_on_c3 : BΣ_2 → Group. G(Fin 2) = C_3 = Aut_Cyc(Fin 3, s) (s2c3_group_c3_path). On classifying types, the map is (X, f) ↦ (X, f_yes). It goes through the subtype where f_yes is a cyclic permutation and f_no = f_yes ∘ f_yes (Σ T Q ≃ Cycles). Also, (1 ⊔ Fin 2, f_yes) = (Fin 3, s) by inl 0 ↦ 0, yes ↦ 1, no ↦ 2. The footnote picture is informal."
   },
   {
     "chapter": 5,
@@ -11689,8 +12160,71 @@
     "labels": [
       "xca:AutC3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "autc3",
+      "autc3_gen",
+      "AutC3Iso",
+      "autc3_abstract_iso_equiv",
+      "autc3_iso_unit",
+      "autc3_iso_power",
+      "autc3_iso_pointwise",
+      "autc3_iso_determined",
+      "autc3_gen_nontrivial",
+      "autc3_iso_gen_nontrivial",
+      "autc3_iso_index",
+      "autc3_iso_index_nonzero",
+      "autc3_index_class",
+      "autc3_one_ne_two",
+      "autc3_two_ne_one",
+      "autc3_index_class_injective",
+      "autc3_path_class",
+      "autc3_path_class_injective",
+      "GroupAutAtMostTwo",
+      "cyclic_three_aut_at_most_two",
+      "group_aut_at_most_two_transfer",
+      "cyclic_fin_three_aut_at_most_two",
+      "S2C3Plus",
+      "s2c3_eval_zero",
+      "s2c3_eval_natural_base",
+      "s2c3_eval_natural",
+      "s2c3_transport_inr_base",
+      "s2c3_transport_inr",
+      "s2c3_fy_commutes",
+      "s2c3_fy_path",
+      "s2c3_loop_snd",
+      "s2c3_loop",
+      "s2c3_fy_symmetry",
+      "s2c3_eval_fy_symmetry",
+      "s2c3_eval_transport",
+      "s2c3_eval_swap_transport",
+      "s2c3_inr_proj",
+      "s2c3_fin2_third",
+      "s2c3_group_ap_injective",
+      "s2c3_swap_acts_nontrivially",
+      "s2c3_group_aut_at_most_two",
+      "s2c3_group_ap_surjective",
+      "s2_aut_c3_map",
+      "s2_aut_c3_ap_injective",
+      "s2_aut_c3_ap_equiv",
+      "s2_aut_c3_map_equiv",
+      "s2_aut_c3_pointed_map",
+      "s2_aut_c3_pointed_equiv",
+      "s2_aut_c3_iso",
+      "s2_aut_c3_path",
+      "s2_aut_c3_classifying",
+      "aut_c3_usym_fin_two",
+      "s2_acts_on_c3",
+      "s2c3_group",
+      "s2c3_group_c3_path",
+      "group_aut"
+    ],
+    "principal": [
+      "s2_aut_c3_path",
+      "s2_aut_c3_pointed_equiv",
+      "s2_aut_c3_map_equiv"
+    ],
+    "note": "The action of ex:S2-acts-on-C3 is a pointed map b : BΣ_2 → BAut(C_3) ≡ Group_(C_3). It sends S to (G(S), ‖C_3 = G(S)‖) and is pointed by G(Fin 2) = C_3 (s2c3_group_c3_path). This map is an equivalence (s2_aut_c3_map_equiv). It gives the isomorphism s2_aut_c3_iso and the identification s2_aut_c3_path : Σ_2 = Aut(C_3) = group_aut (cyclic_group_fin two). Its classifying map is literally S ↦ G(S) on first components (s2_aut_c3_classifying, refl). Proof: on loops, b is ap_G. It is injective because the Σ_2-set S ↦ USym G(S) maps equivariantly to 1 ⊔ S (evaluation at inl 0). This map sends the symmetry u₀ given by f_yes to inr yes. It is surjective because G(Fin 2) = G(Fin 2) injects into Fin 2 (module 573). That is, the image gen^k, k ∈ {1,2}, of the generator determines an automorphism of C_3, through abstract isomorphisms (chapter 7, module 709). Then connected_map_equiv_from_loops applies. Litmus: Aut(C_3) ≃ Fin 2 on symmetries (aut_c3_usym_fin_two), and swap acts nontrivially (s2c3_swap_acts_nontrivially)."
   },
   {
     "chapter": 5,
@@ -11700,8 +12234,27 @@
     "line": 669,
     "section_raw": "Group actions ($G$-sets)}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "standard_symmetric_gset",
+      "standard_symmetric_gset_composite",
+      "standard_action",
+      "standard_symmetric_transposition",
+      "standard_symmetric_gset_transitive",
+      "standard_symmetric_gset_zero_not_transitive",
+      "bool_power_set",
+      "decidable_subsets_gset",
+      "decidable_subsets_gset_underlying",
+      "decidable_subsets_act",
+      "fin3_singleton_zero",
+      "sigma3_decidable_subset_moved"
+    ],
+    "principal": [
+      "standard_symmetric_gset_transitive",
+      "decidable_subsets_gset",
+      "decidable_subsets_act"
+    ],
+    "note": "The standard Σ_n-set (core standard_symmetric_gset, z ↦ z.fst) is literally the composite of the standard action id_{BΣ_n} with the projection BΣ_n → Set (refl). Footnote: it is transitive for n > 0, because the transposition (0 y) sends y to 0. It is not transitive for n = 0 (empty). decidable_subsets_gset n ≔ z ↦ (z → Bool) composes further with S ↦ (S → Bool) : Set → Set. Its action satisfies (g · s)(g · x) = s(x) (typal), with a Σ_3 litmus."
   },
   {
     "chapter": 5,
@@ -11713,8 +12266,16 @@
     "labels": [
       "def:set-of-subgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Subgroups",
+      "SubgroupsSigma",
+      "subgroups_sigma_equiv"
+    ],
+    "principal": [
+      "Subgroups"
+    ],
+    "note": "Sub(G) is a record (gset, point, transitive) with the three components of the printed Σ_{X:BG→Set} X(sh_G) × istrans(X). subgroups_sigma_equiv identifies it with the literal Σ-type (both round trips are refl)."
   },
   {
     "chapter": 5,
@@ -11726,8 +12287,16 @@
     "labels": [
       "xca:group-Xx!"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "transitive_action_type_pcg",
+      "transitive_action_type_connected",
+      "action_type_groupoid"
+    ],
+    "principal": [
+      "transitive_action_type_pcg"
+    ],
+    "note": "For transitive X, Σ_{z:BG} X(z) is connected (lem:conistrans) and a groupoid. This gives a pointed connected groupoid at (sh_G, x)."
   },
   {
     "chapter": 5,
@@ -11739,8 +12308,15 @@
     "labels": [
       "def:underlying-group-of-subgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroup_group",
+      "subgroup_group_classifying"
+    ],
+    "principal": [
+      "subgroup_group"
+    ],
+    "note": "The underlying group of (X,pt) is mkgroup(Tot(X), (sh_G, pt)). Its classifying pointed type is that pair by definition."
   },
   {
     "chapter": 5,
@@ -11752,8 +12328,43 @@
     "labels": [
       "ex:Rm0-subgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "rmsub_gset",
+      "RmBase",
+      "rmsub_point",
+      "rmsub_transitive",
+      "rmsub_subgroup",
+      "rmsub_loop_equiv",
+      "rmsub_power_act",
+      "rmsub_monodromy",
+      "rmsub_cyclic",
+      "rmsub_fin_periods",
+      "rmsub_period_multiple",
+      "rmsub_multiple_period",
+      "rmsub_picks_out",
+      "rsub_gset",
+      "rsub_point",
+      "rsub_transitive",
+      "rsub_subgroup",
+      "rsub_power_act",
+      "rsub_picks_out",
+      "rmlag_litmus_loop_m_fixes",
+      "rsub_litmus_loop_moves",
+      "power_circle_family",
+      "power_bundle_zero",
+      "power_bundle_connected",
+      "power_circle_monodromy",
+      "circle_integer_family",
+      "code_encode_power",
+      "circle_integer_total_contractible"
+    ],
+    "principal": [
+      "rmsub_subgroup",
+      "rmsub_picks_out",
+      "rsub_picks_out"
+    ],
+    "note": "Let C be any circle (Z = circle_group C) and let m = n+1. Then (R_m, 0) : Sub(Z) with R_m = power_circle_family C n. It is transitive because Tot(R_m) is connected. R_m(base) ≡ Fin m holds only through the circle β-identification, so 0 is power_bundle_zero. A symmetry p fixes 0 iff ‖Σ k, p = loop^{k·m}‖ (rmsub_picks_out). The proof uses p · 0 = R_m(loop)^{w(p)}(0) and the monodromy (Fin m, s). For m = 0, the subgroup is (R, 0) with R = circle_integer_family (sets by code_is_set). Then R(loop^k)(0) = k (rsub_power_act), and p fixes 0 iff p = refl (rsub_picks_out). The remarks that relate this to dg_m / α_m and to R as universal covering are motivation. The same is true for the footnote 'any element of Fin m would do'. They are not formalized separately."
   },
   {
     "chapter": 5,
@@ -11765,8 +12376,20 @@
     "labels": [
       "lem:SubGisset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroups_set",
+      "pointed_gset_paths_prop",
+      "pointed_gset_path_fiber_equiv",
+      "gset_path_eval_injective",
+      "subgroups_pairs_set",
+      "PointedGSet"
+    ],
+    "principal": [
+      "subgroups_set",
+      "pointed_gset_path_fiber_equiv"
+    ],
+    "note": "Sub(G) is a set. As in the book, ((X,pt) = (X',pt')) is equivalent to the fiber of ev_pt : (X = X') → X'(sh_G) at pt' (pointed_gset_path_fiber_equiv). This fiber has the native orientation ev(e) = pt'. It is a proposition, because ev_pt is injective for transitive X. The transitivity component is a proposition."
   },
   {
     "chapter": 5,
@@ -11778,8 +12401,20 @@
     "labels": [
       "exa:fix1subSGn"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fixed_point_subgroup",
+      "fixed_point_gset_transitive",
+      "fixed_point_subgroup_symmetries",
+      "fixed_point_subgroup_group_path",
+      "fixed_point_subgroup_pointed_equiv",
+      "standard_symmetric_gset"
+    ],
+    "principal": [
+      "fixed_point_subgroup",
+      "fixed_point_subgroup_group_path"
+    ],
+    "note": "Let n = m+1. The Σ_n-set X(A, !) ≔ A (core standard_symmetric_gset) is transitive. The reason is that its action type is the type of pointed (m+1)-element sets, which is equivalent to the connected FinSet_m (xca:n-is-ptd-n+1). So (X, k) : Sub(Σ_n) for every k : Fin n. The symmetries picked out are the π with π·k = k (lem:E-preserves-symms). The underlying group of (X, k) is identified with Σ_{n−1} (fixed_point_subgroup_group_path). This is a pointed equivalence through xca:n-is-ptd-n+1 and Fin(m+1) ∖ {k} ≃ Fin m. The footnote states that the choice of k matters for the symmetries picked out. It is not formalized separately."
   },
   {
     "chapter": 5,
@@ -11791,8 +12426,21 @@
     "labels": [
       "xca:n-is-ptd-n+1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "finite_pointed_equiv",
+      "finite_plus_point",
+      "finite_remove_point",
+      "PointedFiniteSetsAt",
+      "finite_plus_remove",
+      "finite_remove_plus",
+      "finite_remove_point_equiv",
+      "BookFiniteSetsAt"
+    ],
+    "principal": [
+      "finite_pointed_equiv"
+    ],
+    "note": "FinSet_n ≃ Σ_{S:FinSet_{n+1}} S by A ↦ (A ⊔ 1, inr ★). The inverse is (S, s) ↦ S ∖ {s}, which is n-element by Fin(n+1) ∖ {a} ≃ Fin n. As the hint says, the decidability of S comes from finiteness (xca:finsets-decidable)."
   },
   {
     "chapter": 5,
@@ -11804,8 +12452,23 @@
     "labels": [
       "xca:A-is-A-1+1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "point_removal_equiv",
+      "point_removal",
+      "point_removal_inverse",
+      "PointRemovals",
+      "point_split_equiv",
+      "removal_complement_equiv",
+      "point_removal_retraction",
+      "point_removal_section",
+      "type_path_ext",
+      "Without"
+    ],
+    "principal": [
+      "point_removal_equiv"
+    ],
+    "note": "Let A be any type with decidable equality. Then a ↦ (A ∖ {a}, ua(A ≃ (A ∖ {a}) + 1)) is a BookEquiv A ≃ Σ_{B:U} (A = B + 1). Here A ∖ {a} is Without A a of chapter 2. The inverse is (B, p) ↦ p⁻¹(inr ★). The hypothesis that A is a set is not necessary, because decidable equality is sufficient."
   },
   {
     "chapter": 5,
@@ -11818,8 +12481,42 @@
       "exa:C3subC6",
       "fig:C3inC6"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "c6half_group",
+      "c6half_cycle",
+      "c6half_quotient",
+      "c6half_gset",
+      "c6half_class",
+      "c6half_index",
+      "c6half_act_class",
+      "c6half_class_path_equiv",
+      "c6half_act_equiv",
+      "c6half_picks_out_zero",
+      "c6half_picks_out_one",
+      "c6half_moves_zero_to_one",
+      "c6half_moves_one_to_zero",
+      "c6half_e0",
+      "c6half_comp3_equiv",
+      "c6half_total_equiv",
+      "c6half_action_type_equiv",
+      "c6half_psi_point",
+      "c6half_transitive",
+      "c6half_subgroup",
+      "c6half_pointed_equiv",
+      "c6half_subgroup_is_c3",
+      "root_order_fiber_equiv",
+      "sum_of_fibers_equiv",
+      "cycle_root_of_order",
+      "root_principal_path",
+      "cyclic_group_fin_path"
+    ],
+    "principal": [
+      "c6half_subgroup",
+      "c6half_picks_out_zero",
+      "c6half_subgroup_is_c3"
+    ],
+    "note": "C_6 = cyclic_group_fin 5 and F(X,t) = X/2 = ModQuotient 1 (the quotient by the orbit relation of t²). π · [k] = [π(k)] (c6half_act_class). π picks out [0] iff π(0) is even, that is, iff π is an even power of s by cor:id-m-cycle. The formal statement uses g ↦ g(0), not explicit powers. Footnote: the same holds for [1], and π·[0] = [1] iff π·[1] = [0] iff π(0) is odd. As in the book, ρ_2 : Cyc_3 → Cyc_6, thm:fiber-cdg and lem:sum-of-fibers give BC_3 ≃ Σ_{(X,t):BC_6} X/2. Here thm:fiber-cdg is root_order_fiber_equiv of module 145 (fibers over cycles of a given order). This equivalence sends the base point to ((Fin 6, s), [0]). Hence F is transitive (stated after the equivalence) and (F,[0]) : Sub(C_6). Its underlying group equals C_3 = cyclic_group_fin 2 (through cyclic_group 3). fig:C3inC6 is a picture (no claim beyond the above)."
   },
   {
     "chapter": 5,
@@ -11831,8 +12528,14 @@
     "labels": [
       "def:decidable-subgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsDecidableSubgroup"
+    ],
+    "principal": [
+      "IsDecidableSubgroup"
+    ],
+    "note": "A subgroup (X,pt) is decidable if X(sh_G) has decidable equality (DecidableEquality of module 32)."
   },
   {
     "chapter": 5,
@@ -11844,8 +12547,22 @@
     "labels": [
       "def:typeofmono"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsGroupMono",
+      "is_group_mono_prop",
+      "GroupMonos",
+      "IsTrivialMono",
+      "IsProperMono",
+      "IsTrivialGroup",
+      "trivial_group_iff_path",
+      "trivial_group_iff_usym_contractible"
+    ],
+    "principal": [
+      "IsGroupMono",
+      "GroupMonos"
+    ],
+    "note": "ismono(i) ≔ USym i is an injection (IsEmbedding: propositional fibers) for i : GroupHom H G. Mono(G) ≔ Σ_H Σ_i ismono(i). A mono is proper if i is not an isomorphism. It is trivial if H is trivial, where IsTrivialGroup H ≔ BH contractible. trivial_group_iff_path shows that this is equivalent to H = TG ('H is the trivial group'). trivial_group_iff_usym_contractible shows that it is equivalent to USym H contractible."
   },
   {
     "chapter": 5,
@@ -11857,8 +12574,24 @@
     "labels": [
       "ex:SGninSGn+1"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "symmetric_group_inclusion",
+      "symmetric_group_inclusion_pointing",
+      "symmetric_group_inclusion_mono",
+      "symmetric_group_inclusion_inl",
+      "symmetric_group_inclusion_inr",
+      "symmetric_group_inclusion_reflects",
+      "symmetric_group_inclusion_monomorphism",
+      "set_plus_one",
+      "gset_permutation_ext",
+      "automorphism_group_map_hom"
+    ],
+    "principal": [
+      "symmetric_group_inclusion",
+      "symmetric_group_inclusion_mono"
+    ],
+    "note": "i_n : Σ_n → Σ_{n+1} with Bi_n(A) = A ⊔ 1 (automorphism_group_map_hom of chapter 4 for S ↦ S ⊔ 1) is pointed by refl, literally. The reason is that standard_set (n+1) is (Fin n ⊔ 1, sum_set …) by definition. USym i_n(π) acts as π on Fin n and fixes the new element (inr ★, the 'last element' of the book). Hence USym i_n is injective. The margin picture for n = 2 is informal."
   },
   {
     "chapter": 5,
@@ -11870,8 +12603,25 @@
     "labels": [
       "xca:SG2subSG3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "repointed_inclusion",
+      "repointed_inclusion_usym",
+      "repointed_inclusion_mono",
+      "repointed_monomorphism",
+      "repointed_image_stabilizer",
+      "repointed_point",
+      "repointed_image_iff",
+      "repointed_fixed_iff",
+      "inclusion_picked_out_iff",
+      "conj_in",
+      "conj_out"
+    ],
+    "principal": [
+      "repointed_image_stabilizer",
+      "repointed_inclusion_usym"
+    ],
+    "note": "The printed exercise says i_3, but it means i_2 : Σ_2 → Σ_3. This also occurs in the preceding example. Take any m and any pointing path p : sh = sh of Bi_m (a permutation of Fin (m+1)). Then USym i^p(s) = p⁻¹·USym i_m(s)·p, and h ∈ im(USym i^p) iff h fixes p⁻¹·★. Here ★ = inr ★, the last element of the book. So for m = 2, the six pointing paths give the stabilizers of the three points, that is, the three subgroups {e, (a b)}, each twice. The general formula is the requested calculation. The formalization does not list the six cases one by one."
   },
   {
     "chapter": 5,
@@ -11883,8 +12633,30 @@
     "labels": [
       "xca:C3subSG3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "c3inv_j",
+      "c3inv_j_mono",
+      "c3inv_alpha",
+      "c3inv_alpha_equiv",
+      "c3inv_path",
+      "c3inv_alpha_index",
+      "c3inv_j_prime",
+      "c3inv_j_prime_mono",
+      "c3inv_usym_differ",
+      "c3inv_j_monomorphism",
+      "c3inv_j_prime_monomorphism",
+      "c3inv_homotopy",
+      "c3inv_monos_path",
+      "cyclic_forget_hom",
+      "forget_hom_injective",
+      "pointed_over_path"
+    ],
+    "principal": [
+      "c3inv_usym_differ",
+      "c3inv_monos_path"
+    ],
+    "note": "j : C_3 → Σ_3 is the forgetful homomorphism ((X,t),!) ↦ (X,!). j' = j ∘ α, with α the inversion automorphism (X,t) ↦ (X,t⁻¹). α is pointed by (Fin 3, s) = (Fin 3, s⁻¹) through the transposition (1 2). Both j and j' are monomorphisms (USym injective). USym j ≠ USym j' as functions (c3inv_usym_differ): j' sends the generator r_1 to a symmetry with value 2 at 0. But (C_3, j') = (C_3, j) in Mono(Σ_3) by the pointed equivalence Bα with Bj ∘ Bα = Bj' (c3inv_monos_path)."
   },
   {
     "chapter": 5,
@@ -11896,8 +12668,23 @@
     "labels": [
       "ex:prodinclismono"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_group_incl1",
+      "product_group_incl2",
+      "product_incl1_mono",
+      "product_incl2_mono",
+      "product_incl1_usym",
+      "product_incl1_covering",
+      "product_incl1_fiber_equiv",
+      "product_incl2_covering",
+      "product_incl2_fiber_equiv"
+    ],
+    "principal": [
+      "product_incl1_mono",
+      "product_incl1_usym"
+    ],
+    "note": "The first inclusion i_G (product_group_incl1 of chapter 4: Bi_G(z) = (z, sh_H), pointed by refl) is a monomorphism. USym i_G(g) = (g, refl_{sh_H}) (typal). The formalization uses both the argument of the book by injectivity and its footnote, and the proof goes through the footnote. The footnote states that the preimage of (z,t) contracts to the set t = sh_H, so Bi_G is a covering. The same is true for the second inclusion."
   },
   {
     "chapter": 5,
@@ -11909,8 +12696,25 @@
     "labels": [
       "lem:SubG=MonoG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroups_monos_equiv",
+      "subgroups_monos_is_equiv",
+      "subgroup_to_mono",
+      "mono_to_subgroup",
+      "subgroup_inclusion",
+      "subgroup_inclusion_mono",
+      "mono_gset",
+      "mono_gset_transitive",
+      "group_mono_covering",
+      "covering_group_mono"
+    ],
+    "principal": [
+      "subgroups_monos_is_equiv",
+      "subgroup_to_mono",
+      "mono_to_subgroup"
+    ],
+    "note": "F(X,pt) = (mkgroup(Tot(X),(sh_G,pt)), mkgroup(fst)), with fst pointed by refl, is a BookIsEquiv. Its inverse is E(H,i) = (Bi÷⁻¹, (sh_H, Bi_pt)), exactly as in the proof. The monomorphism property of fst and the set-valuedness of Bi÷⁻¹ are cor:fib-vs-path (covering_group_mono, group_mono_covering)."
   },
   {
     "chapter": 5,
@@ -11922,8 +12726,22 @@
     "labels": [
       "exa:EforSG3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fix_point_subgroup_e_path",
+      "fix_point_mono_path",
+      "fix_point_homotopy",
+      "fix_point_loop_refl",
+      "fix_point_restore_path",
+      "mono_subgroup_roundtrip",
+      "fixed_point_subgroup",
+      "symmetric_group_inclusion_monomorphism"
+    ],
+    "principal": [
+      "fix_point_subgroup_e_path",
+      "fix_point_mono_path"
+    ],
+    "note": "The formalization proves this for every m (the case of the book is m = 2): F(X, inr ★) = (Σ_m, i_m) in Mono(Σ_{m+1}). Hence (X, inr ★) = E(Σ_m, i_m) in Sub(Σ_{m+1}). Here X(A,!) = A, and inr ★ is the added point (the '3' of the book). The book uses a pointwise route through xca:A-is-A-1+1 on the G-set side. Instead, the formalization makes the identification on the monomorphism side. BG of (X, inr ★) is the type of pointed (m+1)-element sets, ≃ FinSet_m (xca:n-is-ptd-n+1). Also, Bi_m(S ∖ s) = S by the splitting of xca:A-is-A-1+1. The pointing coherence is checked on permutations. E(Σ_2,i_2) ≡ (Bi_2⁻¹, (Fin 2, refl)) holds by definition. F(E(Σ_m,i_m)) = (Σ_m, i_m) is mono_subgroup_roundtrip. Here the book writes i_3 for i_2."
   },
   {
     "chapter": 5,
@@ -11935,8 +12753,25 @@
     "labels": [
       "xca:SubG=MonoG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroup_mono_roundtrip",
+      "mono_subgroup_roundtrip",
+      "action_type_fiber_equiv",
+      "pointed_gset_path",
+      "subgroup_path",
+      "pointed_over_path",
+      "mono_roundtrip_equiv",
+      "mono_roundtrip_homotopy",
+      "MonoData",
+      "mono_data_to_mono",
+      "mono_to_mono_data"
+    ],
+    "principal": [
+      "subgroup_mono_roundtrip",
+      "mono_subgroup_roundtrip"
+    ],
+    "note": "The formalization proves both round trips. E(F(X,pt)) = (X,pt) follows from the fiber equivalence fst⁻¹(z) ≃ X(z) (action_type_fiber_equiv). F(E(H,i)) = (H,i) follows from the sum of fibers BH ≃ Σ_z Bi⁻¹(z) (lem:sum-of-fibers), pointed by refl, together with a pointed homotopy Bi ∘ (that equivalence) ~ fst. pointed_over_path turns such data into an identification of pointed maps over BG (pointed-equivalence induction)."
   },
   {
     "chapter": 5,
@@ -11948,8 +12783,14 @@
     "labels": [
       "lem:setofsubgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_monos_set"
+    ],
+    "principal": [
+      "group_monos_set"
+    ],
+    "note": "Mono(G) is a set. This property is transported from Sub(G) along the equivalence of lem:SubG=MonoG."
   },
   {
     "chapter": 5,
@@ -11961,8 +12802,18 @@
     "labels": [
       "lem:E-preserves-symms"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "mono_preserves_symmetries",
+      "SymmetryPickedOut",
+      "subgroup_fixes_picked_out",
+      "subgroup_picked_out_fixes",
+      "subgroup_inclusion_usym"
+    ],
+    "principal": [
+      "mono_preserves_symmetries"
+    ],
+    "note": "For every (X,pt), every (H,i) with (H,i) = F(X,pt) and every g : USym G: g ·_X pt = pt iff ∃h, g = USym i(h). As in the book, the formalization proves it for F(X,pt) itself and transports it along the given identification. The typal unit law of conjugation identifies USym of fst (pointed by refl) with the first projection."
   },
   {
     "chapter": 5,
@@ -11974,8 +12825,16 @@
     "labels": [
       "def:triv-proper-Mono"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsTrivialSubgroup",
+      "IsProperSubgroup"
+    ],
+    "principal": [
+      "IsTrivialSubgroup",
+      "IsProperSubgroup"
+    ],
+    "note": "Trivial: Tot(X) is contractible (the printed 'i.e.' form). Proper: X(sh_G) is not contractible."
   },
   {
     "chapter": 5,
@@ -11987,8 +12846,10 @@
     "labels": [
       "rem:notationsubgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "informal",
+    "declarations": [],
+    "principal": [],
+    "note": "This is a notational remark (H ⊆ G for a subgroup). It makes no mathematical claim."
   },
   {
     "chapter": 5,
@@ -12000,8 +12861,21 @@
     "labels": [
       "ex:prodinclisGset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_proj2_principal_gset",
+      "product_proj2_subgroup",
+      "product_proj2_transitive",
+      "product_proj2_total_equiv",
+      "product_proj2_pointed_equiv",
+      "product_proj2_homotopy",
+      "product_incl1_subgroup_path",
+      "product_incl1_monomorphism"
+    ],
+    "principal": [
+      "product_incl1_subgroup_path"
+    ],
+    "note": "F(P_{G'} ∘ proj_2, refl_{sh_G'}) = (G, i_1) in Mono(G × G'). As in the book, Tot(P_{G'} ∘ proj_2) ≃ BG (by contraction of Σ_{z'} (sh_G' = z')), pointed by refl, and fst = i_1 ∘ φ as pointed maps. pointed_over_path turns this into the identification of monomorphisms."
   },
   {
     "chapter": 5,
@@ -12013,8 +12887,25 @@
     "labels": [
       "con:lagrange"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LagrangeChoice",
+      "lagrange_choice_function_equiv",
+      "lagrange_class",
+      "lagrange_fiber_path_equiv",
+      "lagrange_sum_equiv",
+      "lagrange_choice_path",
+      "lagrange_concat_right_equiv",
+      "lagrange_equiv",
+      "lagrange_equiv_fst",
+      "lagrange_construction"
+    ],
+    "principal": [
+      "lagrange_construction",
+      "lagrange_equiv",
+      "LagrangeChoice"
+    ],
+    "note": "Let (X, pt) : Sub(G) with underlying group H. Then lagrange_construction : LagrangeChoice G X pt → Equiv (USym G) (X(sh_G) × USym H). Here LagrangeChoice is Π_{x} Σ_{g : USym G} (g · x = pt), as printed, and USym H ≡ ((sh_G, pt) = (sh_G, pt)) definitionally. The construction follows the implementation: [g] ≔ g · pt, lem:sum-of-fibers, fibers ≃ (sh_G, pt) = (sh_G, x), then postconcatenation with (g(x), !). xca:AC-in-TT is the definitional currying lagrange_choice_function_equiv. lagrange_equiv states it for any pointed G-set (transitivity is not used). The first component of L(f)(g) is g · pt by refl. The footnote says that the construction works for ∞-groups that act on types. It is not formalized (groups only)."
   },
   {
     "chapter": 5,
@@ -12026,8 +12917,21 @@
     "labels": [
       "cor:lagrange-dep-sum"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "lagrange_dep_sum_equiv",
+      "lagrange_dep_sum_construction",
+      "lagrange_dep_sum_stabilizers",
+      "lagrange_sum_equiv",
+      "lagrange_choice_path",
+      "concat_left_equiv",
+      "component_path_equiv"
+    ],
+    "principal": [
+      "lagrange_dep_sum_construction",
+      "lagrange_dep_sum_equiv"
+    ],
+    "note": "For a choice f, L'(f) : Equiv (USym G) (Σ_{x : X(sh_G)} ((sh_G, x) = (sh_G, x))). It comes from preconcatenation with the inverse of (g(x), !), as in ft:lagrange-dep-sum. The formalization states it for any pointed G-set and for subgroups. lagrange_dep_sum_stabilizers reads (sh_G, x) = (sh_G, x) as USym(G_x)."
   },
   {
     "chapter": 5,
@@ -12039,8 +12943,23 @@
     "labels": [
       "xca:lagrange"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroup_usym_fixing_equiv",
+      "lagrange_subgroup_finite",
+      "lagrange_choice_merely",
+      "lagrange_cardinality",
+      "lagrange_construction",
+      "IsFiniteGroup",
+      "IsFiniteGSet",
+      "group_card",
+      "gset_card"
+    ],
+    "principal": [
+      "lagrange_subgroup_finite",
+      "lagrange_cardinality"
+    ],
+    "note": "Let G be a finite group and (X, pt) : Sub(G) with X a finite G-set. Then H is finite, because USym H ≃ {g | g · pt = pt}, which is a decidable subset of USym G. Also, Card(G) = Card(X) × Card(H). The choice function that con:lagrange needs exists merely (transitivity plus finite choice over X(sh_G), module 34). This is sufficient, because the goal is a proposition. The proof uses no classical principle."
   },
   {
     "chapter": 5,
@@ -12052,8 +12971,27 @@
     "labels": [
       "xca:lagrange-Z-action-Rm"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "rmlag_iterate_zero",
+      "rmlag_position",
+      "RmlagChoiceAll",
+      "rmlag_standard_choice",
+      "rmlag_monodromy_path",
+      "rmlag_choice_all",
+      "rmlag_choice",
+      "rmlag_equiv",
+      "rmlag_fin_equiv",
+      "rmlag_equiv_fst",
+      "lagrange_construction",
+      "rmsub_subgroup",
+      "power_base_trivialization"
+    ],
+    "principal": [
+      "rmlag_choice",
+      "rmlag_fin_equiv"
+    ],
+    "note": "con:lagrange (lagrange_construction, module 526) applies to Z = circle_group C and (R_m, 0) with underlying group H_m. It gives USym Z ≃ R_m(base) × USym H_m, hence ≃ Fin m × USym H_m (rmlag_fin_equiv). The first component of this equivalence is g ↦ g · 0. The premiss of con:lagrange is a choice of g with g · x = 0 for every x. The formalization constructs it explicitly, without a choice axiom. On (Z/m, s), s^{a−x} moves x to a. This is transported to (R_m(base), R_m(loop)) along the monodromy identification, and g = loop^z."
   },
   {
     "chapter": 5,
@@ -12065,8 +13003,34 @@
     "labels": [
       "xca:lagrange-if-subgr-not-normal"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CircleWedgeSignature",
+      "circle_wedge_group",
+      "wedge_gset",
+      "wedge_gset_point",
+      "wedge_gset_point_by_index",
+      "wedge_monodromy1_point",
+      "WedgeChoice",
+      "wedge_choice_index",
+      "wedge_choice_map",
+      "wedge_gset_transitive",
+      "wedge_subgroup",
+      "wedge_lagrange_equiv",
+      "wedge_lagrange_fin3_equiv",
+      "wedge_lagrange_equiv_fst",
+      "lagrange_construction",
+      "circle_wedge_carrier_groupoid",
+      "circle_wedge_free_group",
+      "wedge_subgroup_unconditional",
+      "wedge_lagrange_equiv_unconditional",
+      "wedge_lagrange_fin3_equiv_unconditional"
+    ],
+    "principal": [
+      "wedge_choice_map",
+      "wedge_lagrange_equiv_unconditional"
+    ],
+    "note": "Let G = mkgroup(S¹ ∨ S¹), with a CircleWedgeSignature parameter. Module 596 proves that S¹ ∨ S¹ is a groupoid (see xca:not-normal). Let X be as printed (base ↦ Fin 3, loop₁ ↦ s, loop₂ ↦ (0 1)). Then wedge_choice_map : Π_{x : X(sh)} Σ_{g : USym G} (g · x = 0) is the choice map: e for 0, loop₁·loop₁ for 1 and loop₁ for 2. Here 0 ≔ E⁻¹(0), because X(sh) is Fin 3 only up to the computation law E. Lagrange's construction applies: wedge_lagrange_equiv_unconditional : USym G ≃ X(sh) × USym H for the subgroup (X, 0) with underlying group H. It is also stated as Fin 3 × USym H. It has no groupoid hypothesis, and the conditional versions of module 569 remain. The footnote (H is free, thm:nielsen-schreier) is a forward reference and is not formalized here."
   },
   {
     "chapter": 5,
@@ -12078,8 +13042,22 @@
     "labels": [
       "def:actiontype"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ActionType",
+      "action_type_groupoid",
+      "InvariantMaps",
+      "invariant_maps_set",
+      "Orbits",
+      "orbits_set",
+      "orbit_path"
+    ],
+    "principal": [
+      "ActionType",
+      "InvariantMaps",
+      "Orbits"
+    ],
+    "note": "X_hG ≔ Σ_{z:BG} X(z), X^hG ≔ Π_{z:BG} X(z) and X/G ≔ Σ_{P:Sub_G(X)} istrans(X_P), as printed. X/G is a set, and the G-subset of an orbit determines the orbit (orbit_path)."
   },
   {
     "chapter": 5,
@@ -12091,8 +13069,18 @@
     "labels": [
       "rem:path-in-action-type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "action_type_path_equiv",
+      "ActionTypePath",
+      "action_type_mere_path_equiv",
+      "action_type_mere_path_exists"
+    ],
+    "principal": [
+      "action_type_path_equiv",
+      "action_type_mere_path_equiv"
+    ],
+    "note": "The untruncated equivalence ((z,x) = (w,y)) ≃ Σ_{g:z=w} (g·x = y) is action_type_path_equiv of the core (module 501). As the remark states, action_type_mere_path_equiv / action_type_mere_path_exists give the version for the propositional truncations: ‖(z,x) = (w,y)‖ ≃ ∃_{g:z=w} (g·x = y)."
   },
   {
     "chapter": 5,
@@ -12104,8 +13092,16 @@
     "labels": [
       "def:orbit-map"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_subset",
+      "orbit_map"
+    ],
+    "principal": [
+      "orbit_subset",
+      "orbit_map"
+    ],
+    "note": "[u]_0 is the G-subset z ↦ (x ↦ ‖u = (z,x)‖) (orbit_subset). orbit_map packages it with the transitivity proof of lem:[]0-maps-to-X/G."
   },
   {
     "chapter": 5,
@@ -12117,8 +13113,18 @@
     "labels": [
       "lem:[]0-maps-to-X/G"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_gset",
+      "orbit_gset_transitive",
+      "orbit_gset_component_equiv",
+      "orbit_map"
+    ],
+    "principal": [
+      "orbit_gset_transitive",
+      "orbit_map"
+    ],
+    "note": "The underlying G-set z ↦ Σ_{x:X(z)} ‖u = (z,x)‖ of [u]_0 is transitive. Its action type is the component of u in X_hG (by reassociation, with refl round trips), and this component is connected. Hence [−]_0 : X_hG → X/G."
   },
   {
     "chapter": 5,
@@ -12130,8 +13136,30 @@
     "labels": [
       "lem:X/G=setTruncX_hG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_map_surjective",
+      "orbit_path_of_member",
+      "orbit_has_base_member",
+      "orbit_map_path_equiv",
+      "orbits_set_trunc_unique",
+      "orbits_set_trunc_equiv",
+      "orbits_set_trunc_equiv_class",
+      "SetsWithMapFrom",
+      "orbits_pair",
+      "set_trunc_pair",
+      "orbits_set_trunc_path",
+      "orbits_set_trunc_path_unique",
+      "sets_with_map_path",
+      "sets_with_map_paths_prop",
+      "surjection_quotient_unique"
+    ],
+    "principal": [
+      "orbit_map_surjective",
+      "orbits_set_trunc_path_unique",
+      "orbits_set_trunc_unique"
+    ],
+    "note": "orbit_map_surjective: [-]_0 : X_hG → X/G is surjective. orbits_set_trunc_path_unique: the identity type (X/G, [-]_0) = (‖X_hG‖_0, |-|_0) in SetsWithMapFrom X_hG = Σ_{S:Set}(X_hG → S) is contractible. That is, the identification exists and is unique. orbits_set_trunc_unique states the equivalent factorization of the sentence after the lemma: the pairs of an equivalence ‖X_hG‖_0 ≃ X/G and a commuting triangle form a contractible type. As in the proof of the book, SetTrunc is the quotient of the repository by ‖x = y‖ (rem:set-trunc-as-quotient)."
   },
   {
     "chapter": 5,
@@ -12143,8 +13171,24 @@
     "labels": [
       "cor:orbit-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_of_point",
+      "orbit_point_path_exists_equiv",
+      "OrbitRelation",
+      "orbit_of_point_surjective",
+      "orbit_equivalence_relation",
+      "orbit_quotient_unique",
+      "orbit_quotient_equiv",
+      "orbit_quotient_equiv_class",
+      "surjection_quotient_unique"
+    ],
+    "principal": [
+      "orbit_point_path_exists_equiv",
+      "orbit_of_point_surjective",
+      "orbit_quotient_unique"
+    ],
+    "note": "[x] = [y] ≃ ∃_{g:USym G} (g·x = y) (orbit_point_path_exists_equiv). [-] is surjective. For the quotient by ∃_g (g·x = y), the type of pairs (e : X(sh_G)/~ ≃ X/G, [-] = e ∘ class) is contractible (orbit_quotient_unique). This uses QuotientEquivalenceLifts of module 45, as for xca:map-induces-quotient. [x] is orbit_of_point of the core."
   },
   {
     "chapter": 5,
@@ -12156,8 +13200,20 @@
     "labels": [
       "rem:SubGX=Sub(X/G)"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gsubsets_unfold",
+      "orbit_subsets_curry_equiv",
+      "orbit_subsets_set_trunc_equiv",
+      "orbit_subsets_precompose_equiv",
+      "orbits_set_trunc_equiv",
+      "gsubsets_orbit_subsets_equiv",
+      "gsubsets_orbit_subsets_inverse"
+    ],
+    "principal": [
+      "gsubsets_orbit_subsets_equiv"
+    ],
+    "note": "The formalization proves the chain Sub_G(X) ≡ Π_z (X(z) → Prop) ≃ (X_hG → Prop) ≃ (‖X_hG‖_0 → Prop) ≃ (X/G → Prop) ≡ Sub(X/G) step by step. Then it composes the steps (gsubsets_orbit_subsets_equiv). The inverse is precomposition with [-]_0 by definition (gsubsets_orbit_subsets_inverse). The proof of currying is local (gsubsets_total_equiv is not exported)."
   },
   {
     "chapter": 5,
@@ -12169,8 +13225,16 @@
     "labels": [
       "xca:transX-just1orbit"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "transitive_orbits_contractible",
+      "contractible_orbits_transitive",
+      "orbits_contractible_transitive_equiv"
+    ],
+    "principal": [
+      "orbits_contractible_transitive_equiv"
+    ],
+    "note": "BookIsContr (X/G) ≃ IsTransitive G X (both are propositions). The proof uses the surjectivity of [-]_0, [u]_0 = [v]_0 ⇔ ‖u = v‖ and lem:conistrans."
   },
   {
     "chapter": 5,
@@ -12182,8 +13246,25 @@
     "labels": [
       "rem:equivalents-of-[x]=[y]"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_point_path_mere_equiv",
+      "orbit_point_path_exists_equiv",
+      "orbit_point_path_subset_equiv",
+      "orbit_point_path_member_equiv",
+      "orbit_point_member_definition",
+      "orbit_point_path_member_symm_equiv",
+      "OrbitRelation",
+      "orbit_equivalence_relation",
+      "orbit_relation_induced",
+      "OrbitMember"
+    ],
+    "principal": [
+      "orbit_point_path_exists_equiv",
+      "orbit_point_path_subset_equiv",
+      "orbit_relation_induced"
+    ],
+    "note": "The formalization shows that each listed proposition is equivalent to [x] =_{X/G} [y]. The first is [x](sh_G) = [y](sh_G) as maps X(sh_G) → Prop. The others are ∃_g (g·x = y), ‖(sh_G,x) = (sh_G,y)‖, [x](sh_G,y) and [y](sh_G,x). Here [x](sh_G,y) is definitionally ‖(sh_G,x) = (sh_G,y)‖. orbit_relation_induced identifies the relation ∃_g (g·x = y) with the relation that the surjection [-] induces (x ~ y iff ‖[x] = [y]‖, module 45). It does this as predicates X(sh_G) → X(sh_G) → Prop."
   },
   {
     "chapter": 5,
@@ -12195,8 +13276,27 @@
     "labels": [
       "def:orbit-stabilizer"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_group",
+      "stabilizer_group_classifying",
+      "stabilizer_inclusion",
+      "stabilizer_inclusion_covering",
+      "stabilizer_inclusion_mono",
+      "stabilizer_mono",
+      "stabilizer_component_covering",
+      "OrbitUnderlying",
+      "orbit_underlying_set",
+      "orbit_of_point",
+      "subgroup_stabilizer_mono_path",
+      "subgroup_stabilizer_group_path"
+    ],
+    "principal": [
+      "stabilizer_group",
+      "stabilizer_mono",
+      "OrbitUnderlying"
+    ],
+    "note": "G_x ≔ Aut_{X_hG}(sh_G, x) (automorphism_group, so BG_x is the component of (sh_G,x)). i_x = mkgroup(fst), pointed by refl. fst is a covering (a component inclusion followed by Tot(X) → BG), so (G_x, i_x) is a monomorphism. G·x ≔ {y | [x] = [y]}. The note 'for (X,pt) : Sub(G), (G_pt, i_pt) is the monomorphism of (X,pt)' is subgroup_stabilizer_mono_path (F(X,pt) = (G_pt, i_pt)). So G_pt is the underlying group (subgroup_stabilizer_group_path)."
   },
   {
     "chapter": 5,
@@ -12209,8 +13309,26 @@
       "rem:orbit-fibs",
       "fig:fibs-at-[x]"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_action_type_stabilizer_equiv",
+      "orbit_action_type_stabilizer_point",
+      "orbit_gset_component_equiv",
+      "orbit_gset_point_transitive",
+      "orbit_gset_underlying_equiv",
+      "orbit_underlying_class_equiv",
+      "orbit_component_class_equiv",
+      "orbit_fibs_map",
+      "orbit_fibs_map_over",
+      "orbit_fibs_horizontal",
+      "orbit_fibs_horizontal_fst"
+    ],
+    "principal": [
+      "orbit_action_type_stabilizer_equiv",
+      "orbit_gset_underlying_equiv",
+      "orbit_underlying_class_equiv"
+    ],
+    "note": "(X_[x])_hG pointed at (sh_G,x) is BG_x (an equivalence that sends the point to the point by refl). X_[x] is transitive, and its underlying set Σ_y ‖(sh_G,x) = (sh_G,y)‖ is equivalent to G·x. For O = [x], G·x ≃ X_O(sh_G) and BG_x ≃ (X_O)_hG. fig:fibs-at-[x]: the map (O,y) ↦ (O,(sh_G,y)) over X/G and, at O = [x], y ↦ ((sh_G,y),!) : BG_x. Misprint: the remark writes X_[x](z) ≡ Σ_{y:X(sh_G)} ‖(sh_G,x) = (z,y)‖, but the definition has y : X(z). 'The base point of BG_x depends on x' is a comment without a formal claim."
   },
   {
     "chapter": 5,
@@ -12222,8 +13340,15 @@
     "labels": [
       "xca:[x]=[y]-implies-||Gx=Gy||"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_groups_merely_equal",
+      "orbit_point_path_mere_equiv"
+    ],
+    "principal": [
+      "stabilizer_groups_merely_equal"
+    ],
+    "note": "[x] = [y] → ‖G_x = G_y‖ in Group. A path (sh_G,x) = (sh_G,y) in X_hG gives G_x = G_y by application of u ↦ Aut_{X_hG}(u)."
   },
   {
     "chapter": 5,
@@ -12235,8 +13360,20 @@
     "labels": [
       "rem:subgrp-is-stabsubgr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_subgroup_path",
+      "transitive_stabilizer_subgroup_path",
+      "transitive_orbit_subgroup_path",
+      "orbit_subgroup",
+      "stabilizer_fiber_equiv",
+      "transitive_orbit_gset_equiv"
+    ],
+    "principal": [
+      "stabilizer_subgroup_path",
+      "transitive_stabilizer_subgroup_path"
+    ],
+    "note": "E(G_x, i_x) = (X_[x], x) in Sub(G), through the fiber equivalence i_x⁻¹(z) ≃ X_[x](z). If X is transitive, this is (X, x) (transitive_stabilizer_subgroup_path). The book refers to xca:transX-just1orbit. The formalization replaces this reference with the direct observation that X_[x](z) ≃ X(z) when Tot(X) is connected."
   },
   {
     "chapter": 5,
@@ -12248,8 +13385,21 @@
     "labels": [
       "lem:splitting into orbits"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_splitting_equiv",
+      "orbit_splitting_map",
+      "orbit_splitting_members_equiv",
+      "orbit_splitting_members_map",
+      "quotient_classes_total_equiv",
+      "quotient_classes_total_map",
+      "sum_of_fibers_equiv"
+    ],
+    "principal": [
+      "orbit_splitting_equiv",
+      "quotient_classes_total_equiv"
+    ],
+    "note": "Σ_{O:X/G} [O]⁻¹ ≃ X(sh_G) with [O]⁻¹ = Σ_{x} (O = [x]) (BookFiber). The map is (O,x,p) ↦ x by definition. The proof uses lem:sum-of-fibers in place of lem:contract-away. A variant has X_O(sh_G) in place of the fibers (orbit_splitting_members_equiv). Footnote: for every equivalence relation R on A, Σ_{c:A/R} Σ_{a} c(a) ≃ A (quotient_classes_total_equiv). No set hypothesis is necessary."
   },
   {
     "chapter": 5,
@@ -12261,8 +13411,22 @@
     "labels": [
       "def:fixed-free"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFixedElement",
+      "is_fixed_element_prop",
+      "IsFreeElement",
+      "is_free_element_prop",
+      "IsFreeGSet",
+      "is_free_gset_prop",
+      "IsTrivialGroup"
+    ],
+    "principal": [
+      "IsFixedElement",
+      "IsFreeElement",
+      "IsFreeGSet"
+    ],
+    "note": "x is fixed if i_x is an isomorphism (IsGroupIso). x is free if G_x is trivial (IsTrivialGroup: BG_x contractible). By module 506, this is equivalent to USym G_x contractible or to G_x = TG. X is free if all elements of X(sh_G) are free."
   },
   {
     "chapter": 5,
@@ -12274,8 +13438,26 @@
     "labels": [
       "exa:fixed-free-neither"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "trivial_gset_fixed",
+      "principal_gset_free",
+      "gset_paths_action_type_contractible",
+      "bits4_fixed_row_equiv",
+      "bits4_free_row_equiv",
+      "bits4_fixed_elements",
+      "bits4_free_elements",
+      "bits4_neither_elements",
+      "bits4_litmus_0000_fixed",
+      "bits4_litmus_0001_free",
+      "bits4_litmus_0101_neither"
+    ],
+    "principal": [
+      "bits4_fixed_elements",
+      "bits4_free_elements",
+      "bits4_neither_elements"
+    ],
+    "note": "The trivial and principal parts are core module 505. Every s is fixed in triv_G S (trivial_gset_fixed). Every g is free in P_G, because its action type is contractible (principal_gset_free). For the C_4-set of exa:prep-burnside: x is fixed iff x ∈ {0000, 1111}. x is free iff rot_2 x ≠ x (the twelve elements of the orbits of 0001, 0111, 0011). x is neither fixed nor free iff x ∈ {0101, 1010}. These are stated as pairs of implications."
   },
   {
     "chapter": 5,
@@ -12287,8 +13469,33 @@
     "labels": [
       "xca:fixed-free-neither"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fixed_free_trivial_classifying_equiv",
+      "fixed_free_principal_classifying_contr",
+      "bits4_fixed_classifying_equiv",
+      "bits4_free_classifying_contr",
+      "bits4_neither_stabilizer_usym_equiv",
+      "bits4_stabilizer_usym_equiv",
+      "bits4_stabilizes_equiv",
+      "bits4_row_stab",
+      "ord2_group_path",
+      "ord2_generator",
+      "ord2_square_unit",
+      "bits4_neither_stabilizer_group_path",
+      "bits4_neither_classifying_path",
+      "bits4_neither_classifying_equiv",
+      "bits4_c0101_stabilizer_group_path",
+      "bits4_c1010_stabilizer_group_path",
+      "bits4_c0101_classifying_path",
+      "bits4_c1010_classifying_path"
+    ],
+    "principal": [
+      "fixed_free_trivial_classifying_equiv",
+      "fixed_free_principal_classifying_contr",
+      "bits4_neither_stabilizer_group_path"
+    ],
+    "note": "The formalization elaborates these as statements. For triv_G S, i_s : BG_s → BG is an equivalence. For P_G, BG_g is contractible. For each f : Fin 4 → Fin 2, BG_f ≃ BC_4 through i_f if f ∈ {0000,1111}, and BG_f is contractible if f is free. For f ∈ {0101,1010}, USym (C_4)_f ≃ Fin 2 (the symmetries g with g(0) ∈ {0,2}, bits4_stabilizes_equiv). For these f, the stabilizer group is identified with C_2 = cyclic_group_fin 1 (bits4_neither_stabilizer_group_path, module 597). Hence BG_f = BC_2 as pointed types (bits4_neither_classifying_path), and BG_f ≃ BC_2. The general step ord2_group_path identifies any group with exactly two symmetries with C_2. The reason is that the non-unit symmetry g has g² = e and generates a cyclic subgroup C_2 of full order."
   },
   {
     "chapter": 5,
@@ -12300,8 +13507,25 @@
     "labels": [
       "lem:free-pt-char"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_action_map",
+      "orbit_action_map_surjective",
+      "stabilizer_usym_equiv",
+      "stabilizer_fixing_prop_of_free",
+      "orbit_action_map_reflects_of_free",
+      "free_of_orbit_action_map_reflects",
+      "free_iff_orbit_action_injective",
+      "free_orbit_action_equiv",
+      "orbit_trivial_group_usym_contractible",
+      "orbit_usym_contractible_trivial_group"
+    ],
+    "principal": [
+      "free_iff_orbit_action_injective",
+      "free_orbit_action_equiv",
+      "orbit_action_map_surjective"
+    ],
+    "note": "IsFreeElement G X x ≃ IsEmbedding (USym G) (G·x) (- · x) (book injection). (- · x) is surjective, so it is a bijection when x is free. Free means that BG_x is contractible. The proof uses xca:connected-trivia (BH contractible iff USym H contractible) through local copies of the lemmas of module 506. The reason is that an import of 506 costs minutes of checking."
   },
   {
     "chapter": 5,
@@ -12313,8 +13537,22 @@
     "labels": [
       "lem:X_hG-set-iff-Xfree"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "action_type_set_orbit_map_is_equiv",
+      "orbit_map_is_equiv_action_type_set",
+      "action_type_set_free",
+      "free_action_type_set",
+      "orbit_map_is_equiv_free",
+      "action_type_set_free_equiv",
+      "action_type_set_orbit_map_equiv",
+      "component_contractible_paths_prop"
+    ],
+    "principal": [
+      "action_type_set_free_equiv",
+      "action_type_set_orbit_map_equiv"
+    ],
+    "note": "The three propositions isSet X_hG, BookIsEquiv [-]_0 and IsFreeGSet G X are pairwise equivalent. The formalization gives the implications 1→2, 2→1, 1→3, 3→1, 2→3 and two Equiv packages. As in the book, 3→1 uses that the component of every u : X_hG is contractible (BG connected)."
   },
   {
     "chapter": 5,
@@ -12326,8 +13564,20 @@
     "labels": [
       "lem:fixed-char"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "StabilizerInclusionFiber",
+      "stabilizer_fiber_regroup",
+      "stabilizer_inclusion_fiber_equiv",
+      "fixed_element_orbit_contractible",
+      "orbit_contractible_fixed_by_all",
+      "fixed_element_fixed_by_all"
+    ],
+    "principal": [
+      "fixed_element_orbit_contractible",
+      "fixed_element_fixed_by_all"
+    ],
+    "note": "IsFixedElement G X x ≃ BookIsContr (G·x) ≃ Π_{g:USym G} (x = g·x). As in the proof, the fiber of Bi_x at sh_G is identified with G·x (stabilizer_inclusion_fiber_equiv). The connectivity of BG reduces all fibers to that one."
   },
   {
     "chapter": 5,
@@ -12341,8 +13591,24 @@
       "it:ev-is-inj",
       "it:ev-is-eq-on-inv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "invariant_map_eval",
+      "invariant_map_eval_reflects",
+      "invariant_map_eval_injective",
+      "fixed_element_invariant_map",
+      "fixed_element_invariant_map_eval",
+      "invariant_map_value_fixed",
+      "invariant_map_eval_fiber_equiv",
+      "invariant_map_eval_image",
+      "invariant_maps_fixed_elements_equiv"
+    ],
+    "principal": [
+      "invariant_map_eval_injective",
+      "invariant_map_eval_image",
+      "invariant_maps_fixed_elements_equiv"
+    ],
+    "note": "it:ev-is-inj: ev : X^hG → X(sh_G) is an injection (IsEmbedding). it:ev-is-eq-on-inv: the image of ev, ‖fiber at x‖, is equivalent to 'x is fixed'. In fact, the fiber itself is equivalent to it. Hence X^hG ≃ {x | x fixed}. The invariant map of a fixed x is built from the centers of the contractible fibers of Bi_x."
   },
   {
     "chapter": 5,
@@ -12354,8 +13620,46 @@
     "labels": [
       "xca:Gset-A->B"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sigma_two",
+      "sigma_two_squared",
+      "function_gset",
+      "function_gset_underlying",
+      "function_gset_act",
+      "function_gset_no_fixed_points",
+      "function_gset_no_invariant_maps",
+      "gset_fin2_squared_set",
+      "constant_square_gset",
+      "constant_square_invariant_equiv",
+      "function_gset_left",
+      "function_gset_right",
+      "function_gset_left_value",
+      "function_gset_right_value",
+      "function_gset_right_no_invariant_maps",
+      "function_gset_left_fixed_constant",
+      "function_gset_left_constant_fixed",
+      "function_gset_left_fixed_equiv",
+      "function_gset_left_invariant_equiv",
+      "orbits_classifier_equiv",
+      "orbits_classifier_equiv_class",
+      "FunctionIsConstant",
+      "function_gset_classifier",
+      "function_gset_rep",
+      "function_gset_orbits_equiv",
+      "constant_square_orbits_equiv",
+      "function_gset_right_classifier",
+      "function_gset_right_orbits_equiv",
+      "function_gset_left_classifier",
+      "function_gset_left_rep",
+      "function_gset_left_orbits_equiv"
+    ],
+    "principal": [
+      "function_gset_act",
+      "function_gset_orbits_equiv",
+      "function_gset_no_invariant_maps"
+    ],
+    "note": "G = Σ_2 × Σ_2 (B G ≡ BΣ_2 × BΣ_2) and X(A,B) = (A → B). The action on X(sh_G) = (Fin 2 → Fin 2) is g · f = τ ∘ f ∘ σ⁻¹ for g = (σ, τ) (function_gset_act, typal). Orbits: X/G ≃ Bool by [f] ↦ 'f is constant'. The two orbits are the constant maps and the bijections. X^hG is empty. Easier cases: the constant G-set 2 × 2 has X/G ≃ 2 × 2 and X^hG ≃ 2 × 2. X(2,-) (τ ∘ f) has two orbits (≃ Bool) and no invariant maps. X(-,2) (f ∘ σ⁻¹) has three orbits (≃ Fin 3: constant 0, constant 1, bijections), and X^hΣ_2 ≃ 2 (the constant maps). A general lemma computes the orbit sets (orbits_classifier_equiv). It states that an invariant classifier with representatives identifies X/G."
   },
   {
     "chapter": 5,
@@ -12367,8 +13671,19 @@
     "labels": [
       "xca:HomGsets-ev"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_hom_gset",
+      "gset_hom_gset_invariant_maps",
+      "gset_hom_gset_act",
+      "gset_hom_fixed_maps_equiv",
+      "gset_hom_fixed_maps_equiv_fst",
+      "invariant_maps_fixed_elements_equiv"
+    ],
+    "principal": [
+      "gset_hom_fixed_maps_equiv"
+    ],
+    "note": "Consider the G-set z ↦ (X(z) → Y(z)) (gset_hom_gset). By definition, its invariant maps are Hom_G(X,Y), and its action is conjugation. Evaluation at sh_G gives Hom_G(X,Y) ≃ {φ : X(sh_G) → Y(sh_G) | φ fixed}. Its first component is f(sh_G) by definition."
   },
   {
     "chapter": 5,
@@ -12380,8 +13695,16 @@
     "labels": [
       "def:Gx-action-on-G"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_tilde_gset",
+      "stabilizer_tilde_gset_value",
+      "stabilizer_tilde_gset_underlying"
+    ],
+    "principal": [
+      "stabilizer_tilde_gset"
+    ],
+    "note": "G̃_x ≔ gset_restrict G_x G i_x P_G = P_G ∘ Bi_x. Footnote: G̃_x(z,y,!) ≡ (sh_G = z), and the underlying set of G̃_x is USym G. Both hold by definition."
   },
   {
     "chapter": 5,
@@ -12393,8 +13716,16 @@
     "labels": [
       "xca:Gx-action-on-G"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_tilde_gset_act",
+      "stabilizer_tilde_gset_act_base",
+      "stabilizer_tilde_gset_usym_act"
+    ],
+    "principal": [
+      "stabilizer_tilde_gset_act_base"
+    ],
+    "note": "s ·_{G̃_x} g = s₁ g holds by definition, where the book's s₁ g is concat g s₁ (g first). The formalization states it for all s : u = v and for the s of the exercise from the base point. On symmetries, it is the left multiplication usym_mul G s₁ g."
   },
   {
     "chapter": 5,
@@ -12406,8 +13737,21 @@
     "labels": [
       "xca:fixed-free-neither-action-types"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_stabilizer_equiv",
+      "stabilizer_tilde_gset",
+      "fixed_free_trivial_action_type_contr",
+      "fixed_free_principal_action_type_equiv",
+      "bits4_stabilizer_action_type_equiv",
+      "bits4_orbit_underlying_equiv"
+    ],
+    "principal": [
+      "fixed_free_trivial_action_type_contr",
+      "fixed_free_principal_action_type_equiv",
+      "bits4_stabilizer_action_type_equiv"
+    ],
+    "note": "(G̃_x)_{hG_x} ≃ G·x is orbit_stabilizer_equiv (module 525). Here, it is contractible for triv_G S (like G·s). It is ≃ USym G for P_G (like G·g = USym G, through free_orbit_action_equiv). It is ≃ Fin n with n = 1, 4, 2 according to the orbit of f in the C_4 example (like C_4·f)."
   },
   {
     "chapter": 5,
@@ -12419,8 +13763,19 @@
     "labels": [
       "con:orbit-stabilizer"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orbit_stabilizer_equiv",
+      "orbit_stabilizer_action_type_fiber",
+      "stabilizer_inclusion_fiber_equiv",
+      "stabilizer_fiber_regroup",
+      "orbit_stabilizer_inverse_point",
+      "contract_away_simple"
+    ],
+    "principal": [
+      "orbit_stabilizer_equiv"
+    ],
+    "note": "Equiv ((G̃_x)_{hG_x}) (G·x) holds by the printed chain. By definition, (G̃_x)_{hG_x} is the fiber of Bi_x at sh_G. The chain reassociates it to Σ_z Σ_{y:X(z)} ‖(sh_G,x) = (z,y)‖ × (sh_G = z) and contracts z away. Then it replaces ‖(sh_G,x) = (sh_G,y)‖ by [x] = [y]. The inverse sends y to ((sh_G,y),!) with the path refl (definitionally)."
   },
   {
     "chapter": 5,
@@ -12432,8 +13787,16 @@
     "labels": [
       "cor:action-subgrp-free"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_tilde_free",
+      "stabilizer_tilde_action_type_set",
+      "action_type_set_free"
+    ],
+    "principal": [
+      "stabilizer_tilde_free"
+    ],
+    "note": "IsFreeGSet G_x G̃_x follows from the set-ness of (G̃_x)_{hG_x} (through con:orbit-stabilizer) and lem:X_hG-set-iff-Xfree."
   },
   {
     "chapter": 5,
@@ -12445,8 +13808,16 @@
     "labels": [
       "lem:cosets-Gx.g"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "stabilizer_coset_equiv",
+      "stabilizer_coset_equiv_map",
+      "free_orbit_action_equiv"
+    ],
+    "principal": [
+      "stabilizer_coset_equiv"
+    ],
+    "note": "For g : USym G, (- ·_{G̃_x} g) : USym(G_x) → G_x ·_{G̃_x} g is a BookEquiv (lem:free-pt-char for G_x and G̃_x). Its map is s ↦ s₁ g by definition."
   },
   {
     "chapter": 5,
@@ -12458,8 +13829,20 @@
     "labels": [
       "con:preLagrange"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subgroup_coset_equiv",
+      "subgroup_coset_class",
+      "subgroup_coset_class_definition",
+      "transitive_orbit_underlying_equiv",
+      "orbit_stabilizer_equiv",
+      "action_type_set_orbit_map_is_equiv"
+    ],
+    "principal": [
+      "subgroup_coset_equiv",
+      "subgroup_coset_class"
+    ],
+    "note": "For (X,pt) : Sub(G), the formalization gives Equiv X(sh_G) (G̃_pt / G_pt). It is the composite of three maps: fst⁻¹ : X(sh_G) ≃ G·pt (X transitive), the inverse of the Orbit–Stabilizer equivalence, and [-]_0. [-]_0 is an equivalence because the action type is a set. [x]_pt ≡ [o(fst⁻¹(x))]_0 by definition. G_pt is the stabilizer group of pt in X."
   },
   {
     "chapter": 5,
@@ -12471,8 +13854,21 @@
     "labels": [
       "xca:lagrange2"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "lagrange2_stabilizer_usym_equiv",
+      "lagrange2_coset_fiber_equiv",
+      "lagrange2_cosets_finite",
+      "lagrange_cardinality_cosets",
+      "orbit_splitting_equiv",
+      "stabilizer_coset_equiv",
+      "subgroup_coset_equiv",
+      "cardinality_equinumerous_sum"
+    ],
+    "principal": [
+      "lagrange_cardinality_cosets"
+    ],
+    "note": "The formalization proves the same equation Card(G) = Card(X) × Card(H) without con:lagrange: USym G splits into the fibers of [-] over the cosets G̃_pt/G_pt (lem:splitting into orbits). Each fiber is ≃ USym(G_pt) ≃ USym H (lem:cosets-Gx.g, given a representative from finite choice). Also, G̃_pt/G_pt ≃ X(sh_G) (con:preLagrange)."
   },
   {
     "chapter": 5,
@@ -12484,8 +13880,14 @@
     "labels": [
       "def:Gtorsor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Torsors"
+    ],
+    "principal": [
+      "Torsors"
+    ],
+    "note": "Torsor_G ≔ Σ_{X:GSet} ‖P_G = X‖, as printed. By definition, this is the component of GSet at P_G (torsors_component)."
   },
   {
     "chapter": 5,
@@ -12497,8 +13899,20 @@
     "labels": [
       "xca:torsor=free+transitive"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "torsor_iff_free_transitive",
+      "free_transitive_torsor",
+      "torsor_free",
+      "torsor_transitive",
+      "free_transitive_action_type_contractible",
+      "contractible_action_type_principal_path",
+      "connected_component_equiv"
+    ],
+    "principal": [
+      "torsor_iff_free_transitive"
+    ],
+    "note": "A G-set is a torsor iff it is free and transitive. (⇒) Transport of principal_gset_free/principal_gset_transitive. (⇐) A free transitive G-set has a contractible action type. Hence p ↦ p · x0 identifies it with P_G, because a total map of contractible types is a fiberwise equivalence."
   },
   {
     "chapter": 5,
@@ -12508,8 +13922,23 @@
     "line": 2065,
     "section_raw": "The classifying type is the type of torsors}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "torsors_component",
+      "universal_covering_over",
+      "universal_covering_domain_contractible",
+      "universal_covering_fibers_path",
+      "torsors_coverings_component_equiv",
+      "torsors_connected",
+      "torsors_groupoid",
+      "torsor_group",
+      "torsor_group_path"
+    ],
+    "principal": [
+      "torsors_coverings_component_equiv",
+      "torsor_group_path"
+    ],
+    "note": "Torsor_G is the component of the type of coverings over BG that contains the universal covering (Tot(P_G), fst), whose domain is contractible. This uses coverings_setfamilies_equiv. Torsor_G is a connected groupoid. The group that it classifies with base point P_G is G (torsor_group_path, from lem:BGbytorsor). The size footnote (replacement into the universe of G) cannot be formalized in the single universe of the pinned Narya."
   },
   {
     "chapter": 5,
@@ -12521,8 +13950,19 @@
     "labels": [
       "def:BG2TorsG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bg_to_torsors",
+      "bg_to_torsors_pointed",
+      "gset_paths_is_torsor",
+      "principal_torsor",
+      "torsors_pointed",
+      "gset_paths_action_type_contractible"
+    ],
+    "principal": [
+      "bg_to_torsors_pointed"
+    ],
+    "note": "P_- : BG →* (Torsor_G, P_G), y ↦ P_y, pointed by reflexivity. The proof that each P_y is a torsor uses ‖sh_G = y‖ and ap of P_-. It does not use the contractibility of the action type of P_y, which is also proved (gset_paths_action_type_contractible)."
   },
   {
     "chapter": 5,
@@ -12534,8 +13974,18 @@
     "labels": [
       "rem:pathsptransport"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_paths_pointwise",
+      "gset_paths_family_transport",
+      "gset_paths_transport",
+      "gset_paths_ap_equiv"
+    ],
+    "principal": [
+      "gset_paths_family_transport",
+      "gset_paths_pointwise"
+    ],
+    "note": "There are three readings of P_q. The first is ap of P_- (map_path). The second is its pointwise form Π_x (P_y(x) = P_z(x)) (gset_paths_pointwise, by happly). The third is the pointwise equivalence = transport in the family P_-(x), which sends p : y = x to pq⁻¹ = concat q⁻¹ p (gset_paths_family_transport, typal)."
   },
   {
     "chapter": 5,
@@ -12547,8 +13997,20 @@
     "labels": [
       "lem:pathsptransportiseq"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_paths_ap_equiv",
+      "gset_paths_ap_is_equiv",
+      "gset_paths_ap_inverse",
+      "gset_paths_ap_retraction",
+      "gset_paths_ap_section",
+      "gset_paths_ap_eval",
+      "gset_paths_transport"
+    ],
+    "principal": [
+      "gset_paths_ap_is_equiv"
+    ],
+    "note": "ap of P_- : (y = z) → (P_y = P_z) is a BookIsEquiv for all y, z, by the footnote of the book. The inverse is f ↦ (f_y(refl_y))⁻¹ (lem:weq-iso). The second round trip uses the injectivity of ev_{refl_y} on P_y = P_z (P_y is transitive)."
   },
   {
     "chapter": 5,
@@ -12560,8 +14022,20 @@
     "labels": [
       "lem:BGbytorsor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bg_torsors_equiv",
+      "bg_to_torsors_is_equiv",
+      "bg_to_torsors_ap_is_equiv",
+      "torsors_connected",
+      "torsors_groupoid",
+      "torsors_path_equiv"
+    ],
+    "principal": [
+      "bg_torsors_equiv",
+      "bg_to_torsors_is_equiv"
+    ],
+    "note": "P_- : BG → Torsor_G is an equivalence. As in the book, this follows by cor:fib-vs-path (conn-fib-vs-path-point) from the connectedness of both types and lem:pathsptransportiseq."
   },
   {
     "chapter": 5,
@@ -12574,8 +14048,20 @@
       "def:restrictandinduce",
       "ft:f_!X(w)-orbitset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_restrict",
+      "gset_induce",
+      "GSetInducedSum",
+      "induced_sum_gset",
+      "induce_as_set_trunc",
+      "induced_sum_underlying_equiv"
+    ],
+    "principal": [
+      "gset_restrict",
+      "gset_induce"
+    ],
+    "note": "f^*Y ≔ Y ∘ Bf and f_!X(w) ≔ ‖Σ_{z:BG} (Bf(z) = w) × X(z)‖₀ (SetTrunc), as printed. Footnote: by definition, f_!X(w) is the set truncation of the action type of the G-set z ↦ (Bf(z) = w) × X(z) (induce_as_set_trunc). lem:X/G=setTruncX_hG identifies this with its set of orbits. Its underlying set is P_H(w) × X(sh_G) through Bf_pt (induced_sum_underlying_equiv)."
   },
   {
     "chapter": 5,
@@ -12587,8 +14073,15 @@
     "labels": [
       "xca:why-setTrunc_f_!"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "why_set_trunc_not_set",
+      "why_set_trunc_circle_equiv"
+    ],
+    "principal": [
+      "why_set_trunc_not_set"
+    ],
+    "note": "Let G = Z (circle_group C for any circle C), H = 1 (unit_group), f : Z → 1 and X the constant G-set 1. Then the value of the untruncated family at the base point is equivalent to the circle. Hence it is not a set (circle_not_set)."
   },
   {
     "chapter": 5,
@@ -12600,8 +14093,19 @@
     "labels": [
       "xca:adjunction-_!-^*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "induce_restrict_adjunction",
+      "induce_iso_equiv",
+      "induce_iso_path",
+      "induced_sum_equivalence",
+      "ch5_set_trunc_equiv"
+    ],
+    "principal": [
+      "induce_restrict_adjunction",
+      "induce_iso_path"
+    ],
+    "note": "Hom_H(f_!X, Y) ≃ Hom_G(X, f^*Y). As in the commented solution, the proof uses the universal property of set truncation, currying, the exchange of products and the removal of w by substitution. If f is an isomorphism, f_!X = X ∘ Bf⁻¹ as H-sets, with Bf⁻¹ the inverse map of the equivalence Bf. The proof uses equivalence induction."
   },
   {
     "chapter": 5,
@@ -12613,8 +14117,19 @@
     "labels": [
       "rem:^*-_!-as-(pre)image"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subtype_preimage",
+      "subtype_image_exists",
+      "subtype_preimage_member",
+      "subtype_image_member",
+      "connected_subtype_constant"
+    ],
+    "principal": [
+      "subtype_image_exists",
+      "subtype_preimage"
+    ],
+    "note": "f^*Y = Y ∘ f and ∃_f X(b) = ∃_{a:A}((f(a) = b) × X(a)) are subtype_preimage and subtype_image_exists of chapter 6 (module 613, literally the printed formulas). Their membership readings are definitional. Predicates on connected types are constant (connected_subtype_constant). The last sentence (the intuition carries over to set-valued families) is informal."
   },
   {
     "chapter": 5,
@@ -12626,8 +14141,15 @@
     "labels": [
       "rem:coinduced-Hset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "gset_coinduce",
+      "coinduced_invariant_maps"
+    ],
+    "principal": [
+      "gset_coinduce"
+    ],
+    "note": "f_*X(w) ≔ Π_{z:BG} ((Bf(z) = w) → X(z)) lands in sets (gset_coinduce). Footnote: it is literally the set of invariant maps of the G-set z ↦ ((Bf(z) = w) → X(z)) (coinduced_invariant_maps, refl)."
   },
   {
     "chapter": 5,
@@ -12639,8 +14161,15 @@
     "labels": [
       "rem:coinduced-subset"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "subtype_coinduced_forall",
+      "subtype_forall_preimage_equiv"
+    ],
+    "principal": [
+      "subtype_forall_preimage_equiv"
+    ],
+    "note": "∀_f X(b) ≔ Π_a ((f(a) = b) → X(a)) (module 613) holds iff X contains the whole preimage f⁻¹(b) (BookFiber)."
   },
   {
     "chapter": 5,
@@ -12652,8 +14181,14 @@
     "labels": [
       "xca:adjunction-^*-_*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "restrict_coinduce_adjunction"
+    ],
+    "principal": [
+      "restrict_coinduce_adjunction"
+    ],
+    "note": "Hom_G(f^*Y, X) ≃ Hom_H(Y, f_*X). The proof removes w by substitution and exchanges products."
   },
   {
     "chapter": 5,
@@ -12665,8 +14200,20 @@
     "labels": [
       "con:inducedtorsor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "induced_torsor_pointed",
+      "induced_torsor",
+      "induced_principal_path",
+      "induced_paths_path",
+      "induced_paths_equiv",
+      "induced_torsor_naturality"
+    ],
+    "principal": [
+      "induced_torsor_pointed",
+      "induced_torsor_naturality"
+    ],
+    "note": "η_w : f_!P^G_x(w) ≃ (Bf(x) = w) by contraction of z (and the set truncation of a set), and π = ap_{P^H}(Bf_pt). η⁻¹π : P_H = f_!P_G (π first) points f_! : Torsor_G →* Torsor_H. f_! maps torsors to torsors, and f_! ∘ P^G_- = P^H_- ∘ Bf as maps BG → Torsor_H."
   },
   {
     "chapter": 5,
@@ -12678,8 +14225,21 @@
     "labels": [
       "lem:epifullyfaithful"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "restriction_injective",
+      "restrict_paths_is_equiv",
+      "invariant_maps_restrict_equiv",
+      "invariant_maps_restrict",
+      "restricted_extension",
+      "restricted_section_loop",
+      "connected_sections_agree",
+      "gset_equivalences_hset"
+    ],
+    "principal": [
+      "restriction_injective"
+    ],
+    "note": "If USym f is surjective, then f^* : GSet H → GSet G is an injection (IsEmbedding). The proof uses lem:inj-ap: X = Y is identified with the invariant maps of Z(w) = (X(w) ≃ Y(w)), and f^*X = f^*Y with those of f^*Z. When USym f is surjective, restriction of invariant maps along Bf is an equivalence. The book compares fixed elements (fig:epifullyfaithful). The formalization replaces this with a direct extension argument: a loop at Bf(sh_G) is merely ap_{Bf}(g), so p ↦ p · t(sh_G) is independent of p."
   },
   {
     "chapter": 5,
@@ -12691,8 +14251,24 @@
     "labels": [
       "lem:allgpsarepermutationgps"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cayley_mono",
+      "cayley_hom",
+      "cayley_set",
+      "cayley_classifying_map",
+      "cayley_classifying_covering",
+      "torsor_evaluation",
+      "torsor_evaluation_covering",
+      "torsor_evaluation_fiber_equiv",
+      "cayley_factorization",
+      "cayley_monomorphism"
+    ],
+    "principal": [
+      "cayley_mono",
+      "cayley_hom"
+    ],
+    "note": "ρ_G : Hom(G, Σ_{USym G}) with Bρ_G(z) = P_z(sh_G) = (z = sh_G), pointed by a path with first component refl, is a monomorphism. The proof is that of the book. Bρ_G = ev_sh ∘ P_- (cayley_factorization), and P_- is an equivalence. The fibers of ev_sh are subtypes of the set of pointed maps BG →* (Set, S)."
   },
   {
     "chapter": 5,
@@ -12702,8 +14278,16 @@
     "line": 2596,
     "section_raw": "Any symmetry is a symmetry in $\\Set$}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cayley_mono_elementary",
+      "cayley_usym_reflects",
+      "cayley_usym_action"
+    ],
+    "principal": [
+      "cayley_mono_elementary"
+    ],
+    "note": "This is an elementary proof that does not use lem:BGbytorsor: USym ρ_G(g) acts as x ↦ x g⁻¹ (cayley_usym_action). So evaluation at refl recovers g⁻¹, and USym ρ_G is injective. The remark uses a fiber-triangle argument (by definition, the fibers of Bρ_G are Σ_z (X = (z = sh_G))). The formalization replaces it with the equivalent injectivity on symmetries (cor:fib-vs-path)."
   },
   {
     "chapter": 5,
@@ -12715,8 +14299,25 @@
     "labels": [
       "rem:CayleyOversize"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cayley_pp_gset",
+      "cayley_pp_invariant_equiv",
+      "cayley_pp_invariant_reflects",
+      "cayley_pp_fixed_iff",
+      "cayley_fixed_right_mult",
+      "cayley_fixed_eval_equiv",
+      "cayley_right_mult",
+      "cayley_usym_action",
+      "torsor_evaluation",
+      "cayley_factorization"
+    ],
+    "principal": [
+      "cayley_pp_gset",
+      "cayley_pp_invariant_equiv",
+      "cayley_fixed_eval_equiv"
+    ],
+    "note": "PP(z) ≔ (P_G(z) = P_G(z)) (identifications in Set). By function extensionality, P_G = P_G is equivalent to its invariant maps. Their value at sh_G determines them (cayley_pp_invariant_reflects). The elements of PP(sh_G) that the action fixes are those whose permutation π satisfies π(gg') = gπ(g') (cayley_pp_fixed_iff). Every fixed permutation is right multiplication x ↦ x·π(e) (the book's − ∘ σ⁻¹ with σ = π(e)⁻¹). Evaluation at refl is a bijection onto USym G. For Σ_3, this gives |USym Σ_3| = 6 fixed permutations (the count itself is from chapter 4)."
   },
   {
     "chapter": 5,
@@ -12728,8 +14329,24 @@
     "labels": [
       "xca:PP-fixed-permutations"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "cayley_pp_fixed_iff",
+      "cayley_pp_transport",
+      "CayleyFixedPerms",
+      "cayley_fixed_abstract_group",
+      "cayley_fixed_eval",
+      "cayley_fixed_eval_equiv",
+      "cayley_fixed_eval_anti",
+      "cayley_fixed_inverse_eval_hom",
+      "cayley_fixed_eval_not_hom_sigma3"
+    ],
+    "principal": [
+      "cayley_pp_fixed_iff",
+      "cayley_fixed_eval_anti",
+      "cayley_fixed_eval_not_hom_sigma3"
+    ],
+    "note": "The action of PP is (g·π)(x) = g·π(g⁻¹·x) (cayley_pp_transport). So π is fixed iff π(gg') = gπ(g') (cayley_pp_fixed_iff). The fixed permutations form an abstract group under composition (cayley_fixed_abstract_group). The last claim is false as printed. Evaluation at refl is a bijection, but it is an anti-homomorphism: ev(π∘π') = ev(π')·ev(π) (cayley_fixed_eval_anti). So it is not an abstract homomorphism for Σ_3 (cayley_fixed_eval_not_hom_sigma3). Correction: π ↦ ev(π)⁻¹ is an abstract isomorphism to abstr(G) (cayley_fixed_inverse_eval_hom). With the opposite multiplication on fixed permutations, ev itself would be one."
   },
   {
     "chapter": 5,
@@ -12742,8 +14359,63 @@
       "exa:prep-burnside",
       "fig:C4-action-on-4-bits"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "c4bits_group",
+      "Bits4",
+      "Bits4Pos",
+      "bits4_gset",
+      "bits4_gset_underlying",
+      "bits4_index_equiv",
+      "bits4_index",
+      "bits4_carrier",
+      "bits4_carrier_commutes",
+      "bits4_carrier_add",
+      "bits4_carrier_inverse",
+      "type_path_trl_trr",
+      "bits4_rot",
+      "bits4_act_pointwise",
+      "bits4_act_rot",
+      "bits4_symmetry",
+      "bits4_symmetry_act",
+      "bits4_rot_litmus",
+      "bits4_generator_act_litmus",
+      "bits4_decode_equiv",
+      "bits4_all_sound",
+      "bits4_orbit_index",
+      "bits4_orbit_index_rot",
+      "bits4_align_rot",
+      "bits4_same_orbit_equiv",
+      "bits4_same_orbit_rotation_equiv",
+      "bits4_orbit_of_row",
+      "bits4_orbits_equiv",
+      "bits4_orbits_fin_equiv",
+      "bits4_orbits_card",
+      "bits4_row_size",
+      "bits4_orbit_underlying_equiv",
+      "bits4_orbit_card",
+      "bits4_litmus_0101_1010",
+      "bits4_litmus_0001_not_0111",
+      "bits4_row_stab",
+      "bits4_stab_bool_table",
+      "bits4_stabilizes_equiv",
+      "bits4_row_stab_card",
+      "bits4_stabilizer_usym_equiv",
+      "bits4_stabilizer_card",
+      "bits4_orbit_stabilizer_product",
+      "bits4_same_orbit_same_stabilizer",
+      "bits4_same_orbit_stabilizer_card",
+      "bits4_fixed_pairs_equiv",
+      "bits4_arithmetic_sum_four",
+      "bits4_fixed_pairs_card",
+      "bits4_litmus_0101_r2"
+    ],
+    "principal": [
+      "bits4_act_rot",
+      "bits4_orbits_equiv",
+      "bits4_orbit_stabilizer_product"
+    ],
+    "note": "C_4 = cyclic_group_fin 3 (the literal Aut_Cyc(Fin 4, s)) and X(A,f) = (A → Fin 2). g · x = rot_{g(0)} x with (rot_k x)(i) = x(i − k) (bits4_act_rot, through cor:id-m-cycle and native transport in function types). Orbits: [x] = [y] iff x and y are in the same row of the figure iff y is a rotation of x (bits4_same_orbit_equiv, bits4_same_orbit_rotation_equiv). X/C_4 ≃ Fin 6 with the rows of the figure, with orbit sizes 1,1,4,4,2,4 (bits4_orbit_underlying_equiv). Stabilizers: g · x = x iff g(0) is in the right column of the row (bits4_stabilizes_equiv). Card(C_4·x) × Card((C_4)_x) = Card(C_4) = 4 for every x and any finiteness witnesses. This is checked by computation, not through Lagrange. The stabilizing symmetries depend only on the orbit, and Card(Σ_g X^g) = 24 (bits4_fixed_pairs_card). Boolean reflection decides all 16/256-case facts (closed checks proved by refl)."
   },
   {
     "chapter": 5,
@@ -12756,8 +14428,45 @@
       "lem:burnside",
       "eq:burnside"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FixedBy",
+      "burnside_fixed_by_finite",
+      "BurnsideSum",
+      "burnside_sum_finite",
+      "burnside_orbit_relation_decidable",
+      "burnside_orbits_finite",
+      "burnside_swap_equiv",
+      "stabilizer_usym_equiv",
+      "burnside_stabilizer_sum_equiv",
+      "burnside_fiber_regroup_equiv",
+      "BurnsideOrbitSum",
+      "burnside_orbit_member_equiv",
+      "burnside_chain_equiv",
+      "burnside_orbit_stabilizer_bridge",
+      "BurnsideOrbitChoice",
+      "burnside_orbit_lagrange_equiv",
+      "lagrange_dep_sum_stabilizers",
+      "lagrange_choice_merely",
+      "burnside_orbit_member_decidable",
+      "burnside_orbit_underlying_finite",
+      "burnside_orbit_choice_merely",
+      "burnside_orbit_sum_finite",
+      "burnside_lemma",
+      "finite_decidable_subset",
+      "finite_sigma",
+      "finite_quantifiers",
+      "finite_quotient",
+      "orbit_quotient_equiv",
+      "finite_choice",
+      "cardinality_equinumerous_sum"
+    ],
+    "principal": [
+      "burnside_lemma",
+      "burnside_orbits_finite",
+      "burnside_chain_equiv"
+    ],
+    "note": "Let G be a finite group and X a finite G-set. Then X^g (FixedBy, the core's Σ_{x} (g·x = x)), Σ_{g:USym G} X^g and X/G are finite (burnside_fixed_by_finite, burnside_sum_finite, burnside_orbits_finite). The proofs use decidable subsets, finite sums, cor:orbit-equiv and the decidable quotient. burnside_lemma: Card(Σ_g X^g) = Card(X/G) × Card(G). The proof uses the chain Σ_g X^g ≃ Σ_x Σ_g (g·x = x) ≃ Σ_x USym G_x ≃ Σ_O Σ_x ((O = [x]) × USym G_x) ≃ Σ_O Σ_{x:X_O(sh_G)} USym G_x. The formalization proves this chain step by step (burnside_chain_equiv). It applies cor:lagrange-dep-sum to each orbit (X_O, x_O, f_O) (burnside_orbit_lagrange_equiv). There, the stabilizer of x in X_O is identified with that of x in X. Deviation: the book picks x_O and f_O as `least' elements through enumerations. Here, finite choice (module 34) over X/G and X_O(sh_G) gives them. This is constructive and gives the same proposition."
   },
   {
     "chapter": 5,
@@ -12767,8 +14476,61 @@
     "line": 2877,
     "section_raw": "The lemma that is not Burnside's}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "NatIsPrime",
+      "nat_power",
+      "NatDivides",
+      "nat_truncated_sub",
+      "fermat_little_theorem",
+      "fermat_little_theorem_succ",
+      "fermat_group",
+      "fermat_gset",
+      "fermat_gset_underlying",
+      "fermat_gset_finite",
+      "fermat_gset_card",
+      "fin_function_equiv",
+      "fin_function_cardinality",
+      "fermat_rotation",
+      "fermat_rotation_evaluation",
+      "fermat_action_rotation",
+      "fermat_constant_fixed",
+      "FermatConstant",
+      "fermat_fixed_by_all_constant",
+      "fermat_constants_equiv",
+      "fermat_orbit_subgroup",
+      "fermat_lagrange",
+      "lagrange_cardinality",
+      "fermat_orbit_one_fixed",
+      "fermat_stabilizer_one_unit",
+      "fermat_fixed_nonidentity_constant",
+      "fermat_fixed_by_nonidentity_equiv",
+      "fixed_by_unit_equiv",
+      "fermat_nonidentity_equiv",
+      "fermat_point_sigma_split",
+      "fermat_fixed_points_count",
+      "fermat_burnside_equation",
+      "burnside_lemma",
+      "fermat_divides_from_count",
+      "fermat_power_ge",
+      "fermat_mul_cancel_one",
+      "fermat_cardinality_one_prop",
+      "fermat_stabilizer_dichotomy",
+      "fermat_constant_iff_fixed_by_all",
+      "fermat_power_symmetry",
+      "fermat_power_symmetry_moves",
+      "fermat_nonconstant_witness",
+      "stabilizer_image_fixes",
+      "fermat_power_symmetry_not_in_stabilizer",
+      "fermat_litmus_six",
+      "fermat_litmus_three_two"
+    ],
+    "principal": [
+      "fermat_little_theorem",
+      "fermat_burnside_equation",
+      "fermat_fixed_by_nonidentity_equiv"
+    ],
+    "note": "fermat_little_theorem: for every p with NatIsPrime p (module 1000) and every n, p | n^p ∸ n (NatDivides). The subtraction is truncated, but this is honest, because n ≤ n^p by fermat_power_ge. The proof follows the route of the book. The C_p-set X(S,t) = (S → Fin n) on the literal C_p = Aut_Cyc(Fin p, s) has the underlying set Fin p → Fin n of cardinality n^p. X^refl is everything. For each of the p−1 other symmetries g, X^g is exactly the n constant functions, by xca:lagrange for the subgroup (X_[f], f) and primality. Burnside gives n^p + n(p−1) = Card(X/C_p) × p (fermat_burnside_equation). There, n(p−1) is written mul n m for p = m+1. The conclusion is arithmetic. In the case analysis, the book splits on whether f is constant. The formal proof splits on Card(X_[f]) ∈ {1, p} (equivalently Card((C_p)_f) ∈ {p, 1}). The steps 'select k with f(k) ≠ f(0), s^k·f ≠ f' of the book and the footnotes are formalized separately (fermat_power_symmetry_moves, fermat_nonconstant_witness, fermat_power_symmetry_not_in_stabilizer)."
   },
   {
     "chapter": 6,

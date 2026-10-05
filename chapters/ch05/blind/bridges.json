@@ -1,0 +1,2955 @@
+[
+  {
+    "source": "actions.tex",
+    "line": 56,
+    "labels": [
+      "def:Gset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindIff",
+      "BlindBG",
+      "BlindGSet",
+      "blind_underlying_set",
+      "blind_act",
+      "blind_usym_act",
+      "blind_act_is_equiv"
+    ],
+    "bridge_declarations": [
+      "bridge_def_gset",
+      "bridge_def_underlying",
+      "bridge_def_act",
+      "bridge_def_usym_act",
+      "bridge_act_is_equiv",
+      "bridge_iff_of_equiv"
+    ],
+    "our_declarations": [
+      "GSet",
+      "gset_act",
+      "gset_usym_act"
+    ],
+    "note": "BlindGSet, the action (transport) and the underlying set are ours on the nose (refl). blind_act_is_equiv comes from gset_act_equiv (its map is gset_act by definition).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny",
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 92,
+    "labels": [
+      "def:trivGset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_triv"
+    ],
+    "bridge_declarations": [
+      "bridge_def_triv"
+    ],
+    "our_declarations": [
+      "gset_trivial",
+      "gset_trivial_act"
+    ],
+    "note": "triv_G S is ours on the nose.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 98,
+    "labels": [
+      "rem:G-set-vs-set-bundle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_gset_vs_coverings"
+    ],
+    "bridge_declarations": [
+      "bridge_gset_vs_coverings"
+    ],
+    "our_declarations": [
+      "gset_coverings_equiv"
+    ],
+    "note": "gset_coverings_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 105,
+    "labels": [
+      "def:principaltorsor",
+      "eq:pathsp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_princ",
+      "blind_pathsp",
+      "blind_pathsp_transport",
+      "blind_princ_underlying"
+    ],
+    "bridge_declarations": [
+      "bridge_def_princ",
+      "bridge_def_pathsp",
+      "bridge_pathsp_transport",
+      "bridge_princ_underlying"
+    ],
+    "our_declarations": [
+      "principal_gset",
+      "gset_paths",
+      "gset_paths_map_equiv_value"
+    ],
+    "note": "princ/P_y is ours on the nose. The transport of P_y along q comes from the generic transport_path_to (153). P_G(sh) = USym G by refl.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 140,
+    "labels": [
+      "def:adjointrep",
+      "ft:adjoint-transport"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_Ad",
+      "blind_Ad_transport",
+      "blind_princ_transport",
+      "blind_Ad_free_loops"
+    ],
+    "bridge_declarations": [
+      "bridge_def_Ad",
+      "bridge_Ad_transport",
+      "bridge_princ_transport",
+      "bridge_Ad_free_loops"
+    ],
+    "our_declarations": [
+      "adjoint_gset",
+      "adjoint_gset_act",
+      "adjoint_free_loops_equiv"
+    ],
+    "note": "Ad is ours on the nose. Ad(p)(q) = p q p⁻¹ is adjoint_gset_act, and the transport of princ is gset_paths_act (refl). Free loop space: book_equivalence of adjoint_free_loops_equiv with adjoint_free_loops_base.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 183,
+    "labels": [
+      "ex:HomHGasGset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_hom_hg",
+      "blind_hom_g",
+      "blind_hom_hg_unfold"
+    ],
+    "bridge_declarations": [
+      "bridge_def_hom_hg",
+      "bridge_def_hom_g",
+      "bridge_hom_hg_unfold"
+    ],
+    "our_declarations": [
+      "group_hom_pair_gset",
+      "group_hom_gset"
+    ],
+    "note": "Hom(H,G)(x,y) and its restriction are ours on the nose. The unfolding is group_hom_pair_unfold.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 209,
+    "labels": [
+      "xca:HomZGvsAdG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_HomZGvsAdG"
+    ],
+    "bridge_declarations": [
+      "bridge_HomZGvsAdG"
+    ],
+    "our_declarations": [
+      "adjoint_hom_z_path",
+      "hom_z_adjoint_path_transport"
+    ],
+    "note": "adjoint_hom_z_path (blind orientation Ad = Hom(Z,-)).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 219,
+    "labels": [
+      "def:map-of-Gsets"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindHomG",
+      "blind_hom_g_set"
+    ],
+    "bridge_declarations": [
+      "bridge_def_hom",
+      "bridge_hom_g_set"
+    ],
+    "our_declarations": [
+      "GSetHom",
+      "gset_hom_set"
+    ],
+    "note": "Hom_G is ours on the nose. Its set-ness is gset_hom_set.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 233,
+    "labels": [
+      "xca:equivariant-map-totalization"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindTot",
+      "blind_equivariant_map_totalization"
+    ],
+    "bridge_declarations": [
+      "bridge_def_tot",
+      "bridge_equivariant_map_totalization"
+    ],
+    "our_declarations": [
+      "gset_hom_totalization_equiv",
+      "fiberwise_maps_over_equiv"
+    ],
+    "note": "gset_hom_totalization_equiv, same type.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 240,
+    "labels": [
+      "rem:map-of-Gsets"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_map_of_gsets_equivariant",
+      "blind_prop_set",
+      "blind_map_to_prop_invariant"
+    ],
+    "bridge_declarations": [
+      "bridge_def_prop_set",
+      "bridge_map_of_gsets_equivariant",
+      "bridge_map_to_prop_invariant"
+    ],
+    "our_declarations": [
+      "gset_hom_natural",
+      "gsubset_invariant_iff"
+    ],
+    "note": "gset_hom_natural (argument order swapped) and gsubset_invariant_iff.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 257,
+    "labels": [
+      "def:Gsubset",
+      "ft:SubTotX"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindSubG",
+      "blind_subg_unfold",
+      "blind_subg_set",
+      "blind_subg_tot",
+      "blind_gsubset_underlying"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subg",
+      "bridge_def_gsubset_underlying",
+      "bridge_subg_unfold",
+      "bridge_subg_set",
+      "bridge_subg_tot"
+    ],
+    "our_declarations": [
+      "GSubsets",
+      "gsubset_gset",
+      "gsubsets_total_equiv"
+    ],
+    "note": "Sub_G(X) is ours on the nose. The unfolding is refl. It is a set. ft:SubTotX = gsubsets_total_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 280,
+    "labels": [
+      "xca:SubGX-closedSubXshG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_subset_closed",
+      "BlindClosedSubsets",
+      "blind_subset_eval",
+      "blind_SubGX_closedSubXshG"
+    ],
+    "bridge_declarations": [
+      "bridge_def_closed_subsets",
+      "bridge_subset_eval_agree",
+      "bridge_SubGX_closedSubXshG"
+    ],
+    "our_declarations": [
+      "gsubsets_closed_equiv",
+      "GSetClosedSubsets"
+    ],
+    "note": "Our map and the blind evaluation agree (same subset, closure proofs in a proposition). So BookIsEquiv transfers from gsubsets_closed_equiv by book_isequiv_homotopic.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 292,
+    "labels": [
+      "xca:ptd-conn-to-comp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_ptd_conn_to_comp"
+    ],
+    "bridge_declarations": [
+      "bridge_ptd_conn_to_comp"
+    ],
+    "our_declarations": [
+      "ptd_conn_to_comp_equiv",
+      "pointed_maps_into_component"
+    ],
+    "note": "ptd_conn_to_comp_equiv, same type.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 300,
+    "labels": [
+      "rem:GSet=SetHomG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindSetHom",
+      "BlindActionCompatible",
+      "blind_GSet_SetHomG"
+    ],
+    "bridge_declarations": [
+      "bridge_gset_sethom_compatible",
+      "bridge_GSet_SetHomG"
+    ],
+    "our_declarations": [
+      "gset_action_equiv",
+      "gset_to_action_usym_act",
+      "action_to_gset_usym_act"
+    ],
+    "note": "gset_action_equiv. Its map is (X(sh), gset_to_action X) by refl. The action compatibility uses transport_refl and gset_to_action_usym_act.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 324,
+    "labels": [
+      "def:Gaction"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindAction"
+    ],
+    "bridge_declarations": [
+      "bridge_def_action"
+    ],
+    "our_declarations": [
+      "GroupActionOnSet"
+    ],
+    "note": "An action of G on a set = our GroupActionOnSet (refl).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 333,
+    "labels": [
+      "xca:Ad-triv-abelian"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_Ad_triv_abelian"
+    ],
+    "bridge_declarations": [
+      "bridge_Ad_triv_abelian"
+    ],
+    "our_declarations": [
+      "adjoint_trivial_iff_abelian"
+    ],
+    "note": "adjoint_trivial_iff_abelian.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 338,
+    "labels": [
+      "xca:Ad-princ-trivial"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_Ad_princ_trivial"
+    ],
+    "bridge_declarations": [
+      "bridge_Ad_princ_trivial"
+    ],
+    "our_declarations": [
+      "adjoint_principal_iff_trivial",
+      "trivial_adjoint_principal_path",
+      "adjoint_principal_path_trivial"
+    ],
+    "note": "adjoint_principal_iff_trivial.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 343,
+    "labels": [
+      "def:finite-G-set"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindIsFiniteGSet",
+      "blind_gset_card",
+      "blind_finite_gset_everywhere",
+      "blind_n_element_gset_everywhere"
+    ],
+    "bridge_declarations": [
+      "bridge_def_finite_gset",
+      "bridge_def_gset_card",
+      "bridge_finite_gset_everywhere",
+      "bridge_n_element_gset_everywhere"
+    ],
+    "our_declarations": [
+      "IsFiniteGSet",
+      "gset_card",
+      "gset_finite_at_iff"
+    ],
+    "note": "Finiteness and card are ours on the nose. The everywhere-finite version is gset_finite_everywhere_iff. The n-element version converts between Mere (Fin n = X(z)) in Type and in Set (subtype path) around gset_n_element_everywhere_iff.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 364,
+    "labels": [
+      "def:transitiveGset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindIsTrans"
+    ],
+    "bridge_declarations": [
+      "bridge_def_trans"
+    ],
+    "our_declarations": [
+      "IsTransitive"
+    ],
+    "note": "istrans is ours on the nose (refl).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 372,
+    "labels": [
+      "eq:Gset-trans-gen"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_trans_iff_surjective",
+      "blind_trans_iff_all_z",
+      "blind_trans_iff_nonempty",
+      "blind_empty_not_trans"
+    ],
+    "bridge_declarations": [
+      "bridge_trans_iff_surjective",
+      "bridge_trans_iff_all_z",
+      "bridge_trans_iff_nonempty",
+      "bridge_empty_not_trans"
+    ],
+    "our_declarations": [
+      "transitive_surjective_iff",
+      "transitive_everywhere_iff",
+      "transitive_pairwise_iff"
+    ],
+    "note": "transitive_surjective_iff, transitive_everywhere_iff, transitive_pairwise_iff, gset_empty_not_transitive.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 390,
+    "labels": [
+      "lem:conistrans"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_conistrans"
+    ],
+    "bridge_declarations": [
+      "bridge_conistrans"
+    ],
+    "our_declarations": [
+      "transitive_connected_equiv",
+      "transitive_action_type_connected",
+      "connected_action_type_transitive"
+    ],
+    "note": "transitive_iff_connected_covering.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 509,
+    "labels": [
+      "lem:evisinjwhentransitive"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_evisinjwhentransitive"
+    ],
+    "bridge_declarations": [
+      "bridge_evisinjwhentransitive"
+    ],
+    "our_declarations": [
+      "gset_hom_eval_injective"
+    ],
+    "note": "gset_hom_eval_injective.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 547,
+    "labels": [
+      "xca:not-normal"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_figure_eight_group",
+      "blind_not_normal_gset",
+      "blind_not_normal_transitive",
+      "blind_not_normal_aut_contractible",
+      "blind_not_normal_ev"
+    ],
+    "bridge_declarations": [
+      "bridge_def_not_normal_gset",
+      "bridge_not_normal_transitive",
+      "bridge_not_normal_aut_contractible",
+      "bridge_not_normal_ev"
+    ],
+    "our_declarations": [
+      "wedge_gset_not_normal_unconditional",
+      "wedge_gset_symmetries_contractible_unconditional",
+      "circle_wedge_carrier_groupoid"
+    ],
+    "note": "The blind FigureEightSignature (483) is translated field by field to our CircleWedgeSignature (566). The blind G-set (cycle = finite_fin_successor 2) equals ours by a pointwise check (wedge_cycle_equiv). Transitivity, the contractibility of X = X and the injective-not-surjective ev are transported from wedge_gset_*. The groupoid hypothesis hW is kept as in the blind statement. Module 596 discharges it for our side.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01b-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 558,
+    "labels": [
+      "def:normal-action"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_gset_ev",
+      "BlindIsNormal"
+    ],
+    "bridge_declarations": [
+      "bridge_def_gset_ev",
+      "bridge_def_normal"
+    ],
+    "our_declarations": [
+      "IsNormalGSet"
+    ],
+    "note": "BlindIsNormal = istrans × our IsNormalGSet (refl). The evaluation map is ours.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 567,
+    "labels": [
+      "xca:normal-action-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_normal_action_equiv"
+    ],
+    "bridge_declarations": [
+      "bridge_normal_action_equiv"
+    ],
+    "our_declarations": [
+      "normal_eval_equiv_everywhere",
+      "normal_action_equiv"
+    ],
+    "note": "normal_action_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 581,
+    "labels": [
+      "def:action"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "BlindActionIn",
+      "blind_action_object",
+      "BlindActionOn"
+    ],
+    "bridge_declarations": [
+      "bridge_def_action_in",
+      "bridge_def_action_object",
+      "bridge_def_action_on"
+    ],
+    "our_declarations": [
+      "ActionInType",
+      "ActionOnElement",
+      "action_in_type_equiv"
+    ],
+    "note": "ActionInType/action_object are ours. The blind ∞-group hom is a one-field record around our ActionOnElement (equivalence with refl round trips).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 614,
+    "labels": [
+      "std-action"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_standard_action"
+    ],
+    "bridge_declarations": [
+      "bridge_def_standard_action"
+    ],
+    "our_declarations": [
+      "standard_action"
+    ],
+    "note": "standard_action, refl.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 619,
+    "labels": [
+      "ex:S2-acts-on-C3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_s2_two_element",
+      "blind_s2_swap",
+      "blind_s2_dec",
+      "blind_s2c3_case",
+      "blind_s2c3_fun",
+      "BlindS2C3Type",
+      "blind_s2c3_type_groupoid",
+      "blind_s2c3_point",
+      "blind_s2_acts_on_c3",
+      "blind_bool_s2_shape",
+      "blind_s2_acts_on_c3_bool"
+    ],
+    "bridge_declarations": [
+      "bridge_s2_swap_ne",
+      "bridge_s2_swap",
+      "bridge_s2c3_case",
+      "bridge_s2c3_fun_at",
+      "bridge_def_s2c3_fun",
+      "bridge_def_s2c3_point",
+      "bridge_def_s2c3_type",
+      "bridge_def_s2_acts_on_c3",
+      "bridge_bool_shape_path",
+      "bridge_s2_acts_on_c3_bool"
+    ],
+    "our_declarations": [
+      "s2_acts_on_c3",
+      "s2c3_group_c3_path"
+    ],
+    "note": "The blind swap (enumeration at true) is our two_set_swap (it differs from s). The f_s agree pointwise by case analysis on both decisions. So the blind point of T_S and the blind G(S) equal ours. G(bool) = C₃ through the shape path bool = Fin 2 and s2c3_group_c3_path.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01b-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 664,
+    "labels": [
+      "xca:AutC3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_autc3_witness",
+      "blind_autc3_classifying",
+      "blind_AutC3"
+    ],
+    "bridge_declarations": [
+      "bridge_AutC3"
+    ],
+    "our_declarations": [
+      "s2_aut_c3_path",
+      "s2_aut_c3_pointed_equiv",
+      "s2_aut_c3_map_equiv"
+    ],
+    "note": "For every pointing p, the blind classifying map has the same underlying components as s2_aut_c3_map (the second components are propositions). So it is an equivalence by s2_aut_c3_map_equiv (IsGroupIso is a property of the unpointed map).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01b-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 669,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_standard_sn_set",
+      "blind_standard_sn_set_transitive",
+      "blind_sn_decidable_subsets",
+      "blind_sn_decidable_subsets_underlying"
+    ],
+    "bridge_declarations": [
+      "bridge_def_standard_sn_set",
+      "bridge_def_sn_decidable_subsets",
+      "bridge_standard_sn_set_transitive",
+      "bridge_sn_decidable_subsets_underlying"
+    ],
+    "our_declarations": [
+      "standard_symmetric_gset_transitive",
+      "decidable_subsets_gset",
+      "decidable_subsets_act"
+    ],
+    "note": "The standard Σ_n-set and decidable subsets are ours on the nose. Transitivity: standard_symmetric_gset_transitive.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 725,
+    "labels": [
+      "def:set-of-subgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "BlindSubgroups"
+    ],
+    "bridge_declarations": [
+      "bridge_sub_from",
+      "bridge_sub_to",
+      "bridge_def_subgroups",
+      "bridge_def_subgroups_sigma",
+      "bridge_def_subgroup_group",
+      "bridge_def_F0",
+      "bridge_def_subgroup_decidable",
+      "bridge_def_subgroup_trivial",
+      "bridge_def_subgroup_proper",
+      "bridge_F_agree",
+      "bridge_def_choice_map"
+    ],
+    "our_declarations": [
+      "Subgroups"
+    ],
+    "note": "The blind Σ-type = our SubgroupsSigma. It is equivalent to our record Subgroups, with refl round trips.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 735,
+    "labels": [
+      "xca:group-Xx!"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_group_Xx",
+      "blind_tot_pair",
+      "blind_tot_base_paths",
+      "blind_tot_connected",
+      "blind_tot_groupoid"
+    ],
+    "bridge_declarations": [
+      "bridge_group_Xx"
+    ],
+    "our_declarations": [
+      "transitive_action_type_pcg"
+    ],
+    "note": "(transitive_action_type_connected, action_type_groupoid).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 757,
+    "labels": [
+      "def:underlying-group-of-subgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_subgroup_group"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subgroup_group",
+      "bridge_F_agree"
+    ],
+    "our_declarations": [
+      "subgroup_group"
+    ],
+    "note": "The blind underlying group differs from subgroup_group only in the connectedness proof (a proposition): bridge_def_subgroup_group.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 767,
+    "labels": [
+      "ex:Rm0-subgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_Rm_data",
+      "blind_Rm",
+      "blind_Rm_zero",
+      "blind_Rm_transitive",
+      "blind_Rm_stabilizer",
+      "blind_R_data",
+      "blind_R",
+      "blind_R_to_int",
+      "blind_R_zero",
+      "blind_R_transitive",
+      "blind_R_loop_power",
+      "blind_R_stabilizer"
+    ],
+    "bridge_declarations": [
+      "bridge_def_Rm",
+      "bridge_Rm_zero",
+      "bridge_Rm_transitive",
+      "bridge_Rm_stabilizer",
+      "bridge_R_zero",
+      "bridge_R_transitive",
+      "bridge_R_loop_power",
+      "bridge_R_stabilizer"
+    ],
+    "our_declarations": [
+      "rmsub_subgroup",
+      "rmsub_picks_out",
+      "rsub_picks_out"
+    ],
+    "note": "The blind R_m is our power_circle_family on the nose. The blind 0 (backward transport along the β-law) equals our power_bundle_zero (bridge_inv_trl). The stabilizer comes from rmsub_picks_out with int_mul commuted. The blind R (recursion into Set) is not ours on the nose. A CircleCode for it is built from its β-law (automorphism_pathover_commutes). Transitivity, R(loop^k)(0) = k and the stabilizer follow from the generic encode-decode lemmas of module 27.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 794,
+    "labels": [
+      "lem:SubGisset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_SubGisset"
+    ],
+    "bridge_declarations": [
+      "bridge_SubGisset"
+    ],
+    "our_declarations": [
+      "subgroups_set",
+      "pointed_gset_path_fiber_equiv"
+    ],
+    "note": "subgroups_set, transported along bridge_def_subgroups.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 812,
+    "labels": [
+      "exa:fix1subSGn"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/01-gsets.ny",
+    "blind_declarations": [
+      "blind_standard_sn_set_transitive",
+      "blind_fix1_subgroup",
+      "blind_fix1_action",
+      "blind_fix1subSGn"
+    ],
+    "bridge_declarations": [
+      "bridge_standard_sn_set_transitive",
+      "bridge_fix1_action",
+      "bridge_fix1subSGn"
+    ],
+    "our_declarations": [
+      "fixed_point_subgroup",
+      "fixed_point_subgroup_group_path"
+    ],
+    "note": "π·k is permutation_action by refl. GroupIso comes from fixed_point_subgroup_group_path after a switch of the connectedness witness.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny",
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 830,
+    "labels": [
+      "xca:n-is-ptd-n+1"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_n_is_ptd_n1"
+    ],
+    "bridge_declarations": [
+      "bridge_n_is_ptd_n1"
+    ],
+    "our_declarations": [
+      "finite_pointed_equiv"
+    ],
+    "note": "finite_pointed_equiv, same type.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 836,
+    "labels": [
+      "xca:A-is-A-1+1"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_A_is_A_1_1"
+    ],
+    "bridge_declarations": [
+      "bridge_A_is_A_1_1"
+    ],
+    "our_declarations": [
+      "point_removal_equiv"
+    ],
+    "note": "point_removal_equiv composed with post-composition by ua(Unit ≃ Fin 1). Ours uses + Unit, and the blind statement uses + Fin 1.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 841,
+    "labels": [
+      "exa:C3subC6",
+      "fig:C3inC6"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_five",
+      "blind_six",
+      "blind_C6",
+      "blind_c3c6_F",
+      "blind_c6_standard",
+      "blind_c3c6_class",
+      "blind_c3c6_transitive",
+      "blind_c3c6_action",
+      "blind_c3c6_picked_out",
+      "blind_c3c6_underlying"
+    ],
+    "bridge_declarations": [
+      "bridge_def_c3c6_F",
+      "bridge_c3c6_transitive",
+      "bridge_c3c6_action",
+      "bridge_c3c6_underlying",
+      "bridge_c3c6_picked_out"
+    ],
+    "our_declarations": [
+      "c6half_subgroup",
+      "c6half_picks_out_zero",
+      "c6half_subgroup_is_c3"
+    ],
+    "note": "F = c6half_gset on the nose. Transitivity and π·[k] = [π(k)] are ours. C₃ comes from c6half_subgroup_is_c3. The blind statement uses 'even powers of s', and ours uses 'π(0) even'. The correspondence is derived in bridge-02c from the action on classes, the relation of X/2 (y = s^{2r}x) and cor:id-m-cycle. There, the carrier of s^k is the k-th power of the successor.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny",
+      "chapters/ch05/blind/bridge-02c-c3c6.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 890,
+    "labels": [
+      "def:decidable-subgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "BlindSubgroupDecidable"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subgroup_decidable"
+    ],
+    "our_declarations": [
+      "IsDecidableSubgroup"
+    ],
+    "note": "IsDecidableSubgroup, refl.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 918,
+    "labels": [
+      "def:typeofmono"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "BlindIsMono",
+      "blind_ismono_prop",
+      "BlindMono",
+      "BlindMonoTrivial",
+      "BlindMonoProper"
+    ],
+    "bridge_declarations": [
+      "bridge_def_ismono",
+      "bridge_ismono_prop",
+      "bridge_def_mono",
+      "bridge_def_mono_trivial",
+      "bridge_def_mono_proper",
+      "bridge_F_agree"
+    ],
+    "our_declarations": [
+      "IsGroupMono",
+      "GroupMonos"
+    ],
+    "note": "IsMono, Mono(G) and proper are ours on the nose. That mono is a proposition is is_group_mono_prop. 'Trivial' (H = 1) ↔ ours (BH contractible) by trivial_group_iff_path.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 961,
+    "labels": [
+      "ex:SGninSGn+1"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_plus_one",
+      "blind_sigma_incl_fun",
+      "blind_sigma_incl_at",
+      "blind_sigma_incl",
+      "blind_SGninSGn1_mono",
+      "blind_SGninSGn1_extends"
+    ],
+    "bridge_declarations": [
+      "bridge_def_sigma_incl_at",
+      "bridge_SGninSGn1_mono",
+      "bridge_SGninSGn1_extends"
+    ],
+    "our_declarations": [
+      "symmetric_group_inclusion",
+      "symmetric_group_inclusion_mono"
+    ],
+    "note": "The blind i_n with pointing p is literally our repointed_inclusion at component_path p (refl). The blind i_n (pointed by component_path refl) is ours up to refl = component_path refl. The mono property comes from repointed_inclusion_mono, and the extension from symmetric_group_inclusion_inl/inr.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1003,
+    "labels": [
+      "xca:SG2subSG3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_SG2subSG3"
+    ],
+    "bridge_declarations": [
+      "bridge_SG2subSG3"
+    ],
+    "our_declarations": [
+      "repointed_image_stabilizer",
+      "repointed_inclusion_usym"
+    ],
+    "note": "The printed i_3 is read as i_2 (the blind statement and ours agree). With p = permutation_symmetry π, our repointed_image_stabilizer says that σ ∈ im iff σ fixes p⁻¹·★ = π⁻¹(★). This is the blind condition.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1007,
+    "labels": [
+      "xca:C3subSG3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_C3subSG3"
+    ],
+    "bridge_declarations": [
+      "bridge_C3subSG3"
+    ],
+    "our_declarations": [
+      "c3inv_usym_differ",
+      "c3inv_monos_path"
+    ],
+    "note": "c3inv_j and c3inv_j_prime with monos, c3inv_usym_differ, and the inverse of c3inv_monos_path.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1012,
+    "labels": [
+      "ex:prodinclismono"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_prod_incl1",
+      "blind_prod_incl2",
+      "blind_prodinclismono",
+      "blind_prod_incl1_usym",
+      "blind_prod_incl1_covering"
+    ],
+    "bridge_declarations": [
+      "bridge_def_prod_incl1",
+      "bridge_def_prod_incl2",
+      "bridge_prodinclismono",
+      "bridge_prod_incl1_usym",
+      "bridge_prod_incl1_covering"
+    ],
+    "our_declarations": [
+      "product_incl1_mono",
+      "product_incl1_usym"
+    ],
+    "note": "The blind inclusions are ours on the nose. product_incl1/2_mono, product_incl1_usym, product_incl1_covering.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1025,
+    "labels": [
+      "lem:SubG=MonoG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_subgroup_incl",
+      "BlindHomInto",
+      "blind_F0",
+      "blind_SubG_incl_mono",
+      "blind_F",
+      "blind_SubG_MonoG"
+    ],
+    "bridge_declarations": [
+      "bridge_hominto_at",
+      "bridge_hominto_conn",
+      "bridge_forget_mono",
+      "bridge_def_F0",
+      "bridge_SubG_incl_mono",
+      "bridge_F_agree",
+      "bridge_SubG_MonoG",
+      "BridgePickedOut"
+    ],
+    "our_declarations": [
+      "subgroups_monos_is_equiv",
+      "subgroup_to_mono",
+      "mono_to_subgroup"
+    ],
+    "note": "subgroup_inclusion_mono. The blind F agrees with subgroup_to_mono ∘ (Σ→record) up to the connectedness witness. So it is an equivalence by subgroups_monos_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1059,
+    "labels": [
+      "exa:EforSG3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_EforSG3"
+    ],
+    "bridge_declarations": [
+      "bridge_EforSG3"
+    ],
+    "our_declarations": [
+      "fix_point_subgroup_e_path",
+      "fix_point_mono_path"
+    ],
+    "note": "(Σ₂, i₂) is read for the printed (Σ₂, i₃). The proof uses fix_point_mono_path plus the change of the connectedness witness and of the pointing refl = component_path refl.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1088,
+    "labels": [
+      "xca:SubG=MonoG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_SubG_MonoG",
+      "blind_SubG_incl_mono"
+    ],
+    "bridge_declarations": [
+      "bridge_SubG_incl_mono",
+      "bridge_SubG_MonoG"
+    ],
+    "our_declarations": [
+      "subgroup_mono_roundtrip",
+      "mono_subgroup_roundtrip"
+    ],
+    "note": "Same as lem:SubG=MonoG.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1098,
+    "labels": [
+      "lem:setofsubgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_setofsubgroups"
+    ],
+    "bridge_declarations": [
+      "bridge_setofsubgroups"
+    ],
+    "our_declarations": [
+      "group_monos_set"
+    ],
+    "note": "group_monos_set.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1103,
+    "labels": [
+      "lem:E-preserves-symms"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_E_preserves_symms"
+    ],
+    "bridge_declarations": [
+      "bridge_E_preserves_symms"
+    ],
+    "our_declarations": [
+      "mono_preserves_symmetries"
+    ],
+    "note": "mono_preserves_symmetries, transported along e : M = F(S) in Σ_H Hom(H,G). The blind M carries no mono witness.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1142,
+    "labels": [
+      "def:triv-proper-Mono"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "BlindSubgroupTrivial",
+      "blind_subgroup_trivial_iff",
+      "BlindSubgroupProper"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subgroup_trivial",
+      "bridge_def_subgroup_proper",
+      "bridge_subgroup_trivial_iff"
+    ],
+    "our_declarations": [
+      "IsTrivialSubgroup",
+      "IsProperSubgroup"
+    ],
+    "note": "Trivial and proper are ours on the nose. Tot(X) contractible ↔ underlying group = 1, through trivial_group_path/path_trivial_group and bridge_def_subgroup_group.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1152,
+    "labels": [
+      "rem:notationsubgroup"
+    ],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_declarations": [],
+    "our_declarations": [],
+    "note": "Notation only.",
+    "bridge_file": []
+  },
+  {
+    "source": "actions.tex",
+    "line": 1160,
+    "labels": [
+      "ex:prodinclisGset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_princ_proj2",
+      "blind_prodinclisGset_tot",
+      "blind_prodinclisGset"
+    ],
+    "bridge_declarations": [
+      "bridge_def_princ_proj2",
+      "bridge_prodinclisGset_tot",
+      "bridge_prodinclisGset"
+    ],
+    "our_declarations": [
+      "product_incl1_subgroup_path"
+    ],
+    "note": "princ∘proj₂ is ours on the nose. product_proj2_total_equiv. product_incl1_subgroup_path, after a change of the connectedness witness.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1192,
+    "labels": [
+      "con:lagrange"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "BlindChoiceMap",
+      "blind_lagrange_construction"
+    ],
+    "bridge_declarations": [
+      "bridge_def_choice_map",
+      "bridge_lagrange_construction"
+    ],
+    "our_declarations": [
+      "lagrange_construction",
+      "lagrange_equiv",
+      "LagrangeChoice"
+    ],
+    "note": "Choice maps = LagrangeChoice (refl). lagrange_construction.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1235,
+    "labels": [
+      "cor:lagrange-dep-sum"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_lagrange_dep_sum"
+    ],
+    "bridge_declarations": [
+      "bridge_lagrange_dep_sum"
+    ],
+    "our_declarations": [
+      "lagrange_dep_sum_construction",
+      "lagrange_dep_sum_equiv"
+    ],
+    "note": "lagrange_dep_sum_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1242,
+    "labels": [
+      "xca:lagrange"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_lagrange"
+    ],
+    "bridge_declarations": [
+      "bridge_lagrange"
+    ],
+    "our_declarations": [
+      "lagrange_subgroup_finite",
+      "lagrange_cardinality"
+    ],
+    "note": "lagrange_subgroup_finite, lagrange_cardinality.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1251,
+    "labels": [
+      "xca:lagrange-Z-action-Rm"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_lagrange_Z_action_Rm"
+    ],
+    "bridge_declarations": [
+      "bridge_lagrange_Z_action_Rm"
+    ],
+    "our_declarations": [
+      "rmlag_choice",
+      "rmlag_fin_equiv"
+    ],
+    "note": "rmlag_fin_equiv, transported from our 0 to the blind 0 (bridge_Rm_zero).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02b-subgroup-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1260,
+    "labels": [
+      "xca:lagrange-if-subgr-not-normal"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_not_normal_zero",
+      "blind_lagrange_if_subgr_not_normal"
+    ],
+    "bridge_declarations": [
+      "bridge_lagrange_if_subgr_not_normal"
+    ],
+    "our_declarations": [
+      "wedge_choice_map",
+      "wedge_lagrange_equiv_unconditional"
+    ],
+    "note": "The signature translation is the same as for xca:not-normal. Our choice map wedge_choice_map is transported to the blind G-set and re-pointed to the blind 0. A choice map to one point gives a choice map to any point.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01b-examples.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1346,
+    "labels": [
+      "def:actiontype"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "BlindActionType",
+      "BlindInvariantMaps",
+      "BlindOrbits",
+      "blind_istrans_prop",
+      "blind_orbits_set",
+      "blind_invariant_map_fixed",
+      "blind_princ_Z_no_invariant_maps"
+    ],
+    "bridge_declarations": [
+      "bridge_def_action_type",
+      "bridge_def_invariant_maps",
+      "bridge_def_orbits",
+      "bridge_invariant_map_fixed",
+      "bridge_princ_Z_no_invariant_maps"
+    ],
+    "our_declarations": [
+      "ActionType",
+      "InvariantMaps",
+      "Orbits"
+    ],
+    "note": "X_hG, X^hG and X/G are ours on the nose. Footnotes: the value of an invariant map is fixed, by apd (pathover_transport_equiv). The fact that princ Z has no invariant maps is principal_circle_no_invariant_maps.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1382,
+    "labels": [
+      "rem:path-in-action-type"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_path_in_action_type"
+    ],
+    "bridge_declarations": [
+      "bridge_path_in_action_type"
+    ],
+    "our_declarations": [
+      "action_type_path_equiv",
+      "action_type_mere_path_equiv"
+    ],
+    "note": "action_type_path_equiv and action_type_mere_path_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1475,
+    "labels": [
+      "def:orbit-map"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_orbit_class0"
+    ],
+    "bridge_declarations": [
+      "bridge_def_orbit_class0"
+    ],
+    "our_declarations": [
+      "orbit_subset",
+      "orbit_map"
+    ],
+    "note": "[u]_0 = orbit_subset, refl.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1490,
+    "labels": [
+      "lem:[]0-maps-to-X/G"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "BlindOrbitWitness",
+      "blind_orbit_class0_transitive",
+      "blind_orbit_class"
+    ],
+    "bridge_declarations": [
+      "bridge_tau0",
+      "bridge_tau_path",
+      "bridge_def_orbit_class",
+      "bridge_tau",
+      "bridge_orbit_class0_transitive"
+    ],
+    "our_declarations": [
+      "orbit_gset_transitive",
+      "orbit_map"
+    ],
+    "note": "The witness τ: ours is orbit_gset_transitive. Every blind statement that quantifies over τ is transported from ours along the path τ₀ = τ (propositions). For τ₀, [-]_0 is our orbit_map on the nose.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1502,
+    "labels": [
+      "lem:X/G=setTruncX_hG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_X_G_setTrunc"
+    ],
+    "bridge_declarations": [
+      "bridge_X_G_setTrunc"
+    ],
+    "our_declarations": [
+      "orbit_map_surjective",
+      "orbits_set_trunc_path_unique",
+      "orbits_set_trunc_unique"
+    ],
+    "note": "orbit_map_surjective and orbits_set_trunc_path_unique, transported along the path between the two proofs that X/G is a set.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1535,
+    "labels": [
+      "cor:orbit-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_orbit_of",
+      "BlindSameOrbitRel",
+      "blind_orbit_equiv"
+    ],
+    "bridge_declarations": [
+      "bridge_orbit_equiv"
+    ],
+    "our_declarations": [
+      "orbit_point_path_exists_equiv",
+      "orbit_of_point_surjective",
+      "orbit_quotient_unique"
+    ],
+    "note": "orbit_point_path_exists_equiv, orbit_of_point_surjective. For any R with the orbit predicate, surjection_quotient_unique gives the equivalence. Maps out of the quotient into a set are determined on classes. So the type of factorisations is contractible, with that equivalence as center.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1553,
+    "labels": [
+      "rem:SubGX=Sub(X/G)"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_SubGX_Sub_orbits"
+    ],
+    "bridge_declarations": [
+      "bridge_SubGX_Sub_orbits"
+    ],
+    "our_declarations": [
+      "gsubsets_orbit_subsets_equiv"
+    ],
+    "note": "gsubsets_orbit_subsets_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1572,
+    "labels": [
+      "xca:transX-just1orbit"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_transX_just1orbit"
+    ],
+    "bridge_declarations": [
+      "bridge_transX_just1orbit"
+    ],
+    "our_declarations": [
+      "orbits_contractible_transitive_equiv"
+    ],
+    "note": "contractible_orbits_transitive / transitive_orbits_contractible.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1579,
+    "labels": [
+      "rem:equivalents-of-[x]=[y]"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_equivalents_xy"
+    ],
+    "bridge_declarations": [
+      "bridge_equivalents_xy"
+    ],
+    "our_declarations": [
+      "orbit_point_path_exists_equiv",
+      "orbit_point_path_subset_equiv",
+      "orbit_relation_induced"
+    ],
+    "note": "orbit_point_path_subset/exists/mere/member/member_symm equivalences.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1632,
+    "labels": [
+      "def:orbit-stabilizer"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_stabilizer",
+      "blind_stabilizer_incl",
+      "blind_stabilizer_covering",
+      "blind_stabilizer_mono",
+      "blind_stabilizer_of_subgroup",
+      "BlindOrbitSet"
+    ],
+    "bridge_declarations": [
+      "bridge_def_stabilizer",
+      "bridge_def_stabilizer_incl",
+      "bridge_def_orbit_set",
+      "bridge_stabilizer_covering",
+      "bridge_stabilizer_mono",
+      "bridge_stabilizer_of_subgroup"
+    ],
+    "our_declarations": [
+      "stabilizer_group",
+      "stabilizer_mono",
+      "OrbitUnderlying"
+    ],
+    "note": "G_x and i_x are ours on the nose. The covering and mono properties are ours. (G_pt, i_pt) = F(S) comes from subgroup_stabilizer_mono_path. G·x = OrbitUnderlying for τ₀.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1657,
+    "labels": [
+      "rem:orbit-fibs",
+      "fig:fibs-at-[x]"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_orbit_underlying",
+      "blind_orbit_fibs"
+    ],
+    "bridge_declarations": [
+      "bridge_def_orbit_underlying",
+      "bridge_orbit_fibs"
+    ],
+    "our_declarations": [
+      "orbit_action_type_stabilizer_equiv",
+      "orbit_gset_underlying_equiv",
+      "orbit_underlying_class_equiv"
+    ],
+    "note": "Read with y : X(z) (ours too). orbit_action_type_stabilizer_equiv with its point lemma. orbit_gset_underlying_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1688,
+    "labels": [
+      "xca:[x]=[y]-implies-||Gx=Gy||"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_same_orbit_stabilizers"
+    ],
+    "bridge_declarations": [
+      "bridge_same_orbit_stabilizers"
+    ],
+    "our_declarations": [
+      "stabilizer_groups_merely_equal"
+    ],
+    "note": "stabilizer_groups_merely_equal.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1696,
+    "labels": [
+      "rem:subgrp-is-stabsubgr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_subgrp_is_stabsubgr"
+    ],
+    "bridge_declarations": [
+      "bridge_subgrp_is_stabsubgr"
+    ],
+    "our_declarations": [
+      "stabilizer_subgroup_path",
+      "transitive_stabilizer_subgroup_path"
+    ],
+    "note": "stabilizer_subgroup_path / transitive_stabilizer_subgroup_path with mono_subgroup_roundtrip, after a change of the connectedness witnesses.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1709,
+    "labels": [
+      "lem:splitting into orbits"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_splitting_into_orbits"
+    ],
+    "bridge_declarations": [
+      "bridge_splitting_into_orbits"
+    ],
+    "our_declarations": [
+      "orbit_splitting_equiv",
+      "quotient_classes_total_equiv"
+    ],
+    "note": "orbit_splitting_equiv with orbit_splitting_map (homotopy to the blind second projection).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1726,
+    "labels": [
+      "def:fixed-free"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "BlindFixed",
+      "BlindFree",
+      "BlindGSetFree"
+    ],
+    "bridge_declarations": [
+      "bridge_def_fixed",
+      "bridge_def_free",
+      "bridge_def_gset_free"
+    ],
+    "our_declarations": [
+      "IsFixedElement",
+      "IsFreeElement",
+      "IsFreeGSet"
+    ],
+    "note": "Fixed is ours on the nose. Free (G_x = 1) ↔ ours (BG_x contractible) by trivial_group_iff_path.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1739,
+    "labels": [
+      "exa:fixed-free-neither"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_triv_fixed",
+      "blind_princ_free",
+      "blind_princ_tot_contractible",
+      "blind_c4_fixed_free",
+      "blind_four",
+      "blind_C4",
+      "blind_c4_set",
+      "blind_c4_s",
+      "blind_c4_e0",
+      "blind_c4_e1",
+      "blind_c4_e2",
+      "blind_c4_e3",
+      "blind_bool_of_dec",
+      "blind_and",
+      "blind_fin2_eq",
+      "blind_c4_constant",
+      "blind_c4_period2",
+      "blind_select",
+      "blind_c4_stab_card",
+      "blind_c4_orbit_card"
+    ],
+    "bridge_declarations": [
+      "bridge_triv_fixed",
+      "bridge_princ_free",
+      "bridge_princ_tot_contractible",
+      "bridge_def_C4",
+      "bridge_def_c4_set",
+      "bridge_c4_constant_row",
+      "bridge_c4_period2_row",
+      "bridge_c4_fixed_free",
+      "bridge_select_rows",
+      "bridge_row_stab",
+      "bridge_row_size",
+      "bridge_c4_stab_card",
+      "bridge_c4_orbit_card"
+    ],
+    "our_declarations": [
+      "bits4_fixed_elements",
+      "bits4_free_elements",
+      "bits4_neither_elements"
+    ],
+    "note": "triv fixed, princ free and Tot(princ) contractible are ours. C₄: the blind Boolean tests 'constant' and 'period 2' agree with our row tables on all 16 sequences (bits4_check_point, by computation). Then bits4_fixed_row_equiv / bits4_free_row_equiv apply.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny",
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1751,
+    "labels": [
+      "xca:fixed-free-neither"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_xca_fixed_free_neither"
+    ],
+    "bridge_declarations": [
+      "bridge_xca_fixed_free_neither"
+    ],
+    "our_declarations": [
+      "fixed_free_trivial_classifying_equiv",
+      "fixed_free_principal_classifying_contr",
+      "bits4_neither_stabilizer_group_path"
+    ],
+    "note": "G_s = G through group_path_from_iso (trivial_gset_fixed). fixed_free_principal_classifying_contr. The C₄ stabilizer cards are bits4_stabilizer_card, with the blind table equal to our row table.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1762,
+    "labels": [
+      "lem:free-pt-char"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_tot_step",
+      "blind_orbit_map",
+      "blind_free_pt_char"
+    ],
+    "bridge_declarations": [
+      "bridge_orbit_map_agree",
+      "bridge_orbit_map_path",
+      "bridge_free_pt_char"
+    ],
+    "our_declarations": [
+      "free_iff_orbit_action_injective",
+      "free_orbit_action_equiv",
+      "orbit_action_map_surjective"
+    ],
+    "note": "The blind (- · x) agrees with orbit_action_map (second components in a proposition). orbit_action_map_surjective, free_iff_orbit_action_injective.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1777,
+    "labels": [
+      "lem:X_hG-set-iff-Xfree"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_X_hG_set_iff_free"
+    ],
+    "bridge_declarations": [
+      "bridge_X_hG_set_iff_free"
+    ],
+    "our_declarations": [
+      "action_type_set_free_equiv",
+      "action_type_set_orbit_map_equiv"
+    ],
+    "note": "action_type_set_orbit_map_equiv, action_type_set_free_equiv (free elements converted).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1811,
+    "labels": [
+      "lem:fixed-char"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_fixed_char"
+    ],
+    "bridge_declarations": [
+      "bridge_fixed_char"
+    ],
+    "our_declarations": [
+      "fixed_element_orbit_contractible",
+      "fixed_element_fixed_by_all"
+    ],
+    "note": "fixed_element_orbit_contractible, fixed_element_fixed_by_all.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1841,
+    "labels": [
+      "lem:fixpts-are-fixed",
+      "it:ev-is-inj",
+      "it:ev-is-eq-on-inv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_fixpts_are_fixed"
+    ],
+    "bridge_declarations": [
+      "bridge_fixpts_are_fixed"
+    ],
+    "our_declarations": [
+      "invariant_map_eval_injective",
+      "invariant_map_eval_image",
+      "invariant_maps_fixed_elements_equiv"
+    ],
+    "note": "invariant_map_eval_injective, invariant_map_eval_image.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1871,
+    "labels": [
+      "xca:Gset-A->B"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_S2xS2",
+      "blind_AB_set",
+      "blind_const22_set",
+      "blind_A2_set",
+      "blind_2B_set",
+      "blind_AB_action",
+      "blind_AB_orbits_invariants",
+      "blind_const22_orbits_invariants",
+      "blind_A2_orbits_invariants",
+      "blind_2B_orbits_invariants"
+    ],
+    "bridge_declarations": [
+      "bridge_def_S2xS2",
+      "bridge_def_AB_set",
+      "bridge_def_A2_set",
+      "bridge_def_2B_set",
+      "bridge_def_const22_set",
+      "bridge_AB_action",
+      "bridge_AB_orbits_invariants",
+      "bridge_const22_orbits_invariants",
+      "bridge_A2_orbits_invariants",
+      "bridge_2B_orbits_invariants"
+    ],
+    "our_declarations": [
+      "function_gset_act",
+      "function_gset_orbits_equiv",
+      "function_gset_no_invariant_maps"
+    ],
+    "note": "All G-sets are ours on the nose. The action comes from function_gset_act and gset_act_inv_right. The orbit and invariant counts come from function_gset_orbits_equiv (Bool ≃ Fin 2), constant_square_*, function_gset_left_* and function_gset_right_*.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1881,
+    "labels": [
+      "xca:HomGsets-ev"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_fun_gset",
+      "blind_HomGsets_ev"
+    ],
+    "bridge_declarations": [
+      "bridge_def_fun_gset",
+      "bridge_HomGsets_ev"
+    ],
+    "our_declarations": [
+      "gset_hom_fixed_maps_equiv"
+    ],
+    "note": "Hom_G(X,Y) = the invariant maps of z ↦ X(z) → Y(z) (refl). So invariant_map_eval_injective/image apply.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1903,
+    "labels": [
+      "def:Gx-action-on-G"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_tilde"
+    ],
+    "bridge_declarations": [
+      "bridge_def_tilde"
+    ],
+    "our_declarations": [
+      "stabilizer_tilde_gset"
+    ],
+    "note": "G̃_x = stabilizer_tilde_gset on the nose.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1918,
+    "labels": [
+      "xca:Gx-action-on-G"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_Gx_action_on_G"
+    ],
+    "bridge_declarations": [
+      "bridge_Gx_action_on_G"
+    ],
+    "our_declarations": [
+      "stabilizer_tilde_gset_act_base"
+    ],
+    "note": "stabilizer_tilde_gset_act.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1926,
+    "labels": [
+      "xca:fixed-free-neither-action-types"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_fixed_free_neither_action_types"
+    ],
+    "bridge_declarations": [
+      "bridge_fixed_free_neither_action_types"
+    ],
+    "our_declarations": [
+      "fixed_free_trivial_action_type_contr",
+      "fixed_free_principal_action_type_equiv",
+      "bits4_stabilizer_action_type_equiv"
+    ],
+    "note": "fixed_free_trivial_action_type_contr, fixed_free_principal_action_type_equiv. The C₄ orbit cards come from bits4_stabilizer_action_type_equiv, with the blind table equal to our row sizes.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1944,
+    "labels": [
+      "con:orbit-stabilizer"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_orbit_stabilizer"
+    ],
+    "bridge_declarations": [
+      "bridge_orbit_stabilizer"
+    ],
+    "our_declarations": [
+      "orbit_stabilizer_equiv"
+    ],
+    "note": "orbit_stabilizer_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1972,
+    "labels": [
+      "cor:action-subgrp-free"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_action_subgrp_free"
+    ],
+    "bridge_declarations": [
+      "bridge_action_subgrp_free"
+    ],
+    "our_declarations": [
+      "stabilizer_tilde_free"
+    ],
+    "note": "stabilizer_tilde_free, with free converted.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 1979,
+    "labels": [
+      "lem:cosets-Gx.g"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_cosets_Gx_g"
+    ],
+    "bridge_declarations": [
+      "bridge_cosets_Gx_g"
+    ],
+    "our_declarations": [
+      "stabilizer_coset_equiv"
+    ],
+    "note": "stabilizer_coset_equiv. Its map agrees with the blind (- · g) by stabilizer_coset_equiv_map and stabilizer_tilde_gset_usym_act.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2001,
+    "labels": [
+      "con:preLagrange"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_preLagrange"
+    ],
+    "bridge_declarations": [
+      "bridge_preLagrange"
+    ],
+    "our_declarations": [
+      "subgroup_coset_equiv",
+      "subgroup_coset_class"
+    ],
+    "note": "subgroup_coset_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-03-orbits.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2025,
+    "labels": [
+      "xca:lagrange2"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/02-subgroups.ny",
+    "blind_declarations": [
+      "blind_lagrange"
+    ],
+    "bridge_declarations": [
+      "bridge_lagrange"
+    ],
+    "our_declarations": [
+      "lagrange_cardinality_cosets"
+    ],
+    "note": "Same as xca:lagrange.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-02-subgroups.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2048,
+    "labels": [
+      "def:Gtorsor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "BlindTorsors",
+      "blind_torsors_base"
+    ],
+    "bridge_declarations": [
+      "bridge_def_torsors",
+      "bridge_def_torsors_base"
+    ],
+    "our_declarations": [
+      "Torsors"
+    ],
+    "note": "Torsor_G is ours on the nose. The blind base point differs from principal_torsor only in the witness.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2061,
+    "labels": [
+      "xca:torsor=free+transitive"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_torsor_free_transitive"
+    ],
+    "bridge_declarations": [
+      "bridge_torsor_free_transitive"
+    ],
+    "our_declarations": [
+      "torsor_iff_free_transitive"
+    ],
+    "note": "torsor_iff_free_transitive (free converted).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2065,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_torsors_component",
+      "blind_torsors_connected_groupoid",
+      "blind_torsors_classify_G"
+    ],
+    "bridge_declarations": [
+      "bridge_torsors_component",
+      "bridge_torsors_connected_groupoid",
+      "bridge_torsors_classify_G"
+    ],
+    "our_declarations": [
+      "torsors_coverings_component_equiv",
+      "torsor_group_path"
+    ],
+    "note": "torsors_coverings_component_equiv (path_cover is universal_covering_over on the nose). torsors_connected/groupoid. mkgroup(Torsor_G) = G comes from torsor_group_path, after a change of the base point witness and of the connectedness and groupoid proofs.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2085,
+    "labels": [
+      "def:BG2TorsG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_pathsp_witness",
+      "blind_pathsp_torsor",
+      "blind_BG2TorsG",
+      "blind_pathsp_tot_contractible"
+    ],
+    "bridge_declarations": [
+      "bridge_def_pathsp_torsor",
+      "bridge_pathsp_tot_contractible"
+    ],
+    "our_declarations": [
+      "bg_to_torsors_pointed"
+    ],
+    "note": "P_y as a torsor equals bg_to_torsors y (witness). Tot(P_y) contractible is ours.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2101,
+    "labels": [
+      "rem:pathsptransport"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_pathsp_ap_transport",
+      "blind_pathsp_transport"
+    ],
+    "bridge_declarations": [
+      "bridge_pathsp_transport",
+      "bridge_pathsp_ap_transport"
+    ],
+    "our_declarations": [
+      "gset_paths_family_transport",
+      "gset_paths_pointwise"
+    ],
+    "note": "gset_paths_transport.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-01-gsets.ny",
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2139,
+    "labels": [
+      "lem:pathsptransportiseq"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_pathsptransportiseq"
+    ],
+    "bridge_declarations": [
+      "bridge_pathsptransportiseq"
+    ],
+    "our_declarations": [
+      "gset_paths_ap_is_equiv"
+    ],
+    "note": "gset_paths_ap_is_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2150,
+    "labels": [
+      "lem:BGbytorsor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_BGbytorsor"
+    ],
+    "bridge_declarations": [
+      "bridge_BGbytorsor"
+    ],
+    "our_declarations": [
+      "bg_torsors_equiv",
+      "bg_to_torsors_is_equiv"
+    ],
+    "note": "bg_to_torsors_is_equiv, transferred along the pointwise witness paths.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2175,
+    "labels": [
+      "def:restrictandinduce",
+      "ft:f_!X(w)-orbitset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_restrict",
+      "BlindInduceSum",
+      "blind_induce",
+      "blind_tilde_is_restriction",
+      "blind_induce_gset",
+      "blind_induce_orbitset"
+    ],
+    "bridge_declarations": [
+      "bridge_def_restrict",
+      "bridge_def_induce",
+      "bridge_def_induce_gset",
+      "bridge_tilde_is_restriction",
+      "bridge_induce_orbitset"
+    ],
+    "our_declarations": [
+      "gset_restrict",
+      "gset_induce"
+    ],
+    "note": "f^*, f_! and the G-set (Bf(z) = w) × X(z) are ours on the nose. G̃_x = i_x^* princ by refl. The orbit-set description comes from induce_as_set_trunc and orbits_set_trunc_equiv. The underlying set is induced_sum_underlying_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2208,
+    "labels": [
+      "xca:why-setTrunc_f_!"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_why_setTrunc"
+    ],
+    "bridge_declarations": [
+      "bridge_why_setTrunc"
+    ],
+    "our_declarations": [
+      "why_set_trunc_not_set"
+    ],
+    "note": "Z = mkgroup(constructed circle), f : Z → 1, X = triv 1: why_set_trunc_not_set.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2217,
+    "labels": [
+      "xca:adjunction-_!-^*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_induce_iso",
+      "blind_adjunction_induce_restrict"
+    ],
+    "bridge_declarations": [
+      "bridge_induce_iso",
+      "bridge_adjunction_induce_restrict"
+    ],
+    "our_declarations": [
+      "induce_restrict_adjunction",
+      "induce_iso_path"
+    ],
+    "note": "induce_iso_equiv, induce_restrict_adjunction.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2293,
+    "labels": [
+      "rem:^*-_!-as-(pre)image"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_subtype_image",
+      "blind_connected_predicates_constant"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subtype_image",
+      "bridge_connected_predicates_constant"
+    ],
+    "our_declarations": [
+      "subtype_image_exists",
+      "subtype_preimage"
+    ],
+    "note": "The image subtype is ours on the nose (613). connected_subtype_constant.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2331,
+    "labels": [
+      "rem:coinduced-Hset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_coinduce",
+      "blind_coinduce_invariant"
+    ],
+    "bridge_declarations": [
+      "bridge_def_coinduce",
+      "bridge_coinduce_invariant"
+    ],
+    "our_declarations": [
+      "gset_coinduce"
+    ],
+    "note": "f_* is ours on the nose. coinduced_invariant_maps (a path of types).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2403,
+    "labels": [
+      "rem:coinduced-subset"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_subtype_coimage",
+      "blind_coinduced_subset"
+    ],
+    "bridge_declarations": [
+      "bridge_def_subtype_coimage",
+      "bridge_coinduced_subset"
+    ],
+    "our_declarations": [
+      "subtype_forall_preimage_equiv"
+    ],
+    "note": "The coimage subtype is ours on the nose. subtype_forall_preimage_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2412,
+    "labels": [
+      "xca:adjunction-^*-_*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_adjunction_restrict_coinduce"
+    ],
+    "bridge_declarations": [
+      "bridge_adjunction_restrict_coinduce"
+    ],
+    "our_declarations": [
+      "restrict_coinduce_adjunction"
+    ],
+    "note": "restrict_coinduce_adjunction.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2438,
+    "labels": [
+      "con:inducedtorsor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_inducedtorsor"
+    ],
+    "bridge_declarations": [
+      "bridge_inducedtorsor"
+    ],
+    "our_declarations": [
+      "induced_torsor_pointed",
+      "induced_torsor_naturality"
+    ],
+    "note": "induced_torsor, re-pointed at the blind base points. Naturality comes from induced_torsor_naturality through first components.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2468,
+    "labels": [
+      "lem:epifullyfaithful"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_epifullyfaithful"
+    ],
+    "bridge_declarations": [
+      "bridge_epifullyfaithful"
+    ],
+    "our_declarations": [
+      "restriction_injective"
+    ],
+    "note": "restriction_injective.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2560,
+    "labels": [
+      "lem:allgpsarepermutationgps"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_usym_set_type",
+      "blind_rho_fun",
+      "blind_rho_B",
+      "blind_rho",
+      "blind_cayley"
+    ],
+    "bridge_declarations": [
+      "bridge_def_rho_B",
+      "bridge_cayley"
+    ],
+    "our_declarations": [
+      "cayley_mono",
+      "cayley_hom"
+    ],
+    "note": "The blind Bρ_G agrees pointwise with cayley_classifying_map up to the component witness. The covering property is transported, and the mono property comes from covering_group_mono.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2596,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_cayley_covering"
+    ],
+    "bridge_declarations": [
+      "bridge_cayley_covering"
+    ],
+    "our_declarations": [
+      "cayley_mono_elementary"
+    ],
+    "note": "Covering as above.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2658,
+    "labels": [
+      "rem:CayleyOversize"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_PP",
+      "blind_CayleyOversize"
+    ],
+    "bridge_declarations": [
+      "bridge_def_PP",
+      "bridge_CayleyOversize"
+    ],
+    "our_declarations": [
+      "cayley_pp_gset",
+      "cayley_pp_invariant_equiv",
+      "cayley_fixed_eval_equiv"
+    ],
+    "note": "Card Σ₃ = 6 (symmetric_group_three_card). Bρ_G(z) = P_z(sh) by refl. cayley_pp_invariant_equiv.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2704,
+    "labels": [
+      "xca:PP-fixed-permutations"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_PP_apply",
+      "blind_PP_fixed_char",
+      "blind_PP_fixed_group",
+      "blind_PP_fixed_group_corrected"
+    ],
+    "bridge_declarations": [
+      "bridge_PP_fixed_char",
+      "bridge_pp_apply_concat",
+      "bridge_PP_fixed_group_refuted",
+      "bridge_PP_fixed_group_corrected"
+    ],
+    "our_declarations": [
+      "cayley_pp_fixed_iff",
+      "cayley_fixed_eval_anti",
+      "cayley_fixed_eval_not_hom_sigma3"
+    ],
+    "note": "The literal blind_PP_fixed_group is refuted (bridge_PP_fixed_group_refuted). For Σ₃ with π = right multiplication by σ, τ, it would give τσ = στ. The corrected statement (anti-homomorphism) is bridged from cayley_fixed_eval_equiv (through PP-fixed ≃ CayleyFixedPerms) and cayley_fixed_right_mult. The characterization of fixedness comes from cayley_pp_fixed_to/from.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2738,
+    "labels": [
+      "exa:prep-burnside",
+      "fig:C4-action-on-4-bits"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/03-orbits.ny",
+    "blind_declarations": [
+      "blind_four",
+      "blind_C4",
+      "blind_c4_set",
+      "blind_c4_s",
+      "blind_c4_e0",
+      "blind_c4_e1",
+      "blind_c4_e2",
+      "blind_c4_e3",
+      "blind_bool_of_dec",
+      "blind_and",
+      "blind_fin2_eq",
+      "blind_c4_constant",
+      "blind_c4_period2",
+      "blind_select",
+      "blind_c4_stab_card",
+      "blind_c4_orbit_card",
+      "blind_c4_underlying",
+      "blind_c4_rotation",
+      "blind_c4_six_orbits",
+      "blind_c4_orbit_times_stabilizer",
+      "BlindFixedBy",
+      "blind_c4_24_pairs"
+    ],
+    "bridge_declarations": [
+      "bridge_def_C4",
+      "bridge_def_c4_set",
+      "bridge_c4_constant_row",
+      "bridge_c4_period2_row",
+      "bridge_select_rows",
+      "bridge_row_stab",
+      "bridge_row_size",
+      "bridge_c4_stab_card",
+      "bridge_c4_orbit_card",
+      "bridge_c4_underlying",
+      "bridge_c4_six_orbits",
+      "bridge_def_fixed_by",
+      "bridge_c4_24_pairs",
+      "bridge_c4_orbit_times_stabilizer",
+      "bridge_c4_rotation"
+    ],
+    "our_declarations": [
+      "bits4_act_rot",
+      "bits4_orbits_equiv",
+      "bits4_orbit_stabilizer_product"
+    ],
+    "note": "The underlying set is refl. The rotation (s^k·f)(a) = f(s^{-k}a) is proved, and this confirms the orientation. The carrier of s^k is the k-th power of the successor (cycle_generator_power_eval), then bits4_act_pointwise applies. Six orbits, 24 pairs and Card(C₄·x)·Card(C₄)_x = 4 are ours (orbit set for τ₀).",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2803,
+    "labels": [
+      "lem:burnside",
+      "eq:burnside"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "BlindFixedBy",
+      "blind_burnside"
+    ],
+    "bridge_declarations": [
+      "bridge_burnside",
+      "bridge_def_fixed_by"
+    ],
+    "our_declarations": [
+      "burnside_lemma",
+      "burnside_orbits_finite",
+      "burnside_chain_equiv"
+    ],
+    "note": "burnside_fixed_by_finite, burnside_sum_finite, burnside_orbits_finite, burnside_lemma.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny",
+      "chapters/ch05/blind/bridge-04b-c4.ny"
+    ]
+  },
+  {
+    "source": "actions.tex",
+    "line": 2877,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch05/blind/04-torsors.ny",
+    "blind_declarations": [
+      "blind_pow",
+      "blind_monus",
+      "BlindIsPrime",
+      "blind_pow_litmus",
+      "blind_monus_litmus",
+      "blind_fermat"
+    ],
+    "bridge_declarations": [
+      "bridge_pow",
+      "bridge_monus",
+      "bridge_def_is_prime",
+      "bridge_fermat"
+    ],
+    "our_declarations": [
+      "fermat_little_theorem",
+      "fermat_burnside_equation",
+      "fermat_fixed_by_nonidentity_equiv"
+    ],
+    "note": "BlindIsPrime = NatIsPrime (refl). The blind power and truncated subtraction equal ours by induction. fermat_little_theorem is transported.",
+    "bridge_file": [
+      "chapters/ch05/blind/bridge-04-torsors.ny"
+    ]
+  }
+]

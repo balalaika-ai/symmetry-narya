@@ -5905,5 +5905,1556 @@
       "usym_set"
     ],
     "note": "The omission of the groupoid component of a pointed connected groupoid is group_to_infty_group : Group → InftyGroup (an embedding). The parenthetical remark (BG a groupoid makes USym G a set) is usym_set."
+  },
+  {
+    "source": "actions.tex",
+    "line": 9,
+    "quote": "This section should remind the reader of the material in cha:circle, where we dealt with the special case of the group of integers.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation (chapter overview)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 11,
+    "quote": "connected coverings now reappear in the guise of ``transitive G-sets'', and these are intimately related to the set of subgroups of a group.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_coverings_equiv",
+      "transitive_connected_equiv",
+      "subgroups_monos_equiv",
+      "Subgroups"
+    ],
+    "note": "G-sets are coverings over BG (gset_coverings_equiv, rem:G-set-vs-set-bundle). The transitive G-sets are exactly those with a connected total type (core lem:conistrans). Subgroups are pointed transitive G-sets, and they correspond to monomorphisms (lead module 507)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 14,
+    "quote": "These also generalize the bicycles of sec:bicycles, from which we lift the notion of ``normality''.",
+    "kind": "informal",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "wedge_gset",
+      "wedge_monodromy1",
+      "wedge_monodromy2",
+      "IsNormalGSet"
+    ],
+    "note": "Motivation. The bicycle example of fig:not-normal is formalized as a G-set for G = mkgroup(S¹ ∨ S¹) (module 566). Because of module 596, it now has no groupoid hypothesis. The general correspondence of bicycles with mkgroup(S¹ ∨ S¹)-sets is figure_eight_setfamilies_triples of chapter 4 (module 483). Only the bridge between the two parameters is missing. This bridge is an element of the FigureEightSignature of chapter 4 from a CircleWedgeSignature (same fields), together with an import of 483. The import chain 470–482 of 483 is heavy."
+  },
+  {
+    "source": "actions.tex",
+    "line": 18,
+    "quote": "The main result about G-torsors is that their type can be identified with the classifying type of the group G.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bg_torsors_equiv",
+      "bg_to_torsors"
+    ],
+    "note": "Core lem:BGbytorsor (module 504)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 20,
+    "quote": "In other words, the group G can be completely recovered from its torsors.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "torsor_group_path",
+      "bg_torsors_equiv"
+    ],
+    "note": "torsor_group_path (lead module 540): G = mkgroup(Torsor_G, P_G) as groups. It comes from the pointed equivalence BG ≃ (Torsor_G, P_G)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 20,
+    "quote": "This idea will be essential in ch:absgroup where we show that our definition of concrete groups is equivalent to the abstract version",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference to chapter 7."
+  },
+  {
+    "source": "actions.tex",
+    "line": 25,
+    "quote": "Brief overview of the chapter (sec:gsets, sec:subgroups, invariant maps and orbits, torsors, Cayley, Burnside).",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Chapter outline."
+  },
+  {
+    "source": "actions.tex",
+    "line": 47,
+    "quote": "in the circle S¹, the loop is a non-trivial transformation of the base point base.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gsets_circle_loop_nontrivial"
+    ],
+    "note": "gsets_circle_loop_nontrivial: loop ≠ refl_base for every CircleSignature (winding numbers 1 and 0)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 49,
+    "quote": "Take for example the 2-fold covering of S¹ whose fiber at base is 2. The symmetry loop acts on its two elements by swapping them.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "swapping_boolean_circle_family",
+      "swapping_boolean_circle_monodromy"
+    ],
+    "note": "Chapter 3 (module 120, xca:twoS1coverings): the monodromy of the swapping 2-fold covering is the swap of Bool."
+  },
+  {
+    "source": "actions.tex",
+    "line": 57,
+    "quote": "Recall that, to make things more readable, we write BG → Set instead of the more correct BG÷ → Set.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "GSet"
+    ],
+    "note": "GSet G ≔ BG G .carrier → SetTypes, that is, BG÷ → Set."
+  },
+  {
+    "source": "actions.tex",
+    "line": 69,
+    "quote": "The reader might worry that this notation conflicts with that of path composition. ... see def:principaltorsor for a special case where both conflates (i.e., where ·_X is indeed path composition).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gset_paths_act",
+      "principal_gset_act"
+    ],
+    "note": "On P_y, the action p ·_{P_y} q is concat q p (the book's p q) definitionally (core)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 74,
+    "quote": "In particular, if g : USym G, then X(g) is a permutation of the underlying set X(sh_G) of X.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_act_equiv",
+      "gset_usym_act"
+    ],
+    "note": "gset_act_equiv G X sh sh g : X(sh) ≃ X(sh), with the map gset_usym_act (core)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 84,
+    "quote": "Much of what follows will work equally well for ∞-groups; if G is an infinity group, a G-type is a function X : BG → U, with underlying type X(sh_G). This is an action in U, and more generally, an action of G on an element of type A is a function X : BG → A",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ActionInType",
+      "action_in_type_equiv",
+      "ActionOnElement",
+      "InftyActionInType",
+      "infty_action_object",
+      "InftyGType",
+      "InftyActionOnElement",
+      "infty_action_in_type_equiv"
+    ],
+    "note": "For groups: ActionInType G A = (BG → A), ActionOnElement and action_in_type_equiv (BG → A) ≃ Σ_{a:A} (action on a) (module 560). For ∞-groups (InftyGroup, chapter 4, module 485), the same notions are InftyActionInType, InftyGType, InftyActionOnElement and infty_action_in_type_equiv (module 599). For InftyGType, A = U and the underlying type is X(sh) = infty_action_object. The hedge that much of the subsequent text works for ∞-groups is not checked result by result."
+  },
+  {
+    "source": "actions.tex",
+    "line": 291,
+    "quote": "The following exercise wil be used in the subsequent remark.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Cross-reference. gset_action_composite_equiv does use xca:ptd-conn-to-comp."
+  },
+  {
+    "source": "actions.tex",
+    "line": 330,
+    "quote": "By the construction in rem:GSet=SetHomG we identify G-sets and sets with an action of G on a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "gset_action_equiv",
+      "GroupActionOnSet",
+      "gset_to_action",
+      "action_to_gset"
+    ],
+    "note": "gset_action_equiv : GSet G ≃ Σ_{S:Set} Hom(G, Σ_S). Its map is X ↦ (X(sh_G), gset_to_action G X), and its inverse is action_to_gset."
+  },
+  {
+    "source": "actions.tex",
+    "line": 357,
+    "quote": "In the case of the circle, classifying the group of integers Z, they [connected coverings] correspond to cycles (thm:cycset-connS1cover).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_connected_coverings_cycles"
+    ],
+    "note": "Chapter 3, thm:cycset-connS1cover."
+  },
+  {
+    "source": "actions.tex",
+    "line": 359,
+    "quote": "We hinted there that they are connected to subgroups, so we now study them over a general group G.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation."
+  },
+  {
+    "source": "actions.tex",
+    "line": 361,
+    "quote": "When seen as G-sets, connected coverings over BG are called transitive G-sets",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "transitive_connected_equiv",
+      "gset_coverings_equiv",
+      "IsTransitive"
+    ],
+    "note": "Under gset_coverings_equiv, the covering of X is fst : Tot(X) → BG, and IsTransitive G X ≃ Connected(Tot(X)) (core lem:conistrans)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 405,
+    "quote": "The next lemma is an analog of cor:ConnCycles (for cycles), and a generalization of lem:evisinj-bicycle (for bicycles).",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Cross-reference."
+  },
+  {
+    "source": "actions.tex",
+    "line": 406,
+    "quote": "The action in fig:not-normal corresponds to the bicycle back in fig:abnormal-bicycle (and reproduced in fig:not-normal-graph) illustrates what can go wrong.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "wedge_gset",
+      "wedge_monodromy1",
+      "wedge_monodromy2",
+      "wedge_bicycle_relabel",
+      "wedge_gset_symmetries_contractible"
+    ],
+    "note": "The G-set X of module 566 has the monodromies s = (0 1 2) and t = (0 1). wedge_bicycle_relabel shows that s is an isomorphism of (Fin 3, s, (0 1)) with (Fin 3, s, (1 2)). This is the abnormal bicycle of module 477 (a = s, b = (1 2)). Missing: the element of Bicycles (chapter 4) built from X through figure_eight_setfamilies_triples and bicycles_triples_equiv of module 483. Also missing: its identification with abnormal_bicycle (an Id Bicycles built from wedge_bicycle_relabel)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 477,
+    "quote": "An mkgroup(S¹∨S¹)-set X for which ev_x is not surjective.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "wedge_eval_not_surjective",
+      "wedge_gset_symmetries_contractible"
+    ],
+    "note": "Under the hypothesis that S¹ ∨ S¹ is a groupoid (see xca:not-normal)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 479,
+    "quote": "Note that the underlying set of X with the red and the blue permutation is a bicycle in the sense of def:bicycle.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "wedge_gset_transitive",
+      "transitive_connected_equiv",
+      "wedge_monodromy1",
+      "wedge_monodromy2"
+    ],
+    "note": "X is transitive, so Tot(X) is connected (lem:conistrans). Its monodromies are s and t (wedge_monodromy1/2). Missing: the element of Bicycles of chapter 4 (module 483: figure_eight_setfamilies_triples, bicycle_triple_connected, bicycles_triples_equiv). This element needs a FigureEightSignature built from the CircleWedgeSignature and an import of module 483."
+  },
+  {
+    "source": "actions.tex",
+    "line": 535,
+    "quote": "In sec:normal, in our study of normal subgroups, we will see exactly when we also get surjectivity of the evaluation map.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference."
+  },
+  {
+    "source": "actions.tex",
+    "line": 539,
+    "quote": "Via function extensionality, the identity type X = Y, for G-sets X,Y is a subtype of the type Hom_G(X,Y).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_path_to_hom",
+      "gset_path_to_hom_embedding",
+      "gset_path_equiv"
+    ],
+    "note": "Core module 501: X = Y ≃ Π_z (X(z) ≃ Y(z)), and the underlying-map function is an embedding."
+  },
+  {
+    "source": "actions.tex",
+    "line": 542,
+    "quote": "Hence we also have that evaluation at some x : X(z), for any given z : BG, is an injection ev_x : (X = Y) → Y(z).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_path_eval",
+      "gset_path_eval_injective"
+    ],
+    "note": "Core: gset_path_eval_injective, for transitive X (the context of lem:evisinjwhentransitive)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 555,
+    "quote": "We can now generalize the definition of normal bicycle from def:normal-bicycle to transitive G-sets",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "IsNormalGSet"
+    ],
+    "note": "This introduces def:normal-action (core IsNormalGSet)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 575,
+    "quote": "Oftentimes it is interesting not to have an action on a set, but on an element in any given type ... a group can act on another, giving rise to the notion of the semidirect product in sec:Semidirect-products.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation and forward reference (chapter 8)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 597,
+    "quote": "This generalizes our earlier definition of G-sets X : BG → Set from def:Gset",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gset_action_in_set"
+    ],
+    "note": "GSet G ≡ ActionInType G Set (refl, core)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 599,
+    "quote": "and harmonizes with rem:GSet=SetHomG, relating G-sets and actions of G on a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gset_action_composite_equiv",
+      "action_in_type_group_equiv",
+      "gset_action_equiv"
+    ],
+    "note": "By definition, gset_action_composite_equiv is action_in_type_group_equiv G Set sets_groupoid. gset_action_equiv agrees with it (gset_action_composite_map)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 601,
+    "quote": "Indeed, we identify an action of G in A with a pair of an underlying object a : A and an action of G on a: (BG → A) ≃ Σ_{a:A} Hom(G, Aut_A(a))",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "action_in_type_equiv",
+      "action_in_type_group_equiv",
+      "ActionOnElement"
+    ],
+    "note": "action_in_type_equiv holds for every type A with ActionOnElement (pointed maps BG →* (A_(a),(a,!))). action_in_type_group_equiv uses Hom(G, Aut_A(a)) for groupoids A. Aut_A(a) is a group only in that case."
+  },
+  {
+    "source": "actions.tex",
+    "line": 608,
+    "quote": "This equivalence, hinted at in xca:BGtotype,",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "bg_to_type_one_four"
+    ],
+    "note": "Chapter-4 module 436 proves xca:BGtotype as bg_to_type_one_four (groupoid A)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 609,
+    "quote": "maps an action X : BG → A to the pair consisting of a ≔ X(sh_G) and the homomorphism classified by the pointed map from BG to the pointed component A_(a) given by X.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "action_in_type_equiv_map",
+      "action_in_type_equiv_object",
+      "action_in_type_equiv_values"
+    ],
+    "note": "The map is X ↦ (X(sh_G), z ↦ (X(z),!)), pointed by the component path of refl (refl checks)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 686,
+    "quote": "some of the symmetries of $\\base$ were picked out by the degree $m$ function $\\dg{m}: \\Sc\\to\\Sc$ ... the symmetries picked out are all the iterates ... of $\\Sloop^m$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_degree_hom",
+      "circle_degree_mono",
+      "circle_degree_hom_based_action",
+      "circle_degree_picked_multiple",
+      "circle_degree_multiple_picked",
+      "rmsub_picks_out"
+    ],
+    "note": "Let deg_m (m > 0) be pointed by its computation rule (circle_degree_hom). Then deg_m picks out a symmetry of base iff it is merely loop^(qm) for some q : Z (circle_degree_picked_multiple, circle_degree_multiple_picked, module 599). Here Ω deg_m is the based action of chapter 3 (circle_degree_hom_based_action), whose windings are the multiples of m. The same subset occurs as the symmetries that fix 0 in R_m (ex:Rm0-subgroup, rmsub_picks_out). The remark on the composition and inversion of iterates is the subgroup structure."
+  },
+  {
+    "source": "actions.tex",
+    "line": 700,
+    "quote": "We can pick out the single symmetry $\\Sloop^0$ by the constant map $\\cst{\\base} : \\bn 1 \\to \\Sc$.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivational. The corresponding statement for the universal Z-set R is part of ex:Rm0-subgroup."
+  },
+  {
+    "source": "actions.tex",
+    "line": 709,
+    "quote": "Both $\\dg{m}$ and $\\cst{\\base}$ can trivially be pointed to make them into classifying maps of homomorphisms that are injections on the respective sets of symmetries.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_degree_hom",
+      "circle_degree_hom_mono",
+      "trivial_group_hom_to",
+      "trivial_group_hom_mono",
+      "circle_constant_hom",
+      "circle_constant_hom_mono",
+      "covering_group_mono",
+      "circle_degree_connected_cover"
+    ],
+    "note": "deg_m, pointed by the inverse of its computation rule at base, is the classifying map of circle_degree_hom : Hom(Z, Z). This is a monomorphism for m > 0 (circle_degree_hom_mono, through covering_group_mono and cor:dgm-conncov). cst_base pointed by refl is circle_constant_hom : Hom(1, Z). It is a monomorphism, because every homomorphism out of the trivial group is a monomorphism (trivial_group_hom_mono). Module 599."
+  },
+  {
+    "source": "actions.tex",
+    "line": 713,
+    "quote": "\\cref{lem:conistrans} lets us view these as transitive $\\ZZ$-sets with a chosen element in their underlying sets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "transitive_connected_equiv",
+      "mono_to_subgroup"
+    ],
+    "note": "General form: E : Mono(G) → Sub(G) (mono_to_subgroup) turns a monomorphism into a pointed transitive G-set."
+  },
+  {
+    "source": "actions.tex",
+    "line": 747,
+    "quote": "we can consider the total type $\\Tot(X)$ ... Together with the first projection, it makes a connected \\covering over $\\BG$ and its fiber (at $\\sh_G$) contains a particular point, namely $(\\sh_G,\\pt)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "action_type_projection_covering",
+      "transitive_action_type_connected"
+    ],
+    "note": "fst : Tot(X) → BG is a covering, and Tot(X) is connected for transitive X."
+  },
+  {
+    "source": "actions.tex",
+    "line": 751,
+    "quote": "The first projection then becomes (the classifying map of) a homomorphism from that group to $G$ that embeds the symmetries of $(\\sh_G,\\pt)$ in $\\Tot(X)$ into these of $\\sh_G$ in $\\BG$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subgroup_inclusion",
+      "subgroup_inclusion_mono"
+    ],
+    "note": "subgroup_inclusion is fst pointed by refl. It is a monomorphism."
+  },
+  {
+    "source": "actions.tex",
+    "line": 789,
+    "quote": "The following result is analogous to the fact that $\\Sub(T)$ is a set for any type $T$",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Analogy. There is no claim beyond lem:SubGisset."
+  },
+  {
+    "source": "actions.tex",
+    "line": 896,
+    "quote": "The subgroup of $\\CG_6$ explained above is a decidable subgroup.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "c6half_subgroup_decidable",
+      "c6half_decidable_equality",
+      "c6half_rel_decidable"
+    ],
+    "note": "X(sh) = Fin 6 / 2 has decidable equality, because [i] = [j] iff i and j have the same parity (quotient_decidable_equality)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 897,
+    "quote": "There are other decidable subgroups of $\\CG_6$, and they are accounted for simply by the various factorizations of the number $6$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "c6sub_subgroup",
+      "c6sub_subgroup_decidable",
+      "c6sub_subgroup_group_path",
+      "c6sub_index_card",
+      "c6sub_divisor",
+      "c6sub_cofactor",
+      "c6sub_factorization",
+      "c6sub_classification",
+      "c6sub_subgroup_injective",
+      "c6sub_decidable_subgroups_equiv",
+      "C6SubgroupClassification",
+      "c6sub_classification_package",
+      "c6sub_book_classification",
+      "c6sub_book_equiv",
+      "c6sub_book_half_index",
+      "c6sub_check_all"
+    ],
+    "note": "For each factorization 6 = d·k (d = 1, 2, 3, 6, indexed by Fin 4), T_c is the cyclic subgroup generated by s^d. It is decidable, its underlying group is C_k, and its underlying set has d elements (Lagrange counting). Every decidable subgroup equals T_c for exactly one c (c6sub_classification). The proof is a finite Boolean check of which powers s^i fix the point, then mutual containment. Distinct c have distinct orders. So the decidable subgroups of C_6 are equivalent to Fin 4 (c6sub_decidable_subgroups_equiv). The proof is for C_6 = cyclic_group 6, and transport gives the result for the book's C_6 = cyclic_group_fin 5 (c6sub_book_classification, c6sub_book_equiv). The subgroup (X/2, [0]) of exa:C3subC6 is the factorization 6 = 2·3 (c6sub_book_half_index). The T_c are given as cyclic subgroups, not through quotient sets X/d for d ≠ 2."
+  },
+  {
+    "source": "actions.tex",
+    "line": 912,
+    "quote": "recall from~\\cref{cor:fib-vs-path}\\ref{set-fib-vs-path-point} that $\\USymf$ is injective iff $\\Bf$ is a \\covering, for any homomorphism $f$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "group_mono_covering",
+      "covering_group_mono"
+    ],
+    "note": "Both directions, for f : Hom(H,G) with BH connected."
+  },
+  {
+    "source": "actions.tex",
+    "line": 933,
+    "quote": "the identity type of $\\typemono(G)$ identifies precisely the triples that define the same subset of $\\USym G$, namely when their homomorphisms differ by precomposition by an identification of their underlying groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_over_path",
+      "mono_preserves_symmetries",
+      "group_monos_set",
+      "mono_path_of_same_symmetries",
+      "mono_path_preserves_picked",
+      "SymmetryPickedOut"
+    ],
+    "note": "Two monomorphisms into G are identified iff they pick out the same symmetries of G. The two directions are mono_path_of_same_symmetries (module 599, through Sub(G) ≃ Mono(G) and subgroup_le_antisym of chapter 10) and mono_path_preserves_picked. Both sides are propositions (Mono(G) is a set, group_monos_set). The book describes the identification by precomposition with an identification of underlying groups. This is the Σ-type characterization of identifications, and pointed_over_path gives the direction that the book uses."
+  },
+  {
+    "source": "actions.tex",
+    "line": 946,
+    "quote": "We call $H$ the \\emph{underlying group} of any monomorphism $(H,i)$ into $G$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "GroupMonos"
+    ],
+    "note": "m .fst."
+  },
+  {
+    "source": "actions.tex",
+    "line": 953,
+    "quote": "This amounts to $Bi$ being the universal \\covering over $BG$",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "IsTrivialMono",
+      "IsTrivialGroup",
+      "universal_cover_contractibility_equiv"
+    ],
+    "note": "IsTrivialMono is the contractibility of BH. universal_cover_contractibility_equiv of chapter 3 identifies universal pointed coverings with those that have a contractible domain. Missing: the package of the monomorphism data (BH, Bi) as a pointed covering over BG (Bi is a covering by def:typeofmono). Also missing: the composition of the two equivalences into IsTrivialMono ≃ IsUniversal(Bi)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1095,
+    "quote": "Since $\\Sub(G)$ is a set by \\cref{lem:SubGisset}, \\cref{lem:SubG=MonoG} allows us to conclude:",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_monos_set"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 1102,
+    "quote": "The following lemma states that the equivalences in \\cref{lem:SubG=MonoG} preserve the subsets of symmetries that are picked out.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "mono_preserves_symmetries"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 1127,
+    "quote": "Which of the equivalent sets $\\typemono(G)$ and $\\Sub(G)$ is allowed to be called ``the set of subgroups of $G$'' is, of course, a choice.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Terminology. The equivalence itself is subgroups_monos_equiv. The second marginnote (with the wip disagreement of the authors) compares with set-based mathematics and is informal."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1137,
+    "quote": "First, observe that the underlying groups of an element in $\\typemono(G)$ and of its image under $E$ in $\\Sub(G)$ can be identified.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "mono_subgroup_group_path"
+    ],
+    "note": "subgroup_group G (E m) = m .fst, from F(E(m)) = m."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1188,
+    "quote": "In this section we give a general version of Lagrange's Theorem. It serves as a basis for more traditional versions, such as the counting version in \\cref{xca:lagrange} below.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "lagrange_construction",
+      "lagrange_cardinality"
+    ],
+    "note": "The counting version lagrange_cardinality is derived from lagrange_construction (con:lagrange)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1219,
+    "quote": "This construction also works for \\inftygps acting on types. However, the premiss may be harder to fulfill in such general cases.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "Footnote of the implementation of con:lagrange. The formalization treats only groups (groupoid BG, set-valued X), but lagrange_sum_equiv uses no truncation level."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1231,
+    "quote": "A minor modification of the above implementation, indicated in \\cref{ft:lagrange-dep-sum} gives \\cref{cor:lagrange-dep-sum}, which is sometimes more convenient, \\eg in the proof of \\cref{lem:burnside}.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "lagrange_dep_sum_equiv",
+      "lagrange_equiv"
+    ],
+    "note": "Both equivalences share lagrange_sum_equiv. They differ only in the last step (preconcatenation instead of postconcatenation)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1319,
+    "quote": "Some of these make equally good sense for \\emph{$G$-types} for \\aninftygp $G$, in which case we add a footnote to this effect.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Announcement of footnotes. This formalization does not set up ∞-groups."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1326,
+    "quote": "In \\cref{fig:covering} the left picture exhibits a transitive one, and the right picture a non-transitive one. Also, \\cref{fig:two-comp-S1-cover} shows a non-transitive $\\ZZ$-set, whereas the $m$\\th power bundle over the circle in \\cref{fig:m-th-power} is a transitive $\\ZZ$-set.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This refers to pictures of chapter 3. The transitivity of the m-th power Z-set R_m is part of ex:Rm0-subgroup."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1334,
+    "quote": "\\cref{lem:conistrans} gives a good explanation of these pictures: A $G$-set is transitive if and only if the associated \\covering is connected.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "transitive_connected_equiv",
+      "gset_coverings_equiv"
+    ],
+    "note": "lem:conistrans: IsTransitive G X ≃ Connected (X_hG). The covering associated with X is fst : X_hG → BG (gset_coverings_equiv)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1337,
+    "quote": "In the sense that $\\Trunc{(z,x)\\eqto(w,y)}$ if and only if there exists a $g:z\\eqto w$ such that $g\\cdot_X x = y$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "action_type_mere_path_equiv",
+      "action_type_mere_path_exists"
+    ],
+    "note": "Footnote: the truncated form of rem:path-in-action-type."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1340,
+    "quote": "If $X$ is not transitive, then the latter total type falls apart in different components. Since these components are themselves connected, the choice of an element of them gives rise to a subgroup of $G$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbit_subgroup",
+      "orbit_gset_point_transitive",
+      "orbit_splitting_members_equiv"
+    ],
+    "note": "For x : X(sh_G), the orbit G-set X_[x] is transitive and (X_[x], x) : Sub(G) (orbit_subgroup). X_hG is the sum of the action types of the orbits (orbit_splitting_members_equiv)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1349,
+    "quote": "This definition can be generalized to \\inftygps $G$ and $G$-types $X$.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This footnote recurs (also at lines 1504, 1635, 1728, 1779, 1815, 1948). The formalization covers only groups and G-sets. Most constructions (action type, invariant maps, stabilizers as automorphism groups) are written for set-valued families, but they do not use the set condition essentially. The repository has no ∞-group API."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1361,
+    "quote": "Invariant maps are dependent functions $f$ and the reason for the new name in this context is that $f(z) = g \\cdot_X f(z)$ for any $z:\\BG$ and $g:z\\eqto z$. ... Note that there need not be any invariant maps: the type of invariant maps of $\\princ{\\ZZ}$, \\ie $\\prod_{z:\\Sc}\\base\\eqto z$, is empty. ... the successor function has no fixed point.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "invariant_map_fixed_by_loops",
+      "principal_circle_no_invariant_maps",
+      "invariant_maps_circle_loop_nontrivial"
+    ],
+    "note": "Footnote of def:actiontype: every loop at z fixes f(z). For every CircleSignature C, Π_{z} (base = z) is empty. A section would make loop trivial, but loop ↦ 1 under the universal cover."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1393,
+    "quote": "These various definitions are closely related. For example, we will soon identify the set of orbits with the set truncation of the action type",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbits_set_trunc_equiv"
+    ],
+    "note": "Forward reference to lem:X/G=setTruncX_hG."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1397,
+    "quote": "When $G$-sets are considered as \\coverings $f : A \\to \\BG$, they are the domains $A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "gset_coverings_equiv",
+      "gset_coverings_equiv_total"
+    ],
+    "note": "By definition, the covering associated with X has the total type X_hG (gset_coverings_equiv_total)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1400,
+    "quote": "showing an action of $\\ZZ$ on $\\set{1,2,3,4,5}$ with no invariant maps and an action type equivalent to a sum of two circles. In~\\cref{fig:ZZ-set-orbits}, we show a similar $\\ZZ$-set, with underlying set $\\set{0,1,2,3,4,5}$, three orbits, and $5$ corresponding to the only invariant map.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "These are illustrations by pictures of specific Z-sets that the text does not give formally. The general facts that they use (invariant maps ≃ fixed points, orbits as components) are lem:fixpts-are-fixed and cor:orbit-equiv. The principal Z-set has no invariant maps: principal_circle_no_invariant_maps."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1468,
+    "quote": "we have highlighted one single component of the action type in blue (\\ie corresponding to an element of the set of orbits), and we see that it contains a subset of the underlying set, the three red elements $\\set{0,1,2}$. Such a set is what is traditionally called an orbit.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_of_point_fiber_equiv",
+      "OrbitUnderlying"
+    ],
+    "note": "Description of the figure. The general statement (the fiber of [-] at an orbit O is the underlying set of X_O) is orbit_of_point_fiber_equiv."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1486,
+    "quote": "Recall from \\cref{rem:path-in-action-type} the equivalence of $\\Trunc{(z,x)\\eqto(w,y)}$ and $\\exists_{g:z\\eqto w}(g\\cdot x = y)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "action_type_mere_path_equiv"
+    ],
+    "note": "Recalled from rem:path-in-action-type."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1497,
+    "quote": "In view of the above lemma, we call $[u]_0$ \\emph{the orbit through} $u$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_map"
+    ],
+    "note": "Naming."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1531,
+    "quote": "Another way to state the above lemma is that the map $[\\blank]_0 :X_{hG}\\to X/G$ factors as the composite of $\\settrunc\\blank$ followed by a unique equivalence: $X_{hG}\\to \\setTrunc{X_{hG}}\\equivto X/G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbits_set_trunc_unique",
+      "orbits_set_trunc_equiv",
+      "orbits_set_trunc_equiv_class"
+    ],
+    "note": "The type of equivalences e : ‖X_hG‖_0 ≃ X/G with e ∘ |-|_0 = [-]_0 is contractible."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1544,
+    "quote": "In view of this corollary, we call $[x]$ \\emph{the orbit through} $x$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_of_point"
+    ],
+    "note": "Naming."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1595,
+    "quote": "Thus, both the underlying set $X(\\sh_G)$ and the action type $X_{hG}$ have equivalence relations (induced by the surjections $[\\blank]$ and $[\\blank]_0$, respectively) with quotient set $X/G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbit_quotient_equiv",
+      "orbits_set_trunc_equiv",
+      "orbit_map_surjective",
+      "orbit_of_point_surjective",
+      "orbit_map_path_equiv",
+      "orbit_equivalence_relation"
+    ],
+    "note": "Both maps are surjective. X/G is the quotient of X(sh_G) by ∃_g (g·x = y) (cor:orbit-equiv). It is also the set truncation of X_hG, that is, the quotient by ‖u = v‖ (orbit_map_path_equiv)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1598,
+    "quote": "This also justifies the notation $X/G$. We have a diagram of surjective maps: X(sh_G) → X_hG (x ↦ (sh_G,x)), [-] and [-]_0 to X/G",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_of_point_factors",
+      "action_type_base_point_surjective",
+      "orbit_of_point_surjective",
+      "orbit_map_surjective"
+    ],
+    "note": "Footnote ft:orbit-surj: the triangle commutes ([x] ≡ [(sh_G,x)]_0), and all three maps are surjective. The map x ↦ (sh_G,x) is surjective because BG is connected."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1611,
+    "quote": "Note that the underlying $G$-set of O, \\ie $X_O$, is transitive. It follows that $O(u)$ holds if and only if $O=[u]_0$, for all $u:X_{hG}$. Therefore, the fiber $\\inv{[O]_0}$ is equivalent to the action type $(X_O)_{hG}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbit_member_path_equiv",
+      "orbit_members_action_type_equiv",
+      "orbit_map_fiber_equiv"
+    ],
+    "note": "OrbitMember O u ≃ (O = [u]_0). The fiber of [-]_0 over O is equivalent to Σ_z X_O(z)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1614,
+    "quote": "Notice the abuse here where $O(u)$ stands for $O(z)(x)$ where $u \\jdeq (z,x)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "OrbitMember"
+    ],
+    "note": "OrbitMember G X O (z,x) is O(z)(x)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1617,
+    "quote": "If $O(u)$ and $O(v)$, then $\\Trunc{u\\eqto v}$ by the transitivity of $X_O$. The rest is obvious.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_members_merely_equal"
+    ],
+    "note": "Footnote."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1622,
+    "quote": "the fiber $\\inv{[O]}$ is equivalent to the underlying set of $X_O$, \\ie $X_O(\\sh_G)\\jdeq\\sum_{x:X(\\sh_G)} O(\\sh_G)(x)$ via identity on first components.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbit_of_point_fiber_equiv",
+      "orbit_of_point_fiber_equiv_fst"
+    ],
+    "note": "The equivalence is the identity on first components (orbit_of_point_fiber_equiv_fst)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1705,
+    "quote": "The following lemma states that the orbits of a $G$-set $X$ sum up to its underlying set, with the sum taken over the set of orbits $X/G$.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "orbit_splitting_equiv"
+    ],
+    "note": "Announcement of lem:splitting into orbits."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1826,
+    "quote": "If we evaluate an invariant map $f : \\prod_{z:\\BG}X(z)$ at $\\sh_G$ we do indeed land in this subset: ... $g\\cdot x = x$, for all $g:\\USymG$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "invariant_map_fixed_by_loops",
+      "invariant_map_value_fixed_by_all",
+      "invariant_map_value_fixed"
+    ],
+    "note": "Every g fixes f(sh_G) (through apd f g). Hence f(sh_G) is a fixed element."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1838,
+    "quote": "The following lemma states that, conversely, each fixed $x$ uniquely determines an invariant map.",
+    "kind": "informal",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fixed_element_invariant_map",
+      "invariant_maps_fixed_elements_equiv"
+    ],
+    "note": "Announcement of lem:fixpts-are-fixed."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1894,
+    "quote": "The classifying type of the stabilizer group $G_x$ is the component of $X_{hG}$ pointed by the shape $(\\sh_G,x)$. The first projection of a symmetry of $(\\sh_G,x)$ is a symmetry of $\\sh_G$, and the second projection is a proof of a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "stabilizer_group",
+      "stabilizer_usym_equiv",
+      "action_type_path_equiv"
+    ],
+    "note": "BG_x ≡ NativeComponent (X_hG) (sh_G, x) by definition. A symmetry of (sh_G, x) is a pair (g, g·x = x), with the second component in a set-level identity type (stabilizer_usym_equiv)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1915,
+    "quote": "The underlying set of $\\tilde G_x$ is $\\USymG$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "stabilizer_tilde_gset_underlying"
+    ],
+    "note": "By definition (refl)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1939,
+    "quote": "The action type of $\\tilde G_x$ can be identified with the underlying set of the orbit through $x$ under $X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "orbit_stabilizer_equiv"
+    ],
+    "note": "con:orbit-stabilizer."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1965,
+    "quote": "One is that $(\\tilde G_x)_{hG_x}$ is a set, so that \\cref{lem:X_hG-set-iff-Xfree} applies",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "stabilizer_tilde_action_type_set",
+      "stabilizer_tilde_free"
+    ],
+    "note": "This is proved from the orbit–stabilizer equivalence (G·x is a set)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1966,
+    "quote": "Note that \\cref{xca:Gx-action-on-G} already implies that $(\\tilde G_x)_{hG_x}$ is a set: given $(\\sh_G,x,!,g)$ and $(z,y,!,g')$, there can be at most one $s : \\sh_G \\eqto z$ such that $s\\cdot_{\\tilde G_x} g = sg = g'$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "stabilizer_tilde_mover_unique",
+      "stabilizer_tilde_gset_act",
+      "stabilizer_tilde_action_type_set"
+    ],
+    "note": "Footnote ft:action-type-tildeGx-set: let g : sh = sh and g' : sh = z. Then there is at most one s : sh = z with s g = g' (stabilizer_tilde_mover_unique, module 599). The proof shows that the fiber of s ↦ s g over g' is contractible. The conclusion that (G̃_x)_{hG_x} is a set is proved through con:orbit-stabilizer (stabilizer_tilde_action_type_set)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1976,
+    "quote": "We further obtain that the underlying set of the orbit of $\\tilde G_x$ through $g$ can be identified with the underlying set of $G_x$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "stabilizer_coset_equiv"
+    ],
+    "note": "lem:cosets-Gx.g."
+  },
+  {
+    "source": "actions.tex",
+    "line": 1991,
+    "quote": "In ordinary group theory, a subgroup $H$ of a group $G$ always acts on $G$ by multiplication: this is the $G_{\\pt}$-set $\\tilde G_{\\pt}$ ... The set of orbits for this action is the set $G/H$ of cosets ... in bijection with $H$ ... The group $G$ acts transitively on the set of cosets $G/H$: this is the $G$-set $X$ in our presentation.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "stabilizer_tilde_gset",
+      "stabilizer_tilde_gset_usym_act",
+      "stabilizer_coset_equiv",
+      "subgroup_coset_equiv"
+    ],
+    "note": "This footnote relates to classical cosets. G_pt acts on USym G by left multiplication (stabilizer_tilde_gset_usym_act). Each coset G_pt·g is in bijection with USym G_pt. The cosets form a set that is equivalent to X(sh_G) (con:preLagrange)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2017,
+    "quote": "It is in fact possible to obtain the counting version of Lagrange's Theorem, \\cref{xca:lagrange}, from the above results",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "lagrange_cardinality_cosets"
+    ],
+    "note": "xca:lagrange2."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2039,
+    "quote": "In the end we want to prove that the type of torsors of $\\abstr(G)$ is equivalent to $\\BG$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference to chapter 7 (abstract torsors)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2052,
+    "quote": "There is no conflict with the case when the $\\infty$-group $G$ is actually a group since then any $G$-type in the component of the principal $G$-torsor will be a $G$-set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "torsor_type_family_sets"
+    ],
+    "note": "A type family BG → Type that is merely equal to z ↦ (sh_G = z) is set-valued."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2068,
+    "quote": "Admittedly in a higher universe, but we can use the Replacement~\\cref{pri:replacement} to see that $\\typetorsor_G$ is equivalent to a type in the same universe as $G$",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The pinned Narya has a single universe. In any case, lem:BGbytorsor (bg_torsors_equiv) subsumes the conclusion."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2095,
+    "quote": "That is, we have classified a homomorphism from $G$ to $\\Aut_{\\GSet}(\\princ G)$. It'll turn out to be an isomorphism.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bg_to_torsors_pointed",
+      "bg_to_torsors_is_equiv",
+      "torsor_group_path"
+    ],
+    "note": "The classifying type of Aut_GSet(P_G) is the component Torsor_G of GSet at P_G (torsors_component). The classifying map is an equivalence."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2129,
+    "quote": "the following lemma is a corollary of a \\emph{type-theoretic Yoneda lemma}, and the proof is \\cref{xca:TTYoneda}.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "representable_ap_equiv",
+      "gset_paths_ap_equiv"
+    ],
+    "note": "The chapter-3 Yoneda result representable_ap_equiv is the type-valued version. The set-valued statement is proved directly by the route of the footnote (gset_paths_ap_equiv). Missing: a derivation of gset_paths_ap_equiv from representable_ap_equiv (xca:TTYoneda), that is, an identification of the two equivalences."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2135,
+    "quote": "Take as inverse equivalence the map $Q$ mapping any $f:\\pathsp y \\eqto \\pathsp z$ to $Q(f) \\defequi \\inv{(f_y(\\refl y))} : (y\\eqto z)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_paths_ap_inverse",
+      "gset_paths_ap_equiv"
+    ],
+    "note": "Exactly this inverse."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2168,
+    "quote": "Off-hand, the answer is the round-trip $(\\pathsp{\\blank}^H)\\Bf(\\pathsp{\\blank}^G)^{-1}$, but we can be more concrete than that.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "induced_torsor_naturality"
+    ],
+    "note": "f_! ∘ P^G = P^H ∘ Bf."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2418,
+    "quote": "When $X$ is the $G$-torsor $\\pathsp x^G$, for some $x:\\BG$, the contraction ... induces an equivalence $\\eta_w$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induced_paths_equiv",
+      "induced_paths_path"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 2430,
+    "quote": "so that the action of $\\pathsp{\\blank}^H$ gives us a path $\\pi : \\princ H \\jdeq\\pathsp{\\sh_H}^H \\eqto \\pathsp{\\Bf(\\sh_G)}^H$. Combining we get $\\inv\\eta\\pi:\\princ H \\eqto f_!\\,\\princ G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induced_principal_path"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 2433,
+    "quote": "If $X$ is a $G$-set such that $\\Trunc{\\princ G \\eqto X}$, then $f_!X$ is an $H$-set such that $\\Trunc{\\princ H \\eqto f_!X}$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induced_torsor"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 2459,
+    "quote": "if $f:\\Hom(G,H)$ is such that $\\USymf$ is surjective, then $f^*$ embeds the type of $H$-sets as some of the components of the type of $G$-sets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "restriction_injective"
+    ],
+    "note": "An embedding of groupoids. 'Some of the components' is the reading of IsEmbedding."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2461,
+    "quote": "In \\cref{sec:epis} we will prove such an $f$ to be an \\emph{epimorphism}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference to chapter 9."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2533,
+    "quote": "For abstract groups there is a result, attributed to Cayley, which is often stated as ``any group is a permutation group''.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Historical/motivational."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2549,
+    "quote": "Fixing the second argument $y$ to $\\sh_G$, we obtain a map $\\pathsp{\\blank}^G(\\sh_G):\\BG\\to\\Set$. And since $\\pathsp{\\sh_G}^G(\\sh_G)\\jdeq \\USymG$, we can point $\\pathsp{\\blank}^G(\\sh_G)$ with reflexivity",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cayley_hom",
+      "cayley_classifying_map",
+      "cayley_set"
+    ],
+    "note": "Bρ_G(z) = (gset_paths G z (shape G), !) in Set_(USym G). The pointing path has the first component refl. The second component, which is propositional, is adjusted."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2573,
+    "quote": "All the maps involved are pointed maps between groupoids, so the commutativity of this triangle is a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cayley_factorization",
+      "cayley_triangle_prop",
+      "pointed_maps_set"
+    ],
+    "note": "The triangle is given pointwise (cayley_factorization: ev_sh ∘ P_- = Bρ_G). Its commutativity as pointed maps BG →* BΣ_{USym G} is a proposition (cayley_triangle_prop, module 599). This follows from pointed_maps_set (connected source, groupoid target). The pointed identification itself is not constructed. Cayley's theorem does not need it, because the theorem uses the pointwise factorization."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2587,
+    "quote": "we are done if we show that, for any $S:\\Set_{(\\USymG)}$, the fiber $\\inv{\\ev_{\\sh_G}}(S)$ is a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "torsor_evaluation_covering",
+      "torsor_evaluation_fiber_equiv"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 2626,
+    "quote": "Note that the \\cref{lem:allgpsarepermutationgps} yields that $(G,\\rho_G)$ is a monomorphism into $\\SG_{\\USymG}$. In other words, $G$ is a subgroup of $\\SG_{\\USymG}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cayley_monomorphism",
+      "cayley_subgroup"
+    ],
+    "note": ""
+  },
+  {
+    "source": "actions.tex",
+    "line": 2628,
+    "quote": "Note that the induced map on symmetries is: $\\USym\\rho_G:\\USym G \\to (\\USym G \\eqto \\USym G): g \\mapsto (x \\mapsto x\\inv g)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "cayley_usym_action"
+    ],
+    "note": "As a permutation: permutation_action of USym ρ_G(g) sends x to usym_mul x g⁻¹ = concat g⁻¹ x (typal)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2636,
+    "quote": "The underlying group of $E(G,\\rho_G)$ has classifying type $\\sum_{X:\\BSG_{\\USymG}} \\inv{\\B\\rho_G} (X)$ and shape $(\\USymG,(\\sh_G,\\id_{\\USymG}))$. ... the symmetries of this shape are precisely those permutations $\\pi$ of $\\USymG$ for with there exist a $g:\\USymG$ such that $\\pi$ is right multiplication by $\\inv g$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cayley_subgroup",
+      "cayley_subgroup_symmetries",
+      "cayley_usym_action"
+    ],
+    "note": "The picked-out symmetries are those in the image of USym ρ_G (lem:E-preserves-symms), that is, right multiplications by g⁻¹. The second component of the shape is (sh_G, pointing path of ρ_G), not literally id (its first component is refl)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2641,
+    "quote": "traditionally, Cayley's Theorem selects the permutations that are left multiplications by some $g$. We could have arranged for $\\USym\\rho_G$ to select the same permutations here (by chosing $\\B\\rho_G$ to be $\\princ G$ instead)",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "principal_gset_act"
+    ],
+    "note": "The action of P_G is left multiplication (principal_gset_act). So the permutations that left multiplication selects are the USym of the alternative classifying map z ↦ P_G(z). Missing: the alternative ρ'_G with Bρ'_G = P_G (pointed with the inverted pointing of ev_sh). Also missing: the statement that USym ρ'_G selects exactly the left multiplications."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2730,
+    "quote": "Should we add a little remark on the other natural $\\B\\rho_G$ possible, namely $\\princ G$?",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Work-in-progress note of the authors."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2734,
+    "quote": "The lemma that is not Burnside's",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Section title (historical remark on the attribution of the lemma). No mathematical claim."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2848,
+    "quote": "Note that the last type in the chain above reflects how we counted in fig:C4-action-on-4-bits: for every orbit, and every element in the underlying set of that orbit, we counted the stabilizers of that element.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Comment that relates the chain to the counting in exa:prep-burnside. The chain itself is burnside_chain_equiv."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2855,
+    "quote": "These points x_O can be obtained as the `least' x:X(sh_G) such that O=[x], where `least' means: corresponding to the smallest number under the equivalence of X(sh_G) with a standard finite set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "burnside_orbit_choice_merely",
+      "orbit_has_base_member",
+      "burnside_orbit_underlying_finite"
+    ],
+    "note": "Existence of x_O : X_O(sh_G) for every orbit. The transitivity of X_O gives it merely (orbit_has_base_member). Then finite choice over X/G chooses it for all orbits at once, instead of a least-element search. The target is a proposition, so the two constructions are interchangeable."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2859,
+    "quote": "We also have to give functions f_O : prod_{y:X_O(sh_G)} sum_{g:USymG} g ._{X_O} y = x_O, for every O:X/G. Such functions are obtained by using the transitivity of X_O in combination with the equivalence between USymG and a standard finite set: we can simply take the `least' g:USymG such that g ._{X_O} y = x_O.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "BurnsideOrbitChoice",
+      "lagrange_choice_merely",
+      "burnside_orbit_choice_merely"
+    ],
+    "note": "f_O exists merely by the transitivity of X_O and finite choice over the finite set X_O(sh_G) (lagrange_choice_merely, module 527). It does not come from a least-element search. The data (x_O, f_O) are the type BurnsideOrbitChoice."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2866,
+    "quote": "Applying cor:lagrange-dep-sum, we get an equivalence between USymG and sum_{x : X_O(sh_G)} USymG_x.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "burnside_orbit_lagrange_equiv",
+      "lagrange_dep_sum_stabilizers",
+      "burnside_orbit_stabilizer_bridge"
+    ],
+    "note": "For (x_O, f_O): USym G ≃ Σ_{y : X_O(sh_G)} USym G_{y}. Here cor:lagrange-dep-sum gives the stabilizers in X_O, and burnside_orbit_stabilizer_bridge identifies them with the stabilizers in X. The book does this silently."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2868,
+    "quote": "We conclude that Card(sum_{g:USymG} X^g) = Card(X/G) x Card(G), using xca:fin-sum-of-finsets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "burnside_lemma",
+      "cardinality_equinumerous_sum",
+      "burnside_chain_equiv"
+    ],
+    "note": "burnside_lemma, through cardinality_equiv along the chain and cardinality_equinumerous_sum with the per-orbit equivalences."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2872,
+    "quote": "As a first application of Burnside's Lemma, we note the following number-theoretic consequence, which falls out when we consider the analog of exa:prep-burnside for the case of C_p acting on base-n sequences of length p.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fermat_little_theorem",
+      "fermat_gset",
+      "burnside_lemma"
+    ],
+    "note": "Fermat's Little Theorem follows from burnside_lemma applied to the action of C_p on Fin p → Fin n (fermat_gset)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2885,
+    "quote": "The underlying set is the type of functions Fin p -> Fin n, which is finite of cardinality n^p.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "fermat_gset_underlying",
+      "fermat_gset_card",
+      "fin_function_equiv",
+      "fin_function_cardinality"
+    ],
+    "note": "The underlying set is Fin p → Fin n by definition (refl). fin_function_equiv: (Fin k → Fin n) ≃ Fin (n^k), so the cardinality is n^p."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2889,
+    "quote": "For any f : Fin p -> Fin n, we can apply xca:lagrange to the stabilizer subgroup (C_p)_f. But since p = Card(C_p) is prime, (C_p)_f can only be trivial or all of C_p.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "fermat_orbit_subgroup",
+      "fermat_lagrange",
+      "fermat_stabilizer_dichotomy",
+      "lagrange_cardinality"
+    ],
+    "note": "xca:lagrange for the subgroup (X_[f], f) gives p = Card(X_[f]) × Card((C_p)_f). The underlying group of this subgroup is the stabilizer (rem:subgrp-is-stabsubgr), and the tuple is orbit_subgroup of module 508. fermat_stabilizer_dichotomy: Card((C_p)_f) is 1 or p."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2891,
+    "quote": "The latter happens when f is one of the n constant functions.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "fermat_constant_iff_fixed_by_all",
+      "fermat_constant_fixed_by",
+      "fermat_fixed_by_all_constant",
+      "fermat_constants_equiv"
+    ],
+    "note": "'All of C_p' is expressed as 'every symmetry fixes f'. This holds iff f is constant (f(k) = f(0) for all k). The constant functions form a copy of Fin n. The converse direction uses the symmetry g with g_*(0) = k (cor:id-m-cycle)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2892,
+    "quote": "The set Fin p -> Fin n is finite, hence decidable, so there is no risk to make a case-by-base analysis.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fermat_nonconstant_witness",
+      "fin_decidable_equality",
+      "finite_quantifiers"
+    ],
+    "note": "Footnote: a non-constant f merely has k with f(k) ≠ f(0), by the decidability of equality in Fin n and finite quantifiers. The case analysis of the main proof is instead on Card(X_[f]) ∈ {1, p} (primality)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2894,
+    "quote": "select k such that f(k) neq f(0), and surely s^k . f neq f: then s^k is not in UC_p the only option is that (C_p)_f is trivial.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fermat_power_symmetry",
+      "fermat_power_symmetry_moves",
+      "fermat_stabilizer_one_unit",
+      "fermat_fixed_nonidentity_constant"
+    ],
+    "note": "s^k is the symmetry g with g_*(0) = k (fermat_power_symmetry, cor:id-m-cycle). If f(k) ≠ f(0), then s^k·f ≠ f (fermat_power_symmetry_moves). The conclusion 'only refl fixes a non-constant f' is fermat_fixed_nonidentity_constant (contrapositive form)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2895,
+    "quote": "More rigorously, s^k is not in the image of USym i_f where i_f: (C_p)_f -> C_p is the monomorphism defining the stablizer.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "stabilizer_image_fixes",
+      "fermat_power_symmetry_not_in_stabilizer"
+    ],
+    "note": "Every symmetry in the image of USym(i_x) fixes x (stabilizer_image_fixes, general G-sets). Hence s^k with f(k) ≠ f(0) is not in the image of USym(i_f)."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2898,
+    "quote": "In other words, X^g is all of X(Fin p, s) for g = refl_{(Fin p, s)}, and only the constant functions for anyof the other p-1 symmetries in UC_p.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "fixed_by_unit_equiv",
+      "fermat_fixed_by_nonidentity_equiv",
+      "fermat_nonidentity_equiv"
+    ],
+    "note": "X^refl ≃ X(sh) (any G-set). For g ≠ refl, X^g ≃ constant functions ≃ Fin n. There are p − 1 symmetries g ≠ refl (Without (USym C_p) refl ≃ Fin (p−1))."
+  },
+  {
+    "source": "actions.tex",
+    "line": 2902,
+    "quote": "n^p + n(p-1) = Card(sum_{g:UC_p} X^g) = Card(X/C_p) x Card(C_p) = Card(X/C_p) x p, and so we conclude that p divides n^p-n.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "fermat_fixed_points_count",
+      "fermat_burnside_equation",
+      "fermat_divides_from_count",
+      "fermat_little_theorem"
+    ],
+    "note": "For p = m+1: Card(Σ_g X^g) = n^p + n·m (fermat_fixed_points_count, by separation of refl). This equals Card(X/C_p) × p by burnside_lemma and Card(C_p) = p (fermat_burnside_equation). fermat_divides_from_count derives p | n^p ∸ n with n ≤ n^p."
   }
 ]
