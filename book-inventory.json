@@ -27027,8 +27027,25 @@
     "labels": [
       "def:galois-group"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FieldExt",
+      "galois_group",
+      "field_ext_groupoid",
+      "field_ext_path_equiv",
+      "FieldExtIso",
+      "field_ext_paths_set",
+      "identity_extension",
+      "galois_identity_extension_trivial",
+      "f4_over_f2",
+      "f4_frobenius_symmetry",
+      "f4_frobenius_symmetry_nontrivial"
+    ],
+    "principal": [
+      "galois_group",
+      "FieldExt"
+    ],
+    "note": "Gal(K, i) ≔ automorphism_group (FieldExt k) (field_ext_groupoid k) (K, i). This is the book's Aut_{k\\Fields}(K, i), with k\\Fields = FieldExt k = Σ_{K : Field} RingHom k K. Field homomorphisms are ring homomorphisms of chapter 13. The proof that k\\Fields is a groupoid uses field_ext_path_equiv ((L, j) = (L', j') ≃ isomorphisms φ with φ ∘ j = j'). The formalization reads the printed 'extension (K, i) of a field K' as 'of k'. Litmus tests: the identity extension has a contractible USym Gal. The Frobenius gives a non-unit symmetry of Gal(𝔽₄/𝔽₂) (module 1505)."
   },
   {
     "chapter": 15,
@@ -27040,8 +27057,36 @@
     "labels": [
       "rem:sip-univalence"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "RingIsoLaws",
+      "RingIso",
+      "FieldIso",
+      "ring_path_iso_equiv",
+      "ring_groupoid",
+      "is_field_prop",
+      "field_path_iso_equiv",
+      "field_path_from_iso",
+      "field_path_from_iso_transport",
+      "fields_groupoid",
+      "field_transport_add_ua",
+      "field_transport_mul_ua",
+      "field_transport_zero_ua",
+      "field_transport_one_ua",
+      "field_transport_add",
+      "FieldTransportStructure",
+      "field_transport_structure_iso_equiv",
+      "field_path_transport_structure_equiv",
+      "galois_usym_transport_equiv",
+      "GaloisTransportForm",
+      "galois_usym_kaut_equiv"
+    ],
+    "principal": [
+      "field_path_iso_equiv",
+      "field_path_transport_structure_equiv",
+      "galois_usym_kaut_equiv"
+    ],
+    "note": "(K = L) ≃ Iso(K, L) is field_path_iso_equiv. FieldIso has exactly the four printed laws (φ(x+y), φ(xy), φ(0), φ(1)). The map is transport along the carrier, and transport along field_path_from_iso φ is φ by computation. The middle display (K = L) ≃ Σ_{p : K =_U L} (trp_p(+) = +) × (trp_p(·) = ·) × (trp_p 0 = 0) × (trp_p 1 = 1) is field_path_transport_structure_equiv, with curried operations. The transport formulas along p = ua(φ) hold by refl (field_transport_*_ua). The last display is galois_usym_transport_equiv (Σ_{p : K = K} trp_p(i) = i, p in Fields) and galois_usym_kaut_equiv (Σ_{σ : Iso(K, K)} σ ∘ i = i). The rings of chapter 13 also carry negation. An isomorphism preserves negation automatically, so Iso does not change. The formalization reads 'extension (K, i) of K' as 'of k'."
   },
   {
     "chapter": 15,
@@ -27053,8 +27098,22 @@
     "labels": [
       "lem:field-ext-restriction-set-bundle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "field_ext_restriction",
+      "field_ext_restriction_set_bundle",
+      "KAlgHom",
+      "kalg_hom_set",
+      "restriction_fiber_to_kalg",
+      "restriction_fiber_kalg_equiv",
+      "restriction_fiber_compare",
+      "type_pathover_trl"
+    ],
+    "principal": [
+      "field_ext_restriction_set_bundle",
+      "field_ext_restriction"
+    ],
+    "note": "restr_i = field_ext_restriction k (K, i) : FieldExt K → FieldExt k, (L, j) ↦ (L, j ∘ i). field_ext_restriction_set_bundle : IsCovering, that is, every BookFiber is a set. The proof is different from the proof of the book. It goes through the fiber computation of the following running text (restriction_fiber_kalg_equiv : fiber over (L, j) ≃ hom_k(K, L), a set)."
   },
   {
     "chapter": 15,
@@ -27066,8 +27125,24 @@
     "labels": [
       "defn:algebraic-element"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "IsAlgebraicElementAsPrinted",
+      "every_element_algebraic_as_printed",
+      "IsAlgebraicElement",
+      "is_algebraic_element_prop",
+      "poly_value",
+      "ring_power",
+      "ext_poly_value",
+      "linear_poly_root",
+      "f2_poly_litmus"
+    ],
+    "principal": [
+      "IsAlgebraicElement",
+      "every_element_algebraic_as_printed",
+      "IsAlgebraicElementAsPrinted"
+    ],
+    "note": "WRONG AS PRINTED (status refuted, corrected version principal). The printed proposition is ‖Σ_n Σ_{a : ⟦n+1⟧ → k} i(a(0)) + i(a(1))α + ⋯ + i(a(n))αⁿ = 0‖ (IsAlgebraicElementAsPrinted). It allows the zero polynomial. Thus every element of every extension is algebraic (every_element_algebraic_as_printed, n = 0, a = 0). As a result, the first claim of rem:algebraic-endomorphisms-are-automorphisms is false as printed (printed_algebraic_t_equiv_fails, counterexample 𝔽₂(X), X ↦ X², module 1532). The corrected notion is IsAlgebraicElement: the same proposition with a(n) ≠ 0, that is, α is a root of a nonzero polynomial of degree n. poly_value computes a(0) + a(1)x + ⋯ + a(n)xⁿ with Fin(n+1) in standard order (inr ★ = index n) and x^m = 1·x⋯x."
   },
   {
     "chapter": 15,
@@ -27079,8 +27154,18 @@
     "labels": [
       "defn:algebraic-extension"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsAlgebraicExtension",
+      "IsAlgebraicExtensionAsPrinted",
+      "every_extension_algebraic_as_printed",
+      "identity_extension_algebraic",
+      "f2_rational_not_algebraic"
+    ],
+    "principal": [
+      "IsAlgebraicExtension"
+    ],
+    "note": "IsAlgebraicExtension k E means that every α : K is algebraic, with the corrected IsAlgebraicElement. defn:algebraic-element is refuted as printed. The printed version IsAlgebraicExtensionAsPrinted holds for every extension. Litmus tests: the identity extension is algebraic (α is a root of X − α). 𝔽₂(X) is not algebraic over 𝔽₂ (f2_rational_not_algebraic, module 1532)."
   },
   {
     "chapter": 15,
@@ -27092,8 +27177,50 @@
     "labels": [
       "rem:algebraic-endomorphisms-are-automorphisms"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "algebraic_galois_t_equiv_dec",
+      "algebraic_galois_t_equiv",
+      "algebraic_kalg_endo_is_equiv_dec",
+      "algebraic_kalg_endo_is_equiv",
+      "galois_t_is_equiv_of_endos",
+      "galois_t_equiv_endo_is_equiv",
+      "kaut_kalg_equiv_of_endos",
+      "field_hom_injective",
+      "poly_root_bound",
+      "poly_div_spec",
+      "bounded_injective_surjective_dec",
+      "bounded_injective_surjective",
+      "fin_fiber_decidable",
+      "lem_set_decidable_equality",
+      "printed_algebraic_t_equiv_fails",
+      "f2_rational_t_not_equiv",
+      "f2_rational_ext",
+      "f2_rational_field",
+      "f2_rational_frobenius",
+      "f2_rational_frobenius_x",
+      "f2_rational_x_not_square",
+      "f2_rational_frobenius_not_equiv",
+      "frac_field",
+      "f2_poly_domain",
+      "f2_poly_square_ratio_zero",
+      "char_two_frobenius",
+      "char_two_bool_hom",
+      "SquareLess",
+      "RationalSeparation",
+      "real_like_endo_identity",
+      "real_like_galois_t_equiv",
+      "algebraic_converse_fails",
+      "printed_non_algebraic_impossible",
+      "ring_hom_preserves_square_less",
+      "kalg_endo_fixes_base"
+    ],
+    "principal": [
+      "printed_algebraic_t_equiv_fails",
+      "algebraic_galois_t_equiv_dec",
+      "real_like_endo_identity"
+    ],
+    "note": "REFUTED AS PRINTED. With the printed defn:algebraic-element, every extension is algebraic. Thus the first claim would make t an equivalence for every extension. printed_algebraic_t_equiv_fails refutes this with 𝔽₂(X)/𝔽₂ (module 1532). Here 𝔽₂(X) is the fraction field of 𝔽₂[X]. The Frobenius x ↦ x² is an 𝔽₂-endomorphism, and X is not a square by parity of valuations. Also, t is an equivalence only if every k-endomorphism is an equivalence (galois_t_equiv_endo_is_equiv). In the same way, the second claim cannot hold as printed (printed_non_algebraic_impossible). Corrected first claim (principal): algebraic_galois_t_equiv_dec shows that t is an equivalence for algebraic extensions with decidable equality of K. algebraic_galois_t_equiv gives the same result under excluded middle. The proof needs the decision only to search finite lists of roots. A fully constructive proof is not known here. Corrected second claim: the formalization does not construct ℚ and ℝ. Consider any extension with RationalSeparation: x < y iff y − x is the square of an invertible element, and elements in the same rational intervals are equal. For such an extension, every k-endomorphism is the identity (real_like_endo_identity). The proof uses the strict order, not the book's non-decreasing + irrational case. Thus t is an equivalence. The non-algebraicity of ℚ → ℝ is a hypothesis of algebraic_converse_fails."
   },
   {
     "chapter": 15,
@@ -27105,8 +27232,31 @@
     "labels": [
       "defn:degree-field-extension"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "field_ext_vector_space",
+      "IsFiniteExtension",
+      "ExtensionHasDegree",
+      "field_extension_degree",
+      "field_extension_degree_spec",
+      "field_extension_degree_unique",
+      "field_dimension_unique",
+      "field_dimension_invariance",
+      "field_injective_linear_le",
+      "DimensionInvariance",
+      "extension_degree",
+      "extension_degree_spec",
+      "identity_extension_degree_one",
+      "identity_extension_finite",
+      "f2_identity_extension_degree",
+      "f2_not_two_dimensional"
+    ],
+    "principal": [
+      "IsFiniteExtension",
+      "ExtensionHasDegree",
+      "field_extension_degree"
+    ],
+    "note": "K is a k-vector space by a·v ≔ i(a)v (field_ext_vector_space). Finite means IsFiniteDimensional (module 1302). [K : k] = n is ExtensionHasDegree k E n. 'The dimension' needs the invariance of dimension. dimension_unique of module 1413 covers only euclidean fields (trace argument, characteristic 0). Thus module 1509 proves the invariance for every field (field_dimension_unique). An injective linear map Kᵐ → Kⁿ forces m ≤ n. The proof is by elimination and uses the fact that non-invertible elements are 0. It needs no decidability. Hence field_extension_degree k E h has no hypothesis (extension_degree with field_dimension_invariance). Litmus tests: [K : K] = 1, and [𝔽₂ : 𝔽₂] = 1 by computation. 𝔽₂ is not 2-dimensional over itself."
   },
   {
     "chapter": "B",

@@ -14317,5 +14317,222 @@
     "importance": "low",
     "declarations": [],
     "note": "This is the outline of a planned section with subsection titles 728-732. It contains no claims."
+  },
+  {
+    "source": "galois.tex",
+    "line": 5,
+    "quote": "The goal of Galois theory is to study how the roots of a given polynomial can be distinguished from one another.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation."
+  },
+  {
+    "source": "galois.tex",
+    "line": 6,
+    "quote": "Take for example $X^2+1$ ... It has two distincts roots in $\\mathbb C$, namely $i$ and $-i$ ... an observer ... limited to the realm of $\\mathbb R$, can not distinguish between the two.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "f4_omega_root",
+      "f4_omega_square_root"
+    ],
+    "note": "The formalization does not construct ℂ and ℝ. The analogous litmus test: ω and ω² are the two roots of X² + X + 1 in 𝔽₄ (module 1505). The next claim makes 'cannot distinguish' precise."
+  },
+  {
+    "source": "galois.tex",
+    "line": 11,
+    "quote": "for any polynomial $Q: \\mathbb R[X,Y]$, the equation $Q(i,-i) = 0$ is satisfied if and only if $Q(-i,i) = 0$ also. This property is easily understood by noticing that there is a automorphism of fields $\\sigma: \\mathbb C \\to \\mathbb C$ such that $\\sigma(i) = -i$ and $\\sigma(-i) = i$ which also fixes $\\mathbb R$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "conjugate_roots_iff",
+      "kaut_poly2_value",
+      "poly2_value",
+      "ring_hom_poly_value",
+      "f4_conjugate_roots",
+      "f4_frobenius_kaut"
+    ],
+    "note": "Let (K, i) be any extension of k, and let σ be any k-automorphism that exchanges α and β. Then Q(α, β) = 0 iff Q(β, α) = 0 for every Q with coefficients in k (conjugate_roots_iff). Here Q(x, y) = Σ_q (Σ_p i(a_pq) x^p) y^q. An instance is 𝔽₂ → 𝔽₄ with the Frobenius (f4_conjugate_roots). The ℂ/ℝ instance and the existence of complex conjugation need ℂ, and the formalization does not construct ℂ."
+  },
+  {
+    "source": "galois.tex",
+    "line": 29,
+    "quote": "Recall that a field extension is simply a morphism of fields $i: k\\to K$ ... the type of fields extensions of $k$ is defined as $\\fieldsext k \\defequi \\sum_{K:\\fieldstype}\\fieldshom(k,K)$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "FieldExt",
+      "Field",
+      "RingHom"
+    ],
+    "note": "FieldExt k = Σ Field (K ↦ RingHom (k .fst) (K .fst)). Morphisms of fields are ring homomorphisms (chapter 13, def:ringhom)."
+  },
+  {
+    "source": "galois.tex",
+    "line": 86,
+    "quote": "Given an extension $(K,i)$ of field $k$, there is a map of interest: $\\restr i: \\fieldsext K \\to \\fieldsext k,\\quad (L,j) \\mapsto (L,ji)$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "field_ext_restriction"
+    ],
+    "note": "ji is ring_hom_compose k K L i j, with i first."
+  },
+  {
+    "source": "galois.tex",
+    "line": 111,
+    "quote": "The fiber of this map at a given extension $(L,j)$ of $k$ is: ... $\\weq \\sum_{L'}\\sum_{j'}(L,j) = (L',j'i) \\weq \\sum_{L'}\\sum_{j'}\\sum_{p:L = L'} pj=j'i \\weq \\sum_{j':K\\to L} j=j'i \\weq \\hom_k(K,L)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "restriction_fiber_kalg_equiv",
+      "restriction_fiber_reshuffle",
+      "restriction_fiber_contract_equiv",
+      "restriction_fiber_family",
+      "KAlgHom",
+      "restriction_fiber_to_kalg"
+    ],
+    "note": "restriction_fiber_kalg_equiv : BookFiber restr_i (L, j) ≃ KAlgHom k (K, i) (L, j), with KAlgHom = Σ_{j' : K → L} j = j' i. These are the k-algebra homomorphisms, and the formalization takes them as the definition of hom_k(K, L). The second step is the computation of Id in a Σ-type in Narya (pathover p j = j' i). The third step is contract_away for (L', p). The map is the explicit restriction_fiber_to_kalg ((L', j'), q) ↦ trp_q⁻¹(j')."
+  },
+  {
+    "source": "galois.tex",
+    "line": 120,
+    "quote": "the map $t: \\USym \\Gal(K,i) \\to \\inv{(\\restr i)}(K,i)$ mapping $g$ to $\\trp g (\\id_K)$ identifies with the inclusion of the $k$-automorphisms of $K$ into the $k$-endomorphisms of $K$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "galois_t",
+      "restriction_identity_point",
+      "galois_t_identification",
+      "galois_t_general",
+      "kaut_to_kalg",
+      "kaut_to_kalg_embedding",
+      "galois_t_equiv_endo_is_equiv"
+    ],
+    "note": "galois_t g = the transport of id_K (restriction_identity_point) along g. galois_t_identification states restriction_fiber_to_kalg (t g) = kaut_to_kalg (galois_usym_kaut_equiv g). That is, under fiber ≃ End_k(K) and USym Gal ≃ Aut_k(K), t is the inclusion. This inclusion is an embedding (kaut_to_kalg_embedding). Conversely, t is an equivalence only if every k-endomorphism is an equivalence (galois_t_equiv_endo_is_equiv, module 1532). Thus t is an equivalence iff all k-endomorphisms are k-automorphisms."
+  },
+  {
+    "source": "galois.tex",
+    "line": 124,
+    "quote": "TODO: write a section on polynomials in chapter 12",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an editorial note. Here, coefficient functions give the polynomial values (poly_value), as in defn:algebraic-element."
+  },
+  {
+    "source": "galois.tex",
+    "line": 165,
+    "quote": "Given two extensions $i: k \\to K$ and $j: K \\to L$, the map $\\restr i$ can be seen as a pointed map $\\restr i: \\B\\Gal(L,j) \\to \\B\\Gal(L,ji),\\quad x\\mapsto x\\circ i.$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "galois_restriction_hom",
+      "automorphism_group_map_hom"
+    ],
+    "note": "This is restr_i on components, pointed by refl (automorphism_group_map_hom of module 431)."
+  },
+  {
+    "source": "galois.tex",
+    "line": 169,
+    "quote": "Then, through \\cref{lem:field-ext-restriction-set-bundle}, $\\restr i$ presents $\\Gal(L,j)$ as a subgroup of $\\Gal(L,ji)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "galois_restriction_mono",
+      "covering_ap_injective"
+    ],
+    "note": "galois_restriction_mono : IsGroupMono (chapter 5: monomorphisms = subgroups, lem:SubG=MonoG). The proof uses the set-bundle property: ap of a set bundle is injective."
+  },
+  {
+    "source": "galois.tex",
+    "line": 170,
+    "quote": "One goal of Galois theory is to characterize those extensions $i':k \\to L$ for which all subgroups of $\\Gal(L,i')$ arise in this way.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a programme statement. The section on the fundamental theorem is empty."
+  },
+  {
+    "source": "galois.tex",
+    "line": 174,
+    "quote": "Given any extension $i:k \\to L$, there is an obivous $\\Gal(L,i)$-set $X$ given by $(L',i') \\mapsto L'$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "galois_gset",
+      "galois_gset_action",
+      "f4_frobenius_acts_on_omega"
+    ],
+    "note": "galois_gset k E : GSet (galois_group k E) is u ↦ the carrier of the field of u, which is a set. Litmus tests: g acts by its k-automorphism (refl), and the Frobenius sends ω to ω²."
+  },
+  {
+    "source": "galois.tex",
+    "line": 178,
+    "quote": "For a pointed connected set-bundle $g:B \\to \\B \\Gal(L,i)$, one can consider the type of fixed points of the $\\mkgroup B$-set $Xf$: $K \\defequi (Xg)^{\\mkgroup B} \\jdeq \\prod_{x:B}X(g(x))$. It is a set, which can be equipped with a field structure, defined pointwise.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fixed_ring",
+      "fixed_ring_carrier",
+      "galois_fixed_field",
+      "fixed_ring_non_invertibles_zero",
+      "fixed_ring_invertible_spread",
+      "fixed_ring_non_trivial_cring",
+      "f4_galois_fixed_field"
+    ],
+    "note": "'Xf' is a misprint for X g. fixed_ring is Π_{x : B} X(g x) with pointwise operations. Its carrier is literally the fixed points (fixed_ring_carrier). galois_fixed_field shows that it is a field when B is connected and pointed. Non-invertible sections vanish, because invertibility at one point spreads along mere paths. The set-bundle hypothesis is not necessary, and the formalization does not assume it."
+  },
+  {
+    "source": "galois.tex",
+    "line": 184,
+    "quote": "because $g$ is pointed, one has a path $p:L=L''$ such that $pi'=j''$. There are fields extensions $i':k \\to K$ and $j':K \\to L$ given by: $i'(a) \\defequi x\\mapsto \\snd(g(x))(a),\\quad j'(f) \\defequi \\inv p f(b)$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "fixed_field_point_iso",
+      "fixed_field_point_iso_inverse",
+      "galois_fixed_field_base",
+      "galois_fixed_field_top"
+    ],
+    "note": "'p i' = j''' is a misprint for p i = j'' (fixed_field_point_iso, the k-isomorphism of the pointing path). j'(f) = p⁻¹(f(b)), where p⁻¹ is the k-isomorphism of the inverse path (fixed_field_point_iso_inverse)."
+  },
+  {
+    "source": "galois.tex",
+    "line": 190,
+    "quote": "In particular, for all $a:k$, $j'i'(a) = \\inv p \\snd(g(b))(a) = \\inv p j''(a) = i'(a)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "galois_fixed_field_triangle",
+      "f4_galois_fixed_field_triangle"
+    ],
+    "note": "The last term is a misprint for i(a). galois_fixed_field_triangle : j' ∘ i' = i as ring homomorphisms. There is a litmus instance for g = id on BGal(𝔽₄/𝔽₂)."
+  },
+  {
+    "source": "galois.tex",
+    "line": 192,
+    "quote": "Galois theory is interested in the settings when these two contructions are inverse from each other.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a programme statement. The sections 'separable/normal/etc.' and 'fundamental theorem' are empty stubs (lines 194-198)."
   }
 ]

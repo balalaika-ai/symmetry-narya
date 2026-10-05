@@ -1,0 +1,239 @@
+[
+  {
+    "source": "galois.tex",
+    "line": 36,
+    "labels": [
+      "def:galois-group"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/01-galois-group.ny",
+    "blind_declarations": [
+      "BlindFieldHom",
+      "BlindFieldExt",
+      "blind_field_ext_groupoid",
+      "BlindGaloisGroup"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-01-galois-group.ny",
+    "bridge_declarations": [
+      "bridge_def_field_hom",
+      "bridge_def_field_ext",
+      "bridge_def_field_ext_groupoid",
+      "bridge_def_galois_group",
+      "bridge_def_galois_usym",
+      "ComponentLoop",
+      "bridge_usym_to_ours",
+      "bridge_usym_to_blind"
+    ],
+    "our_declarations": [
+      "FieldExt",
+      "RingHom",
+      "field_ext_groupoid",
+      "galois_group"
+    ],
+    "note": "BlindFieldHom and BlindFieldExt are the main ones by refl. The two groupoid proofs of k\\Fields are equal, because isGroupoid is a proposition. Thus BlindGaloisGroup = galois_group in Group. USym of both is the loop type at E in its component. The conversion check of Narya raises bug E0500 when it compares the two USym types directly. The reason is that it compares the groupoid fields of the two group records. Thus bridge_def_galois_usym is an equivalence through the explicit loop type ComponentLoop, with refl round trips. Both sides read the printed 'extension (K,i) of a field K' as 'of k'."
+  },
+  {
+    "source": "galois.tex",
+    "line": 43,
+    "labels": [
+      "rem:sip-univalence"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/01-galois-group.ny",
+    "blind_declarations": [
+      "BlindFieldIso",
+      "blind_trp_op",
+      "blind_trp_elt",
+      "blind_field_paths_structure",
+      "blind_field_transport_structure",
+      "blind_field_sip",
+      "blind_galois_usym_paths",
+      "blind_galois_usym_isos"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-01-galois-group.ny",
+    "bridge_declarations": [
+      "bridge_def_field_iso",
+      "bridge_field_paths_structure",
+      "bridge_field_transport_structure",
+      "bridge_field_sip",
+      "bridge_field_sip_converse",
+      "bridge_galois_usym_paths",
+      "bridge_kaut_condition_equiv",
+      "BlindKAutForm",
+      "bridge_kaut_form_equiv",
+      "bridge_usym_kaut_equiv",
+      "bridge_galois_usym_isos"
+    ],
+    "our_declarations": [
+      "field_path_iso_equiv",
+      "field_path_transport_structure_equiv",
+      "field_transport_add_ua",
+      "galois_usym_transport_equiv",
+      "galois_usym_kaut_equiv"
+    ],
+    "note": "All four blind claims are main statements. BlindFieldIso is FieldIso by refl. blind_field_paths_structure is field_path_transport_structure_equiv. blind_field_transport_structure is the four field_transport_*_ua (refl). blind_field_sip is field_path_iso_equiv, and the converse is trivial. The two forms of USym Gal are galois_usym_transport_equiv and galois_usym_kaut_equiv, composed with the USym identification. For the second form, the main condition σ∘i = i as ring homomorphisms is equivalent to the blind condition on underlying functions. Both conditions are propositions."
+  },
+  {
+    "source": "galois.tex",
+    "line": 91,
+    "labels": [
+      "lem:field-ext-restriction-set-bundle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/02-restriction-algebraic.ny",
+    "blind_declarations": [
+      "blind_restr",
+      "blind_field_ext_restriction_set_bundle"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-02-restriction-algebraic.ny",
+    "bridge_declarations": [
+      "bridge_def_restr",
+      "bridge_field_ext_restriction_set_bundle",
+      "bridge_def_restr_fiber"
+    ],
+    "our_declarations": [
+      "field_ext_restriction",
+      "field_ext_restriction_set_bundle"
+    ],
+    "note": "blind_restr is field_ext_restriction by refl. The blind statement is field_ext_restriction_set_bundle verbatim."
+  },
+  {
+    "source": "galois.tex",
+    "line": 126,
+    "labels": [
+      "defn:algebraic-element"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/02-restriction-algebraic.ny",
+    "blind_declarations": [
+      "blind_ring_pow",
+      "blind_fin_sum",
+      "blind_poly_eval",
+      "BlindIsAlgebraicElement",
+      "blind_algebraic_element_as_printed_vacuous",
+      "BlindIsAlgebraicElementCorrected"
+    ],
+    "bridge_file": [
+      "chapters/ch15/blind/bridge-02-restriction-algebraic.ny",
+      "chapters/ch15/blind/bridge-02a-poly.ny"
+    ],
+    "bridge_declarations": [
+      "bridge_blind_algebraic_trivial",
+      "bridge_def_algebraic_element",
+      "bridge_algebraic_element_as_printed_vacuous",
+      "bridge_ring_pow",
+      "bpoly_series_sum",
+      "bpoly_blind_sum",
+      "bpoly_our_sum",
+      "bridge_blind_eval_series",
+      "bridge_algebraic_element_to_blind",
+      "bridge_algebraic_element_from_blind",
+      "bridge_dec_base"
+    ],
+    "our_declarations": [
+      "IsAlgebraicElementAsPrinted",
+      "every_element_algebraic_as_printed",
+      "IsAlgebraicElement",
+      "poly_value",
+      "ring_power"
+    ],
+    "note": "Literal version: BlindIsAlgebraicElement and the main IsAlgebraicElementAsPrinted are both the trivially true proposition (zero polynomial). Thus they are equivalent. blind_algebraic_element_as_printed_vacuous is derived from every_element_algebraic_as_printed. The blind evaluation uses fin_index, which enumerates Fin(n+1) in the reverse of the main order (fin_index (inr ★) = 0). Thus the bridge compares the evaluations through coefficient sequences (bridge-02a). Corrected version: the main notion (top coefficient a(n) ≠ 0) implies the blind corrected notion (not all coefficients zero) unconditionally (bridge_algebraic_element_to_blind). The converse holds if k has decidable equality (bridge_algebraic_element_from_blind). Its proof searches for the top nonzero coefficient. Decidable equality of K is sufficient (bridge_dec_base). The two corrections are classically equivalent. The main correction is the constructive one that looks stronger. Book status: refuted as printed (vacuous), corrected version principal."
+  },
+  {
+    "source": "galois.tex",
+    "line": 136,
+    "labels": [
+      "defn:algebraic-extension"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/02-restriction-algebraic.ny",
+    "blind_declarations": [
+      "BlindIsAlgebraicExt",
+      "BlindIsAlgebraicExtCorrected"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-02-restriction-algebraic.ny",
+    "bridge_declarations": [
+      "bridge_def_algebraic_ext",
+      "bridge_def_algebraic_ext_corrected_to",
+      "bridge_def_algebraic_ext_corrected_from"
+    ],
+    "our_declarations": [
+      "IsAlgebraicExtension",
+      "IsAlgebraicExtensionAsPrinted",
+      "every_extension_algebraic_as_printed"
+    ],
+    "note": "Literal version: both are trivially true (maps both ways). Corrected version: the bridge is pointwise from defn:algebraic-element. Main ⇒ blind holds unconditionally, and blind ⇒ main holds with decidable equality of k."
+  },
+  {
+    "source": "galois.tex",
+    "line": 141,
+    "labels": [
+      "rem:algebraic-endomorphisms-are-automorphisms"
+    ],
+    "status": "gap",
+    "blind_file": "chapters/ch15/blind/02-restriction-algebraic.ny",
+    "blind_declarations": [
+      "BlindRestrFiber",
+      "blind_restr_id_path",
+      "blind_restr_fiber_id",
+      "blind_t",
+      "blind_algebraic_t_equiv",
+      "blind_algebraic_t_equiv_corrected",
+      "blind_t_equiv_not_algebraic",
+      "blind_t_equiv_not_algebraic_corrected"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-02-restriction-algebraic.ny",
+    "bridge_declarations": [
+      "bridge_def_restr_fiber_id",
+      "bridge_def_t",
+      "bridge_t_equiv_to_blind",
+      "bridge_t_equiv_from_blind",
+      "bridge_algebraic_t_equiv_refuted",
+      "bridge_algebraic_t_equiv_corrected_dec",
+      "bridge_algebraic_t_equiv_corrected_lem",
+      "bridge_algebraic_t_equiv_corrected_converse",
+      "bridge_t_equiv_not_algebraic_refuted",
+      "bridge_t_equiv_not_algebraic_corrected_cond"
+    ],
+    "our_declarations": [
+      "galois_t",
+      "printed_algebraic_t_equiv_fails",
+      "f2_rational_t_not_equiv",
+      "algebraic_galois_t_equiv_dec",
+      "algebraic_galois_t_equiv",
+      "real_like_galois_t_equiv",
+      "algebraic_converse_fails"
+    ],
+    "note": "blind_t is the main galois_t definitionally (bridge_def_t), and BookIsEquiv of blind_t ⇔ isEquiv of galois_t. The literal first claim is refuted. bridge_algebraic_t_equiv_refuted applies it to the main 𝔽₂(X)/𝔽₂ (module 1532, new), where t is not an equivalence. The literal second claim is refuted, because every extension is algebraic as printed. There is a gap: the main results are weaker than the blind corrected statements. The bridge derives the corrected first claim only with decidable equality of K (bridge_algebraic_t_equiv_corrected_dec) or with excluded middle (bridge_algebraic_t_equiv_corrected_lem). Conversely, the blind corrected claim implies the main claim without hypotheses (bridge_algebraic_t_equiv_corrected_converse). The corrected second claim says that some non-algebraic extension has t an equivalence. The bridge derives it for any non-algebraic extension with RationalSeparation (bridge_t_equiv_not_algebraic_corrected_cond). No such extension is constructed, because the repository has no ℚ and no ℝ."
+  },
+  {
+    "source": "galois.tex",
+    "line": 156,
+    "labels": [
+      "defn:degree-field-extension"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch15/blind/02-restriction-algebraic.ny",
+    "blind_declarations": [
+      "blind_ext_vector_space",
+      "BlindIsFiniteExt",
+      "blind_ext_degree"
+    ],
+    "bridge_file": "chapters/ch15/blind/bridge-02-restriction-algebraic.ny",
+    "bridge_declarations": [
+      "bridge_def_ext_vector_space",
+      "bridge_finite_to_ours",
+      "bridge_finite_to_blind",
+      "bridge_def_finite_ext",
+      "bridge_def_ext_degree",
+      "bridge_def_ext_degree_converse"
+    ],
+    "our_declarations": [
+      "field_ext_vector_space",
+      "IsFiniteExtension",
+      "field_extension_degree",
+      "field_dimension_invariance"
+    ],
+    "note": "blind_ext_vector_space is the main version by refl. BlindIsFiniteExt (Σ n, HasDimension) is a proposition by the invariance of dimension over any field (module 1509, new). Hence it is equivalent to the main IsFiniteExtension (‖Σ n, HasDimension‖). The blind degree h .fst equals field_extension_degree (refl, both directions). Before, the degree needed DimensionInvariance as a hypothesis."
+  }
+]
