@@ -1,0 +1,501 @@
+[
+  {
+    "source": "geometry.tex",
+    "line": 17,
+    "labels": [
+      "def:InnerProductSpace"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/01-inner-product-spaces.ny",
+    "blind_declarations": [
+      "BlindEuclideanField",
+      "BlindInnerProductLaws",
+      "BlindInnerProductSpace",
+      "BlindInnerProductSpaceDim",
+      "blind_dot",
+      "blind_dot_laws",
+      "blind_std_inner_product_space",
+      "blind_std_inner_product_space_dim"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_ef14",
+      "bridge_def_ip_laws",
+      "bridge_ip_laws_prop",
+      "bridge_def_dot",
+      "bridge_def_inner_product_space",
+      "bridge_std_os",
+      "bridge_std_os_blind",
+      "bridge_def_osn",
+      "bridge_std_osn"
+    ],
+    "our_declarations": [
+      "EuclideanField",
+      "IsInnerProduct",
+      "InnerProductSpace",
+      "InnerProductSpaceDim",
+      "dot_product",
+      "dot_product_inner",
+      "standard_inner_product_space",
+      "standard_inner_product_space_dim"
+    ],
+    "note": "Parameter records: bridge_ef14 builds our EuclideanField from a BlindEuclideanField. The field, the cone and the axioms are the same. The blind Σ-valued sqrt is split into sqrt, sqrt_nonneg and sqrt_square. The bridge forgets the blind extra axiom nonneg_total. In general, there is no map in the other direction, because totality is not one of our axioms. So our version covers a larger class of fields, and no blind statement needs such a map. Over bridge_ef14 K, BlindInnerProductLaws ≃ IsInnerProduct (the fields are reordered). OS and OS_n are equivalent with refl round trips. The function blind_dot is dot_product by refl. The blind 𝕍ⁿ is our standard space up to a path whose space and form components are refl. The proofs of finite dimension and of the laws are different."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 34,
+    "labels": [
+      "thm:GramSchmidt"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/01-inner-product-spaces.ny",
+    "blind_declarations": [
+      "blind_gram_schmidt"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-01-inner-product-spaces.ny",
+    "bridge_declarations": [
+      "bridge_gram_schmidt"
+    ],
+    "our_declarations": [
+      "gram_schmidt_theorem_os",
+      "gram_schmidt_theorem"
+    ],
+    "note": "The blind statement says: ∀ n with HasDimension n V, V = 𝕍ⁿ merely, in OS. It is our gram_schmidt_theorem_os at bridge_ef14 K, transported by bridge_os_inv and bridge_std_os_blind."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 46,
+    "labels": [
+      "lem:InnerProductSpace1Type"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/01-inner-product-spaces.ny",
+    "blind_declarations": [
+      "blind_inner_product_space_one_type"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-01-inner-product-spaces.ny",
+    "bridge_declarations": [
+      "bridge_inner_product_space_one_type",
+      "bridge_osn_groupoid"
+    ],
+    "our_declarations": [
+      "inner_product_space_groupoid",
+      "inner_product_space_dim_groupoid"
+    ],
+    "note": "This is isGroupoid OS, transported along the equivalence bridge_def_inner_product_space (hlevel_equiv)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 57,
+    "labels": [
+      "def:OrthogonalGroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/01-inner-product-spaces.ny",
+    "blind_declarations": [
+      "BlindOrthogonalGroup",
+      "blind_orthogonal_group_data"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-01-inner-product-spaces.ny",
+    "bridge_declarations": [
+      "bridge_orthogonal_group_data",
+      "bridge_osn_connected",
+      "bridge_def_orthogonal_group",
+      "bridge_orthogonal_group_iso",
+      "bridge_blind_orthogonal_two_not_abelian"
+    ],
+    "our_declarations": [
+      "orthogonal_group",
+      "orthogonal_group_connected",
+      "orthogonal_group_classifying"
+    ],
+    "note": "For every n, the blind OS_n is connected and a groupoid (from ours along bridge_def_osn). For all proofs conn, grpd, the blind O(n) equals our orthogonal_group (bridge_mkgroup_path). This uses a pointed equivalence of classifying types. The equality also holds as a GroupIso. Litmus through the bridge: the blind O(2) is not abelian."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 113,
+    "labels": [
+      "def:EuclideanSpace"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "blind_vectors_group",
+      "BlindEuclideanSpace",
+      "blind_es_vectors",
+      "blind_es_points"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_es",
+      "bridge_es_points",
+      "bridge_def_vectors_group"
+    ],
+    "our_declarations": [
+      "EuclideanSpace",
+      "euclidean_points",
+      "ip_additive_group"
+    ],
+    "note": "ES is the same Σ of an inner product space and an abstract torsor of its additive group. The map bridge_es is an equivalence with refl round trips. Points and the vector group agree by refl."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 127,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "BlindEuclideanSpaceDim",
+      "blind_es_dim_forget",
+      "blind_euclidean_spaces_sum",
+      "blind_std_euclidean_space"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-02-euclidean-spaces.ny",
+    "bridge_declarations": [
+      "bridge_def_esn",
+      "bridge_std_esn",
+      "bridge_std_es",
+      "bridge_es_back",
+      "bridge_euclidean_spaces_sum"
+    ],
+    "our_declarations": [
+      "EuclideanSpaceDim",
+      "euclidean_standard",
+      "euclidean_space_dim_sum_equiv",
+      "vector_space_dimension_data",
+      "finite_dimension_prop"
+    ],
+    "note": "The blind ES_n ≃ ours, with refl round trips. The blind 𝔼ⁿ is ours up to a path whose torsor component is refl. The blind claim says that the forgetful map Σ_n ES_n → ES is a (book) equivalence. The proof uses our inverse (vector_space_dimension_data) and our uniqueness of dimension (finite_dimension_prop)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 148,
+    "labels": [
+      "thm:EuclideanNormalization"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "blind_euclidean_normalization"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-02-euclidean-spaces.ny",
+    "bridge_declarations": [
+      "bridge_euclidean_normalization"
+    ],
+    "our_declarations": [
+      "euclidean_normalization_es",
+      "euclidean_normalization"
+    ],
+    "note": "This comes from euclidean_normalization_es at bridge_ef14 K, transported by bridge_es_inv and bridge_std_es_blind."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 158,
+    "labels": [
+      "lem:EuclideanSpace1Type"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "blind_euclidean_space_one_type"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-02-euclidean-spaces.ny",
+    "bridge_declarations": [
+      "bridge_euclidean_space_one_type"
+    ],
+    "our_declarations": [
+      "euclidean_space_dim_groupoid"
+    ],
+    "note": "This is isGroupoid ES_n, transported along bridge_def_esn."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 168,
+    "labels": [
+      "def:EuclideanGroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "BlindEuclideanGroup",
+      "blind_euclidean_group_data"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-02-euclidean-spaces.ny",
+    "bridge_declarations": [
+      "bridge_euclidean_group_data",
+      "bridge_esn_connected",
+      "bridge_def_euclidean_group",
+      "bridge_euclidean_group_iso"
+    ],
+    "our_declarations": [
+      "euclidean_group",
+      "euclidean_group_connected",
+      "euclidean_space_dim_groupoid"
+    ],
+    "note": "ES_n is a connected groupoid (from ours). For all proofs, the blind E(n) equals our euclidean_group, through a pointed equivalence of classifying types."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 178,
+    "labels": [
+      "thm:EuclideanGroupSemidirect"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/02-euclidean-spaces.ny",
+    "blind_declarations": [
+      "blind_euclidean_group_semidirect",
+      "blind_orthogonal_vectors_action"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-02-euclidean-spaces.ny",
+    "bridge_declarations": [
+      "bridge_semidirect_carrier_equiv",
+      "bridge_semidirect_path",
+      "bridge_euclidean_group_semidirect"
+    ],
+    "our_declarations": [
+      "euclidean_group_semidirect",
+      "euclidean_semidirect_action"
+    ],
+    "note": "The blind semidirect product O(n) ⋉ (V ↦ concr V) equals ours. The classifying types are equivalent, and the blind action is ours on bridged spaces. The blind GroupIso is the composite blind E(n) = our E(n) = our O(n) ⋉ ℝⁿ (euclidean_group_semidirect) = blind O(n) ⋉ ℝⁿ. This holds for all connectedness/groupoid proofs."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 229,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "BlindEucObj",
+      "blind_prop_set"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_euc_obj",
+      "bridge_def_prop_set",
+      "bridge_symmetry_group"
+    ],
+    "our_declarations": [
+      "EuclideanObject",
+      "propositions_settype",
+      "geometric_object_symmetry_group"
+    ],
+    "note": "The two versions of EucObj_M are equivalent with refl round trips. The term blind_prop_set is propositions_settype by refl. The symmetry groups of corresponding objects are equal (automorphism_group_equiv_path_at)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 241,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "blind_euc_obj_groupoid"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+    "bridge_declarations": [
+      "bridge_euc_obj_groupoid"
+    ],
+    "our_declarations": [
+      "euclidean_object_groupoid"
+    ],
+    "note": "This is isGroupoid EucObj_M for every set M, transported along bridge_def_euc_obj."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 247,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "blind_euc_obj_symmetry_subgroup",
+      "blind_symmetry_group"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+    "bridge_declarations": [
+      "bridge_standard_object",
+      "bridge_mono_family",
+      "bridge_euc_obj_symmetry_subgroup"
+    ],
+    "our_declarations": [
+      "geometric_object_subgroup",
+      "geometric_object_subgroup_path",
+      "subgroup_inclusion_mono"
+    ],
+    "note": "The bridge reads this as the existence of a monomorphism Sym(𝔼ⁿ, g) → E(n). Our result gives a subgroup of E(n) whose underlying group is Sym(𝔼ⁿ, g) (geometric_object_subgroup_path). Its inclusion is a monomorphism. The bridge transports it along the group paths Sym_blind = Sym_ours and E(n)_blind = E(n)_ours. This holds for every groupoid proof and connectedness proof."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 251,
+    "labels": [],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "blind_point_symmetry_orthogonal",
+      "blind_point_object"
+    ],
+    "bridge_file": [
+      "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+      "chapters/ch14/blind/bridge-03b-point-symmetry-refutation.ny"
+    ],
+    "bridge_declarations": [
+      "blind_point_symmetry_orthogonal_corrected",
+      "bridge_point_symmetry_orthogonal_corrected",
+      "bridge_point_symmetry_origin",
+      "bridge_iso_mono",
+      "bridge_conj_commute",
+      "bridge_family_conj_trivial",
+      "bridge_point_symmetry_orthogonal_refuted"
+    ],
+    "our_declarations": [
+      "point_symmetry_group",
+      "origin_symmetry_iso",
+      "origin_symmetry_path",
+      "orthogonal_two_not_abelian"
+    ],
+    "note": "The literal blind statement asks for a GroupIso, as data, for every E of dimension n and every point P. It is refuted for n = 2 and every K (bridge_point_symmetry_orthogonal_refuted). A family of isomorphisms Aut(c a) ≅ G over a type makes the images of loops central. Over OS_2 with c = point_object_map, such a family would make O(2) abelian. This contradicts orthogonal_two_not_abelian. The blind statement has no corrected variant. The bridge file defines blind_point_symmetry_orthogonal_corrected, which states the mere existence of the isomorphism. It is derived from our point_symmetry_group. The data version holds at (𝔼ⁿ, {0}) (bridge_point_symmetry_origin, from origin_symmetry_iso). For the corrected and origin versions, the bridge file is bridge-03-geometric-objects."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 262,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "BlindConfiguration",
+      "blind_constituent",
+      "BlindConfigurationOfN"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+    "bridge_declarations": [
+      "bridge_config",
+      "bridge_def_configuration",
+      "bridge_def_constituent",
+      "bridge_def_configuration_of_n"
+    ],
+    "our_declarations": [
+      "Configuration",
+      "configuration_constituent",
+      "ConfigurationOfObjects"
+    ],
+    "note": "The two types of configurations are equivalent with refl round trips. Constituents correspond by refl. On both sides, configurations of n objects are the case I = Fin n."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 272,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "BlindArrangement"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+    "bridge_declarations": [
+      "bridge_arrangement",
+      "bridge_arrangement_inv",
+      "bridge_def_arrangement"
+    ],
+    "our_declarations": [
+      "Arrangement"
+    ],
+    "note": "Blind arrangements of T are equivalent to our arrangements of the bridged objects. The mere equalities are mapped by ap of bridge_obj and its inverse."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 286,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/03-geometric-objects.ny",
+    "blind_declarations": [
+      "BlindIncidenceType"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-03-geometric-objects.ny",
+    "bridge_declarations": [
+      "bridge_def_incidence_type"
+    ],
+    "our_declarations": [
+      "IncidenceType"
+    ],
+    "note": "Incidence types are the components of equivalent types of arrangements (component_equiv)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 294,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/04-icosahedron.ny",
+    "blind_declarations": [
+      "blind_two",
+      "blind_five",
+      "blind_half",
+      "blind_sqrt_five",
+      "blind_phi",
+      "blind_vec3",
+      "blind_sign",
+      "blind_cyclic",
+      "BlindIcoIndex",
+      "blind_ico_vertex",
+      "blind_ico_sum",
+      "blind_e3",
+      "blind_icosahedron_vertices",
+      "BlindIcoHullWitness",
+      "blind_icosahedron"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-04-icosahedron.ny",
+    "bridge_declarations": [
+      "bridge_four",
+      "bridge_five",
+      "bridge_sqrt_five",
+      "bridge_half",
+      "bridge_phi",
+      "bridge_ico_cyc",
+      "bridge_ico_sigma",
+      "bridge_ico_sigma_invol",
+      "bridge_vertex",
+      "bridge_vertex_back",
+      "bridge_ico_sum",
+      "bridge_vertex_pred",
+      "bridge_icosahedron_vertices",
+      "bridge_hull_forward",
+      "bridge_hull_backward",
+      "bridge_hull_pred",
+      "bridge_icosahedron"
+    ],
+    "our_declarations": [
+      "golden_ratio",
+      "icosahedron_vertex",
+      "icosahedron_vertex_set",
+      "IcosahedronConvexCombination",
+      "icosahedron"
+    ],
+    "note": "The bridge proves blind_phi = golden_ratio. It uses the unique inverse of 2 and the unique non-negative √5. One side writes 5 as (2+2)+1, and the other side uses ring_of_nat 5. The blind vertex indexing has sign false = + and another order of cyclic shifts. The involution bridge_ico_sigma matches this indexing with ours. The 12-term sums agree after reindexing. So, as geometric objects, the blind vertex set and the blind convex hull are our icosahedron_vertex_set and icosahedron. Both sides read 'the regular solid' as the convex hull."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 300,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch14/blind/04-icosahedron.ny",
+    "blind_declarations": [
+      "blind_golden_rectangle",
+      "blind_icosahedron_adjacent_distance",
+      "blind_norm",
+      "blind_norm3",
+      "blind_sub3"
+    ],
+    "bridge_file": "chapters/ch14/blind/bridge-04-icosahedron.ny",
+    "bridge_declarations": [
+      "bridge_rect_sides",
+      "bridge_rect_orthogonal",
+      "bridge_norm_ours",
+      "bridge_golden_rectangle",
+      "bridge_adjacent_square",
+      "bridge_icosahedron_adjacent_distance"
+    ],
+    "our_declarations": [
+      "golden_rectangle_short_length",
+      "golden_rectangle_long_length",
+      "icosahedron_edge_square",
+      "icosahedron_edge_length"
+    ],
+    "note": "Golden rectangle: a-b = c-d and orthogonality are generic computations. The facts ‖a-b‖ = 2 and ‖a-c‖ = 2φ are ours (golden_rectangle_short_length/long_length), after the blind φ is replaced by ours. The blind norm uses another proof of H(v,v) ≥ 0. The sqrt arguments are identified by nonneg_prop. Adjacent distance: the displayed sum 1 + (φ-1)² + φ² is computed generically. Its value 4 and the norm 2 come from icosahedron_edge_square/icosahedron_edge_length. Neither side formalizes the claim of the remark that this computation is sufficient for regularity."
+  }
+]

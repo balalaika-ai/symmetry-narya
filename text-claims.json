@@ -13872,5 +13872,450 @@
     "importance": "low",
     "declarations": [],
     "note": "These are empty section titles (lines 1304-1307). They have no content."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 8,
+    "quote": "We assume some standard linear algebra over real numbers ... In our context, the field of real numbers, $\\RR$, is a set, and so are vector spaces over it.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "EuclideanField",
+      "ring_set",
+      "module_set"
+    ],
+    "note": "Narya has no reals. Thus ℝ is the explicit parameter K : EuclideanField. This is a field of chapter 13 with an order predicate, antisymmetry, square roots of non-negative elements, and nonzero → invertible. K and vector spaces are sets (ring_set, module_set). Modules 1410–1413 prove the linear algebra that the formalization uses (bases, Gram–Schmidt, dimension uniqueness). It is not assumed."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 12,
+    "quote": "a vector space $V$ has an underlying additive abstract group, and we will feel free to pass from it to the corresponding group.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ip_additive_group",
+      "module_group",
+      "concr",
+      "euclidean_semidirect_action"
+    ],
+    "note": "The additive abstract group is module_group. The corresponding (concrete) group is concr of it (module 707)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 22,
+    "quote": "Let $\\OS$ denote the type of inner product spaces.  It is a type of pairs whose elements are of the form $(V,H)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "InnerProductSpace"
+    ],
+    "note": "This is a record (space, finite, form, inner). It contains the pair (V, H) and the proofs of finite dimensionality and of the inner product axioms."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 24,
+    "quote": "For $n : \\NN$, let $\\OS_n$ denote the type of inner product spaces of dimension $n$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "InnerProductSpaceDim",
+      "inner_product_space_dim_sum_equiv"
+    ],
+    "note": "The definition is OS_n ≔ Σ_{V : OS} HasDimension n V. Dimension uniqueness gives OS ≃ Σ_n OS_n."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 26,
+    "quote": "we may construct the {\\em standard} inner product space $\\VV^n$ ... the dot product $x \\cdot y \\defeq \\sum_i x_i y_i$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "dot_product",
+      "dot_product_inner",
+      "standard_inner_product_space",
+      "standard_inner_product_space_dim",
+      "standard_has_dimension",
+      "standard_ip_space_dimension"
+    ],
+    "note": "Kⁿ = functions Fin n → K (module 1315), with the dot product. It is an inner product space of dimension n. Positive definiteness comes from sums of squares in an ordered field."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 38,
+    "quote": "For the definition of the adverb ``merely'', refer to \\cref{def:merely}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a cross-reference. The word 'merely' is Mere (module 29)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 66,
+    "quote": "The standard action ... of $\\OrthGp n$ is an action of it on its designated shape $\\VV^n$. ... compose the standard action with the projection map $\\B \\OrthGp n \\to \\typeRealVectorSpace$ that forgets the inner product to get an action of $\\OrthGp n$ on the vector space $\\RR^n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "standard_action",
+      "orthogonal_forget_inner_product",
+      "orthogonal_standard_gset",
+      "orthogonal_standard_gset_underlying",
+      "orthogonal_symmetry_act"
+    ],
+    "note": "The composite is the O(n)-set V ↦ (carrier of V), with the underlying set Kⁿ (refl). A symmetry given by a linear isometry φ acts by φ (refl)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 80,
+    "quote": "an isosceles non-equilateral triangle has a total of 2 symmetries: the identity and the reflection through the midline.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "triangle_object",
+      "triangle_isosceles_not_equilateral",
+      "triangle_loop_fixes_apex",
+      "triangle_loop_determined",
+      "triangle_swap_loop",
+      "triangle_reflection_nontrivial",
+      "isosceles_triangle_symmetries"
+    ],
+    "note": "This is in modules 1493–1497. T is the vertex set {(0,0), (1,0), (0,1)} in 𝔼² over any K. It is isosceles: |CA|² = |CB|² = 1 ≠ 2 = |AB|². T is a geometric object with materials Prop. The result is isosceles_triangle_symmetries : USym Sym(T) ≃ Bool. Under this equivalence, the identity ↦ true and the reflection in the midline y = x ↦ false. These two symmetries are different. Proof: transport of points along a symmetry is affine with an isometric linear part (refl applied to the uniform structure). So it fixes the apex, because the norms are 1 and 2. Hence it comes from a loop of O(2), because point_object_component_equiv is surjective on loops. The images of (1,0) and (0,1) determine the isometry of this loop. The vertex set has the same symmetries as the solid triangle. The solid triangle is not formalized."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 83,
+    "quote": "So, a Euclidean space will come with two sets: a set of points and a set of vectors ... a unique vector ... from $P$ to $Q$ ... distance ... a unique point $Q$ ... translation along $v$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "euclidean_points_set",
+      "euclidean_translate",
+      "euclidean_difference_contractible",
+      "ip_norm",
+      "standard_three_distance",
+      "euclidean_standard_translate"
+    ],
+    "note": "This is an informal high-school description. The torsor definition realizes it: points and vectors are sets, v + P exists, and the vector from P to Q is unique. Length is ip_norm (√H(v,v) ≥ 0), and distance in 𝔼³ is standard_three_distance. The 'positioning' language is not formal."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 103,
+    "quote": "We introduce the (new) notation $v+P$ ... the associative rule $v+(w+P) = (v+w)+P$ holds.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "euclidean_translate",
+      "euclidean_translate_assoc"
+    ],
+    "note": "v + P is the torsor action. Associativity comes from the action law."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 106,
+    "quote": "This suggests that the essential features of high school geometry can be captured by describing the set of points as a torsor for the group of vectors.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation for def:EuclideanSpace."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 119,
+    "quote": "We will write $V$ also for the additive group underlying $V$.  Thus an expression such as $\\B V$ or $\\typetorsor_V$ will be understood as applying to the underlying additive group",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ip_additive_group",
+      "concr_classifying_type"
+    ],
+    "note": "B V is B(concr(module_group V)), which is literally the type of V-torsors (module 707)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 121,
+    "quote": "We are careful not to refer to the group as an Abelian group at this point ... because the operator $\\B$ may be used in some contexts to denote a different construction on Abelian groups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "module_group_abelian"
+    ],
+    "note": "This is a footnote on notation. The group is abelian (module_group_abelian, chapter 13)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 136,
+    "quote": "The torsor $\\Points E$ is a nonempty set upon which $V$ acts.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "euclidean_points_nonempty",
+      "euclidean_points_set",
+      "euclidean_translate"
+    ],
+    "note": "Non-emptiness is mere (Mere (Points E))."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 138,
+    "quote": "given $P,Q:\\Points E$, there is a unique $v:V$ such $v+P = Q$; for it we introduce the notation $Q-P \\defeq v$ ... $(Q-P)+P=Q$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "abstract_torsor_difference_contractible",
+      "euclidean_difference_contractible",
+      "euclidean_difference",
+      "euclidean_difference_law"
+    ],
+    "note": "This is the contractibility of Σ_v (v + P = Q) for any abstract torsor, that is, for a free and transitive action."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 143,
+    "quote": "we may construct the {\\em standard} Euclidean space $\\EE^n : \\ES_n$ ... For $\\Vectors E$ we take ... $\\VV^n$, and for $\\Points E$ ... the corresponding principal torsor",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "euclidean_standard",
+      "euclidean_standard_points",
+      "euclidean_standard_translate"
+    ],
+    "note": "Points 𝔼ⁿ ≡ Kⁿ, and v + P is the coordinatewise sum. Both facts hold by refl."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 175,
+    "quote": "The {\\em standard action} of $\\EucGp n$ ... is an action of it on the Euclidean space $\\EE^n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "euclidean_standard_gset",
+      "euclidean_standard_gset_underlying",
+      "euclidean_translation_act"
+    ],
+    "note": "This is the E(n)-set E ↦ Points E. Translations act by translation."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 195,
+    "quote": "much of what we say is more general and applies equally well to other sorts of geometry, such as projective geometry or hyperbolic geometry.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a remark about scope."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 204,
+    "quote": "in the standard Euclidean plane ... the $x$-axis is described by the equation $y=0$ ... $g : \\Points E \\to \\Prop$ defined by $(x,y) \\mapsto y=0$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "x_axis",
+      "x_axis_object",
+      "standard_plane"
+    ],
+    "note": "This is the predicate P ↦ (P_y = 0) on 𝔼²."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 209,
+    "quote": "the symmetry given by the function $t : (x,y) \\mapsto (x+3,y)$. It is compatible with the action of $\\Vectors E$ on $\\Points E$, and it sends the line to itself. ... by univalence, ... the translation $t$ gives rise to an identification of type $(E,g) = (E,g)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ef_three",
+      "x_shift_vector",
+      "principal_torsor_translation",
+      "x_axis_translation_invariant",
+      "plane_x_translation_path",
+      "plane_x_translation_is_symmetry",
+      "plane_x_translation_transport",
+      "x_axis_translation_symmetry"
+    ],
+    "note": "The map t = (+ (3,0)) is an automorphism of the torsor (equivariance), and it preserves the x-axis. The identification x_axis_translation_symmetry : (𝔼², g) = (𝔼², g) in EucObj_Prop has as its space component the translation symmetry of E(2)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 216,
+    "quote": "suppose the object to be described is a car ... we may choose to model the car as a function of type $\\Points E \\to M$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation for materials."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 225,
+    "quote": "$\\Prop$ is a set (with 2 distinguished elements, $\\true$ and $\\false$).",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "propositions_set",
+      "propositions_settype",
+      "true_proposition"
+    ],
+    "note": "PropTypes is a set (module 21)."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 233,
+    "quote": "It would be a mistake to regard a geometric object as a triple $(E,M,g)$, for then symmetries would be allowed to permute the materials.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a footnote inside the definition block. It is not formalized."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 245,
+    "quote": "The exercise above allows us to speak of the symmetry group of a geometric object.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "geometric_object_symmetry_group"
+    ],
+    "note": "This is Aut(o) in the groupoid EucObj_M."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 258,
+    "quote": "One often considers situations in geometry with multiple objects in the same space ... This prompts the following definitions.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is motivation."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 279,
+    "quote": "arrangements consisting of a point and a line in the plane ... where the point is at a distance $d$ from the line ... are all merely equal to each other ... the arrangements are classified by the set of nonnegative real numbers $d$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "PLObject",
+      "pl_config",
+      "pl_config_arrangement",
+      "pl_config_invariant",
+      "pl_config_path",
+      "pl_translation",
+      "pl_reflection",
+      "second_coordinate_negation_isometry"
+    ],
+    "note": "Module 1498 treats the configurations (𝔼², {P}, x-axis). These are arrangements of the point object (𝔼², {0}) and the x-axis object. Equal configurations have the same squared distance y² of the point to the line (pl_config_invariant). Configurations with y' = ±y are equal (pl_config_path). The proof uses a translation along the axis and a reflection in it. The sign is a hypothesis, because equality in K is not decidable. Not formalized: arbitrary lines and planes, and π₀(arrangements) ≃ {d ≥ 0}. The book defines neither lines nor point-line distance, and it says 'in some sense'."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 312,
+    "quote": "Icosahedron with its golden rectangles.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a figure caption."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 375,
+    "quote": "The seven frieze patterns up to isometry, with their orbifold symbols.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [],
+    "note": "This figure caption asserts the classification of frieze patterns into seven types up to isometry. The book defines neither frieze patterns nor their symmetry groups. The classification of discrete isometry groups of a strip is not developed. Note: the words 'up to isometry' are important. As abstract groups, the seven frieze groups fall into only four isomorphism types: ℤ, ℤ × C₂, D∞ and D∞ × C₂. This is a classical fact, and it is not formalized."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 461,
+    "quote": "See~\\cref{fig:friezes,fig:friezes-gen}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The section 'Frieze patterns' contains only figures."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 466,
+    "quote": "The seven frieze patterns up to isometry, with their orbifold symbols and superimposed generators.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the same claim as line 375, with the generators drawn."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 707,
+    "quote": "Tricycle on carpet.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a figure of a wallpaper pattern. It contains no claim."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 710,
+    "quote": "\\section{Incidence geometries and the Levi graph}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is an empty stub section."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 713,
+    "quote": "Barycentric calculus. Affine transformations. Euclidean / Hermitian geometry (isometries, conformity...)",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the outline of a planned section (affine geometry, with subsection titles 714-718). It contains no claims."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 720,
+    "quote": "\\section{Inversive geometry (Möbius)}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a stub with subsection titles: residue at a point is affine, and Miquel's theorem. It contains no statements."
+  },
+  {
+    "source": "geometry.tex",
+    "line": 725,
+    "quote": "Projective spaces (projective invariance, cross ratio, harmonic range...). Conics/quadrics. (Classification in low dimensions?) ... complex algebraic plane projective curves",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the outline of a planned section with subsection titles 728-732. It contains no claims."
   }
 ]

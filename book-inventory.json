@@ -26471,8 +26471,24 @@
     "labels": [
       "def:InnerProductSpace"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "EuclideanField",
+      "IsInnerProduct",
+      "is_inner_product_prop",
+      "InnerProductSpace",
+      "ip_carrier",
+      "InnerProductSpaceDim",
+      "ip_left_linear",
+      "ip_right_linear",
+      "standard_inner_product_space"
+    ],
+    "principal": [
+      "InnerProductSpace",
+      "IsInnerProduct",
+      "EuclideanField"
+    ],
+    "note": "An inner product space is a finite dimensional K-vector space (chapter 13 VectorSpace with IsFiniteDimensional) with a form H : V → V → K. The form is curried, not V × V → ℝ. It is linear in the first argument, symmetric and positive definite (H(v,v) ≥ 0, H(v,v) = 0 → v = 0). The book does not state these axioms explicitly. An explicit parameter K : EuclideanField replaces ℝ. K is a field with a non-negativity predicate. This predicate is closed under +, · and squares, and it is antisymmetric. K also has chosen square roots of non-negative elements, and nonzero → invertible. Classically, all these properties are true of ℝ."
   },
   {
     "chapter": 14,
@@ -26484,8 +26500,50 @@
     "labels": [
       "thm:GramSchmidt"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "fin_linear_combination",
+      "InLinearSpan",
+      "span_zero",
+      "span_add",
+      "span_smul",
+      "span_neg",
+      "span_member",
+      "span_combination",
+      "span_extend",
+      "LinearlyIndependent",
+      "independent_restrict",
+      "independent_last_not_in_span",
+      "basis_coordinates",
+      "basis_coordinates_lc",
+      "basis_independent",
+      "basis_expansion",
+      "basis_spans",
+      "ip_lc_left",
+      "IsOrthonormal",
+      "ip_lc_orthonormal",
+      "GramSchmidtData",
+      "gs_residual",
+      "gs_residual_orthogonal",
+      "gs_residual_nonzero",
+      "gs_norm",
+      "gs_new_vector",
+      "gs_step",
+      "gram_schmidt_family",
+      "gram_schmidt_isometry",
+      "gram_schmidt_theorem_os",
+      "gram_schmidt_theorem",
+      "ip_space_path_from_isometry",
+      "ip_space_dim_path_from_isometry",
+      "dimension_unique",
+      "ip_space_dimension"
+    ],
+    "principal": [
+      "gram_schmidt_theorem",
+      "gram_schmidt_theorem_os",
+      "gram_schmidt_isometry"
+    ],
+    "note": "For V : OS_n, Mere (V = 𝕍ⁿ) holds in OS_n (gram_schmidt_theorem). For V : OS with HasDimension n, Mere (V = 𝕍ⁿ) holds in OS (gram_schmidt_theorem_os). The phrase \"n is dim V\" is well defined by dimension_unique (module 1413). The proof is as in the book. Gram–Schmidt starts from a basis and gives an orthonormal basis and a linear isometry 𝕍ⁿ ≅ V. It is a recursion on independent families, and it uses the square roots and inverses of the EuclideanField hypothesis. The structure identity principle of module 1401 turns the isometry into an identification."
   },
   {
     "chapter": 14,
@@ -26497,8 +26555,26 @@
     "labels": [
       "lem:InnerProductSpace1Type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LinearIsometry",
+      "IsIsometry",
+      "linear_isometry_path",
+      "linear_isometry_set",
+      "ip_space_path_to_isometry",
+      "ip_space_isometry_path_section",
+      "ip_space_isometry_total_contractible",
+      "ip_space_path_isometry_equiv",
+      "ip_space_paths_set",
+      "inner_product_space_groupoid",
+      "inner_product_space_dim_groupoid",
+      "ip_space_dim_path_equiv"
+    ],
+    "principal": [
+      "inner_product_space_groupoid",
+      "ip_space_path_isometry_equiv"
+    ],
+    "note": "OS is a groupoid. As in the book's proof, (V = W) ≃ linear isomorphisms f with H'(f u, f v) = H(u, v) (ip_space_path_isometry_equiv). This equivalence is built on the module SIP of module 1304. The identification from an isometry has the carrier ua(f), so transport is f by computation. These isomorphisms form a set. OS_n is also a groupoid (inner_product_space_dim_groupoid)."
   },
   {
     "chapter": 14,
@@ -26510,8 +26586,25 @@
     "labels": [
       "def:OrthogonalGroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "orthogonal_group_connected",
+      "orthogonal_group_classifying",
+      "orthogonal_group",
+      "orthogonal_group_classifying_type",
+      "orthogonal_group_shape",
+      "orthogonal_usym_isometry_equiv",
+      "orthogonal_symmetry",
+      "coordinate_swap_isometry",
+      "first_coordinate_negation_isometry",
+      "orthogonal_two_not_abelian",
+      "ef_neg_one_ne_one"
+    ],
+    "principal": [
+      "orthogonal_group",
+      "orthogonal_usym_isometry_equiv"
+    ],
+    "note": "Exactly as printed, O(n) ≔ mkgroup(OS_n, 𝕍ⁿ). Connectedness comes from thm:GramSchmidt, and the groupoid property comes from lem:InnerProductSpace1Type. By refl, B O(n) ≡ OS_n and shape ≡ 𝕍ⁿ. The symmetries are equivalent to the linear isometries of 𝕍ⁿ. Litmus: O(2) is not abelian. A coordinate swap and a reflection do not commute, because 1 ≠ -1 in an ordered field."
   },
   {
     "chapter": 14,
@@ -26523,8 +26616,20 @@
     "labels": [
       "def:EuclideanSpace"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ip_additive_group",
+      "EuclideanSpace",
+      "euclidean_points",
+      "euclidean_vectors",
+      "euclidean_translate",
+      "euclidean_points_set"
+    ],
+    "principal": [
+      "EuclideanSpace",
+      "ip_additive_group"
+    ],
+    "note": "A Euclidean space is a pair (V, A) of an inner product space V and an abstract torsor A. The torsor is for the additive group that underlies V (module_group of chapter 13). Abstract torsors are as in def:abstrGtorsors (module 707): AbstractTorsors G = Σ_{X : G-set} ‖P_G = X‖."
   },
   {
     "chapter": 14,
@@ -26534,8 +26639,29 @@
     "line": 127,
     "section_raw": "Euclidean spaces}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "EuclideanSpaceDim",
+      "EuclideanSpace",
+      "euclidean_space_dim_forget",
+      "euclidean_points",
+      "euclidean_vectors",
+      "euclidean_space_dim_sum_equiv",
+      "dimension_unique",
+      "finite_dimension_prop",
+      "inner_product_space_dim_sum_equiv",
+      "vector_space_dimension_data",
+      "trace_count_equal",
+      "fin_sum_swap",
+      "linear_map_matrix",
+      "ef_nat_injective"
+    ],
+    "principal": [
+      "EuclideanSpaceDim",
+      "euclidean_space_dim_sum_equiv",
+      "dimension_unique"
+    ],
+    "note": "The definitions are ES_n ≔ Σ_{V : OS_n} Torsor_V and ES ≔ Σ_{V : OS} Torsor_V. Points E is the set of the torsor, and Vectors E is the vector space. The claim ES ≃ Σ_n ES_n (the map forgets n) is proved through the uniqueness of dimension (dimension_unique). This uniqueness uses a trace argument n·1 = m·1 and the characteristic 0 of the ordered field K. Similarly, OS ≃ Σ_n OS_n."
   },
   {
     "chapter": 14,
@@ -26547,8 +26673,18 @@
     "labels": [
       "thm:EuclideanNormalization"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "euclidean_standard",
+      "euclidean_normalization",
+      "euclidean_normalization_es",
+      "abstract_torsors_connected"
+    ],
+    "principal": [
+      "euclidean_normalization",
+      "euclidean_normalization_es"
+    ],
+    "note": "Every E : ES_n is merely equal to 𝔼ⁿ = (𝕍ⁿ, principal torsor of Kⁿ). This also holds for E : ES with HasDimension n. The proof is as printed. By thm:GramSchmidt, assume Vectors E = 𝕍ⁿ, and transport the torsor along this identification. Then the torsor is merely the principal one."
   },
   {
     "chapter": 14,
@@ -26560,8 +26696,17 @@
     "labels": [
       "lem:EuclideanSpace1Type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "euclidean_space_dim_groupoid",
+      "euclidean_space_groupoid",
+      "abstract_torsors_groupoid",
+      "concr_classifying_type"
+    ],
+    "principal": [
+      "euclidean_space_dim_groupoid"
+    ],
+    "note": "ES_n (and ES) is a 1-type, because it is a Σ of groupoids over a groupoid. The book's identification ES_n ≃ Σ_{V : B O(n)} B V (lem:BGbytorsor) holds by definition here. The reason is that B(concr G) is the type of G-torsors (concr_classifying_type, refl)."
   },
   {
     "chapter": 14,
@@ -26573,8 +26718,22 @@
     "labels": [
       "def:EuclideanGroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "euclidean_group_connected",
+      "euclidean_group_classifying",
+      "euclidean_group",
+      "euclidean_group_classifying_type",
+      "euclidean_standard_gset",
+      "principal_torsor_translation",
+      "euclidean_translation",
+      "euclidean_translation_act",
+      "euclidean_translation_trivial"
+    ],
+    "principal": [
+      "euclidean_group"
+    ],
+    "note": "As printed, E(n) ≔ mkgroup(ES_n, 𝔼ⁿ). Connectedness comes from thm:EuclideanNormalization, and the groupoid property comes from lem:EuclideanSpace1Type. Litmus: the translations x ↦ x + v of the principal torsor are symmetries. They act on points by P ↦ P + v. This action is propositional, through the inverse of the G-set SIP. The translations are trivial only for v = 0."
   },
   {
     "chapter": 14,
@@ -26586,8 +26745,20 @@
     "labels": [
       "thm:EuclideanGroupSemidirect"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "euclidean_semidirect_action",
+      "euclidean_semidirect_action_shape",
+      "euclidean_semidirect_classifying",
+      "euclidean_group_semidirect_iso",
+      "euclidean_group_semidirect",
+      "semidirect_product"
+    ],
+    "principal": [
+      "euclidean_group_semidirect",
+      "euclidean_group_semidirect_iso"
+    ],
+    "note": "E(n) = O(n) ⋉ ℝⁿ as groups: the formalization gives an identification and the identity group isomorphism. The action of O(n) is V ↦ concr(additive group of V) (chapter 8 semidirect_product). Its value at the shape is ℝⁿ (abstr(concr ℝⁿ) = ℝⁿ). As in the proof, the classifying type Σ_{V : B O(n)} B(concr V) of the semidirect product is ES_n by definition. The pointed classifying types agree by refl."
   },
   {
     "chapter": 14,
@@ -26597,8 +26768,16 @@
     "line": 229,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "EuclideanObject",
+      "standard_object",
+      "propositions_settype"
+    ],
+    "principal": [
+      "EuclideanObject"
+    ],
+    "note": "For a set M (SetTypes), EucObj_M ≔ Σ_{E : ES} (Points E → M). The case M = Prop uses propositions_settype: PropTypes is a set (module 21). The footnote is not formalized. It says that a triple (E, M, g) would let symmetries permute materials."
   },
   {
     "chapter": 14,
@@ -26608,8 +26787,14 @@
     "line": 241,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "euclidean_object_groupoid"
+    ],
+    "principal": [
+      "euclidean_object_groupoid"
+    ],
+    "note": "EucObj_M is a groupoid, because it is the Σ of the groupoid ES with the set-valued family Points E → M."
   },
   {
     "chapter": 14,
@@ -26619,8 +26804,24 @@
     "line": 247,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "geometric_object_symmetry_group",
+      "object_component_gset",
+      "object_component_dimension",
+      "object_action_type_to_component",
+      "object_component_to_action_type",
+      "object_action_type_component_equiv",
+      "object_component_gset_transitive",
+      "geometric_object_subgroup",
+      "geometric_object_subgroup_iso",
+      "geometric_object_subgroup_path"
+    ],
+    "principal": [
+      "geometric_object_subgroup",
+      "geometric_object_subgroup_path"
+    ],
+    "note": "Let o = (𝔼ⁿ, g). Its symmetry group Aut(o) is the automorphism group in EucObj_M. Aut(o) is a subgroup of E(n) in the sense of chapter 5, where Subgroups = pointed transitive G-sets. The E(n)-set X(E) = Σ_{g'} ‖o = (E, g')‖, pointed at g, is transitive. The underlying group of this subgroup is identified with Aut(o) (geometric_object_subgroup_path). The identification uses a pointed equivalence of the total space with the component of o."
   },
   {
     "chapter": 14,
@@ -26630,8 +26831,32 @@
     "line": 251,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "single_pred",
+      "single_pred_injective",
+      "IsSingletonObject",
+      "is_singleton_object_prop",
+      "torsor_orbit_iso",
+      "pointed_torsors_contractible",
+      "abstract_torsor_difference_contractible",
+      "point_object_map",
+      "origin_pred",
+      "origin_object",
+      "origin_component_singleton",
+      "point_object_component",
+      "point_object_component_inverse",
+      "point_object_component_equiv",
+      "origin_symmetry_iso",
+      "origin_symmetry_path",
+      "point_object_merely_origin",
+      "point_symmetry_group"
+    ],
+    "principal": [
+      "point_symmetry_group",
+      "origin_symmetry_iso"
+    ],
+    "note": "Let E have dimension n and let P be a point. Then the object (E, Q ↦ (Q = P)) has a symmetry group equal to O(n). The lemma point_symmetry_group gives Mere (Sym(E, {P}) = O(n)) in Group. For (𝔼ⁿ, {0}), origin_symmetry_iso gives an explicit group isomorphism O(n) ≅ Sym. This proof uses the fact that pointed torsors are contractible. For general E, the formalization reads \"is isomorphic\" as mere existence. The book cannot mean more. An isomorphism given as data for every E and P is refuted for n = 2 (chapters/ch14/blind/bridge-03b-point-symmetry-refutation.ny). Such a family would make every loop central, so O(2) would be abelian. This contradicts orthogonal_two_not_abelian."
   },
   {
     "chapter": 14,
@@ -26641,8 +26866,17 @@
     "line": 262,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Configuration",
+      "configuration_constituent",
+      "ConfigurationOfObjects"
+    ],
+    "principal": [
+      "Configuration",
+      "configuration_constituent"
+    ],
+    "note": "A configuration for I and sets M_i is (E, (p_i : Points E → M_i)_i) : Σ_{E : ES} Π_i (Points E → M_i). Its constituents are (E, p_i). Configurations of n objects take I = Fin n."
   },
   {
     "chapter": 14,
@@ -26652,8 +26886,15 @@
     "line": 272,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Arrangement",
+      "single_arrangement_equiv"
+    ],
+    "principal": [
+      "Arrangement"
+    ],
+    "note": "An arrangement of objects T_i is a configuration whose i-th constituent is merely equal to T_i. Litmus: the arrangements of one object T are the objects that are merely equal to T (single_arrangement_equiv)."
   },
   {
     "chapter": 14,
@@ -26663,8 +26904,15 @@
     "line": 286,
     "section_raw": "Geometric objects}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IncidenceType",
+      "incidence_type_connected"
+    ],
+    "principal": [
+      "IncidenceType"
+    ],
+    "note": "The incidence type of an arrangement a is its connected component (NativeComponent) in the type of arrangements. It is connected. The book says \"an incidence type is a connected component\". We index components by a representative."
   },
   {
     "chapter": 14,
@@ -26674,8 +26922,53 @@
     "line": 294,
     "section_raw": "The icosahedron}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IcosaIndex",
+      "triple_vector",
+      "icosa_sign",
+      "icosa_vertex",
+      "icosahedron_vertex",
+      "golden_ratio",
+      "ef_sqrt_five",
+      "ef_half",
+      "golden_ratio_square",
+      "golden_ratio_nonneg",
+      "standard_space_three",
+      "icosa_index_sum",
+      "icosahedron_vertex_set",
+      "IcosahedronConvexCombination",
+      "icosahedron",
+      "GoldenInt",
+      "golden_mul",
+      "golden_phi_square",
+      "golden_vertex",
+      "icosa_pair_count",
+      "icosa_count_zero",
+      "icosa_count_edges",
+      "icosa_count_second",
+      "icosa_count_antipodal",
+      "icosa_degree",
+      "icosa_degree_five",
+      "int_to_ring",
+      "golden_to_field",
+      "golden_to_field_add",
+      "golden_to_field_neg",
+      "golden_to_field_mul",
+      "golden_vertex_to_field",
+      "golden_sq_distance_to_field",
+      "icosa_pair_class",
+      "icosahedron_vertex_injective",
+      "icosahedron_edge_iff",
+      "icosahedron_field_degree_five",
+      "icosahedron_field_edge_count"
+    ],
+    "principal": [
+      "icosahedron",
+      "icosahedron_vertex",
+      "golden_ratio"
+    ],
+    "note": "The vertices are the cyclic permutations of (0, ±1, ±φ) in 𝔼³, with φ = (1 + √5)/2 (golden_ratio). Here φ² = φ + 1 and φ ≥ 0. The formalization reads \"the regular solid with these vertices\" as their convex hull (icosahedron, materials Prop). The vertex set is icosahedron_vertex_set. The edge graph is computed over ℤ[φ] with the same vertex function. There are 12 distinct vertices and 60 ordered pairs at squared distance 4, that is, 30 edges. Also, 60 ordered pairs are at 4 + 4φ and 12 are at 8 + 4φ, and the degree is 5. The ring map ℤ[φ] → K transfers these results to every K (modules 1490–1492). Over K, the 12 vertices are distinct. Two vertices are at distance 2 iff their ℤ[φ] squared distance is 4. Every vertex has exactly 5 vertices at distance 2, and there are 30 edges. The icosahedral group is not constructed: the book makes no claim about it."
   },
   {
     "chapter": 14,
@@ -26685,8 +26978,44 @@
     "line": 300,
     "section_raw": "The icosahedron}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ip_norm",
+      "standard_three_difference",
+      "standard_three_distance",
+      "ef_sqrt_unique",
+      "ef_two",
+      "ef_two_square",
+      "icosahedron_edge_square",
+      "icosahedron_edge_length",
+      "golden_rectangle_a",
+      "golden_rectangle_b",
+      "golden_rectangle_c",
+      "golden_rectangle_d",
+      "golden_short_side",
+      "golden_long_side",
+      "golden_rectangle_ab",
+      "golden_rectangle_dc",
+      "golden_rectangle_ad",
+      "golden_short_side_square",
+      "golden_long_side_square",
+      "golden_sides_orthogonal",
+      "golden_rectangle_short_length",
+      "golden_rectangle_long_length",
+      "golden_ratio_times_pred",
+      "golden_ratio_ge_one",
+      "golden_rectangle_short_le_long",
+      "icosa_remark_pair_golden",
+      "icosa_degree_five",
+      "icosahedron_edge_iff",
+      "icosahedron_field_degree_five"
+    ],
+    "principal": [
+      "icosahedron_edge_length",
+      "golden_rectangle_short_length",
+      "golden_rectangle_long_length"
+    ],
+    "note": "The formalization proves ‖(0,1,φ) − (1,φ,0)‖ = 2. The squared norm is 1 + (φ−1)² + φ² = 4, and √4 = 2 by the uniqueness of non-negative roots. Golden rectangle: A=(0,1,φ), B=(0,−1,φ), C=(0,−1,−φ), D=(0,1,−φ). Then A−B = D−C = (0,2,0) and A−D = (0,0,2φ). The sides are orthogonal, with lengths 2 and 2φ, and 2 ≤ 2φ. The book's \"we just need to calculate\" (regularity by symmetry) is not formalized as a regularity theorem. But module 1492 computes the full edge graph over ℤ[φ] (degree 5, 30 edges of length 2) and transfers it to K."
   },
   {
     "chapter": 15,
