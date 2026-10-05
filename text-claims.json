@@ -4322,5 +4322,1588 @@
     "importance": "low",
     "declarations": [],
     "note": "The identity is not formalized (gcd/lcm exist in module 148)."
+  },
+  {
+    "source": "group.tex",
+    "line": 5,
+    "quote": "the identity type $a\\eqto_Aa$ reflects the ``symmetries'' of an element $a$ in a type $A$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation for the view of loops as symmetries."
+  },
+  {
+    "source": "group.tex",
+    "line": 6,
+    "quote": "Since the symmetries $p : a\\eqto_A a$ are paths that start and end at the point $a:A$, we also call them \\emph{loops} at $a$, or \\emph{automorphisms} of $a$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Loop",
+      "Omega"
+    ],
+    "note": "Terminology. The type of loops at the point of a pointed type is Loop (module 00), pointed as Omega."
+  },
+  {
+    "source": "group.tex",
+    "line": 15,
+    "quote": "Symmetries have special properties.  For instance, you can rotate a square by $90\\mathdegree$, and you can reverse that motion by rotating it by $-90\\mathdegree$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Geometric illustration."
+  },
+  {
+    "source": "group.tex",
+    "line": 16,
+    "quote": "Symmetries can also be composed, and this composition respects certain rules that hold in all examples.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "usym_mul",
+      "usym_abstract_laws"
+    ],
+    "note": "The composition of symmetries is usym_mul. Its laws are lem:idtypesgiveabstractgroups (usym_abstract_laws, module 403)."
+  },
+  {
+    "source": "group.tex",
+    "line": 20,
+    "quote": "it became clear to mathematicians at the end of the 19\\textsuperscript{th} century that the properties of such symmetries could be codified by saying that they form an abstract \\emph{group}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Historical remark."
+  },
+  {
+    "source": "group.tex",
+    "line": 21,
+    "quote": "equality is ``reflexive, symmetric and transitive'' -- implemented by operations $\\refl{a}$, $\\symm_{a,b}$ and $\\trans_{a,b,c}$, and an abstract group is just a set with such operations satisfying appropriate rules.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "inverse",
+      "concat",
+      "AbstractGroup"
+    ],
+    "note": "The term refl is native. The operations symm and trans are inverse and concat (J.ny, module 00). Abstract groups are AbstractGroup (module 403)."
+  },
+  {
+    "source": "group.tex",
+    "line": 30,
+    "quote": "The axioms for an abstract group follow from the rules for identity types, without us needing to impose them.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "usym_abstract_laws",
+      "abstr"
+    ],
+    "note": "lem:idtypesgiveabstractgroups: usym_abstract_laws and abstr (module 403)."
+  },
+  {
+    "source": "group.tex",
+    "line": 32,
+    "quote": "We will show in~\\cref{ch:absgroup} that the two approaches give the same end result.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [],
+    "note": "Forward reference to chapter 7 (groups compared with abstract groups). It is not part of this chapter."
+  },
+  {
+    "source": "group.tex",
+    "line": 42,
+    "quote": "``homomorphisms'' (which to us are simply given by pointed maps)",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "GroupHom",
+      "hom_B"
+    ],
+    "note": "GroupHom G H is a wrapped BookPointedMap (BG G) (BG H) (module 401)."
+  },
+  {
+    "source": "group.tex",
+    "line": 49,
+    "quote": "In most of our exposition we make the blanket assumption that the identity type in question is a set, but in~\\cref{sec:inftygps} we briefly discuss $\\infty$-groups, where this assumption is dropped.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "PointedConnectedGroupoid",
+      "usym_set",
+      "InftyGroup"
+    ],
+    "note": "Groups require a groupoid classifying type. Thus USym G is a set. The type of ∞-groups (no groupoid condition) is InftyGroup (module 485)."
+  },
+  {
+    "source": "group.tex",
+    "line": 68,
+    "quote": "In order to motivate the formal definition of a group we revisit some types that we have seen in earlier chapters, paying special attention to the symmetries in these types.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Section introduction."
+  },
+  {
+    "source": "group.tex",
+    "line": 110,
+    "quote": "Note that the types $\\Sc$ and $\\FinSet_2$ in the examples above are groupoids.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_groupoid",
+      "bg_groupoid",
+      "symmetric_group"
+    ],
+    "note": "The lemma circle_groupoid holds for every circle. FinSet_2 is BΣ_2, a groupoid (bg_groupoid (symmetric_group two))."
+  },
+  {
+    "source": "group.tex",
+    "line": 111,
+    "quote": "For an arbitrary type $A$ and an element $a:A$, the symmetries of $a$ in $A$ form an \\inftygp, cf.~\\cref{sec:inftygps} below.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "infty_automorphism_group"
+    ],
+    "note": "Module 485 gives Aut_A(a) as an ∞-group for every A and a."
+  },
+  {
+    "source": "group.tex",
+    "line": 113,
+    "quote": "in elementary texts it is customary to restrict the notion of a group to the case when $a\\eqto_A a$ is a \\emph{set}, as we will do",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "PointedConnectedGroupoid",
+      "Group"
+    ],
+    "note": "Group is defined from pointed connected groupoids."
+  },
+  {
+    "source": "group.tex",
+    "line": 116,
+    "quote": "if are we given two elements $g,h:a\\eqto_A a$, then the identity type $g\\eqto h$ is a proposition (and we can simply write $g = h$). That is, $g$ can be equal to $h$ in at most one way",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "usym_set",
+      "isSet"
+    ],
+    "note": "By the definition of isSet, usym_set G g h : isProp (g = h)."
+  },
+  {
+    "source": "group.tex",
+    "line": 122,
+    "quote": "The examples of groups that Klein and Lie were interested in often had more structure on the set $a\\eqto_A a$, for instance a topology or a smooth structure.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Historical remark on topological and Lie groups."
+  },
+  {
+    "source": "group.tex",
+    "line": 128,
+    "quote": "Such groups give rise to \\inftygps by converting continuous (or smooth) symmetries of $a$ in $A$ parametrized by the continuous (or smooth) real interval, into identifications",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The text refers to cohesive/real-cohesive type theory (ft:cohesive). This development has no real numbers and no cohesion."
+  },
+  {
+    "source": "group.tex",
+    "line": 137,
+    "quote": "See \\cref{ch:grouphistory} for a brief summary of the history of groups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Cross-reference."
+  },
+  {
+    "source": "group.tex",
+    "line": 237,
+    "quote": "We are now ready to define the type of groups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition sentence."
+  },
+  {
+    "source": "group.tex",
+    "line": 360,
+    "quote": "Frequently we want to consider the symmetries $\\loops(A,a)$ of some element $a$ in some groupoid $A$, so we introduce the following definition.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation for def:automorphism-group."
+  },
+  {
+    "source": "group.tex",
+    "line": 726,
+    "quote": "Some groups have the property that the order you compose the symmetries is immaterial.  The prime example is the group of integers $\\ZZ\\jdeq\\mkgroup(\\Sc,\\base)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_group_is_abelian"
+    ],
+    "note": "Z = circle_group C is abelian for every circle C (circle_loops_commute)."
+  },
+  {
+    "source": "group.tex",
+    "line": 729,
+    "quote": "Any symmetry is of the form $\\Sloop^n$ for some integer $n$, and if $\\Sloop^m$ is also a symmetry, then $\\Sloop^n\\Sloop^m=\\Sloop^{n+m}=\\Sloop^{m+n}=\\Sloop^m\\Sloop^n$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "circle_every_symmetry_power",
+      "circle_power_mul",
+      "int_add_comm"
+    ],
+    "note": "Every symmetry is loop^{wind(g)} (circle_every_symmetry_power). In the book's order, loopⁿ · loopᵐ = loop^{n+m} (circle_power_mul). Also, n + m = m + n (int_add_comm)."
+  },
+  {
+    "source": "group.tex",
+    "line": 733,
+    "quote": "Such cases are important enough to have their own name:",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition to def:abgp."
+  },
+  {
+    "source": "group.tex",
+    "line": 749,
+    "quote": "We can visualize symmetries $g$ and $h$ commuting with each other in a group $A \\jdeq\\mkgroup(A,a)$ by the picture in the margin; going from (upper left hand corner) $a$ to (lower right hand corner) $a$ by either composition gives the same result.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Picture of the commutation square. Its content is IsAbelian (def:abgp)."
+  },
+  {
+    "source": "group.tex",
+    "line": 797,
+    "quote": "We'll see more examples of groups in~\\cref{sec:sign-homomorphism,sec:bicycles} and indeed throughout the rest of the book.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference."
+  },
+  {
+    "source": "group.tex",
+    "line": 802,
+    "quote": "Studying the identity type leads one to the definition of what an abstract group should be. We fix a type $A$ and an element $a:A$ for the rest of the section, and we focus on the identity type $a\\eqto a$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation and a variable convention for the whole section."
+  },
+  {
+    "source": "group.tex",
+    "line": 810,
+    "quote": "There is an element $\\refl a : a \\eqto a$. (See page \\pageref{rules-for-equality}, rule \\ref{E2}.) We set $e \\defeq \\refl a$ as notation for the time being.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "loop_space_abstract_group"
+    ],
+    "note": "The unit of loop_space_abstract_group A a h is refl a."
+  },
+  {
+    "source": "group.tex",
+    "line": 814,
+    "quote": "For $g : a \\eqto a$, the inverse $g^{-1} : a \\eqto a$ was defined in \\cref{def:eq-symm}. Because it was defined by path induction, this inverse operation satisfies $e^{-1} \\jdeq e$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "loop_space_inverse_unit",
+      "inverse_refl"
+    ],
+    "note": "In Narya's HOTT, inverse is defined by transport. The equation inverse(refl a) = refl a holds only as the identification inverse_refl (no regularity), not judgmentally. Checked: `refl` does not typecheck for this rule in the pinned Narya. The transport along a degenerate identity type stays stuck as .trr. Thus the judgmental part cannot be formalized. Only the identification can be formalized. Remains partly."
+  },
+  {
+    "source": "group.tex",
+    "line": 818,
+    "quote": "For $g, h : a \\eqto a$, the product $h \\cdot g : a \\eqto a$ was defined in \\cref{def:eq-trans}. Because it was defined by path induction, this product operation satisfies $e \\cdot g \\jdeq g$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "loop_space_mul",
+      "loop_space_unit_mul",
+      "concat_p1"
+    ],
+    "note": "h·g = trans(g)(h) is concat g h (loop_space_mul A a h g). The equation e·g = concat g refl = g holds only as the identification concat_p1, not judgmentally. Checked: `refl` does not typecheck for this rule in the pinned Narya. The transport along a degenerate identity type stays stuck as .trr. Thus the judgmental part cannot be formalized. Only the identification can be formalized. Remains partly."
+  },
+  {
+    "source": "group.tex",
+    "line": 823,
+    "quote": "For any elements $g,g_1,g_2,g_3:a\\eqto a$, we consider the following four identity types: the right unit law: $g \\eqto g\\cdot e$, the left unit law: $g \\eqto e\\cdot g$, the associativity law: $g_1\\cdot(g_2\\cdot g_3) \\eqto (g_1\\cdot g_2)\\cdot g_3$, the law of inverses: $g\\cdot \\inv g \\eqto e$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "loop_space_group_laws",
+      "AbstractGroupLaws"
+    ],
+    "note": "The four laws are the fields unit_right, unit_left, assoc and inv_right of AbstractGroupLaws. The equations have the orientation of def:abstractgroup."
+  },
+  {
+    "source": "group.tex",
+    "line": 834,
+    "quote": "In \\cref{xca:path-groupoid-laws}, the reader has constructed explicit elements of these identity types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "loop_space_group_laws",
+      "concat_1p",
+      "concat_p1",
+      "concat_assoc",
+      "concat_inverse_left"
+    ],
+    "note": "The lemma loop_space_group_laws gives the four elements for every loop space a = a that is a set."
+  },
+  {
+    "source": "group.tex",
+    "line": 836,
+    "quote": "If $a\\eqto a$ is a set, then the identity types above are all propositions. Then, in line with the convention adopted in \\cref{sec:props-sets-grpds}, we could simply say that \\cref{xca:path-groupoid-laws} establishes that the equations hold.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "abstract_group_laws_prop",
+      "loop_space_group_laws"
+    ],
+    "note": "Identity types of a set are propositions. The laws form a proposition (abstract_group_laws_prop)."
+  },
+  {
+    "source": "group.tex",
+    "line": 838,
+    "quote": "That motivates the following definition, in which we introduce a new set $S$ to play the role of $a\\eqto a$. ... The original type $A$ and its element $a$ play no further role.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation for def:abstractgroup."
+  },
+  {
+    "source": "group.tex",
+    "line": 845,
+    "quote": "In \\cref{sec:inftygps} we will come back to $A$ and $a$ and consider the case in which $A$ is an arbitrary connected type and $a:A$. Then $a\\eqto a$ need not be a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "universe_circle_component_loops_not_set",
+      "circle_automorphisms_not_set",
+      "infty_automorphism_group",
+      "native_component_connected"
+    ],
+    "note": "For a connected type A and a : A, a = a is not necessarily a set. For any circle C, the component U_(S¹) of the universe is connected (native_component_connected). But its loop type at S¹ is not a set (universe_circle_component_loops_not_set). The proof uses circle_automorphisms_not_set: Equiv S¹ S¹ is not a set, because of the central loop with value loop at base. The forward reference to sec:inftygps is the ∞-group infty_automorphism_group Type S¹."
+  },
+  {
+    "source": "group.tex",
+    "line": 880,
+    "quote": "Taking into account the introductory comments we have made above, we may state the following lemma.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition sentence."
+  },
+  {
+    "source": "group.tex",
+    "line": 892,
+    "quote": "The type $\\USymG$ is a set, because $\\BG$ is a groupoid. \\cref{xca:path-groupoid-laws} shows that all the relevant equations hold, as required.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "usym_set",
+      "usym_abstract_laws"
+    ],
+    "note": "Proof of lem:idtypesgiveabstractgroups (core)."
+  },
+  {
+    "source": "group.tex",
+    "line": 902,
+    "quote": "\\cref{lem:idtypesgiveabstractgroups} implies that all examples of groups, such as those in \\cref{sec:firstgroupexamples}, can easily be turned into examples of abstract groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "abstr",
+      "empty_maps_abelian"
+    ],
+    "note": "abstr applies to every group. For example, abstract_group_of_maps_abelian_converse_fails uses abstr (symmetric_group three)."
+  },
+  {
+    "source": "group.tex",
+    "line": 905,
+    "quote": "The following exercise provides a different source of examples.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition sentence."
+  },
+  {
+    "source": "group.tex",
+    "line": 921,
+    "quote": "in~\\cref{ch:absgroup} we'll show that the $G \\mapsto \\abstr(G)$ construction furnishes an equivalence from the type of groups to the type of abstract groups, and we'll correlate concepts and constructions on groups to corresponding ones for abstract groups.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstr"
+    ],
+    "note": "Forward reference to chapter 7 (absgroup.tex). It is not proved in chapter 4."
+  },
+  {
+    "source": "group.tex",
+    "line": 948,
+    "quote": "A slight generalization of the discussion above will be to suppose that we have a general pointed map with an arbitrary pointing path $k_\\pt : \\pt_\\BH \\eqto k ( \\pt_\\BG ) $, not necessarily given by reflexivity. Indeed, that works out, thereby motivating the following definition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "usym_hom_unit",
+      "usym_hom_inv",
+      "usym_hom_mul",
+      "loops_map_unit",
+      "loops_map_inverse",
+      "loops_map_concat"
+    ],
+    "note": "The identities of rem:homom-eqs hold for Ωk with an arbitrary pointing path (lem:grouphomomaxioms, core)."
+  },
+  {
+    "source": "group.tex",
+    "line": 976,
+    "quote": "We would like to understand explicitly the effect of a general homomorphism $f$ from $G$ to $H$ on the underlying symmetries $\\USymG$, $\\USymH$, again without assuming that pointing path of $\\Bf$ is given by reflexivity. So we should first study how pointed maps affect loops",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Motivation for def:loops-map, with a margin picture."
+  },
+  {
+    "source": "group.tex",
+    "line": 1035,
+    "quote": "We write $f \\jdeq (f_\\div,p)$, where $p : \\pt_{\\BH} \\eqto f_\\div (\\pt_{\\BG})$. By induction on $p$, which is allowed since $\\pt_{\\BH}$ is arbitrary, we reduce to the case where $\\pt_{\\BH} \\jdeq f_\\div (\\pt_{\\BG})$ and $p\\jdeq \\refl{\\pt_{\\BH}}$. We finish by applying \\cref{rem:homom-eqs} and \\ref{rem:loops-map}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "loop_conjugate_inverse",
+      "loop_conjugate_concat",
+      "loop_conjugate_unit",
+      "map_path_inverse",
+      "map_path_concat"
+    ],
+    "note": "Proof of lem:grouphomomaxioms: the core eliminates the pointing path by J inside loop_conjugate_inverse/concat. Then it uses lem:apcomp, as in the book."
+  },
+  {
+    "source": "group.tex",
+    "line": 1081,
+    "quote": "Recall from \\cref{sec:pointedtypes}, that when there is little danger of confusion, we may drop the subscript ``$\\div$'' when talking about the unpointed structure.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Notation. The formalization always writes .fst / hom_function."
+  },
+  {
+    "source": "group.tex",
+    "line": 1092,
+    "quote": "Identifications of homomorphisms $f\\eqto_{\\Hom(G,H)}f'$ are equivalent to identifications of pointed maps $\\Bf \\eqto_{\\BG\\ptdto\\BH} \\Bf'$; the latter are (by \\cref{con:identity-ptd-maps} and the fact that $\\BH$ is a groupoid) given by identifications of (unpointed) maps $h : \\Bf_\\div \\eqto \\Bf'_\\div$ such that $h(\\shape_G)\\Bf_\\pt = \\Bf'_\\pt.$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "group_hom_path_data_equiv",
+      "GroupHomPathData",
+      "group_hom_path_equiv",
+      "pointed_map_path_equiv"
+    ],
+    "note": "group_hom_path_data_equiv: (f = f') ≃ Σ(h : Bf÷ = Bf'÷) (concat Bf_pt h(sh_G) = Bf'_pt). This is the printed form, with h a path of functions (h(sh_G) = happly). The homotopy version is group_hom_path_equiv. The equivalence does not need the groupoid hypothesis. Only the proof that the coherence is a proposition needs it."
+  },
+  {
+    "source": "group.tex",
+    "line": 1104,
+    "quote": "We will later show that if $G$ and $H$ are groups, then $\\Hom(G,H)$ is equivalent to the \\emph{set} of ``abstract group homomorphisms'' from $\\abstr(G)$ to $\\abstr(H)$ (see \\cref{lem:homomabstrconcr}), but it is instructive to give a direct proof of the following.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstr_hom"
+    ],
+    "note": "Forward reference to lem:homomabstrconcr (chapter 7). In chapter 4, only the map Hom(G,H) → AbstractHom (abstr_hom) exists."
+  },
+  {
+    "source": "group.tex",
+    "line": 1116,
+    "quote": "Given homomorphisms $f,f':\\Hom(G,H)$, we use the equivalence just described ... By function extensionality, the type $h\\eqto j$ is equivalent to the proposition $\\prod_{t:\\BG_\\div} h(t) = j(t)$. So now we can use connectedness of $\\BG_\\div$, and only check the equality on the point $\\shape_G$. By assumption, $h(\\shape_G) = \\Bf'_\\pt \\inv{\\Bf_\\pt} = j(\\shape_G)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pointed_homotopy_prop",
+      "pointed_maps_set",
+      "group_hom_set"
+    ],
+    "note": "Proof of lem:hom-is-set (core): pointed_homotopy_prop cancels Bf_pt at sh_G (concat_cancel_left). Then it extends the result by connectedness."
+  },
+  {
+    "source": "group.tex",
+    "line": 1132,
+    "quote": "The same argument shows that the type $X\\ptdto Y$ is a set whenever $X$ is connected and $Y$ is a groupoid.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "pointed_maps_set",
+      "pointed_maps_set_from_general"
+    ],
+    "note": "Footnote ft:ptd-decr-h-lev, first sentence: pointed_maps_set (core, the same argument). It is also pointed_maps_set_from_general, the case k = 1, n = 0 of the general statement."
+  },
+  {
+    "source": "group.tex",
+    "line": 1134,
+    "quote": "A more general fact is that $X \\ptdto Y$ is an $n$-type whenever $X$ is $(k-1)$-connected and $Y$ is $(n+k)$-truncated, for all $k\\ge0$ and $n\\ge-1$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "pointed_maps_truncation_level_book",
+      "pointed_maps_truncation_level",
+      "pointed_sections_hlevel",
+      "pointed_sections_contractible",
+      "pointed_sections_path_equiv",
+      "point_inclusion_n_connected",
+      "n_connected_sections_equiv"
+    ],
+    "note": "Proved in general: let n = n'−1. Then NConnectedType k X÷ and HLevel (k + n' + 1) Y÷ imply HLevel (n'+1) (X →* Y) (pointed_maps_truncation_level_book). The proof generalizes to pointed sections and uses induction on the level. It also covers n = −2 (pointed_maps_truncation_level with m = 0)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1249,
+    "quote": "By induction on $f_\\pt$ and on $g_\\pt$, we reduce to the case where $f_\\pt \\jdeq \\refl{f(x)}$ and $g_\\pt \\jdeq \\refl{g(f(x))}$ ... both sides are equal, by definition, to $\\refl{g(f(x))}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "loops_compose_conjugate",
+      "loops_map_compose",
+      "ap_compose"
+    ],
+    "note": "Implementation of def:loops-compose (core): J on the pointing path of f and on a based path. In Narya, ap_{g∘f}(p) ≡ ap_g(ap_f(p)) is judgmental (ap_compose is refl)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1267,
+    "quote": "The following example expresses that $\\ZZ$ is a ``free group with one generator''.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "circle_group_hom_ev",
+      "circle_group_hom_ev_map",
+      "circle_group_hom_from_symmetry"
+    ],
+    "note": "Evaluation at the generator loop gives Hom(Z, G) ≃ USym G. This holds for every group G and every circle C (Z = circle_group C)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1292,
+    "quote": "The following lemma states the ``naturality'' of $\\ev_{\\BG}$ in the previous example.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition sentence."
+  },
+  {
+    "source": "group.tex",
+    "line": 1310,
+    "quote": "Going across horizontally and then down, $k$ is mapped first to $\\USymk(\\Sloop)$, and then to $\\USymf(\\USymk(\\Sloop))$. Going the other way takes $k$ to $\\USym(f\\circ k)(\\Sloop)$, which is equal to $\\USymf(\\USymk(\\Sloop))$ by \\cref{cor:USym-compose}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "circle_group_hom_ev_natural",
+      "loops_map_compose_pointwise"
+    ],
+    "note": "Proof of lem:Znatural."
+  },
+  {
+    "source": "group.tex",
+    "line": 1387,
+    "quote": "The above example motivates and justifies the following definition of a homomorphism from a group to its \\emph{inner} automorphisms, that is, automorphisms that come from conjugation. Such automorphisms will further be discussed in \\cref{sec:aut-group}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "inn",
+      "inn_usym_fst",
+      "inn_usym_acts_by_conjugation",
+      "conj_usym"
+    ],
+    "note": "The inner automorphism USym(inn)(g) acts on symmetries by conjugation h ↦ g·h·g⁻¹ (inn_usym_acts_by_conjugation). The further discussion is a forward reference."
+  },
+  {
+    "source": "group.tex",
+    "line": 1392,
+    "quote": "Recall that $\\BAut(G)$ is the connected component of $G$ in the type $\\Group$, pointed at $G$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "group_aut",
+      "automorphism_group",
+      "group_groupoid"
+    ],
+    "note": "group_aut G = automorphism_group Group group_groupoid G (core). Its classifying type is NativeComponent Group G, pointed at (G, |refl|)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1412,
+    "quote": "In this section we're going to define the very important \\emph{sign homomorphism} $\\sgn : \\SG_n \\to \\SG_2$, defined for $n \\ge 2$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "sign_hom",
+      "bsgn_small_constant"
+    ],
+    "note": "sign_hom n is defined for every n. For n = 0, 1, it is the trivial homomorphism (Bsgn constant). For n ≥ 2, it is the sign."
+  },
+  {
+    "source": "group.tex",
+    "line": 1415,
+    "quote": "The approach we take here is similar to that of~\\citeauthor{MangelRijke2023}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Bibliographic remark."
+  },
+  {
+    "source": "group.tex",
+    "line": 1417,
+    "quote": "To do this, we need to assign to every $n$-element set $A$ a $2$-element set $\\Bsgn(A)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsgn"
+    ],
+    "note": "bsgn n A : BookFiniteSetsAt 2 for A : BookFiniteSetsAt n."
+  },
+  {
+    "source": "group.tex",
+    "line": 1453,
+    "quote": "The two equivalence classes of directions of the complete graph on a $3$-element set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "local_orderings_fin_three_card",
+      "sign_orderings_fin_three_two_element"
+    ],
+    "note": "Figure caption: the local orderings of Fin 3 fall into the two sign orderings (a two-element quotient)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1458,
+    "quote": "We get this $2$-element set as a quotient of the set of all possible ways of choosing an element from each $2$-element subset of $A$, where two different such choices are deemed the same if they differ in an \\emph{even} number of pairs.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "LocalOrderings",
+      "SignOrderings",
+      "ParityRelated",
+      "bsgn_quotient_path"
+    ],
+    "note": "For n ≥ 2, Bsgn(A) is identified with the set of sign orderings of A (bsgn_quotient_path)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1462,
+    "quote": "Since choosing an element from a $2$-element set is equivalent to ordering it (\\eg chosen element first),",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "two_choice_ordering_equiv"
+    ],
+    "note": "A two-element type T is equivalent to the type of enumerations Fin 2 ≃ T. The equivalence takes the value at 0, so the chosen element comes first."
+  },
+  {
+    "source": "group.tex",
+    "line": 1464,
+    "quote": "we can also talk about ways of ordering all possible $2$-element subsets of $A$, or equivalently, ways of directing the complete graph on $A$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Reformulation in graph language. The development does not define graphs. The ordering formulation is two_choice_ordering_equiv, applied to each subset."
+  },
+  {
+    "source": "group.tex",
+    "line": 1466,
+    "quote": "\\Cref{fig:sign-orderings-3} shows all $8$ ways of directing the complete graph on a $3$-element set divided into the $2$ resulting equivalence classes.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "local_orderings_fin_three_card",
+      "local_orderings_fin_three_path",
+      "sign_orderings_fin_three_two_element",
+      "fin_functions_two_equiv"
+    ],
+    "note": "LocalOrderings (Fin 3) has cardinality 8 = 2^3, and SignOrderings (Fin 3) is a two-element set. The fact that each class has 4 elements is not stated separately."
+  },
+  {
+    "source": "group.tex",
+    "line": 1469,
+    "quote": "To see that this really defines an equivalence relation, it helps to generalize a bit. Thus, fix a finite set $E$, and let $P : E \\to \\BSG_2$ be a family of $2$-element sets with parameter type $E$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "LocalSections",
+      "ParityRelated"
+    ],
+    "note": "All of lem:parityequiv is stated for a finite E (with IsFinite witness) and P : E → BookFiniteSetsAt 2."
+  },
+  {
+    "source": "group.tex",
+    "line": 1476,
+    "quote": "This makes sense because any $2$-element set is decidable, and a subset of a finite set specified by a decidable predicate is itself a finite set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "two_element_decidable_equality",
+      "finite_decidable_subset",
+      "parity_disagreement_finite"
+    ],
+    "note": "Footnote of the definition at group.tex:1473."
+  },
+  {
+    "source": "group.tex",
+    "line": 1478,
+    "quote": "We may apply the usual set-theoretic operators, such as union and set difference, to these subsets.",
+    "kind": "informal",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "Not necessary: the proof of transitivity uses the parity cocycle (finite_true_count_xor) instead of unions and differences of subsets."
+  },
+  {
+    "source": "group.tex",
+    "line": 1479,
+    "quote": "Note also that the parity relation is itself decidable.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_related_decidable"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1488,
+    "quote": "The $\\sim$ relation is clearly symmetric, and it is reflexive, since the empty set has an even number of elements.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_odd_refl",
+      "parity_odd_symm",
+      "parity_relation"
+    ],
+    "note": "Proof of lem:parityequiv."
+  },
+  {
+    "source": "group.tex",
+    "line": 1490,
+    "quote": "To show transitivity, let $f_1,f_2,f_3:\\prod_{e:E}P(e)$. We can partition $E$ according to whether the $f_i$ agree or disagree",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_odd_cocycle",
+      "two_differ_cocycle",
+      "finite_true_count_xor",
+      "parity_venn_cover",
+      "parity_venn_part",
+      "parity_venn_split",
+      "parity_venn_part_swap",
+      "parity_venn_count",
+      "parity_venn_odd",
+      "parity_venn_transitive",
+      "parity_venn_one_even",
+      "finite_true_count_split"
+    ],
+    "note": "Module 463 formalizes the book's argument, with subsets as Boolean predicates and Card as finite_true_count. It proves E12 ∪ E23 ∪ E13 = E (parity_venn_cover). It proves F_ij = E'_ik ⊔ E'_jk as a count (parity_venn_split, E'_ab = parity_venn_part). It proves Card(F12)+Card(F13)+Card(F23) = 2(Card(E'12)+Card(E'13)+Card(E'23)) (parity_venn_count). It also proves the consequences: transitivity (parity_venn_transitive) and that at least one F_ij is even (parity_venn_one_even). Module 451 also proves transitivity by the xor cocycle parity(f,h) = parity(f,g) xor parity(g,h)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1532,
+    "quote": "We also see that at least one of the $F_{ij}$'s has even cardinality, so the quotient has at most $2$ elements.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_quotient_at_most_two"
+    ],
+    "note": "Of any three sections, two are related."
+  },
+  {
+    "source": "group.tex",
+    "line": 1535,
+    "quote": "Clearly, if $E$ is empty, then $\\prod_{e:E}P(e)$ is contractible, so the quotient is contractible.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_quotient_empty_contractible"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1539,
+    "quote": "we may assume that $E$ is the $n$-element set $\\set{1,\\dots,n}$ (since $n>0$), and (by induction on $n$) that each set $P(e)$ is $\\set{\\pm 1}$ … Then any function is equivalent to either the all $+1$-function or the function that is $-1$ at $1$ and $+1$ otherwise",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "parity_quotient_equiv",
+      "parity_quotient_inverse_equiv",
+      "local_section_flip",
+      "parity_odd_flip",
+      "local_sections_mere"
+    ],
+    "note": "Proved without a reduction of E and P. For any base section f0 and point e0, every section is related to f0 or to f0 flipped at e0. The two classes are distinct. Finite choice gives f0 merely."
+  },
+  {
+    "source": "group.tex",
+    "line": 1547,
+    "quote": "Recall from~\\cref{ex:bigproductofgroups} that we can form the product of any (finite) family of groups. In particular, if we take the constant family at $G$, indexed by a finite set $S$, we get a power $G^S$, with classifying type $\\BG^S$ and underlying set of symmetries $\\USymG^S$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "power_group",
+      "power_group_usym_equiv",
+      "power_sigma_two"
+    ],
+    "note": "Core module 407 (power_group S hS G, with USym ≃ S → USym G through happly)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1577,
+    "quote": "Note that this works even when $E$ is empty, since the product of an empty collection of numbers is $+1$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "sign_product_empty",
+      "sign_product_fin_zero",
+      "sign_mu_usym_product_dec"
+    ],
+    "note": "Footnote of the exercise at group.tex:1570."
+  },
+  {
+    "source": "group.tex",
+    "line": 1588,
+    "quote": "This term is used in analogy with total and cyclic orderings, even though it's harder to visualize as an ordering. It seems to have first been used by~\\citeauthor{Kuperberg1996}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Terminological and historical footnote."
+  },
+  {
+    "source": "group.tex",
+    "line": 1610,
+    "quote": "Not only does the notion of a sign ordering allow us to define the sign homomorphism, we also get a new family of examples of groups",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "alternating_group",
+      "alternating_group_printed"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1613,
+    "quote": "We'll study this construction more generally later in~\\cref{subsec:ker}: in these terms $\\AG_n$ is the \\emph{kernel} of the sign homomorphism.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference to kernels (chapter 9). Here, the formalization proves only USym A_n ≃ even permutations (alternating_usym_even)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1635,
+    "quote": "Something interesting happens when we consider permutations on other shapes in $\\BSG_n$, \\ie arbitrary $n$-element sets $A$. The same map, $\\Bsgn$, can be considered as a map $\\BAut(A) \\to \\BSG_2$, but we can cannot make this pointed uniformly in $A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "aut_to_bsigma",
+      "bsgn_no_uniform_pointing"
+    ],
+    "note": "For n ≥ 2, there is no family of identifications Bsgn(A) = sh_{Σ_2} (bsgn_no_uniform_pointing)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1640,
+    "quote": "Why not? A construction $p : \\prod_{A:\\BSG_n}(\\Bsgn_\\div(A) \\eqto \\sh_{\\SG_2})$ would amount to an identification of $\\Bsgn$ with the constant map.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsgn_uniform_pointing_equiv",
+      "bsgn_no_uniform_pointing"
+    ],
+    "note": "The equivalence with identifications Bsgn = const is function extensionality. For n ≥ 2, such an identification does not exist, because the transposition (0 1) is sent to the swap."
+  },
+  {
+    "source": "group.tex",
+    "line": 1642,
+    "quote": "However, the self-identifications of a $2$-element set $T$, $(T \\eqto T)$, \\emph{can} be identified with $\\set{\\pm1}$, according to whether it transposes the elements of $T$, or not.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "two_loops_sign_equiv",
+      "two_loop_sign",
+      "two_loop_moves"
+    ],
+    "note": "For every point T of BΣ_2."
+  },
+  {
+    "source": "group.tex",
+    "line": 1645,
+    "quote": "In this section, we identify $\\USG_2$ with the set $\\set{\\pm1}$, which has a compatible abstract group structure given by multiplication.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "Sign",
+      "sign_mul",
+      "sign_abstract_group",
+      "sigma_two_sign",
+      "sigma_two_sign_equiv",
+      "sigma_two_sign_mul",
+      "sigma_two_sign_abstract_hom"
+    ],
+    "note": "USym Σ_2 ≃ {±1} as abstract groups."
+  },
+  {
+    "source": "group.tex",
+    "line": 1648,
+    "quote": "Hence, we can define the sign of any permutation of a finite set:",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "permutation_sign"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1660,
+    "quote": "For permutations of the standard $n$-element set, this is the same as the value $\\Usgn(\\sigma) : \\USG_2$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "permutation_sign_standard",
+      "permutation_sign_standard_set"
+    ],
+    "note": "For n ≥ 2. For n ≤ 1, both are trivial."
+  },
+  {
+    "source": "group.tex",
+    "line": 1661,
+    "quote": "Note that $\\sgn$ defines an abstract homomorphism from $\\Aut(A)$ to $\\SG_2$ for each $A$, since it does so for $A \\jdeq \\sh_{\\SG_n}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "permutation_sign_compose",
+      "permutation_sign_at_compose",
+      "permutation_loop_compose",
+      "permutation_sign_at_transport"
+    ],
+    "note": "Multiplicativity is proved directly for every point A, because loops of composites are concatenations. Transport invariance relates arbitrary A to the standard shape."
+  },
+  {
+    "source": "group.tex",
+    "line": 1663,
+    "quote": "Even better, this abstract homomorphism comes from a concrete one $\\sgn^A : \\Hom(\\Aut(A),\\SG_2)$ for each finite set $A$. Indeed, since $T \\eqto U$ is a $2$-element set for any $2$-element sets $T$ and $U$, we can consider the map $\\Bsgn^A_\\div : \\BAut(A) \\to \\BSG_2$ that maps $B : \\BAut(A)$ to $(\\Bsgn_\\div(A) \\eqto \\Bsgn_\\div(B))$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "two_set_paths_two_element",
+      "bsgn_aut",
+      "bsgn_aut_point",
+      "bsgn_aut_point_equiv",
+      "sign_aut_hom",
+      "aut_to_bsigma",
+      "sign_aut_paths_moves",
+      "sign_aut_usym_sign",
+      "sign_aut_usym_permutation_sign",
+      "sign_aut_usym_permutation_sign_finite",
+      "permutation_sign_at_moves",
+      "sign_aut_swap_litmus"
+    ],
+    "note": "sgn^A is constructed for a point A0 of BΣ_n. Here Aut(A0) = permutation_group, and Bsgn^A(B) = (Bsgn(A0) = Bsgn(B)) as a two-element set. Module 462 proves that sgn^A induces the sign of permutations. The statement is sigma_two_sign (USym sgn^A (g)) = sgn of the permutation of g (sign_aut_usym_sign). That is, USym sgn^A (σ) = sgn(σ) for every permutation σ of a finite set A (sign_aut_usym_permutation_sign_finite). Key step: transport in Bsgn^A along a loop is postcomposition. It moves iff the loop of Bsgn(A) moves."
+  },
+  {
+    "source": "group.tex",
+    "line": 1667,
+    "quote": "The identification of $\\Bsgn^A_\\div(A)$ with $\\{\\pm1\\}$ mentioned above makes $\\Bsgn^A_\\div$ into a pointed map $\\Bsgn^A : \\BAut(A) \\ptdto \\BSG_2$, i.e., it defines an homomorphism $\\sgn^A : \\Hom(\\Aut(A),\\SG_2)$, as announced.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsgn_aut_point",
+      "sign_aut_hom"
+    ],
+    "note": "Pointing through Fin 2 ≃ {±1} ≃ (T = T)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1671,
+    "quote": "This is an instance of a more general construction, called {\\em delooping} (see \\cref{sec:delooping}). The formula for $\\Bsgn^A_\\div$ here is very simple since $\\SG_2$ is a fairly simple group.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference."
+  },
+  {
+    "source": "group.tex",
+    "line": 1689,
+    "quote": "For \\ref{it:sign-transposition}, it suffices to consider the transposition $(1\\;2)$ of a standard $n$-element set $\\set{1,2,\\dots,n}$. Relative to the standard local ordering ($1<2,1<3,\\dots,1<n,2<3,\\ldots,n-1<n$), the transposition only changes the ordering $1<2$ to $2<1$, thus differing at exactly one place.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bsigma_transposition_sign",
+      "fin_transposition_sign",
+      "swap01_inversion_number",
+      "usgn_swap01",
+      "action_parity_inversions"
+    ],
+    "note": "Reduction by transport invariance and conjugation. Inversions count the disagreement with the standard local ordering, and (0 1) has exactly one inversion."
+  },
+  {
+    "source": "group.tex",
+    "line": 1696,
+    "quote": "Now \\ref{it:sign-cycle} follows via~\\cref{xca:perm-prod-transpositions}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "cycle_sign_at",
+      "transposition_chain_sign",
+      "cycle_transposition_product"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1698,
+    "quote": "For \\ref{it:identity-even}, assume $\\id_A = (a_1\\;b_1)\\cdots(a_k\\;b_k)$, and take the sign of both sides. Since $\\sgn$ is a homomorphism, we get $+1 = (-1)^k$, so $k$ is even.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "identity_word_even",
+      "transposition_word_sign"
+    ],
+    "note": ""
+  },
+  {
+    "source": "group.tex",
+    "line": 1731,
+    "quote": "(or of any totally ordered $n$-element set -- but these are all uniquely identified with $\\bn n$)",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This development does not include total orders on n-element sets. The exercise is formalized for Fin n with its standard order."
+  },
+  {
+    "source": "group.tex",
+    "line": 1736,
+    "quote": "If we represent $\\sigma$ graphically as in~\\cref{fig:permutation-crossings}, then inversions are crossings of the edges $(i,\\sigma(i))$ and $(j,\\sigma(j))$.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Pictorial interpretation of inversions."
+  },
+  {
+    "source": "group.tex",
+    "line": 1788,
+    "quote": "In~\\cref{def:Cyc} we introduced the type of cycles: pairs $(X,t)$ of a nonempty set $X$ and a bijection $t : X \\equivto X$ such that any two elements $x,x':X$ can be connected ... These gave rise to the group of integers $\\ZZ$ via the infinite cycle $(\\zet,\\zs)$ ... and the cyclic groups of finite order $\\CG_m$ via the finite cycles $(\\bn m,\\zs)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Cycles",
+      "Cyclic",
+      "infinite_cycle",
+      "cyclic_group",
+      "cyclic_group_fin"
+    ],
+    "note": "Recap of chapter 3 and ex:cyclicgroups: Cycles (module 58), cyclic_group 0 = Aut_Cyc(Z, succ) (≃ Z) and cyclic_group_fin n = Aut_Cyc(Fin (n+1), s) (module 404)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1825,
+    "quote": "\\caption{The infinite dihedral bicycle.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "infinite_dihedral_bicycle"
+    ],
+    "note": "The TikZ code of fig:infinite-bicycle agrees with def:Dinfty-Q (x_n = inl n, y_n = inr n). It has red arrows x_n → x_{n+1} and y_{n+1} → y_n, and blue arrows x_n ↔ y_n."
+  },
+  {
+    "source": "group.tex",
+    "line": 1843,
+    "quote": "\\caption{The quaternion bicycle.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "quaternion_bicycle",
+      "quaternion_a_map",
+      "quaternion_b_map"
+    ],
+    "note": "In the TikZ code of fig:quaternion-bicycle, the blue (b) arrows are k → a(k) for the printed a, b of def:Dinfty-Q. The red (a) arrows are k → b(k). Thus the colours are swapped. We follow the formulas. An exchange of a and b gives the same symmetries, and hence the same automorphism group."
+  },
+  {
+    "source": "group.tex",
+    "line": 1847,
+    "quote": "we now focus on sets with \\emph{two} bijections, $a$ and $b$, such that any two elements $x,x'$ can be connected by repeated application of $a$ and $b$ and their inverses, such as the ones depicted in~\\cref{fig:infinite-bicycle,fig:quaternion-bicycle}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_bicycle_connected",
+      "quaternion_bicycle_connected"
+    ],
+    "note": "Both pictured structures are connected in the sense of def:bicycle (explicit words from a base point). The sentence 'We call these bicycles ... for reasons that will become clear later' is naming."
+  },
+  {
+    "source": "group.tex",
+    "line": 1861,
+    "quote": "One convenient way of formalizing this is via lists of elements of $\\zet\\amalg\\zet$, where the left/right elements indicate a power of $a$/$b$, respectively.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "BicycleWord"
+    ],
+    "note": "Words are List (Sum Int Int). The word inl n stands for aⁿ, and inr n stands for bⁿ."
+  },
+  {
+    "source": "group.tex",
+    "line": 1868,
+    "quote": "we define the \\emph{meaning} $\\sem\\ell : X \\equivto X$ of such a list $\\ell$ by induction, cf.~\\cref{sec:lists}: $\\sem\\varepsilon \\defeq \\id_X$, $\\sem{\\inl n\\ell} \\defeq a^n\\circ \\sem{\\ell}$, $\\sem{\\inr n\\ell} \\defeq b^n \\circ \\sem{\\ell}$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bicycle_meaning_map",
+      "bicycle_meaning",
+      "bicycle_meaning_nil",
+      "bicycle_meaning_cons_left",
+      "bicycle_meaning_cons_right"
+    ],
+    "note": "Defined by list induction on the underlying map (judgmental clauses). It is packaged as an equivalence with the inverse word map. The clauses hold as identifications of equivalences."
+  },
+  {
+    "source": "group.tex",
+    "line": 1876,
+    "quote": "For example, we have $\\sem{\\inl 3\\inr{-2}\\inl{-1}\\inr 1} = a^3b^{-2}a^{-1}b$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bicycle_example_word",
+      "bicycle_example_meaning",
+      "bicycle_example_meaning_powers"
+    ],
+    "note": "Holds by refl in two forms. The first form is written out with a, b, a⁻¹, b⁻¹ (litmus for the composition order). The second form is a composite of the integer powers."
+  },
+  {
+    "source": "group.tex",
+    "line": 1951,
+    "quote": "With the definition of bicycles in place, we can define the infinite dihedral and quaternion groups as automorphism groups",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Transition sentence. The definitions are def:Dinfty-Q."
+  },
+  {
+    "source": "group.tex",
+    "line": 1993,
+    "quote": "If $(X,a,b)$ and $(X',a',b')$ are elements of $\\sum_{X:\\UU}(X\\to X)\\times(X\\to X)$, then univalence ... gives an equivalence $\\bigl( (X,a,b) \\eqto (X',a',b') \\bigr) \\equivto \\sum_{e:X\\equivto X'}(ea \\eqto a'e) \\times (eb \\eqto b'e)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "SelfMapPairs",
+      "SelfMapPairIsos",
+      "self_map_pairs_paths_equiv",
+      "self_map_pathover_equiv"
+    ],
+    "note": "For arbitrary types and endomaps, with ea = a'e an identification of functions X → X'. The equivalence of the first component is transport along the path of types (univalence with transport_univalence_equiv)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2002,
+    "quote": "to a type whose three components we can visualize as: [diagram]",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Commutative-diagram picture of the three components."
+  },
+  {
+    "source": "group.tex",
+    "line": 2013,
+    "quote": "If $X$ and $X'$ are sets, then this is the subtype of $X \\to X'$ consisting of equivalences $e$ satisfying $ea=a'e$ and $eb=b'e$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "BicycleIsomorphisms",
+      "bicycle_paths_equiv",
+      "bicycle_isomorphism_map_embedding",
+      "bicycles_groupoid"
+    ],
+    "note": "For bicycles, (B = B') ≃ Σ (e : X ≃ X') (pointwise e(a x) = a'(e x)) × (pointwise e(b x) = b'(e x)). The projection to X → X' is injective (an embedding)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2015,
+    "quote": "This means that the symmetries of a bicycle $(X,a,b)$ are given by those self-equivalences $e : X\\equivto X$ that \\emph{commute} with both $a$ and $b$ in the sense that $ae=ae$ and $be=eb$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bicycle_symmetries_equiv",
+      "bicycle_automorphism_group_usym_equiv"
+    ],
+    "note": "Typo in the book: 'ae=ae' should read 'ae=ea'. Formalized as (B = B) ≃ BicycleIsomorphisms B B. It is also formalized for USym Aut_Bicyc(B)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2037,
+    "quote": "\\caption{An ``abnormal'' bicycle with only the identity symmetry.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abnormal_bicycle",
+      "abnormal_bicycle_only_identity",
+      "abnormal_bicycle_group_trivial",
+      "abnormal_bicycle_not_normal"
+    ],
+    "note": "Read off the TikZ: Fin 3, a = (0 1 2), and b fixes 0 and swaps 1, 2. Its type of symmetries is contractible, so Aut_Bicyc is trivial. Litmus: it is not normal."
+  },
+  {
+    "source": "group.tex",
+    "line": 2040,
+    "quote": "For a (uni)cycle $(X,t)$, any power $t^n$ of $t$ will commute with $t$ itself",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cycle_power_commutes",
+      "bicycle_power_commutes"
+    ],
+    "note": "tⁿ(t x) = t(tⁿ x) for every cycle and integer n."
+  },
+  {
+    "source": "group.tex",
+    "line": 2042,
+    "quote": "but for a bicycle $(X,a,b)$, we need not have $ab=ba$. Indeed, neither of the bicycles in~\\cref{fig:infinite-bicycle,fig:quaternion-bicycle} satisfies this.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "dihedral_not_commuting",
+      "quaternion_not_commuting"
+    ],
+    "note": "ab ≠ ba as functions. For D∞, ab(inl 0) = inr(−1) ≠ inr 1 = ba(inl 0). For the quaternion bicycle, (ab)(0) = 2 ≠ 6 = (ba)(0)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2044,
+    "quote": "And there are many bicycles whose \\emph{only} symmetry is the identity, \\eg the one in~\\cref{fig:abnormal-bicycle}, or has fewer symmetries than desired, as in~\\cref{fig:somewhat-abnormal-bicycle}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abnormal_bicycle_only_identity",
+      "somewhat_abnormal_symmetries_bool"
+    ],
+    "note": "The two examples are formalized. The words 'many' and 'fewer than desired' are informal."
+  },
+  {
+    "source": "group.tex",
+    "line": 2064,
+    "quote": "\\caption{Another ``abnormal'' bicycle: It has four elements, but only two symmetries.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "somewhat_abnormal_bicycle",
+      "somewhat_abnormal_symmetries_bool",
+      "somewhat_abnormal_group_usym_bool",
+      "somewhat_abnormal_half_turn_nontrivial"
+    ],
+    "note": "Read off the TikZ: Fin 4, a = (0 1 2 3), and b swaps 0 and 2 and fixes 1, 3. Its symmetries are equivalent to Bool (identity and a²)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2069,
+    "quote": "Since all elements are connected by two self-equivalences, we still have that any identification $(X,a,b) \\eqto (X',a',b')$ is determined by the image of any given element $x:X$, giving a weakening of~\\cref{cor:ConnCycles} for cycles.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bicycle_evaluation_path_reflecting",
+      "bicycle_evaluation_injective"
+    ],
+    "note": "This is lem:evisinj-bicycle."
+  },
+  {
+    "source": "group.tex",
+    "line": 2095,
+    "quote": "This tells us what's special about the infinite dihedral and the quaternion bicycles: they are \\emph{normal}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "infinite_dihedral_bicycle_normal",
+      "quaternion_bicycle_normal",
+      "dihedral_shift_iso",
+      "dihedral_reflection_iso",
+      "quaternion_symmetry_from_zero"
+    ],
+    "note": "Explicit symmetries reach every element from a base point. For Z ⊔ Z, these are the translations/reflections σ±_k. For Fin 8, these are the 8 permutations that commute with a, b. Then xca:normal-bicycle-equiv applies."
+  },
+  {
+    "source": "group.tex",
+    "line": 2096,
+    "quote": "What follows is a special case of a more general story that resumes in~\\cref{def:normal-action} (for actions) and will be the focus of~\\cref{ch:subgroups} on normal subgroups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference (footnote)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2110,
+    "quote": "In other words, a normal bicycle has the maximum possible amount of symmetry, in that any element is just like any other.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "bicycle_evaluation_injective",
+      "normal_bicycle_from_point_surjective",
+      "normal_bicycle_from_point",
+      "bicycle_symmetry_between",
+      "normal_bicycle_unique_symmetry"
+    ],
+    "note": "Formal content: for every bicycle and x, ev_x : Aut(B) → X is an embedding (bicycle_evaluation_injective). Thus X bounds the symmetries. Normal means that ev_x is also surjective. It is sufficient that ev_x is merely surjective at one point (normal_bicycle_from_point_surjective). That is, the maximum Aut(B) ≃ X is attained. Then a unique symmetry moves every element to every other element. This is 'any element is just like any other' (bicycle_symmetry_between, normal_bicycle_unique_symmetry)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2116,
+    "quote": "In other words, for a normal bicycle $(X,a,b)$ there is a unique symmetry (\\ie permutation of $X$ commuting with $a$ and $b$) mapping any $x$ to $x'$ for any $x,x':X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "normal_bicycle_unique_symmetry"
+    ],
+    "note": "BookIsContr (Σ (e : BicycleIsomorphisms B B) (x' = e(x)))."
+  },
+  {
+    "source": "group.tex",
+    "line": 2124,
+    "quote": "It follows that $\\cbid xx = \\id_X$ and $\\cbid{x'}{x''} \\circ \\cbid{x}{x'} = \\cbid x{x''}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bicycle_cbid_self",
+      "bicycle_cbid_compose",
+      "bicycle_cbid_inverse"
+    ],
+    "note": "As identifications of symmetries: cbid x x = refl and concat (cbid x x') (cbid x' x'') = cbid x x'' (g ∘ f is concat f g). Also, inverse (cbid x x') = cbid x' x."
+  },
+  {
+    "source": "group.tex",
+    "line": 2126,
+    "quote": "We also have that the inverse of $\\ev_x$ ... maps $x'$ to $\\cbid x{x'}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bicycle_cbid_inverse_evaluation"
+    ],
+    "note": "By refl: the inverse map of the equivalence (ev_x, normality) at x' is cbid x x'."
+  },
+  {
+    "source": "group.tex",
+    "line": 2129,
+    "quote": "In~\\cref{sec:covS1} we used the subset $H_t \\jdeq \\setof{n:\\zet}{t^n=\\id}$ of $\\zet$ to study a cycle $(X,t)$. There, we get the equal subsets $\\setof{n:\\zet}{t^n(x)=x}$ no matter which $x:X$ we pick.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cycle_periods_at_point",
+      "cycle_fix_from_point",
+      "cycle_period_from_point"
+    ],
+    "note": "Chapter 3 (lem:cycle-order-point-ap)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2131,
+    "quote": "This is because all cycles $(X,t)$ are normal in the general sense of~\\cref{cor:ConnCycles}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "cycle_automorphisms_evaluation"
+    ],
+    "note": "For every cycle c and x, evaluation (c = c) → X is a BookEquiv (module 66)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2134,
+    "quote": "For a bicycle $(X,a,b)$, however, the relationship between the subsets $H_x \\defeq \\setof{\\ell:(\\zet\\amalg\\zet)^*}{\\sem\\ell(x)=x}$ for varying $x:X$ is exactly what determines normality.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bicycle_stabilizer",
+      "bicycle_normal_stabilizers_equiv"
+    ],
+    "note": "H_x as an element of Sub((Z⊔Z)*). The claim is the exercise at group.tex 2142."
+  },
+  {
+    "source": "group.tex",
+    "line": 2140,
+    "quote": "We leave this as an exercise now, as we'll return to normality in greater generality later, especially in~\\cref{ch:subgroups}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Forward reference."
+  },
+  {
+    "source": "group.tex",
+    "line": 2174,
+    "quote": "Assume now that we are given a normal bicycle $(X,a,b)$ with a chosen element $x_0:X$. We get a surjective map $\\sem\\blank(x_0) : (\\zet\\amalg\\zet)^* \\to X$, which induces an equivalence relation on $(\\zet\\amalg\\zet)^*$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bicycle_words_at_point_surjective",
+      "bicycle_word_relation"
+    ],
+    "note": "Surjectivity is the connectivity of the bicycle. It does not need normality. The relation ⟦ℓ⟧x₀ = ⟦ℓ'⟧x₀ is an EquivalenceRelation (module 41)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2217,
+    "quote": "\\caption{A frieze pattern with infinite dihedral symmetry.}",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "Picture of a frieze."
+  },
+  {
+    "source": "group.tex",
+    "line": 2257,
+    "quote": "\\caption{The frieze in~\\cref{fig:first-frieze} with the infinite dihedral bicycle of~\\cref{fig:infinite-bicycle} superimposed.}",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "dihedral_frieze_T_shift",
+      "dihedral_frieze_R_reflection"
+    ],
+    "note": "The labels agree with the bicycle at x₀ = inl 0. The labels aⁿx₀ go up the left column, and the labels aⁿbx₀ go down the right column. As drawn, T is the downward translation σ⁺₋₁, and R is the half turn σ⁻₀."
+  },
+  {
+    "source": "group.tex",
+    "line": 2344,
+    "quote": "Disregarding the requirement that the classifying type of a group $G$ is a groupoid (so that $\\USymG$ is a set) we get the simpler notion of \\inftygps:",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "InftyGroup",
+      "group_to_infty_group",
+      "group_to_infty_group_embedding",
+      "usym_set"
+    ],
+    "note": "The omission of the groupoid component of a pointed connected groupoid is group_to_infty_group : Group → InftyGroup (an embedding). The parenthetical remark (BG a groupoid makes USym G a set) is usym_set."
   }
 ]

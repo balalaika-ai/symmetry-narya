@@ -1,0 +1,2485 @@
+[
+  {
+    "source": "group.tex",
+    "line": 71,
+    "labels": [
+      "ex:base=base"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_ex_base_eq_base"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_ex_base_eq_base"
+    ],
+    "our_declarations": [
+      "circle_group_usym_integers",
+      "circle_power_mul",
+      "circle_winding_mul"
+    ],
+    "note": "Our circle_integer_loop_equiv, whose map is judgmentally loop_power. Additivity comes from circle_power_concat."
+  },
+  {
+    "source": "group.tex",
+    "line": 89,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_ex_fin_two_symmetries",
+      "blind_ex_circle_to_finset_two",
+      "blind_swap2",
+      "blind_bn_finset",
+      "blind_finset_loop"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_fin2_swap_pointwise",
+      "bridge_fin2_swap_path",
+      "bridge_fin2_ua_cases",
+      "bridge_fin2_type_loop_path",
+      "bridge_ex_fin_two_symmetries",
+      "bridge_ex_circle_to_finset_two"
+    ],
+    "our_declarations": [
+      "sigma2_usym_equiv",
+      "sigma2_swap_squared",
+      "circle_finset_two_loop"
+    ],
+    "note": "The blind swap of Fin 2 is our fin2_swap_equiv (pointwise refl). The classification of loops Fin 2 = Fin 2 in the universe follows from fin2_automorphism_eta, ua_eta and ua_identity. The inequality swap ≠ refl follows from fin2_zero_ne_one by transport. The equation swap·swap = refl follows from ua_compose. The circle map is circle recursion with the β-rule, as in our circle_finset_two_map (module 413). Our map is on BookFiniteSetsAt, and the blind map uses FiniteSetsAt."
+  },
+  {
+    "source": "group.tex",
+    "line": 139,
+    "labels": [
+      "rem:heap-preview"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_heap_preview"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_heap_preview"
+    ],
+    "our_declarations": [
+      "path_heap_op",
+      "path_heap_transport_equiv",
+      "path_heap_transport_respects"
+    ],
+    "note": "Transport in x ↦ (a = x) along f⁻¹. This is the construction of path_heap_transport_equiv (module 413), applied to f⁻¹. Its map is p ↦ p·f⁻¹ judgmentally."
+  },
+  {
+    "source": "group.tex",
+    "line": 161,
+    "labels": [
+      "rem:whypointedconngpoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_component_loops"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_component_loops"
+    ],
+    "our_declarations": [
+      "component_loops_equiv",
+      "component_loops_equiv_map"
+    ],
+    "note": "Our component_loops_equiv, whose map is ap fst judgmentally (component_loops_equiv_map)."
+  },
+  {
+    "source": "group.tex",
+    "line": 194,
+    "labels": [
+      "def:pt-conn-groupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindPtConnGroupoid",
+      "BlindGroupoidTypes",
+      "BlindConnectedTypes",
+      "blind_ptconn_pointed"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_pcg",
+      "bridge_pcg_inv",
+      "bridge_def_pt_conn_groupoid",
+      "bridge_def_groupoid_types",
+      "bridge_def_connected_types",
+      "bridge_def_ptconn_pointed"
+    ],
+    "our_declarations": [
+      "PointedConnectedGroupoid",
+      "pcg_sigma_equiv"
+    ],
+    "note": "Nested Σ ≃ our four-field record, with refl round trips. The margin notations are GroupoidTypes and ConnectedTypes on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 215,
+    "labels": [
+      "xca:defgroup"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_defgroup_connected",
+      "blind_xca_defgroup_groupoid",
+      "blind_xca_defgroup_groupoid_corrected",
+      "blind_xca_defgroup_equiv"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_xca_defgroup_connected",
+      "bridge_xca_defgroup_groupoid_refuted",
+      "bridge_xca_defgroup_groupoid_corrected",
+      "bridge_xca_defgroup_equiv"
+    ],
+    "our_declarations": [
+      "defgroup_unconditional_fails",
+      "connected_groupoid_loops_equiv",
+      "pcg_defgroup_equiv"
+    ],
+    "note": "Part 1 and the concluding equivalence are bridged (connected_based_equiv, pcg_defgroup_equiv). Our statement refutes the literal second part (bridge_xca_defgroup_groupoid_refuted). The proof uses defgroup_unconditional_fails with A = U and a = ∅. The blind corrected variant (A connected) is our connected_groupoid_loops_equiv. The blind reading is the same as ours. The block is now `refuted` in book-inventory.json."
+  },
+  {
+    "source": "group.tex",
+    "line": 228,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_ptconn_props"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_ptconn_props"
+    ],
+    "our_declarations": [
+      "pcg_witnesses_unique",
+      "pcg_path_pointed_equiv"
+    ],
+    "note": "connected_prop and isgroupoid_isprop."
+  },
+  {
+    "source": "group.tex",
+    "line": 239,
+    "labels": [
+      "def:typegroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindGroup",
+      "blind_mkgroup"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_g",
+      "bridge_g_inv",
+      "bridge_g_eta",
+      "bridge_def_group",
+      "bridge_def_mkgroup"
+    ],
+    "our_declarations": [
+      "Group",
+      "mkgroup"
+    ],
+    "note": "Copy of U^{=1}_* ≃ our one-field record Group. After a match on copy, the round trips are refl."
+  },
+  {
+    "source": "group.tex",
+    "line": 269,
+    "labels": [
+      "def:classifying-type"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_B",
+      "blind_BG",
+      "blind_shape"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_bg",
+      "bridge_def_shape"
+    ],
+    "our_declarations": [
+      "group_B",
+      "BG",
+      "shape"
+    ],
+    "note": "blind_BG G and blind_shape G are BG (bridge_g G) and shape (bridge_g G) on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 290,
+    "labels": [
+      "def:looptype"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_loops"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_loops"
+    ],
+    "our_declarations": [
+      "Omega"
+    ],
+    "note": "blind_loops is Omega on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 301,
+    "labels": [
+      "def:group-symmetries"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindUSym",
+      "blind_usym_is_set"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_usym",
+      "bridge_def_usym_ops"
+    ],
+    "our_declarations": [
+      "USym",
+      "usym_set"
+    ],
+    "note": "BlindUSym G is USym (bridge_g G) on the nose. The same holds for unit, inverse and product. The lemma usym_set gives the set claim (used in bridge-02)."
+  },
+  {
+    "source": "group.tex",
+    "line": 322,
+    "labels": [
+      "def:finite-group"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindIsFiniteGroup",
+      "blind_group_card"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_finite_group",
+      "bridge_def_group_card"
+    ],
+    "our_declarations": [
+      "IsFiniteGroup",
+      "group_card"
+    ],
+    "note": "The predicate and the cardinality are the same on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 331,
+    "labels": [
+      "rem:aut"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_aut_equiv",
+      "blind_rem_aut_subtype",
+      "blind_rem_aut_paths"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_aut_equiv",
+      "bridge_rem_aut_subtype",
+      "bridge_rem_aut_paths"
+    ],
+    "our_declarations": [
+      "group_classifying_equiv",
+      "pcg_pointed_subtype_equiv",
+      "group_path_pointed_equiv"
+    ],
+    "note": "This follows from group_classifying_equiv, pcg_path_pointed_equiv and group_path_pointed_equiv, composed with the definition bridges (equivalence_on_paths)."
+  },
+  {
+    "source": "group.tex",
+    "line": 343,
+    "labels": [
+      "rem:BG-convention"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_bg_convention"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_bg_convention_inv",
+      "bridge_bg_convention_eta",
+      "bridge_rem_bg_convention"
+    ],
+    "our_declarations": [
+      "group_eta"
+    ],
+    "note": "Ours holds by record eta (group_eta is refl). For the blind Copy type, the inverse is given by a match on copy., and the blind statement is about this inverse."
+  },
+  {
+    "source": "group.tex",
+    "line": 362,
+    "labels": [
+      "def:automorphism-group"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_Aut",
+      "blind_component_groupoid",
+      "blind_component_point"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_aut",
+      "bridge_aut_any",
+      "bridge_def_aut",
+      "bridge_def_component_point"
+    ],
+    "our_declarations": [
+      "automorphism_group"
+    ],
+    "note": "blind_Aut differs from automorphism_group only in the groupoid witness of the component (pcg_witnesses_unique)."
+  },
+  {
+    "source": "group.tex",
+    "line": 375,
+    "labels": [
+      "rem:symmetriesofnonconnectedgroupoids"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_rem_component_fst_equiv",
+      "blind_rem_group_is_aut_shape"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_component_fst_equiv",
+      "bridge_rem_group_is_aut_shape"
+    ],
+    "our_declarations": [
+      "connected_component_pointed_equiv",
+      "pcg_automorphism_path",
+      "group_shape_automorphism_path"
+    ],
+    "note": "connected_component_fst_equiv and group_shape_automorphism_path (with bridge_aut)."
+  },
+  {
+    "source": "group.tex",
+    "line": 389,
+    "labels": [
+      "ex:circlegroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_ZZ",
+      "blind_ex_circlegroup_aut",
+      "blind_ex_base_eq_base"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_def_zz",
+      "bridge_ex_circlegroup_aut"
+    ],
+    "our_declarations": [
+      "circle_group",
+      "circle_group_automorphism_path",
+      "circle_infinite_cycles_book_form"
+    ],
+    "note": "blind_ZZ C is circle_group C on the nose. The bridge uses circle_group_automorphism_path."
+  },
+  {
+    "source": "group.tex",
+    "line": 414,
+    "labels": [
+      "xca:groups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_groups"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01-groups.ny",
+    "bridge_declarations": [
+      "bridge_circle_loops_map",
+      "bridge_circle_loops_equiv",
+      "bridge_circle_pointed_equiv",
+      "bridge_circle_group_path",
+      "bridge_xca_groups"
+    ],
+    "our_declarations": [
+      "integer_cyclic_path",
+      "integer_cyclic_flip_path",
+      "integer_cyclic_paths_differ"
+    ],
+    "note": "The blind statement is for every circle C. Ours is for the constructed circle (integer_cyclic_path, integer_cyclic_flip_path, integer_cyclic_paths_differ). Any circle is pointed-equivalent to the constructed one (circle_delooping_equiv with p ↦ loop^{winding p}). Pre-composition with that path keeps the two identifications different (concat_cancel_left/right)."
+  },
+  {
+    "source": "group.tex",
+    "line": 419,
+    "labels": [
+      "ex:groups",
+      "ex:trivgroup",
+      "ex:permgroup",
+      "ex:genpermgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_TG",
+      "blind_SG",
+      "blind_SG_set",
+      "blind_true_prop",
+      "blind_props_groupoid",
+      "blind_ex_true_loops_contractible",
+      "blind_ex_trivgroup_contractible",
+      "blind_ex_trivgroup_set",
+      "blind_ex_permgroup_classifying",
+      "blind_ex_permgroup_finset_n",
+      "blind_ex_permgroup_universe"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01b-group-examples.ny",
+    "bridge_declarations": [
+      "bridge_tg",
+      "bridge_sg",
+      "bridge_sg_set",
+      "bridge_ex_true_loops_contractible",
+      "bridge_ex_trivgroup_contractible",
+      "bridge_ex_trivgroup_set",
+      "bridge_finset_to",
+      "bridge_finset_from",
+      "bridge_finset_equiv",
+      "bridge_finset_point",
+      "bridge_ex_permgroup_classifying",
+      "bridge_ex_permgroup_finset_n",
+      "bridge_ex_permgroup_universe"
+    ],
+    "our_declarations": [
+      "trivial_group",
+      "symmetric_group",
+      "permutation_group"
+    ],
+    "note": "All parts come from module 414 (contractible_group_trivial, set_automorphism_group_trivial, symmetric_group_finset_n_automorphism, symmetric_group_universe_path). The blind BS_n identification is with FiniteSetsAt n (mere Type paths). Ours uses BookFiniteSetsAt n (mere SetTypes paths). The two are equivalent by the light equivalence bridge_finset_equiv (identity on the set)."
+  },
+  {
+    "source": "group.tex",
+    "line": 512,
+    "labels": [
+      "xca:group-example-details"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_aut_prop_trivial",
+      "blind_xca_sg0_trivial",
+      "blind_xca_sg1_trivial",
+      "blind_xca_sgfalse_trivial",
+      "blind_xca_aut_finset_sg",
+      "blind_xca_aut_nat_int"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01b-group-examples.ny",
+    "bridge_declarations": [
+      "bridge_xca_aut_prop_trivial",
+      "bridge_xca_sg0_trivial",
+      "bridge_xca_sg1_trivial",
+      "bridge_xca_sgfalse_trivial",
+      "bridge_xca_aut_finset_sg",
+      "bridge_xca_aut_nat_int"
+    ],
+    "our_declarations": [
+      "prop_automorphism_group_trivial",
+      "finite_set_automorphism_symmetric",
+      "nat_int_permutation_groups_path"
+    ],
+    "note": "Results of module 414/415, with the definition bridges."
+  },
+  {
+    "source": "group.tex",
+    "line": 522,
+    "labels": [
+      "ex:cyclicgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_CG",
+      "blind_ZmodmZ",
+      "BlindEndoSets",
+      "blind_endo_sets_groupoid",
+      "blind_ex_cyclicgroups_chain",
+      "blind_ex_cyclic_order_one",
+      "blind_ex_cyclic_order_two",
+      "blind_ex_cyclic_card",
+      "blind_ex_symmetric_card"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01b-group-examples.ny",
+    "bridge_declarations": [
+      "bridge_cg",
+      "bridge_perm_endo",
+      "bridge_equiv_endo_groupoid",
+      "bridge_cyclic_endo_path",
+      "bridge_degree_cover_path",
+      "bridge_ex_cyclicgroups_chain",
+      "bridge_ex_cyclic_order_one",
+      "bridge_ex_cyclic_order_two",
+      "bridge_ex_cyclic_card",
+      "bridge_ex_symmetric_card"
+    ],
+    "our_declarations": [
+      "cyclic_group_fin",
+      "cyclic_group_eval_mul",
+      "cyclic_integers_mod_path"
+    ],
+    "note": "blind_CG n is our cyclic_group_fin n. The blind chain uses the book's Σ(X:Set)(X → X). Ours uses Σ(X:Set)(X ≃ X) (Permutations). The automorphism groups agree, because Permutations ≃ Σ(u : Σ X (X → X)) isEquiv u is a subtype (automorphism_group_subtype_path). The rest is cycle_permutation_automorphism_path, degree_cover_permutation_group_path and degree_cover_integers_mod_path. The footnote claims follow from cyclic_group_one_trivial, cyclic_two_symmetric_two_path and the cardinality equivalences."
+  },
+  {
+    "source": "group.tex",
+    "line": 568,
+    "labels": [
+      "ex:Cm",
+      "fig:m-cycle-roots"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_Rm_finset",
+      "blind_Rm_finset_base",
+      "BlindRmFiber",
+      "BlindBCGprimeCarrier",
+      "blind_BCGprime",
+      "blind_CGprime",
+      "blind_ex_Cm_projection",
+      "blind_ex_Cm_prime_ptconn",
+      "blind_ex_Cm_prime_equiv",
+      "blind_ex_Cm_cycle_structures"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01d-cm.ny",
+    "bridge_declarations": [
+      "bridge_rm_loop_compare",
+      "bridge_rm_compare",
+      "bridge_rm_fiber_equiv",
+      "bridge_rm_trunc_fiber_equiv",
+      "bridge_cm_carrier_equiv",
+      "bridge_ex_Cm_prime_ptconn",
+      "bridge_cycle_structures_iff",
+      "bridge_ex_Cm_cycle_structures",
+      "bridge_structures_equiv",
+      "bridge_cm_prj",
+      "bridge_ex_Cm_projection",
+      "BridgeImageQ",
+      "bridge_pointed_equiv_induction",
+      "bridge_image_compose",
+      "bridge_rm_pointed_compare",
+      "bridge_pointed_path_equiv",
+      "bridge_cm_prime_path",
+      "bridge_ex_Cm_prime_equiv"
+    ],
+    "our_declarations": [
+      "cycle_forget_fiber_equiv",
+      "cyclic_image_group",
+      "cyclic_image_path"
+    ],
+    "note": "R_m^blind (into FiniteSetsAt) = to ∘ power_finset_map (bridge_rm_compare, circle universal property). Fibers over the two FinSet presentations are fibers of paths of underlying sets. Projection: cycle_forget_fiber_equiv, together with the translation of structures. This translation is between equivalences in Permutations and endomaps in Σ Type (Y → Y). BC'_m is a pointed connected groupoid through the carrier equivalence with ours. The pointed equivalence BC'_m ≃ BC_m uses an image-along-pointed-equivalence lemma (pointed-equivalence induction) and cyclic_image_path. Cycle structures: power_fiber_cycle_structures, together with the period classification (cycle_periods_imply_paths). This classification identifies ours (merely equal to the standard cycle) with chapter 3's CycleStructures."
+  },
+  {
+    "source": "group.tex",
+    "line": 653,
+    "labels": [
+      "xca:CG2isSG2"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_CG2isSG2"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01d-cm.ny",
+    "bridge_declarations": [
+      "bridge_xca_CG2isSG2"
+    ],
+    "our_declarations": [
+      "rm_two_fiber_contractible",
+      "cyclic_two_symmetric_two_path"
+    ],
+    "note": "rm_two_fiber_contractible, transported along the fiber equivalence and the subtype path from(bn 2) = shape."
+  },
+  {
+    "source": "group.tex",
+    "line": 658,
+    "labels": [
+      "xca:RmloopCGm"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_RmloopCGm"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01f-rmloop.ny",
+    "bridge_declarations": [
+      "BridgeIdFam",
+      "bridge_pathover_id_fam",
+      "bridge_conj_solve",
+      "bridge_st_transport",
+      "bridge_rl_J",
+      "bridge_rl_Jpt",
+      "bridge_rl_Jp",
+      "bridge_rl_Up",
+      "bridge_rl_g0",
+      "bridge_rl_g0_U",
+      "bridge_rl_powers",
+      "bridge_rl_Phi",
+      "bridge_rl_power_trr",
+      "bridge_rl_Phi_power",
+      "bridge_rl_Phi_injective",
+      "BridgeRlGen",
+      "bridge_rl_e",
+      "bridge_rl_e_injective",
+      "bridge_rl_e_surjective",
+      "bridge_xca_RmloopCGm"
+    ],
+    "our_declarations": [
+      "cyclic_image_symmetries",
+      "cyclic_generated_equiv"
+    ],
+    "note": "The equivalence is defined with the underlying map that the blind statement prescribes (transport along ap U of the loop). Thus the compatibility clause is refl. Every loop of BC'_m is merely a power of g0 = Ω(J)(loop) for the zero-image factor J. This uses our zero_image_factor_connected_fibers and circle_power_winding. Also, ap U g0 = ua s (our pointed_circle_loop_rec_beta for R_m). The map ap U is injective (set fibers over FinSet_m, subtypes FinSet_m ⊂ Set ⊂ U). This is the argument of our cyclic_image_symmetries/cyclic_generated_equiv, done directly on the blind BC'_m."
+  },
+  {
+    "source": "group.tex",
+    "line": 665,
+    "labels": [
+      "ex:productofgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_group_product",
+      "blind_klein",
+      "blind_ex_klein_four",
+      "blind_ex_product_usym",
+      "blind_connected_product"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_prod",
+      "bridge_klein",
+      "bridge_ex_klein_four",
+      "bridge_ex_product_usym"
+    ],
+    "our_declarations": [
+      "product_group",
+      "product_group_usym_equiv",
+      "klein_card"
+    ],
+    "note": "The blind product differs from product_group only in witnesses. The bridge uses klein_usym_equiv and product_group_usym_equiv."
+  },
+  {
+    "source": "group.tex",
+    "line": 680,
+    "labels": [
+      "xca:klein-not-cyclic"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_klein_not_cyclic"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_xca_klein_not_cyclic"
+    ],
+    "our_declarations": [
+      "klein_not_cyclic"
+    ],
+    "note": "klein_not_cyclic along bridge_cg and bridge_klein."
+  },
+  {
+    "source": "group.tex",
+    "line": 685,
+    "labels": [
+      "ex:bigproductofgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_group_bigproduct",
+      "blind_ex_bigproduct_ptw"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_bigproduct",
+      "bridge_ex_bigproduct_ptw"
+    ],
+    "our_declarations": [
+      "family_product_group",
+      "family_product_usym_equiv"
+    ],
+    "note": "family_product_group (witnesses differ) and family_product_usym_equiv, whose map is happly."
+  },
+  {
+    "source": "group.tex",
+    "line": 704,
+    "labels": [
+      "xca:bigproductfunext",
+      "it:bigproductfunext-i"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_bigproduct_connected",
+      "blind_xca_bigproduct_binary"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_xca_bigproduct_connected",
+      "bridge_fin2_pair",
+      "bridge_fin2_unpair",
+      "bridge_xca_bigproduct_binary"
+    ],
+    "our_declarations": [
+      "connected_pi_finite",
+      "bool_family_product_path",
+      "component_product_group"
+    ],
+    "note": "(i) connected_pi_finite. (ii) Ours is stated for Bool (bool_family_product_path). The blind statement is for Fin 2, and it is proved the same way (pointed equivalence f ↦ (f 0, f 1))."
+  },
+  {
+    "source": "group.tex",
+    "line": 720,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "usym_abstract_laws"
+    ],
+    "note": "No blind declaration: forward references to lem:idtypesgiveabstractgroups and lem:Groupsareidentitytypes. The text makes no claim of its own."
+  },
+  {
+    "source": "group.tex",
+    "line": 734,
+    "labels": [
+      "def:abgp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindIsAb",
+      "BlindAbGroup",
+      "blind_isab_prop"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_isab",
+      "bridge_def_abgroup",
+      "bridge_isab_prop"
+    ],
+    "our_declarations": [
+      "IsAbelian",
+      "AbelianGroup"
+    ],
+    "note": "BlindIsAb G is IsAbelian (bridge_g G) on the nose. The bridge uses is_abelian_prop."
+  },
+  {
+    "source": "group.tex",
+    "line": 745,
+    "labels": [
+      "exer:first examples"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_S2_abelian",
+      "blind_xca_S3_not_abelian",
+      "blind_xca_product_abelian"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_xca_S2_abelian",
+      "bridge_xca_S3_not_abelian",
+      "bridge_xca_product_abelian"
+    ],
+    "our_declarations": [
+      "sigma2_abelian",
+      "symmetric_group_three_not_abelian",
+      "product_abelian"
+    ],
+    "note": "sigma2_abelian, symmetric_group_three_not_abelian and product_abelian. The blind S_n have our USym on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 759,
+    "labels": [
+      "rem:whatAREabeliangroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "BlindAbFoldFactorization",
+      "blind_rem_abelian_fold"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01e-wedge.ny",
+    "bridge_declarations": [
+      "bridge_interchange",
+      "bridge_fold_abelian",
+      "BridgeFoldT",
+      "bridge_fold_T_prop",
+      "bridge_fold_from_T",
+      "bridge_fold_to_T",
+      "bridge_fold_coh",
+      "bridge_fold_q_retract",
+      "bridge_fold_prop",
+      "bridge_rem_abelian_fold"
+    ],
+    "our_declarations": [
+      "OnePointUnionSignature",
+      "wedge_factorization_prop",
+      "wedge_factorization_abelian_equiv"
+    ],
+    "note": "The blind reading replaces the wedge by its universal property: m with unit homotopies that agree at (sh, sh). Ours (module 422) is parametrized by a wedge signature with no inhabitant. Thus the blind statement is proved directly. The direction ⇐ follows from our abelian_endomap_section/_beta. The direction ⇒ follows by Eckmann–Hilton with naturality. Propositionality holds because the factorizations retract (up to a propositional component) onto sections of the set family x ↦ (BG,sh) →* (BG,x) fixed at sh. These sections form a proposition over the connected BG."
+  },
+  {
+    "source": "group.tex",
+    "line": 779,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_change_basepoint",
+      "blind_xca_change_basepoint_inf"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_xca_change_basepoint"
+    ],
+    "our_declarations": [
+      "mkgroup_points_merely_equal",
+      "infty_group_points_merely_equal"
+    ],
+    "note": "mkgroup_points_merely_equal. The ∞-group analogue is in bridge-06 (bridge_xca_change_basepoint_inf)."
+  },
+  {
+    "source": "group.tex",
+    "line": 787,
+    "labels": [
+      "xca:typegroupisgroupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/01-groups.ny",
+    "blind_declarations": [
+      "blind_xca_group_paths_set",
+      "blind_xca_typegroup_groupoid",
+      "blind_AutGroup"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-01c-products.ny",
+    "bridge_declarations": [
+      "bridge_xca_group_paths_set",
+      "bridge_xca_typegroup_groupoid",
+      "bridge_def_aut_group"
+    ],
+    "our_declarations": [
+      "group_paths_set",
+      "group_groupoid",
+      "group_aut"
+    ],
+    "note": "group_paths_set, transferred along the equivalence on paths."
+  },
+  {
+    "source": "group.tex",
+    "line": 850,
+    "labels": [
+      "def:abstractgroup",
+      "struc:under-set",
+      "struc:unit",
+      "struc:mult-op",
+      "axiom:unit-laws",
+      "axiom:ass-law",
+      "struc:inv-op",
+      "axiom:inv-law"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/02-abstract.ny",
+    "blind_declarations": [
+      "BlindAbstractGroup",
+      "BlindAbstractGroupLaws",
+      "BlindAbstractIsAb"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-02-abstract.ny",
+    "bridge_declarations": [
+      "bridge_laws_to",
+      "bridge_laws_from",
+      "bridge_ag",
+      "bridge_ag_inv",
+      "bridge_def_abstract_group",
+      "bridge_def_abstract_isab"
+    ],
+    "our_declarations": [
+      "AbstractGroup",
+      "AbstractGroupLaws"
+    ],
+    "note": "The blind record keeps isSet as a field and the laws without it. Ours keeps isSet in the laws (as absgroup.tex). The equivalence has refl round trips. The orientations are the same (right inverse law only, as printed)."
+  },
+  {
+    "source": "group.tex",
+    "line": 875,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/02-abstract.ny",
+    "blind_declarations": [
+      "blind_rem_abstract_laws_prop"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-02-abstract.ny",
+    "bridge_declarations": [
+      "bridge_rem_abstract_laws_prop"
+    ],
+    "our_declarations": [
+      "abstract_group_laws_prop",
+      "abstract_group_laws_irrelevant"
+    ],
+    "note": "abstract_group_laws_prop."
+  },
+  {
+    "source": "group.tex",
+    "line": 883,
+    "labels": [
+      "lem:idtypesgiveabstractgroups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/02-abstract.ny",
+    "blind_declarations": [
+      "blind_lem_idtypes_abstract_groups",
+      "blind_usym_mul",
+      "blind_usym_inv",
+      "blind_usym_unit"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-02-abstract.ny",
+    "bridge_declarations": [
+      "bridge_lem_idtypes_abstract_groups"
+    ],
+    "our_declarations": [
+      "usym_abstract_laws",
+      "loop_space_group_laws"
+    ],
+    "note": "usym_set and usym_abstract_laws. The blind operations are ours on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 896,
+    "labels": [
+      "def:abstrG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/02-abstract.ny",
+    "blind_declarations": [
+      "blind_abstr"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-02-abstract.ny",
+    "bridge_declarations": [
+      "bridge_def_abstr"
+    ],
+    "our_declarations": [
+      "abstr"
+    ],
+    "note": "Equal to abstr up to the propositional laws (abstract_group_laws_irrelevant)."
+  },
+  {
+    "source": "group.tex",
+    "line": 908,
+    "labels": [
+      "xca:abstract-group-of-maps"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch04/blind/02-abstract.ny",
+    "blind_declarations": [
+      "blind_xca_abstract_group_of_maps",
+      "blind_xca_abstract_group_of_maps_corrected",
+      "blind_pointwise_mul"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-02-abstract.ny",
+    "bridge_declarations": [
+      "bridge_xca_abstract_group_of_maps_refuted",
+      "bridge_xca_abstract_group_of_maps_corrected"
+    ],
+    "our_declarations": [
+      "abstract_group_of_maps",
+      "abstract_group_of_maps_abelian_iff",
+      "abstract_group_of_maps_abelian_converse_fails"
+    ],
+    "note": "Our statement refutes the literal statement (abstract_group_of_maps_abelian_converse_fails: X = ∅, G = abstr Σ₃). The corrected variant (X merely inhabited) follows from pointwise_group_laws, pointwise_abelian and pointwise_abelian_reflect."
+  },
+  {
+    "source": "group.tex",
+    "line": 932,
+    "labels": [
+      "rem:homom-eqs"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_rem_homom_eqs"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_rem_homom_eqs"
+    ],
+    "our_declarations": [
+      "homom_eqs_ap",
+      "homom_eqs_inv",
+      "homom_eqs_mul"
+    ],
+    "note": "map_path_inverse and map_path_concat (the proofs of homom_eqs_inv/mul). The unit holds by refl."
+  },
+  {
+    "source": "group.tex",
+    "line": 953,
+    "labels": [
+      "def:grouphomomorphism"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "BlindHom",
+      "blind_mkhom",
+      "blind_Bhom"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_h",
+      "bridge_h_inv",
+      "bridge_def_hom",
+      "bridge_hpath"
+    ],
+    "our_declarations": [
+      "GroupHom",
+      "mkhom",
+      "hom_B"
+    ],
+    "note": "Copy of pointed maps ≃ our one-field record GroupHom. After a match, the round trips are refl."
+  },
+  {
+    "source": "group.tex",
+    "line": 993,
+    "labels": [
+      "def:loops-map"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_loops_map",
+      "blind_loops_map_pt",
+      "blind_loops_map_pointed"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_loops_map",
+      "bridge_def_loops_map"
+    ],
+    "our_declarations": [
+      "loops_map",
+      "loops_pointed_map"
+    ],
+    "note": "The blind bracketing (k_pt·ap k p)·k_pt⁻¹ and our bracketing k_pt·(ap k p·k_pt⁻¹) are equal by concat_assoc. The pointing paths are not compared (both come from the inverse law)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1009,
+    "labels": [
+      "rem:loops-map"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_rem_loops_map_refl"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_rem_loops_map_refl"
+    ],
+    "our_declarations": [
+      "loops_map_refl_pointing"
+    ],
+    "note": "loops_map_refl_pointing after bridge_def_loops_map."
+  },
+  {
+    "source": "group.tex",
+    "line": 1014,
+    "labels": [
+      "def:USym-hom"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_usym_hom"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_usym_hom",
+      "bridge_def_usym_hom"
+    ],
+    "our_declarations": [
+      "usym_hom"
+    ],
+    "note": "usym_hom up to the reassociation of def:loops-map."
+  },
+  {
+    "source": "group.tex",
+    "line": 1022,
+    "labels": [
+      "lem:grouphomomaxioms",
+      "gp-homo-unit",
+      "gp-homo-comp",
+      "gp-homo-inv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_lem_grouphomomaxioms"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_lem_grouphomomaxioms"
+    ],
+    "our_declarations": [
+      "usym_hom_unit",
+      "usym_hom_inv",
+      "usym_hom_mul"
+    ],
+    "note": "usym_hom_unit/inv/mul, transported along bridge_usym_hom."
+  },
+  {
+    "source": "group.tex",
+    "line": 1043,
+    "labels": [
+      "def:groupisomorphism"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "BlindIsIso",
+      "BlindIso",
+      "blind_iso_is_set"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_def_is_iso",
+      "bridge_def_iso",
+      "bridge_iso_eta",
+      "bridge_iso_is_set"
+    ],
+    "our_declarations": [
+      "IsGroupIso",
+      "GroupIso"
+    ],
+    "note": "IsGroupIso on the nose. The lemma group_iso_set is transferred."
+  },
+  {
+    "source": "group.tex",
+    "line": 1050,
+    "labels": [
+      "def:identity-group-homomorphism"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_id_hom",
+      "blind_id_hom_is_iso"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_def_id_hom",
+      "bridge_id_hom_is_iso"
+    ],
+    "our_declarations": [
+      "group_hom_id",
+      "group_hom_id_iso"
+    ],
+    "note": "group_hom_id (on the nose) and group_hom_id_iso."
+  },
+  {
+    "source": "group.tex",
+    "line": 1056,
+    "labels": [
+      "remark:groupsasunivalenttype"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_rem_groups_univalent"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_rem_groups_univalent"
+    ],
+    "our_declarations": [
+      "group_path_iso_equiv"
+    ],
+    "note": "group_path_iso_equiv composed with the definition bridges."
+  },
+  {
+    "source": "group.tex",
+    "line": 1074,
+    "labels": [
+      "def:group-homomorphism-composition"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_hom_compose"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_hom_compose"
+    ],
+    "our_declarations": [
+      "group_hom_compose"
+    ],
+    "note": "group_hom_compose on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 1084,
+    "labels": [
+      "rem:Bf-convention"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_rem_bf_convention"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_bf_convention_inv",
+      "bridge_bf_convention_eta",
+      "bridge_rem_bf_convention"
+    ],
+    "our_declarations": [
+      "group_hom_induction"
+    ],
+    "note": "Ours (group_hom_induction) holds by record eta. For the blind Copy type, it holds by a match."
+  },
+  {
+    "source": "group.tex",
+    "line": 1111,
+    "labels": [
+      "lem:hom-is-set"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_lem_hom_is_set"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_lem_hom_is_set"
+    ],
+    "our_declarations": [
+      "group_hom_set",
+      "pointed_maps_set",
+      "pointed_maps_truncation_level_book"
+    ],
+    "note": "group_hom_set transferred along bridge_def_hom."
+  },
+  {
+    "source": "group.tex",
+    "line": 1141,
+    "labels": [
+      "ex:groups-morphisms",
+      "it:mod_m"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_hom_coprod",
+      "blind_hom_prod",
+      "blind_set_sum",
+      "blind_set_prod",
+      "blind_component_map",
+      "blind_ex_fin_sum_identification",
+      "blind_ex_fin_prod_identification",
+      "blind_ex_hom_to_trivial",
+      "blind_ex_hom_from_trivial",
+      "blind_hom_proj1",
+      "blind_hom_proj2",
+      "blind_hom_incl1",
+      "blind_hom_incl2",
+      "blind_Rm_hom",
+      "blind_mod_m",
+      "blind_hom_forget_cycle",
+      "blind_ex_mod_m_factorization",
+      "blind_component_loop",
+      "blind_circle_rec_pointing"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03b-hom-examples.ny",
+    "bridge_declarations": [
+      "bridge_def_hom_coprod",
+      "bridge_def_hom_prod",
+      "bridge_ex_fin_sum_identification",
+      "bridge_ex_fin_prod_identification",
+      "bridge_hom_trivial_to",
+      "bridge_hom_trivial_from",
+      "bridge_ex_hom_to_trivial",
+      "bridge_ex_hom_from_trivial",
+      "bridge_def_hom_proj1",
+      "bridge_def_hom_incl1",
+      "bridge_circle_rec_pointed",
+      "bridge_component_set_loop",
+      "bridge_component_cycle_loop",
+      "bridge_def_Rm_hom",
+      "bridge_def_mod_m",
+      "bridge_def_hom_forget_cycle",
+      "bridge_ex_mod_m_factorization"
+    ],
+    "our_declarations": [
+      "symmetric_sum_hom",
+      "group_hom_to_unit_unique",
+      "mod_hom"
+    ],
+    "note": "The blind homomorphisms are ours on the nose (permutation_sum/product_hom, product projections, power_finset_pointed, mod_pointed, cycle_forget_pointed). For R_m and mod_m, the comparison goes through refl lemmas for abstract arguments. A direct refl on the concrete terms made the checker run >25 min. The Fin identifications come from ua of fin_sum/product_identification. The uniqueness of homs to/from TG comes from group_hom_to/from_trivial_unique. The factorization is mod_forget_factorization."
+  },
+  {
+    "source": "group.tex",
+    "line": 1202,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_rem_id_ne_tau",
+      "blind_rem_tau_conjugation",
+      "blind_tau3",
+      "blind_tau3_path",
+      "blind_tau_tilde"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03b-hom-examples.ny",
+    "bridge_declarations": [
+      "bridge_tau3_pointwise",
+      "bridge_tau3_path",
+      "bridge_rem_tau_conjugation",
+      "bridge_rem_id_ne_tau"
+    ],
+    "our_declarations": [
+      "automorphism_group_map_hom",
+      "sigma3_tilde_tau",
+      "sigma3_two_homs_differ"
+    ],
+    "note": "The blind τ = (0 1) in the blind numbering is our fin3_swap12 (sigma3_sigma). Ours (sigma3_two_homs_differ) uses fin3_swap01. The same argument gives the blind statement (loop_conjugate_fixed_commutes, sigma3_tau_sigma_noncommuting). The conjugation formula is refl."
+  },
+  {
+    "source": "group.tex",
+    "line": 1240,
+    "labels": [
+      "def:loops-compose"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_loops_compose"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_loops_compose"
+    ],
+    "our_declarations": [
+      "loops_map_compose"
+    ],
+    "note": "loops_map_compose with bridge_loops_map on both sides."
+  },
+  {
+    "source": "group.tex",
+    "line": 1261,
+    "labels": [
+      "cor:USym-compose"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_cor_usym_compose"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_cor_usym_compose"
+    ],
+    "our_declarations": [
+      "usym_hom_compose"
+    ],
+    "note": "Instance of the previous bridge (usym_hom_compose)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1270,
+    "labels": [
+      "ex:Zinitial"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_ex_Zinitial",
+      "blind_ev"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_ex_Zinitial"
+    ],
+    "our_declarations": [
+      "circle_hom_ev",
+      "circle_group_hom_ev",
+      "circle_hom_ve"
+    ],
+    "note": "circle_hom_ev (map loops_map f loop) with the map changed along bridge_loops_map (equiv_change_map)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1295,
+    "labels": [
+      "lem:Znatural"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_lem_Znatural",
+      "blind_ev_hom"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_lem_Znatural"
+    ],
+    "our_declarations": [
+      "circle_group_hom_ev_natural",
+      "circle_group_hom_ev_natural_square"
+    ],
+    "note": "circle_group_hom_ev_natural with bridge_usym_hom."
+  },
+  {
+    "source": "group.tex",
+    "line": 1329,
+    "labels": [
+      "xca:BGtotype"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_xca_BGtotype"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_xca_BGtotype"
+    ],
+    "our_declarations": [
+      "bg_to_type_two_one",
+      "bg_to_type_three_four",
+      "pointed_maps_into_component"
+    ],
+    "note": "bg_to_type_two_one, refl (T2 = T3 as in ours), bg_to_type_three_four and bridge_def_hom fibrewise."
+  },
+  {
+    "source": "group.tex",
+    "line": 1341,
+    "labels": [
+      "rem:first-abs-hom"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_lem_grouphomomaxioms"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_lem_grouphomomaxioms"
+    ],
+    "our_declarations": [
+      "usym_hom_abstract_equations",
+      "abstr_hom"
+    ],
+    "note": "Same statement as lem:grouphomomaxioms in the blind file. Ours is usym_hom_abstract_equations / abstr_hom."
+  },
+  {
+    "source": "group.tex",
+    "line": 1361,
+    "labels": [
+      "exa:conj-concrete"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_regroup",
+      "blind_conj_map",
+      "blind_exa_conj_iso",
+      "blind_exa_conj_identification",
+      "blind_exa_conj_formula"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_def_regroup",
+      "bridge_exa_conj_iso",
+      "bridge_exa_conj_identification",
+      "bridge_exa_conj_formula"
+    ],
+    "our_declarations": [
+      "conj_pointed_equiv",
+      "conj_group_path",
+      "conj_usym"
+    ],
+    "note": "blind_regroup is group_at on the nose. The bridge uses conj_iso, conj_group_path and conj_usym_function. Here loop_conjugate is the blind formula."
+  },
+  {
+    "source": "group.tex",
+    "line": 1395,
+    "labels": [
+      "def:inner-autos"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/03-homs.ny",
+    "blind_declarations": [
+      "blind_inn",
+      "blind_inn_merely"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-03-homs.ny",
+    "bridge_declarations": [
+      "bridge_def_inn_aut_group",
+      "bridge_def_inn"
+    ],
+    "our_declarations": [
+      "inn",
+      "inn_classifying_map",
+      "inn_component_witness"
+    ],
+    "note": "Definition: the blind Aut(G) lives on the component of BlindGroup. Ours lives on the component of Group. The groups are identified (bridge_aut, automorphism_group_equiv_path along bridge_def_group). The classifying maps agree pointwise (y ↦ group_at G y, refl after a match on copy.)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1473,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "BlindParityRel",
+      "BlindEvenCard",
+      "blind_nat_even",
+      "BlindLocalSections",
+      "blind_parity_predicate",
+      "BlindParityQuotient",
+      "BlindBSG2"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_def_even_card",
+      "bridge_def_parity_rel",
+      "bridge_def_local_sections",
+      "bridge_parity_predicate_path",
+      "bridge_def_parity_quotient",
+      "bridge_nat_even_odd",
+      "bridge_sg_defeq_bsg2"
+    ],
+    "our_declarations": [
+      "ParityRelated",
+      "IsEvenNat",
+      "is_even_nat_iff",
+      "LocalSections",
+      "ParityQuotient",
+      "parity_relation"
+    ],
+    "note": "BlindEvenCard S ≃ IsEvenNat (cardinality S hS) for finite S. Both are propositions, and blind_nat_even k = not (nat_odd k). Hence BlindParityRel ≃ ParityRelated. The blind quotient is the image of the blind predicate. It equals ours by ap of Image along the path of predicates. BlindBSG2 and BlindLocalSections are ours judgmentally."
+  },
+  {
+    "source": "group.tex",
+    "line": 1482,
+    "labels": [
+      "lem:parityequiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_lem_parityequiv"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_lem_parityequiv",
+      "bridge_conv_parity_transitive",
+      "bridge_def_parity_quotient"
+    ],
+    "our_declarations": [
+      "parity_relation",
+      "parity_quotient_two_element",
+      "parity_quotient_empty_one_element"
+    ],
+    "note": "All five parts follow from parity_relation (through bridge_def_parity_rel). They also use parity_quotient_two_element / parity_quotient_empty_one_element, transported along bridge_def_parity_quotient. Converse: our transitivity follows from the blind lemma (bridge_conv_parity_transitive)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1554,
+    "labels": [
+      "def:mu_E"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_mu_E",
+      "blind_mu_E_dec",
+      "blind_group_power",
+      "blind_Bmu_nonempty",
+      "BlindMuPointing",
+      "blind_two_to_component"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_def_group_power",
+      "bridge_def_bmu_nonempty",
+      "bridge_pq_bsigma_path",
+      "bridge_mu_dec_classifying",
+      "bridge_def_mu_E",
+      "bridge_hyps_ptg"
+    ],
+    "our_declarations": [
+      "power_sigma_two",
+      "sign_mu",
+      "sign_mu_pointed",
+      "parity_quotient_bsigma_two",
+      "sign_mu_classifying"
+    ],
+    "note": "blind_mu_E is blind_mu_E_dec at the decision finite_inhabited_decidable, and blind_mu_E_dec matches on a variable. By cases on the decision, its classifying map is ours (bridge_mu_dec_classifying, bridge_def_mu_E). This holds for every hp, lem, ptg. The blind S_2^E is our power_sigma_two (group path). The nonempty branch blind_Bmu_nonempty is our parity_quotient_bsigma_two. The blind pointing convention differs, because the blind 0 of Fin 2 is inl (inr star). But BlindMuPointing is inhabited (bridge_hyps_ptg)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1570,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_xca_mu_product"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_xca_mu_product",
+      "bridge_sg_loops_sign",
+      "bridge_sg_ne_iff_minus"
+    ],
+    "our_declarations": [
+      "sign_mu_usym_product",
+      "sign_product",
+      "sigma_two_sign_equiv"
+    ],
+    "note": "Bridged for all hp, lem, ptg from sign_mu_usym_product. The sign of a loop image depends only on the free classifying map (bridge_sg_loops_sign). This map is ours by bridge_def_mu_E. Also, s e ≠ refl iff its sign is −1."
+  },
+  {
+    "source": "group.tex",
+    "line": 1581,
+    "labels": [
+      "def:sign-ordering"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "BlindTwoSubsets",
+      "blind_two_subsets_set",
+      "blind_two_subset_family",
+      "BlindLocalOrderings",
+      "BlindSignOrderings"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_def_two_subsets",
+      "bridge_def_two_subset_family",
+      "bridge_def_local_orderings",
+      "bridge_pq_reindex_J",
+      "bridge_pq_reindex",
+      "bridge_def_sign_orderings"
+    ],
+    "our_declarations": [
+      "TwoSubsets",
+      "two_subset_bsigma",
+      "LocalOrderings",
+      "SignOrderings"
+    ],
+    "note": "BlindTwoSubsets A ≃ TwoSubsets (A .fst), with the truncated identification with Fin 2 inverted. The families P agree along it (same carriers). The local orderings are equivalent. BlindSignOrderings A = SignOrderings by the predicate path and a reindexing lemma for parity quotients. This lemma uses J on the identification of index types."
+  },
+  {
+    "source": "group.tex",
+    "line": 1598,
+    "labels": [
+      "def:sgn"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_sgn",
+      "blind_Bsgn_map",
+      "blind_Bsgn_pt",
+      "blind_Bmu_sgn",
+      "BlindSignHyps",
+      "blind_two_subsets_finite",
+      "blind_fin_val",
+      "blind_bsn_finite",
+      "BlindBSGn",
+      "blind_two_subsets_dec",
+      "blind_two_subsets_inhabited",
+      "blind_two_subsets_small",
+      "blind_last_two_subset",
+      "blind_last_two",
+      "blind_last_two_equiv"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_sg_defeq_bsgn",
+      "bridge_sgn_E",
+      "bridge_sgn_K_dec",
+      "bridge_sgn_K",
+      "bridge_def_sgn_usym",
+      "bridge_sign_hyps_inhabited",
+      "bridge_hyps_hp",
+      "bridge_hyps_fin",
+      "bridge_hyps_ord"
+    ],
+    "our_declarations": [
+      "bsgn",
+      "bsgn_point",
+      "sign_hom",
+      "usgn",
+      "sign_family",
+      "sign_subsets_finite"
+    ],
+    "note": "For every H, the free map blind_Bsgn_map H n agrees pointwise with our bsgn n (bridge_sgn_K). The proof uses cases on the blind decision blind_two_subsets_dec n A and on ours. The ptg/ord parts of H only affect pointings. BlindBSGn is our BΣ_n judgmentally. USym blind_sgn agrees with usgn under {±1} (bridge_def_sgn_usym). The pointings can differ by the central swap, but USym does not see this swap. BlindSignHyps is inhabited (bridge_sign_hyps_inhabited). Its ord part comes from our standard order, reversed, because blind_fin_val makes inr the largest element."
+  },
+  {
+    "source": "group.tex",
+    "line": 1614,
+    "labels": [
+      "def:alternating-groups"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_AG",
+      "BlindAltCarrier",
+      "blind_alt_shape",
+      "BlindAltPtConn",
+      "blind_alt_ptconn",
+      "blind_alt_small_disconnected"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_alt_small_disconnected",
+      "bridge_alt_small_not_connected",
+      "bridge_small_center",
+      "bridge_alt_groupoid",
+      "bridge_alt_carrier_path",
+      "bridge_alt_ptconn",
+      "bridge_alt_map",
+      "bridge_alt_map_equiv"
+    ],
+    "our_declarations": [
+      "AlternatingShapes",
+      "alternating_shapes_connected",
+      "alternating_shapes_small_not_connected",
+      "alternating_group_printed"
+    ],
+    "note": "blind_alt_small_disconnected: for n ≤ 1, BΣ_n has an actual path from each point to the shape. Thus the two points of Bsgn(pt) lie in different components. The proof works for any map. blind_alt_ptconn: the groupoid half is general. Connectedness transfers from alternating_shapes_connected, because the blind total type is AlternatingShapes (bridge_alt_carrier_path, from bridge_sgn_K)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1631,
+    "labels": [
+      "xca:isos_A3_C3"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_xca_isos_A3_C3"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_xca_isos_A3_C3",
+      "bridge_alt_three_path",
+      "bridge_alt_map_equiv"
+    ],
+    "our_declarations": [
+      "a3_c3_target_iso",
+      "a3_c3_source_iso",
+      "a3_c3_isos_differ",
+      "alternating_point_path_step",
+      "group_path_from_pointed_equiv"
+    ],
+    "note": "The statements hold for every H and h. The blind A_3 is our a3_group, through a pointed equivalence of total types from bridge_sgn_K. The lemma alternating_point_path_step joins the blind designated point to ours. The blind C_3 is c3_group (bridge_aut). Our two different isomorphisms a3_c3_target_iso / a3_c3_source_iso transfer."
+  },
+  {
+    "source": "group.tex",
+    "line": 1649,
+    "labels": [
+      "def:sgn-permutation"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_sgn_action",
+      "BlindPermEven",
+      "BlindPermOdd",
+      "blind_bsgn_loop",
+      "blind_set_ua_loop",
+      "blind_litmus_bsgn_two",
+      "blind_litmus_bsgn_three",
+      "blind_litmus_bsgn_zero",
+      "blind_litmus_bsgn_one",
+      "blind_litmus_sgn_action_one",
+      "blind_litmus_loop_tau",
+      "blind_litmus_sgn_action_swap2",
+      "blind_litmus_sgn_action_tau01",
+      "blind_litmus_subset_tau01_at0",
+      "blind_litmus_subset_tau01_at1"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_sg_loop_path",
+      "bridge_sg_even_to",
+      "bridge_sg_even_from",
+      "bridge_sg_odd_to",
+      "bridge_sg_odd_from",
+      "bridge_sg_moves_K",
+      "bridge_def_perm_even",
+      "bridge_def_perm_odd"
+    ],
+    "our_declarations": [
+      "permutation_sign_at",
+      "permutation_loop",
+      "two_loop_moves",
+      "permutation_sign_at_moves"
+    ],
+    "note": "The blind loop blind_bsgn_loop n A σ equals our permutation_loop (bridge_sg_loop_path). For a loop of a two-element set, 'all points fixed' / 'no point fixed' is moves = false / true. With bridge_sgn_K, BlindPermEven H n A σ ≃ (permutation_sign_at n A σ = +1) and BlindPermOdd ≃ (= −1). This holds for every H (bridge_def_perm_even / bridge_def_perm_odd)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1675,
+    "labels": [
+      "lem:sign-properties",
+      "it:sign-transposition",
+      "it:sign-cycle",
+      "it:identity-even"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_lem_sign_transposition",
+      "blind_lem_sign_cycle",
+      "blind_lem_sign_identity_even"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_lem_sign_identity_even",
+      "bridge_conv_identity_even",
+      "bridge_lem_sign_transposition",
+      "bridge_conv_transposition_sign",
+      "bridge_sg_cycle_sign",
+      "bridge_lem_sign_cycle"
+    ],
+    "our_declarations": [
+      "identity_word_even",
+      "bsigma_transposition_sign",
+      "cycle_sign_at",
+      "is_kcycle_cycle_notation_equiv"
+    ],
+    "note": "(1) follows from bsigma_transposition_sign. (2) follows from cycle_sign_at, because IsKCycle merely gives a cycle-notation list of length j+1 (module 286). Both use bridge_def_perm_even/odd and hold for every H. (3) follows from identity_word_even. The converses also hold for (1) and (3) (bridge_conv_transposition_sign, bridge_conv_identity_even)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1703,
+    "labels": [
+      "cor:sign-defined"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_cor_sign_defined"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_cor_sign_defined_parity",
+      "bridge_sg_word_sign",
+      "bridge_cor_sign_defined"
+    ],
+    "our_declarations": [
+      "sign_defined_parity",
+      "transposition_word_sign",
+      "permutation_sign_at_homotopy"
+    ],
+    "note": "The parity component follows from sign_defined_parity. The even/odd components follow from transposition_word_sign through bridge_def_perm_even/odd, for every H."
+  },
+  {
+    "source": "group.tex",
+    "line": 1729,
+    "labels": [
+      "xca:sign-by-crossings"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "BlindInversions",
+      "blind_xca_sign_by_crossings"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_fin_val_bound",
+      "bridge_fin_val_lt_to",
+      "bridge_fin_val_lt_from",
+      "bridge_fin_val_book_lt",
+      "bridge_def_inversions",
+      "bridge_xca_sign_by_crossings"
+    ],
+    "our_declarations": [
+      "Inversions",
+      "inversion_count",
+      "permutation_sign_at_inversions"
+    ],
+    "note": "BlindInversions n σ ≃ Inversions n σ by (i, j) ↦ (j, i), because blind_fin_val is the reverse of our order fin_lt. The statement follows from permutation_sign_at_inversions and bridge_def_perm_even, for every H."
+  },
+  {
+    "source": "group.tex",
+    "line": 1741,
+    "labels": [
+      "fig:permutation-crossings-isotopy"
+    ],
+    "status": "no-claim",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "inversion_parity_independent",
+      "crossings_parity_compose"
+    ],
+    "note": "The blind file makes no separate claim for this remark. The labels xca:sign-by-crossings and def:sgn-permutation cover it. Our module 460 formalizes its claims."
+  },
+  {
+    "source": "group.tex",
+    "line": 1779,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/04-sign.ny",
+    "blind_declarations": [
+      "blind_xca_even_count"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-04-sign.ny",
+    "bridge_declarations": [
+      "bridge_fin_two_product_sum",
+      "bridge_xca_even_count"
+    ],
+    "our_declarations": [
+      "EvenPermutations",
+      "even_permutations_half",
+      "signed_permutations_finite"
+    ],
+    "note": "The blind even permutations are EvenPermutations (family equivalence from bridge_def_perm_even). Also, Fin 2 × S ≃ S + S. For every H, even_permutations_half gives 2·#even = n!."
+  },
+  {
+    "source": "group.tex",
+    "line": 1881,
+    "labels": [
+      "def:bicycle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "BlindBicycles",
+      "BlindBicycleStr",
+      "blind_sem",
+      "BlindZZList",
+      "blind_bicycle_str_prop",
+      "blind_bicycles_groupoid"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_sem",
+      "bridge_str_to",
+      "bridge_str_from",
+      "bridge_def_bicycle_str",
+      "bridge_bic",
+      "bridge_bic_inv",
+      "bridge_def_bicycles",
+      "bridge_bicycle_paths",
+      "bridge_bicycle_ev"
+    ],
+    "our_declarations": [
+      "Bicycles",
+      "BicycleConnected",
+      "bicycle_meaning"
+    ],
+    "note": "The blind meaning [ℓ] agrees pointwise with bicycle_meaning_map (list induction). Thus the conditions are equivalent propositions, and BlindBicycles ≃ Bicycles (identity on X, a, b)."
+  },
+  {
+    "source": "group.tex",
+    "line": 1896,
+    "labels": [
+      "rem:F2-first-look",
+      "fig:first-view-BF2"
+    ],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "figure_eight_connected_coverings_bicycles",
+      "FigureEightSignature",
+      "figure_eight_total_connected"
+    ],
+    "note": "No blind declaration: forward reference (bicycles as connected coverings of S1 ∨ S1, free groups, BF_S). No claim is provable with earlier material."
+  },
+  {
+    "source": "group.tex",
+    "line": 1955,
+    "labels": [
+      "def:Dinfty-Q"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_Dinfty",
+      "blind_dihedral_bicycle",
+      "blind_dihedral_is_bicycle",
+      "blind_dihedral_a",
+      "blind_dihedral_b",
+      "blind_zz_set",
+      "blind_Q8",
+      "blind_quaternion_bicycle",
+      "blind_quaternion_is_bicycle",
+      "blind_quaternion_a",
+      "blind_quaternion_b",
+      "blind_quaternion_check",
+      "BlindBicycleOn",
+      "blind_bicycle_of",
+      "blind_bicycle_aut",
+      "blind_fin_of_nat"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny + bridge-05b-small-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_bicycle_aut_path",
+      "bridge_dihedral_a_commutes",
+      "bridge_dihedral_b_commutes",
+      "bridge_dihedral_path",
+      "bridge_def_dinfty",
+      "bridge_q8_psi",
+      "bridge_q8_psi_equiv",
+      "bridge_q8_ca",
+      "bridge_q8_cb",
+      "bridge_q8_path",
+      "bridge_def_q8"
+    ],
+    "our_declarations": [
+      "infinite_dihedral_group",
+      "quaternion_group",
+      "bicycles_groupoid"
+    ],
+    "note": "The definitions are parametrized by the bicycle property. D∞ is ours through the identity bicycle isomorphism, because the blind a, b are ours pointwise. For Q₈, the blind numbering of Fin 8 (blind_fin_val, reversed) gives a bicycle that is isomorphic to ours. The isomorphism is ψ = (0 5 2 7 4 1 6 3) on depths. It was found by search and checked pointwise by refl. Hence the automorphism groups agree."
+  },
+  {
+    "source": "group.tex",
+    "line": 2073,
+    "labels": [
+      "lem:evisinj-bicycle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_lem_evisinj_bicycle",
+      "blind_bicycle_ev"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_lem_evisinj_bicycle"
+    ],
+    "our_declarations": [
+      "bicycle_evaluation_injective",
+      "bicycle_evaluation_path_reflecting"
+    ],
+    "note": "bicycle_evaluation_path_reflecting, together with the injectivity of the equivalence on paths. The blind evaluation is ours on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 2101,
+    "labels": [
+      "def:normal-bicycle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "BlindNormalBicycle"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_isequiv_precompose",
+      "bridge_isequiv_cancel",
+      "bridge_normal_to",
+      "bridge_normal_from",
+      "bridge_def_normal_bicycle"
+    ],
+    "our_declarations": [
+      "IsNormalBicycle"
+    ],
+    "note": "The blind evaluation is ours, precomposed with the equivalence on paths. Thus the two normality conditions are logically equivalent (both are propositions)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2112,
+    "labels": [
+      "xca:normal-bicycle-equiv"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_normal_bicycle_equiv"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_xca_normal_bicycle_equiv"
+    ],
+    "our_declarations": [
+      "normal_bicycle_from_point"
+    ],
+    "note": "normal_bicycle_from_point."
+  },
+  {
+    "source": "group.tex",
+    "line": 2119,
+    "labels": [
+      "def:cbid-bicycle"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_cbid"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_def_cbid"
+    ],
+    "our_declarations": [
+      "bicycle_cbid",
+      "bicycle_cbid_sends"
+    ],
+    "note": "The blind cbid maps to our bicycle_cbid (bicycle_cbid_unique)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2142,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_normal_iff_H",
+      "blind_bicycle_H",
+      "blind_bsem"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_def_bicycle_H",
+      "bridge_xca_normal_iff_H"
+    ],
+    "our_declarations": [
+      "bicycle_normal_stabilizers_equiv",
+      "bicycle_stabilizer"
+    ],
+    "note": "H_x is our bicycle_stabilizer (proposition_extensionality, bridge_sem). The bridge uses bicycle_normal_stabilizers_equiv."
+  },
+  {
+    "source": "group.tex",
+    "line": 2146,
+    "labels": [],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_commuting_normal",
+      "blind_xca_cycles_commuting_bicycles",
+      "BlindCommutingBicycle",
+      "BlindCommutingBicycles"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_commuting_to",
+      "bridge_commuting_from",
+      "bridge_xca_commuting_normal",
+      "bridge_xca_cycles_commuting_bicycles_refuted"
+    ],
+    "our_declarations": [
+      "commuting_bicycle_normal",
+      "cycle_product_not_onto_commuting",
+      "cycle_pairs_split_bicycles_equiv"
+    ],
+    "note": "Commuting bicycles are normal: bridged (commuting_bicycle_normal). The blind literal statement claims an equivalence Cyc × Cyc ≃ commuting bicycles. The blind file has no corrected variant. Our statement refutes this claim (cycle_product_not_onto_commuting): (Bool, not, not) is not a product. Ours proves the corrected statement for split commuting bicycles (cycle_pairs_split_bicycles_equiv)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2178,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_list_equivalence"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_xca_list_equivalence"
+    ],
+    "our_declarations": [
+      "normal_bicycle_word_relation_meaning"
+    ],
+    "note": "normal_bicycle_words_same_meaning with bridge_sem. The converse holds by happly."
+  },
+  {
+    "source": "group.tex",
+    "line": 2184,
+    "labels": [
+      "rem:bicycle-list-concat"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_rem_sem_append",
+      "blind_rem_cbid_shift",
+      "blind_rem_cbid_concat"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_rem_sem_append",
+      "bridge_cbid_args",
+      "bridge_rem_cbid_shift",
+      "bridge_rem_cbid_concat"
+    ],
+    "our_declarations": [
+      "bicycle_cbid_meaning",
+      "bicycle_list_concat_forward",
+      "bicycle_list_concat_backward"
+    ],
+    "note": "bicycle_meaning_append, bicycle_cbid_meaning and bicycle_list_concat_forward/backward, transferred along the equivalence on paths (equivalence_injective, map_path_concat)."
+  },
+  {
+    "source": "group.tex",
+    "line": 2262,
+    "labels": [
+      "rem:inf-dihedral-frieze"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_rem_dihedral_frieze"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05c-dihedral.ny",
+    "bridge_declarations": [
+      "BridgePointedBicycles",
+      "bridge_dihedral_pointed_path",
+      "BridgeFriezeRPower",
+      "bridge_frieze_R_power_ours",
+      "bridge_rem_dihedral_frieze"
+    ],
+    "our_declarations": [
+      "bicycle_frieze_T_word",
+      "bicycle_frieze_R_word",
+      "bicycle_frieze_example"
+    ],
+    "note": "(i)–(iv) hold for any normal bicycle (bicycle_frieze_T/R_alt, bicycle_frieze_T/R_word). (v) is ours for D∞ at the origin (dihedral_frieze_R_power). It is transported to any normality proof and along the pointed path from the blind D∞."
+  },
+  {
+    "source": "group.tex",
+    "line": 2298,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_dihedral_geometric"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05c-dihedral.ny",
+    "bridge_declarations": [
+      "BridgeGeometric",
+      "bridge_geometric_ours",
+      "bridge_xca_dihedral_geometric"
+    ],
+    "our_declarations": [
+      "dihedral_frieze_identification",
+      "dihedral_frieze_bicycle"
+    ],
+    "note": "dihedral_frieze_identification, transported as in 2262. The blind T, R (transport along the underlying path of the symmetry) are ours (bicycle_paths_equiv) through bridge_def_cbid."
+  },
+  {
+    "source": "group.tex",
+    "line": 2303,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/05-bicycles.ny",
+    "blind_declarations": [
+      "blind_xca_hexagon_prism",
+      "blind_hexagon_a",
+      "blind_hexagon_b",
+      "blind_prism_a",
+      "blind_prism_b",
+      "blind_prism_a_table"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-05b-small-bicycles.ny",
+    "bridge_declarations": [
+      "bridge_hex_ca",
+      "bridge_hex_cb",
+      "bridge_hexagon_path",
+      "bridge_prism_psi_equiv",
+      "bridge_prism_ca",
+      "bridge_prism_cb",
+      "bridge_prism_path",
+      "bridge_xca_hexagon_prism"
+    ],
+    "our_declarations": [
+      "hexagon_prism_automorphism_iso",
+      "hexagon_sigma3_iso",
+      "prism_sigma3_iso"
+    ],
+    "note": "The blind hexagon equals ours under the identity of Fin 6. The blind prism on Fin 6 is ours on Fin 3 ⊔ Fin 3 under d ↦ inl d / inr (d−3) (checked pointwise). The lemmas hexagon_prism_automorphism_path and hexagon_automorphism_group_path give the two isomorphisms."
+  },
+  {
+    "source": "group.tex",
+    "line": 2347,
+    "labels": [
+      "def:inftygps"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/06-infinity-groups.ny",
+    "blind_declarations": [
+      "BlindPtConnTypes",
+      "BlindInfGroup",
+      "blind_inf_mkgroup",
+      "blind_inf_clf"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-06-infinity-groups.ny",
+    "bridge_declarations": [
+      "bridge_ptc",
+      "bridge_ptc_inv",
+      "bridge_def_ptconn_types",
+      "bridge_ig",
+      "bridge_ig_inv",
+      "bridge_ig_eta",
+      "bridge_def_infgroup"
+    ],
+    "our_declarations": [
+      "PointedConnectedType",
+      "InftyGroup",
+      "mk_infty_group"
+    ],
+    "note": "Nested Σ / Copy ≃ our records, with refl round trips."
+  },
+  {
+    "source": "group.tex",
+    "line": 2361,
+    "labels": [
+      "rem:pointedtypes"
+    ],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "infty_group_classifying_equiv"
+    ],
+    "note": "No blind declaration: notational convention (∞-group as synonym, omission of propositional data). There is no claim."
+  },
+  {
+    "source": "group.tex",
+    "line": 2371,
+    "labels": [
+      "def:classifyingspace"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/06-infinity-groups.ny",
+    "blind_declarations": [
+      "blind_inf_BG",
+      "blind_inf_shape"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-06-infinity-groups.ny",
+    "bridge_declarations": [
+      "bridge_def_inf_BG",
+      "bridge_def_inf_shape"
+    ],
+    "our_declarations": [
+      "infty_BG",
+      "infty_shape"
+    ],
+    "note": "On the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 2378,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/06-infinity-groups.ny",
+    "blind_declarations": [
+      "blind_inf_Aut"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-06-infinity-groups.ny",
+    "bridge_declarations": [
+      "bridge_def_inf_aut"
+    ],
+    "our_declarations": [
+      "infty_automorphism_group"
+    ],
+    "note": "infty_automorphism_group on the nose."
+  },
+  {
+    "source": "group.tex",
+    "line": 2389,
+    "labels": [
+      "rem:autinfgp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/06-infinity-groups.ny",
+    "blind_declarations": [
+      "blind_rem_universe_set_component_groupoid",
+      "blind_group_to_infgroup",
+      "blind_rem_group_infgroup_injection"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-06-infinity-groups.ny",
+    "bridge_declarations": [
+      "bridge_rem_universe_set_component_groupoid",
+      "bridge_def_group_to_infgroup",
+      "bridge_rem_group_infgroup_injection"
+    ],
+    "our_declarations": [
+      "universe_set_component_groupoid",
+      "universe_component_groupoid_not_universe",
+      "group_to_infty_group_embedding"
+    ],
+    "note": "universe_set_component_groupoid. Also group_infty_paths_equiv, composed with the equivalences on paths."
+  },
+  {
+    "source": "group.tex",
+    "line": 2400,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch04/blind/06-infinity-groups.ny",
+    "blind_declarations": [
+      "BlindInfHom",
+      "blind_inf_mkhom",
+      "blind_inf_Bhom"
+    ],
+    "bridge_file": "chapters/ch04/blind/bridge-06-infinity-groups.ny",
+    "bridge_declarations": [
+      "bridge_def_infhom"
+    ],
+    "our_declarations": [
+      "InftyGroupHom",
+      "mk_infty_hom",
+      "infty_hom_B"
+    ],
+    "note": "Copy of pointed maps ≃ InftyGroupHom."
+  }
+]

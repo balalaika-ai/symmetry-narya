@@ -15,7 +15,8 @@ the open gaps and the corrections to the book. It also links each block of the b
 |---|---:|---:|---:|---:|---:|---|---:|
 | [Chapter 2: An introduction to univalent mathematics](chapters/ch02/README.md) | 196 | 196 | 0 | 0 | 0 | — | 2 |
 | [Chapter 3: The universal symmetry: the circle](chapters/ch03/README.md) | 102 | 101 | 1 | 0 | 0 | — | 10 |
-| **Total** | **298** | **297** | **1** | **0** | **0** | | **12** |
+| [Chapter 4: Groups, concretely](chapters/ch04/README.md) | 95 | 92 | 3 | 0 | 0 | 0 | 8 |
+| **Total** | **393** | **389** | **4** | **0** | **0** | | **20** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:

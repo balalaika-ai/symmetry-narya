@@ -8511,8 +8511,24 @@
     "labels": [
       "ex:base=base"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_group",
+      "circle_group_usym_integers",
+      "circle_power",
+      "circle_every_symmetry_power",
+      "circle_power_concat",
+      "circle_power_mul",
+      "circle_winding_mul",
+      "circle_winding_composition",
+      "circle_loop_integer_equiv"
+    ],
+    "principal": [
+      "circle_group_usym_integers",
+      "circle_power_mul",
+      "circle_winding_mul"
+    ],
+    "note": "The statements hold for every circle C (CircleSignature). The map n ↦ loopⁿ is an equivalence ℤ ≃ (base = base) (circle_group_usym_integers, cor:S1groupoid). Every symmetry is loop^{wind(g)} (circle_every_symmetry_power). Composition corresponds to addition: loopⁿ · loopᵐ = loop^{n+m} in the book's order (circle_power_mul). In concatenation order, this is circle_power_concat. The winding number changes · into + (circle_winding_mul). The sentence that the circle 'efficiently packages' the group of integers is motivational."
   },
   {
     "chapter": 4,
@@ -8522,8 +8538,29 @@
     "line": 89,
     "section_raw": "The type of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "symmetric_group",
+      "finset_two_pointed",
+      "sigma2_swap",
+      "sigma2_usym_equiv",
+      "sigma2_cases",
+      "sigma2_classification",
+      "sigma2_swap_nontrivial",
+      "sigma2_swap_squared",
+      "fin2_swap_equiv",
+      "circle_finset_two_map",
+      "circle_finset_two_beta",
+      "circle_finset_two_pointed",
+      "circle_finset_two_loop",
+      "bool_loops_equiv"
+    ],
+    "principal": [
+      "sigma2_usym_equiv",
+      "sigma2_swap_squared",
+      "circle_finset_two_loop"
+    ],
+    "note": "The pointed type (FinSet_2, 2) is BΣ_2 by definition (finset_two_pointed, refl). Its symmetries 2 = 2 are identifications in FinSet_2 = Set_(Fin 2). These symmetries are exactly refl and swap. Evaluation at 0 gives USym Σ_2 ≃ Fin 2 (sigma2_usym_equiv). Every symmetry is refl or swap (sigma2_cases). Also, swap ≠ refl and swap · swap = refl. The exercise xca:C2 itself is about Bool = Bool in U (bool_loops_equiv, ch2). The formalization proves it again here for Fin 2 in FinSet_2. For every circle C, the map S¹ → FinSet_2 with base ↦ 2 and loop ↦ swap is circle recursion. Its computation rule is an identification (circle_finset_two_beta). As a pointed map, it sends loop to swap (circle_finset_two_loop). The sentence 'We saw this already in fig:covering' is a cross-reference."
   },
   {
     "chapter": 4,
@@ -8535,8 +8572,21 @@
     "labels": [
       "rem:heap-preview"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_heap_op",
+      "path_heap_cancel_left",
+      "path_heap_cancel_right",
+      "path_heap_transport_equiv",
+      "path_heap_transport_map",
+      "path_heap_transport_respects"
+    ],
+    "principal": [
+      "path_heap_op",
+      "path_heap_transport_equiv",
+      "path_heap_transport_respects"
+    ],
+    "note": "Footnote: the formal statement gives the ternary operation (p, q, r) ↦ p q⁻¹ r on a = a'. It uses the book composition order, that is, concat (concat r q⁻¹) p. It gives the heap laws p p⁻¹ r = r and p r⁻¹ r = p. The heap axioms proper are in sec:heaps. Transport along f : a = a' in x ↦ (a = x) is the equivalence l ↦ l · f from a = a to a = a'. This equivalence is judgmentally concat, and it respects the ternary operation. Some statements are informal: a = a' has no obvious binary composition and no distinguished element. The affine-plane analogy is also informal. These statements make no mathematical claim beyond the above."
   },
   {
     "chapter": 4,
@@ -8548,8 +8598,20 @@
     "labels": [
       "rem:whypointedconngpoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "component_loops_equiv",
+      "component_loops_equiv_map",
+      "component_path_equiv",
+      "automorphism_group_usym_equiv",
+      "native_component_connected",
+      "usym_set"
+    ],
+    "principal": [
+      "component_loops_equiv",
+      "component_loops_equiv_map"
+    ],
+    "note": "By lem:subtype-eq-= (component_path_equiv), the first projection A_(a) → A induces an equivalence ((a,!) = (a,!)) ≃ (a = a). The underlying map of this equivalence is ap_fst, by refl (component_loops_equiv_map). A_(a) is connected (native_component_connected). The conclusions ('we should consider only connected types', 'only groupoids') are motivation for def:pt-conn-groupoid."
   },
   {
     "chapter": 4,
@@ -8561,8 +8623,23 @@
     "labels": [
       "def:pt-conn-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PointedConnectedGroupoid",
+      "PointedConnectedGroupoidSigma",
+      "pcg_sigma_equiv",
+      "GroupoidTypes",
+      "PointedGroupoids",
+      "ConnectedTypes",
+      "PointedConnectedType",
+      "unit_pointed_groupoid",
+      "unit_connected_type"
+    ],
+    "principal": [
+      "PointedConnectedGroupoid",
+      "pcg_sigma_equiv"
+    ],
+    "note": "U^{=1}_* is the core record PointedConnectedGroupoid (carrier, point, connected, groupoid). The literal Σ(A : U)(A × isconn(A) × isgrpd(A)) is PointedConnectedGroupoidSigma. The two types are equivalent, and both round trips hold by refl. Margin note: U^{≤1} = Groupoid = Σ A isgrpd(A) is GroupoidTypes, and U^{≤1}_* is PointedGroupoids (module 284). U^{>0} = Σ A isconn(A) is ConnectedTypes, and U^{>0}_* is PointedConnectedType (module 485). U is Narya's Type."
   },
   {
     "chapter": 4,
@@ -8574,8 +8651,27 @@
     "labels": [
       "xca:defgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "connected_based_equiv",
+      "connected_to_based",
+      "based_to_connected",
+      "groupoid_loops_set",
+      "based_set_loops_groupoid",
+      "based_groupoid_loops_equiv",
+      "connected_groupoid_loops_equiv",
+      "DefGroupSigma",
+      "pcg_defgroup_equiv",
+      "defgroup_unconditional_fails",
+      "universe_not_groupoid",
+      "universe_empty_loops_set"
+    ],
+    "principal": [
+      "defgroup_unconditional_fails",
+      "connected_groupoid_loops_equiv",
+      "pcg_defgroup_equiv"
+    ],
+    "note": "Refuted: part 2 as printed ('A is a groupoid iff a = a is a set', for arbitrary A) is false. For A = U and a = ∅, the loop type is a set, but U is not a groupoid. This is defgroup_unconditional_fails (module 411), which uses universe_not_groupoid of module 487. In general, only 'A groupoid ⇒ a = a set' holds (groupoid_loops_set). Corrected statement: part 2 holds under Π(x:A) ‖a = x‖ (based_groupoid_loops_equiv), that is, for connected A (connected_groupoid_loops_equiv). The conclusion uses it in this form. Part 1, Connected A ≃ Π(x:A) ‖a = x‖ (connected_based_equiv), is proved as printed. The conclusion U^{=1}_* ≃ Σ(A:U) Σ(a:A) ((Π_x ‖a = x‖) × isSet(a = a)) (pcg_defgroup_equiv) is also proved as printed. Blind statement check: our statement refutes the blind literal statement, and the blind corrected variant is our statement (bridged-corrected)."
   },
   {
     "chapter": 4,
@@ -8585,8 +8681,18 @@
     "line": 228,
     "section_raw": "The type of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "pcg_witnesses_unique",
+      "connected_prop",
+      "isgroupoid_isprop",
+      "pcg_path_pointed_equiv"
+    ],
+    "principal": [
+      "pcg_witnesses_unique",
+      "pcg_path_pointed_equiv"
+    ],
+    "note": "(A, a) determines (A, a, p, q). Any two connectedness and groupoid witnesses give equal elements of U^{=1}_* (pcg_witnesses_unique). The reason is that isconn(A) and isgrpd(A) are propositions (connected_prop, isgroupoid_isprop). Paths in U^{=1}_* are paths of pointed types (pcg_path_pointed_equiv, core). The naming convention itself is informal."
   },
   {
     "chapter": 4,
@@ -8598,8 +8704,18 @@
     "labels": [
       "def:typegroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Group",
+      "mkgroup",
+      "group_eta",
+      "group_beta"
+    ],
+    "principal": [
+      "Group",
+      "mkgroup"
+    ],
+    "note": "Group is a one-field record (classifying : U^{=1}_*) with the constructor mkgroup. The book uses the data type Copy of sec:unary-sum-types (module 16) instead. Records have judgmental eta. Thus mkgroup(B G) ≡ G and B(mkgroup X) ≡ X hold by refl (group_eta, group_beta). Also, identifications of groups compute fieldwise. The footnote on the name mkgroup is informal."
   },
   {
     "chapter": 4,
@@ -8611,8 +8727,20 @@
     "labels": [
       "def:classifying-type"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_B",
+      "BG",
+      "shape",
+      "bg_connected",
+      "bg_groupoid"
+    ],
+    "principal": [
+      "group_B",
+      "BG",
+      "shape"
+    ],
+    "note": "B : Group → U^{=1}_* is the record projection group_B. BG G is the pointed type (A, a). The designated shape sh_G = pt_BG is shape G. The typographical footnote is informal."
   },
   {
     "chapter": 4,
@@ -8624,8 +8752,15 @@
     "labels": [
       "def:looptype"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Omega",
+      "Loop"
+    ],
+    "principal": [
+      "Omega"
+    ],
+    "note": "Ω X ≔ (pt_X = pt_X), pointed at refl, is Omega X (core). Its underlying type is Loop X of module 00."
   },
   {
     "chapter": 4,
@@ -8637,8 +8772,18 @@
     "labels": [
       "def:group-symmetries"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "USym",
+      "usym_set",
+      "usym_set_type",
+      "usym_mkgroup"
+    ],
+    "principal": [
+      "USym",
+      "usym_set"
+    ],
+    "note": "USym G ≔ Ω BG is a set (usym_set). Footnote: USym : Group → Set is usym_set_type, and USym(mkgroup X) ≡ ΩX (usym_mkgroup, refl). The 'symmetries in / of' remark is terminology."
   },
   {
     "chapter": 4,
@@ -8650,8 +8795,20 @@
     "labels": [
       "def:finite-group"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsFiniteGroup",
+      "group_card",
+      "is_finite_group_prop",
+      "cyclic_group_fin_card",
+      "sigma2_card",
+      "symmetric_group_card"
+    ],
+    "principal": [
+      "IsFiniteGroup",
+      "group_card"
+    ],
+    "note": "The core defines IsFiniteGroup G ≔ IsFinite (USym G) and Card(G) ≔ Card(USym G). Litmus tests: Card(C_m) = m (cyclic_group_fin_card), Card(Σ_2) = 2 (sigma2_card) and Card(Σ_n) = n! (symmetric_group_card)."
   },
   {
     "chapter": 4,
@@ -8663,8 +8820,21 @@
     "labels": [
       "rem:aut"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_classifying_equiv",
+      "pcg_pointed_subtype_equiv",
+      "pcg_structure_prop",
+      "group_beta",
+      "group_path_pointed_equiv",
+      "group_path_pointed_refl"
+    ],
+    "principal": [
+      "group_classifying_equiv",
+      "pcg_pointed_subtype_equiv",
+      "group_path_pointed_equiv"
+    ],
+    "note": "The constructor and the destructor give Group ≃ U^{=1}_* (group_classifying_equiv). U^{=1}_* is the subtype of U_* given by the proposition 'connected groupoid' (pcg_pointed_subtype_equiv, pcg_structure_prop). A pointed connected groupoid X is B(mkgroup X) by refl (group_beta). There is an equivalence (G = H) ≃ (BG = BH), with BG and BH as pointed types (group_path_pointed_equiv). This equivalence sends refl to refl (group_path_pointed_refl)."
   },
   {
     "chapter": 4,
@@ -8676,8 +8846,16 @@
     "labels": [
       "rem:BG-convention"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_eta",
+      "group_beta",
+      "Group"
+    ],
+    "principal": [
+      "group_eta"
+    ],
+    "note": "Group is a one-field record with judgmental eta. Thus a definition of f(G) for G ≡ mkgroup X is literally a definition on G .classifying. No induction principle of Copy is necessary (group_eta is refl). The footnote about notation is informal."
   },
   {
     "chapter": 4,
@@ -8689,8 +8867,18 @@
     "labels": [
       "def:automorphism-group"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "automorphism_group",
+      "component_pcg",
+      "component_point",
+      "component_groupoid",
+      "automorphism_group_usym_equiv"
+    ],
+    "principal": [
+      "automorphism_group"
+    ],
+    "note": "For a groupoid A, Aut_A(a) ≔ mkgroup(A_(a), (a, !)). The groupoid witness is an explicit argument hA. By definition, BAut_A(a) ≡ (A_(a), (a,!))."
   },
   {
     "chapter": 4,
@@ -8702,8 +8890,19 @@
     "labels": [
       "rem:symmetriesofnonconnectedgroupoids"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "connected_component_fst_equiv",
+      "connected_component_pointed_equiv",
+      "pcg_automorphism_path",
+      "group_shape_automorphism_path"
+    ],
+    "principal": [
+      "connected_component_pointed_equiv",
+      "pcg_automorphism_path",
+      "group_shape_automorphism_path"
+    ],
+    "note": "For connected A, fst : A_(a) → A is a BookIsEquiv, because its fibers ‖a = x‖ are inhabited propositions. It is also a pointed equivalence, pointed by refl a. Hence mkgroup(A, a) = Aut_A(a) (pcg_automorphism_path, through group_path_from_pointed_equiv). Also, G = Aut_BG(sh_G) for every group G (group_shape_automorphism_path)."
   },
   {
     "chapter": 4,
@@ -8715,8 +8914,29 @@
     "labels": [
       "ex:circlegroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_group",
+      "circle_pcg",
+      "circle_group_classifying",
+      "native_circle_connected",
+      "circle_groupoid",
+      "circle_power_mul",
+      "circle_winding_mul",
+      "circle_group_automorphism_path",
+      "integer_group",
+      "integer_group_automorphism_path",
+      "InfiniteCyclesBookForm",
+      "infinite_cycles_book_form_equiv",
+      "circle_infinite_cycles_book_form",
+      "circle_infinite_cycles_equiv"
+    ],
+    "principal": [
+      "circle_group",
+      "circle_group_automorphism_path",
+      "circle_infinite_cycles_book_form"
+    ],
+    "note": "The statements hold for every circle C. Z ≔ mkgroup(S¹, base) is circle_group C, with BZ ≡ (S¹, base) (refl). S¹ is a connected groupoid. There is an equivalence base = base ≃ ℤ, with composition as addition (module 413). Z = Aut_S¹(base) (circle_group_automorphism_path). At the constructed circle, this is integer_group (module 405). InfCyc = Σ(X:U) Σ(t:X → X) ‖(ℤ, s) = (X, t)‖ is InfiniteCycles up to reassociation of Σ (infinite_cycles_book_form_equiv, refl round trips). S¹ ≃ InfCyc is thm:S1bysymmetries (circle_infinite_cycles_equiv)."
   },
   {
     "chapter": 4,
@@ -8728,8 +8948,27 @@
     "labels": [
       "xca:groups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "integer_cyclic_path",
+      "integer_cyclic_flip_path",
+      "integer_cyclic_paths_differ",
+      "circle_group_with",
+      "circle_identity_pointed_equiv",
+      "circle_flip_pointed_equiv",
+      "circle_group_identity_path",
+      "circle_group_flip_path",
+      "circle_identity_equiv_loop",
+      "circle_flip_equiv_loop",
+      "circle_group_paths_differ",
+      "circle_reflection_equiv"
+    ],
+    "principal": [
+      "integer_cyclic_path",
+      "integer_cyclic_flip_path",
+      "integer_cyclic_paths_differ"
+    ],
+    "note": "There are two identifications Z = Aut_Cyc(ℤ, s) (= cyclic_group 0). The constructed circle of chapter 3 is S¹ ≔ Cyc_0, based at (ℤ, s). Thus cyclic_group 0 is mkgroup of the same pointed type with its own witnesses (circle_group_with). The identity and the flip of the circle give two pointed equivalences BZ ≃ BAut_Cyc(ℤ, s). The flip is rem:flipthecircle: base ↦ base, loop ↦ loop⁻¹, an equivalence by circle_reflection_equiv. The two identifications differ (integer_cyclic_paths_differ). The isomorphism recovered from a path of groups sends loop to loop or to loop⁻¹, respectively. The winding numbers of these loops are 1 and −1. Module 413 proves this for every circle (circle_group_paths_differ)."
   },
   {
     "chapter": 4,
@@ -8744,8 +8983,51 @@
       "ex:permgroup",
       "ex:genpermgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "trivial_group",
+      "true_proposition_loops_contractible",
+      "trivial_group_usym_contractible",
+      "usym_contractible_trivial",
+      "prop_automorphism_group_trivial",
+      "unit_group_trivial",
+      "contractible_group_trivial",
+      "set_automorphism_group_trivial",
+      "symmetric_group",
+      "symmetric_group_classifying_type",
+      "book_finite_sets_at_equiv",
+      "finite_set_automorphism_symmetric",
+      "symmetric_group_finset_n_automorphism",
+      "symmetric_group_universe_path",
+      "permutation_group_universe_path",
+      "universe_set_automorphism_group",
+      "universe_set_component_groupoid",
+      "permutation_group",
+      "permutation_group_classifying",
+      "set_types_not_connected",
+      "GroupIn",
+      "group_in_equiv",
+      "small_pcg_in_upper",
+      "group_in_upper",
+      "small_true",
+      "prop_u_in_upper",
+      "small_trivial_group",
+      "small_trivial_group_trivial",
+      "small_trivial_group_in_upper",
+      "unit_automorphism_group",
+      "unit_automorphism_group_in",
+      "unit_automorphism_group_trivial",
+      "permutation_group_essentially_small",
+      "permutation_group_in",
+      "group_aut_essentially_small",
+      "group_aut_in"
+    ],
+    "principal": [
+      "trivial_group",
+      "symmetric_group",
+      "permutation_group"
+    ],
+    "note": "(1) TG = Aut_Prop(true), with true = true contractible. TG is identified with Aut_Prop(P) for every proposition P and with mkgroup(true, triv) (unit_group). It is also identified with mkgroup(C, c) for contractible C and with Aut_S(x) for every set S. All of these use 'symmetries contractible ⇒ trivial' (usym_contractible_trivial). (2) Σ_n = Aut_Set(Fin n), with BΣ_n ≡ (FinSet_n, n) by refl. Here FinSet_n is the groupoid of n-element sets (book_finite_sets_at_equiv). Also, Σ_n = Aut_FinSet(n), Σ_n = Aut_{FinSet_n}(n) and Σ_n = Aut_U(n), where U_(n) is a groupoid (universe_set_automorphism_group, module 485). (3) Σ_S = Aut_Set(S), with BΣ_S ≡ (Set_(S), S). Set is not connected (set_types_not_connected). Footnote: module 421 uses universes as smallness predicates of modules 190-193. Prop_U : U' and true : Prop_U. Group_U ≃ Copy(U^{=1}_*) lies in U' (group_in_upper). Aut_{Prop_U}(true) is trivial, with classifying type in U'. Aut_true(triv) is in Group_U for every U. With the hypothesis Replacement U, Σ_S ∈ Group_U for S : Set_U, and Aut_Group(G) ∈ Group_U for G ∈ Group_U. The final sentence (some groups lie only in higher Group_i) is not formalizable here."
   },
   {
     "chapter": 4,
@@ -8757,8 +9039,29 @@
     "labels": [
       "xca:group-example-details"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "prop_automorphism_group_trivial",
+      "prop_automorphisms_contractible",
+      "prop_permutation_group_trivial",
+      "symmetric_group_zero_trivial",
+      "symmetric_group_one_trivial",
+      "empty_permutation_group_trivial",
+      "symmetric_group_zero_is_empty",
+      "fin_one_type_prop",
+      "finite_set_automorphism_group",
+      "finite_set_automorphism_symmetric",
+      "automorphism_group_subtype_path",
+      "nat_int_permutation_groups_path",
+      "permutation_group_equiv_path",
+      "parity_nat_int_equiv"
+    ],
+    "principal": [
+      "prop_automorphism_group_trivial",
+      "finite_set_automorphism_symmetric",
+      "nat_int_permutation_groups_path"
+    ],
+    "note": "Aut_Prop(P) = TG for every proposition P, because PropTypes is a set. Σ_S is trivial when S is a proposition, because S ≃ S is then contractible. Thus Σ_0, Σ_1 and Σ_false are trivial. Here Σ_0 = Σ_∅ by definition (Fin 0 ≡ ∅), and false = ∅. Aut_FinSet(n) = Σ_n through the subtype FinSet ⊆ Set (automorphism_group_subtype_path with component_subtype_equiv). Aut_Set(ℕ) = Aut_Set(ℤ) follows from the equivalence ℕ ≃ ℤ of module 288, a parity encoding (module 415)."
   },
   {
     "chapter": 4,
@@ -8770,8 +9073,50 @@
     "labels": [
       "ex:cyclicgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cyclic_group",
+      "cyclic_group_fin",
+      "cyclic_group_fin_path",
+      "cyclic_group_fin_usym_equiv",
+      "cyclic_group_fin_card",
+      "modular_add",
+      "modular_zero",
+      "modular_add_zero_left",
+      "modular_add_zero_right",
+      "modular_add_litmus_two",
+      "modular_add_litmus_wrap",
+      "cyclic_group_eval",
+      "cyclic_group_eval_equiv",
+      "cyclic_group_eval_unit",
+      "cyclic_group_eval_generator",
+      "cyclic_group_eval_mul",
+      "cycle_group_generator",
+      "cycle_group_power",
+      "cycle_group_symmetries_are_powers",
+      "cycle_loops_are_powers",
+      "cyclic_group_one_trivial",
+      "cyclic_two_symmetric_two_path",
+      "cyclic_two_generator_nontrivial",
+      "cyclic_two_generator_squared",
+      "cyclic_two_cases",
+      "symmetric_group_card",
+      "cyclic_three_symmetric_three_differ",
+      "cycle_permutation_automorphism_path",
+      "permutations_groupoid",
+      "degree_cover_permutation_group_path",
+      "degree_cover_integers_mod_path",
+      "integers_mod_group",
+      "cyclic_integers_mod_path",
+      "circle_coverings_permutations",
+      "coverings_setfamilies_equiv"
+    ],
+    "principal": [
+      "cyclic_group_fin",
+      "cyclic_group_eval_mul",
+      "cyclic_integers_mod_path"
+    ],
+    "note": "C_m ≔ Aut_Cyc(m, s) is cyclic_group_fin n, with m = n+1 and the literal (Fin m, s). It is identified with cyclic_group m on (ℤ/m, s). The image of 0 gives a correspondence between the m symmetries and 0, …, m−1 (cyclic_group_fin_usym_equiv). On ℤ/m, this is cyclic_group_eval_equiv. Composition corresponds to addition mod m, a ⊕ b ≔ s^b(a), with 0 as the unit (cyclic_group_eval_mul, eval_unit). Every symmetry is a power of the generator (cycle_group_symmetries_are_powers). Footnote: C_1 = TG. C_2 = Σ_2, with exactly one nontrivial symmetry f, and f² = id. Σ_m has m! symmetries. A count shows C_3 ≠ Σ_3. The chain C_m = Aut_{Σ(X:Set)(X ≃ X)}(m, s) = Aut_{SetBundle(S¹)}(S¹, dg_m) = Aut_{S¹→Set}(R_m) =: ℤ/mℤ is proved for every circle (cyclic_integers_mod_path). The proof uses thm:coveringsofS1perms. In the first step, the book writes Σ(X:Set)(X → X), but the theorem uses X ≃ X. We also use X ≃ X."
   },
   {
     "chapter": 4,
@@ -8784,8 +9129,42 @@
       "ex:Cm",
       "fig:m-cycle-roots"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CycFin",
+      "cycle_forget_set",
+      "cycle_forget_pointed",
+      "cyclic_forget_hom",
+      "CycleStructuresOn",
+      "cycle_structures_set",
+      "cyc_fin_split_equiv",
+      "cycle_forget_fiber_equiv",
+      "cycle_forget_covering",
+      "finite_successor_symmetry",
+      "power_finset_map",
+      "power_finset_pointed",
+      "power_finset_hom",
+      "power_finset_loop",
+      "power_finset_underlying",
+      "mod_forget_factorization",
+      "mod_connected_fibers",
+      "connected_fibers_from_loops",
+      "circle_map_image_pcg",
+      "circle_map_image_group",
+      "cyclic_image_group",
+      "mod_forget_image_equiv",
+      "mod_forget_image_pointed_equiv",
+      "cyclic_image_path",
+      "power_fiber_cycle_structures",
+      "zero_image_universal_property",
+      "ZeroImage"
+    ],
+    "principal": [
+      "cycle_forget_fiber_equiv",
+      "cyclic_image_group",
+      "cyclic_image_path"
+    ],
+    "note": "The statements hold for every circle C and m = n+1. The map prj : Cyc_m → FinSet_m, ((X,t),!) ↦ (X,!), pointed by refl, is the forgetful homomorphism C_m → Σ_m. Its fiber at X is Σ(t : X ≃ X) ‖(m, s) = (X, t)‖, a set (cycle_forget_fiber_equiv). This fiber uses permutations, not endomaps t : X → X, in agreement with def:Cyc. R_m : BZ → BΣ_m is the circle recursion base ↦ m, loop ↦ s. Its computation rule gives its pointing (book: R_m(base) ≡ m). Its underlying set family is ch3's R_m (power_finset_underlying). C'_m ≔ mkgroup(Σ_{X:FinSet_m} ‖R_m⁻¹(X)‖_0, (m, |(base, β)|_0)) is the 0-image group (cyclic_image_group). Here β is the pointing of R_m, not refl. As pointed maps, R_m = prj ∘ mod_m. Also, mod_m is 0-connected, because all symmetries of C_m are powers of the generator. Thus ‖R_m⁻¹(X)‖_0 ≃ prj⁻¹(X) = cycle structures on X (power_fiber_cycle_structures). Also, BC'_m ≃ BC_m as pointed types, and this gives C'_m = C_m (cyclic_image_path). The book factors through c : S¹ ≃ Cyc_0 and −/m of thm:image-Z-to-Cm. Instead, we factor through mod_m directly. Uniqueness is zero_image_universal_property. The roots-of-unity picture (fig:m-cycle-roots) and the footnote on quotient groups and images are informal or forward references."
   },
   {
     "chapter": 4,
@@ -8797,8 +9176,21 @@
     "labels": [
       "xca:CG2isSG2"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "cycle_structures_two_contractible",
+      "rm_two_fiber_contractible",
+      "fin2_cyclic_is_swap",
+      "fin2_cyclic_moves",
+      "cycle_structures_two_all",
+      "cycle_forget_two_equiv",
+      "cyclic_two_symmetric_two_path"
+    ],
+    "principal": [
+      "rm_two_fiber_contractible",
+      "cyclic_two_symmetric_two_path"
+    ],
+    "note": "For every circle C, ‖R_2⁻¹(2)‖_0 is contractible (rm_two_fiber_contractible). It is the set of cycle structures on 2, and the only cyclic permutation of Fin 2 is the swap (fin2_cyclic_is_swap). Every 2-element set has exactly one cycle structure. Thus prj : Cyc_2 → FinSet_2 is an equivalence, and C_2 = Σ_2 (cyclic_two_symmetric_two_path). The exercise says that the contractibility reflects this identification. The footnote (C_2 = Σ_2 is contractible) refers to a later chapter."
   },
   {
     "chapter": 4,
@@ -8810,8 +9202,25 @@
     "labels": [
       "xca:RmloopCGm"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "SuccessorGenerated",
+      "successor_generated_set",
+      "forget_to_generated",
+      "forget_hom_power",
+      "forget_hom_injective",
+      "forget_ap_injective",
+      "forget_generated_injective",
+      "forget_generated_surjective",
+      "cyclic_generated_equiv",
+      "cyclic_image_symmetries",
+      "book_fiber_prop_of_injective"
+    ],
+    "principal": [
+      "cyclic_image_symmetries",
+      "cyclic_generated_equiv"
+    ],
+    "note": "The symmetries of sh_{C'_m} in BC'_m are equivalent to the subgroup generated by s = R_m(loop): USym(C'_m) ≃ Σ(σ : m = m) ‖Σ(k : ℤ) sᵏ = σ‖ (cyclic_image_symmetries). The equivalence is the composite of transport along C'_m = C_m and σ ↦ Ω(prj)(σ). The second map is injective, because its permutation determines a cycle automorphism. Its image is exactly the set of powers of s. The formalization does not prove that the equivalence is literally Ω of the inclusion BC'_m → BΣ_m. It is the explicit composite above."
   },
   {
     "chapter": 4,
@@ -8823,8 +9232,25 @@
     "labels": [
       "ex:productofgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "product_group",
+      "product_group_classifying",
+      "product_group_usym_equiv",
+      "product_group_mul_fst",
+      "product_group_mul_snd",
+      "product_symmetries_ext",
+      "klein_four_group",
+      "klein_usym_equiv",
+      "klein_finite",
+      "klein_card"
+    ],
+    "principal": [
+      "product_group",
+      "product_group_usym_equiv",
+      "klein_card"
+    ],
+    "note": "G × H ≔ mkgroup(BG × BH), pointed at (sh_G, sh_H) (core). The lemma product_group_classifying holds by refl. USym(G × H) ≃ USym G × USym H, with componentwise composition. The Klein four-group Σ_2 × Σ_2 has four symmetries (klein_card)."
   },
   {
     "chapter": 4,
@@ -8836,8 +9262,20 @@
     "labels": [
       "xca:klein-not-cyclic"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ExponentTwo",
+      "klein_exponent_two",
+      "sigma2_exponent_two",
+      "product_exponent_two",
+      "cyclic_four_not_exponent_two",
+      "cyclic_four_generator_square_value",
+      "klein_not_cyclic"
+    ],
+    "principal": [
+      "klein_not_cyclic"
+    ],
+    "note": "C_4 = Σ_2 × Σ_2 is impossible (klein_not_cyclic). Every symmetry of the Klein group squares to the identity (klein_exponent_two). Identifications of groups transport this property. But the generator of C_4 on ℤ/4 squares to 2 ≠ 0 (computed by refl). C_4 is the literal cyclic_group_fin 3, identified with cyclic_group 4 by cyclic_group_fin_path."
   },
   {
     "chapter": 4,
@@ -8849,8 +9287,17 @@
     "labels": [
       "ex:bigproductofgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "family_product_group",
+      "family_product_usym_equiv",
+      "power_group"
+    ],
+    "principal": [
+      "family_product_group",
+      "family_product_usym_equiv"
+    ],
+    "note": "Core (module 407): let S be finite (IsFinite S, that is, merely an n-element set), and let G : S → Group. Then Π_s G(s) ≔ mkgroup(Π_s BG(s), s ↦ sh_{G(s)}). By function extensionality, ptw (happly) gives USym(Π_s G(s)) ≃ Π_s USym G(s)."
   },
   {
     "chapter": 4,
@@ -8863,8 +9310,24 @@
       "xca:bigproductfunext",
       "it:bigproductfunext-i"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "connected_pi_finite",
+      "groupoid_pi",
+      "bool_finite",
+      "bool_family_pair",
+      "bool_family_unpair",
+      "bool_family_product_path",
+      "component_product_group",
+      "component_product_usym_equiv",
+      "family_product_component_path"
+    ],
+    "principal": [
+      "connected_pi_finite",
+      "bool_family_product_path",
+      "component_product_group"
+    ],
+    "note": "(i) A finite product of connected types is connected (connected_pi_finite, core, by finite choice). Products of groupoids are groupoids. (ii) For S = Bool, the product of a family equals the binary product G(false) × G(true). The pointed equivalence f ↦ (f(false), f(true)) gives this identification (bool_family_product_path). Footnote: for an arbitrary family, the component of s ↦ sh_{G(s)} is a group (component_product_group), with USym ≃ Π_s USym G(s). For finite S, this group is equal to the product. The Axiom-of-Choice alternative is not formalized."
   },
   {
     "chapter": 4,
@@ -8874,8 +9337,15 @@
     "line": 720,
     "section_raw": "The type of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_abstract_laws",
+      "abstr"
+    ],
+    "principal": [
+      "usym_abstract_laws"
+    ],
+    "note": "Forward references: lem:idtypesgiveabstractgroups (usym_abstract_laws, module 403) gives the group laws. The characterization by these laws (lem:Groupsareidentitytypes) belongs to chapter 7. It is not formalized here."
   },
   {
     "chapter": 4,
@@ -8887,8 +9357,18 @@
     "labels": [
       "def:abgp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsAbelian",
+      "is_abelian_prop",
+      "AbelianGroup",
+      "circle_group_is_abelian"
+    ],
+    "principal": [
+      "IsAbelian",
+      "AbelianGroup"
+    ],
+    "note": "The core defines isAb(G) ≔ Π(g, h : USym G) gh = hg, with gh = usym_mul G g h. This is a proposition. The core also defines AbGroup ≔ Σ(G : Group) isAb(G). The preceding prose (Z abelian) is circle_group_is_abelian."
   },
   {
     "chapter": 4,
@@ -8900,8 +9380,19 @@
     "labels": [
       "exer:first examples"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sigma2_abelian",
+      "symmetric_group_three_not_abelian",
+      "product_abelian",
+      "klein_abelian"
+    ],
+    "principal": [
+      "sigma2_abelian",
+      "symmetric_group_three_not_abelian",
+      "product_abelian"
+    ],
+    "note": "Σ_2 is abelian, because its two automorphisms of Fin 2 commute. Σ_3 is not abelian: (1 2)(0 1) and (0 1)(1 2) differ at 0 (module 406). The product of abelian groups is abelian (componentwise)."
   },
   {
     "chapter": 4,
@@ -8913,8 +9404,34 @@
     "labels": [
       "rem:whatAREabeliangroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "OnePointUnionSignature",
+      "OnePointUnionBoundary",
+      "one_point_union_rec",
+      "one_point_union_rec_beta",
+      "one_point_union_connected",
+      "wedge_pointed_ext",
+      "wedge_fold_pointed",
+      "wedge_incl_pointed",
+      "WedgeFoldFactorization",
+      "factorization_abelian",
+      "abelian_factorization",
+      "wedge_factorization_prop",
+      "wedge_factorization_abelian_equiv",
+      "pointed_maps_eq_from_loops",
+      "abelian_pointed_maps_ext",
+      "connected_set_section",
+      "central_family",
+      "sigma2_fold_factorization",
+      "sigma3_no_fold_factorization"
+    ],
+    "principal": [
+      "OnePointUnionSignature",
+      "wedge_factorization_prop",
+      "wedge_factorization_abelian_equiv"
+    ],
+    "note": "The one-point union X ∨ Y is OnePointUnionSignature X Y. This is a type with inl, inr, glue and dependent induction, and its computation rule is an identification. Narya has no HITs. Thus every result holds for every inhabitant, and the formalization constructs none. Let W be any wedge of BG with itself. Take fold (the identity on both summands) and the inclusion (inl x ↦ (x, sh), inr x ↦ (sh, x)), pointed by their computation rules. Then the type of pointed factorizations Σ(h : BG × BG →* BG)(h ∘ incl = fold) is a proposition (wedge_factorization_prop). It is equivalent to isAb(G) (wedge_factorization_abelian_equiv). The first sentences say that classifying types of abelian groups are identity types of 2-types. They refer to sec:abelian-groups and are not formalized here."
   },
   {
     "chapter": 4,
@@ -8924,8 +9441,16 @@
     "line": 779,
     "section_raw": "The type of groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "mkgroup_points_merely_equal",
+      "infty_group_points_merely_equal"
+    ],
+    "principal": [
+      "mkgroup_points_merely_equal",
+      "infty_group_points_merely_equal"
+    ],
+    "note": "Take mkgroup(A, a), with its connectedness and groupoid witnesses, and any b : A. Then ‖mkgroup(A, a) = mkgroup(A, b)‖, by connectedness. The same holds for ∞-groups (module 485)."
   },
   {
     "chapter": 4,
@@ -8937,8 +9462,20 @@
     "labels": [
       "xca:typegroupisgroupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_paths_set",
+      "group_groupoid",
+      "group_aut",
+      "group_aut_usym_paths",
+      "group_aut_usym_isos"
+    ],
+    "principal": [
+      "group_paths_set",
+      "group_groupoid",
+      "group_aut"
+    ],
+    "note": "Core (module 402): G = H is a set, and Group is a groupoid. Aut(G) ≔ Aut_Group(G) (group_aut). Its symmetries are the identifications G = G, or equivalently the isomorphisms G → G (group_aut_usym_isos)."
   },
   {
     "chapter": 4,
@@ -8957,8 +9494,17 @@
       "struc:inv-op",
       "axiom:inv-law"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractGroupLaws",
+      "AbstractGroup",
+      "abstract_group_set"
+    ],
+    "principal": [
+      "AbstractGroup",
+      "AbstractGroupLaws"
+    ],
+    "note": "AbstractGroup is the record (carrier, unit, mul, inv, laws), with laws : AbstractGroupLaws carrier unit mul inv. The book's g1·g2 is mul g1 g2. The only deviation is in the packaging. The laws are grouped as GroupLaws of absgroup.tex. The field carrier_set gives isSet(S) (the book's 'a set S'). The unit law (a) is split into unit_right (g·e = g) and unit_left (e·g = g). Associativity and the law of inverses (g·g⁻¹ = e) are as printed."
   },
   {
     "chapter": 4,
@@ -8968,8 +9514,16 @@
     "line": 875,
     "section_raw": "Abstract groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_group_laws_prop",
+      "abstract_group_laws_irrelevant"
+    ],
+    "principal": [
+      "abstract_group_laws_prop",
+      "abstract_group_laws_irrelevant"
+    ],
+    "note": "The equations are propositions: AbstractGroupLaws S e mul inv is a proposition (abstract_group_laws_prop). Two abstract groups with the same data and different proofs of the laws are equal (abstract_group_laws_irrelevant). The subtype convention itself is notation."
   },
   {
     "chapter": 4,
@@ -8981,8 +9535,26 @@
     "labels": [
       "lem:idtypesgiveabstractgroups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_abstract_laws",
+      "usym_set",
+      "usym_unit",
+      "usym_inv",
+      "usym_mul",
+      "loop_space_group_laws",
+      "loop_space_abstract_group",
+      "abstr_is_loop_space_group",
+      "concat_1p",
+      "concat_p1",
+      "concat_assoc",
+      "concat_inverse_left"
+    ],
+    "principal": [
+      "usym_abstract_laws",
+      "loop_space_group_laws"
+    ],
+    "note": "Let G be a group. Take USym G with e = refl, g⁻¹ = inverse g and h·g = trans(g)(h) = concat g h (usym_mul G h g). Then USym G satisfies the laws. USym G is a set, because BG is a groupoid (usym_set). The laws come from xca:path-groupoid-laws. The book's judgmental e·g ≡ g is the identification concat_p1, because Narya's J has a typal β-rule. The lemma loop_space_group_laws states the same for any loop space a = a that is a set. The lemma abstr_is_loop_space_group checks by refl that abstr G is its instance at sh_G."
   },
   {
     "chapter": 4,
@@ -8994,8 +9566,14 @@
     "labels": [
       "def:abstrG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstr"
+    ],
+    "principal": [
+      "abstr"
+    ],
+    "note": "abstr G is the abstract group (USym G, refl, usym_mul G, usym_inv G, usym_abstract_laws G)."
   },
   {
     "chapter": 4,
@@ -9007,8 +9585,29 @@
     "labels": [
       "xca:abstract-group-of-maps"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "pointwise_mul",
+      "pointwise_inv",
+      "pointwise_group_laws",
+      "pointwise_abstract_group",
+      "abstract_group_of_maps",
+      "abstract_group_of_maps_unit",
+      "abstract_group_of_maps_mul",
+      "pointwise_abelian",
+      "pointwise_abelian_reflect",
+      "abstract_group_of_maps_abelian_iff",
+      "empty_set_type",
+      "empty_maps_abelian",
+      "abstract_group_of_maps_abelian_converse_fails",
+      "symmetric_group_three_not_abelian"
+    ],
+    "principal": [
+      "abstract_group_of_maps",
+      "abstract_group_of_maps_abelian_iff",
+      "abstract_group_of_maps_abelian_converse_fails"
+    ],
+    "note": "X → S with the pointwise operations is an abstract group (abstract_group_of_maps, for a set X). The set hypothesis on X is not necessary: pointwise_abstract_group works for any type. The neutral element is x ↦ e, and the product is pointwise judgmentally (litmus refl). The claim 'Abelian iff G is' is false as printed. G abelian ⇒ X → S abelian holds for every X (pointwise_abelian). The converse holds when X is merely inhabited (pointwise_abelian_reflect, abstract_group_of_maps_abelian_iff). For X = ∅, the group of maps is abelian, but abstr(Σ_3) is not (abstract_group_of_maps_abelian_converse_fails)."
   },
   {
     "chapter": 4,
@@ -9020,8 +9619,26 @@
     "labels": [
       "rem:homom-eqs"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "homom_eqs_target",
+      "homom_eqs_shape",
+      "homom_eqs_ap",
+      "homom_eqs_unit",
+      "homom_eqs_inv",
+      "homom_eqs_mul",
+      "homom_eqs_abstract_hom",
+      "homom_eqs_hom",
+      "homom_eqs_usym_hom",
+      "map_path_inverse",
+      "map_path_concat"
+    ],
+    "principal": [
+      "homom_eqs_ap",
+      "homom_eqs_inv",
+      "homom_eqs_mul"
+    ],
+    "note": "The book says 'without loss of generality pt_BH ≡ k(pt_BG) and k_pt ≡ refl'. The formalization realizes this with H := mkgroup(B, k(sh_G)) for a connected groupoid B and k : BG÷ → B. Then sh_H ≡ k(sh_G) judgmentally (homom_eqs_shape). The map f := ap_k : USym G → USym H satisfies f(refl) ≡ refl (refl, 'true by definition' as printed). By lem:apcomp, it also satisfies f(g⁻¹) = f(g)⁻¹ and f(g'·g) = f(g')·f(g). That is, f is an abstract homomorphism (homom_eqs_abstract_hom). The lemma homom_eqs_usym_hom identifies USym of (k, refl) with ap_k (rem:loops-map). The reduction of the general case is lem:grouphomomaxioms."
   },
   {
     "chapter": 4,
@@ -9033,8 +9650,21 @@
     "labels": [
       "def:grouphomomorphism"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GroupHom",
+      "mkhom",
+      "hom_B",
+      "hom_function",
+      "hom_point",
+      "group_hom_classifying_equiv"
+    ],
+    "principal": [
+      "GroupHom",
+      "mkhom",
+      "hom_B"
+    ],
+    "note": "Hom(G,H) is GroupHom G H, with the constructor mkhom and the destructor hom_B (classifying map Bf). Here hom_function = Bf÷ and hom_point = Bf_pt : sh_H = Bf÷(sh_G), in the book orientation. Deviation: the formalization uses a one-field record with judgmental eta instead of the data type Copy_mkgroup. Thus mkhom and B are mutually inverse judgmentally (group_hom_classifying_equiv). So the Copy induction principle is trivial. The footnote 'we may write f : G → H' is notation."
   },
   {
     "chapter": 4,
@@ -9046,8 +9676,19 @@
     "labels": [
       "def:loops-map"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loops_map",
+      "pointed_loop_conjugate",
+      "loops_map_point",
+      "loops_pointed_map",
+      "loop_conjugate_unit"
+    ],
+    "principal": [
+      "loops_map",
+      "loops_pointed_map"
+    ],
+    "note": "loops_map X Y k p = concat k_pt (concat (ap_k p) k_pt⁻¹). This is the book's k_pt⁻¹ · ap_{k÷}(p) · k_pt in concatenation order (k_pt first). The pointing path (Ωk)_pt has type refl = Ωk(refl) (loops_map_point, by the inverse law). In the book, Ωk(refl) ≡ k_pt⁻¹·k_pt judgmentally. Here, Ωk(refl) = concat k_pt (concat refl k_pt⁻¹), and the unit law is part of the proved identification."
   },
   {
     "chapter": 4,
@@ -9059,8 +9700,15 @@
     "labels": [
       "rem:loops-map"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loops_map_refl_pointing",
+      "loop_conjugate_at_refl"
+    ],
+    "principal": [
+      "loops_map_refl_pointing"
+    ],
+    "note": "For k = (f, refl_{f x}), Ωk = ap_f as functions (x = x) → (f x = f x). The proof uses funext and the identification loop_conjugate_at_refl. This identification is not judgmental, because concat refl p ≡ p fails in HOTT."
   },
   {
     "chapter": 4,
@@ -9072,8 +9720,14 @@
     "labels": [
       "def:USym-hom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_hom"
+    ],
+    "principal": [
+      "usym_hom"
+    ],
+    "note": "usym_hom G H f := loops_map (BG G) (BG H) (hom_B G H f). This is literally Ω Bf."
   },
   {
     "chapter": 4,
@@ -9088,8 +9742,23 @@
       "gp-homo-comp",
       "gp-homo-inv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_hom_unit",
+      "usym_hom_inv",
+      "usym_hom_mul",
+      "loops_map_unit",
+      "loops_map_inverse",
+      "loops_map_concat",
+      "loop_conjugate_inverse",
+      "loop_conjugate_concat"
+    ],
+    "principal": [
+      "usym_hom_unit",
+      "usym_hom_inv",
+      "usym_hom_mul"
+    ],
+    "note": "The formalization proves the three identities with the printed orientations. They are USym f(refl) = refl, USym f(g⁻¹) = (USym f(g))⁻¹ and USym f(g'·g) = USym f(g')·USym f(g) (usym_mul notation). As in the book's proof, path induction eliminates the pointing path (inside loop_conjugate_inverse/concat). This reduces the identities to lem:apcomp. In the source, the labels gp-homo-comp/gp-homo-inv are attached to the inverse/product lines in swapped order. The formalization covers both."
   },
   {
     "chapter": 4,
@@ -9101,8 +9770,19 @@
     "labels": [
       "def:groupisomorphism"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsGroupIso",
+      "is_group_iso_prop",
+      "GroupIso",
+      "group_hom_set",
+      "group_iso_set"
+    ],
+    "principal": [
+      "IsGroupIso",
+      "GroupIso"
+    ],
+    "note": "f is an isomorphism iff Bf÷ is a (book) equivalence. Iso(G,H) = Σ(f : Hom(G,H)) IsGroupIso f is a subset, because IsGroupIso is a proposition. The footnote (both are sets) is group_hom_set and group_iso_set."
   },
   {
     "chapter": 4,
@@ -9114,8 +9794,19 @@
     "labels": [
       "def:identity-group-homomorphism"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_id",
+      "book_pointed_identity",
+      "group_hom_id_iso",
+      "group_iso_id",
+      "usym_hom_id"
+    ],
+    "principal": [
+      "group_hom_id",
+      "group_hom_id_iso"
+    ],
+    "note": "id_G := mkhom(id_BG), with id_BG = (identity, refl) of def:pointedidentity. It is an isomorphism (group_hom_id_iso). The lemma usym_hom_id shows that USym(id_G) is the identity (an identification)."
   },
   {
     "chapter": 4,
@@ -9127,8 +9818,20 @@
     "labels": [
       "remark:groupsasunivalenttype"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_path_iso_equiv",
+      "group_path_from_iso",
+      "group_path_classifying_equiv",
+      "pcg_path_pointed_equiv",
+      "pointed_path_equiv",
+      "book_pointed_equiv_group_iso_equiv",
+      "group_path_from_pointed_equiv"
+    ],
+    "principal": [
+      "group_path_iso_equiv"
+    ],
+    "note": "(G = H) ≃ Iso(G,H). This equivalence is composed from the record eta of Group and the subtype U^{=1}_* ⊆ U_*. The other parts are xca:pointedequiv (pointed_path_equiv) and BookPointedEquiv(BG,BH) ≃ Iso(G,H). The convention to write p : Iso(G,H) for p : G = H (and Bp for the pointed equivalence) is notation. The formalization always applies group_path_iso_equiv / group_path_from_iso explicitly."
   },
   {
     "chapter": 4,
@@ -9140,8 +9843,18 @@
     "labels": [
       "def:group-homomorphism-composition"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_compose",
+      "book_pointed_compose",
+      "group_hom_id_compose",
+      "group_hom_compose_id",
+      "group_hom_compose_assoc"
+    ],
+    "principal": [
+      "group_hom_compose"
+    ],
+    "note": "group_hom_compose G G' G'' f f' = mkhom(Bf' ∘ Bf) is the book's f' ∘ f, with book_pointed_compose of def:pointedtypes. The argument order is first f, then f'. The formalization adds unit and associativity laws."
   },
   {
     "chapter": 4,
@@ -9153,8 +9866,16 @@
     "labels": [
       "rem:Bf-convention"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_induction",
+      "group_hom_induction_beta",
+      "group_hom_classifying_equiv"
+    ],
+    "principal": [
+      "group_hom_induction"
+    ],
+    "note": "To define φ : Π(f : Hom(G,H)) T(f), it is sufficient to give φ(mkhom k) for all pointed maps k. This is group_hom_induction (by record eta). Its computation rule is judgmental (group_hom_induction_beta is refl). The footnote is notation."
   },
   {
     "chapter": 4,
@@ -9166,8 +9887,25 @@
     "labels": [
       "lem:hom-is-set"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_set",
+      "pointed_maps_set",
+      "pointed_homotopy_prop",
+      "group_hom_path_equiv",
+      "group_hom_path_data_equiv",
+      "GroupHomPathData",
+      "pointed_maps_truncation_level",
+      "pointed_maps_truncation_level_book",
+      "pointed_maps_set_from_general",
+      "pointed_sections_hlevel"
+    ],
+    "principal": [
+      "group_hom_set",
+      "pointed_maps_set",
+      "pointed_maps_truncation_level_book"
+    ],
+    "note": "Hom(G,H) is a set, by the book's argument. Identifications of homomorphisms are pairs (h, h(sh_G)·Bf_pt = Bf'_pt). With h : Bf÷ = Bf'÷ as printed, this is group_hom_path_data_equiv. With homotopies, it is group_hom_path_equiv. Two such h agree at sh_G by cancellation of Bf_pt. Hence they agree everywhere by connectedness (pointed_homotopy_prop). Footnote ft:ptd-decr-h-lev: the first sentence is pointed_maps_set. The general claim is pointed_maps_truncation_level_book: if X is (k−1)-connected, Y is (n+k)-truncated, k ≥ 0 and n ≥ −1, then X →* Y is an n-type. It is proved for all n ≥ −2 through pointed sections (pointed_sections_hlevel) and HoTT Lemma 7.5.7 (module 285)."
   },
   {
     "chapter": 4,
@@ -9180,8 +9918,90 @@
       "ex:groups-morphisms",
       "it:mod_m"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "set_sum_right",
+      "set_product_right",
+      "native_component_map",
+      "automorphism_group_map_hom",
+      "permutation_sum_hom",
+      "permutation_product_hom",
+      "permutation_sum_hom_carrier",
+      "permutation_sum_hom_point",
+      "transport_sum_right_inl",
+      "transport_sum_right_inr",
+      "transport_product_right",
+      "map_path_loop_conjugate",
+      "loops_map_refl_family",
+      "permutation_sum_hom_action_inl",
+      "permutation_sum_hom_action_inr",
+      "permutation_product_hom_action",
+      "permutation_relabel_map",
+      "permutation_relabel_point",
+      "permutation_relabel_hom",
+      "permutation_relabel_is_iso",
+      "permutation_relabel_iso",
+      "permutation_relabel_back",
+      "permutation_relabel_action",
+      "fin_sum_equiv",
+      "fin_product_equiv",
+      "fin_sum_identification",
+      "fin_product_identification",
+      "symmetric_sum_hom",
+      "symmetric_product_hom",
+      "symmetric_sum_hom_action",
+      "symmetric_sum_hom_fixes",
+      "symmetric_sum_hom_acts",
+      "symmetric_product_hom_action",
+      "symmetric_product_hom_acts",
+      "permutation_symmetry_ext",
+      "permhom_sigma2_swap",
+      "symmetric_sum_hom_swap_pointwise",
+      "symmetric_sum_hom_swap_is_sigma",
+      "fin_product_enumeration_one_zero",
+      "fin_product_enumeration_zero_one",
+      "symmetric_product_hom_swap_zero",
+      "symmetric_product_hom_swap_two",
+      "prop_book_contractible",
+      "group_hom_into_contractible_prop",
+      "group_hom_into_contractible",
+      "group_hom_from_contractible",
+      "contractible_domain_pointed_maps",
+      "group_hom_to_unit",
+      "group_hom_from_unit",
+      "group_hom_to_unit_unique",
+      "group_hom_from_unit_unique",
+      "trivial_group_classifying_contractible",
+      "group_hom_to_trivial_unique",
+      "group_hom_from_trivial_unique",
+      "fin_one_contraction",
+      "fin_one_group",
+      "group_hom_to_fin_one_unique",
+      "group_hom_from_fin_one_unique",
+      "product_group_proj1",
+      "product_group_proj2",
+      "product_group_incl1",
+      "product_group_incl2",
+      "product_group_proj1_usym",
+      "product_group_incl1_usym",
+      "mod_map",
+      "mod_pointed",
+      "mod_hom",
+      "mod_hom_loop",
+      "power_finset_hom",
+      "power_finset_loop",
+      "mod_forget_hom_factorization",
+      "mod_forget_factorization",
+      "cyclic_forget_hom",
+      "cyclic_integers_mod_path",
+      "group_path_iso_equiv"
+    ],
+    "principal": [
+      "symmetric_sum_hom",
+      "group_hom_to_unit_unique",
+      "mod_hom"
+    ],
+    "note": "(1) The maps X ↦ X ⊔ T and X ↦ X × T on Set_(S), pointed by refl judgmentally, give Σ_S → Σ_{S⊔T} and Σ_S → Σ_{S×T}. For X ⊔ T, the image of g acts as g on S and as the identity on T. For X × T, it acts as g on the first components only. Σ_m → Σ_{m+n} and Σ_m → Σ_{mn} compose these maps with an isomorphism. This isomorphism comes from Fin(m+n) = Fin m ⊔ Fin n or from Fin(mn) = Fin m × Fin n (module 35). Its classifying map is X ↦ X, pointed by the identification, and it acts by conjugation. The product identification enumerates (a,b) as a + m·b. That is, the order is lexicographic, and the second component leads (the book leaves the choice open). Litmus: Σ_2 → Σ_3 sends the transposition to σ = (1 2), and Σ_2 → Σ_4 sends it to (0 1)(2 3). (2) Hom(G,1) and Hom(1,G) are contractible, with the book's homomorphisms as centers. This holds for 1 = unit_group, for the book's TG = Aut_Prop(true) and for mkgroup(bn 1, 0). The second statement uses contractible_domain_pointed_maps (lem:contract-away/lem:univ-cover-of-groupoid argument). (3) Module 404 gives the projections and inclusions. Their USym are projection and inclusion (litmus). (4) The statements hold for every circle C and m = n+1. R_m classifies a homomorphism Z → Σ_m (power_finset_hom). Its computation rule gives its pointing, but the book uses refl_m. The homomorphism mod_m : Z → C_m is classified by circle recursion base ↦ (m, s), loop ↦ s (the generating symmetry). Its computation rule gives its pointing, not reflexivity (mod_hom, mod_hom_loop). As homomorphisms, R_m = prj ∘ mod_m (mod_forget_hom_factorization). Here prj : C_m → Σ_m forgets the cycle structure (cyclic_forget_hom, pointed by refl). The isomorphism C_m ≅ ℤ/mℤ of ex:cyclicgroups is cyclic_integers_mod_path. This is an identification, and thus an isomorphism through group_path_iso_equiv."
   },
   {
     "chapter": 4,
@@ -9191,8 +10011,29 @@
     "line": 1202,
     "section_raw": "Homomorphisms}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "native_component_map",
+      "automorphism_group_map_hom",
+      "automorphism_group_map_usym",
+      "sigma3_tau",
+      "sigma3_sigma",
+      "symmetric_group_classifying_type",
+      "sigma3_tilde_tau",
+      "sigma3_tilde_tau_usym",
+      "usym_hom_id",
+      "loop_conjugate_fixed_commutes",
+      "sigma3_tilde_tau_commutes",
+      "sigma3_sigma_tau_zero",
+      "sigma3_tau_sigma_zero",
+      "sigma3_two_homs_differ"
+    ],
+    "principal": [
+      "automorphism_group_map_hom",
+      "sigma3_tilde_tau",
+      "sigma3_two_homs_differ"
+    ],
+    "note": "Convention: a map f : A → B of groupoids induces Aut_A(a) → Aut_B(f a) (automorphism_group_map_hom). This homomorphism is classified by f on components and pointed by refl judgmentally. It acts by ap_f. The connectedness of A and B is not necessary. The example: τ̃ = (id, τ) with τ = (0 1). Then Ω(τ̃)(g) ≡ τ⁻¹·g·τ judgmentally (sigma3_tilde_tau_usym). If id_{Σ3} = τ̃, then τ commutes with every symmetry (sigma3_tilde_tau_commutes). This fails for σ = (1 2), because στ(0) = 2 and τσ(0) = 1 (module 406). Thus id_{Σ3} ≠ τ̃ (sigma3_two_homs_differ). The convention sentences about the omission of refl are notation."
   },
   {
     "chapter": 4,
@@ -9204,8 +10045,16 @@
     "labels": [
       "def:loops-compose"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "loops_map_compose",
+      "loops_map_compose_pointwise",
+      "loops_compose_conjugate"
+    ],
+    "principal": [
+      "loops_map_compose"
+    ],
+    "note": "Ω(g ∘ f) = Ωg ∘ Ωf as functions Ω X → Ω Z (funext of the pointwise version). As in the book, the proof uses induction on the pointing path of f and on a based path. The base case ap_{g∘f}(refl) ≡ ap_g(ap_f(refl)) ≡ refl is judgmental, as printed. But the proof also uses the unit laws of concat to remove the reflexive pointing paths, and these laws are identifications."
   },
   {
     "chapter": 4,
@@ -9217,8 +10066,14 @@
     "labels": [
       "cor:USym-compose"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_hom_compose"
+    ],
+    "principal": [
+      "usym_hom_compose"
+    ],
+    "note": "USym(ψ ∘ φ) = USym ψ ∘ USym φ as functions. This is the instance of def:loops-compose at Bφ and Bψ."
   },
   {
     "chapter": 4,
@@ -9230,8 +10085,35 @@
     "labels": [
       "ex:Zinitial"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_hom_ev",
+      "circle_hom_ev_map",
+      "circle_hom_ev_book",
+      "circle_pointed_maps_set",
+      "usym_set",
+      "circle_group_hom_ev",
+      "circle_group_hom_ev_map",
+      "circle_hom_ve",
+      "circle_hom_ve_base",
+      "circle_hom_ve_point",
+      "circle_hom_ve_loop_over",
+      "circle_hom_ve_loop",
+      "circle_hom_ve_ev",
+      "circle_group_hom_from_symmetry",
+      "circle_group_hom_from_symmetry_loop",
+      "circle_group_hom_ev_identity",
+      "circle_group_hom_ev_trivial",
+      "pointed_circle_universal_property",
+      "pointed_circle_loop_rec",
+      "circle_group"
+    ],
+    "principal": [
+      "circle_hom_ev",
+      "circle_group_hom_ev",
+      "circle_hom_ve"
+    ],
+    "note": "The statements hold for an arbitrary circle C, with Z = circle_group C. The group integer_group is the instance C = constructed_circle. ev_BG : ((S¹,base) →* BG) ≃ USym G is cor:circle-loopspace (module 129). Its map is literally (f÷, f_pt) ↦ Ω(f÷, f_pt)(loop) (refl). Both sides are sets. Hom(Z,G) ≃ USym G sends f to USym f(loop) judgmentally. The inverse ve(g) is circle recursion on (sh_G, g). In the book, ve(g)(base) ≡ sh_G judgmentally, and the pointing path is refl. Here, these become the base identification of the circle signature and its inverse (circle_hom_ve_base, circle_hom_ve_point). Also, ve(g)(loop) = g holds over that identification (circle_hom_ve_loop_over). It also holds as Ω(ve g)(loop) = g. Litmus: ev(id_Z) = loop and ev(trivial) = e."
   },
   {
     "chapter": 4,
@@ -9243,8 +10125,18 @@
     "labels": [
       "lem:Znatural"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "circle_group_hom_ev_natural",
+      "circle_group_hom_ev_natural_square",
+      "loops_map_compose_pointwise",
+      "usym_hom_compose"
+    ],
+    "principal": [
+      "circle_group_hom_ev_natural",
+      "circle_group_hom_ev_natural_square"
+    ],
+    "note": "ev_H(f ∘ k) = USym f(ev_G(k)) for all k : Hom(Z,G). This holds pointwise and as an identification of functions Hom(Z,G) → USym H. As in the book, the proof uses cor:USym-compose. Here f ∘ k is group_hom_compose Z G H k f."
   },
   {
     "chapter": 4,
@@ -9256,8 +10148,33 @@
     "labels": [
       "xca:BGtotype"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "BGToTypeOne",
+      "BGToTypeTwo",
+      "BGToTypeThree",
+      "BGToTypeFour",
+      "bg_to_type_two_three",
+      "bg_to_type_three_one",
+      "bg_to_type_two_one",
+      "pointed_map_chosen_target_equiv",
+      "component_lift_map",
+      "component_lift",
+      "component_project",
+      "component_project_lift",
+      "component_lift_project",
+      "pointed_maps_into_component",
+      "bg_to_type_three_four",
+      "bg_to_type_one_four",
+      "bg_to_type_one_four_point",
+      "bg_to_type_one_four_function"
+    ],
+    "principal": [
+      "bg_to_type_two_one",
+      "bg_to_type_three_four",
+      "pointed_maps_into_component"
+    ],
+    "note": "For a group G and a groupoid A, the four types are equivalent. (2) and (3) are judgmentally the same, because BookPointedMap is that Σ-type. The equivalence (2)/(3) ≃ (1) is xca:freemaps. The equivalence (3) ≃ (4) is fiberwise. It uses that pointed maps from the connected BG into (A,a) are pointed maps into the component A_(a) (pointed_maps_into_component). This is the content of xca:ptd-conn-to-comp of actions.tex, and the formalization proves it here. It also uses Hom(G, Aut_A(a)) ≃ BG →* (A_(a), (a,!)). Litmus: a map f goes judgmentally to (f(sh_G), the homomorphism classified by f on components)."
   },
   {
     "chapter": 4,
@@ -9269,8 +10186,19 @@
     "labels": [
       "rem:first-abs-hom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "usym_hom_abstract_equations",
+      "abstr_hom",
+      "usym_hom_unit",
+      "usym_hom_mul",
+      "usym_hom_inv"
+    ],
+    "principal": [
+      "usym_hom_abstract_equations",
+      "abstr_hom"
+    ],
+    "note": "USym f(e_G) = e_H, USym f(g ·_G g') = USym f(g) ·_H USym f(g') and USym f(g⁻¹) = (USym f(g))⁻¹. These equations use the operations of abstr(G) and abstr(H) (usym_hom_abstract_equations). The definition abstr_hom packages USym f as an abstract homomorphism, that is, a multiplication-preserving map, as in absgroup.tex."
   },
   {
     "chapter": 4,
@@ -9282,8 +10210,33 @@
     "labels": [
       "exa:conj-concrete"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_at",
+      "group_at_usym",
+      "conj_pointed_map",
+      "conj_pointed_equiv",
+      "conj_hom",
+      "conj_iso",
+      "conj_group_path",
+      "conj_usym",
+      "conj_usym_function",
+      "conj_usym_transport",
+      "conj_usym_equiv",
+      "conj_at_shape_usym",
+      "conj_abelian_trivial",
+      "loop_conjugate_fixed_commutes_right",
+      "conj_sigma3_moves_sigma",
+      "loop_conjugate",
+      "loop_transport_conjugate",
+      "inverse_inverse"
+    ],
+    "principal": [
+      "conj_pointed_equiv",
+      "conj_group_path",
+      "conj_usym"
+    ],
+    "note": "For p : sh_G = y, (id_BG, p⁻¹) : BG ≃* (BG÷, y) is a pointed equivalence. It gives the isomorphism conj_iso : G ≅ mkgroup(BG÷, y) and the identification conj_group_path. USym(mkgroup(BG÷,y)) ≡ (y = y) judgmentally (footnote). In the book's notation, Ω(id, p⁻¹)(g) = p g p⁻¹ (loop_conjugate). In concatenation order, this is p⁻¹, then g, then p. The proof uses inverse_inverse instead of the book's path induction. The map is transport in z ↦ (z = z) along p. Hence it is an equivalence (sh_G = sh_G) ≃ (y = y). Litmus: for y = sh_G, conjugation is g ↦ p·g·p⁻¹ in usym_mul notation (judgmental). Conjugation is trivial in abelian groups, and conjugation by τ moves σ in Σ_3."
   },
   {
     "chapter": 4,
@@ -9295,8 +10248,31 @@
     "labels": [
       "def:inner-autos"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_at",
+      "group_at_shape",
+      "inn_component_witness",
+      "inn_classifying_map",
+      "inn_point",
+      "inn",
+      "inn_value",
+      "inn_value_shape",
+      "inn_point_fst",
+      "inn_usym_fst",
+      "inn_group_path_shape",
+      "inn_usym_acts_by_conjugation",
+      "inn_abelian_acts_trivially",
+      "inn_sigma3_tau_nontrivial",
+      "group_aut",
+      "component_path"
+    ],
+    "principal": [
+      "inn",
+      "inn_classifying_map",
+      "inn_component_witness"
+    ],
+    "note": "inn : Hom(G, Aut(G)) has Binn(y) = (mkgroup(BG÷, y), w_y) in the component of Group at G. Here w_y : ‖G = mkgroup(BG÷, y)‖ comes from the connectedness of BG and conj_group_path ('the codomain of Binn is correct'). Binn(sh_G) ≡ G judgmentally (record eta). The book's p_inn := refl_G is the component path whose first component is refl_G judgmentally (inn_point_fst). The reason is that the truncation components differ as terms of a proposition. Litmus: as an identification G = G, USym(inn)(g) is ap_{y ↦ mkgroup(BG÷,y)}(g) (inn_usym_fst). Its shape component is g (judgmentally). Transport of a symmetry h along it gives g·h·g⁻¹ (inn_usym_acts_by_conjugation). Hence inn acts trivially for abelian G, and USym(inn)(τ) ≠ e in Σ_3 (inn_sigma3_tau_nontrivial)."
   },
   {
     "chapter": 4,
@@ -9306,8 +10282,28 @@
     "line": 1473,
     "section_raw": "The sign homomorphism}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "LocalSections",
+      "ParityDisagreement",
+      "parity_disagreement_finite",
+      "ParityRelated",
+      "parity_related_prop",
+      "IsEvenNat",
+      "is_even_nat_prop",
+      "is_even_nat_iff",
+      "parity_odd",
+      "parity_related_iff",
+      "parity_related_decidable",
+      "two_set_two_element",
+      "two_element_decidable_equality",
+      "decidable_not"
+    ],
+    "principal": [
+      "ParityRelated",
+      "IsEvenNat"
+    ],
+    "note": "ParityRelated E hE P f g says that the subset {e | f e ≠ g e} (ParityDisagreement) has an even number of elements. This subset is finite, because two-element sets have decidable equality (parity_disagreement_finite). Here IsEvenNat n ≔ Σ k, n = k + k. This is equivalent to nat_odd n = false (is_even_nat_iff). The finite set E has an explicit IsFinite witness hE. The family P lands in BΣ_2 = BookFiniteSetsAt 2. The footnote's decidability of the parity relation is parity_related_decidable."
   },
   {
     "chapter": 4,
@@ -9319,8 +10315,37 @@
     "labels": [
       "lem:parityequiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "parity_relation",
+      "parity_odd_cocycle",
+      "parity_odd_refl",
+      "parity_odd_symm",
+      "two_differ_cocycle",
+      "finite_true_count_xor",
+      "ParityQuotient",
+      "parity_class",
+      "parity_quotient_map",
+      "parity_quotient_equiv",
+      "parity_quotient_two_element",
+      "parity_quotient_bsigma_two",
+      "parity_quotient_empty_contractible",
+      "parity_quotient_empty_one_element",
+      "parity_quotient_at_most_two",
+      "local_section_flip",
+      "parity_odd_flip",
+      "parity_litmus_one_classes_differ",
+      "parity_litmus_two_classes_equal",
+      "parity_venn_count",
+      "parity_venn_transitive",
+      "parity_venn_one_even"
+    ],
+    "principal": [
+      "parity_relation",
+      "parity_quotient_two_element",
+      "parity_quotient_empty_contractible"
+    ],
+    "note": "The relation ∼ is an EquivalenceRelation (parity_relation). The quotient is the set quotient of module 41. For nonempty E, the class map measured against any base section is an equivalence (Π P)/∼ ≃ Bool (parity_quotient_equiv). Thus the quotient is a two-element set. For empty E, the quotient is contractible and equal to Fin 1. The proof of transitivity uses the cocycle law parity(f,h) = parity(f,g) xor parity(g,h) (additivity of parities of counts). A second proof uses the book's Venn-diagram count Card(F12)+Card(F13)+Card(F23) = 2(…) (parity_venn_count, parity_venn_transitive, module 463). The proof's remark that the quotient has at most two classes is parity_quotient_at_most_two. Litmus: for E = Fin 1, the constant sections at 0 and 1 are in different classes. For E = Fin 2, they are in the same class."
   },
   {
     "chapter": 4,
@@ -9332,8 +10357,26 @@
     "labels": [
       "def:mu_E"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "power_sigma_two",
+      "sign_mu_pointed",
+      "sign_mu",
+      "sign_mu_classifying",
+      "sign_mu_point",
+      "sign_mu_point_equiv",
+      "sign_mu_point_zero",
+      "sign_mu_base_section",
+      "parity_quotient_bsigma_two",
+      "fin_two_parity_equiv",
+      "power_sigma_two_empty_contractible",
+      "sign_mu_empty_unique"
+    ],
+    "principal": [
+      "sign_mu",
+      "sign_mu_pointed"
+    ],
+    "note": "μ_E : Hom(Σ_2^E, Σ_2) uses the decision finite_inhabited_decidable whether E is inhabited. Here Σ_2^E = power_group of module 407. If E is nonempty, Bμ_E(P) = (Π P)/∼. Its pointing is Fin 2 ≃ (E → Fin 2)/∼, which sends 0 to the class of the constant section at 0 (sign_mu_point_zero). The formalization identifies {±1} with Fin 2 by +1 = 0 and −1 = 1. If E is empty, Bμ_E is constant at sh with refl pointing. Then BΣ_2^E is contractible, and this is the unique homomorphism (sign_mu_empty_unique)."
   },
   {
     "chapter": 4,
@@ -9343,8 +10386,29 @@
     "line": 1570,
     "section_raw": "The sign homomorphism}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sign_product",
+      "sign_product_empty",
+      "sign_product_fin_zero",
+      "sign_product_fin_succ",
+      "power_sigma_two_component",
+      "power_sigma_two_sign_equiv",
+      "sign_mu_usym_product",
+      "sign_mu_usym_product_dec",
+      "sign_mu_product",
+      "sign_mu_moves_ne",
+      "sign_mu_component_differ",
+      "parity_class_differ",
+      "quotient_family_transport",
+      "local_sections_transport",
+      "sigma_two_sign_equiv"
+    ],
+    "principal": [
+      "sign_mu_usym_product",
+      "sign_mu_product"
+    ],
+    "note": "sign_mu_usym_product: the sign of USym μ_E(g) is the product of the signs of the components g(e) = happly g e. This is the map of power_group_usym_equiv. The lemma sign_mu_product states it for s : E → {±1} through USym(Σ_2^E) ≃ {±1}^E. This step uses function extensionality and the footnote identification. The product over a finite set is (−1)^(number of −1 values). The lemmas sign_product_fin_zero/_fin_succ show that it is the iterated product on Fin n. The footnote (empty product +1) is sign_product_empty, and the E-empty case covers it."
   },
   {
     "chapter": 4,
@@ -9356,8 +10420,25 @@
     "labels": [
       "def:sign-ordering"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "TwoSubsets",
+      "two_subset_carrier_set",
+      "two_subset_two_element",
+      "two_subset_bsigma",
+      "LocalOrderings",
+      "SignOrderings",
+      "local_ordering_unfold",
+      "pair_subset",
+      "two_subsets_fin_inhabited",
+      "local_orderings_fin_three_card",
+      "sign_orderings_fin_three_two_element"
+    ],
+    "principal": [
+      "LocalOrderings",
+      "SignOrderings"
+    ],
+    "note": "E(A) is KSubsets A 2 (module 178). P(e) is the carrier of e as a point of BΣ_2. A finite set is given as (A, isSet A, IsFinite A). Litmus: Fin 3 has 8 local orderings, and its sign orderings form a two-element set."
   },
   {
     "chapter": 4,
@@ -9369,8 +10450,38 @@
     "labels": [
       "def:sgn"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bsgn",
+      "bsgn_point",
+      "bsgn_pointed",
+      "sign_hom",
+      "usgn",
+      "standard_shape",
+      "bsigma_finite",
+      "sign_subsets_finite",
+      "sign_family",
+      "fin_lt",
+      "two_subset_min",
+      "two_subset_max",
+      "standard_local_ordering",
+      "standard_order_equiv",
+      "standard_order_path",
+      "standard_order_family_path",
+      "bsgn_small_constant",
+      "bsgn_quotient",
+      "bsgn_quotient_path",
+      "bsgn_quotient_carrier",
+      "usgn_sign_parity",
+      "usgn_permutation_parity",
+      "fin_three_pair_min_zero"
+    ],
+    "principal": [
+      "sign_hom",
+      "bsgn",
+      "bsgn_point"
+    ],
+    "note": "Bsgn(A) ≔ Bμ_{E(A)}(P) for A : BΣ_n. Its pointing is the pointing of Bμ, followed by Bμ applied to an identification of the constant family with P. This identification sends 0 ↦ min and 1 ↦ max in each two-element subset {i < j} of Fin n (order fin_lt, 0 = inr star). The definition is made for every n, as printed. For n = 0, 1, there are no two-element subsets, and Bsgn is constant at the standard two-element set (bsgn_small_constant). That is, sgn is trivial there (the book only uses n ≥ 2). For n ≥ 2, Bsgn(A) is identified with the set of sign orderings of A (bsgn_quotient_path). Also, USym sgn is the parity of the disagreement of the transported standard local ordering with itself (usgn_sign_parity)."
   },
   {
     "chapter": 4,
@@ -9382,8 +10493,30 @@
     "labels": [
       "def:alternating-groups"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AlternatingShapes",
+      "alternating_point",
+      "alternating_point_value",
+      "alternating_shapes_groupoid",
+      "alternating_point_path",
+      "alternating_shapes_connected",
+      "alternating_group_printed",
+      "alternating_shapes_small_not_connected",
+      "alternating_group",
+      "connected_component_equiv",
+      "alternating_group_printed_path",
+      "EvenSymmetries",
+      "alternating_usym_even",
+      "alternating_point_standard",
+      "alternating_three_card"
+    ],
+    "principal": [
+      "alternating_group_printed",
+      "alternating_group",
+      "alternating_shapes_small_not_connected"
+    ],
+    "note": "For n ≥ 2, Σ_{A:BΣ_n} Bsgn(A), pointed at (n, Bsgn_pt(pt_2)) with pt_2 = 0 ∈ Fin 2, is a pointed connected groupoid. Then A_n = alternating_group_printed. Correction: for n = 0, 1, this type is not connected, because Bsgn is constant at a two-element set (alternating_shapes_small_not_connected). Thus the printed definition is not a group. The corrected A_n for all n is the automorphism group (component) of the designated shape. For n ≥ 2, it is equal to the printed one (alternating_group_printed_path). The gloss is formalized. The designated shape carries the class of the standard local ordering (alternating_point_standard). The symmetries of A_n are the even permutations (alternating_usym_even). Litmus: A_3 has 3 symmetries."
   },
   {
     "chapter": 4,
@@ -9395,8 +10528,37 @@
     "labels": [
       "xca:isos_A3_C3"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "a3_c3_target_iso",
+      "a3_c3_source_iso",
+      "a3_c3_isos_differ",
+      "psi_target_hom",
+      "psi_source_hom",
+      "psi_target_iso",
+      "psi_source_iso",
+      "psi_target_map",
+      "psi_source_map",
+      "psi_target_point",
+      "psi_source_point",
+      "target_ordering",
+      "source_ordering",
+      "c3_commutes_iff_even",
+      "c3_classify",
+      "c3_shape_loops_equiv",
+      "c3_shape_map_is_equiv",
+      "c3_target_parity",
+      "c3_source_parity",
+      "c3_generator",
+      "psi_target_action",
+      "psi_source_action"
+    ],
+    "principal": [
+      "a3_c3_target_iso",
+      "a3_c3_source_iso",
+      "a3_c3_isos_differ"
+    ],
+    "note": "C_3 = cyclic_group_fin 2 (Aut_Cyc(Fin 3, s)), and A_3 = alternating_group_printed 1. The maps ψ, ψ' : C_3 → A_3 send a 3-cycle (X, t) to X with the sign ordering of a local ordering. In each pair {x, t x}, this local ordering chooses the target t x (ψ) or the source x (ψ'). The two maps are isomorphisms, because their loop maps are bijections. The reason is that a permutation of Fin 3 commutes with s iff it is even (c3_commutes_iff_even). The proof uses the loops criterion of module 185. The two isomorphisms A_3 → C_3 are their inverses (through group_path_iso_equiv). They differ, because ψ(s) and ψ'(s) act on 0 ∈ Fin 3 by 1 and 2."
   },
   {
     "chapter": 4,
@@ -9408,8 +10570,26 @@
     "labels": [
       "def:sgn-permutation"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "permutation_sign",
+      "permutation_sign_at",
+      "finite_set_point",
+      "permutation_loop",
+      "IsEvenPermutation",
+      "permutation_sign_at_homotopy",
+      "permutation_sign_standard_set",
+      "two_loop_sign",
+      "two_loop_moves",
+      "sign_aut_usym_sign",
+      "sign_aut_usym_permutation_sign_finite",
+      "permutation_sign_at_moves"
+    ],
+    "principal": [
+      "permutation_sign",
+      "permutation_sign_at"
+    ],
+    "note": "Let A be a finite set (FiniteSets) with n = Card A. Then A is a point of BΣ_n, and σ is the loop ua(σ). The definition permutation_sign_at matches on n. For n = 0, 1, the sign is +1. Otherwise, it is two_loop_sign of ap Bsgn of the loop. This is −1 exactly when the transport swaps the two elements of Bsgn(A) (two_loop_moves). Even means sign +1 (IsEvenPermutation). The following prose gives the concrete sgn^A : Hom(Aut(A), Σ_2) (group.tex:1663, sign_aut_hom). It induces this sign on symmetries: sign_aut_usym_permutation_sign_finite (module 462)."
   },
   {
     "chapter": 4,
@@ -9424,8 +10604,33 @@
       "it:sign-cycle",
       "it:identity-even"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "transposition_sign",
+      "bsigma_transposition_sign",
+      "fin_transposition_sign",
+      "transposition_conjugate",
+      "fin_to_front",
+      "permutation_sign_at_transport",
+      "conjugate_permutation",
+      "usgn_swap01",
+      "swap01_inversion_number",
+      "cycle_sign",
+      "cycle_sign_at",
+      "transposition_chain_sign",
+      "identity_word_even",
+      "transposition_word_equiv",
+      "transposition_word_sign",
+      "permutation_sign_compose",
+      "permutation_sign_at_compose",
+      "sigma3_tau_sign"
+    ],
+    "principal": [
+      "transposition_sign",
+      "cycle_sign",
+      "identity_word_even"
+    ],
+    "note": "(1) transposition_sign: every transposition (a b), a ≠ b, of a finite set has sign −1. By transport invariance, the proof reduces to (i j) on Fin n. This transposition is conjugate to (0 1). The disagreement of (0 1) with the standard local ordering is the single inversion (usgn_swap01). (2) cycle_sign: a k-cycle (a_1 … a_k) = cycle_notation_equiv (module 174) has sign (−1)^(k−1), with k − 1 = length rest. The proof uses xca:perm-prod-transpositions (cycle_transposition_product) and multiplicativity. (3) identity_word_even: if id equals the composite of a word of transpositions (module 176), then the word has even length."
   },
   {
     "chapter": 4,
@@ -9437,8 +10642,17 @@
     "labels": [
       "cor:sign-defined"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sign_defined_parity",
+      "permutation_sign_word",
+      "transposition_word_sign"
+    ],
+    "principal": [
+      "sign_defined_parity",
+      "permutation_sign_word"
+    ],
+    "note": "If σ equals the composites of two words of transpositions, then their lengths have the same parity (sign_defined_parity). Also, sgn(σ) = (−1)^length for each word (permutation_sign_word)."
   },
   {
     "chapter": 4,
@@ -9450,8 +10664,32 @@
     "labels": [
       "xca:sign-by-crossings"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Inversions",
+      "inversions_finite",
+      "inversion_count",
+      "inversion_number",
+      "inversion_number_fun",
+      "inversion_count_number",
+      "usgn_inversions",
+      "usgn_inversion_number",
+      "permutation_sign_at_inversions",
+      "action_parity_inversions",
+      "action_differ",
+      "two_subsets_pairs_equiv",
+      "subset_preimage",
+      "local_ordering_action",
+      "local_ordering_transport",
+      "sigma3_tau_inversions",
+      "sigma3_tau_sign"
+    ],
+    "principal": [
+      "permutation_sign_at_inversions",
+      "usgn_inversions",
+      "Inversions"
+    ],
+    "note": "Inversions n σ are the ordered pairs (i, j) with i < j and σ(j) < σ(i) in the standard order of Fin n. The number of these pairs is inv(σ), and sgn(σ) = (−1)^inv(σ) (permutation_sign_at_inversions). This holds for every n. For n ≥ 2, it also holds for USym sgn. The proof identifies the disagreement set of σ·ω₀ and ω₀ with the inversions through E(Fin n) ≃ ordered pairs. The parenthetical claim about other totally ordered sets is not formalized (see claims). Litmus: inversion_number 3 τ = 1 by refl, and sgn τ = −1 for τ = (0 1) in Σ_3."
   },
   {
     "chapter": 4,
@@ -9463,8 +10701,22 @@
     "labels": [
       "fig:permutation-crossings-isotopy"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "inversions_swap02",
+      "inversions_swap01_relabeled",
+      "relabel_swap02",
+      "sign_independent_of_ordering",
+      "inversion_parity_independent",
+      "crossings_parity_compose",
+      "fin_two_swap_twice_inversions",
+      "fin_two_identity_inversions"
+    ],
+    "principal": [
+      "inversion_parity_independent",
+      "crossings_parity_compose"
+    ],
+    "note": "Formalized: the number of inversions depends on the linear order. A relabeling of Fin 3 by (1 2) changes (0 2), with 3 inversions, into (0 1), with 1 inversion. But the sign and the parity of the number of inversions do not depend on the order (sign_independent_of_ordering, inversion_parity_independent). Composition of permutations preserves the parity of crossings (crossings_parity_compose). In the figure, (1 2)(1 2) = id has 1 + 1 crossings and then 0 crossings. The remarks on what the two pictures make visible and on pulling strings taut are informal."
   },
   {
     "chapter": 4,
@@ -9474,8 +10726,24 @@
     "line": 1779,
     "section_raw": "The sign homomorphism}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "EvenPermutations",
+      "OddPermutations",
+      "permutations_even_odd_equiv",
+      "even_odd_equiv",
+      "swap01_times",
+      "signed_permutations_finite",
+      "even_permutations_count",
+      "even_permutations_half",
+      "even_permutations_three",
+      "fin_automorphisms_equiv",
+      "factorial"
+    ],
+    "principal": [
+      "even_permutations_half"
+    ],
+    "note": "even_permutations_half: for n ≥ 2, the number c of even permutations of Fin n satisfies c + c = n!. Here n! comes from xca:factorial (fin_automorphisms_equiv of module 175). That is, there are n!/2 even permutations. Multiplication by (0 1) exchanges even and odd permutations. For n = 3, c = 3 (even_permutations_three)."
   },
   {
     "chapter": 4,
@@ -9487,8 +10755,32 @@
     "labels": [
       "def:bicycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Bicycles",
+      "BicycleConnected",
+      "BicycleWordFrom",
+      "bicycle_connected_prop",
+      "BicycleWord",
+      "bicycle_meaning_map",
+      "bicycle_meaning",
+      "bicycle_meaning_inverse_map",
+      "bicycle_meaning_nil",
+      "bicycle_meaning_cons_left",
+      "bicycle_meaning_cons_right",
+      "mkbicycle",
+      "bicycle_carrier",
+      "bicycle_a",
+      "bicycle_b",
+      "bicycle_connectivity",
+      "bicycle_structure"
+    ],
+    "principal": [
+      "Bicycles",
+      "BicycleConnected",
+      "bicycle_meaning"
+    ],
+    "note": "Bicycles is the displayed formula with the printed nesting: Σ (X : SetTypes) Σ (a : X ≃ X) Σ (b : X ≃ X) (Mere X × Π x x', Mere (Σ ℓ, x' = ⟦ℓ⟧(x))). Here ∃ is Mere of Σ, and words are ℓ : List (Sum Int Int). The power aⁿ is the integer power permutation_power (Int has neg n = −(n+1)). The meaning ⟦ℓ⟧ of group.tex 1870–1877 (bicycle_meaning, an Equiv X X) is defined by list induction on its underlying map. Thus the printed clauses ⟦ε⟧ = id, ⟦inl n ℓ⟧ = aⁿ∘⟦ℓ⟧ and ⟦inr n ℓ⟧ = bⁿ∘⟦ℓ⟧ hold by definition for maps. They also hold as identifications of equivalences (bicycle_meaning_nil/cons_left/cons_right). The reading as a 'subtype of Σ_{X:U}(X→X)×(X→X)' is covered by self_map_pairs_paths_equiv and bicycle_isomorphism_map_embedding (module 471)."
   },
   {
     "chapter": 4,
@@ -9501,8 +10793,28 @@
       "rem:F2-first-look",
       "fig:first-view-BF2"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FigureEightSignature",
+      "FigureEightBoundary",
+      "figure_eight_universal_property",
+      "figure_eight_setfamilies_triples",
+      "figure_eight_coverings_triples",
+      "figure_eight_monodromy1",
+      "figure_eight_monodromy2",
+      "figure_eight_total_connected",
+      "figure_eight_connected_coverings_bicycles",
+      "figure_eight_word_path",
+      "figure_eight_total_path_word",
+      "figure_eight_word_predicate",
+      "bicycles_triples_equiv"
+    ],
+    "principal": [
+      "figure_eight_connected_coverings_bicycles",
+      "FigureEightSignature",
+      "figure_eight_total_connected"
+    ],
+    "note": "The forward claim 'bicycles are the connected coverings over S¹ ∨ S¹' is proved for every FigureEightSignature. This is the HIT with base and two loops described in the remark. It is a signature with dependent induction and a propositional computation law, like CircleSignature in chapter 3. No HIT exists in the pinned Narya, and the formalization constructs no inhabitant here. The result is ConnectedCoverings(S¹∨S¹) ≃ Bicyc as a BookEquiv. The bicycle is the fiber over base, with the transports along loop₁ and loop₂. The formalization also proves the universal property (S¹∨S¹ → A) ≃ Σ_{a}(a = a)×(a = a). It also proves that set families are equivalent to sets with two permutations. The generalization to S-fold cycles over BF_S and the groupoid property of BF_S are forward references or historical (informal). The same holds for the picture and the footnote on bicyclic groups."
   },
   {
     "chapter": 4,
@@ -9514,8 +10826,39 @@
     "labels": [
       "def:Dinfty-Q"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infinite_dihedral_bicycle",
+      "infinite_dihedral_group",
+      "dihedral_a_equiv",
+      "dihedral_b_equiv",
+      "dihedral_bicycle_connected",
+      "dihedral_word_from_origin",
+      "quaternion_bicycle",
+      "quaternion_group",
+      "quaternion_a_equiv",
+      "quaternion_b_equiv",
+      "quaternion_bicycle_connected",
+      "eight",
+      "bicycles_groupoid",
+      "bicycle_automorphism_group",
+      "quaternion_a_order_four",
+      "quaternion_b_order_four",
+      "quaternion_a_square_b_square",
+      "quaternion_a_square_not_identity",
+      "quaternion_b_conjugates_a",
+      "quaternion_aba",
+      "quaternion_usym_equiv",
+      "quaternion_group_card",
+      "infinite_dihedral_usym_equiv",
+      "dihedral_shift_symmetry_acts"
+    ],
+    "principal": [
+      "infinite_dihedral_group",
+      "quaternion_group",
+      "bicycles_groupoid"
+    ],
+    "note": "The formalization proves that both standard bicycles with the printed a, b are bicycles. The first is Z ⊔ Z = Sum Int Int, with a(inl n) = inl(n+1), written int_add n 1. The second is Fin 8 with k = inl^k(inr ⋆), given by tables of the printed mod-8 formulas. Bicyc is a groupoid (bicycles_groupoid, through bicycle_paths_equiv). D∞ and Q₈ are automorphism_group Bicycles bicycles_groupoid of these bicycles. Litmus: for the printed a, b of the quaternion bicycle, a⁴ = b⁴ = id, a² = b² (k ↦ k+4) ≠ id, bab⁻¹ = a⁻¹ and aba = b. Also, USym Q₈ ≃ Fin 8 and |Q₈| = 8, and USym D∞ ≃ Z ⊔ Z. The figure fig:quaternion-bicycle draws the arrows k → a(k) of the printed formula in the colour of b, and the arrows of b in the colour of a. We follow the formula. The footnote is a forward reference (informal)."
   },
   {
     "chapter": 4,
@@ -9527,8 +10870,22 @@
     "labels": [
       "lem:evisinj-bicycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bicycle_evaluation_injective",
+      "bicycle_evaluation_path_reflecting",
+      "bicycle_iso_ext",
+      "bicycle_commuting_maps_agree",
+      "bicycle_meaning_intertwine",
+      "bicycle_path_evaluate",
+      "bicycle_paths_equiv",
+      "bicycle_path_evaluate_transport"
+    ],
+    "principal": [
+      "bicycle_evaluation_injective",
+      "bicycle_evaluation_path_reflecting"
+    ],
+    "note": "Take bicycles B, B' and x₀. The map ev_{x₀}(e) = e(x₀) is injective in the sense of def:injection (IsEmbedding: propositional book fibers). It is also path-reflecting. Here bicycle_path_evaluate gives the underlying equivalence of e under bicycle_paths_equiv. This equivalence is transport along the path of sets (bicycle_path_evaluate_transport, by refl). The proof follows the book. List induction gives e⟦ℓ⟧ = ⟦ℓ⟧'e (bicycle_meaning_intertwine), and then connectivity completes the proof (bicycle_commuting_maps_agree)."
   },
   {
     "chapter": 4,
@@ -9540,8 +10897,18 @@
     "labels": [
       "def:normal-bicycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsNormalBicycle",
+      "is_normal_bicycle_prop",
+      "bicycle_evaluation",
+      "bicycle_evaluation_equiv",
+      "NormalBicycles"
+    ],
+    "principal": [
+      "IsNormalBicycle"
+    ],
+    "note": "IsNormalBicycle B ≔ Π (x : X), BookIsEquiv (Id Bicycles B B) X (bicycle_evaluation B x), with bicycle_evaluation B x p = p(x). It is a proposition."
   },
   {
     "chapter": 4,
@@ -9553,8 +10920,18 @@
     "labels": [
       "xca:normal-bicycle-equiv"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_bicycle_from_point",
+      "bicycle_symmetry_between",
+      "normal_bicycle_from_point_surjective",
+      "bicycle_iso_compose",
+      "bicycle_iso_inverse"
+    ],
+    "principal": [
+      "normal_bicycle_from_point"
+    ],
+    "note": "If ev_x is a BookIsEquiv for some x, then ev_y is a BookIsEquiv for every y. The symmetry e_z ∘ e_y⁻¹ sends y to z, with e_w = ev_x⁻¹(w) and composition as isomorphisms. Thus ev_y is surjective. It is injective by lem:evisinj-bicycle (lem:inj+surj). The variant normal_bicycle_from_point_surjective (merely surjective at one point) is the one used for D∞ and Q₈."
   },
   {
     "chapter": 4,
@@ -9566,8 +10943,18 @@
     "labels": [
       "def:cbid-bicycle"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bicycle_cbid",
+      "bicycle_cbid_sends",
+      "bicycle_cbid_unique",
+      "normal_bicycle_unique_symmetry"
+    ],
+    "principal": [
+      "bicycle_cbid",
+      "bicycle_cbid_sends"
+    ],
+    "note": "For a normal bicycle, cbid x x' is the center of the contractible book fiber of ev_x over x'. Thus x' = cbid x x' (x). The lemma bicycle_cbid_unique says that every symmetry that sends x to x' equals it. The lemma normal_bicycle_unique_symmetry states the preceding sentence of the text. That sentence says that a unique permutation commutes with a, b and maps x to x'."
   },
   {
     "chapter": 4,
@@ -9577,8 +10964,23 @@
     "line": 2142,
     "section_raw": "Bicycles}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bicycle_stabilizer",
+      "bicycle_normal_stabilizers_equiv",
+      "normal_bicycle_stabilizers_equal",
+      "bicycle_normal_from_stabilizers",
+      "bicycle_iso_from_point",
+      "bicycle_point_map",
+      "BicyclePointImage",
+      "bicycle_path_stabilizer_inclusion",
+      "subtypes_path_inclusion"
+    ],
+    "principal": [
+      "bicycle_normal_stabilizers_equiv",
+      "bicycle_stabilizer"
+    ],
+    "note": "H_x ≔ {ℓ | ⟦ℓ⟧(x) = x} is bicycle_stabilizer B x : Subtypes (List (Sum Int Int)) (Sub of def:subtype). The exercise is the equivalence of propositions IsNormalBicycle B ≃ Π x y, H_x = H_y (equality in Sub). For H_x = H'_y, the ⇐ direction constructs an isomorphism of bicycles that sends x to y (bicycle_iso_from_point). This is the bicycle analogue of lem:IdCycle. Unique choice gives f(⟦ℓ⟧x) ≔ ⟦ℓ⟧'y."
   },
   {
     "chapter": 4,
@@ -9588,8 +10990,40 @@
     "line": 2146,
     "section_raw": "Bicycles}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "IsCommutingBicycle",
+      "commuting_bicycle_normal",
+      "commuting_meanings_commute",
+      "cycle_product_bicycle",
+      "cycle_product_bicycle_commuting",
+      "product_bicycle_connected",
+      "bool_double_bicycle",
+      "bool_double_bicycle_commuting",
+      "bool_double_not_in_image",
+      "cycle_product_not_onto_commuting",
+      "IsSplitBicycle",
+      "SplitCommutingBicycles",
+      "cycle_product_bicycle_split",
+      "bool_double_not_split",
+      "commuting_orbit_cycle",
+      "commuting_orbit_iso",
+      "cycles_to_split_bicycles",
+      "split_bicycles_to_cycles",
+      "cycle_pairs_split_bicycles_equiv",
+      "cycle_pairs_split_bicycles_book_equiv",
+      "cycle_product_bicycle_automorphism_path",
+      "klein_bicycle",
+      "klein_bicycle_commuting",
+      "klein_bicycle_product_path",
+      "klein_bicycle_automorphism_path"
+    ],
+    "principal": [
+      "commuting_bicycle_normal",
+      "cycle_product_not_onto_commuting",
+      "cycle_pairs_split_bicycles_equiv"
+    ],
+    "note": "First part as printed: commuting bicycles (a(b x) = b(a x) for all x) are normal. Second part refuted: the map ((X,t),(Y,u)) ↦ (X×Y, t×id, id×u) lands in the commuting bicycles, but it is not onto them. The commuting bicycle (Bool, not, not) is not in its image (cycle_product_not_onto_commuting). Corrected statement, proved: the map is an equivalence Cyc × Cyc ≃ SplitCommutingBicycles. These are the commuting bicycles with aⁿbᵐz = z ⇒ aⁿz = z. The inverse takes the orbit sets Z/⟨b⟩ and Z/⟨a⟩ with the induced permutations. The bicycle (Bool, not, not) is not split. Footnote: the picture shows a 4-element commuting bicycle. From the TikZ, a flips the second coordinate and b flips the first coordinate. For this bicycle, Aut_Bicyc = C₂ × C₂ (klein_bicycle_automorphism_path). The proof uses Aut_Bicyc(product bicycle) = product of the cyclic automorphism groups. The last step, from C₂ = Σ₂ to the Klein four-group Σ₂ × Σ₂, is xca:CG2isSG2 (another part)."
   },
   {
     "chapter": 4,
@@ -9599,8 +11033,17 @@
     "line": 2178,
     "section_raw": "Bicycles}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "normal_bicycle_word_relation_meaning",
+      "normal_bicycle_words_same_meaning",
+      "bicycle_word_relation",
+      "bicycle_words_at_point_surjective"
+    ],
+    "principal": [
+      "normal_bicycle_word_relation_meaning"
+    ],
+    "note": "The standing assumption of the preceding text is a normal bicycle with x₀. Under this assumption, the surjection ⟦-⟧(x₀) induces a relation (bicycle_word_relation). This relation relates ℓ, ℓ' iff ⟦ℓ⟧ = ⟦ℓ'⟧ as equivalences X ≃ X. This is an equivalence of propositions (Id X ⟦ℓ⟧x₀ ⟦ℓ'⟧x₀) ≃ (Id (X ≃ X) ⟦ℓ⟧ ⟦ℓ'⟧)."
   },
   {
     "chapter": 4,
@@ -9612,8 +11055,23 @@
     "labels": [
       "rem:bicycle-list-concat"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bicycle_path_evaluate_meaning",
+      "bicycle_cbid_meaning",
+      "bicycle_meaning_append",
+      "bicycle_list_concat_forward_step",
+      "bicycle_list_concat_forward",
+      "bicycle_list_concat_backward_step",
+      "bicycle_list_concat_backward",
+      "bicycle_cbid_compose"
+    ],
+    "principal": [
+      "bicycle_cbid_meaning",
+      "bicycle_list_concat_forward",
+      "bicycle_list_concat_backward"
+    ],
+    "note": "The formalization proves all displayed equalities for a normal bicycle and words ℓ, ℓ' (ℓ'ℓ = append ℓ' ℓ). Symmetries commute with ⟦ℓ⟧. Also, cbid x x' = cbid ⟦ℓ⟧x ⟦ℓ⟧x', and ⟦ℓ'⟧⟦ℓ⟧ = ⟦ℓ'ℓ⟧ (pointwise). Both two-step calculations are proved as identifications in Id Bicyc B B. There, the book's composite g ∘ f of symmetries is written concat f g. The 'punchline' sentence is informal."
   },
   {
     "chapter": 4,
@@ -9625,8 +11083,30 @@
     "labels": [
       "rem:inf-dihedral-frieze"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "bicycle_frieze_T",
+      "bicycle_frieze_R",
+      "bicycle_frieze_T_alt",
+      "bicycle_frieze_R_alt",
+      "bicycle_frieze_T_word",
+      "bicycle_frieze_R_word",
+      "bicycle_frieze_T_cbid_word",
+      "bicycle_frieze_R_cbid_word",
+      "bicycle_frieze_example",
+      "bicycle_frieze_T_inverse_base",
+      "dihedral_frieze_R_power",
+      "dihedral_frieze_T_shift",
+      "dihedral_frieze_R_reflection",
+      "dihedral_frieze_T_values",
+      "dihedral_frieze_R_values"
+    ],
+    "principal": [
+      "bicycle_frieze_T_word",
+      "bicycle_frieze_R_word",
+      "bicycle_frieze_example"
+    ],
+    "note": "The statements hold for every normal bicycle and base point x₀. T = cbid(ax₀, x₀) = cbid(x₀, a⁻¹x₀), and R = cbid(bx₀, x₀) = cbid(x₀, b⁻¹x₀). Also, T(⟦ℓ⟧x₀) = ⟦ℓ inl(−1)⟧x₀ and R(⟦ℓ⟧x₀) = ⟦ℓ inr(−1)⟧x₀, with the middle cbid expressions. Also, a(T⁻²R x₀) = T⁻²RT⁻¹x₀, with T⁻¹ the inverse symmetry and composites as functions. For the infinite dihedral bicycle, R(aⁿx₀) = aⁿbx₀ for every x₀. At x₀ = inl 0, T = σ⁺₋₁ (downward translation) and R = σ⁻₀ (half turn). The frieze pictures and the words 'geometric symmetries' are informal. The references to fig:plus-minus-one and ch:euclidean are also informal."
   },
   {
     "chapter": 4,
@@ -9636,8 +11116,22 @@
     "line": 2298,
     "section_raw": "Bicycles}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "dihedral_frieze_bicycle",
+      "dihedral_frieze_identification",
+      "dihedral_frieze_T_equiv",
+      "dihedral_frieze_R_equiv",
+      "dihedral_flip_equiv",
+      "dihedral_flip_commutes_T",
+      "dihedral_flip_commutes_R",
+      "bicycle_connected_transfer"
+    ],
+    "principal": [
+      "dihedral_frieze_identification",
+      "dihedral_frieze_bicycle"
+    ],
+    "note": "Let x₀ = inl 0, as in fig:first-frieze-bicycle. Take the permutations that underlie the symmetries T and R. Then (X, T, R) is a bicycle. It is identified with (X, a, b) through e(inl n) = inl(−n) and e(inr n) = inr n (ea = Te, eb = Re)."
   },
   {
     "chapter": 4,
@@ -9647,8 +11141,32 @@
     "line": 2303,
     "section_raw": "Bicycles}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "hexagon_bicycle",
+      "prism_bicycle",
+      "hexagon_prism_automorphism_path",
+      "hexagon_prism_automorphism_iso",
+      "hexagon_automorphism_group_path",
+      "prism_automorphism_group_path",
+      "hexagon_sigma3_iso",
+      "prism_sigma3_iso",
+      "cayley_bicycle",
+      "cayley_bicycle_group_path",
+      "sigma3_usym_named_equiv",
+      "sigma3_permutation_code",
+      "hexagon_cayley_path",
+      "prism_cayley_path",
+      "hexagon_bicycle_normal",
+      "prism_bicycle_normal",
+      "hexagon_prism_different_components"
+    ],
+    "principal": [
+      "hexagon_prism_automorphism_iso",
+      "hexagon_sigma3_iso",
+      "prism_sigma3_iso"
+    ],
+    "note": "The pictured bicycles are read off the TikZ. The hexagon is on Fin 6, with a = (0 1)(2 3)(4 5) and b = (1 2)(3 4)(5 0). The prism is on Fin 3 ⊔ Fin 3, with a(x_k) = x_{k−1}, a(y_k) = y_{k+1} and b(x_k) = y_k. Both are identified with Cayley bicycles of Σ₃, for (0 1), (1 2) and for (0 1 2), (1 2), respectively. For generating g, h, G = Aut_Bicyc(Cay(G; g, h)) (cayley_bicycle_group_path). This gives Aut(hexagon) = Σ₃ = Aut(prism) as identifications of groups and as GroupIso. Also formalized: both bicycles are normal, and they lie in different components (hexagon_prism_different_components)."
   },
   {
     "chapter": 4,
@@ -9660,8 +11178,21 @@
     "labels": [
       "def:inftygps"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "PointedConnectedType",
+      "InftyGroup",
+      "mk_infty_group",
+      "infty_group_B",
+      "infty_group_classifying_equiv",
+      "Connected"
+    ],
+    "principal": [
+      "PointedConnectedType",
+      "InftyGroup",
+      "mk_infty_group"
+    ],
+    "note": "U^{>0}_* = Σ(A:U) A × isconn(A) is the record PointedConnectedType (carrier, point, connected), with the components in the printed order. The type of ∞-groups is a wrapped copy of it, with the constructor mk_infty_group and the destructor infty_group_B (the book's clf). As for Group (module 400), the wrapper is a one-field record instead of the data type Copy of module 16. Thus mk_infty_group (infty_group_B G) ≡ G and infty_group_B (mk_infty_group X) ≡ X hold judgmentally. That is, infty_group_classifying_equiv is refl in both directions."
   },
   {
     "chapter": 4,
@@ -9673,8 +11204,15 @@
     "labels": [
       "rem:pointedtypes"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infty_group_classifying_equiv",
+      "group_classifying_equiv"
+    ],
+    "principal": [
+      "infty_group_classifying_equiv"
+    ],
+    "note": "The synonymy of ∞-groups and pointed connected types (wrapped with mkgroup) is the equivalence infty_group_classifying_equiv : InftyGroup ≃ PointedConnectedType. Both directions hold by refl. The analogue for groups is group_classifying_equiv. The omission of the propositional component, (A, a) for (A, a, !), is a notational convention without separate content."
   },
   {
     "chapter": 4,
@@ -9686,8 +11224,16 @@
     "labels": [
       "def:classifyingspace"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infty_BG",
+      "infty_shape"
+    ],
+    "principal": [
+      "infty_BG",
+      "infty_shape"
+    ],
+    "note": "infty_BG G : Pointed is the underlying pointed type (carrier, point) of the classifying pointed connected type. Its base point infty_shape G is the designated shape."
   },
   {
     "chapter": 4,
@@ -9697,8 +11243,17 @@
     "line": 2378,
     "section_raw": "Infinity groups (\\texorpdfstring{\\inftygps}{∞-groups})}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "infty_automorphism_group",
+      "component_point",
+      "native_component_connected",
+      "NativeComponent"
+    ],
+    "principal": [
+      "infty_automorphism_group"
+    ],
+    "note": "For any type A and a : A, infty_automorphism_group A a = mk_infty_group (A_(a), (a, |refl|), connectedness of the component). Here A_(a) = NativeComponent A a = Σ(x:A) ‖a = x‖. There is no groupoid hypothesis on A."
   },
   {
     "chapter": 4,
@@ -9710,8 +11265,30 @@
     "labels": [
       "rem:autinfgp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "universe_component_set",
+      "universe_set_component_groupoid",
+      "universe_set_automorphism_group",
+      "universe_set_automorphism_group_infty",
+      "universe_not_groupoid",
+      "universe_not_groupoid_of_circle",
+      "universe_component_groupoid_not_universe",
+      "circle_central_loop",
+      "circle_loop_not_refl",
+      "group_to_infty_group",
+      "group_to_infty_group_bg",
+      "group_infty_paths_equiv",
+      "group_to_infty_group_embedding",
+      "infty_universe_automorphisms_equiv",
+      "universe_fin_automorphisms_symmetric"
+    ],
+    "principal": [
+      "universe_set_component_groupoid",
+      "universe_component_groupoid_not_universe",
+      "group_to_infty_group_embedding"
+    ],
+    "note": "First paragraph: for a set S, the component U_(S) is a groupoid (universe_set_component_groupoid). The proof uses (X = Y) ≃ (X ≃ Y) for sets. Thus Aut_U(S) is an ordinary group (universe_set_automorphism_group). Its ∞-group is literally infty_automorphism_group Type S. The formalization completes the example with a proof that U itself is not a groupoid (universe_not_groupoid). This proof uses the central loop of the constructed circle and loop ≠ refl. Thus 'the component can be a groupoid although A is not' is a theorem (universe_component_groupoid_not_universe). Second paragraph: the inclusion U^{=1}_* ↪ U^{>0}_* induces group_to_infty_group : Group → InftyGroup. Its action on identity types is an equivalence (group_infty_paths_equiv). Therefore it is an embedding in the book's sense, with proposition-valued fibers (group_to_infty_group_embedding). Litmus: the symmetries of Aut_U(A) are the self-equivalences of A (infty_universe_automorphisms_equiv)."
   },
   {
     "chapter": 4,
@@ -9721,8 +11298,19 @@
     "line": 2400,
     "section_raw": "Infinity groups (\\texorpdfstring{\\inftygps}{∞-groups})}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "InftyGroupHom",
+      "mk_infty_hom",
+      "infty_hom_B",
+      "BookPointedMap"
+    ],
+    "principal": [
+      "InftyGroupHom",
+      "mk_infty_hom",
+      "infty_hom_B"
+    ],
+    "note": "Hom(G, H) of ∞-groups is a wrapped copy of BG →* BH in the book's pointing orientation (BookPointedMap, pt_BH = f(pt_BG)). Again, it is a one-field record (judgmental eta) instead of Copy. The classifying map Bf is infty_hom_B."
   },
   {
     "chapter": 5,
