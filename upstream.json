@@ -1,0 +1,10 @@
+{
+  "narya": {
+    "url": "https://github.com/gwaithimirdain/narya.git",
+    "commit": "efafad2af1fbdbad92064c01c3bacfb9878ced22"
+  },
+  "SymmetryBook": {
+    "url": "https://github.com/UniMath/SymmetryBook.git",
+    "commit": "c0c6ab3a53e69d86e19d8cf2009e992d2d75427c"
+  }
+}

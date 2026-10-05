@@ -1,0 +1,5 @@
+/vendor/
+*.nyo
+/evidence/*.log
+__pycache__/
+/.blind-runs/

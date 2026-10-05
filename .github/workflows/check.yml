@@ -1,0 +1,45 @@
+name: check
+
+# The fast checks run on every push. The full typecheck (`make check`, `make blind`) needs more memory than a
+# standard runner has; README.md gives the requirements, and evidence/ records the result of the last full check.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPAMYES: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y opam libgmp-dev pkg-config
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.opam
+            vendor
+          key: narya-${{ runner.os }}-${{ hashFiles('upstream.json', 'scripts/bootstrap.sh') }}
+      - name: Initialize opam
+        run: test -f ~/.opam/config || opam init --bare --no-setup --disable-sandboxing
+      - run: scripts/bootstrap.sh
+      - run: make check-dry-run
+      - run: make audit
+      - run: make controls
+      - run: make index-check
+      - name: Inventory reproducibility
+        run: |
+          make inventory
+          git diff --exit-code book-inventory.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence
+          path: evidence/negative-controls.json

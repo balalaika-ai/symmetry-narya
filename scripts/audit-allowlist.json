@@ -1,0 +1,12 @@
+{
+  "about": "Exceptions to the heuristic source lint. Each entry is bound to the first 16 hex digits of the declaration's SHA-256 after removing comments and normalizing whitespace.",
+  "entries": [
+    {
+      "check": "recursion",
+      "name": "bisim_of_11",
+      "file": "vendor/narya/test/black/hott.t/univalence.ny",
+      "sha256": "0c4944c2caea30d8",
+      "reason": "Upstream guarded corecursion into isBisim: the self-call occurs in the .id.e copattern. The scanner recognizes structural recursion but not productivity of corecursion."
+    }
+  ]
+}

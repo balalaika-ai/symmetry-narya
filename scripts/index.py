@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""Generate the chapter pages chapters/<folder>/README.md and the chapter table in README.md.
+
+Reads book-inventory.json (book blocks), text-claims.json (claims in the running text), the results of the blind
+statement check (chapters/<folder>/blind/bridges.json) and the definitions in src/. Run `make index`.
+`make index-check` fails if a generated file is out of date or if a referenced declaration does not exist.
+"""
+import json
+import re
+import sys
+
+import check
+
+ROOT = check.ROOT
+DEF = re.compile(r'(?m)^\s*def\s+([^\s(:]+)')
+BEGIN, END = '<!-- chapter-table:begin -->', '<!-- chapter-table:end -->'
+
+# (chapter, folder, book source files, title)
+CHAPTERS = [
+    (2, 'ch02', ['intro-uf.tex'], 'An introduction to univalent mathematics'),
+    (3, 'ch03', ['circle.tex'], 'The universal symmetry: the circle'),
+    (4, 'ch04', ['group.tex'], 'Groups, concretely'),
+    (5, 'ch05', ['actions.tex'], 'Actions'),
+    (6, 'ch06', ['cats.tex'], 'A categorical interlude'),
+    (7, 'ch07', ['absgroup.tex'], 'Groups, abstractly'),
+    (8, 'ch08', ['congp.tex'], 'Constructing groups'),
+    (9, 'ch09', ['subgroups.tex', 'symmetry.tex'], 'Normal subgroups and quotients'),
+    (10, 'ch10', ['fingp.tex'], 'Finite groups'),
+    (11, 'ch11', ['fggroups.tex'], 'Group presentations'),
+    (12, 'ch12', ['abelian.tex'], 'Abelian groups'),
+    (13, 'ch13', ['fields.tex'], 'Rings, fields and vector spaces'),
+    (14, 'ch14', ['geometry.tex'], 'Geometry and groups'),
+    (15, 'ch15', ['galois.tex'], 'Galois theory'),
+    ('B', 'appB', ['metamath.tex', 'choicefin.tex'], 'Metamathematical remarks'),
+]
+
+
+def name_of(chapter, title):
+    return f'Appendix {chapter}: {title}' if chapter == 'B' else f'Chapter {chapter}: {title}'
+
+
+def definitions():
+    where = {}
+    files = sorted((ROOT / 'src').glob('*.ny')) + [ROOT / 'vendor/narya/test/black/hott.t' / n
+                                                   for n in ('J.ny', 'univalence.ny')]
+    for path in files:
+        if not path.exists():
+            continue
+        text = check.code_only(path.read_text(), keep_layout=True)
+        for m in DEF.finditer(text):
+            where.setdefault(m.group(1), (path.relative_to(ROOT), text.count('\n', 0, m.start(1)) + 1))
+    return where
+
+
+def section_title(raw):
+    title = re.sub(r'\\texorpdfstring\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}\{([^}]*)\}', r'\1', raw)
+    title = re.sub(r'\\label\{[^}]*\}', '', title)
+    title = title.replace('\\titledagger', ' (†)')
+    title = title.split('}')[0].rstrip(':').strip()
+    title = title.replace('\\Coverings', 'Coverings').replace('\\coverings', 'coverings')
+    return re.sub(r'[\\$]', '', title).strip()
+
+
+def section_titles(filename):
+    """Section titles of a book file in reading order, following \\input as scripts/inventory.py does."""
+    book = (ROOT / 'vendor/SymmetryBook' / filename).read_text()
+    book = re.sub(r'(?<!\\)%[^\n]*', '', book)
+    titles = []
+    for m in re.finditer(r'\\section\{([^\n]*)|\\input\{([^}]+)\}', book):
+        titles += [m.group(1)] if m.group(1) is not None else section_titles(m.group(2) + '.tex')
+    return titles
+
+
+def link(name, where):
+    if name not in where:
+        return f'`{name}` (missing!)'
+    path, line = where[name]
+    if str(path).startswith('vendor/narya/'):
+        commit = json.loads((ROOT / 'upstream.json').read_text())['narya']['commit']
+        rel = str(path)[len('vendor/narya/'):]
+        return f'[`{name}`](https://github.com/gwaithimirdain/narya/blob/{commit}/{rel}#L{line})'
+    return f'[`{name}`](../../{path}#L{line})'
+
+
+def labels(row):
+    return ', '.join(f'`{label}`' for label in row.get('labels', [])) or f'{row.get("kind", "block")} (no label)'
+
+
+def where_in_book(row):
+    return f'{row["source"]}:{row["line"]}'
+
+
+def one_line(text):
+    return ' '.join(text.split()).replace('|', '\\|')
+
+
+def chapter_data(chapter, folder, sources, blocks, claims):
+    rows = [b for b in blocks if b['chapter'] == chapter]
+    texts = [c for c in claims if c['source'] in sources]
+    bridges_path = ROOT / 'chapters' / folder / 'blind/bridges.json'
+    bridges = json.loads(bridges_path.read_text()) if bridges_path.exists() else None
+    count = lambda xs, s: sum(1 for x in xs if x['status'] == s)
+    gaps = ([('block', b) for b in rows if b['status'] == 'partial']
+            + [('blind', b) for b in (bridges or []) if b['status'] == 'gap']
+            + [('claim', c) for c in texts if c['status'] in ('partly', 'not formalized')])
+    return dict(rows=rows, texts=texts, bridges=bridges, gaps=gaps, count=count)
+
+
+def render_chapter(chapter, folder, sources, title, blocks, claims, where):
+    d = chapter_data(chapter, folder, sources, blocks, claims)
+    rows, texts, bridges, gaps, count = d['rows'], d['texts'], d['bridges'], d['gaps'], d['count']
+    out = [f'# {name_of(chapter, title)}', '',
+           'Generated by `scripts/index.py`. Do not edit this file. [Back to the overview](../../README.md).', '',
+           'Book source: ' + ', '.join(f'`{s}`' for s in sources) + ' at the pinned SymmetryBook commit.', '',
+           '## Status', '',
+           '| Item | Count |', '|---|---:|',
+           f'| Book blocks | {len(rows)} |',
+           f'| Mapped: formal statement and proof | {count(rows, "mapped")} |',
+           f'| Refuted: false as printed, corrected statement proved | {count(rows, "refuted")} |',
+           f'| Partial | {count(rows, "partial")} |',
+           f'| Informal: no mathematical claim | {count(rows, "informal")} |',
+           f'| Running-text claims | {len(texts)} |',
+           f'| Running-text claims formalized | {count(texts, "formalized")} |',
+           f'| Running-text claims partly formalized | {count(texts, "partly")} |',
+           f'| Running-text claims not formalized | {count(texts, "not formalized")} |',
+           f'| Running-text claims that are not formalizable | {count(texts, "not formalizable")} |', '']
+    if bridges is None:
+        out += ['Blind statement check: not done for this chapter.', '']
+    else:
+        out += [f'Blind statement check (files in [`blind/`](blind/)): {len(bridges)} blocks, '
+                f'{count(bridges, "bridged")} bridged, {count(bridges, "bridged-corrected")} bridged to the '
+                f'corrected statement, {count(bridges, "gap")} gaps, {count(bridges, "no-claim")} without a claim.', '']
+    out += ['## Open gaps', '']
+    if not gaps:
+        out += ['None.', '']
+    for kind, heading in (('block', 'Partial blocks'), ('blind', 'Gaps of the blind statement check'),
+                          ('claim', 'Running-text claims not formalized or partly formalized')):
+        items = [r for k, r in gaps if k == kind]
+        if items:
+            out += [f'### {heading}', '']
+            for r in items:
+                status = f' ({r["status"]})' if kind == 'claim' else ''
+                label = labels(r) if kind != 'claim' else 'claim'
+                out.append(f'- {label}, {where_in_book(r)}{status}: {one_line(r.get("note", ""))}')
+            out.append('')
+    refuted = [b for b in rows if b['status'] == 'refuted']
+    out += ['## Corrections to the book', '']
+    if refuted:
+        out += [f'- {labels(b)}, {where_in_book(b)}: {one_line(b.get("note", ""))}' for b in refuted] + ['']
+    else:
+        out += ['No block of this chapter is false as printed.', '']
+    out += ['## Blocks', '',
+            'Each row gives the block of the book, its status and the principal declaration(s) whose type is the',
+            'book statement. `book-inventory.json` has all declarations and a note for each block.', '']
+    section, index = None, 0
+    titles = [t for s in sources for t in section_titles(s)]
+    for b in rows:
+        if b['section_raw'] != section:
+            section = b['section_raw']
+            if section:
+                index = titles.index(section, index) + 1
+            heading = f'{chapter}.{index} {section_title(section)}' if section else 'Opening of the chapter'
+            out += ['', f'### {heading}', '',
+                    '| line | block | kind | status | principal declaration(s) |', '|---:|---|---|---|---|']
+        principal = ', '.join(link(n, where) for n in b.get('principal', [])) or '—'
+        out.append(f"| {b['line']} | {labels(b) if b.get('labels') else '(no label)'} | {b['kind']} | "
+                   f"{b['status']} | {principal} |")
+    return '\n'.join(out).rstrip() + '\n'
+
+
+def render_table(blocks, claims):
+    out = ['| Chapter | Blocks | Mapped | Refuted | Partial | Informal | Blind check gaps | Open gaps |',
+           '|---|---:|---:|---:|---:|---:|---|---:|']
+    total = [0] * 6
+    for chapter, folder, sources, title in CHAPTERS:
+        d = chapter_data(chapter, folder, sources, blocks, claims)
+        rows, count, bridges = d['rows'], d['count'], d['bridges']
+        nums = [len(rows), count(rows, 'mapped'), count(rows, 'refuted'), count(rows, 'partial'),
+                count(rows, 'informal'), len(d['gaps'])]
+        total = [a + b for a, b in zip(total, nums)]
+        blind = '—' if bridges is None else str(count(bridges, 'gap'))
+        out.append(f'| [{name_of(chapter, title)}](chapters/{folder}/README.md) | '
+                   + ' | '.join(map(str, nums[:5])) + f' | {blind} | {nums[5]} |')
+    out.append('| **Total** | ' + ' | '.join(f'**{n}**' for n in total[:5]) + f' | | **{total[5]}** |')
+    return '\n'.join(out)
+
+
+def outputs():
+    where = definitions()
+    blocks = json.loads((ROOT / 'book-inventory.json').read_text())
+    claims = json.loads((ROOT / 'text-claims.json').read_text())
+    references = {n for row in blocks + claims for n in row.get('declarations', []) + row.get('principal', [])}
+    missing = references - where.keys()
+    if missing:
+        sys.exit('Missing inventory declarations: ' + ', '.join(sorted(missing)))
+    files = {}
+    for chapter, folder, sources, title in CHAPTERS:
+        files[ROOT / 'chapters' / folder / 'README.md'] = render_chapter(chapter, folder, sources, title, blocks,
+                                                                         claims, where)
+    readme = (ROOT / 'README.md').read_text()
+    start, end = readme.index(BEGIN) + len(BEGIN), readme.index(END)
+    files[ROOT / 'README.md'] = readme[:start] + '\n' + render_table(blocks, claims) + '\n' + readme[end:]
+    return files
+
+
+def main():
+    files = outputs()
+    if '--check' in sys.argv:
+        stale = [str(p.relative_to(ROOT)) for p, text in files.items() if not p.exists() or p.read_text() != text]
+        if stale:
+            sys.exit('Out of date: ' + ', '.join(stale) + '; run `make index`.')
+        print(f'{len(files)} generated files are up to date.')
+        return
+    for p, text in files.items():
+        p.write_text(text)
+    print(f'Wrote {len(files)} files.')
+
+
+if __name__ == '__main__':
+    main()

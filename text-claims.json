@@ -1,0 +1,2134 @@
+[
+  {
+    "source": "intro-uf.tex",
+    "line": 68,
+    "quote": "One expresses the declaration that an object $a$ is an element of the \\emph{type} $X$ by writing $a:X$.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is notation for the typing judgment. In Narya, a : X is the native judgment."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 138,
+    "quote": "The \\emph{type} of the function $x \\mapsto e$ is called a \\emph{product type} and will be denoted by $\\prod_{x:X} T(x)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the native Narya Π-type (x : X) → T x. The non-dependent case is the native function type."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 184,
+    "quote": "the name of the variable no longer matters, in other words, that $x \\mapsto e(x)$ and $t \\mapsto e(t)$ may regarded as identical.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the alpha-equivalence of bound variables. The proof assistant handles it. It is not a statement."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 190,
+    "quote": "yielding $e(\\blank)$ as alternative notation for the function $x \\mapsto e(x)$.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the underscore notation for anonymous functions. It is only notation."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 214,
+    "quote": "The notation $b \\jdeq c$ will denote the statement that the expressions $b$ and $c$ become the same thing …",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the meta-level definitional equality (and \\defeq for definitions). It corresponds to the judgmental equality of Narya. It is not an internal statement."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 222,
+    "quote": "We define the \\emph{composite} function $g \\circ f : X \\to Z$ by setting $g \\circ f \\defeq (a \\mapsto g(f(a)))$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "compose"
+    ],
+    "note": "The formalization defines compose A B C g f ≔ x ↦ g (f x), as printed in the book."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 228,
+    "quote": "Then $(h \\circ g) \\circ f$ and $h \\circ (g \\circ f)$ are the same by definition",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "compose_assoc_definitional"
+    ],
+    "note": "It is judgmental in Narya. Module 287 records it as a refl-typed check."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 236,
+    "quote": "$f \\circ \\id_X$ is the same by definition as $a \\mapsto f(a)$, which … is to be regarded as the same as $f$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "compose_identity_right_definitional",
+      "compose_identity_left_definitional"
+    ],
+    "note": "f ∘ id ≡ f and id ∘ f ≡ f hold by eta. Module 287 records them as refl-typed checks."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 287,
+    "quote": "There are some types called \\emph{universes}. … If $X$ is a type, then it appears as an element in some universe $\\UU$.",
+    "kind": "convention",
+    "status": "partly",
+    "importance": "medium",
+    "declarations": [
+      "Universe",
+      "UniverseType",
+      "NestedUniverses",
+      "total_universe"
+    ],
+    "note": "Narya has one Type : Type. The formalization models a universe as a small-predicate with closure fields. It also has nested pairs U : U' with cumulativity. There is no hierarchy U_0 : U_1 : … and no designated smallest U_0."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 303,
+    "quote": "It follows from the properties above that there are an infinite number of universes, for each one is an element of a larger one.",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a metatheoretic claim about the ambient hierarchy. Narya has Type : Type (total_universe contains its own type). Thus a faithful statement of the claim is not possible."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 310,
+    "quote": "The flexibility offered by this correspondence between families of types in $\\UU$ and functions to $\\UU$ will often be used.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is native. Type families are functions X → Type. In the model, universe-restricted families are PropU/UniverseType-valued maps."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 316,
+    "quote": "Here are Peano's rules for constructing the natural numbers in the form that is used in type theory.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "Nat",
+      "nat_ind"
+    ],
+    "note": "Nat is a native inductive type with judgmental computation. The rule (P4) is nat_ind."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 346,
+    "quote": "that different natural numbers have different successors; and that no number has $0$ as its successor. Those omitted rules remain true",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "successor_paths_equiv",
+      "nat_zero_ne_suc"
+    ],
+    "note": "The formalization proves two facts: the injectivity of successor (as an equivalence of path types) and 0 ≠ suc n."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 357,
+    "quote": "the difference between an induction principle and the corresponding recursion principle is that in the latter principle the type family is constant.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology only."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 383,
+    "quote": "We define by induction on $\\NN$ the $m$-fold \\emph{iteration} $e^m : Y \\to Y$ by setting $e^0 \\defeq \\id_Y$ and $e^{\\Succ(m)}\\defeq e\\circ e^m$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "iterate",
+      "iterate_add"
+    ],
+    "note": "The formalization has iterate A f (suc k) a = f (iterate A f k a). In the notation of the book, this is e^{S m} = e ∘ e^m, as printed."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 388,
+    "quote": "we define $n+m : \\NN$ by induction on $\\NN$ with respect to the variable $m$ by setting $n+0\\defeq n$ and $n+\\Succ(m)\\defeq \\Succ(n+m)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "add"
+    ],
+    "note": "The function add recurses on its second argument, as printed in the book. The example 2+2 ≡ 4 holds judgmentally, but the formalization does not record it."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 394,
+    "quote": "we define the product $m \\cdot n : \\NN$ by induction on $m$ … $ \\Succ(m) \\cdot n \\defeq (m \\cdot n) + n$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "mul",
+      "mul_comm"
+    ],
+    "note": "The function mul recurses on its second argument (m·S k = m·k + m). Thus the book's m·n is literally mul n m. The lemma mul_comm identifies the two orders."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 397,
+    "quote": "Alternatively (and equivalently) we may use iteration of functions to define addition and multiplication, by setting $n+m \\defeq \\Succ^m(n)$ …",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "add_iterate_suc",
+      "mul_iterate_add"
+    ],
+    "note": "Module 287 proves add n m = suc^m(n) and mul n m (the book's m·n) = (i ↦ i+n)^m(0) by nat_ind on m."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 400,
+    "quote": "we may define the factorial function $\\fact : \\NN \\to \\NN$ … setting $\\fact(0) \\defeq 1$ and $\\fact(\\Succ(m)) \\defeq \\Succ(m) \\cdot \\fact(m)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "factorial"
+    ],
+    "note": "The function factorial (module 175) follows the printed recursion. The formalization does not record the check fact(3) ≡ 6."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 415,
+    "quote": "Here are the rules for constructing and using identity types.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "J",
+      "transport"
+    ],
+    "note": "The formalization uses the native HOTT Id, with J constructed in vendor J.ny. The computation rule of (E3) holds only as an identification. This is a documented foundation difference."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 421,
+    "quote": "moreover, if $X$ is an element of a universe $\\UU$, then so is $a \\eqto b$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Universe"
+    ],
+    "note": "This is the field id_small of the universe model (module 190)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 438,
+    "quote": "We will refer to an element $i$ of $a \\eqto b$ as an \\emph{identification} of $a$ with $b$",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology only."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 465,
+    "quote": "we will refer to an element $i$ of $a \\eqto a$ as a \\emph{symmetry} of $a$.",
+    "kind": "inline-definition",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology for loops Id A a a. No separate declaration is necessary."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 470,
+    "quote": "Consider the identity type $\\fact(2) \\eqto 2$ … so we see from rule \\ref{E2} that $\\refl{\\Succ(\\Succ(0))}$ serves as an element of it.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "factorial_two_refl",
+      "factorial_three_refl"
+    ],
+    "note": "Module 287 proves fact(2) = 2 and fact(3) = 6 by refl."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 473,
+    "quote": "We will see later that numbers only have trivial symmetries",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "nat_set"
+    ],
+    "note": "ℕ is a set. The proof uses encode–decode."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 625,
+    "quote": "we may use concatenation to define powers $p^n : a \\eqto a$ by induction on $n:\\NN$; we set $p^0\\defeq\\refl{a}$ and $p^{n+1}\\defeq p\\cdot p^n$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "loop_power_nat",
+      "loop_power"
+    ],
+    "note": "The formalization has loop_power_nat (n+1) = concat (p^n) p, that is, p·p^n in book notation. The declaration loop_power extends this to Int with p^{-n} = (p^{-1})^n, as in the text and the footnote."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 704,
+    "quote": "The transport functions behave as expected: we may construct an identification of type $\\trp {e'\\circ e} \\eqto \\trp {e'} \\circ \\trp {e}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "transport_concat_function"
+    ],
+    "note": "The formalization restates this as xca:trp-compose."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 730,
+    "quote": "Take, for example, $T(x)\\defeq (x \\eqto x)$. Then $\\trp e$ … transports a symmetry of $a$ to a symmetry of $b$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "transport_conjugation"
+    ],
+    "note": "The formalization computes transport in the loop family as conjugation (xca:trp-in-a/x=b/x)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 755,
+    "quote": "If $X$ and $Y(x)$ are elements of a universe $\\UU$, then so is $\\prod_{x:X} Y(x)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Universe"
+    ],
+    "note": "This is the field pi_small of the universe model (module 190)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 772,
+    "quote": "we may abbreviate $\\ap{f,x,x'}$ by writing $\\ap{f}$ instead. For convenience, we may abbreviate it even further, writing $f(p)$",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is notation. The book also uses it for apd and apap. Narya writes refl f p / map_path."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 821,
+    "quote": "The functions provided by these two definitions are not equal by definition, but they can be identified",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "happly_evaluation_ap",
+      "happly"
+    ],
+    "note": "In Narya, happly p x is definitionally ap_{ev_x}(p). Module 287 records this by refl."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 957,
+    "quote": "Similarly, one can define the inverse of a path over a path, writing $\\inv q : \\pathover {y'} Y {\\inv p} y$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pathover_inverse",
+      "pathover_inverse_refl_strong"
+    ],
+    "note": "Module 17 defines it with the typal reflexivity law."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 960,
+    "quote": "For these operations on paths over paths we have identifications analogous to those for the operations on paths in \\cref{xca:path-groupoid-laws}, after some modification.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "pathover_concat_refl_right_strong",
+      "pathover_concat_refl_left_strong",
+      "pathover_concat_inverse_right_strong",
+      "pathover_concat_inverse_left_strong",
+      "pathover_inverse_inverse_strong",
+      "pathover_concat_assoc_strong"
+    ],
+    "note": "This covers all six laws. Each law lies over the corresponding base law (module 281, xca:cp)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1072,
+    "quote": "There are \\emph{sums} of types. … $\\sum _{x:X} Y(x)$ whose elements are all pairs $(a,b)$, where $a:X$ and $b:Y(a)$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the native Narya Σ with the fields fst/snd. These fields are the projections of lines 1125–1133."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1119,
+    "quote": "If $X$ and $Y(x)$ are elements of a universe $\\UU$, then so is $\\sum _{x:X} Y(x)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Universe"
+    ],
+    "note": "This is the field sigma_small of the universe model (module 190)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1187,
+    "quote": "By path composition, one sees that any element $x : X$ can serve as the center of a contraction of a contractible type $X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "book_contraction_at"
+    ],
+    "note": "Module 287 gives a contraction centred at any x. The proof uses path composition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1246,
+    "quote": "Using $t$ we can define an inverse function $g : Y \\to X$ by setting $g(y)\\defeq\\fst(\\fst(t(y)))$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "equiv_inverse_map",
+      "equiv_counit",
+      "equiv_retraction",
+      "canonical_inverse_equiv"
+    ],
+    "note": "The map equiv_inverse_map is e .equiv b .center .fst, that is, fst(fst(t(y))). The two inverse laws of lines 1248–1258 are equiv_counit and equiv_retraction."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1262,
+    "quote": "For any type $X$, the identity function $\\id_X$ is an equivalence from $X$ to $X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "identity_equiv",
+      "identity_book_equiv",
+      "path_to_contractible"
+    ],
+    "note": "The proof is as in the text: the fibers of the identity are singletons."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1268,
+    "quote": "the function $\\trp[T]{e}$ from \\cref{def:transport} is an equivalence from $T(x)$ to $T(y)$, for all $e: x \\eqto y$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "transport_equiv",
+      "transport_univalence_equiv"
+    ],
+    "note": "The formalization states transport_equiv for paths in the universe. The family case is its instance at ap_T(e) = refl T e. The map of this instance is transport in T. There is no dedicated family-level declaration."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1327,
+    "quote": "First, we use \\cref{lem:weq-iso} to construct an element of … i.e., the associativity of sum types",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "sigma_assoc"
+    ],
+    "note": "This is footnote ft:Sigma-assoc. The declaration sigma_assoc is the associativity equivalence with refl inverse laws."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1333,
+    "quote": "Then, we construct for any contractible type $X$ and for any family of types $Y(x)$ … an equivalence between $\\sum_{x:X}Y(x)$ and $Y(c)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "contractible_base_sigma_equiv",
+      "book_contractible_base_sigma_equiv"
+    ],
+    "note": "Module 287 proves Σ_{x:X} Y(x) ≃ Y(c) for contractible X. The proof uses Y(x) ≃ (c = x) × Y(x) and contract_away_simple."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1471,
+    "quote": "The special case $Z\\jdeq X$, $f\\jdeq\\id_X$ applies to any product type.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "section_above_equiv"
+    ],
+    "note": "This is a direct instance at f = id. The formalization does not state it separately."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1477,
+    "quote": "will be treated transparently, \\ie we will pass between $f(x,y)$ and $f(x)(y)$ without denoting it.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "curry_equiv"
+    ],
+    "note": "The formalization always passes explicitly through curry_equiv or pattern matching."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1619,
+    "quote": "We often use $\\fst(\\pathpair p q) \\eqto p$ and $\\snd(\\pathpair p q) \\eqto q$ … Similarly, $r \\eqto \\pathpair {\\fst(r)}{\\snd(r)}$ by induction on $r$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "pair_path_fst",
+      "pair_path_snd",
+      "pair_path_eta"
+    ],
+    "note": "The formalization records this under lem:isEq-pair=. For native Id, all of it is judgmental."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1626,
+    "quote": "There is special case of sum types that deserves to be mentioned … the sum type is called the \\emph{binary product}",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Product"
+    ],
+    "note": "The formalization defines Product A B ≔ Σ A (_ ↦ B), exactly as described (also rem:non-dependent-sums)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1692,
+    "quote": "There is an equivalence between $(a_1,b_1) \\eqto (a_2,b_2)$ and $(a_1 \\eqto a_2) \\times (b_1 \\eqto b_2)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "product_path_equiv",
+      "book_product_path_equiv"
+    ],
+    "note": "This is also lem:isEq-pair-bin=."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1695,
+    "quote": "we let $f\\times f'$ denote the map of type $(X\\times X') \\to (Y\\times Y')$ that sends $(x,x')$ to $(f(x),f'(x'))$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "product_map",
+      "product_equiv_map",
+      "product_map_book_equiv"
+    ],
+    "note": "The formalization defines f × f′ in general. By refl, product_equiv's map is f × f′. Also, f × f′ is an equivalence when f and f′ are equivalences (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1755,
+    "quote": "we may prove that any two elements $x$ and $y$ of $\\emptytype$ are equal … by using induction on $x$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Empty",
+      "absurd",
+      "empty_prop"
+    ],
+    "note": "Ex falso is absurd. The lemma empty_prop gives that any two elements are equal."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1764,
+    "quote": "to assert that a type $T$ has no elements … Providing a function of type $T \\to \\emptytype$ is a convenient way",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Not"
+    ],
+    "note": "The formalization defines Not A ≔ A → Empty."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1776,
+    "quote": "we may construct, for any element $u : \\true$, an identification of type $u \\eqto \\triv$ … for any elements $x$ and $y$ of $\\true$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "unit_contractible",
+      "unit_prop"
+    ],
+    "note": "The lemma unit_prop gives u = star and x = y for all elements of Unit. The proof uses induction, as in the text."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1801,
+    "quote": "We may use substitution to construct an element of type $(\\yes \\eqto \\no)\\to \\emptytype$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bool_encode",
+      "BoolCode"
+    ],
+    "note": "The term bool_encode true. false. has the type Id Bool true false → Empty, because BoolCode true false ≡ Empty (the book's P). There is no separately named lemma."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1806,
+    "quote": "The definition of $P(b)$ is motivated by the expectation that we will be able to construct an equivalence between $P(b)$ and $\\yes \\eqto b$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "BoolCode",
+      "bool_path_equiv",
+      "bool_true_path_code_equiv",
+      "bool_encode_decode"
+    ],
+    "note": "Module 287 proves (true = b) ≃ BoolCode true b. Here BoolCode true is the book's P."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1810,
+    "quote": "we may use substitution to prove that it is absurd that successors of natural numbers are identical to $0$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "nat_zero_ne_suc"
+    ],
+    "note": "The lemma nat_zero_ne_suc is nat_encode at (0, suc n). Its code NatCode 0 (suc n) is Empty (the book's P)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1815,
+    "quote": "The definition of $P(i)$ is motivated by the expectation that we will be able to construct an equivalence between $P(i)$ and $0 \\eqto i$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "NatCode",
+      "nat_path_equiv",
+      "nat_zero_path_code_equiv",
+      "nat_encode_decode"
+    ],
+    "note": "Module 287 proves (0 = i) ≃ NatCode 0 i. Here NatCode 0 is the book's P."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1850,
+    "quote": "The \\emph{binary sum} of two types $X$ and $Y$, denoted $X \\amalg Y$, is an inductive type with two constructors",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Sum",
+      "sum_elim"
+    ],
+    "note": "This is a native data type with the constructors inl./inr."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1886,
+    "quote": "Thus $\\inl{x} \\eqto \\inr{y}$ is always empty, and there are equivalences of type $(\\inl{x} \\eqto \\inl{x'}) \\equivto (x \\eqto x')$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "sum_path_equiv",
+      "SumCode"
+    ],
+    "note": "This covers all four constructor combinations (xca:binary-sum-id)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1915,
+    "quote": "The \\emph{unary sum} or \\emph{wrapped copy} of $X$ is an inductive type $\\Copy(X)$ … with a single constructor",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "Copy",
+      "copy_value"
+    ],
+    "note": "The function copy_value is the destructor out."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1931,
+    "quote": "Note that $\\Copy(X)$ can alternatively be defined as $\\sum_{z:\\true}X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "copy_unit_sigma_equiv"
+    ],
+    "note": "Module 287 proves Copy(X) ≃ Σ_{z:1} X."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1939,
+    "quote": "the induction principle implies that $\\inc{\\out(z)} \\eqto z$ for all $z:\\Copy(X)$, so there is an equivalence of type $\\Copy(X) \\equivto X$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "copy_equiv"
+    ],
+    "note": "The formalization builds copy_equiv from copy_value (out). It proves inc(out z) = z by induction on z, as in the text."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1942,
+    "quote": "It follows that there are equivalences of type $(\\inc{x} \\eqto \\inc{x'}) \\equivto (x \\eqto x')$ and $(\\out(z) \\eqto \\out(z')) \\equivto (z \\eqto z')$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "copy_equiv",
+      "map_equiv_to_paths"
+    ],
+    "note": "These are instances of map_equiv_to_paths at copy_equiv and at its inverse. The lemma map_equiv_to_paths states that ap of an equivalence is an equivalence. The formalization does not state the instances separately."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 1946,
+    "quote": "we can make several copies of $X$ that are not equal to each other by definition, for instance, by picking different names for the constructor.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is about the definitional distinctness of data types. For example, NegNat (exa:nnn) is a separate data type."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2028,
+    "quote": "we can define a function $\\len : X^* \\to \\NN$, giving the length of a list, satisfying $\\len(\\varepsilon) \\jdeq 0$ and $\\len(x\\ell) \\jdeq \\Succ(\\len(\\ell))$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "length"
+    ],
+    "note": "The function length follows the printed recursion: 0 on nil, suc on cons."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2037,
+    "quote": "there are no general functions producing the head and tail of an arbitrary list, since the empty list has neither head nor tail.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "no_general_list_head",
+      "nil_no_head_tail",
+      "list_hd",
+      "list_tl"
+    ],
+    "note": "There is no map (X : Type) → X* → X (take X = ∅). The type ε = x t is empty. The functions hd and tl have the book's computation rules by definition (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2064,
+    "quote": "We shall see in~\\cref{thm:isset-inductive-types} below that $X^*$ is a set whenever $X$ is.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "list_set"
+    ],
+    "note": "This is a forward reference to thm:isset-inductive-types. The lemma list_set takes isSet A."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2096,
+    "quote": "We may write $\\trp[\\id_\\UU]{p}$ more briefly as $\\ptoe p$, which we also use to denote the corresponding function of type $X\\to Y$",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "transport_equiv"
+    ],
+    "note": "The underlying map of transport_equiv A B p is p .trr."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2122,
+    "quote": "Thus there are identifications of type $\\etop {\\ptoe p} \\eqto p$ and $\\ptoe {\\etop f} \\eqto f$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "ua",
+      "ua_eta",
+      "ua_beta",
+      "transport_univalence_equiv"
+    ],
+    "note": "The formalization has both inverse laws of ua with the exact transport map."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2123,
+    "quote": "There are also identifications of type $\\overetop{\\id_X} \\eqto \\refl{X}$ and $\\overetop{g\\,f} \\eqto \\etop{g}\\,\\etop{f}$ if $g: Y\\equivto Z$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "ua_identity",
+      "ua_compose"
+    ],
+    "note": "The lemma ua_compose states ua(d∘e) = ua e · ua d in concatenation order. In book notation, this is etop(g)etop(f)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2176,
+    "quote": "An important special case … $\\trp[X \\mapsto (X\\to X)]{\\etop g} (f) \\eqto g\\circ f \\circ g^{-1}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "transport_endomorphism_ua",
+      "transport_inverse_ua"
+    ],
+    "note": "The formalization proves it as an identification of functions. It is listed under lem:trp-in-function-type."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2340,
+    "quote": "We shall call a type $P$ with that property a \\emph{proposition}, and its elements will be called \\emph{proofs} of $P$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "isProp"
+    ],
+    "note": "The formalization defines isProp A ≔ (x y : A) → Id A x y, as in the text. The formal version is at def:isSet."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2350,
+    "quote": "Then English phrases such as ``$P$ holds'', ``we know $P$'', and ``we have shown $P$'', will all mean that we have an element of $P$.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a reading convention for prose."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2365,
+    "quote": "If for any $x:X$ and any $y:X$ the identity type $x \\eqto y$ is a proposition, then we shall say that $X$ is a \\emph{set}.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "isSet",
+      "HLevel"
+    ],
+    "note": "This is also called a 0-type. Its HLevel index is 2."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2377,
+    "quote": "Some authors therefore call propositions \\emph{$(-1)$-types}, and they call contractible types \\emph{$(-2)$-types}.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "HLevel"
+    ],
+    "note": "HLevel index k is book level k−2. Index 0 is the contractible types, 1 is the propositions and 2 is the sets."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2402,
+    "quote": "Equations are propositions, so we can speak of them being true or false",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Equation"
+    ],
+    "note": "Equation packages Id with the proof that Id is a proposition. This proof comes from the set."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2424,
+    "quote": "If for any $x:X$ and any $y:X$ the identity type $x \\eqto y$ is a set, then we shall say that $X$ is a \\emph{groupoid}",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "isGroupoid",
+      "HLevel"
+    ],
+    "note": "This is also called a 1-type. Its HLevel index is 3."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2428,
+    "quote": "If for any $n:\\NN$, any $x:X$, and any $y:X$ the identity type $x \\eqto y$ is an $n$-\\emph{type} … $X$ is an $(n+1)$-\\emph{type}.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "HLevel"
+    ],
+    "note": "HLevel is the same recursion, shifted by 2. It starts from contractibility. The term 'n-truncated' names the same notion."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2433,
+    "quote": "We prove that every proposition is a set, from which it follows by induction that every $n$-type is an $(n+1)$-\\emph{type}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "prop_is_set",
+      "hlevel_raise"
+    ],
+    "note": "The lemma prop_is_set is lem:prop-is-set. The lemma hlevel_raise is the induction step for every level."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2527,
+    "quote": "Since $\\false$ is a proposition, it follows by \\ref{prop-utils-codom} above that $A\\to\\emptytype$ is a proposition for any type $A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "negation_prop"
+    ],
+    "note": "The lemma negation_prop proves isProp (A → Empty) for an arbitrary type A."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2535,
+    "quote": "$\\true\\amalg \\true$ has two distinct elements $\\inl{\\triv}$ and $\\inr{\\triv}$, an is therefore \\emph{not} a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "unit_sum_elements_distinct",
+      "unit_sum_not_prop",
+      "bool_not_prop"
+    ],
+    "note": "Module 287 proves inl(triv) ≠ inr(triv). Thus 1 ⨿ 1 (and Bool) is not a proposition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2537,
+    "quote": "Similarly, $\\sum_{n:\\NN} \\true$ has infinitely many distinct elements $(n,\\triv)$ and is not a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "nat_unit_sigma_injective",
+      "nat_unit_sigma_not_prop"
+    ],
+    "note": "Module 287 shows that n ↦ (n,triv) reflects paths. It also shows that Σ_{n:ℕ} 1 is not a proposition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2578,
+    "quote": "we will use identifiers starting with ``is'' only for names of types that are propositions. Examples are … and also $\\isEq(f)$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "isequiv_isprop",
+      "book_isequiv_isprop"
+    ],
+    "note": "This is a naming convention. The formalization proves its one non-trivial instance: isEq is a proposition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2601,
+    "quote": "the inductive definition of $n$-types can indeed start with $n$ as $-2$, where we have the contractible types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "HLevel",
+      "prop_paths_contractible",
+      "contractible_paths_prop"
+    ],
+    "note": "HLevel starts at index 0 = isContr. The exercise xca:prop-contractible= links the levels."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2724,
+    "quote": "any function $g: T\\to P$ to a proposition $P$ yields a (unique) function $f:\\Trunc{T}\\to P$ satisfying $f(\\trunc{t})\\jdeq g(t)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "mere_rec",
+      "mere_rec_beta",
+      "trunc_rec"
+    ],
+    "note": "For native Mere, the computation is judgmental. Uniqueness follows from the universal property."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2731,
+    "quote": "for any proposition $P$, precomposition with $\\trunc{\\_}$ is an equivalence of type $(\\Trunc{T} \\to P) \\equivto (T \\to P)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "mere_universal_property",
+      "mere_universal_property_book_map"
+    ],
+    "note": "The _book_map companion states that precomposition itself is the equivalence."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2744,
+    "quote": "the concept of $T$ \\emph{not being empty}, which would be represented by the proposition $\\neg(T \\eqto \\emptytype)$, which is equivalent to $\\neg\\neg T$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "not_empty_double_negation",
+      "negation_empty_path"
+    ],
+    "note": "The lemma not_empty_double_negation is an equivalence ¬(T = Empty) ≃ ¬¬T for arbitrary T. The proof uses ua."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2753,
+    "quote": "let $\\Trunc \\blank$ have the type $\\UU\\to\\sum_{X:\\UU}\\isprop(X)$. The type $\\sum_{X:\\UU}\\isprop(X)$ is also denoted as $\\Prop_\\UU$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trunc_small",
+      "PropU",
+      "PropTypes",
+      "mere_isprop"
+    ],
+    "note": "Universe closure under truncation is the model field trunc_small."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2804,
+    "quote": "It will turn out that $A_{(a)}$ is a subtype of $A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "NativeComponent",
+      "mere_isprop"
+    ],
+    "note": "The component is a Σ over the proposition-valued family ‖a = x‖."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2817,
+    "quote": "Note that the empty type $\\emptytype$ is \\emph{not} connected.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "empty_not_connected",
+      "native_empty_not_connected"
+    ],
+    "note": "Module 287 proves that ∅ is not connected, for every truncation signature."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2861,
+    "quote": "Consider the function $f:\\bn{1}\\to\\bn{2}$ that is constant $0$. … Hence $f$ is not an equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fin_two_zero",
+      "fin_two_one",
+      "fin_one_to_two_zero",
+      "fin_one_to_two_zero_fiber_one_empty",
+      "fin_one_to_two_zero_not_equiv",
+      "fin_one_to_two_zero_embedding"
+    ],
+    "note": "This is about the constant-0 map 1 → 2 (module 287). Its fiber at 1 is empty, so the map is not an equivalence. All fibers of the map are propositions."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2872,
+    "quote": "As a function between sets $f$ is an injection (one-to-one), but not a surjection.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fin_one_to_two_zero_embedding",
+      "fin_one_to_two_zero_not_surjective",
+      "fin_one_prop"
+    ],
+    "note": "The constant-0 map 1 → 2 is an injection and not a surjection (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2885,
+    "quote": "This is equivalent to saying we have a function $g:B\\to A$ and an identification $p: f\\circ g \\eqto \\id_B$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "split_surjection_section_equiv",
+      "section_to_split_surjection"
+    ],
+    "note": "This is a footnote of def:surjection (module 280)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2920,
+    "quote": "This argument applies generally: Any non-empty proposition is contractible.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "nonempty_prop_contractible",
+      "native_nonempty_prop_contractible"
+    ],
+    "note": "A non-empty proposition is contractible, for every truncation signature (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2924,
+    "quote": "If the types $A$ and $B$ in the above lemma are \\emph{sets}, then we call equivalences between $A$ and $B$ also \\emph{bijections}.",
+    "kind": "convention",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is terminology only."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 2998,
+    "quote": "each $\\ap{f}$ is an equivalence if and only if all implications … hold, but this is in general not sufficient.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "set_ap_equivalences_path_reflection_iff",
+      "path_reflection_not_sufficient"
+    ],
+    "note": "This is a footnote of lem:inj-ap (module 280). Only B must be a set."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3063,
+    "quote": "Note that $(\\exists_{x:A}(y \\eqto f(x))) \\jdeq \\Trunc{f^{-1}(y)}$ … For this reason, $\\im(f)$ is called the \\emph{propositional} image.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Image"
+    ],
+    "note": "The formalization defines Image with Mere of the book fiber. Thus this holds by definition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3071,
+    "quote": "This diagram actually commutes by definition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "image_triangle"
+    ],
+    "note": "The term image_triangle is refl f."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3081,
+    "quote": "Thus the image factorization of $f$ is a 6-tuple. … as do the proofs that $g$ is an injection and $h$ is a surjection.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ImageFactorizations"
+    ],
+    "note": "ImageFactorizations is the 6-tuple. The margin note swaps the roles: the displayed type has issurj(g), isinj(h). This is a typo in the book."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3150,
+    "quote": "with the Law of Excluded Middle, one can derive $P$ from the latter",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "excluded_middle_implies_dne"
+    ],
+    "note": "The proof is by contradiction under LEM (also xca:dne-lem)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3184,
+    "quote": "The map $P\\mapsto P$ is welltyped by \\emph{cumulativity} of the universes … Note that the map is not the identity function due to its type.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "prop_inclusion",
+      "NestedUniverses"
+    ],
+    "note": "Cumulativity is the model field of NestedUniverses. The map is prop_inclusion."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3212,
+    "quote": "Note that $\\sum_{X:\\UU}(A \\equivto X)$, the type expressing that $A$ is essentially $\\UU$-small, is a proposition by the univalence axiom for $\\UU$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "essentially_small_prop"
+    ],
+    "note": "The formalization proves essentially_small_prop from univalence. The proof uses the contractibility of Σ X, A ≃ X."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3215,
+    "quote": "Of course, any $A:\\UU$ is essentially $\\UU$-small, and any essentially $\\UU$-small type is locally $\\UU$-small.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "small_essentially_small",
+      "essentially_small_locally_small"
+    ],
+    "note": "Module 190 proves both implications for every universe of the model."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3218,
+    "quote": "To show that a type is locally $\\UU$-small we have to give a reflexive relation … that induces, by path induction, a family of equivalences",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "locally_small_from_relation",
+      "locally_small_relation"
+    ],
+    "note": "This covers both directions of the criterion."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3251,
+    "quote": "This follows from our replacement principle, assuming propositional resizing, or the even stronger principle of the excluded middle.",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a comparison with set-theoretic replacement. The development has no set-theoretic model. The pri:replacement note records this as informal."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3255,
+    "quote": "The replacement principle can be proved using the join construction of the image … assumption that the universes are closed under pushouts.",
+    "kind": "claim",
+    "status": "not formalizable",
+    "importance": "medium",
+    "declarations": [
+      "Replacement"
+    ],
+    "note": "The join-construction proof needs pushouts (higher inductive types). Narya does not have them. The formalization uses replacement only as a hypothesis."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3266,
+    "quote": "Another consequence is that the type of finite sets, which we'll define below in~\\cref{def:groupoidFin}, is essentially small.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "finite_sets_essentially_small",
+      "fin_image_finite_sets"
+    ],
+    "note": "The formal statement assumes replacement."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3273,
+    "quote": "In this section, we give two (equivalent) definitions of the notion of a subtype of a given type $T$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subtypes_injections_equiv"
+    ],
+    "note": "This is lem:Sub(T)=Inj(T)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3284,
+    "quote": "Note that giving a predicate on $T$ is equivalent to giving a map $Q: T\\to\\Prop_\\UU$ for a suitable universe $\\UU$",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Subtypes",
+      "PropU"
+    ],
+    "note": "By definition, predicates are PropTypes-valued (or PropU-valued) maps."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3292,
+    "quote": "we can form the predicate $P(t)\\defeq (f(t) \\eq \\yes)$ … However, not every predicate can be given through a $f: T\\to\\bool$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bool_value_predicate",
+      "bool_predicate_map",
+      "bool_true_iff_path",
+      "bool_predicate_map_injective",
+      "BooleanPredicate",
+      "boolean_predicate_prop",
+      "boolean_predicate_decidable",
+      "boolean_predicate_of_decidable",
+      "boolean_predicate_decidable_equiv",
+      "AllPredicatesBoolean",
+      "all_predicates_boolean_excluded_middle",
+      "excluded_middle_all_predicates_boolean",
+      "all_predicates_boolean_excluded_middle_equiv"
+    ],
+    "note": "P is given through f when P = (t ↦ f(t) = yes) in T → Prop. Such an f is unique, and it exists if and only if P is decidable. Every predicate on every type is given in this way if and only if LEM holds (an equivalence of propositions). Module 287 proves these facts."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3299,
+    "quote": "we can define $\\chi_P: T\\to\\bool$ … In this way, decidable predicates on a type $T$ correspond to their characteristic functions $T\\to\\bool$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "characteristic_function",
+      "characteristic_function_section",
+      "characteristic_function_retraction",
+      "characteristic_function_book_equiv",
+      "decidable_predicates_bool_equiv"
+    ],
+    "note": "Module 287 proves that P ↦ χ_P is an equivalence DecidablePredicate T ≃ (T → Bool) (BookIsEquiv of χ). Its inverse is f ↦ (f(–) = yes)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3341,
+    "quote": "\\cref{cor:contract-away} gives that $\\inv\\fst(t)\\weq P(t)$ for all $t:T$, so that $\\fst$ is an injection.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "projection_book_fiber_equiv",
+      "prop_family_embedding",
+      "subtype_path_equiv"
+    ],
+    "note": "This also covers line 3416: (T_P, fst) is an injection into T."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3384,
+    "quote": "Since $\\Prop$ is a set, $\\Sub(T)$ is also a set, for any type $T$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "subtypes_set"
+    ],
+    "note": "The lemma subtypes_set is pi_set over propositions_set (lem:Prop-in-Set), as in the text."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3389,
+    "quote": "The identity types $P\\eq_{\\Sub(T)} Q$ and $T_P\\eqto_{\\UU} T_Q$ are in general not equivalent!",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bool_true_subtype",
+      "bool_false_subtype",
+      "bool_true_false_subtypes_distinct",
+      "bool_true_false_carriers_path",
+      "bool_subtype_paths_not_carrier_paths",
+      "SubtypePathsCarrierPaths",
+      "subtype_paths_not_carrier_paths"
+    ],
+    "note": "Module 287 gives the counterexample T = Bool, P = (– = true), Q = (– = false). Here T_P = T_Q (both are contractible), but P ≠ Q. Thus there is no equivalence (P = Q) ≃ (T_P = T_Q). Also, there is no such family for all T, P, Q."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3450,
+    "quote": "As a consequence, $\\Inj(T)$ is a set since $\\Sub(T)$ is, for any type $T$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "injections_into_set"
+    ],
+    "note": "The lemma injections_into_set is also listed under cor:Inj(T)-is-set."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3463,
+    "quote": "we have universes, and the identity type of $\\Inj^\\UU(T)$ identifies precisely the triples defining the same subset.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "injections_path_equiv",
+      "injections_path_fiberwise_equiv"
+    ],
+    "note": "Module 287 shows that paths in Inj(T) are paths of the fiber predicates. Equivalently, they are pointwise equivalences of the fibers."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3484,
+    "quote": "we then call $T_P$ a \\emph{subset} of $T$ and we may denote it by $\\setof{t:T}{P(t)}$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "SubtypeCarrier"
+    ],
+    "note": "SubtypeCarrier T P is Σ T (t ↦ P t .fst). This is the book's T_P."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3509,
+    "quote": "Any proposition has decidable identity types … and is thus a \\emph{decidable set}, even though it may not be \\emph{decidable as a proposition}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "proposition_decidable_set"
+    ],
+    "note": "The formalization states proposition_decidable_set for any proposition. The contrast with the decidability of P itself needs no statement."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3514,
+    "quote": "The way we phrased this definition implies that $A$ is a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "decidable_set_is_set"
+    ],
+    "note": "The lemma decidable_set_is_set extracts sethood from the proposition clause of the definition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3527,
+    "quote": "Therefore the following is \\emph{not} a subtype of $\\UU$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "pointed_types_forget_not_structure",
+      "truncated_map_raise"
+    ],
+    "note": "The map fst : U_* → U is not even 0-truncated: its fiber over Set is not a set. Hence it is not an injection. The formalization does not state the subtype corollary separately."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3572,
+    "quote": "In particular, $(gf)_\\div \\jdeq g_\\div f_\\div$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "book_pointed_compose"
+    ],
+    "note": "This holds by the definition of book_pointed_compose."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3685,
+    "quote": "The following lemma holds for $n$-types in general, but we only need it for propostions and sets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "equiv_hlevel",
+      "ntypes_path_equiv",
+      "ntypes_level"
+    ],
+    "note": "For all levels, X ≃ Y is an n-type when Y is an n-type. Also, the type of n-types is an (n+1)-type."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3709,
+    "quote": "One may wonder whether $\\NN$ … is a set. The answer is yes, but it is harder to prove than one would think.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "nat_set"
+    ],
+    "note": "The proof of nat_set uses encode–decode, not Hedberg."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3720,
+    "quote": "A variation can be used to give a complete characterization of the identity types of inductive types.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "sum_path_equiv",
+      "list_path_equiv",
+      "bool_path_equiv",
+      "nat_path_equiv",
+      "unit_path_equiv",
+      "copy_path_equiv"
+    ],
+    "note": "The formalization characterizes the identity types of 1, Bool, ℕ, Copy (module 287), sums and lists by equivalences."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3726,
+    "quote": "For lists, this gives equivalences … we can deduce more generally that $X^*$ is an $n$-type, when $X$ is an $n$-type",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "list_path_equiv",
+      "ListCode",
+      "list_hlevel"
+    ],
+    "note": "The formalization records this under thm:isset-inductive-types."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3815,
+    "quote": "for any set $S$ and any function $g: T\\to S$ there is a (unique) function $f:\\Trunc{T}_0\\to S$ satisfying $f(\\trunc{t}_0)\\jdeq g(t)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "set_trunc_rec",
+      "set_trunc_rec_beta"
+    ],
+    "note": "The non-dependent computation holds definitionally."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3818,
+    "quote": "Lemma~7.3.12 gives an equivalence from $\\trunc{t}_0 \\eq \\trunc{t'}_0$ to $\\Trunc{t \\eqto t'}$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "set_trunc_paths"
+    ],
+    "note": "For the quotient construction of SetTrunc, set_trunc_paths gives (|t|₀ = |t'|₀) ≃ ‖t = t'‖."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3821,
+    "quote": "for any set $S$, precomposition with $\\trunc{\\_}_0$ is an equivalence … This is called \\emph{the universal property of set truncation}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "set_trunc_universal_property"
+    ],
+    "note": "The lemma set_trunc_universal_property states that precomposition with set_trunc is an equivalence for every set S."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3827,
+    "quote": "More generally, there are operations turning any type into an $n$-type … with constant truncation operator $\\Trunc{T}_{-2}\\defeq\\true$",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "MinusTwoTrunc",
+      "minus_two_trunc_unit",
+      "minus_two_trunc_definition",
+      "minus_two_trunc_unit_definition",
+      "minus_two_trunc_level",
+      "minus_two_trunc_universal_property"
+    ],
+    "note": "Module 285 defines ‖T‖_{−2} ≔ 1 and |t|_{−2} ≔ triv. This is a (−2)-type with the universal property (module 287): precomposition with |–|_{−2} is an equivalence into every (−2)-type."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3865,
+    "quote": "This is in contrast to a \\emph{constant} map … Any constant map is indeed weakly constant.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "constant_weakly_constant",
+      "identified_constant_weakly_constant"
+    ],
+    "note": "Module 287 proves that constant maps are weakly constant. Maps identified with a constant map are also weakly constant."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3868,
+    "quote": "Note also that when $B$ is a set, weak constancy of $f : A \\to B$ is a proposition.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "weakly_constant_prop"
+    ],
+    "note": "This is also listed with the unnumbered definition at 3862."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3882,
+    "quote": "The key point is that $\\im(f)$ is a proposition because $f$ is weakly constant.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "weakly_constant_image_prop"
+    ],
+    "note": "The lemma weakly_constant_image_prop proves that the image of a weakly constant map into a set is a proposition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3919,
+    "quote": "$(\\Succ(w),\\Succ(d))$, for example, determines the same net worth as $(w,d)$, and $(\\Succ(w),\\Succ(d))\\ne(w,d)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "nat_ne_suc",
+      "net_worth_same",
+      "net_worth_pairs_distinct"
+    ],
+    "note": "Module 287 proves Succ(w) + d = w + Succ(d) and (Succ(w),Succ(d)) ≠ (w,d)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3928,
+    "quote": "Recall that an \\emph{equivalence relation} is one that is (1) \\emph{reflexive} … (2) \\emph{symmetric} … (3) \\emph{transitive}",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "EquivalenceRelation"
+    ],
+    "note": "This is a proposition-valued relation with the three laws."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3934,
+    "quote": "the equivalence relation is $R((w_1,d_1),(w_2,d_2)) \\defeq  (w_1+d_2 = w_2 + d_1)$, precisely capturing equality of net worth",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "SameBalance",
+      "balance_relation",
+      "same_balance_trans"
+    ],
+    "note": "The declaration balance_relation packages SameBalance with its reflexivity, symmetry and transitivity (same_balance_trans)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3945,
+    "quote": "the type $A/R$ could in fact be used as a type of integers",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "integer_quotient_equiv"
+    ],
+    "note": "The formalization compares it with the native Int (xca:ints-as-quotient)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3952,
+    "quote": "We may wonder about the universe level of $A/R$ … By the Replacement~\\cref{pri:replacement}, $A/R$ is essentially $\\UU$-small",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "quotient_small_image_equiv",
+      "quotient_essentially_small",
+      "resized_relation"
+    ],
+    "note": "This is a footnote of def:quotient-set. It covers both routes: replacement and resizing."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3972,
+    "quote": "Note that $R\\mapsto(z\\mapsto R(\\fst(z))(\\snd(z))$ is an equivalence from $A\\to(A\\to\\Prop)$ to $(A\\times A)\\to\\Prop)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "curry_equiv"
+    ],
+    "note": "This is an instance of curry_equiv."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 3988,
+    "quote": "Any element of the image of $R$ is merely an equivalence predicate",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Quotient",
+      "quotient_class_property"
+    ],
+    "note": "This holds by the definition of Quotient as Image. The second component is the truncated fiber. The formalization does not state the pointwise iff form separately."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4024,
+    "quote": "We will construct the center of contraction $\\bar f : A/R \\to B$ such that $\\bar f([x]) \\jdeq f(x)$ for all $x:A$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "quotient_rec",
+      "quotient_rec_beta"
+    ],
+    "note": "The rule quotient_rec_beta is reflexivity."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4067,
+    "quote": "Convince yourself that a general equivalence relation on a finite set looks like a union of such complete graphs.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a pictorial 'convince yourself' remark."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4142,
+    "quote": "If $f$ is injective, then $\\ap{f}$ is an equivalence by \\cref{lem:inj-ap}, so that $A/{\\eq_f}$ is essentially given by \\cref{rem:set-trunc-as-quotient}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "embedding_induced_relation_mere_paths",
+      "embedding_induced_quotient_set_trunc",
+      "embedding_on_paths"
+    ],
+    "note": "For an injection f, ≃_f is the relation ‖a = a′‖. Thus A/≃_f = ‖A‖_0 (SetTrunc A) in Type (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4158,
+    "quote": "A useful function $\\NN\\to\\NN$ is the \\emph{predecessor} $\\Pred$ defined by $\\Pred(0)\\defeq 0$ and $\\Pred(\\Succ(n))\\defeq n$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "nat_pred"
+    ],
+    "note": "The function nat_pred (module 07) is the printed two-clause definition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4160,
+    "quote": "Elementary properties of addition, multiplication and predecessor can be proved in type theory in the usual way. We freely use them",
+    "kind": "informal",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "add_comm",
+      "add_assoc",
+      "mul_comm",
+      "mul_assoc"
+    ],
+    "note": "Module 46 proves the standard laws (see xca:try-your-luck-N). The open-ended clause is not auditable. The formalization does not collect predecessor laws."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4190,
+    "quote": "By Hedberg's \\cref{thm:hedberg}, we get an alternate proof that $\\NN$ is a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "hedberg",
+      "nat_dec_eq"
+    ],
+    "note": "This is a direct application. The formalization does not state it as a named instance."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4215,
+    "quote": "First note that $P_{\\min}(n)$ is a proposition, and that all $n$ such that $P_{\\min}(n)$ are equal.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "isminimum_prop",
+      "minimum_unique",
+      "minimum_prop"
+    ],
+    "note": "The lemmas isminimum_prop and minimum_unique (inside minimum_prop) give both remarks. The lemma minimum_prop shows that Σ n, P_min(n) is a proposition."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4221,
+    "quote": "we define a function $\\mu_P:\\NN\\to\\NN$ which, given input $n$, searches for a $k<n$ such that $P(k)$. … we will call \\emph{bounded search}.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "bounded_search",
+      "bounded_min",
+      "bounded_min_zero",
+      "bounded_min_successor"
+    ],
+    "note": "The book uses μ_P again in the proofs of lem:PHP and lem:euclid-div. The formal proofs of these lemmas use other arguments."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4236,
+    "quote": "$\\mu_P(n)\\leq n \\quad\\text{and}\\quad \\mu_P(n)<n \\to P(\\mu_P(n))$ … $P(m) \\to \\mu_P(n)\\leq m$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bounded_min_bound",
+      "bounded_min_found",
+      "bounded_min_minimal",
+      "bounded_min_no_hit"
+    ],
+    "note": "This covers all displayed invariants of the implementation of def:Nwellordered."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4378,
+    "quote": "When moving beyond sets, there are two different ways in which a type can be finite: an \\emph{additive} way and a \\emph{multiplicative} way",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "The book does not define the additive and multiplicative notions of finiteness."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4411,
+    "quote": "Here it doesn't matter whether we take the sum over $\\Set$ or over $\\UU$, since any finite set is a set.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "finite_sethood",
+      "BookFiniteSetsAt",
+      "book_finite_sets_at_component",
+      "book_finite_sets_at_finite_path",
+      "book_finite_sets_at_universe_path"
+    ],
+    "note": "This is a footnote of def:groupoidFin. It includes the displayed chain of identifications."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4432,
+    "quote": "Observe that we have identifications in $\\FinSet_0 \\eqto \\FinSet_1 \\eqto \\bn{1} $, and in $\\FinSet \\eqto \\sum_{n:\\NN}\\FinSet_n$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "finite_sets_zero_one_path",
+      "finite_sets_one_unit_path",
+      "finite_sets_components"
+    ],
+    "note": "All three identifications are paths in the universe (module 38 and def:groupoidFin)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4435,
+    "quote": "Also, $\\FinSet$ is the image of the map $\\Fin : \\NN \\to \\UU$ … and is hence essentially $\\UU$-small (for any universe $\\UU$)",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "finite_sets_image_path",
+      "fin_image_finite_sets",
+      "finite_sets_essentially_small"
+    ],
+    "note": "This assumes replacement. The declaration nat_small plays the role of 'U_0 is the smallest universe'."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4445,
+    "quote": "We have already seen several examples of 2-element sets: $\\bool$, $\\bn{2}$, $\\bn{1}\\amalg\\bn{1}$ that can easily be identified.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "fin_one_sum_bool_equiv",
+      "fin_two_equiv"
+    ],
+    "note": "Module 287 proves 1 ⨿ 1 ≃ 2 ≃ Bool."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4450,
+    "quote": "one cannot identify an \\emph{arbitrary} 2-element set with any of these. … Having a name for one of the elements would be sufficient",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "two_sets_no_global_identification",
+      "two_pointed_enumeration"
+    ],
+    "note": "This includes the footnote: a chosen point determines Bool ≃ A."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4485,
+    "quote": "We need $n\\ge 0$, since for a contractible ($-2$-type) $X$ we get an equivalence $X^* \\equivto \\NN$ … and $\\NN$ is not contractible.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "nat_not_contractible",
+      "list_of_contractible_not_contractible",
+      "length_equiv"
+    ],
+    "note": "ℕ is not contractible. Thus X* is not contractible for contractible X (module 287)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4582,
+    "quote": "If $f$ in \\cref{lem:sum-of-fibers} is an injection, then … $A$ is a $n$-type if $B$ is a $n$-type",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "truncated_map_domain_hlevel",
+      "minus_one_truncated_map_equiv",
+      "truncated_map_raise"
+    ],
+    "note": "The lemma truncated_map_domain_hlevel transfers any h-level from B to A along a truncated map. Injections are (−1)-truncated maps."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4588,
+    "quote": "Note that we need $A$ to be in the same universe as the one we're taking type families in.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "small_families_maps_equiv"
+    ],
+    "note": "The universe-stratified version is small_families_maps_equiv (module 193)."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4755,
+    "quote": "Since the type of $n$-types is an $(n+1)$-type, $\\Trunc A_{n+1}$ is an $(n+1)$-type",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "ntypes_level",
+      "trunc_step_level"
+    ],
+    "note": "The lemma ntypes_level states that NTypes k (types of h-level k+1) has h-level k+2. That is, the type of n-types is an (n+1)-type. The lemma trunc_step_level uses it."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4786,
+    "quote": "Since this is a proposition and $\\trunc\\blank_{n+1}$ is surjective",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trunc_unit_surjective"
+    ],
+    "note": "The lemma trunc_unit_surjective holds for every level k."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4812,
+    "quote": "Finally, we need to re-size $\\Trunc A_{n+1}$ to fit in the universe $\\UU$ that $A$ came from.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "trunc_essentially_small"
+    ],
+    "note": "The formal statement assumes replacement."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4839,
+    "quote": "any map $f : B \\to A$ can be described as ``projecting away'' its fibers, by using the equivalence $e$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "book_sum_of_fibers_equiv",
+      "sum_of_fibers_equiv"
+    ],
+    "note": "This is lem:sum-of-fibers."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4850,
+    "quote": "If $A$ and $B$ are groupoids, these fibers are themselves groupoids",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "maps_between_hlevels_truncated"
+    ],
+    "note": "The formal statement is for every level."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4855,
+    "quote": "$f$ \\emph{forgets at most structure} if all the fibers are sets; … \\emph{forgets nothing} if all the fibers are contractible.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "TruncatedMap"
+    ],
+    "note": "This is TruncatedMap at h-levels 2, 1 and 0."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4862,
+    "quote": "Of course, a map forgets properties if and only if it's an injection, and it forgets nothing if and only if it's an equivalence.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "minus_one_truncated_map_equiv",
+      "minus_two_truncated_map_equiv"
+    ],
+    "note": "One equivalence is between a TruncatedMap level and IsEmbedding. The other is between a TruncatedMap level and BookIsEquiv."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4869,
+    "quote": "$f$ \\emph{forgets at most $n$-structure} if all the fibers are $n$-truncated.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "TruncatedMap"
+    ],
+    "note": "This also covers the terminology 1-structure (stuff), 0-structure and (−1)-structure."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4893,
+    "quote": "we can factor $f : B \\to A$ through first its \\emph{$0$-image} and then its usual $(-1)$-image",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "ZeroImage",
+      "zero_image_factor",
+      "zero_image_to_image",
+      "image_include_embedding"
+    ],
+    "note": "The formalization assembles the factorization A → ZeroImage → Image → B from modules 106, 39 and 164."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4896,
+    "quote": "we can define the $n$-image in a similar way and prove that the $n$-image factorization is unique.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "NImageFactorizations",
+      "n_image_universal_property"
+    ],
+    "note": "This is in modules 230–232."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4902,
+    "quote": "Since the unit type $\\bn 1$ is the unique $(-2)$-type, we have $\\Trunc{X}_{-2} \\eqto \\bn 1$ for any type $X$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "MinusTwoTrunc",
+      "minus_two_trunc_unit_equiv",
+      "minus_two_type_unit_path",
+      "minus_two_types_contractible"
+    ],
+    "note": "Modules 285 and 287 prove three facts. Every (−2)-type is identified with 1. The type Σ_{X:Type} isContr X is contractible. Also, ‖X‖_{−2} ≃ 1."
+  },
+  {
+    "source": "intro-uf.tex",
+    "line": 4915,
+    "quote": "not only are the fibers sets, they are \\emph{nonempty} sets … Note also that the fibers of the first map are connected",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "zero_image_to_image_zero_truncated",
+      "zero_image_to_image_surjective",
+      "zero_image_factor_connected_fibers"
+    ],
+    "note": "The last map is the embedding of the image. It forgets at most properties."
+  }
+]
