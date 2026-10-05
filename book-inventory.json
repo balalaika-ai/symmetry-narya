@@ -17370,8 +17370,23 @@
       "monoid:unit-laws",
       "monoid:ass-law"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Monoid",
+      "MonoidLaws",
+      "UnitLaws",
+      "AssocLaw",
+      "monoid_set",
+      "monoid_unit_right",
+      "monoid_unit_left",
+      "monoid_assoc",
+      "monoid_laws_prop"
+    ],
+    "principal": [
+      "Monoid",
+      "MonoidLaws"
+    ],
+    "note": "Monoid is a record (carrier, unit, mul, laws : MonoidLaws carrier unit mul). Here MonoidLaws = isSet(S) × UnitLaws × AssocLaw, exactly as the book shows it before def:type-abstrgp. The unit laws are g·e = g and e·g = g. Associativity is g1·(g2·g3) = (g1·g2)·g3. The laws form a proposition (monoid_laws_prop)."
   },
   {
     "chapter": 7,
@@ -17383,8 +17398,21 @@
     "labels": [
       "exa:monoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "list_monoid",
+      "list_monoid_laws",
+      "list_set",
+      "append_nil",
+      "append_assoc_book",
+      "list_monoid_mul_litmus",
+      "list_monoid_unit_litmus",
+      "list_monoid_no_inverse"
+    ],
+    "principal": [
+      "list_monoid"
+    ],
+    "note": "The monoid list_monoid S hS is (List S, nil, append) for a set S (module 720). S* is a set by list_set (the list case of thm:isset-inductive-types, module 16). The left unit law holds by computation. The right unit law is append_nil. Associativity in the orientation of the book is append_assoc_book. Litmus: [true] * [false] = [true, false] by refl. For an inhabited S, list_monoid_no_inverse shows that there is no inverse operation. Thus this is a monoid that is not a group."
   },
   {
     "chapter": 7,
@@ -17396,8 +17424,24 @@
     "labels": [
       "def:type-abstrgp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractGroup",
+      "AbstractGroupLaws",
+      "GroupLaws",
+      "InverseLaw",
+      "AbstractGroupSigma",
+      "abstract_group_sigma_equiv",
+      "group_laws_equiv",
+      "group_laws_prop",
+      "abstract_group_monoid"
+    ],
+    "principal": [
+      "AbstractGroupSigma",
+      "abstract_group_sigma_equiv",
+      "AbstractGroup"
+    ],
+    "note": "The type of abstract groups is the record AbstractGroup of module 403 (carrier, unit, mul, inv, laws). AbstractGroupSigma is the printed iterated Σ over S : U, e, μ, ι with GroupLaws = MonoidLaws × InverseLaw. The equivalence abstract_group_sigma_equiv identifies the two types (both round trips are refl). The equivalence group_laws_equiv relates the 5-field laws record of module 403 to the GroupLaws of the book."
   },
   {
     "chapter": 7,
@@ -17412,8 +17456,26 @@
       "monoid:inv-law",
       "axiom:mere-inverse"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MereInverses",
+      "mere_inverses_prop",
+      "InverseLaw",
+      "inverse_operation_mere_inverses",
+      "MonoidInverseOperation",
+      "MonoidMereInverses",
+      "monoid_inverse_operation_prop",
+      "monoid_inverse_operation_mere_equiv",
+      "abstract_group_to_monoid_inverse",
+      "abstract_group_from_monoid_inverse",
+      "abstract_group_monoid_inverse_equiv",
+      "abstract_group_mere_inverses_equiv"
+    ],
+    "principal": [
+      "MereInverses",
+      "abstract_group_mere_inverses_equiv"
+    ],
+    "note": "The formal axiom:mere-inverse is MereInverses S e mul = Π g, Mere (Σ h, e = g·h). This is the orientation of the book: Σ h, e = g·h is BookFiber of μ(g) over e. The items monoid:inv-op and monoid:inv-law are the inverse function with InverseLaw (module 700). The remark announces a comparison. The formalization states it as AbstractGroup ≃ Σ (M : Monoid) MereInverses(M) (abstract_group_mere_inverses_equiv, module 721). For a monoid, an inverse operation with the law of inverses is a proposition that is equivalent to MereInverses, by lem:group-inv-operation."
   },
   {
     "chapter": 7,
@@ -17425,8 +17487,31 @@
     "labels": [
       "lem:group-inv-operation"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "mere_inverse_left",
+      "mere_inverse_unique",
+      "mere_inverse_fiber_prop",
+      "mere_inverse_fiber_contractible",
+      "mere_inverse_function",
+      "mere_inverse_law",
+      "inverse_law_prop",
+      "group_inv_operation_contractible",
+      "mere_inverse_left_law",
+      "mere_inverse_involution",
+      "mere_inverse_abstract_group",
+      "int_add_abstract_group_laws",
+      "int_add_abstract_group",
+      "int_add_monoid_laws",
+      "int_add_mere_inverses",
+      "mere_inverse_int_litmus",
+      "mere_inverse_int_left_litmus"
+    ],
+    "principal": [
+      "group_inv_operation_contractible",
+      "mere_inverse_fiber_contractible"
+    ],
+    "note": "Take S, e, μ with MonoidLaws (isSet, unit laws, associativity) and MereInverses. Then group_inv_operation_contractible proves BookIsContr (Σ (ι : S → S) InverseLaw S e μ ι), that is, a unique inverse function (module 721). The proof follows the book. A right inverse is a left inverse (mere_inverse_left), and right inverses are unique. Thus the fiber μ(g)⁻¹(e) is contractible (mere_inverse_fiber_contractible), and g⁻¹ is its center. The footnote states g⁻¹·g = e and (g⁻¹)⁻¹ = g. These are mere_inverse_left_law and mere_inverse_involution. Litmus: take (Z, 0, +) with mere inverses given by negation. Then the constructed inverse of 1 computes to −1 (refl)."
   },
   {
     "chapter": 7,
@@ -17436,8 +17521,16 @@
     "line": 182,
     "section_raw": "Monoids and abstract groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstr_is_equiv",
+      "abstr_book_equiv",
+      "group_abstract_group_equiv"
+    ],
+    "principal": [
+      "abstr_is_equiv"
+    ],
+    "note": "This is a forward reference: abstr : Group → AbstractGroup is an equivalence. Module 709 proves it (thm:Groupsareidentitytypes)."
   },
   {
     "chapter": 7,
@@ -17450,8 +17543,25 @@
       "rem:abs-iso",
       "ft:no-abs-inftygp"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractIso",
+      "AbstractIsoEquations",
+      "abstract_iso_equations_equiv",
+      "abstract_group_path_from_iso",
+      "abstract_group_path_from_iso_carrier",
+      "abstract_group_path_from_iso_transport",
+      "abstract_group_path_iso_equiv",
+      "abstract_iso_id",
+      "abstract_iso_compose",
+      "abstract_iso_inverse"
+    ],
+    "principal": [
+      "AbstractIso",
+      "abstract_group_path_from_iso",
+      "abstract_group_path_iso_equiv"
+    ],
+    "note": "An isomorphism of abstract groups is an equivalence f : S ≃ S' that preserves multiplication (AbstractIso). AbstractIsoEquations adds the printed unit equation e' = f(e) and is equivalent (xca:onlymult-hom). The identification abstract_group_path_from_iso applies univalence. Its carrier component is ua(f), and transport along it is f by refl. Footnote ft:no-abs-inftygp is an informal comment (claims file)."
   },
   {
     "chapter": 7,
@@ -17461,8 +17571,19 @@
     "line": 215,
     "section_raw": "Monoids and abstract groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_group_path_iso_equiv",
+      "AbstractGroupPathEquations",
+      "abstract_group_path_equations_equiv",
+      "abstract_group_path_to_iso",
+      "abstract_group_iso_total_contractible"
+    ],
+    "principal": [
+      "abstract_group_path_equations_equiv",
+      "abstract_group_path_iso_equiv"
+    ],
+    "note": "Analysis of rem:abs-iso: the formalization proves (G = G') ≃ Σ (p : S = S') (e' = p(e)) × Π_{s,t} μ'(p(s), p(t)) = p(μ(s,t)), with p(x) the transport along p (abstract_group_path_equations_equiv). It also proves (G = G') ≃ Iso(G, G'). The map path → iso is transport. The inverse is the ua-construction. The equivalence follows because the total space of isomorphisms is a retract of the contractible total space of identifications."
   },
   {
     "chapter": 7,
@@ -17474,8 +17595,33 @@
     "labels": [
       "xca:op-abs-group"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_op_mul",
+      "abstract_op_laws",
+      "abstract_op_group",
+      "abstract_inv_equiv",
+      "abstract_op_iso",
+      "abstract_op_iso_equations",
+      "abstract_op_iso_unit",
+      "abstract_op_path",
+      "ag_inv_unit",
+      "ag_inv_mul",
+      "ag_inv_left",
+      "ag_inv_inv",
+      "abstract_iso_equations_equiv",
+      "abstract_group_path_from_iso",
+      "abstract_op_mul_litmus",
+      "abstract_op_path_transport",
+      "abstract_op_op_path",
+      "abstract_op_identity_not_hom"
+    ],
+    "principal": [
+      "abstract_op_group",
+      "abstract_op_iso",
+      "abstract_op_path"
+    ],
+    "note": "The group abstract_op_group G is (S, e, μ^op, ι) with μ^op(a, b) = μ(b, a) (module 722). The isomorphism abstract_op_iso : AbstractIso G G^op has the underlying equivalence ι, which is its own inverse (ag_inv_inv). Its homomorphism condition is literally (ab)⁻¹ = b⁻¹a⁻¹ (ag_inv_mul). The unit equation of the printed form (abstract_op_iso_equations) is ι(e) = e (ag_inv_unit). These are the two equations of the hint. The identification abstract_op_path : G = G^op is the induced identification (module 702). Litmus: transport along it is ι by refl, and (G^op)^op = G. For abstr Σ₃, the identity function is not a homomorphism G → G^op."
   },
   {
     "chapter": 7,
@@ -17487,8 +17633,28 @@
     "labels": [
       "xca:conj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "abstract_conj",
+      "abstract_conj_mul",
+      "abstract_conj_hom",
+      "abstract_conj_equiv",
+      "abstract_conj_iso",
+      "abstract_conj_path",
+      "abstract_conj_path_transport",
+      "abstract_conj_inverse_right",
+      "abstract_conj_printed_instance_fails",
+      "abstract_conj_abelian",
+      "abstract_conj_int_litmus",
+      "abstract_conj_fixed_commutes",
+      "abstract_conj_sigma3_moves"
+    ],
+    "principal": [
+      "abstract_conj_printed_instance_fails",
+      "abstract_conj_mul",
+      "abstract_conj_iso"
+    ],
+    "note": "Refuted as printed: the displayed instance g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s·g⁻¹) has s instead of s' in the second factor, and it is false. In Z with g = s = 0 and s' = 1, it says 1 = 0 (abstract_conj_printed_instance_fails). The formalization proves the intended statement. The map conj^g(s) = (g·s)·g⁻¹ (abstract_conj, module 723) preserves multiplication: g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s'·g⁻¹) (abstract_conj_mul). It is an equivalence (abstract_conj_equiv). Thus it is an isomorphism (abstract_conj_iso) and an identification G = G (abstract_conj_path). Litmus: conj^g is the identity in abelian groups, conj^1(2) = 2 in Z by refl, and conj^τ(σ) ≠ σ in abstr Σ₃."
   },
   {
     "chapter": 7,
@@ -17500,8 +17666,25 @@
     "labels": [
       "rem:ee=e_coherence"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "monoid_unit_coherence",
+      "circle_endo_unit_laws",
+      "circle_endo_assoc",
+      "circle_endo_unit_witnesses_differ",
+      "NonCoherentUnitalStructure",
+      "circle_endo_non_coherent",
+      "unit_coherence_counterexample",
+      "circle_central_loop",
+      "circle_central_loop_base",
+      "circle_loop_not_refl",
+      "constructed_circle"
+    ],
+    "principal": [
+      "monoid_unit_coherence",
+      "unit_coherence_counterexample"
+    ],
+    "note": "In a monoid, the two identifications e·e = e that the unit laws give are equal, because the carrier is a set (monoid_unit_coherence, module 720). Without the set condition, they can be different (module 727). Let C be a circle, and let A = C → C with e = id and μ = composition. The unit and associativity laws hold judgmentally. The unit-law witnesses are refl and funext(x ↦ c(g x)), where c is the central loop with c(base) = loop (module 486). At e·e = e these witnesses are different, because loop ≠ refl (circle_endo_unit_witnesses_differ). The term unit_coherence_counterexample : NonCoherentUnitalStructure instantiates this at the constructed circle. The closing sentence says that the problem vanishes for ∞-groups as pointed connected types (sec:inftygps). This sentence is a pointer, not a separate claim."
   },
   {
     "chapter": 7,
@@ -17513,8 +17696,19 @@
     "labels": [
       "xca:left-inv-involution"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ag_inv_left_book",
+      "ag_inv_left",
+      "ag_inv_involution",
+      "mere_inverse_left_law",
+      "mere_inverse_involution"
+    ],
+    "principal": [
+      "ag_inv_left_book",
+      "ag_inv_involution"
+    ],
+    "note": "The lemma ag_inv_left_book (module 721) is the printed e = g⁻¹·g. The lemma ag_inv_left of module 700 has the reverse orientation. The lemma ag_inv_involution (module 700) is g = (g⁻¹)⁻¹, as printed. As the hint suggests, mere_inverse_left_law and mere_inverse_involution give the same two facts for the inverse that the proof of lem:group-inv-operation builds."
   },
   {
     "chapter": 7,
@@ -17526,8 +17720,43 @@
     "labels": [
       "xca:typemonoidisgroupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MonoidStructureOnSet",
+      "MonoidOverSets",
+      "monoid_to_over_sets",
+      "monoid_from_over_sets",
+      "monoid_over_sets_equiv",
+      "monoid_structure_laws_prop",
+      "monoid_structure_set",
+      "monoid_over_sets_hlevel",
+      "monoid_groupoid",
+      "sets_groupoid",
+      "abstract_group_groupoid",
+      "abstract_group_paths_set",
+      "abstract_iso_set",
+      "MonoidData",
+      "monoid_data",
+      "MonoidLawsAt",
+      "monoid_laws_pathover",
+      "monoid_path_of_data",
+      "left_zero_monoid_mul",
+      "left_zero_monoid_laws",
+      "left_zero_monoid",
+      "left_zero_swap",
+      "left_zero_swap_involutive",
+      "left_zero_swap_equiv",
+      "left_zero_swap_mul",
+      "left_zero_swap_path",
+      "left_zero_swap_path_nontrivial",
+      "monoid_not_set",
+      "abstract_group_not_set"
+    ],
+    "principal": [
+      "monoid_groupoid",
+      "abstract_group_groupoid"
+    ],
+    "note": "The proof of monoid_groupoid : isGroupoid Monoid (module 726) uses Monoid ≃ Σ (X : SetTypes) (monoid structure on X). The base is the groupoid of sets (sets_groupoid), and the fibres are sets. Thus the Σ-type has h-level 3. The abstract-group half is abstract_group_groupoid (module 702). It uses (G = G') ≃ Iso(G, G'), which is a set. Litmus: neither type is a set. In the three-element left-zero monoid, the swap of the two non-unit elements induces a non-trivial self-identification (monoid_not_set). For Σ₃, abstr applied to USym(inn)(τ) is a non-trivial self-identification of abstr Σ₃ (abstract_group_not_set, module 730)."
   },
   {
     "chapter": 7,
@@ -17539,8 +17768,37 @@
     "labels": [
       "xca:cheapgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ShearGroupLaws",
+      "ShearGroup",
+      "shear_group_laws_prop",
+      "shear_bar",
+      "shear_bar_unit",
+      "shear_bar_bar",
+      "shear_to_abstract_mul",
+      "shear_to_abstract_laws",
+      "shear_to_abstract",
+      "abstract_to_shear_op",
+      "shear_inv_unit_inv",
+      "abstract_to_shear_laws",
+      "abstract_to_shear",
+      "ShearGroupData",
+      "shear_group_data",
+      "ShearGroupLawsAt",
+      "shear_group_laws_pathover",
+      "shear_group_path_of_data",
+      "shear_abstract_round_trip",
+      "shear_shear_round_trip",
+      "abstract_shear_equiv",
+      "shear_int_litmus",
+      "shear_int_mul_litmus"
+    ],
+    "principal": [
+      "ShearGroup",
+      "abstract_shear_equiv"
+    ],
+    "note": "ShearGroup (module 724) is the printed definition. It has a set S (isSet is a field of the laws record), e and *, with e*a = a, a*a = e and c*(b*a) = (c*b̄)‾*a for ā = a*e. The equivalence abstract_shear_equiv : Equiv AbstractGroup ShearGroup has the map a*b = b·a⁻¹ and the inverse a·b = b̄*a, a⁻¹ = ā, as in the hint. The hint does not name the inverse, but ā is forced. The exercise and the hint are correct as printed: ē = e and ā̄ = a (shear_bar_unit, shear_bar_bar). The latter follows with c = ā and b = a in (3). Litmus: for Z, a*b = b − a (2*5 = 3), and the recovered product is addition (2·3 = 5). Both hold by refl."
   },
   {
     "chapter": 7,
@@ -17550,8 +17808,48 @@
     "line": 277,
     "section_raw": "Monoids and abstract groups}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "FurstenbergLaws",
+      "FurstenbergGroup",
+      "furstenberg_laws_prop",
+      "furstenberg_square_weakly_constant",
+      "furstenberg_unit",
+      "furstenberg_square",
+      "furstenberg_right_unit",
+      "furstenberg_swap",
+      "furstenberg_double_inverse",
+      "furstenberg_cancel_unit",
+      "furstenberg_mul",
+      "furstenberg_inv",
+      "furstenberg_group_laws",
+      "furstenberg_to_abstract",
+      "abstract_to_furstenberg_op",
+      "abstract_to_furstenberg_laws",
+      "abstract_to_furstenberg",
+      "FurstenbergData",
+      "furstenberg_data",
+      "FurstenbergLawsAt",
+      "furstenberg_laws_pathover",
+      "furstenberg_path_of_data",
+      "furstenberg_round_trip",
+      "furstenberg_abstract_round_trip",
+      "furstenberg_abstract_equiv",
+      "weakly_constant_rec",
+      "weakly_constant_rec_value",
+      "furstenberg_int",
+      "furstenberg_int_op_litmus",
+      "furstenberg_int_unit_litmus",
+      "furstenberg_int_mul_litmus",
+      "furstenberg_int_seven",
+      "furstenberg_int_seven_unit_litmus"
+    ],
+    "principal": [
+      "FurstenbergGroup",
+      "furstenberg_abstract_equiv",
+      "furstenberg_unit"
+    ],
+    "note": "FurstenbergGroup (module 725) is a set S with Mere S (nonempty) and an operation ∘. It satisfies (a∘c)∘(b∘c) = a∘b and Π a c, Mere (Σ b, a∘b = c). As the hint suggests, a ↦ a∘a is weakly constant (furstenberg_square_weakly_constant). Since S is a set, weakly_constant_rec (thm:wconstant-elim, module 39) gets its value e from Mere S. The map furstenberg_to_abstract has the unit e, a·b = a∘(e∘b) and b⁻¹ = e∘b. The converse uses a∘b = a·b⁻¹. The equivalence furstenberg_abstract_equiv : Equiv FurstenbergGroup AbstractGroup is the requested equivalence. Litmus: three facts hold for Z by refl. First, 5∘2 = 3. Second, e = 0 also when 7 is the witness of Mere S. Third, the recovered product is addition. The footnotes (the name, the reference) contain no further mathematical claim."
   },
   {
     "chapter": 7,
@@ -17563,8 +17861,24 @@
     "labels": [
       "{xca:onlymult-hom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_hom_preserves_unit",
+      "abstract_hom_preserves_inv",
+      "ag_idempotent_unit",
+      "ag_inv_unique_right",
+      "abelian_inverse_hom",
+      "int_add_abelian",
+      "int_negation_hom",
+      "int_negation_hom_litmus",
+      "int_negation_preserves_unit",
+      "int_negation_preserves_inv"
+    ],
+    "principal": [
+      "abstract_hom_preserves_unit",
+      "abstract_hom_preserves_inv"
+    ],
+    "note": "Module 701 proves that a function that preserves multiplication also preserves the unit and inverses. For the unit, f(e)·f(e) = f(e) forces f(e) = e (ag_idempotent_unit). For inverses, the proof uses the uniqueness of right inverses. Litmus (module 728): negation on Z is an abstract homomorphism (abelian_inverse_hom), and the formalization instantiates the unit and inverse equations for it."
   },
   {
     "chapter": 7,
@@ -17576,8 +17890,21 @@
     "labels": [
       "def:abstrisfunctor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "IsAbstractHom",
+      "AbstractHom",
+      "abstr_hom",
+      "is_abstract_hom_prop",
+      "abstract_hom_set",
+      "abstract_hom_ext",
+      "abstract_hom_fun_path_equiv"
+    ],
+    "principal": [
+      "AbstractHom",
+      "abstr_hom"
+    ],
+    "note": "The type absHom(G, H) is Σ_{f : S → T} Π_{s,s'} f(s·s') = f(s)·f(s') (module 403). It is a set (abstract_hom_set), and the underlying function determines its elements (abstract_hom_fun_path_equiv, footnote). The map abstr(f) = (USym f, !) is abstr_hom of module 403, and lem:grouphomomaxioms supplies the proof."
   },
   {
     "chapter": 7,
@@ -17589,8 +17916,28 @@
     "labels": [
       "rem:monoid-hom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "MonoidHom",
+      "abstract_hom_monoid_hom",
+      "abstract_group_monoid",
+      "monoid_hom_set",
+      "two_element_monoid",
+      "unit_monoid",
+      "monoid_footnote_map",
+      "monoid_footnote_map_mul",
+      "monoid_footnote_map_not_unit",
+      "monoid_footnote_map_not_monoid_hom",
+      "monoid_mul_preserving_not_unit_preserving",
+      "unit_monoid_hom_to_two",
+      "int_negation_monoid_hom_unit"
+    ],
+    "principal": [
+      "MonoidHom",
+      "abstract_hom_monoid_hom",
+      "monoid_mul_preserving_not_unit_preserving"
+    ],
+    "note": "MonoidHom M N (module 701) is the displayed Σ f, (f(e_M) = e_N) × Π s s', f(s·s') = f(s)·f(s'). It is a set (monoid_hom_set, module 728). The lemma abstract_hom_monoid_hom shows that an abstract homomorphism is a homomorphism of the underlying monoids. It preserves the unit by xca:onlymult-hom. A map of monoids can preserve multiplication but not the unit: this is monoid_mul_preserving_not_unit_preserving, from the example of ft:monoid-hom. Litmus: the unit map 1 → {0,1} is a MonoidHom, and negation on Z gives a monoid homomorphism with computed values."
   },
   {
     "chapter": 7,
@@ -17602,8 +17949,28 @@
     "labels": [
       "xca:abshomcomposition"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_hom_compose",
+      "abstract_hom_id",
+      "abstract_hom_compose_id_left",
+      "abstract_hom_compose_id_right",
+      "abstract_hom_compose_assoc",
+      "abstr_hom_id",
+      "abstr_hom_compose",
+      "group_endo_monoid",
+      "abstract_endo_monoid",
+      "int_negation_twice_litmus",
+      "int_negation_twice_identity",
+      "group_endo_monoid_unit_litmus",
+      "group_endo_monoid_mul_litmus"
+    ],
+    "principal": [
+      "abstract_hom_compose",
+      "abstr_hom_compose",
+      "abstract_endo_monoid"
+    ],
+    "note": "Module 701 proves the following facts. Composites of abstract homomorphisms are homomorphisms (abstract_hom_compose, with φ first). Also abstr(id_G) = id_abstr(G) and abstr(f₁f₀) = abstr(f₁)abstr(f₀) (abstr_hom_id, abstr_hom_compose). Hom(G, G) and absHom(G, G) are monoids under composition, with the product f₁·f₀ = f₁∘f₀ (group_endo_monoid, abstract_endo_monoid). Litmus (module 728): negation∘negation on Z computes pointwise (refl) and is equal to the unit of absHom(Z, Z). The unit and the product of Hom(G, G) are id_G and composition, by refl."
   },
   {
     "chapter": 7,
@@ -17615,8 +17982,37 @@
     "labels": [
       "ex:conjhom"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "abstract_conj_hom",
+      "abstract_conj_iso",
+      "abstract_conj_path",
+      "abstract_iso_transport_postcompose",
+      "abstract_iso_transport_postcompose_hom",
+      "abstract_iso_transport_precompose",
+      "abstract_conj_transport_postcompose",
+      "abstract_conj_transport_precompose",
+      "abstract_conj_inverse_right",
+      "abstr_conj_hom_is_abstract_conj",
+      "inn_identification",
+      "inn_abstr_iso",
+      "inn_abstr_conj_path",
+      "inn_abstr_sigma3_nontrivial",
+      "conj_hom",
+      "conj_at_shape_usym",
+      "inn",
+      "inn_usym_fst",
+      "inn_usym_acts_by_conjugation",
+      "abstract_conj_transport_precompose_printed_fails",
+      "conj_pre_sigma3_contradiction",
+      "conj_pre_h"
+    ],
+    "principal": [
+      "abstract_conj_transport_precompose_printed_fails",
+      "abstract_conj_transport_precompose",
+      "abstract_conj_transport_postcompose"
+    ],
+    "note": "Refuted as printed in one point: the phrase 'similarly for elements in H, giving rise to precomposition with conjugation by h' is false. Transport along conj^h : H = H in X ↦ absHom(X, K) is precomposition with (conj^h)⁻¹ = conj^{h⁻¹} (abstract_conj_transport_precompose). Precomposition with conj^h fails for H = K = abstr Σ₃, f = id and h = τσ: it would give 2 = 0 in Fin 3 (abstract_conj_transport_precompose_printed_fails, module 731). The rest holds. The map conj^g is an element of absHom(G, G), an isomorphism and an identification (abstract_conj_hom / _iso / _path, module 723). Transport along conj^g in X ↦ absHom(H, X) is postcomposition with conj^g (abstract_conj_transport_postcompose). Applied to (id_BG, g⁻¹), abstr gives conj^g (abstr_conj_hom_is_abstract_conj). Applied to USym(inn)(g), abstr gives the identification conj^g of abstr G (inn_abstr_conj_path, module 730)."
   },
   {
     "chapter": 7,
@@ -17628,8 +18024,28 @@
     "labels": [
       "xca:abs-homgroup"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "refuted",
+    "declarations": [
+      "abstract_hom_pointwise_mul",
+      "abstract_abelian_interchange",
+      "abelian_pointwise_mul_hom",
+      "square_hom_abelian",
+      "pointwise_products_hom_abelian",
+      "pointwise_products_hom_all_abelian",
+      "abelian_iff_pointwise_products_hom",
+      "unit_abstract_group_laws",
+      "unit_abstract_group",
+      "unit_pointwise_mul_hom",
+      "pointwise_products_hom_fixed_domain_fails",
+      "sigma3_square_not_hom",
+      "symmetric_group_three_not_abelian"
+    ],
+    "principal": [
+      "pointwise_products_hom_fixed_domain_fails",
+      "abelian_pointwise_mul_hom",
+      "abelian_iff_pointwise_products_hom"
+    ],
+    "note": "Refuted as printed: for given G and H, the 'if' direction is false. This direction says: if all pointwise products f·g of homomorphisms H → G are homomorphisms, then G is abelian. For the trivial group H, every such product is a homomorphism, because all of them are constant at e. This is also true for the non-abelian G = abstr Σ₃ (pointwise_products_hom_fixed_domain_fails, module 729). The formalization proves these statements instead. If G is abelian, then f·g is a homomorphism for every H (abelian_pointwise_mul_hom). If s ↦ s·s = id·id is a homomorphism G → G, then G is abelian (square_hom_abelian). Thus G is abelian if and only if all pointwise products of homomorphisms G → G are homomorphisms (abelian_iff_pointwise_products_hom). Also, G is abelian if and only if this holds for all H (pointwise_products_hom_all_abelian)."
   },
   {
     "chapter": 7,
@@ -17641,8 +18057,25 @@
     "labels": [
       "def:abstrGtorsors"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractGSet",
+      "agset_carrier",
+      "agset_act",
+      "agset_act_mul",
+      "agset_act_unit",
+      "agset_from_action",
+      "agset_principal",
+      "agset_principal_act",
+      "AbstractTorsors",
+      "abstract_principal_torsor"
+    ],
+    "principal": [
+      "AbstractGSet",
+      "agset_principal",
+      "AbstractTorsors"
+    ],
+    "note": "A G-set is literally a pair (X, ·_X) of X : Set and an abstract homomorphism G → abstr(Σ_X). The element s ·_X x is transport along the symmetry s ·_X (footnote), with (st)·x = s·(t·x) and e·x = x (typal). The principal torsor is (S, g ↦ (s ↦ μ(g, s))). The function agset_from_action builds it, so its action is μ(g, s) by refl. Also GTor = Σ_{X : GSet} ‖P_G = X‖ (Mere)."
   },
   {
     "chapter": 7,
@@ -17654,8 +18087,16 @@
     "labels": [
       "xca:absprtorsor"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "agset_principal_right",
+      "agset_principal_right_iso",
+      "agset_principal_right_path"
+    ],
+    "principal": [
+      "agset_principal_right_path"
+    ],
+    "note": "The identification (S, s ↦ μ(g, s)) = (S, s ↦ μ(s, ι(g))) in GSet comes from the isomorphism ι (ι(g s) = ι(s) ι(g), ag_inv_mul) through agset_path_from_iso."
   },
   {
     "chapter": 7,
@@ -17665,8 +18106,16 @@
     "line": 505,
     "section_raw": "Groups: from abstract to concrete and back}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstr_gset_unfold",
+      "abstr_gset_symmetries_paths",
+      "agset_principal_abstr_act"
+    ],
+    "principal": [
+      "abstr_gset_unfold"
+    ],
+    "note": "AbstractGSet (abstr G) is by refl the type of pairs (S, f) with f : USym G → USym(Σ_S) and f(p q) = f(p) f(q). Here the product is the product of abstr in the book. The symmetries of S in Σ_S are the identifications S = S of sets (abstr_gset_symmetries_paths)."
   },
   {
     "chapter": 7,
@@ -17678,8 +18127,20 @@
     "labels": [
       "def:concr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "concr",
+      "concr_classifying",
+      "abstract_torsors_connected",
+      "abstract_torsors_groupoid",
+      "concr_classifying_type",
+      "concr_shape",
+      "concr_usym_iso_equiv"
+    ],
+    "principal": [
+      "concr"
+    ],
+    "note": "The group concr(G) is mkgroup (GTor, P_G), together with the proofs that GTor is connected and a groupoid. BG(concr G) ≡ AbstractTorsors G, and the shape is the principal torsor by refl. The equivalence concr_usym_iso_equiv identifies its symmetries with the automorphisms of P_G."
   },
   {
     "chapter": 7,
@@ -17692,8 +18153,27 @@
       "ex:BqG",
       "ft:shG=z"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "path_preinv",
+      "path_post",
+      "bq_gset",
+      "bq_gset_act",
+      "bq_gset_principal",
+      "bq_torsor_witness",
+      "bq_map",
+      "bq_point",
+      "bq_pointed",
+      "preinv_gset",
+      "preinv_gset_act",
+      "preinv_gset_principal_path"
+    ],
+    "principal": [
+      "bq_gset",
+      "bq_pointed",
+      "bq_gset_principal"
+    ],
+    "note": "The definition is Bq_G(z) = ((z = sh_G), post_z) with post_z(g)(p) = g p (concat p g). For z ≡ sh_G, it is definitionally the principal abstr(G)-torsor (bq_gset_principal is refl). The book points Bq_G by reflexivity. Torsor witnesses are not definitionally equal, so bq_point is the pair (refl, proof in a proposition). Footnote ft:shG=z: preinv_gset (r ↦ r p⁻¹) is an abstr(G)-set. It is identified with P only through xca:absprtorsor (preinv_gset_principal_path)."
   },
   {
     "chapter": 7,
@@ -17705,8 +18185,14 @@
     "labels": [
       "def:qG-concr-abstr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "q_hom"
+    ],
+    "principal": [
+      "q_hom"
+    ],
+    "note": "The homomorphism q_G : Hom(G, concr(abstr G)) is mkhom of the pointed map Bq_G."
   },
   {
     "chapter": 7,
@@ -17718,8 +18204,23 @@
     "labels": [
       "lem:Groupsareidentitytypes"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "q_hom_is_iso",
+      "q_iso",
+      "concr_abstr_path",
+      "agset_path_iso_equiv",
+      "agset_path_to_iso",
+      "bq_ap_iso_map",
+      "bq_loops_iso",
+      "bq_loops_equiv",
+      "abstract_r_equiv"
+    ],
+    "principal": [
+      "q_hom_is_iso",
+      "concr_abstr_path"
+    ],
+    "note": "The homomorphism q_G is an isomorphism: Bq_G is an equivalence by cor:fib-vs-path (connected_map_equiv_from_loops). The reason is its action on loops. Under (Bq x = Bq y) ≃ Iso (agset_path_iso_equiv, the Σ_f Π_g f ∘ post_x(g) = post_y(g) ∘ f of the book), this action is the map ω ↦ preinv(ω) = (p ↦ p ω⁻¹). This map is the equivalence r_{abstr G}. The book argues with arbitrary x, y. We use the loops at sh_G (same corollary). From this, concr_abstr_path : concr(abstr G) = G follows."
   },
   {
     "chapter": 7,
@@ -17731,8 +18232,32 @@
     "labels": [
       "thm:Groupsareidentitytypes"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "abstract_r_map",
+      "abstract_r_inverse",
+      "abstract_r_equiv",
+      "abstract_r_mul",
+      "concr_usym_of",
+      "concr_abstr_carrier_equiv",
+      "concr_usym_iso_concat",
+      "concr_abstr_hom",
+      "concr_abstr_iso",
+      "abstr_concr_path",
+      "abstr_book_equiv",
+      "abstr_is_equiv",
+      "group_abstract_group_equiv",
+      "concr_usym_of_iso",
+      "abstract_r_map_action",
+      "abstract_cayley_hom",
+      "abstract_cayley_injective"
+    ],
+    "principal": [
+      "abstr_is_equiv",
+      "concr_abstr_iso",
+      "abstract_r_equiv"
+    ],
+    "note": "The functor abstr is an equivalence with inverse concr (lem:weq-iso through book_quasi_inverse_equiv). The map r_G(u) = μ(-, u⁻¹) is an equivalence S ≃ Aut(P_G), the printed Σ_π Π_{s,t} π(μ(s,t)) = μ(s, π(t)), with r(μ(u,v)) = r(u) ∘ r(v). Composed with Aut(P_G) ≃ (P_G = P_G), it is an abstract isomorphism G ≅ abstr(concr G) and gives abstr(concr G) = G. Footnote ft:abstract-Cayley: the homomorphism G → abstr(Σ_S) of the principal torsor is injective (abstract_cayley_injective)."
   },
   {
     "chapter": 7,
@@ -17744,8 +18269,15 @@
     "labels": [
       "def:phi^*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "agset_restrict",
+      "agset_restrict_act"
+    ],
+    "principal": [
+      "agset_restrict"
+    ],
+    "note": "The definition is φ^*(S, ψ) = (S, ψ ∘ φ). Its action is s ↦ φ(s) ·_ψ - by refl."
   },
   {
     "chapter": 7,
@@ -17757,8 +18289,20 @@
     "labels": [
       "def:phi_!"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AgsetInduceWitness",
+      "agset_induce_relation",
+      "AgsetInduceCarrier",
+      "agset_induce_class",
+      "agset_induce_act",
+      "agset_induce",
+      "agset_induce_act_class"
+    ],
+    "principal": [
+      "agset_induce"
+    ],
+    "note": "The set φ_!(X) = P_H ×_G X is the set quotient (T × X)/∼ (Quotient of module 41) for (t, x) ∼ (u, y) ≔ ∃_g (t φ(g) = u) × (x = g ·_X y). An element h acts by the map induced by (t, x) ↦ (h t, x) (by refl on classes)."
   },
   {
     "chapter": 7,
@@ -17770,8 +18314,23 @@
     "labels": [
       "xca:phi_!-OK"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "agset_induce_relation",
+      "agset_induce_witness_refl",
+      "agset_induce_witness_symm",
+      "agset_induce_witness_trans",
+      "agset_induce_shift_respects",
+      "agset_induce_act_mul",
+      "agset_induce_act_unit",
+      "agset_induce"
+    ],
+    "principal": [
+      "agset_induce_relation",
+      "agset_induce_shift_respects",
+      "agset_induce"
+    ],
+    "note": "(1) The relation ∼ is an equivalence relation (witnesses e, g⁻¹, g g'). (2) The map (t, x) ↦ (h t, x) respects ∼. (3) The induced maps satisfy the action laws, so agset_from_action gives the abstract homomorphism H → abstr(Σ_{(T×X)/∼})."
   },
   {
     "chapter": 7,
@@ -17783,8 +18342,19 @@
     "labels": [
       "def:Hom-absG"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractGSetHom",
+      "AgsetEquivariant",
+      "AbstractGSetIso",
+      "agset_iso_hom",
+      "agset_iso_path",
+      "agset_iso_set"
+    ],
+    "principal": [
+      "AbstractGSetHom"
+    ],
+    "note": "Hom_G(X, Y) = Σ_{f : X → Y} Π_s f ∘ (s ·_X -) = (s ·_Y -) ∘ f, with the printed equation of functions. Isomorphisms of G-sets (AbstractGSetIso) use the pointwise form of the equation."
   },
   {
     "chapter": 7,
@@ -17796,8 +18366,22 @@
     "labels": [
       "xca:phi_!-|phi^*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "induce_restrict_abstract_adjunction",
+      "induce_restrict_left",
+      "induce_restrict_right",
+      "induce_restrict_right_map",
+      "induce_restrict_abstract_adjunction_map",
+      "agset_hom_path",
+      "agset_hom_mk",
+      "agset_hom_equivariant",
+      "induce_principal_adjunct"
+    ],
+    "principal": [
+      "induce_restrict_abstract_adjunction"
+    ],
+    "note": "Hom_H(φ_!X, Y) ≃ Hom_G(X, φ^*Y) for all G-sets X and H-sets Y, with the maps of def:Hom-absG. The map is F ↦ (x ↦ F[e, x]) (refl, induce_restrict_abstract_adjunction_map). The inverse sends f to the map [t, x] ↦ t ·_Y f(x) induced on the quotient. Litmus: the adjunct of φ_!(P_G) ≅ P_H is φ."
   },
   {
     "chapter": 7,
@@ -17809,8 +18393,26 @@
     "labels": [
       "def:phi_*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "CoinduceCondition",
+      "coinduce_condition_prop",
+      "AgsetCoinduceCarrier",
+      "agset_coinduce_carrier_set",
+      "agset_coinduce_path",
+      "agset_coinduce_act",
+      "agset_coinduce_act_mul",
+      "agset_coinduce_act_unit",
+      "agset_coinduce",
+      "agset_coinduce_act_value",
+      "int_coinduce_negation",
+      "int_coinduce_action_litmus"
+    ],
+    "principal": [
+      "agset_coinduce",
+      "CoinduceCondition"
+    ],
+    "note": "The set φ_*(X) is {b : T → X | Π_s b ∘ (- φ(s⁻¹)) = (s ·_X -) ∘ b}, with the printed equation of functions. The action on it is h · b = b(h⁻¹ -). The printed action 'b(h⁻¹ ·_X -)' is ill-typed, because h⁻¹ : T does not act on X. We use b(h⁻¹ -), where h⁻¹ - is multiplication in T, as in the text before the definition ('a(h⁻¹ -)'). The formalization proves that this action preserves the condition and is an action (agset_coinduce_act, _mul, _unit). Litmus on ℤ."
   },
   {
     "chapter": 7,
@@ -17822,8 +18424,19 @@
     "labels": [
       "xca:phi^*-|phi_*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "restrict_coinduce_abstract_adjunction",
+      "restrict_coinduce_fwd",
+      "restrict_coinduce_fwd_point",
+      "restrict_coinduce_bwd",
+      "restrict_coinduce_abstract_adjunction_map",
+      "coinduce_inv_phi_inv"
+    ],
+    "principal": [
+      "restrict_coinduce_abstract_adjunction"
+    ],
+    "note": "Hom_G(φ^*Y, X) ≃ Hom_H(Y, φ_*X) for all G-sets X and H-sets Y. The map is f ↦ (y ↦ (t ↦ f(t⁻¹ ·_Y y))) (refl, restrict_coinduce_abstract_adjunction_map), and its inverse is F ↦ (y ↦ F(y)(e))."
   },
   {
     "chapter": 7,
@@ -17835,8 +18448,30 @@
     "labels": [
       "lem:homomabstrconcr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "DeloopCond",
+      "DeloopFamily",
+      "deloop_family_base_contractible",
+      "deloop_family_contractible",
+      "deloop_function",
+      "deloop_paths",
+      "deloop_point",
+      "deloop_hom",
+      "deloop_paths_natural",
+      "deloop_square",
+      "deloop_hom_section",
+      "deloop_canonical",
+      "deloop_hom_retraction",
+      "abstr_hom_book_equiv",
+      "abstr_hom_is_equiv",
+      "abstr_hom_equiv"
+    ],
+    "principal": [
+      "abstr_hom_book_equiv",
+      "deloop_hom"
+    ],
+    "note": "The formalization follows the delooping of the book. The type C(x) = Σ_y Σ_{p : (sh_G = x) → (sh_H = y)} Π_{ω, α} p(α ω) = p(α) f(ω) is contractible. At sh_G it is a retract of Σ_y (sh_H = y), and the rest follows by connectedness. Its centre gives Bg with p f(ω) = Bg(ω) p (deloop_square). Thus abstr(g) = f. The footnote leaves deloop ∘ abstr = id 'to the reader'. The formalization proves it too (deloop_hom_retraction): the canonical element of C(x) built from a homomorphism is equal to the centre. The term abstr_hom_is_equiv is the hypothesis AbstrHomIsEquiv of module 1207."
   },
   {
     "chapter": 7,
@@ -17849,8 +18484,23 @@
       "xca:Bconcr-OK",
       "it:Bconcr_pt"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "induce_principal_map",
+      "induce_principal_iso",
+      "induce_principal_path",
+      "concr_hom_torsor",
+      "concr_hom_point",
+      "concr_hom",
+      "concr_hom_id",
+      "concr_hom_compose"
+    ],
+    "principal": [
+      "induce_principal_path",
+      "concr_hom",
+      "concr_hom_compose"
+    ],
+    "note": "(1) The map (t, x) ↦ t φ(x) induces φ_!(P_G) ≅ P_H (inverse t ↦ [t, e]), and thus an identification. (2) The functor concr preserves identities and composition, with Bconcr(φ) the restriction of φ_! to torsors pointed by the inverse of (1). The proof of (2) uses the faithfulness of abstr (lem:homomabstrconcr) and the naturality computation abstr(concr φ)(r_G s) = r_H(φ s)."
   },
   {
     "chapter": 7,
@@ -17862,8 +18512,35 @@
     "labels": [
       "thm:concr-equiv-cats"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "AbstractGroupWild",
+      "AbstractGroupPrecat",
+      "abstr_functor",
+      "concr_functor",
+      "r_natural_iso",
+      "r_inverse_natural_iso",
+      "q_natural_iso",
+      "q_inverse_natural_iso",
+      "q_hom_usym",
+      "q_natural",
+      "q_natural_generic",
+      "nat_iso_full_inverse",
+      "concr_hom_usym_natural",
+      "concr_hom_usym_action",
+      "concr_hom_abstr",
+      "concr_is_cat_equivalence",
+      "concr_cat_equivalence",
+      "abstr_is_cat_equivalence",
+      "abstr_cat_equivalence",
+      "abstr_functor_fully_faithful"
+    ],
+    "principal": [
+      "concr_is_cat_equivalence",
+      "r_natural_iso",
+      "q_natural_iso"
+    ],
+    "note": "The functor concr : AbstractGroupWild → GroupWild is a functor and an equivalence of categories (IsCatEquivalence of module 603, built by cat_equivalence_from_nat_isos). It uses r : id ⇒ abstr ∘ concr and q⁻¹ : concr ∘ abstr ⇒ id. The functor abstr is also an equivalence (q, r⁻¹). The naturality of r is the footnote computation of the book: ap of φ_! on r_G(s) is id ×_G r_G(s), and [t, e·s⁻¹] ↦ t φ(s)⁻¹. The naturality of q uses abstr(q_G) = r_{abstr G} and the faithfulness of abstr."
   },
   {
     "chapter": 7,
@@ -17875,8 +18552,24 @@
     "labels": [
       "xca:SG2=SG2-contractible"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "sigma_two_cyclic_two_isos_contractible",
+      "sigma_two_cyclic_two_isos_prop",
+      "sigma_two_cyclic_two_iso",
+      "group_iso_abstract_iso_equiv",
+      "sign_like_iso_prop",
+      "sign_like_iso_value",
+      "sign_iso_fixed",
+      "cyclic_two_sign_abstract_iso",
+      "sigma_two_sign_abstract_iso",
+      "sign_automorphisms_contractible"
+    ],
+    "principal": [
+      "sigma_two_cyclic_two_isos_contractible",
+      "group_iso_abstract_iso_equiv"
+    ],
+    "note": "The formal statement reads Iso(Σ_2, C_2) as GroupIso (symmetric_group 2) (cyclic_group 2) and shows that it is BookIsContr. The proof uses the categorical/identity equivalence GroupIso G H ≃ AbstractIso (abstr G) (abstr H) (group_iso_abstract_iso_equiv). Both abstract groups are isomorphic to {±1}, and every automorphism of {±1} is the identity (sign_automorphisms_contractible). The block is in a wip section of the book."
   },
   {
     "chapter": 7,
@@ -17888,8 +18581,28 @@
     "labels": [
       "lem:actionsconcr2abstr"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ev_gset_action",
+      "ev_gset",
+      "ev_gset_underlying",
+      "ev_gset_act",
+      "ev_gset_symmetry",
+      "ev_gset_chain_equiv",
+      "ev_gset_chain_map",
+      "gset_abstract_gset_equiv",
+      "gset_abstract_gset_equiv_map",
+      "ev_gset_is_equiv",
+      "ev_gset_sigma3_tau_zero",
+      "ev_gset_principal_iso",
+      "ev_gset_principal_path"
+    ],
+    "principal": [
+      "ev_gset",
+      "gset_abstract_gset_equiv",
+      "ev_gset_is_equiv"
+    ],
+    "note": "The map ev_gset G X is (X(sh_G), a_X), where a_X is abstr of the homomorphism G -> Sigma_{X(sh_G)} classified by z |-> (X(z), !) (gset_to_action, rem:GSet=SetHomG). The equivalence gset_abstract_gset_equiv has the map ev_gset by refl, and ev_gset_is_equiv is the BookIsEquiv form. The statement that a_X(g) is X(g) = (g ._X -) is typal. It is ev_gset_act (pointwise: a_X(g) acts by transport along g) and ev_gset_symmetry (a_X(g) is the symmetry of the permutation X(g)). Litmus: tau = (0 1) sends 0 to 1 in ev of the standard Sigma_3-set, and ev(P_G) = P_{abstr G}."
   },
   {
     "chapter": 7,
@@ -17901,8 +18614,29 @@
     "labels": [
       "ex:abstrandconj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "group_hom_gset",
+      "hom_gset_conj_transport_refl",
+      "hom_gset_conj_transport",
+      "hom_gset_ev_underlying",
+      "hom_gset_ev_act",
+      "ev_gset_action",
+      "abstr_conj_hom_is_abstract_conj",
+      "hom_gset_conj_mul_law",
+      "hom_gset_conj_unit_law",
+      "hom_gset_conj_act",
+      "hom_gset_conj_agset",
+      "hom_gset_conj_agset_act",
+      "hom_gset_abstr_equivariant",
+      "hom_gset_conj_sigma3_moves_id"
+    ],
+    "principal": [
+      "hom_gset_conj_transport",
+      "hom_gset_ev_act",
+      "hom_gset_abstr_equivariant"
+    ],
+    "note": "By hom_gset_conj_transport, transport along p : sh_G = z in Hom(H,G)(z) = Hom(H, mkgroup(BG_div, z)) is postcomposition with (id_BG, p^-1) (conj_hom, module 437). The proof is by path induction. Thus g acts on ev_{sh_G}(Hom(H,G)) by postcomposition with (id_BG, g^-1) (hom_gset_ev_act). Here the abstract homomorphism USym G -> abstr(Sigma_{Hom(H,G)}) is ev_gset_action. The equation abstr(id_BG, g^-1) = conj^g is abstr_conj_hom_is_abstract_conj (module 730). The lemma hom_gset_abstr_equivariant states abstr((id_BG,g^-1) o f) = conj^g o abstr(f). That is, the action on absHom(abstr H, abstr G) is postcomposition with conj^g. Litmus: in Sigma_3, conj^tau o id != id."
   },
   {
     "chapter": 7,
@@ -17914,8 +18648,24 @@
     "labels": [
       "lem:abstrandconj"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "hom_gset_conj_agset",
+      "hom_gset_conj_act",
+      "hom_gset_conj_act_mul",
+      "hom_gset_conj_act_unit",
+      "hom_gset_conj_iso",
+      "hom_gset_conj_path",
+      "gset_abstract_gset_equiv",
+      "abstr_hom_equiv",
+      "hom_gset_abstr_equivariant"
+    ],
+    "principal": [
+      "hom_gset_conj_path",
+      "hom_gset_conj_agset",
+      "hom_gset_conj_iso"
+    ],
+    "note": "For abstract groups, hom_gset_conj_agset H G is the abstract G-set (absHom(H, G), g |-> conj^g o -). The action laws are proved: conj^{gh} = conj^g o conj^h and conj^e = id. The identification hom_gset_conj_path : gset_abstract_gset_equiv G .map (Hom(H,G)) = hom_gset_conj_agset (abstr H) (abstr G) holds as abstr(G)-sets. It comes from the isomorphism whose underlying equivalence is abstr_hom_equiv H G of lem:homomabstrconcr."
   },
   {
     "chapter": 7,
@@ -17927,8 +18677,23 @@
     "labels": [
       "xca:f^*-abs(f)^*"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "restrict_ev_iso_equivariant",
+      "restrict_ev_iso",
+      "restrict_ev_path",
+      "restrict_ev_square",
+      "restrict_ev_iso_id_map",
+      "gset_restrict",
+      "agset_restrict",
+      "ev_gset",
+      "gset_abstract_gset_equiv"
+    ],
+    "principal": [
+      "restrict_ev_square",
+      "restrict_ev_path"
+    ],
+    "note": "The square restrict_ev_square is Id (GSet H -> absGSet(abstr G)) (ev_{sh_G} o f^*) (abstr(f)^* o ev_{sh_H}). It follows by funext from restrict_ev_path : ev_{sh_G}(f^*Y) = abstr(f)^*(ev_{sh_H} Y). The underlying sets Y(Bf(sh_G)) and Y(sh_H) are not judgmentally equal. The isomorphism is transport in Y along Bf_pt : sh_H = Bf(sh_G). It is equivariant because USym f(g) = Bf_pt . ap_Bf(g) . Bf_pt^-1. Litmus: for f = id the map is the identity."
   },
   {
     "chapter": 7,
@@ -17940,8 +18705,36 @@
     "labels": [
       "xca:f_!-abs(f)_!"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "induce_compare_conj_cancel",
+      "induce_compare_conj_solve",
+      "induce_compare_sum_act",
+      "induce_compare_trunc_act",
+      "induce_compare_rep",
+      "induce_compare_respects_witness",
+      "induce_compare_respects",
+      "induce_compare_reflect_witness",
+      "induce_compare_reflects",
+      "induce_compare_surjective",
+      "induce_compare_map",
+      "induce_compare_class",
+      "induce_compare_book_equiv",
+      "induce_compare_equivariant",
+      "induce_compare_iso",
+      "induce_ev_path",
+      "induce_ev_square",
+      "gset_induce",
+      "agset_induce",
+      "induced_sum_gset",
+      "surjection_quotient_equiv"
+    ],
+    "principal": [
+      "induce_ev_square",
+      "induce_ev_path",
+      "induce_compare_book_equiv"
+    ],
+    "note": "The square induce_ev_square is Id (GSet G -> absGSet(abstr H)) (ev_{sh_H} o f_!) (abstr(f)_! o ev_{sh_G}). It follows by funext from induce_ev_path. The underlying equivalence (USym H x X(sh_G))/~ = f_!X(sh_H) = ||Sigma_z (Bf z = sh_H) x X z||_0 is induced by (t, x) |-> |(sh_G, (Bf_pt^-1 . t, x))|_0, as in induced_sum_underlying_equiv. This map is surjective, and it respects and reflects ~ (surjection_quotient_equiv, the pattern of cor:orbit-equiv). It is equivariant for (t,x) |-> (h t, x) on one side and transport along h on the other side. The printed relation (p USym f(g) = q) matches t . phi(g) = u (concat phi(g) t) of module 740. No flip is necessary."
   },
   {
     "chapter": 7,
@@ -17953,8 +18746,18 @@
     "labels": [
       "def:bipt-conn-groupoid"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "ConnectedGroupoids",
+      "BipointedConnectedGroupoidSigma",
+      "BipointedConnectedGroupoid",
+      "bpcg_sigma_equiv"
+    ],
+    "principal": [
+      "BipointedConnectedGroupoidSigma",
+      "BipointedConnectedGroupoid"
+    ],
+    "note": "BipointedConnectedGroupoidSigma is the printed U^{=1}_{••} = Σ(A : U^{=1})(A × A). Here U^{=1} is ConnectedGroupoids = Σ(A : U)(isconn(A) × isgrpd(A)), by analogy with U^{=1}_* of def:pt-conn-groupoid. The book does not display U^{=1}. No earlier type of connected groupoids existed in src/. The record BipointedConnectedGroupoid (carrier, start, finish, connected, groupoid) is used below. The equivalence bpcg_sigma_equiv identifies it with the Σ-type (both round trips are refl). The second point has the name finish because end is a Narya keyword (module 780)."
   },
   {
     "chapter": 7,
@@ -17966,8 +18769,36 @@
     "labels": [
       "def:heap"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Heap",
+      "mkheap",
+      "heap_B",
+      "heap_eta",
+      "heap_beta",
+      "heap_classifying_equiv",
+      "BHeap",
+      "heap_start_shape",
+      "heap_end_shape",
+      "bh_connected",
+      "bh_groupoid",
+      "ISym",
+      "isym_set",
+      "isym_settype",
+      "heap_usym",
+      "heap_usym_set",
+      "heap_usym_settype",
+      "heap_usym_mkheap",
+      "heap_usym_unfold",
+      "heap_cyclic_double_carrier",
+      "heap_cyclic_double_usym"
+    ],
+    "principal": [
+      "Heap",
+      "mkheap",
+      "heap_usym_settype"
+    ],
+    "note": "Heap is the wrapped copy of U^{=1}_{••} as a one-field record sig (classifying : BipointedConnectedGroupoid). This is exactly how module 400 defines Group (not the data type Copy of module 16). Judgmental eta gives mkheap (heap_B H) ≡ H and heap_B (mkheap X) ≡ X, so the Copy induction principle is trivial. The inline definitions after the block are heap_B (destructor B), heap_start_shape / heap_end_shape, ISym(A, a, a') = (a = a') with isym_set, and USym : Heap → Set as heap_usym_settype. ISym is a set because A is a groupoid. The underlying type of heap_usym_settype is heap_usym, with USym (mkheap X) ≡ ISym X by refl. Module 780."
   },
   {
     "chapter": 7,
@@ -17979,8 +18810,30 @@
     "labels": [
       "xca:group+torsor-heap"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "GroupWithBGPoint",
+      "heap_left_map",
+      "heap_left_equiv",
+      "heap_right_map",
+      "heap_right_equiv",
+      "heap_with_end",
+      "heap_with_start",
+      "group_heap",
+      "group_heap_lift",
+      "heap_double_section",
+      "heap_double_equiv",
+      "heap_double_equiv_map",
+      "heap_left_double",
+      "heap_right_double",
+      "heap_right_with_end"
+    ],
+    "principal": [
+      "heap_left_equiv",
+      "heap_right_equiv",
+      "heap_double_equiv"
+    ],
+    "note": "The equivalence l = heap_left_equiv : Heap ≃ Σ_{G : Group} BG takes the start shape as the designated shape. It keeps the end shape as the point of BG. The equivalence r = heap_right_equiv does the same with the endpoints exchanged. For both l and r, the round trips hold by refl (record eta). The equivalence c = heap_double_equiv : Group ≃ Σ_{H : Heap} USym H maps G to the doubled heap with refl (the lift of the doubling map). Its inverse takes the start group. One round trip is refl, and the other contracts (a', p) to (a, refl a) in the based path space. The equivalences are of type Equiv, built from quasi-inverses (module 781)."
   },
   {
     "chapter": 7,
@@ -17990,8 +18843,58 @@
     "line": 1384,
     "section_raw": "Heaps \\texorpdfstring{$(\\dagger)$}{(\\textdagger) \\color{red} just moved from symmetry without proofreading BID211116}}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "heap_ternary",
+      "heap_end_loop",
+      "heap_start_loop",
+      "heap_end_act",
+      "heap_start_act",
+      "heap_translation",
+      "heap_translation_end_act",
+      "heap_end_act_mul",
+      "heap_end_act_equiv",
+      "heap_translation_equiv",
+      "heap_translation_equiv_map",
+      "SymmetryImageData",
+      "SymmetryImage",
+      "symmetry_image_group",
+      "symmetry_image_iso",
+      "symmetry_image_include",
+      "heap_end_loop_surjective",
+      "heap_end_symmetry_data",
+      "heap_translation_group",
+      "heap_translation_group_carrier",
+      "heap_end_act_injective",
+      "heap_translation_end_iso",
+      "heap_translation_end_path",
+      "heap_translation_concrete_group",
+      "heap_translation_concrete_end_path",
+      "heap_translation_start",
+      "heap_start_act_ternary",
+      "heap_start_act_mul",
+      "heap_start_act_equiv",
+      "heap_start_loop_surjective",
+      "heap_start_symmetry_data",
+      "heap_translation_start_group",
+      "heap_translation_start_family",
+      "heap_start_act_injective",
+      "heap_translation_start_iso",
+      "heap_translation_start_path",
+      "heap_translation_start_concrete_group",
+      "heap_translation_start_concrete_path",
+      "heap_start_loop_ternary",
+      "heap_translation_start_compose",
+      "heap_sigma3_ternary_action",
+      "heap_sigma3_translation_end",
+      "heap_ternary_path_heap_op"
+    ],
+    "principal": [
+      "heap_translation_group",
+      "heap_translation_end_iso",
+      "heap_translation_concrete_end_path"
+    ],
+    "note": "By def:eq-trans, the juxtaposition qp of the book is trans(p)(q) = concat p q (first p). Thus p q⁻¹ r is heap_ternary H p q r = concat r (concat q⁻¹ p). That is, it is the post-composition of r with the end-shape symmetry p q⁻¹. Litmus (heap_sigma3_ternary_action): τ e σ sends 0 to τ(σ(0)) = 1. The group of the symmetries r ↦ p q⁻¹ r is heap_translation_group H. It is the image of (p, q) ↦ (r ↦ p q⁻¹ r) in USym H ≃ USym H under composition. It is an abstract group (modules 782-783) and a group through concr (module 786). The isomorphism heap_translation_end_iso identifies it with abstr of the end group through g ↦ (r ↦ g r). Thus heap_translation_concrete_end_path : end group = concr(translations). This step uses concr ∘ abstr = id (module 709). For the other endpoint, the symmetries r ↦ r p⁻¹ q = heap_ternary H r p q form heap_translation_start_group ≅ abstr(start group), through g ↦ (r ↦ r g⁻¹). Its composition is (p, q)(p', q') = (p q'⁻¹ p', q)."
   },
   {
     "chapter": 7,
@@ -18001,8 +18904,43 @@
     "line": 1391,
     "section_raw": "Heaps \\texorpdfstring{$(\\dagger)$}{(\\textdagger) \\color{red} just moved from symmetry without proofreading BID211116}}",
     "labels": [],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "heap_endpoint_iso",
+      "heap_endpoint_group_path",
+      "heap_endpoints_merely_iso",
+      "heap_endpoints_merely_equal",
+      "IsAbelianHeap",
+      "is_abelian_heap_prop",
+      "heap_end_abelian_to_heap",
+      "heap_abelian_to_end",
+      "heap_abelian_end_equiv",
+      "heap_start_end_abelian",
+      "heap_end_start_abelian",
+      "heap_abelian_start_equiv",
+      "heap_conj_abstract_iso",
+      "heap_conj_constant_base",
+      "heap_conj_constant",
+      "heap_conj_abstract_constant",
+      "heap_canonical_abstract_iso",
+      "heap_canonical_abstract_iso_value",
+      "heap_canonical_abstract_path",
+      "heap_endpoint_iso_constant",
+      "heap_canonical_iso",
+      "heap_canonical_iso_value",
+      "heap_canonical_group_path",
+      "heap_canonical_iso_abstract",
+      "heap_sigma3_not_abelian",
+      "heap_double_abelian",
+      "heap_double_canonical_identity",
+      "heap_unit_group_abelian"
+    ],
+    "principal": [
+      "heap_endpoints_merely_iso",
+      "IsAbelianHeap",
+      "heap_canonical_iso"
+    ],
+    "note": "The lemma heap_endpoints_merely_iso gives Mere (GroupIso (start group) (end group)) by conjugation with a mere p : a = a' (conj_iso of module 437). Thus the two groups are also merely equal as groups. An abelian heap is one with p q⁻¹ r = r q⁻¹ p (IsAbelianHeap). The book leaves this notion to the reader. A heap is abelian if and only if its end group is abelian, and also if and only if its start group is abelian. For abelian heaps, heap_canonical_iso : GroupIso (start) (end) is defined without a choice of p (weakly constant elimination, thm:wconstant-elim). It is equal to conjugation by every p (heap_canonical_iso_value). The independence of p uses lem:homomabstrconcr (abstr_hom_equiv, module 710). The abstract-group version heap_canonical_abstract_iso (module 784) needs only module 702. Litmus: the doubled heap of Σ_3 is not abelian, and the canonical isomorphism of a doubled abelian group is the identity."
   },
   {
     "chapter": 7,
@@ -18014,8 +18952,51 @@
     "labels": [
       "xca:heap-variety"
     ],
-    "status": "unmapped",
-    "declarations": []
+    "status": "mapped",
+    "declarations": [
+      "Ternary",
+      "TernarySets",
+      "PointedTernarySets",
+      "heap_ternary_structure",
+      "heap_pointed_structure",
+      "HeapEquations",
+      "heap_equations_prop",
+      "HeapLaws",
+      "heap_laws_prop",
+      "TernaryHeapLaws",
+      "heap_ternary_paraassoc",
+      "heap_ternary_equations",
+      "heap_ternary_laws",
+      "heap_fiber_laws",
+      "abstract_group_ternary",
+      "abstract_group_pointed_ternary",
+      "heap_pointed_structure_double",
+      "abstract_group_heap_equations",
+      "PointedHeapLaws",
+      "PointedHeaps",
+      "pointed_heap_group",
+      "pointed_heap_ternary_recover",
+      "abstract_group_pointed_heap_equiv",
+      "abstract_group_pointed_fiber_equiv",
+      "total_map_fiber_equiv",
+      "heap_pointed_fiber_equiv",
+      "heap_pointed_fiber_laws_equiv",
+      "heap_ternary_fiber_pointed_equiv",
+      "heap_ternary_fiber_prop",
+      "heap_ternary_fiber_equiv",
+      "heap_from_laws",
+      "heap_usym_fiber_ternary_equiv",
+      "heap_usym_fiber_set",
+      "heap_empty_not_heap",
+      "heap_bool_projection_not_heap",
+      "heap_unit_heap"
+    ],
+    "principal": [
+      "heap_usym_fiber_set",
+      "heap_ternary_fiber_prop",
+      "heap_ternary_fiber_equiv"
+    ],
+    "note": "The lemma heap_usym_fiber_set S proves isSet (Σ_{H : Heap} (S = USym H)) (BookFiber, identification in Set). By heap_ternary_fiber_prop, the fiber of H ↦ (USym H, (p, q, r) ↦ p q⁻¹ r) at (S, t) is a proposition. The equivalence heap_ternary_fiber_equiv identifies this fiber with Mere S × (t(x, x, y) = y) × (t(x, y, y) = x) × (t(t(x, y, z), u, v) = t(x, y, t(z, u, v))). Ternary operations are uncurried S × (S × S) → S, as printed. Deviation: in addition to the equations, the description needs that S is merely inhabited. The empty set with its unique t satisfies all equations but is not a heap (heap_empty_not_heap). The proofs use abstract groups = pointed heaps (module 785) and thm:Groupsareidentitytypes (module 787)."
   },
   {
     "chapter": 8,

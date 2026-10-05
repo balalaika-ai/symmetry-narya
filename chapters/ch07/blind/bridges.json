@@ -1,0 +1,1321 @@
+[
+  {
+    "source": "absgroup.tex",
+    "line": 47,
+    "labels": [
+      "def:monoid",
+      "struc:monoid-set",
+      "struc:monoid-unit",
+      "struc:monoid-mult",
+      "monoid:unit-laws",
+      "monoid:ass-law"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindMonoid",
+      "BlindMonoidLaws",
+      "BlindUnitLaws",
+      "BlindAssocLaw"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_monoid",
+      "bridge_def_group_laws"
+    ],
+    "our_declarations": [
+      "Monoid",
+      "MonoidLaws",
+      "UnitLaws",
+      "AssocLaw"
+    ],
+    "note": "BlindMonoid and Monoid have the same fields. The blind laws (BlindUnitLaws, BlindAssocLaw, BlindMonoidLaws) are ours by refl. Thus bridge_def_monoid is an equivalence with refl round trips."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 66,
+    "labels": [
+      "exa:monoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_exa_monoid"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_exa_monoid"
+    ],
+    "our_declarations": [
+      "list_monoid_laws",
+      "list_monoid"
+    ],
+    "note": "The List, nil and append are the same. The blind claim is our list_monoid_laws."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 96,
+    "labels": [
+      "def:type-abstrgp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindAbsGroup",
+      "BlindGroupLaws",
+      "BlindInverseLaw",
+      "BlindUnitLaws",
+      "BlindAssocLaw",
+      "BlindMonoidLaws",
+      "blind_abstr"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_ag7",
+      "bridge_ag7_inv",
+      "bridge_def_abs_group",
+      "bridge_def_group_laws",
+      "bridge_def_abstr7",
+      "bridge_def_abstr_inv"
+    ],
+    "our_declarations": [
+      "AbstractGroup",
+      "AbstractGroupLaws",
+      "GroupLaws",
+      "group_laws_from_record",
+      "abstr"
+    ],
+    "note": "BlindAbsGroup (with the laws as the nested Σ GroupLaws) and our record AbstractGroup are inverse up to η (bridge_def_abs_group, refl round trips). Also, blind_abstr G is abstr G by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 116,
+    "labels": [
+      "rem:inverses-as-property",
+      "monoid:inv-op",
+      "monoid:inv-law",
+      "axiom:mere-inverse"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindMereInverse"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_def_mere_inverse"
+    ],
+    "our_declarations": [
+      "MereInverses"
+    ],
+    "note": "BlindMereInverse is MereInverses by refl (same orientation e = g·h)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 141,
+    "labels": [
+      "lem:group-inv-operation"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_lem_group_inv_operation"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_lem_group_inv_operation"
+    ],
+    "our_declarations": [
+      "group_inv_operation_contractible"
+    ],
+    "note": "This is definitionally our statement."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 182,
+    "labels": [],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "abstr_is_equiv"
+    ],
+    "note": "This is a forward reference to thm:Groupsareidentitytypes (bridged at line 648). It has no claim of its own. The blind version and ours agree."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 189,
+    "labels": [
+      "rem:abs-iso",
+      "ft:no-abs-inftygp"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindIsAbsIso",
+      "BlindAbsIso",
+      "blind_rem_abs_iso"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_iso_of_blind",
+      "bridge_is_abs_iso_of",
+      "bridge_rem_abs_iso"
+    ],
+    "our_declarations": [
+      "AbstractIso",
+      "abstract_group_path_from_iso",
+      "abstract_hom_preserves_unit"
+    ],
+    "note": "A blind isomorphism (BookIsEquiv f, e' = f(e), μ'(fs,ft) = f(μ(s,t))) gives our AbstractIso, and back. The identification is ap bridge_ag7_inv of abstract_group_path_from_iso, whose carrier transport is f by refl. The footnote ft:no-abs-inftygp is informal on both sides."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 215,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_xca_abs_iso_analysis"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_xca_abs_iso_analysis"
+    ],
+    "our_declarations": [
+      "abstract_group_path_equations_equiv"
+    ],
+    "note": "The bridge is bridge_ag_paths (paths of BlindAbsGroup = paths of AbstractGroup, refl round trips), composed with our abstract_group_path_equations_equiv. The blind transport Type (X ↦ X) p is our p .trr by conversion."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 219,
+    "labels": [
+      "xca:op-abs-group"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_op_mul",
+      "blind_xca_op_abs_group"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_xca_op_abs_group"
+    ],
+    "our_declarations": [
+      "abstract_op_laws",
+      "abstract_op_group",
+      "abstract_op_iso"
+    ],
+    "note": "The laws of G^op come from abstract_op_laws. The isomorphism ι is our abstract_op_iso, converted to the printed iso form."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 232,
+    "labels": [
+      "xca:conj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_conj",
+      "blind_xca_conj"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_xca_conj"
+    ],
+    "our_declarations": [
+      "abstract_conj",
+      "abstract_conj_iso",
+      "abstract_conj_mul",
+      "abstract_conj_printed_instance_fails"
+    ],
+    "note": "The blind conj^g s = (g·s)·g⁻¹ is ours. The blind statement blind_xca_conj (conj^g is an isomorphism) is abstract_conj_iso in the printed form. The blind statement states the intended claim, not the printed example instance (s instead of s'). That instance is false (abstract_conj_printed_instance_fails). For that reason, the block has the status refuted in book-inventory.json."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 241,
+    "labels": [
+      "rem:ee=e_coherence"
+    ],
+    "status": "no-claim",
+    "blind_file": null,
+    "blind_declarations": [],
+    "bridge_file": null,
+    "bridge_declarations": [],
+    "our_declarations": [
+      "monoid_unit_coherence",
+      "unit_coherence_counterexample"
+    ],
+    "note": "Blind: a meta-remark without a claim about the defined notions. Our version formalizes the coherence point of the remark: both proofs of e·e = e agree in a monoid, and there is a counterexample without the set condition."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 251,
+    "labels": [
+      "xca:left-inv-involution"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_xca_left_inv_involution"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_xca_left_inv_involution"
+    ],
+    "our_declarations": [
+      "ag_inv_left_book",
+      "ag_inv_involution"
+    ],
+    "note": "The orientations are the same (e = g⁻¹·g, g = (g⁻¹)⁻¹)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 257,
+    "labels": [
+      "xca:typemonoidisgroupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "blind_xca_typemonoidisgroupoid"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_groupoid_transfer",
+      "bridge_xca_typemonoidisgroupoid"
+    ],
+    "our_declarations": [
+      "monoid_groupoid",
+      "abstract_group_groupoid"
+    ],
+    "note": "Our groupoid proofs are transported along bridge_def_monoid and bridge_def_abs_group (hlevel_equiv)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 261,
+    "labels": [
+      "xca:cheapgroup"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindShearGroup",
+      "blind_shear_bar",
+      "blind_xca_cheapgroup"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_shear",
+      "bridge_shear_inv",
+      "bridge_def_shear_group",
+      "bridge_xca_cheapgroup"
+    ],
+    "our_declarations": [
+      "ShearGroup",
+      "abstract_shear_equiv"
+    ],
+    "note": "BlindShearGroup ≃ ShearGroup (fields regrouped, refl round trips, law 3 identical). The blind BookEquiv is our abstract_shear_equiv, composed with the definition bridges."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 277,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/01-monoids.ny",
+    "blind_declarations": [
+      "BlindFurstenbergGroup",
+      "blind_xca_furstenberg"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-01-monoids.ny",
+    "bridge_declarations": [
+      "bridge_furstenberg",
+      "bridge_furstenberg_inv",
+      "bridge_def_furstenberg_group",
+      "bridge_xca_furstenberg"
+    ],
+    "our_declarations": [
+      "FurstenbergGroup",
+      "furstenberg_abstract_equiv"
+    ],
+    "note": "BlindFurstenbergGroup ≃ FurstenbergGroup (refl round trips). The blind BookEquiv is furstenberg_abstract_equiv, composed with the definition bridges."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 299,
+    "labels": [
+      "{xca:onlymult-hom"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "blind_xca_onlymult_hom"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_xca_onlymult_hom"
+    ],
+    "our_declarations": [
+      "abstract_hom_preserves_unit",
+      "abstract_hom_preserves_inv"
+    ],
+    "note": "The orientations are the same."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 319,
+    "labels": [
+      "def:abstrisfunctor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "BlindIsAbsHom",
+      "BlindAbsHom",
+      "blind_abstr_hom",
+      "blind_def_abstrisfunctor_prop"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_def_abstrisfunctor_prop",
+      "bridge_def_abs_hom",
+      "bridge_def_abstr_hom"
+    ],
+    "our_declarations": [
+      "IsAbstractHom",
+      "AbstractHom",
+      "abstr_hom",
+      "is_abstract_hom_prop",
+      "abstract_hom_set"
+    ],
+    "note": "BlindAbsHom and blind_abstr_hom are ours by refl (bridge-00-core). The footnote (prop, set) is ours."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 350,
+    "labels": [
+      "rem:monoid-hom"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "BlindMonoidHom",
+      "blind_rem_monoid_hom",
+      "blind_bool_monoid",
+      "blind_unit_monoid",
+      "blind_ft_monoid_hom"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_def_monoid_hom",
+      "bridge_rem_monoid_hom",
+      "bridge_ft_monoid_hom"
+    ],
+    "our_declarations": [
+      "MonoidHom",
+      "abstract_hom_monoid_hom",
+      "monoid_footnote_map_mul",
+      "monoid_footnote_map_not_unit",
+      "two_element_monoid_zero_inverse"
+    ],
+    "note": "BlindMonoidHom is MonoidHom by refl. For ft:monoid-hom, the blind Bool monoid with and is ours on constructors. The blind 'no inverse operation' follows from our two_element_monoid_zero_inverse at false."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 365,
+    "labels": [
+      "xca:abshomcomposition"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "blind_abshom_id",
+      "blind_abshom_compose",
+      "blind_xca_abshomcomposition"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_def_abshom_id",
+      "bridge_def_abshom_compose",
+      "bridge_xca_abshomcomposition"
+    ],
+    "our_declarations": [
+      "abstract_hom_compose",
+      "abstr_hom_id",
+      "abstr_hom_compose",
+      "group_endo_monoid",
+      "abstract_endo_monoid"
+    ],
+    "note": "The blind identity and composite are ours by refl. For abstr(id) and abstr(f1 f0), the bridge works on underlying functions through ap of our identifications. Both monoid laws are ours."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 378,
+    "labels": [
+      "ex:conjhom"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "blind_ex_conjhom_hom",
+      "blind_ex_conjhom_post",
+      "blind_ex_conjhom_pre",
+      "blind_ex_conjhom_pre_corrected",
+      "blind_ex_conjhom_inner"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_ag_path_ext",
+      "bridge_ex_conjhom_hom",
+      "bridge_ex_conjhom_post",
+      "bridge_ex_conjhom_pre_corrected",
+      "bridge_ex_conjhom_pre_refuted",
+      "bridge_ex_conjhom_inner"
+    ],
+    "our_declarations": [
+      "abstract_conj_mul",
+      "abstract_conj_transport_postcompose",
+      "abstract_conj_transport_precompose",
+      "abstract_conj_transport_precompose_printed_fails",
+      "abstr_conj_hom_is_abstract_conj",
+      "inn_usym_acts_by_conjugation"
+    ],
+    "note": "The blind statements quantify over every p : G = G with carrier transport conj^g. Every such p is equal to our abstract_conj_path (bridge_ag_path_ext: paths are isomorphisms, and their maps determine them). Thus post and pre_corrected follow from ours. The new counterexample abstract_conj_transport_precompose_printed_fails (module 731: abstr Σ₃, f = id, h = τσ) refutes the literal blind_ex_conjhom_pre (precomposition with conj^h). The inner part follows from ours by ap."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 406,
+    "labels": [
+      "xca:abs-homgroup"
+    ],
+    "status": "bridged-corrected",
+    "blind_file": "chapters/ch07/blind/02-abshom.ny",
+    "blind_declarations": [
+      "BlindAbsIsAbelian",
+      "blind_xca_abs_homgroup",
+      "blind_xca_abs_homgroup_corrected"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-02-abshom.ny",
+    "bridge_declarations": [
+      "bridge_xca_abs_homgroup_refuted",
+      "bridge_xca_abs_homgroup_corrected"
+    ],
+    "our_declarations": [
+      "pointwise_products_hom_fixed_domain_fails",
+      "abelian_pointwise_mul_hom",
+      "square_hom_abelian"
+    ],
+    "note": "Our counterexample (H trivial, G = abstr Σ₃) refutes the literal version (fixed H). The corrected version (all H) follows from abelian_pointwise_mul_hom and square_hom_abelian (H = G, f = g = id). The blind formalization and ours found the same error independently."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 461,
+    "labels": [
+      "def:abstrGtorsors"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_perm_group",
+      "BlindAbsGSet",
+      "blind_gset_act",
+      "blind_gset_of_action",
+      "blind_abs_principal",
+      "BlindAbsTorsor"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-00-core.ny",
+    "bridge_declarations": [
+      "bridge_def_gset7",
+      "bridge_def_gset_act",
+      "bridge_gofa_path",
+      "bridge_principal_path",
+      "bridge_component_map",
+      "bridge_component_equiv",
+      "bridge_def_torsor",
+      "bridge_def_perm_group"
+    ],
+    "our_declarations": [
+      "AbstractGSet",
+      "agset_act",
+      "agset_from_action",
+      "agset_principal",
+      "AbstractTorsors",
+      "agset_structure_ext"
+    ],
+    "note": "BlindAbsGSet and the action are ours by refl. Both blind_gset_of_action and the blind principal torsor use other proofs for the inverse of the action. Thus they are equal to ours by a path (same set, same action, agset_structure_ext). The torsor types are equivalent through this path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 495,
+    "labels": [
+      "xca:absprtorsor"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_xca_absprtorsor"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_absprtorsor_mul",
+      "bridge_absprtorsor_unit",
+      "bridge_xca_absprtorsor"
+    ],
+    "our_declarations": [
+      "agset_principal_right",
+      "agset_principal_right_path"
+    ],
+    "note": "The action laws come from ours (agset_principal_right). The identification is ours, conjugated by the principal-torsor and gset_of_action paths."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 505,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_ex_abstr_gset_unfold"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_ex_abstr_gset_unfold"
+    ],
+    "our_declarations": [
+      "abstr_gset_unfold"
+    ],
+    "note": "Both are refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 523,
+    "labels": [
+      "def:concr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_abs_gset_groupoid",
+      "blind_concr",
+      "blind_concr_carrier"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_def_concr",
+      "bridge_def_concr_abstr",
+      "bridge_concr_path"
+    ],
+    "our_declarations": [
+      "concr",
+      "abstract_torsors_connected",
+      "abstract_torsors_groupoid"
+    ],
+    "note": "The identification blind_concr G = concr G uses a point path between the blind principal torsor and ours. It also uses the uniqueness of the connectedness/groupoid witnesses (pcg_witnesses_unique). The blind groupoid proof of AbsGSet is a proof of our agset_groupoid's proposition."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 547,
+    "labels": [
+      "ex:BqG",
+      "ft:shG=z"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_bq_set",
+      "blind_post",
+      "blind_bq_gset",
+      "blind_bq",
+      "blind_bq_pointed",
+      "blind_ex_bqg_principal",
+      "blind_ft_shg_z"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_bq_gset_path",
+      "bridge_ex_bqg_principal",
+      "bridge_preinv_mul",
+      "bridge_preinv_unit",
+      "bridge_ft_shg_z"
+    ],
+    "our_declarations": [
+      "bq_gset",
+      "bq_gset_principal",
+      "preinv_gset",
+      "preinv_gset_principal_path"
+    ],
+    "note": "The blind Bq_G(z) is our bq_gset up to the action proofs. The statement 'definitionally the principal torsor' holds on both sides (refl). The bridge derives it from bq_gset_principal. For ft:shG=z, the action laws come from preinv_gset, and the identification comes from preinv_gset_principal_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 580,
+    "labels": [
+      "def:qG-concr-abstr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_qG"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_def_qG"
+    ],
+    "our_declarations": [
+      "q_hom",
+      "bq_map"
+    ],
+    "note": "The blind q_G's map is our bq_map followed by the torsor identification, pointwise."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 587,
+    "labels": [
+      "lem:Groupsareidentitytypes"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_lem_groups_are_identity_types"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_lem_groups_are_identity_types"
+    ],
+    "our_declarations": [
+      "q_hom_is_iso",
+      "bq_map"
+    ],
+    "note": "This is our q_hom_is_iso, composed with the torsor-type equivalence. It is homotopic to the blind Bq_G (bridge_book_equiv_homotopic)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 648,
+    "labels": [
+      "thm:Groupsareidentitytypes"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/03-torsors.ny",
+    "blind_declarations": [
+      "blind_thm_groups_are_identity_types",
+      "blind_ft_abstract_cayley"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-03-torsors.ny",
+    "bridge_declarations": [
+      "bridge_ag_inv_equiv",
+      "bridge_thm_groups_are_identity_types",
+      "bridge_inj_embedding",
+      "bridge_ft_abstract_cayley"
+    ],
+    "our_declarations": [
+      "abstr_book_equiv",
+      "abstract_cayley_hom",
+      "abstract_cayley_injective"
+    ],
+    "note": "The equation blind_abstr = bridge_ag7_inv ∘ abstr holds by refl, so BookIsEquiv follows from abstr_book_equiv. Cayley: an injective map into a set gives the blind IsEmbedding."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 733,
+    "labels": [
+      "def:phi^*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "blind_phi_star"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_phi_star"
+    ],
+    "our_declarations": [
+      "agset_restrict"
+    ],
+    "note": "The blind φ^* is ours by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 762,
+    "labels": [
+      "def:phi_!"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "blind_phi_rel",
+      "blind_phi_eqrel",
+      "blind_phi_induced",
+      "blind_phi_quotient",
+      "blind_phi_class",
+      "blind_phi_shriek"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_phi_tx",
+      "bridge_def_phi_rel_witness",
+      "bridge_def_phi_quotient",
+      "bridge_def_phi_class",
+      "bridge_phi_induced_path",
+      "bridge_phi_shriek_path",
+      "bridge_phi_shriek_path_class"
+    ],
+    "our_declarations": [
+      "AgsetInduceWitness",
+      "agset_induce_relation",
+      "AgsetInduceCarrier",
+      "agset_induce_class",
+      "agset_induce_act",
+      "agset_induce"
+    ],
+    "note": "The blind φ_! has the data of xca:phi_!-OK as parameters. For every such data, the quotient, its classes and its set proof are ours by refl. The reason is that a quotient depends only on the predicate of the relation. The action is equal to ours (quotient induction). Thus blind φ_!X = agset_induce X (bridge_phi_shriek_path)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 785,
+    "labels": [
+      "xca:phi_!-OK"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "BlindPhiShriekOK",
+      "blind_xca_phi_shriek_ok"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_phi_shriek_respects",
+      "bridge_phi_shriek_ok_at",
+      "bridge_xca_phi_shriek_ok"
+    ],
+    "our_declarations": [
+      "agset_induce_relation",
+      "agset_induce_shift_witness",
+      "agset_induce"
+    ],
+    "note": "All six fields of the blind data come from our proofs."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 797,
+    "labels": [
+      "def:Hom-absG"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "BlindAbsGSetHom"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_gset_hom"
+    ],
+    "our_declarations": [
+      "AbstractGSetHom"
+    ],
+    "note": "They are identical by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 816,
+    "labels": [
+      "xca:phi_!-|phi^*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "blind_xca_phi_shriek_adj"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_phi_shriek_adj"
+    ],
+    "our_declarations": [
+      "induce_restrict_abstract_adjunction"
+    ],
+    "note": "For every data, our adjunction is transported along bridge_phi_shriek_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 876,
+    "labels": [
+      "def:phi_*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "BlindPhiLowerSet",
+      "blind_phi_lower_raw_act",
+      "BlindPhiLowerOK",
+      "blind_def_phi_lower_ok",
+      "blind_phi_lower"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_def_phi_lower_set",
+      "bridge_phi_lower_ok_at",
+      "bridge_def_phi_lower_ok",
+      "bridge_phi_lower_act_path",
+      "bridge_phi_lower_path"
+    ],
+    "our_declarations": [
+      "AgsetCoinduceCarrier",
+      "CoinduceCondition",
+      "agset_coinduce_act",
+      "agset_coinduce"
+    ],
+    "note": "The blind reading of the ill-typed printed action (b(h⁻¹ · -) with the multiplication of H) is ours. The closure and action laws (a blind parameter) come from our proofs. For every such data, blind φ_*X = agset_coinduce X. The path comes from the identity iso, and the set proofs are different."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 893,
+    "labels": [
+      "xca:phi^*-|phi_*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/04-phi-functors.ny",
+    "blind_declarations": [
+      "blind_xca_phi_lower_adj"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-04-phi-functors.ny",
+    "bridge_declarations": [
+      "bridge_xca_phi_lower_adj"
+    ],
+    "our_declarations": [
+      "restrict_coinduce_abstract_adjunction"
+    ],
+    "note": "For every data, our adjunction is transported along bridge_phi_lower_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 933,
+    "labels": [
+      "lem:homomabstrconcr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/05-homs.ny",
+    "blind_declarations": [
+      "blind_lem_homomabstrconcr"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-05-homs.ny",
+    "bridge_declarations": [
+      "bridge_lem_homomabstrconcr"
+    ],
+    "our_declarations": [
+      "abstr_hom_is_equiv"
+    ],
+    "note": "This is definitionally ours."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1028,
+    "labels": [
+      "xca:Bconcr-OK",
+      "it:Bconcr_pt"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/05-homs.ny",
+    "blind_declarations": [
+      "BlindBconcrOK1",
+      "blind_xca_bconcr_ok1",
+      "blind_bconcr",
+      "blind_concr_mor",
+      "BlindConcrData",
+      "blind_concr_mor_d",
+      "BlindConcrMapId",
+      "BlindConcrMapComp",
+      "blind_xca_bconcr_ok2"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-05-homs.ny",
+    "bridge_declarations": [
+      "bridge_xca_bconcr_ok1",
+      "bridge_adj_ipp",
+      "bridge_adj_ipp_class",
+      "bridge_key_path",
+      "bridge_gen_hom",
+      "bridge_gen_vary",
+      "bridge_gen_id",
+      "bridge_gen_comp",
+      "bridge_ours_gen",
+      "bridge_concr_mor_cmp",
+      "bridge_concr_map_id",
+      "bridge_concr_map_comp",
+      "bridge_xca_bconcr_ok2",
+      "bridge_concr_data"
+    ],
+    "our_declarations": [
+      "induce_principal_path",
+      "induce_principal_transport",
+      "concr_hom",
+      "concr_hom_id",
+      "concr_hom_compose"
+    ],
+    "note": "(1) For every data of xca:phi_!-OK: our induce_principal_path is moved to the blind principal torsors, with the class condition [t,s] ↦ tφ(s). (2) For every data d, the blind Bconcr(φ) is bridge_gen_hom of (blind φ_!, blind points, the path of the data). It is equal to our concr_hom with moved points. This uses the homotopy blind φ_! = agset_induce. It also uses that the path of the data agrees with ours on classes, and thus as G-set paths. The functor laws move along the points by path induction. The lemma bridge_concr_data shows that the data exist."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1037,
+    "labels": [
+      "thm:concr-equiv-cats"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/05-homs.ny",
+    "blind_declarations": [
+      "BlindAbsGroupWild",
+      "blind_is_abshom_prop",
+      "blind_abshom_path",
+      "blind_thm_concr_equiv_cats"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-05-homs.ny",
+    "bridge_declarations": [
+      "bridge_def_abs_group_wild_hom",
+      "bridge_def_abs_group_wild_comp",
+      "bridge_blind_concr_functor",
+      "bridge_concr_mor_equiv",
+      "bridge_concr_split_eso",
+      "bridge_thm_concr_equiv_cats",
+      "bridge_wrap",
+      "bridge_wrap_equiv",
+      "bridge_gen_equiv"
+    ],
+    "our_declarations": [
+      "concr_functor",
+      "concr_is_cat_equivalence",
+      "cat_equivalence_mor_is_equiv",
+      "concr_abstr_path",
+      "ff_split_eso_is_cat_equivalence"
+    ],
+    "note": "For every data d, the functor laws hold as in 1028. The functor is fully faithful, because our concr_hom is an equivalence on arrows (from concr_is_cat_equivalence) and the move of the points preserves this. It is split essentially surjective through blind_concr(blind_abstr K) = concr(abstr K) = K. It is an equivalence by ff + split eso (module 641). The blind wild category has our hom-sets and composition by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1160,
+    "labels": [
+      "xca:SG2=SG2-contractible"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/05-homs.ny",
+    "blind_declarations": [
+      "blind_xca_sg2_c2_contractible"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-05b-sg2.ny",
+    "bridge_declarations": [
+      "bridge_xca_sg2_c2_contractible"
+    ],
+    "our_declarations": [
+      "sigma_two_cyclic_two_isos_contractible",
+      "cyclic_group_fin_path"
+    ],
+    "note": "The blind C_2 is cyclic_group_fin 1 = cyclic_group 2 (cyclic_group_fin_path). The bridge transports our contractibility proof."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1195,
+    "labels": [
+      "lem:actionsconcr2abstr"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/06-actions.ny",
+    "blind_declarations": [
+      "blind_gset_sym",
+      "blind_gset_sym_hom",
+      "blind_ev_sh",
+      "blind_lem_actionsconcr2abstr"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-06-actions.ny",
+    "bridge_declarations": [
+      "bridge_ev_path",
+      "bridge_lem_actionsconcr2abstr"
+    ],
+    "our_declarations": [
+      "ev_gset",
+      "ev_gset_act",
+      "gset_abstract_gset_equiv"
+    ],
+    "note": "The blind a_X(g) = X(g) and ours act identically (ev_gset_act). Thus the blind ev is equal to ours by a path. BookIsEquiv follows by homotopy."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1208,
+    "labels": [
+      "ex:abstrandconj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/06-actions.ny",
+    "blind_declarations": [
+      "blind_hom_gset",
+      "blind_ex_abstrandconj_transport",
+      "blind_ex_abstrandconj_action"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-06-actions.ny",
+    "bridge_declarations": [
+      "bridge_def_hom_gset",
+      "bridge_ex_abstrandconj_transport",
+      "bridge_hom_conj_compat",
+      "bridge_ex_abstrandconj_action"
+    ],
+    "our_declarations": [
+      "group_hom_gset",
+      "hom_gset_conj_transport",
+      "abstr_hom_compose",
+      "abstr_conj_hom_is_abstract_conj"
+    ],
+    "note": "The blind G-set Hom(H,G) is ours by refl. Transport and the conjugation compatibility come from ours."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1237,
+    "labels": [
+      "lem:abstrandconj"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/06-actions.ny",
+    "blind_declarations": [
+      "BlindHomConjCompat",
+      "blind_lem_abstrandconj"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-06-actions.ny",
+    "bridge_declarations": [
+      "bridge_lem_abstrandconj",
+      "bridge_lem_abstrandconj_converse"
+    ],
+    "our_declarations": [
+      "abstr_hom_is_equiv",
+      "hom_gset_conj_path"
+    ],
+    "note": "This is ours. Converse: the blind statement gives our identification of abstr(G)-sets."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1263,
+    "labels": [
+      "xca:f^*-abs(f)^*"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/06-actions.ny",
+    "blind_declarations": [
+      "blind_xca_restrict_abs"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-06-actions.ny",
+    "bridge_declarations": [
+      "bridge_def_phi_star_06",
+      "bridge_xca_restrict_abs"
+    ],
+    "our_declarations": [
+      "restrict_ev_path",
+      "agset_restrict"
+    ],
+    "note": "This is our restrict_ev_path, conjugated by the ev paths."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1277,
+    "labels": [
+      "xca:f_!-abs(f)_!"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/06-actions.ny",
+    "blind_declarations": [
+      "blind_xca_induce_abs"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-06b-induction.ny",
+    "bridge_declarations": [
+      "bridge_xca_induce_abs"
+    ],
+    "our_declarations": [
+      "induce_ev_path",
+      "agset_induce"
+    ],
+    "note": "For every data of xca:phi_!-OK: the bridge uses the ev paths, our induce_ev_path and bridge_phi_shriek_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1304,
+    "labels": [
+      "def:bipt-conn-groupoid"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "BlindConnGroupoid",
+      "BlindBiPCG"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_def_conn_groupoid",
+      "bridge_def_bipcg_sigma",
+      "bridge_bipcg",
+      "bridge_bipcg_inv",
+      "bridge_def_bipcg"
+    ],
+    "our_declarations": [
+      "ConnectedGroupoids",
+      "BipointedConnectedGroupoidSigma",
+      "BipointedConnectedGroupoid"
+    ],
+    "note": "The blind Σ-types are ours by refl. The record form is equivalent, with refl round trips."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1320,
+    "labels": [
+      "def:heap"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "BlindHeap",
+      "blind_mkheap",
+      "blind_heap_B",
+      "blind_heap_usym",
+      "blind_heap_usym_set"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_heap",
+      "bridge_heap_inv",
+      "bridge_def_heap",
+      "bridge_def_mkheap",
+      "bridge_def_heap_carrier",
+      "bridge_def_heap_start",
+      "bridge_def_heap_end",
+      "bridge_def_heap_usym",
+      "bridge_def_heap_start_group",
+      "bridge_def_heap_end_group"
+    ],
+    "our_declarations": [
+      "Heap",
+      "mkheap",
+      "heap_B",
+      "heap_usym_settype",
+      "heap_start_group",
+      "heap_end_group"
+    ],
+    "note": "This is an equivalence with refl round trips. The shapes, USym and the endpoint groups are equal to ours by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1356,
+    "labels": [
+      "xca:group+torsor-heap"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "blind_heap_start_group",
+      "blind_heap_end_group",
+      "blind_heap_l",
+      "blind_heap_r",
+      "blind_heap_c",
+      "blind_xca_group_torsor_heap"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_def_heap_l",
+      "bridge_def_heap_r",
+      "bridge_heap_lift",
+      "bridge_heap_lift_inv",
+      "bridge_def_heap_lift",
+      "bridge_def_heap_c",
+      "bridge_heap_l_equiv",
+      "bridge_heap_r_equiv",
+      "bridge_heap_c_equiv",
+      "bridge_xca_group_torsor_heap",
+      "bridge_xca_group_torsor_heap_converse"
+    ],
+    "our_declarations": [
+      "heap_left_equiv",
+      "heap_right_equiv",
+      "heap_double_equiv"
+    ],
+    "note": "The blind maps l, r, c are ours, composed with the heap bridge, pointwise by refl. The converse rebuilds ours from the blind statement."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1384,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "blind_heap_t",
+      "BlindHeapShear",
+      "blind_xca_heap_to_group"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_def_heap_t",
+      "bridge_def_heap_shear",
+      "bridge_hshear_image_equiv",
+      "bridge_hshear_iso",
+      "bridge_hshear_concr_path",
+      "bridge_xca_heap_to_group"
+    ],
+    "our_declarations": [
+      "heap_ternary",
+      "heap_translation_group",
+      "heap_translation_concrete_end_path"
+    ],
+    "note": "The operation blind_heap_t is our heap_ternary by refl (same composition order). The blind shears are equivalent to our image of translations. Applied to the blind group, concr gives the end group, through bridge_concr_path and heap_translation_concrete_end_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1391,
+    "labels": [],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "BlindIsAbelianHeap",
+      "blind_xca_heap_endpoints"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_def_abelian_heap",
+      "bridge_xca_heap_endpoints",
+      "bridge_xca_heap_endpoints_converse"
+    ],
+    "our_declarations": [
+      "IsAbelianHeap",
+      "heap_endpoints_merely_iso",
+      "heap_canonical_iso"
+    ],
+    "note": "The blind abelian-heap definition (p q⁻¹ r = r q⁻¹ p) is ours by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1408,
+    "labels": [
+      "xca:heap-variety"
+    ],
+    "status": "bridged",
+    "blind_file": "chapters/ch07/blind/07-heaps.ny",
+    "blind_declarations": [
+      "BlindTernary",
+      "blind_heap_ternary_structure",
+      "blind_xca_heap_variety",
+      "BlindHeapLaws",
+      "blind_xca_heap_variety_description"
+    ],
+    "bridge_file": "chapters/ch07/blind/bridge-07-heaps.ny",
+    "bridge_declarations": [
+      "bridge_def_ternary",
+      "bridge_def_ternary_structure",
+      "bridge_def_heap_laws",
+      "bridge_usym_fiber_equiv",
+      "bridge_ternary_fiber_equiv",
+      "bridge_xca_heap_variety",
+      "bridge_xca_heap_variety_description",
+      "bridge_xca_heap_variety_description_converse"
+    ],
+    "our_declarations": [
+      "heap_usym_fiber_set",
+      "heap_ternary_fiber_prop",
+      "heap_ternary_fiber_equiv",
+      "HeapLaws"
+    ],
+    "note": "The fibres are equivalent, with refl round trips. BlindHeapLaws is HeapLaws, reordered. Both descriptions need Mere S in addition to the equations."
+  }
+]

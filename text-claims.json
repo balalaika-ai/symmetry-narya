@@ -8997,5 +8997,844 @@
     "importance": "low",
     "declarations": [],
     "note": "The section is empty in the pinned book. Only LaTeX comments follow. There is nothing to formalize."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 8,
+    "quote": "In this chapter we will implement an inverse construction, how to obtain a (concrete) group from an abstract one",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "concr",
+      "concr_abstr_path",
+      "abstr_concr_path",
+      "group_abstract_group_equiv"
+    ],
+    "note": "The construction concr (module 707) is the group that the abstract torsors classify. Module 709 proves both round trips. Thus abstr : Group → AbstractGroup is an equivalence with inverse concr."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 10,
+    "quote": "we show how to obtain a (concrete) homomorphism from an abstract one",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "deloop_hom",
+      "abstr_hom_equiv",
+      "concr_hom"
+    ],
+    "note": "The function deloop_hom (module 710) reconstructs a homomorphism G → H from an abstract homomorphism abstr G → abstr H (lem:homomabstrconcr). The function concr_hom (module 742) is concr on morphisms."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 11,
+    "quote": "Of course this is not a reason to stop here, but to continue finding out which parts of group theory benefit from the concrete approach.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This footnote gives motivation. It contains no mathematical claim."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 20,
+    "quote": "More precisely, we give an equivalence of categories between the categories of concrete and of abstract groups.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "concr_cat_equivalence",
+      "abstr_cat_equivalence"
+    ],
+    "note": "This is thm:concr-equiv-cats, module 744, with the wild precategories GroupWild (chapter 6) and AbstractGroupWild."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 27,
+    "quote": "One could advocate for the name `abstract monoid' here, were it not the case that we have no concrete analogue for monoids in our setting. The reason is the symmetry of the identity types.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This footnote is about terminology. The reason that it gives is informal: identity types are symmetric, so loop spaces are groups."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 41,
+    "quote": "A monoid is a collection of data consisting only of \\ref{struc:under-set}, \\ref{struc:unit}, and \\ref{struc:mult-op} from the list in \\cref{def:abstractgroup}. In other words, the existence of inverses is not assumed.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "Monoid",
+      "abstract_group_monoid",
+      "list_monoid_no_inverse",
+      "two_element_monoid_no_inverse"
+    ],
+    "note": "Monoid (module 700) has the underlying set, the unit and the multiplication, with the monoid laws. The map abstract_group_monoid forgets the inverse operation of an abstract group. Examples of monoids without inverses are list_monoid_no_inverse (module 720) and two_element_monoid_no_inverse (module 728)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 77,
+    "quote": "Building on the definition of a monoid, we may encode the type of abstract groups as follows. [...] Using that notation, we introduce names for the relevant propositions. UnitLaws(S,e,μ) :≡ ..., AssocLaw(S,μ) :≡ ..., MonoidLaws(S,e,μ) :≡ isSet(S) × UnitLaws × AssocLaw, InverseLaw(S,e,μ,ι) :≡ ..., GroupLaws(S,e,μ,ι) :≡ MonoidLaws × InverseLaw",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "UnitLaws",
+      "AssocLaw",
+      "MonoidLaws",
+      "InverseLaw",
+      "GroupLaws",
+      "monoid_laws_prop",
+      "group_laws_prop",
+      "group_laws_equiv",
+      "inverse_law_prop"
+    ],
+    "note": "Module 700 defines the named laws as displayed (products nested to the right). They are propositions: monoid_laws_prop and group_laws_prop (isSet S is part of MonoidLaws), and inverse_law_prop (module 721). The equivalence group_laws_equiv identifies GroupLaws with the laws record of module 403."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 108,
+    "quote": "an abstract group $\\mathscr G$ will be a quintuple of the form $\\mathscr G \\jdeq (S,e,\\mu,\\iota,!)$. For brevity, we will usually omit the proof of the properties from the display, since it's unique, and write an abstract group as though it were a quadruple",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstract_group_sigma_equiv",
+      "group_laws_prop",
+      "abstract_group_laws_prop",
+      "abstract_group_laws_irrelevant",
+      "abstract_group_path_of_data"
+    ],
+    "note": "The quintuple form is AbstractGroupSigma. It is equivalent to the record AbstractGroup, with refl round trips (abstract_group_sigma_equiv). The uniqueness of the proof of the laws is group_laws_prop / abstract_group_laws_prop. The lemmas abstract_group_laws_irrelevant (module 430) and abstract_group_path_of_data (module 702) show that the quadruple (S, e, μ, ι) determines the abstract group."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 294,
+    "quote": "In this section we define the notion of homomorphism for abstract groups, which we touched upon in~\\cref{rem:first-abs-hom}. We start by an exercise that simplifies the requirements for abstract group homomorphisms.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a section overview without a mathematical claim. The notion is IsAbstractHom / AbstractHom (module 403), and the exercise is xca:onlymult-hom."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 308,
+    "quote": "Thus we see that, due to the properties of the abstract groups, if $f$ preserves multiplication, then $f$ also preserves unit and inverses.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstract_hom_preserves_unit",
+      "abstract_hom_preserves_inv",
+      "abstract_hom_monoid_hom"
+    ],
+    "note": "This is xca:onlymult-hom (module 701). The lemma abstract_hom_monoid_hom packages the unit equation into a monoid homomorphism."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 310,
+    "quote": "For monoids this is not true: Let $M$ be the monoid with two elements, $1$ and $0$, with ordinary multiplication, so the unit is $1$. Consider $\\bn1$ as the trivial monoid. Now define $h: \\bn1\\to M$ by $h(0)=0$. Then $h$ preserves multiplication, but not the unit.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "two_element_monoid_mul",
+      "two_element_monoid_laws",
+      "two_element_monoid",
+      "unit_monoid_laws",
+      "unit_monoid",
+      "monoid_footnote_map",
+      "monoid_footnote_map_mul",
+      "monoid_footnote_map_not_unit",
+      "monoid_footnote_map_not_monoid_hom",
+      "monoid_mul_preserving_not_unit_preserving"
+    ],
+    "note": "Module 728: M is Bool with 0 = false, 1 = true, x·y = x ∧ y and unit true (two_element_monoid). The trivial monoid is unit_monoid on Unit. The map h = monoid_footnote_map (constant false) preserves multiplication by refl. The formalization refutes h(*) = 1. Thus h is not a MonoidHom, and the monoid analogue of xca:onlymult-hom fails (monoid_mul_preserving_not_unit_preserving)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 315,
+    "quote": "Note that $M$ cannot be extended to an abstract group, since giving $0$ an inverse would make $0$ equal to $1$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "two_element_monoid_zero_inverse",
+      "two_element_monoid_no_inverse",
+      "two_element_monoid_no_mere_inverses",
+      "two_element_monoid_not_abstract_group"
+    ],
+    "note": "An inverse x of 0 gives 0 = 0·x = 1 (two_element_monoid_zero_inverse, whose conclusion is Id Bool false true). Thus M has no inverse operation with the law of inverses, and not even mere inverses. No abstract group has M as its underlying monoid (two_element_monoid_not_abstract_group, module 728)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 426,
+    "quote": "it will then be relatively simple to show that the constructions of forming the abstract group of a group and taking the group classified by the torsors of an abstract group are inverse to each other.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "concr_abstr_path",
+      "abstr_concr_path",
+      "abstr_is_equiv"
+    ],
+    "note": "Module 709."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 436,
+    "quote": "Then we can view $X$ as the classifying function of a group homomorphism from $G$ to $\\SG_{X(\\sh_G)}$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "gset_action_equiv",
+      "gset_to_action",
+      "ptd_conn_to_comp_equiv"
+    ],
+    "note": "Chapter 5 (rem:GSet=SetHomG, module 560) gives GSet G ≃ Σ_S GroupActionOnSet G S with GroupActionOnSet G S = GroupHom G (permutation_group S). The restriction of the codomain to the component is ptd_conn_to_comp_equiv."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 450,
+    "quote": "Its underlying set is $\\USymG$. The abstract version of the corresponding homomorphism, defined by transport, is the function $\\USymG\\to(\\USymG\\eqto\\USymG)$ mapping $g$ to $(g\\cdot\\blank)$, \\ie postcomposition with $g$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "bq_gset_principal",
+      "agset_principal_abstr_act",
+      "abstr_gset_unfold"
+    ],
+    "note": "The principal abstr(G)-torsor acts by g · h = concat h g (left multiplication / postcomposition with g), by refl (agset_principal_abstr_act). For z ≡ sh_G, the abstr(G)-set of ex:BqG is the principal torsor (bq_gset_principal)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 454,
+    "quote": "A (free) choice has been made to define $\\princ G$ using $(\\sh_G\\eqto z)$ and not $(z\\eqto\\sh_G)$. In the latter case the abstract homomorphism would map $g$ to $(\\blank\\cdot\\inv g)$, \\ie precomposition with the inverse of $g$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "preinv_gset",
+      "preinv_gset_act",
+      "preinv_gset_principal_path"
+    ],
+    "note": "Module 712 gives the abstr(G)-set (sh_G = z, r ↦ r g⁻¹) and its identification with the principal torsor at z ≡ sh_G (through xca:absprtorsor)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 520,
+    "quote": "Clearly, the types $\\absGSet$ and $\\absGTor$ are groupoids, and the latter is by definition connected.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "agset_groupoid",
+      "abstract_torsors_groupoid",
+      "abstract_torsors_connected"
+    ],
+    "note": "Modules 706–707. The proof of agset_groupoid uses the identification of paths of G-sets with isomorphisms (agset_path_iso_equiv)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 531,
+    "quote": "We recognize $\\preinv$ from \\cref{lem:pathsptransportiseq} as the induced map of identity types ... followed by evaluation at $z$. Post-composition $\\post$ is transport in the family $\\pathsp x$, while $\\preinv$ is precomposition by the inverse of its argument.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "path_preinv",
+      "path_post"
+    ],
+    "note": "Module 708 defines path_preinv q p ≔ p q⁻¹ and path_post p q ≔ p q directly by concatenation. The formalization does not restate the identification with transport in the path families. This identification is the definition of transport on path types."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 731,
+    "quote": "The abstract version of restriction, \\ie precompostion, is no surprise",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "agset_restrict",
+      "agset_restrict_act"
+    ],
+    "note": "This is def:phi^* (module 740)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 746,
+    "quote": "By \\cref{lem:X/G=setTruncX_hG}, the set $f_!X(w)$ is equivalent to the set of orbits of the $G$-set $(z:\\BG)\\mapsto((\\Bf(z) \\eqto w)\\times X(z))$. Using $\\Bfpt$, the underlying set of the latter is equivalent to $\\princ H(w)\\times X(\\sh_G)$. By \\cref{cor:orbit-equiv}, quotienting the latter set with the equivalence relation ... gives an equivalent of $f_!X(w)$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induce_as_set_trunc",
+      "induced_sum_underlying_equiv",
+      "induce_ev_path",
+      "induce_ev_square"
+    ],
+    "note": "The steps are results of chapter 5 (modules 521, 542). The composite at w ≡ sh_H is an H-equivariant equivalence (USym H × X(sh_G))/∼ ≃ f_!X(sh_H). Module 753 proves it (xca:f_!-abs(f)_!) directly with surjection_quotient_equiv (the pattern of cor:orbit-equiv). The proof does not pass through the orbit set."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 795,
+    "quote": "Like maps of $G$-sets in \\cref{def:map-of-Gsets}, we have a notion of map of $\\agp G$-sets",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "AbstractGSetHom"
+    ],
+    "note": "This is def:Hom-absG."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 812,
+    "quote": "The following exercise asks you to prove $\\varphi_! \\dashv \\varphi^*$, which is the abstract version of the adjunction $f_! \\dashv f^*$ from \\cref{ex:action-functors}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induce_restrict_abstract_adjunction",
+      "induce_restrict_adjunction"
+    ],
+    "note": "Module 741 contains the abstract adjunction, and module 542 contains the concrete one. The comparison of the functors is lem:actionsconcr2abstr and xca:f_!-abs(f)_! (modules 750, 753)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 833,
+    "quote": "Following \\cref{rem:GSet=SetHomG}, we look at the underlying set $f_*X(\\sh_H)$ of the $H$-set $f_*X$. This underlying set ... is a set of invariant maps for the $G$-set sending $z:\\BG$ to $(\\Bf(z)\\eqto\\sh_H) \\to X(z)$. \\cref{xca:HomGsets-ev} gives an equivalence between $f_*X(\\sh_H)$ and the subset of fixed elements of $(\\Bf(\\sh_G)\\eqto\\sh_H) \\to X(\\sh_G)$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "coinduced_invariant_maps"
+    ],
+    "note": "The first sentence is coinduced_invariant_maps (module 542, refl). The evaluation equivalence is xca:HomGsets-ev of chapter 5. The formalization does not compose the motivation into a comparison of f_* with abstr(f)_*. The book states no such result."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 846,
+    "quote": "shows how to transport a fixed $a:(\\Bf(\\sh_G)\\eqto\\sh_H) \\to X(\\sh_G)$ to an element $a(\\blank\\inv{\\Bfpt}):\\USymH\\to X(\\sh_G)$ and why the latter function is also fixed",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the motivating diagram for def:phi_*. The abstract condition that it leads to is CoinduceCondition (module 743). The concrete-to-abstract transport is not formalized separately."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 866,
+    "quote": "one sees that the action of $h$ maps any $a:(\\Bf(\\sh_G)\\eqto\\sh_H)\\to X(\\sh_G)$ to $a(\\inv h \\blank)$. ... However, you may check this as an exercise. The same action works for functions $\\USymH\\to X(\\sh_G)$, since $(\\inv h\\blank)\\Bfpt = \\inv h(\\blank\\Bfpt)$.",
+    "kind": "claim",
+    "status": "partly",
+    "importance": "low",
+    "declarations": [
+      "agset_coinduce_act",
+      "agset_coinduce_act_value"
+    ],
+    "note": "The abstract part is agset_coinduce_act with agset_coinduce_act_mul/unit (module 743). It states that h · b = b(h⁻¹ -) preserves the fixed-point condition and is an action. The formalization does not restate the concrete action formula on f_*X(sh_H)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 909,
+    "quote": "They do, and we provide two independent and somewhat different arguments.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "abstr_hom_equiv",
+      "abstr_functor_fully_faithful"
+    ],
+    "note": "First argument: delooping (module 710, abstr_hom_equiv). Second argument: abstr is an equivalence of categories, and thus it is fully faithful (abstr_functor_fully_faithful, module 744, through lem:cat-equiv-ff of chapter 6)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 910,
+    "quote": "Translating from group homomorphisms to abstract group homomorphisms is easy: ... the function which takes a homomorphism, classified by a pointed map $\\Bf:\\BG\\ptdto\\BH$, to the induced map of identity types $\\USymf \\jdeq \\loops\\Bf$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstr_hom",
+      "usym_hom"
+    ],
+    "note": "This is abstr_hom of module 403."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1001,
+    "quote": "On objects, $\\concr$ is defined via the type of $\\agp G$-torsors ... This we proved is the inverse of $\\abstr$ on objects via two identifications $q_G$ ... and $r_{\\agp G}$",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "concr",
+      "q_iso",
+      "r_component_is_iso",
+      "concr_abstr_path",
+      "abstr_concr_path"
+    ],
+    "note": "Modules 707–709 and 744."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1013,
+    "quote": "Then $\\concr$ sends an abstract group homomorphism $\\varphi$ to the concrete group homomorphism $\\concr(\\varphi)$ classified by the pointed map $\\Bconcr(\\varphi)$ ... the restriction of $\\varphi_!$ to these components ... $\\Bconcr(\\varphi)_\\pt$ as the inverse of the path given in \\cref{xca:Bconcr-OK}",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "concr_hom_torsor",
+      "concr_hom_point",
+      "concr_hom",
+      "induce_principal_path"
+    ],
+    "note": "In module 742, concr_hom_torsor applies φ_! to a torsor. That is, φ_! maps the truncated identification with the principal torsor, and the result is composed with induce_principal_path. The point concr_hom_point is the inverse of induce_principal_path."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1153,
+    "quote": "As a corollary, we get a different proof of \\cref{lem:homomabstrconcr} by applying \\cref{lem:cat-equiv-ff} to the above theorem.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstr_functor_fully_faithful"
+    ],
+    "note": "Module 744."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1164,
+    "quote": "Equivalence of monos in both categories.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a fragment in a wip block (a to-do note), not a statement."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1166,
+    "quote": "\\cref{xca:phi_!-|phi^*,xca:phi^*-|phi_*} follow from \\cref{xca:adjunction-_!-^*,xca:adjunction-^*-_*}, resp.",
+    "kind": "claim",
+    "status": "not formalized",
+    "importance": "low",
+    "declarations": [
+      "induce_restrict_abstract_adjunction",
+      "restrict_coinduce_abstract_adjunction"
+    ],
+    "note": "This is a wip remark on a proof strategy. The formalization proves both abstract adjunctions directly (modules 741, 743). It does not derive them from the concrete ones through the equivalence of G-sets."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1174,
+    "quote": "Given a group $G$ it should by now come as no surprise that the type of $G$-sets is equivalent to the type of $\\abstr(G)$-sets.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "gset_abstract_gset_equiv",
+      "ev_gset"
+    ],
+    "note": "Equiv (GSet G) (AbstractGSet (abstr G)), with the map ev_gset (lem:actionsconcr2abstr)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1176,
+    "quote": "$G$-sets are closely connected to homomorphisms from $G$ to a permutation group.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "gset_action_equiv"
+    ],
+    "note": "This is a pointer to the introduction of sec:Gsetforabstract. The precise statement is rem:GSet=SetHomG (gset_action_equiv, module 560)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1179,
+    "quote": "According to \\cref{lem:homomabstrconcr} $$\\abstr:\\Hom(G,\\SG_S)\\to\\absHom(\\abstr(G),\\abstr(\\SG_S))$$ is an equivalence",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "abstr_hom_equiv",
+      "abstr_hom_is_equiv"
+    ],
+    "note": "This is the instance H = permutation_group S of abstr_hom_equiv G H (module 710). The formalization uses it fibrewise in ev_gset_chain_equiv."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1181,
+    "quote": "where the group $\\SG_S$ is classified by the component of the groupoid $\\Set$, pointed at $S$.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "permutation_group",
+      "automorphism_group"
+    ],
+    "note": "Module 404 defines permutation_group S = automorphism_group SetTypes sets_groupoid S. By this definition, its classifying type is the component NativeComponent SetTypes S, pointed at (S, !)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1183,
+    "quote": "The component information is moot by \\cref{xca:ptd-conn-to-comp}.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ev_gset_component_moot",
+      "ptd_conn_to_comp_equiv",
+      "group_hom_classifying_equiv"
+    ],
+    "note": "The equivalence ev_gset_component_moot G S : Equiv (BG G ->* (Set, S)) (Hom(G, Sigma_S)) composes xca:ptd-conn-to-comp with Hom(G, Sigma_S) = (BG ->* (Set_(S), (S,!)))."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1185,
+    "quote": "Using \\cref{rem:GSet=SetHomG}, we have the following chain of known equivalences and definitions: GSet \\we \\sum_{S:\\Set} \\Hom(G,\\SG_S) \\we\\sum_{S:\\Set} \\absHom(\\abstr(G),\\abstr(\\SG_S)) \\jdeq \\absGSet[\\abstr(G)].",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "ev_gset_chain_equiv",
+      "gset_action_equiv",
+      "abstr_hom_equiv",
+      "family_equiv",
+      "ev_gset_chain_last_step"
+    ],
+    "note": "The equivalence ev_gset_chain_equiv is gset_action_equiv, followed by family_equiv of abstr_hom_equiv. The last step is a judgmental equality of types (ev_gset_chain_last_step, refl)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1194,
+    "quote": "Backtracking these equivalences we see that we have established",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ev_gset_chain_map",
+      "gset_abstract_gset_equiv"
+    ],
+    "note": "The composite of the chain is ev_{sh_G} by refl (ev_gset_chain_map). Thus gset_abstract_gset_equiv has the map ev_gset."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1242,
+    "quote": "Recall from \\cref{sec:phi-functors} the adjoint triple $\\varphi_!\\dashv\\varphi^*\\dashv\\varphi_*$ for a given abstract homomorphism $\\varphi$. ... Also recall the adjoint triple $f_!\\dashv f^*\\dashv f_*$ from \\cref{def:restrictandinduce,rem:coinduced-Hset}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [
+      "induce_restrict_adjunction",
+      "restrict_coinduce_adjunction",
+      "agset_restrict",
+      "agset_induce"
+    ],
+    "note": "This recalls results that are proved elsewhere. The concrete adjunctions are in module 542. The abstract ones are in our sec:phi-functors modules (740 and the adjunction modules)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1252,
+    "quote": "Since $f^*$ and $\\abstr(f)^*$ are both defined by precomposition, the following diagram can easily be filled",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "restrict_ev_square",
+      "restrict_ev_iso",
+      "restrict_ev_iso_equivariant"
+    ],
+    "note": "The filler of the square is restrict_ev_square (xca:f^*-abs(f)^*). In addition to precomposition, the filler needs transport along the pointing path Bf_pt, because Y(Bf(sh_G)) and Y(sh_H) are different sets."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1266,
+    "quote": "For $f_!$ and $\\abstr(f)_!$ we have a similar diagram. Filling this requires the equivalences preceding \\cref{def:phi_!} motivating the definition of $\\varphi_!$ in view of the definition of $f_!$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "induce_compare_book_equiv",
+      "induce_ev_square",
+      "surjection_quotient_equiv",
+      "induced_sum_gset"
+    ],
+    "note": "The filler induce_ev_square uses the equivalence (USym H x X(sh_G))/~ = f_!X(sh_H) (induce_compare_book_equiv). The formalization gets this equivalence like cor:orbit-equiv / lem:X/G=setTruncX_hG, through surjection_quotient_equiv (module 521)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1292,
+    "quote": "Recall that we in \\cref{rem:heap-preview} wondered about the status of general identity types $a\\eqto_A a'$, for $a$ and $a'$ elements of a groupoid $A$, as opposed to the more special loop types $a\\eqto_Aa$. Here we describe the resulting algebraic structure and how it relates to groups.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is the motivation and outline of the section. The mathematical content is in the blocks and claims below."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1295,
+    "quote": "This section has no implications for the rest of the book, and can thus safely be skipped on a first reading.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a margin note about the reading order. It contains no mathematical claim."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1301,
+    "quote": "We proceed in a fashion entirely analogous to that of \\cref{sec:typegroup}, but instead of looking a pointed types, we look at \\emph{bipointed types}.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a methodological remark. The formalization realizes the analogy: it models Heap on Group (module 780)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1310,
+    "quote": "Recall that $\\UU^{=1}$ is the type of connected groupoids $A$, and that we also write $A:\\UU$ for the underlying type. We write $(A,a,a'):\\UUppone$ to indicate the two endpoints.",
+    "kind": "convention",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "ConnectedGroupoids",
+      "BipointedConnectedGroupoid",
+      "bpcg_sigma_equiv"
+    ],
+    "note": "The book does not define U^{=1} elsewhere. The formalization uses ConnectedGroupoids = Σ(A : U)(isconn(A) × isgrpd(A)), by analogy with U^{=1}_*. The record BipointedConnectedGroupoid writes (A, a, a') with the fields carrier, start, finish."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1314,
+    "quote": "Analogous to the loop type of a pointed type, we have a designated identity type of a bipointed type, where we use the two points as the endpoints of the identifications: We set $\\ISym(A,a,a') \\defeq (a \\eqto_A a')$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "ISym",
+      "isym_set",
+      "isym_settype"
+    ],
+    "note": "ISym X = Id (X .carrier) (X .start) (X .finish). It is a set because A is a groupoid (isym_set). This gives ISym : U^{=1}_{••} → Set (isym_settype)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1321,
+    "quote": "The concept of heap (in the abelian case) was first introduced by Prüfer under the German name \\emph{Schar} (swarm/flock). In Anton Sushkevich's book [Teoriya Obobshchennykh Grupp] (\\emph{Theory of Generalized Groups}, 1937), the Russian term [gruda] (heap) is used in contrast to [gruppa] (group). For this reason, a heap is sometimes known as a ``groud'' in English.",
+    "kind": "informal",
+    "status": "not formalizable",
+    "importance": "low",
+    "declarations": [],
+    "note": "This is a historical footnote on the name. It contains no mathematical claim."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1340,
+    "quote": "We call the destructor $\\B : \\Heap \\to \\UUppone$, and call $\\BH$ the \\emph{classifying type} of the heap $H \\jdeq\\mkheap\\BH$, just as for groups, and we call the first point in $BH$ is \\emph{start shape} of $H$, and the second point the \\emph{end shape} of $H$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "heap_B",
+      "heap_eta",
+      "heap_beta",
+      "BHeap",
+      "heap_start_shape",
+      "heap_end_shape"
+    ],
+    "note": "The function heap_B is the destructor. H ≡ mkheap (heap_B H) holds judgmentally (heap_eta is refl), because Heap is a one-field record, as Group in module 400."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1346,
+    "quote": "The identity type construction $\\ISym : \\UUppone \\to \\Set$ induces a map $\\USym : \\Heap \\to \\Set$, mapping $\\mkheap X$ to $\\ISym X$. These are the \\emph{underlying identifications} of the heaps.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "heap_usym",
+      "heap_usym_set",
+      "heap_usym_settype",
+      "heap_usym_mkheap"
+    ],
+    "note": "The map heap_usym_settype : Heap → SetTypes is ISym ∘ B. The equation heap_usym_mkheap is USym (mkheap X) = ISym X, by refl."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1351,
+    "quote": "These is an obvious map (indeed a functor) from groups to heaps, given by doubling the point. That is, we keep the classifying type and use the designated shape as both start and end shape of the heap.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_heap",
+      "group_heap_usym",
+      "HeapHom",
+      "heap_hom_id",
+      "heap_hom_compose",
+      "group_heap_hom",
+      "group_heap_hom_id",
+      "group_heap_hom_compose"
+    ],
+    "note": "The heap group_heap G is mkheap (BG, sh_G, sh_G). The book does not define heap morphisms. HeapHom H K is a bipointed map BH → BK (book orientation of the pointings). The doubling map acts on homomorphisms by f ↦ (Bf÷, Bf_pt, Bf_pt). It preserves identities and composition judgmentally."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1355,
+    "quote": "In fact, this map lifts to the type of heaps with a chosen identification.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "group_heap_lift",
+      "group_heap_lift_fst",
+      "heap_double_equiv",
+      "heap_double_equiv_map"
+    ],
+    "note": "The element group_heap_lift G is (group_heap G, refl sh_G) : Σ_{H : Heap} USym H. It is the map of the equivalence c of xca:group+torsor-heap."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1360,
+    "quote": "Recalling the equivalence between $\\BG$ and the type of $G$-torsors from~\\cref{lem:BGbytorsor}, we can also say that a heap is the same as a group $G$ together with a $G$-torsor.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "GroupWithTorsor",
+      "bg_torsors_family_equiv",
+      "heap_left_torsor_equiv",
+      "heap_right_torsor_equiv",
+      "heap_left_torsor_value",
+      "heap_right_torsor_value"
+    ],
+    "note": "The equivalences heap_left_torsor_equiv, heap_right_torsor_equiv : Heap ≃ Σ_{G : Group} Torsor_G compose l and r fiberwise with bg_torsors_equiv (lem:BGbytorsor, module 504). They are in module 781."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1363,
+    "quote": "But be aware that are \\emph{two} such descriptions, according to which endpoint is the designated shape, and which is the ``twisted'' torsor.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "low",
+    "declarations": [
+      "heap_left_torsor_equiv",
+      "heap_right_torsor_equiv",
+      "heap_left_torsor_value",
+      "heap_right_torsor_value",
+      "heap_left_torsor_underlying"
+    ],
+    "note": "Through l, the group is the start group and the torsor is P_{a'} = (z ↦ (a' = z)). Through r, the group is the end group and the torsor is P_a. Both hold by refl. The torsor of l has the underlying set (a' = a) (heap_left_torsor_underlying)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1367,
+    "quote": "It also follows that the type of heaps is a (large) groupoid.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "heap_type_groupoid",
+      "group_with_torsor_groupoid"
+    ],
+    "note": "The lemma heap_type_groupoid : isGroupoid Heap follows by transport along l from Σ_{G : Group} BG. Group is a groupoid by xca:typegroupisgroupoid, and BG is a groupoid. Narya has a single universe, so the formalization does not record largeness."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1369,
+    "quote": "In the other direction, there are \\emph{two} obvious maps (functors) from heaps to groups, taking either the start or the end shape to be the designated shape.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "heap_start_group",
+      "heap_end_group",
+      "heap_start_hom",
+      "heap_end_hom",
+      "heap_start_hom_id",
+      "heap_end_hom_id",
+      "heap_start_hom_compose",
+      "heap_end_hom_compose",
+      "heap_start_group_double",
+      "heap_end_group_double",
+      "heap_start_hom_double",
+      "heap_end_hom_double"
+    ],
+    "note": "On morphisms (HeapHom), a functor forgets one pointing. The functors preserve identities and composition judgmentally. Both functors are retractions of the doubling functor (refl)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1373,
+    "quote": "Here's an \\emph{a priori} different map from heaps to groups: For a heap $H$, consider all the symmetries of the underlying set of identifications $\\USymH$ that arise as $r \\mapsto p\\inv q r$ for $p,q\\in \\USymH$.",
+    "kind": "inline-definition",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "heap_ternary",
+      "heap_translation",
+      "heap_translation_equiv",
+      "heap_translation_group",
+      "heap_translation_group_carrier",
+      "heap_translation_concrete_group"
+    ],
+    "note": "In the composition order of the book (def:eq-trans: qp = concat p q), p q⁻¹ r = concat r (concat q⁻¹ p) (heap_ternary). The group of these symmetries is the image of (p, q) ↦ (r ↦ p q⁻¹ r) in USym H ≃ USym H. It is an abstract group under composition (heap_translation_group, module 783) and a group through concr (module 786)."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1378,
+    "quote": "Note that $(p,q)$ and $(p',q')$ determine the same symmetry if and only if $p\\inv q = p'\\inv{q'}$, and if and only if $\\inv{p'}p = \\inv{q'}q$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "heap_translation_same_end",
+      "heap_end_loop_start_loop",
+      "heap_end_to_start_loop",
+      "heap_start_to_end_loop"
+    ],
+    "note": "By heap_translation_same_end, (r ↦ p q⁻¹ r) = (r ↦ p' q'⁻¹ r) ≃ (p q⁻¹ = p' q'⁻¹ in USym of the end group, concat q⁻¹ p). By heap_end_loop_start_loop, this is ≃ (p'⁻¹ p = q'⁻¹ q in USym of the start group, concat p p'⁻¹). All are propositions, so these equivalences are the printed logical equivalences."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1382,
+    "quote": "For the composition, we have $(p,q)(p',q') = (p\\inv{q}p',q') = (p,q'\\inv{p'}q)$.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "high",
+    "declarations": [
+      "heap_translation_compose_left",
+      "heap_translation_compose_right",
+      "heap_end_loop_ternary_left",
+      "heap_end_loop_ternary_right"
+    ],
+    "note": "The product (p, q)(p', q') is the composite (r ↦ p q⁻¹ r) ∘ (r ↦ p' q'⁻¹ r). This is the function-composition order, and the printed formulas hold in this order. The product is equal to the symmetries of (heap_ternary H p q p', q') and of (p, heap_ternary H q' p' q). This holds as functions (funext) and on end-shape symmetries."
+  },
+  {
+    "source": "absgroup.tex",
+    "line": 1400,
+    "quote": "Now we come to the question of describing the algebraic structure of a heap. Whereas for groups we can define the abstract structure in terms of the reflexivity path and the binary operation of path composition, for heaps, we can define the abstract structure in terms of a \\emph{ternary operation}, as envisioned by the following exercise.",
+    "kind": "claim",
+    "status": "formalized",
+    "importance": "medium",
+    "declarations": [
+      "heap_ternary_structure",
+      "heap_ternary_fiber_equiv",
+      "heap_usym_fiber_set",
+      "abstract_group_pointed_heap_equiv"
+    ],
+    "note": "The exercise xca:heap-variety makes this precise (modules 785, 787). The heap structures on a set S with ternary operation t form a proposition. This proposition is equivalent to Mere S plus the heap equations. The equivalence abstract_group_pointed_heap_equiv shows that abstract groups are pointed heaps."
   }
 ]
