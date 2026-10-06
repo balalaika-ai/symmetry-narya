@@ -18,17 +18,17 @@ the open gaps and the corrections to the book. It also links each block of the b
 | [Chapter 4: Groups, concretely](chapters/ch04/README.md) | 95 | 92 | 3 | 0 | 0 | 0 | 8 |
 | [Chapter 5: Actions](chapters/ch05/README.md) | 112 | 110 | 1 | 0 | 1 | 0 | 11 |
 | [Chapter 6: A categorical interlude](chapters/ch06/README.md) | 89 | 89 | 0 | 0 | 0 | 0 | 10 |
-| [Chapter 7: Groups, abstractly](chapters/ch07/README.md) | 51 | 48 | 3 | 0 | 0 | 0 | 4 |
+| [Chapter 7: Groups, abstractly](chapters/ch07/README.md) | 51 | 49 | 2 | 0 | 0 | 0 | 4 |
 | [Chapter 8: Constructing groups](chapters/ch08/README.md) | 39 | 36 | 0 | 0 | 3 | 0 | 2 |
-| [Chapter 9: Normal subgroups and quotients](chapters/ch09/README.md) | 71 | 66 | 5 | 0 | 0 | 0 | 5 |
+| [Chapter 9: Normal subgroups and quotients](chapters/ch09/README.md) | 71 | 67 | 4 | 0 | 0 | 0 | 5 |
 | [Chapter 10: Finite groups](chapters/ch10/README.md) | 19 | 17 | 1 | 1 | 0 | 3 | 5 |
-| [Chapter 11: Group presentations](chapters/ch11/README.md) | 36 | 29 | 3 | 3 | 1 | — | 10 |
+| [Chapter 11: Group presentations](chapters/ch11/README.md) | 36 | 30 | 2 | 3 | 1 | — | 10 |
 | [Chapter 12: Abelian groups](chapters/ch12/README.md) | 19 | 19 | 0 | 0 | 0 | 0 | 2 |
 | [Chapter 13: Rings, fields and vector spaces](chapters/ch13/README.md) | 44 | 43 | 0 | 0 | 1 | 0 | 2 |
 | [Chapter 14: Geometry and groups](chapters/ch14/README.md) | 19 | 19 | 0 | 0 | 0 | 0 | 5 |
 | [Chapter 15: Galois theory](chapters/ch15/README.md) | 7 | 5 | 2 | 0 | 0 | 1 | 3 |
 | [Appendix B: Metamathematical remarks](chapters/appB/README.md) | 18 | 18 | 0 | 0 | 0 | 1 | 10 |
-| **Total** | **917** | **888** | **19** | **4** | **6** | | **89** |
+| **Total** | **917** | **891** | **16** | **4** | **6** | | **89** |
 <!-- chapter-table:end -->
 
 The columns have these meanings:
@@ -36,6 +36,8 @@ The columns have these meanings:
 - **Blocks**: the definitions, lemmas, theorems, constructions, exercises, examples and remarks of the book.
 - **Mapped**: the block has a formal statement and a proof.
 - **Refuted**: the block is false as printed. The repository proves a counterexample and a corrected statement.
+  Some mapped blocks have a slip in the book, for example a typo or an ambiguous notation, but the intended
+  statement is proved. The section "Corrections to the book" of each chapter page lists both kinds.
 - **Partial**: the repository formalizes only a part of the block.
 - **Informal**: the block has no mathematical claim, for example a historical comment.
 - **Blind check gaps**: the number of gaps in the blind statement check. A dash shows that the chapter has no

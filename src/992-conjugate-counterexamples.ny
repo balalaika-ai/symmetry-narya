@@ -6,11 +6,12 @@ export "524-fixed-elements"
 export "505-gset-core-litmus"
 export "507-subgroups-monos-equiv"
 
-{` Chapter 9 (subgroups.tex), the printed versions of lem:thereisaconjugate
-   (line 1840) and of the remark on inn (line 1887) are false; both are
-   refuted here with Σ_3 acting on Fin 3 and g = (0 1 2) (sigma3_sym cyc.).
-   The corrected versions are conjugate_fixed_point_iff (913) and
-   inn_usym_usym (955). `}
+{` Chapter 9 (subgroups.tex). The remark on inn (line 1887) is false as
+   printed. For lem:thereisaconjugate (line 1840), the reading of g⁻¹Bf_pt as
+   "first g⁻¹, then Bf_pt" makes the lemma false. Both are refuted here with
+   Σ_3 acting on Fin 3 and g = (0 1 2) (sigma3_sym cyc.). The lemma in the
+   reading that its proof uses is conjugate_fixed_point_iff (913); the
+   corrected remark is inn_usym_usym (955). `}
 
 {` An H-fixed point is fixed by the image of every symmetry of H. `}
 def subgroup_fixed_point_usym_fixed (G : Group) (X : GSet G) (m : GroupMonos G) (y : gset_underlying G X)
@@ -55,8 +56,10 @@ def sigma3_t0_zero_fixed
           (refl ((r ↦ gset_act G X s0 s0 r fin3_zero) : Id B s0 s0 → Fin three) (inverse_refl B s0))
           (gset_act_refl G X s0 fin3_zero)))
 
-{` lem:thereisaconjugate as printed: the conjugate gH ≔ (H, F, g⁻¹ Bf_pt) read
-   with g⁻¹ first (the only well-typed reading; it is conjugate_mono by g⁻¹). `}
+{` lem:thereisaconjugate with the conjugate gH ≔ (H, F, g⁻¹ Bf_pt) read as
+   "first g⁻¹, then Bf_pt" (conjugate_mono by g⁻¹). The other well-typed
+   reading, which the proof of the book uses, is conjugate_fixed_point_iff
+   (913). `}
 def thereisaconjugate_printed : Type
   ≔ (G : Group) (X : GSet G) (x : gset_underlying G X) (g : USym G) (m : GroupMonos G)
     → Product (IsSubgroupFixedPoint G X m (gset_usym_act G X g x)

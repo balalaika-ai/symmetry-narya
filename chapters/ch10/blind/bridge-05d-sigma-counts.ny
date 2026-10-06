@@ -10,9 +10,12 @@ export "../../../src/1052-sigma-n-order-three-classes"
      3 is ≡ 1 (mod 3) (module 1051), and 20 ≢ 1;
    - "10 subgroups of order 9, one for each 3-element subset": there are
      binomial(6,3) = 20 such subsets, but the number of 3-Sylow subgroups of
-     Σ_6 is ≡ 1 (mod 3) (thm:sylow3, module 1017).
-   Corrected variants: the formula for n = 3, 4 is proved (1 and 4); the
-   counts for n = 5 (10) and n = 6 (40, 10 of order 9) are not formalized. `}
+     Σ_6 is ≡ 1 (mod 3) (thm:sylow3, module 1017). The number 10 is right
+     (720/72); only the parenthetical is false.
+   Corrected variants: the formula for n = 3, 4 is proved (1 and 4). Module
+   1054 proves the counts of subgroups of order 3 for n = 5 (10) and n = 6
+   (40), but they are not bridged here. The count 10 of subgroups of order 9
+   of Σ_6 is not formalized. `}
 
 def bridge_twenty_not_one_mod_three (h : NatCongruent 3 20 1) : Empty
   ≔ nat_decision_false_reflect (NatDivides 3 19) (nat_divides_decidable_any 3 19) (refl (false. : Bool))

@@ -143,10 +143,14 @@ def render_chapter(chapter, folder, sources, title, blocks, claims, where):
                 label = labels(r) if kind != 'claim' else 'claim'
                 out.append(f'- {label}, {where_in_book(r)}{status}: {one_line(r.get("note", ""))}')
             out.append('')
-    refuted = [b for b in rows if b['status'] == 'refuted']
+    # A refuted block is false as printed. A block with a 'correction' has a slip (typo, notation) in the book, but
+    # the intended statement is proved.
+    corrected = [b for b in rows if b['status'] == 'refuted' or b.get('correction')]
     out += ['## Corrections to the book', '']
-    if refuted:
-        out += [f'- {labels(b)}, {where_in_book(b)}: {one_line(b.get("note", ""))}' for b in refuted] + ['']
+    if corrected:
+        out += [f'- {labels(b)}, {where_in_book(b)}: {one_line(b.get("note", ""))}' if b['status'] == 'refuted'
+                else f'- {labels(b)}, {where_in_book(b)} (slip; the intended statement is proved): '
+                     f'{one_line(b["correction"])}' for b in corrected] + ['']
     else:
         out += ['No block of this chapter is false as printed.', '']
     out += ['## Blocks', '',

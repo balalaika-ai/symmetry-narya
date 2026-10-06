@@ -29,13 +29,20 @@ def conjugate_mono (G : Group) (g : USym G) (m : GroupMonos G) : GroupMonos G
 {` lem:thereisaconjugate: g · x is a fixed point for the H-action iff x is
    a fixed point for the conjugate (H, F, g p).
 
-   Deviation: the book writes the conjugate as gH ≔ (H, F, g⁻¹Bf_pt), which
-   is ill-typed in the book's composition order and, read as "first g⁻¹,
-   then Bf_pt" (the action of g on Mono(G)), makes the statement false
-   (for Σ_3 acting on {0,1,2}, H the stabilizer of 0 and g a 3-cycle,
-   x ≔ g⁻¹·0 has g·x = 0 H-fixed, but x is fixed only by g⁻¹Hg ≠ gHg⁻¹).
-   The book's own proof computes with X((g⁻¹Bf_pt)⁻¹) = g⁻¹·X(Bf_pt⁻¹),
-   i.e. the pointing "first g, then Bf_pt", which is what we use. `}
+   Notation: the book writes the conjugate as gH ≔ (H, F, g⁻¹Bf_pt). As a
+   composite in the book's composition order this is ill-typed. It has two
+   well-typed readings.
+   (1) g⁻¹ acts on Bf_pt by transport in z ↦ (z = F(sh_H)), as in
+   def:kernel. This gives the pointing "first g, then Bf_pt", which is the
+   pointing used here. The book's own proof computes with this reading:
+   X((g⁻¹Bf_pt)⁻¹) = g⁻¹·X(Bf_pt⁻¹). With it, the lemma is this declaration.
+   (2) "First g⁻¹, then Bf_pt" (the action of g on Mono(G)). With it, the
+   statement is false (thereisaconjugate_printed_refuted, module 992: for Σ_3
+   acting on {0,1,2}, H the stabilizer of 0 and g a 3-cycle, x ≔ g⁻¹·0 has
+   g·x = 0 H-fixed, but x is fixed only by g⁻¹Hg ≠ gHg⁻¹).
+   In reading (1), gH is the conjugate by g⁻¹ in the sense of
+   rem:action-Mono(G) (conjugate_mono_action), so the name gH clashes with
+   that remark. `}
 def conjugate_fixed_point_iff (G : Group) (X : GSet G) (x : gset_underlying G X) (g : USym G) (m : GroupMonos G)
   : Product (IsSubgroupFixedPoint G X m (gset_usym_act G X g x) → IsSubgroupFixedPoint G X (conjugate_mono G g m) x)
       (IsSubgroupFixedPoint G X (conjugate_mono G g m) x → IsSubgroupFixedPoint G X m (gset_usym_act G X g x))

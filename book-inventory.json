@@ -14346,7 +14346,7 @@
       "cayley_fixed_eval_anti",
       "cayley_fixed_eval_not_hom_sigma3"
     ],
-    "note": "The action of PP is (g·π)(x) = g·π(g⁻¹·x) (cayley_pp_transport). So π is fixed iff π(gg') = gπ(g') (cayley_pp_fixed_iff). The fixed permutations form an abstract group under composition (cayley_fixed_abstract_group). The last claim is false as printed. Evaluation at refl is a bijection, but it is an anti-homomorphism: ev(π∘π') = ev(π')·ev(π) (cayley_fixed_eval_anti). So it is not an abstract homomorphism for Σ_3 (cayley_fixed_eval_not_hom_sigma3). Correction: π ↦ ev(π)⁻¹ is an abstract isomorphism to abstr(G) (cayley_fixed_inverse_eval_hom). With the opposite multiplication on fixed permutations, ev itself would be one."
+    "note": "The action of PP is (g·π)(x) = g·π(g⁻¹·x) (cayley_pp_transport). So π is fixed iff π(gg') = gπ(g') (cayley_pp_fixed_iff). The fixed permutations form an abstract group under composition (cayley_fixed_abstract_group). The last claim is false as printed. Evaluation at refl is a bijection, but it is an anti-homomorphism: ev(π∘π') = ev(π')·ev(π) (cayley_fixed_eval_anti). So it is not an abstract homomorphism for Σ_3 (cayley_fixed_eval_not_hom_sigma3). Correction: π ↦ ev(π)⁻¹ is an abstract homomorphism to abstr(G) (cayley_fixed_inverse_eval_hom). It is a bijection, because ev is one (cayley_fixed_eval_equiv) and inversion is an involution. The formalization does not state the isomorphism as one declaration. This is a slip (a missing inverse), not a substantive error. With the opposite multiplication on fixed permutations, ev itself would be one."
   },
   {
     "chapter": 5,
@@ -17633,7 +17633,7 @@
     "labels": [
       "xca:conj"
     ],
-    "status": "refuted",
+    "status": "mapped",
     "declarations": [
       "abstract_conj",
       "abstract_conj_mul",
@@ -17650,11 +17650,12 @@
       "abstract_conj_sigma3_moves"
     ],
     "principal": [
-      "abstract_conj_printed_instance_fails",
       "abstract_conj_mul",
-      "abstract_conj_iso"
+      "abstract_conj_iso",
+      "abstract_conj_printed_instance_fails"
     ],
-    "note": "Refuted as printed: the displayed instance g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s·g⁻¹) has s instead of s' in the second factor, and it is false. In Z with g = s = 0 and s' = 1, it says 1 = 0 (abstract_conj_printed_instance_fails). The formalization proves the intended statement. The map conj^g(s) = (g·s)·g⁻¹ (abstract_conj, module 723) preserves multiplication: g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s'·g⁻¹) (abstract_conj_mul). It is an equivalence (abstract_conj_equiv). Thus it is an isomorphism (abstract_conj_iso) and an identification G = G (abstract_conj_path). Litmus: conj^g is the identity in abelian groups, conj^1(2) = 2 in Z by refl, and conj^τ(σ) ≠ σ in abstr Σ₃."
+    "note": "The exercise is true and proved. Only the example display g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s·g⁻¹) has a typo: s instead of s' in the second factor. Taken literally, the display is false. In Z with g = s = 0 and s' = 1, it says 1 = 0 (abstract_conj_printed_instance_fails). The map conj^g(s) = (g·s)·g⁻¹ (abstract_conj, module 723) preserves multiplication: g·(s·s')·g⁻¹ = (g·s·g⁻¹)·(g·s'·g⁻¹) (abstract_conj_mul). It is an equivalence (abstract_conj_equiv). Thus it is an isomorphism (abstract_conj_iso) and an identification G = G (abstract_conj_path). Litmus: conj^g is the identity in abelian groups, conj^1(2) = 2 in Z by refl, and conj^τ(σ) ≠ σ in abstr Σ₃.",
+    "correction": "Typo in the example display: the second factor must be g·s'·g⁻¹, not g·s·g⁻¹. The exercise itself is true (abstract_conj_mul, abstract_conj_iso). The literal display fails in Z (abstract_conj_printed_instance_fails)."
   },
   {
     "chapter": 7,
@@ -18012,7 +18013,7 @@
       "abstract_conj_transport_precompose",
       "abstract_conj_transport_postcompose"
     ],
-    "note": "Refuted as printed in one point: the phrase 'similarly for elements in H, giving rise to precomposition with conjugation by h' is false. Transport along conj^h : H = H in X ↦ absHom(X, K) is precomposition with (conj^h)⁻¹ = conj^{h⁻¹} (abstract_conj_transport_precompose). Precomposition with conj^h fails for H = K = abstr Σ₃, f = id and h = τσ: it would give 2 = 0 in Fin 3 (abstract_conj_transport_precompose_printed_fails, module 731). The rest holds. The map conj^g is an element of absHom(G, G), an isomorphism and an identification (abstract_conj_hom / _iso / _path, module 723). Transport along conj^g in X ↦ absHom(H, X) is postcomposition with conj^g (abstract_conj_transport_postcompose). Applied to (id_BG, g⁻¹), abstr gives conj^g (abstr_conj_hom_is_abstract_conj). Applied to USym(inn)(g), abstr gives the identification conj^g of abstr G (inn_abstr_conj_path, module 730)."
+    "note": "Refuted as printed in one point: the phrase 'similarly for elements in H, giving rise to precomposition with conjugation by h' is false. Transport along conj^h : H = H in X ↦ absHom(X, K) is precomposition with (conj^h)⁻¹ = conj^{h⁻¹} (abstract_conj_transport_precompose). Precomposition with conj^h fails for H = K = abstr Σ₃, f = id and h = τσ, the 3-cycle 0 ↦ 1 ↦ 2 ↦ 0 (here τ = (0 1) and σ = (1 2)): it would give 2 = 0 in Fin 3 (abstract_conj_transport_precompose_printed_fails, module 731). The rest holds. The map conj^g is an element of absHom(G, G), an isomorphism and an identification (abstract_conj_hom / _iso / _path, module 723). Transport along conj^g in X ↦ absHom(H, X) is postcomposition with conj^g (abstract_conj_transport_postcompose). Applied to (id_BG, g⁻¹), abstr gives conj^g (abstr_conj_hom_is_abstract_conj). Applied to USym(inn)(g), abstr gives the identification conj^g of abstr G (inn_abstr_conj_path, module 730)."
   },
   {
     "chapter": 7,
@@ -22713,7 +22714,7 @@
     "labels": [
       "lem:thereisaconjugate"
     ],
-    "status": "refuted",
+    "status": "mapped",
     "declarations": [
       "IsSubgroupFixedPoint",
       "conjugate_mono",
@@ -22726,10 +22727,11 @@
       "thereisaconjugate_printed_refuted"
     ],
     "principal": [
-      "thereisaconjugate_printed_refuted",
-      "conjugate_fixed_point_iff"
+      "conjugate_fixed_point_iff",
+      "thereisaconjugate_printed_refuted"
     ],
-    "note": "The lemma is refuted as printed. The conjugate gH ≔ (H, F, g^-1 Bf_pt) is ill-typed in the composition order of the book. Its only well-typed reading (g^-1 first, = conjugate_mono G g^-1 m) makes the lemma false (thereisaconjugate_printed_refuted, module 992). The counterexample is Σ3 on Fin 3, with H = T_0 = Stab(0), g = (0 1 2) and x = 2. Then g·2 = 0 is T_0-fixed. But then g^-1·2 = 1 would be T_0-fixed, while (1 2) ∈ T_0 moves it. Corrected statement (conjugate_fixed_point_iff, 913): g·x is H-fixed iff x is fixed for (H, F, g then Bf_pt). This is the pointing that the proof of the book computes with, that is, the action of g^-1 on Mono(G) (conjugate_mono_action)."
+    "note": "The lemma is proved in the reading that its proof uses (conjugate_fixed_point_iff, module 913). The book writes the conjugate as gH ≔ (H, F, g^-1 Bf_pt). As a composite of identifications in the order of the book, this is ill-typed. There are two well-typed readings. (1) g^-1 acts on Bf_pt by transport in z ↦ (z = F(sh_H)), as in def:kernel. This gives the pointing 'first g, then Bf_pt' (conjugate_mono G g m). The proof of the book computes with this reading: X((g^-1 Bf_pt)^-1) = g^-1·X(Bf_pt^-1). With this reading the lemma is conjugate_fixed_point_iff. (2) 'First g^-1, then Bf_pt' (conjugate_mono G g^-1 m). With this reading the lemma is false (thereisaconjugate_printed_refuted, module 992). The counterexample is Σ3 on Fin 3, with H = T_0 = Stab(0), g = (0 1 2) and x = 2. Then g·2 = 0 is T_0-fixed. But then g^-1·2 = 1 would be T_0-fixed, while (1 2) ∈ T_0 moves it. In reading (1), gH is the conjugate of H by g^-1 for the action of rem:action-Mono(G) (conjugate_mono_action). Thus the name gH clashes with that remark.",
+    "correction": "Notation: write the pointing of the conjugate as Bf_pt g (first g, then Bf_pt), the reading that the proof uses. With it, the lemma is proved (conjugate_fixed_point_iff). The other reading, first g^-1 then Bf_pt, makes the lemma false (thereisaconjugate_printed_refuted). The name gH clashes with rem:action-Mono(G), where this subgroup is the conjugate by g^-1."
   },
   {
     "chapter": 9,
@@ -23298,7 +23300,7 @@
       "sigma5_order_three_subgroups_card",
       "sigma6_order_three_subgroups_card"
     ],
-    "note": "The formalization proves these facts. Sigma_3 has a unique subgroup of order 3, <(0 1 2)>, and this subgroup is normal. Sigma_4 has 1 or 4 subgroups of order 3 (3-Sylow), and they are all conjugate. In Sigma_4, <(0 1 2)> is not normal, so there are exactly 4. Also, 9 | n! for n > 5. For n > 5, the subgroups of order 3 of Sigma_n are not all conjugate. Module 1052 shows this with <(0 1 2)> and <(0 1 2)(3 4 5)> in Sigma_(m+6). The proof counts the moved points: 3 for the first subgroup and 6 for the second. <(0 1 2)> and <(3 4 5)> are conjugate. The formalization refutes three printed claims with formal counterexamples (Bridges, chapters/ch10/blind). The claim 'Sigma_n has n(n-1)(n-2)/6 subgroups of order 3' fails at n = 6. The reason: the number of subgroups of order p of a group with p | |G| is = 1 mod p (order_p_subgroups_congruent, module 1051), and 20 is not. The claim '<(1 2 3)> is not conjugate to <(4 5 6)>' is false. The claim 'one subgroup of order 9 for each 3-element subset' is false: binomial(6,3) = 20 is not = 1 mod 3, but |Syl_3(Sigma_6)| is. Modules 1053-1054 prove the exact numbers of subgroups of order 3 by enumeration. Sigma_3, Sigma_4, Sigma_5 and Sigma_6 have 1, 4, 10 and 40 (sigma5_order_three_subgroups_card, sigma6_order_three_subgroups_card). The book's formula counts only the subgroups generated by a 3-cycle. Two claims are not formalized: the 10 subgroups of order 9 of Sigma_6, and an order-9 subgroup that contains both 3-cycles. An enumeration over the 720 elements of Sigma_6 needs too much memory in the pinned Narya."
+    "note": "The formalization proves these facts. Sigma_3 has a unique subgroup of order 3, <(0 1 2)>, and this subgroup is normal. Sigma_4 has 1 or 4 subgroups of order 3 (3-Sylow), and they are all conjugate. In Sigma_4, <(0 1 2)> is not normal, so there are exactly 4. Also, 9 | n! for n > 5. For n > 5, the subgroups of order 3 of Sigma_n are not all conjugate. Module 1052 shows this with <(0 1 2)> and <(0 1 2)(3 4 5)> in Sigma_(m+6). The proof counts the moved points: 3 for the first subgroup and 6 for the second. <(0 1 2)> and <(3 4 5)> are conjugate. The formalization refutes three printed claims with formal counterexamples (Bridges, chapters/ch10/blind). The claim 'Sigma_n has n(n-1)(n-2)/6 subgroups of order 3' fails at n = 6. The reason: the number of subgroups of order p of a group with p | |G| is = 1 mod p (order_p_subgroups_congruent, module 1051), and 20 is not. The claim '<(1 2 3)> is not conjugate to <(4 5 6)>' is false. The parenthetical 'one for each subset of cardinality 3' is false: binomial(6,3) = 20 is not = 1 mod 3, but |Syl_3(Sigma_6)| is. The number 10 of subgroups of order 9 is right (720/72); a complementary pair of 3-element subsets gives the same subgroup. Modules 1053-1054 prove the exact numbers of subgroups of order 3 by enumeration. Sigma_3, Sigma_4, Sigma_5 and Sigma_6 have 1, 4, 10 and 40 (sigma5_order_three_subgroups_card, sigma6_order_three_subgroups_card). The book's formula counts only the subgroups generated by a 3-cycle. Two claims are not formalized: the 10 subgroups of order 9 of Sigma_6, and an order-9 subgroup that contains both 3-cycles. An enumeration over the 720 elements of Sigma_6 needs too much memory in the pinned Narya."
   },
   {
     "chapter": 10,
@@ -24687,7 +24689,7 @@
     "line": 924,
     "section_raw": "Connections with automata (*)}",
     "labels": [],
-    "status": "refuted",
+    "status": "mapped",
     "declarations": [
       "FgautoIsCoset",
       "FgautoInverseAutomaton",
@@ -24707,7 +24709,8 @@
       "fgauto_coset_iff_inverse_automaton",
       "fgauto_coset_automata_counterexample"
     ],
-    "note": "The printed statement has a typo (X and Y are mixed up), and it is false. We use X ⊆ F(S) as a predicate on reduced words. Counterexample: the inverse automaton with two vertices and no edges has an empty reduced language, which is not a coset (fgauto_coset_automata_counterexample). The corrected statement is proved. X is a coset Hw of a finitely generated H iff X is nonempty and X = rho(L(A)) for a finite inverse automaton A. Here A is deterministic, with reverse edges and an initial and a terminal vertex. Direction '=>' uses the Stallings automaton of H with a hair for w. Direction '<=' takes H generated by spanning-tree loop words, and it does not need determinism."
+    "note": "The printed statement mixes up X and Y (typo). The book does not define an inverse automaton. The section follows Bartholdi and Silva, Rational subsets of groups (arXiv:1012.1532). In their Definition 2.1, an inverse automaton is deterministic, trim and has a single final state. We use X ⊆ F(S) as a predicate on reduced words. The formalization proves the theorem in this form: X is a coset Hw of a finitely generated H iff X is nonempty and X = rho(L(A)) for a finite inverse automaton A (fgauto_coset_iff_inverse_automaton). Here A is deterministic, with reverse edges and an initial and a terminal vertex. The hypothesis 'X nonempty' replaces 'trim': a trim automaton has a nonempty language, and trimming does not change the language. Without such a hypothesis the statement fails: the automaton with two vertices and no edges has an empty reduced language, which is not a coset (fgauto_coset_automata_counterexample). Direction '=>' uses the Stallings automaton of H with a hair for w. Direction '<=' takes H generated by spanning-tree loop words, and it does not need determinism.",
+    "correction": "Typo: X and Y are mixed up. Also, the book does not define an inverse automaton; with the definition of the source (deterministic, trim, a single final state) the theorem holds (fgauto_coset_iff_inverse_automaton, which assumes X nonempty instead of trim). Without 'trim', an automaton without edges is a counterexample (fgauto_coset_automata_counterexample)."
   },
   {
     "chapter": 11,
@@ -27220,7 +27223,7 @@
       "algebraic_galois_t_equiv_dec",
       "real_like_endo_identity"
     ],
-    "note": "REFUTED AS PRINTED. With the printed defn:algebraic-element, every extension is algebraic. Thus the first claim would make t an equivalence for every extension. printed_algebraic_t_equiv_fails refutes this with 𝔽₂(X)/𝔽₂ (module 1532). Here 𝔽₂(X) is the fraction field of 𝔽₂[X]. The Frobenius x ↦ x² is an 𝔽₂-endomorphism, and X is not a square by parity of valuations. Also, t is an equivalence only if every k-endomorphism is an equivalence (galois_t_equiv_endo_is_equiv). In the same way, the second claim cannot hold as printed (printed_non_algebraic_impossible). Corrected first claim (principal): algebraic_galois_t_equiv_dec shows that t is an equivalence for algebraic extensions with decidable equality of K. algebraic_galois_t_equiv gives the same result under excluded middle. The proof needs the decision only to search finite lists of roots. A fully constructive proof is not known here. Corrected second claim: the formalization does not construct ℚ and ℝ. Consider any extension with RationalSeparation: x < y iff y − x is the square of an invertible element, and elements in the same rational intervals are equal. For such an extension, every k-endomorphism is the identity (real_like_endo_identity). The proof uses the strict order, not the book's non-decreasing + irrational case. Thus t is an equivalence. The non-algebraicity of ℚ → ℝ is a hypothesis of algebraic_converse_fails."
+    "note": "REFUTED AS PRINTED, but only as a consequence of defn:algebraic-element, which omits 'nonzero' (galois.tex:126). This is not a separate error. With the printed defn:algebraic-element, every extension is algebraic. Thus the first claim would make t an equivalence for every extension. printed_algebraic_t_equiv_fails refutes this with 𝔽₂(X)/𝔽₂ (module 1532). Here 𝔽₂(X) is the fraction field of 𝔽₂[X]. The Frobenius x ↦ x² is an 𝔽₂-endomorphism, and X is not a square by parity of valuations. Also, t is an equivalence only if every k-endomorphism is an equivalence (galois_t_equiv_endo_is_equiv). In the same way, the second claim cannot hold as printed (printed_non_algebraic_impossible). Corrected first claim (principal): algebraic_galois_t_equiv_dec shows that t is an equivalence for algebraic extensions with decidable equality of K. algebraic_galois_t_equiv gives the same result under excluded middle. The proof needs the decision only to search finite lists of roots. A fully constructive proof is not known here. Corrected second claim: the formalization does not construct ℚ and ℝ. Consider any extension with RationalSeparation: x < y iff y − x is the square of an invertible element, and elements in the same rational intervals are equal. For such an extension, every k-endomorphism is the identity (real_like_endo_identity). The proof uses the strict order, not the book's non-decreasing + irrational case. Thus t is an equivalence. The non-algebraicity of ℚ → ℝ is a hypothesis of algebraic_converse_fails."
   },
   {
     "chapter": 15,

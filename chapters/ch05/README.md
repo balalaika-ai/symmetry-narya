@@ -39,7 +39,7 @@ Blind statement check (files in [`blind/`](blind/)): 112 blocks, 110 bridged, 1 
 
 ## Corrections to the book
 
-- `xca:PP-fixed-permutations`, actions.tex:2704: The action of PP is (g·π)(x) = g·π(g⁻¹·x) (cayley_pp_transport). So π is fixed iff π(gg') = gπ(g') (cayley_pp_fixed_iff). The fixed permutations form an abstract group under composition (cayley_fixed_abstract_group). The last claim is false as printed. Evaluation at refl is a bijection, but it is an anti-homomorphism: ev(π∘π') = ev(π')·ev(π) (cayley_fixed_eval_anti). So it is not an abstract homomorphism for Σ_3 (cayley_fixed_eval_not_hom_sigma3). Correction: π ↦ ev(π)⁻¹ is an abstract isomorphism to abstr(G) (cayley_fixed_inverse_eval_hom). With the opposite multiplication on fixed permutations, ev itself would be one.
+- `xca:PP-fixed-permutations`, actions.tex:2704: The action of PP is (g·π)(x) = g·π(g⁻¹·x) (cayley_pp_transport). So π is fixed iff π(gg') = gπ(g') (cayley_pp_fixed_iff). The fixed permutations form an abstract group under composition (cayley_fixed_abstract_group). The last claim is false as printed. Evaluation at refl is a bijection, but it is an anti-homomorphism: ev(π∘π') = ev(π')·ev(π) (cayley_fixed_eval_anti). So it is not an abstract homomorphism for Σ_3 (cayley_fixed_eval_not_hom_sigma3). Correction: π ↦ ev(π)⁻¹ is an abstract homomorphism to abstr(G) (cayley_fixed_inverse_eval_hom). It is a bijection, because ev is one (cayley_fixed_eval_equiv) and inversion is an involution. The formalization does not state the isomorphism as one declaration. This is a slip (a missing inverse), not a substantive error. With the opposite multiplication on fixed permutations, ev itself would be one.
 
 ## Blocks
 
